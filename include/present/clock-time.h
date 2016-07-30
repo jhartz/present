@@ -7,9 +7,9 @@
  * For details, see LICENSE.
  */
 
-#include "present-utils/types.h"
-#include "present-utils/utils.h"
-#include "present-impl/clock-time-data.h"
+#include "present/utils/types.h"
+#include "present/utils/utils.h"
+#include "present/impl/present-clock-time-data.h"
 
 #ifndef _PRESENT_CLOCK_TIME_H_
 #define _PRESENT_CLOCK_TIME_H_
@@ -70,10 +70,11 @@ struct ClockTime {
     ClockTime & operator=(const ClockTime &);
 
 private:
+    explicit ClockTime(PresentClockTimeData &);
     ClockTime();
 #endif
 
-    struct ClockTimeData my_data;
+    struct PresentClockTimeData my_data;
 };
 
 /*

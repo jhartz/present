@@ -7,9 +7,9 @@
  * For details, see LICENSE.
  */
 
-#include "present-utils/types.h"
-#include "present-utils/utils.h"
-#include "present-impl/date-data.h"
+#include "present/utils/types.h"
+#include "present/utils/utils.h"
+#include "present/impl/present-date-data.h"
 
 #ifndef _PRESENT_DATE_H_
 #define _PRESENT_DATE_H_
@@ -68,10 +68,11 @@ struct Date {
     Date & operator=(const Date &);
 
 private:
+    explicit Date(PresentDateData &);
     Date();
 #endif
 
-    struct DateData my_data;
+    struct PresentDateData my_data;
 };
 
 /*

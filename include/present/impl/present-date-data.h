@@ -7,13 +7,13 @@
  * For details, see LICENSE.
  */
 
-#include "present-utils/types.h"
-#include "present-utils/utils.h"
+#include "present/utils/types.h"
+#include "present/utils/utils.h"
 
 #ifndef _PRESENT_DATE_DATA_H_
 #define _PRESENT_DATE_DATA_H_
 
-struct DateData {
+struct PresentDateData {
     // This value will ALWAYS be divisible by SECONDS_IN_DAY
     time_t      startOfDayTime;
 };

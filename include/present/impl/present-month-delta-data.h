@@ -7,13 +7,13 @@
  * For details, see LICENSE.
  */
 
-#include "present-utils/types.h"
-#include "present-utils/utils.h"
+#include "present/utils/types.h"
+#include "present/utils/utils.h"
 
 #ifndef _PRESENT_MONTH_DELTA_DATA_H_
 #define _PRESENT_MONTH_DELTA_DATA_H_
 
-struct MonthDeltaData {
+struct PresentMonthDeltaData {
     int_month_delta delta_months;
 };
 

@@ -7,9 +7,9 @@
  * For details, see LICENSE.
  */
 
-#include "present-utils/types.h"
-#include "present-utils/utils.h"
-#include "present-impl/timestamp-data.h"
+#include "present/utils/types.h"
+#include "present/utils/utils.h"
+#include "present/impl/present-timestamp-data.h"
 
 #ifndef _PRESENT_TIMESTAMP_H_
 #define _PRESENT_TIMESTAMP_H_
@@ -73,10 +73,11 @@ struct Timestamp {
     Timestamp & operator=(const Timestamp &);
 
 private:
+    explicit Timestamp(PresentTimestampData &);
     Timestamp();
 #endif
 
-    struct TimestampData my_data;
+    struct PresentTimestampData my_data;
 };
 
 /*

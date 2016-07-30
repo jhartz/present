@@ -7,9 +7,9 @@
  * For details, see LICENSE.
  */
 
-#include "present-utils/types.h"
-#include "present-utils/utils.h"
-#include "present-impl/time-delta-data.h"
+#include "present/utils/types.h"
+#include "present/utils/utils.h"
+#include "present/impl/present-time-delta-data.h"
 
 #ifndef _PRESENT_TIME_DELTA_H_
 #define _PRESENT_TIME_DELTA_H_
@@ -89,10 +89,11 @@ struct TimeDelta {
     TimeDelta & operator=(const TimeDelta &);
 
 private:
+    explicit TimeDelta(PresentTimeDeltaData &);
     TimeDelta();
 #endif
 
-    struct TimeDeltaData my_data;
+    struct PresentTimeDeltaData my_data;
 };
 
 /*
