@@ -18,10 +18,10 @@
  * Forward Declarations
  */
 
-struct Date;
 struct ClockTime;
-struct TimeDelta;
+struct Date;
 struct MonthDelta;
+struct TimeDelta;
 
 /*
  * C++ Class / C Struct Definition

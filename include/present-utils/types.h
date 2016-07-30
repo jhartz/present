@@ -32,6 +32,7 @@ typedef uint_fast8_t    int_month;
 typedef uint_fast8_t    int_day;
 
 typedef uint_fast8_t    int_week_of_year;
+typedef uint_fast16_t   int_day_of_year;
 typedef uint_fast8_t    int_day_of_week;
 
 #define DAY_OF_WEEK_MONDAY      (1)

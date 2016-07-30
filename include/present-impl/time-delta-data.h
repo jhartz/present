@@ -14,8 +14,8 @@
 #define _PRESENT_TIME_DELTA_DATA_H_
 
 struct TimeDeltaData {
-    int_second_delta delta_seconds;
-    int_nanosecond_delta delta_nanoseconds;
+    int_delta delta_seconds;
+    int_delta delta_nanoseconds;
 };
 
 #endif /* _PRESENT_TIME_DELTA_DATA_H_ */

@@ -125,37 +125,37 @@ struct TimeDelta
 TimeDelta_zero();
 
 int_delta
-TimeDelta_get_nanoseconds(const TimeDelta * const self);
+TimeDelta_get_nanoseconds(const struct TimeDelta * const self);
 
 int_delta
-TimeDelta_get_seconds(const TimeDelta * const self);
+TimeDelta_get_seconds(const struct TimeDelta * const self);
 
 double
-TimeDelta_get_seconds_decimal(const TimeDelta * const self);
+TimeDelta_get_seconds_decimal(const struct TimeDelta * const self);
 
 int_delta
-TimeDelta_get_minutes(const TimeDelta * const self);
+TimeDelta_get_minutes(const struct TimeDelta * const self);
 
 double
-TimeDelta_get_minutes_decimal(const TimeDelta * const self);
+TimeDelta_get_minutes_decimal(const struct TimeDelta * const self);
 
 int_delta
-TimeDelta_get_hours(const TimeDelta * const self);
+TimeDelta_get_hours(const struct TimeDelta * const self);
 
 double
-TimeDelta_get_hours_decimal(const TimeDelta * const self);
+TimeDelta_get_hours_decimal(const struct TimeDelta * const self);
 
 int_delta
-TimeDelta_get_days(const TimeDelta * const self);
+TimeDelta_get_days(const struct TimeDelta * const self);
 
 double
-TimeDelta_get_days_decimal(const TimeDelta * const self);
+TimeDelta_get_days_decimal(const struct TimeDelta * const self);
 
 int_delta
-TimeDelta_get_weeks(const TimeDelta * const self);
+TimeDelta_get_weeks(const struct TimeDelta * const self);
 
 double
-TimeDelta_get_weeks_decimal(const TimeDelta * const self);
+TimeDelta_get_weeks_decimal(const struct TimeDelta * const self);
 
 void TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor);
 

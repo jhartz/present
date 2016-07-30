@@ -18,7 +18,7 @@
  * Forward Declarations
  */
 
-struct MonthDelta;
+struct TimeDelta;
 
 /*
  * C++ Class / C Struct Definition
