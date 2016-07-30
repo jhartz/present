@@ -18,10 +18,14 @@
  * Typedefs for common components of dates and times
  */
 
+// Time
+
 typedef uint_fast8_t    int_hour;
 typedef uint_fast8_t    int_minute;
 typedef uint_fast8_t    int_second;
 typedef uint_fast64_t   int_nanosecond;
+
+// Date
 
 typedef int_fast32_t    int_year;
 typedef uint_fast8_t    int_month;
@@ -49,6 +53,15 @@ enum class DAY_OF_WEEK {
     SUNDAY      = DAY_OF_WEEK_SUNDAY
 };
 #endif
+
+// Time Delta
+
+typedef int_fast64_t    int_delta;
+
+// Month Delta
+
+typedef int_fast32_t    int_month_delta;
+typedef int_fast16_t    int_year_delta;
 
 
 #endif /* _PRESENT_TYPES_H_ */

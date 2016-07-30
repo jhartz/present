@@ -12,5 +12,7 @@
 
 #define OVERLOAD_MAX_3(_1, _2, _3, NAME, ...) NAME
 
+#define OVERLOAD_MAX_4(_1, _2, _3, _4, NAME, ...) NAME
+
 #endif /* _PRESENT_UTILS_H_ */
 

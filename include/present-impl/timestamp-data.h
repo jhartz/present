@@ -15,7 +15,7 @@
 
 struct TimestampData {
     time_t timestamp;
-    int_nanoseconds nanoseconds;
+    int_nanosecond nanoseconds;
 };
 
 #endif /* _PRESENT_TIMESTAMP_DATA_H_ */

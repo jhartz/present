@@ -14,7 +14,7 @@
 #define _PRESENT_MONTH_DELTA_DATA_H_
 
 struct MonthDeltaData {
-    int_fast32_t delta_months;
+    int_month_delta delta_months;
 };
 
 #endif /* _PRESENT_MONTH_DELTA_DATA_H_ */

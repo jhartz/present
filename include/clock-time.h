@@ -26,6 +26,8 @@ struct MonthDelta;
 
 struct ClockTime {
 #ifdef __cplusplus
+    static ClockTime create(int_hour hour);
+
     static ClockTime create(int_hour hour, int_minute minute);
 
     static ClockTime create(int_hour hour, int_minute minute, int_second second);
@@ -83,13 +85,23 @@ extern "C" {
 #endif
 
 struct ClockTime
-ClockTime_create(int_hour hour, int_minute minute);
+ClockTime_create_from_hour(int_hour hour);
 
 struct ClockTime
-ClockTime_create_with_seconds(int_hour hour, int_minute minute, int_second second);
+ClockTime_create_from_hour_minute(int_hour hour, int_minute minute);
 
 struct ClockTime
-ClockTime_create_with_nanoseconds(int_hour hour, int_minute minute, int_second second, int_nanosecond nanosecond);
+ClockTime_create_from_hour_minute_second(int_hour hour, int_minute minute, int_second second);
+
+struct ClockTime
+ClockTime_create_from_hour_minute_second_nanosecond(int_hour hour, int_minute minute, int_second second, int_nanosecond nanosecond);
+
+#define ClockTime_create(...)    \
+    OVERLOAD_MAX_4(__VA_ARGS__, \
+        ClockTime_create_from_hour_minute_second_nanosecond,    \
+        ClockTime_create_from_hour_minute_second,   \
+        ClockTime_create_from_hour_minute,  \
+        ClockTime_create_from_hour)(__VA_ARGS__)
 
 struct ClockTime
 ClockTime_create_with_decimal_seconds(int_hour hour, int_minute minute, double second);
@@ -104,25 +116,25 @@ struct ClockTime
 ClockTime_now();
 
 int_hour
-ClockTime_get_hour(const struct ClockTime * const clocktime);
+ClockTime_get_hour(const struct ClockTime * const self);
 
 int_minute
-ClockTime_get_minute(const struct ClockTime * const clocktime);
+ClockTime_get_minute(const struct ClockTime * const self);
 
 int_second
-ClockTime_get_second(const struct ClockTime * const clocktime);
+ClockTime_get_second(const struct ClockTime * const self);
 
 int_nanosecond
-ClockTime_get_nanosecond(const struct ClockTime * const clocktime);
+ClockTime_get_nanosecond(const struct ClockTime * const self);
 
 double
-ClockTime_get_second_decimal(const struct ClockTime * const clocktime);
+ClockTime_get_second_decimal(const struct ClockTime * const self);
 
 void
-ClockTime_add_time_delta(struct ClockTime * const clocktime, struct TimeDelta * const delta);
+ClockTime_add_time_delta(struct ClockTime * const self, struct TimeDelta * const delta);
 
 void
-ClockTime_subtract_time_delta(struct ClockTime * const clocktime, struct TimeDelta * const delta);
+ClockTime_subtract_time_delta(struct ClockTime * const self, struct TimeDelta * const delta);
 
 bool
 ClockTime_equal(const struct ClockTime * const, const struct ClockTime * const);

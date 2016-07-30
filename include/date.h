@@ -117,40 +117,40 @@ struct Date
 Date_today();
 
 int_year
-Date_get_year(struct Date * const date);
+Date_get_year(const struct Date * const self);
 
 int_month
-Date_get_month(struct Date * const date);
+Date_get_month(const struct Date * const self);
 
 int_day
-Date_get_day(struct Date * const date);
+Date_get_day(const struct Date * const self);
 
 int_day_of_year
-Date_get_day_of_year(struct Date * const date);
+Date_get_day_of_year(const struct Date * const self);
 
 int_week_of_year
-Date_get_week_of_year(struct Date * const date);
+Date_get_week_of_year(const struct Date * const self);
 
 int_day_of_week
-Date_get_day_of_week(struct Date * const date);
+Date_get_day_of_week(const struct Date * const self);
 
 void
-Date_add_month_delta(struct Date * const date, const struct MonthDelta * const delta);
+Date_add_month_delta(struct Date * const self, const struct MonthDelta * const delta);
 
 bool
-Date_equal(struct Date * const, struct Date * const);
+Date_equal(const struct Date * const, const struct Date * const);
 
 bool
-Date_less_than(struct Date * const, struct Date * const);
+Date_less_than(const struct Date * const, const struct Date * const);
 
 bool
-Date_less_than_or_equal(struct Date * const, struct Date * const);
+Date_less_than_or_equal(const struct Date * const, const struct Date * const);
 
 bool
-Date_greater_than(struct Date * const, struct Date * const);
+Date_greater_than(const struct Date * const, const struct Date * const);
 
 bool
-Date_greater_than_or_equal(struct Date * const, struct Date * const);
+Date_greater_than_or_equal(const struct Date * const, const struct Date * const);
 
 #ifdef __cplusplus
 }
