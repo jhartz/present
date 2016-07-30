@@ -1,2 +1,3 @@
-# present
-Present - A date/time library for C/C++
+# Present
+
+A date/time library for C/C++
