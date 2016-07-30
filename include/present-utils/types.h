@@ -7,6 +7,10 @@
  * For details, see LICENSE.
  */
 
+#include <stdbool.h>
+#include <stdint.h>
+#include <time.h>
+
 #ifndef _PRESENT_TYPES_H_
 #define _PRESENT_TYPES_H_
 

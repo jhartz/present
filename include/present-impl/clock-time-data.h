@@ -7,10 +7,8 @@
  * For details, see LICENSE.
  */
 
-#include <stdint.h>
-
-#include "types.h"
-#include "util.h"
+#include "present-utils/types.h"
+#include "present-utils/utils.h"
 
 #ifndef _PRESENT_CLOCK_TIME_DATA_H_
 #define _PRESENT_CLOCK_TIME_DATA_H_

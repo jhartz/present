@@ -7,9 +7,9 @@
  * For details, see LICENSE.
  */
 
-#include "types.h"
-#include "util.h"
-#include "impl/date-data.h"
+#include "present-utils/types.h"
+#include "present-utils/utils.h"
+#include "present-impl/date-data.h"
 
 #ifndef _PRESENT_DATE_H_
 #define _PRESENT_DATE_H_
@@ -35,6 +35,8 @@ struct Date {
 
     static Date create_from_year_week_day(int_year year, int_week_of_year week_of_year, int_day_of_week day_of_week);
 
+    static Date today();
+
     int_year get_year() const;
 
     int_month get_month() const;
@@ -56,6 +58,11 @@ struct Date {
     friend bool operator==(const Date &, const Date &);
     friend bool operator!=(const Date &, const Date &);
 
+    friend bool operator<(const Date &, const Date &);
+    friend bool operator<=(const Date &, const Date &);
+    friend bool operator>(const Date &, const Date &);
+    friend bool operator>=(const Date &, const Date &);
+
     Date(const Date &);
     Date & operator=(const Date &);
 
@@ -76,56 +83,74 @@ extern "C" {
 
 struct Date
 Date_create_from_year(
-        int_year    year);
+    int_year    year);
 
 struct Date
 Date_create_from_year_month(
-        int_year    year,
-        int_month   month);
+    int_year    year,
+    int_month   month);
 
 struct Date
 Date_create_from_year_month_day(
-        int_year    year,
-        int_month   month,
-        int_day     day);
+    int_year    year,
+    int_month   month,
+    int_day     day);
 
 struct Date
 Date_create_from_year_week(
-        int_year    year,
-        int_week_of_year    week_of_year);
+    int_year    year,
+    int_week_of_year    week_of_year);
 
 struct Date
 Date_create_from_year_week_day(
-        int_year    year,
-        int_week_of_year    week_of_year,
-        int_day_of_week     day_of_week);
+    int_year    year,
+    int_week_of_year    week_of_year,
+    int_day_of_week     day_of_week);
 
 #define Date_create(...)    \
     OVERLOAD_MAX_3(__VA_ARGS__, \
-            Date_create_from_year_month_day,    \
-            Date_create_from_year_month,    \
-            Date_create_from_year)(__VA_ARGS__)
+        Date_create_from_year_month_day,    \
+        Date_create_from_year_month,    \
+        Date_create_from_year)(__VA_ARGS__)
+
+struct Date
+Date_today();
 
 int_year
-Date_get_year(struct Date date);
+Date_get_year(struct Date * const date);
 
 int_month
-Date_get_month(struct Date date);
+Date_get_month(struct Date * const date);
 
 int_day
-Date_get_day(struct Date date);
+Date_get_day(struct Date * const date);
 
 int_day_of_year
-Date_get_day_of_year(struct Date date);
+Date_get_day_of_year(struct Date * const date);
 
 int_week_of_year
-Date_get_week_of_year(struct Date date);
+Date_get_week_of_year(struct Date * const date);
 
 int_day_of_week
-Date_get_day_of_week(struct Date date);
+Date_get_day_of_week(struct Date * const date);
 
 void
 Date_add_month_delta(struct Date * const date, const struct MonthDelta * const delta);
+
+bool
+Date_equal(struct Date * const, struct Date * const);
+
+bool
+Date_less_than(struct Date * const, struct Date * const);
+
+bool
+Date_less_than_or_equal(struct Date * const, struct Date * const);
+
+bool
+Date_greater_than(struct Date * const, struct Date * const);
+
+bool
+Date_greater_than_or_equal(struct Date * const, struct Date * const);
 
 #ifdef __cplusplus
 }
