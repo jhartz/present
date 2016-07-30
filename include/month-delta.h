@@ -7,10 +7,6 @@
  * For details, see LICENSE.
  */
 
-#ifdef __cplusplus
-#include <type_traits>
-#endif
-
 #include "present-utils/types.h"
 #include "present-utils/utils.h"
 #include "present-impl/month-delta-data.h"

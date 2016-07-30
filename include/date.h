@@ -138,6 +138,9 @@ Date_get_day_of_week(const struct Date * const self);
 void
 Date_add_month_delta(struct Date * const self, const struct MonthDelta * const delta);
 
+void
+Date_subtract_month_delta(struct Date * const self, const struct MonthDelta * const delta);
+
 bool
 Date_equal(const struct Date * const, const struct Date * const);
 
