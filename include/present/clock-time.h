@@ -24,6 +24,13 @@ struct TimeDelta;
  * C++ Class / C Struct Definition
  */
 
+/**
+ * Class or struct representing a time as seen on a clock.
+ *
+ * This includes hours, minutes, and seconds (up to nanosecond precision).
+ * There is no date information stored with the time, nor a time zone (so a
+ * ClockTime instance is NOT tied to a specific time zone).
+ */
 struct PRESENT_API ClockTime {
 #ifdef __cplusplus
     static ClockTime create(int_hour hour);

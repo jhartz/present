@@ -14,15 +14,19 @@ option (COMPILE_REPL
     ON
 )
 
+set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
+
 # Configure a header file to pass some of the CMake settings to the source code
 configure_file (
     "${PROJECT_SOURCE_DIR}/src/present-config.h.in"
-    "${PROJECT_BINARY_DIR}/present-config.h"
+    "${PROJECT_BINARY_DIR}/include/present-config.h"
 )
 
 # Add the binary tree to the search path for include files so that we will find
 # PresentConfig.h
-include_directories ("${PROJECT_BINARY_DIR}")
+include_directories ("${PROJECT_BINARY_DIR}/include")
 
 # Add the header include files
 include_directories ("${PROJECT_SOURCE_DIR}/include")
@@ -46,7 +50,7 @@ install (
 install (
     FILES
         "${PROJECT_SOURCE_DIR}/include/present.h"
-        "${PROJECT_BINARY_DIR}/present-config.h"
+        "${PROJECT_BINARY_DIR}/include/present-config.h"
     DESTINATION include
 )
 install (
@@ -88,10 +92,25 @@ if (COMPILE_PRESENTCPP)
     endif (COMPILE_REPL)
 endif (COMPILE_PRESENTCPP)
 
+# Add documentation generation (Doxygen)
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+    configure_file (
+        "${PROJECT_SOURCE_DIR}/Doxyfile.in"
+        "${PROJECT_BINARY_DIR}/Doxyfile"
+        @ONLY
+    )
+    add_custom_target (doc
+        ${DOXYGEN_EXECUTABLE} ${PROJECT_BINARY_DIR}/Doxyfile
+        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+        COMMENT "Generating API documentation with Doxygen" VERBATIM
+    )
+endif (DOXYGEN_FOUND)
+
 # Add support for installing as a package
 include (InstallRequiredSystemLibraries)
 set (CPACK_RESOURCE_FILE_LICENSE
-    "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE"
+    "${PROJECT_SOURCE_DIR}/LICENSE"
 )
 set (CPACK_PACKAGE_VERSION_MAJOR "${Present_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Present_VERSION_MINOR}")
