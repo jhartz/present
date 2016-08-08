@@ -33,24 +33,31 @@ struct PRESENT_API Timestamp {
 #ifdef __cplusplus
     static Timestamp create(const time_t timestamp);
 
+    static Timestamp create(
+        const struct tm & tm,
+        const TimeDelta & timeZoneOffset);
     static Timestamp create_utc(const struct tm & tm);
-    static Timestamp create(const struct tm & tm, const TimeDelta & timeZoneOffset);
     static Timestamp create_local(const struct tm & tm);
 
+    static Timestamp create(
+        const Date & date,
+        const ClockTime & clockTime,
+        const TimeDelta & timeZoneOffset);
     static Timestamp create_utc(const Date & date, const ClockTime & clockTime);
-    static Timestamp create(const Date & date, const ClockTime & clockTime, const TimeDelta & timeZoneOffset);
-    static Timestamp create_local(const Date & date, const ClockTime & clockTime);
+    static Timestamp create_local(
+        const Date & date,
+        const ClockTime & clockTime);
 
     static Timestamp now();
 
     static Timestamp epoch();
 
+    Date get_date(const TimeDelta & timeZoneOffset) const;
     Date get_date_utc() const;
-    Date get_date(const TimeDelta & timeZoneOffset);
     Date get_date_local() const;
 
-    ClockTime get_clock_time_utc() const;
     ClockTime get_clock_time(const TimeDelta & timeZoneOffset) const;
+    ClockTime get_clock_time_utc() const;
     ClockTime get_clock_time_local() const;
 
     Timestamp & operator+=(const TimeDelta &);
@@ -79,7 +86,6 @@ struct PRESENT_API Timestamp {
     }
 
 private:
-    explicit Timestamp(PresentTimestampData & data) : my_data(data) {}
     Timestamp();
 #endif
 };
@@ -100,14 +106,14 @@ struct Timestamp
 
 PRESENT_API
 struct Timestamp
-    Timestamp_create_from_struct_tm_utc(
-        const struct tm tm);
-
-PRESENT_API
-struct Timestamp
     Timestamp_create_from_struct_tm(
         const struct tm tm,
         const struct TimeDelta * const timeZoneOffset);
+
+PRESENT_API
+struct Timestamp
+    Timestamp_create_from_struct_tm_utc(
+        const struct tm tm);
 
 PRESENT_API
 struct Timestamp
@@ -117,16 +123,16 @@ struct Timestamp
 
 PRESENT_API
 struct Timestamp
-    Timestamp_create_utc(
-        const struct Date * const date,
-        const struct ClockTime * const clockTime);
-
-PRESENT_API
-struct Timestamp
     Timestamp_create(
         const struct Date * const date,
         const struct ClockTime * const clockTime,
         const struct TimeDelta * const timeZoneOffset);
+
+PRESENT_API
+struct Timestamp
+    Timestamp_create_utc(
+        const struct Date * const date,
+        const struct ClockTime * const clockTime);
 
 PRESENT_API
 struct Timestamp
@@ -146,14 +152,14 @@ struct Timestamp
 
 PRESENT_API
 struct Date
-    Timestamp_get_date_utc(
-        const struct Timestamp * const self);
-
-PRESENT_API
-struct Date
     Timestamp_get_date(
         const struct Timestamp * const self,
         const struct TimeDelta * const timeZoneOffset);
+
+PRESENT_API
+struct Date
+    Timestamp_get_date_utc(
+        const struct Timestamp * const self);
 
 PRESENT_API
 struct Date
@@ -161,6 +167,12 @@ struct Date
         const struct Timestamp * const self);
 
 
+
+PRESENT_API
+struct ClockTime
+    Timestamp_get_clock_time(
+        const struct Timestamp * const self,
+        const struct TimeDelta * const timeZoneOffset);
 PRESENT_API
 struct ClockTime
     Timestamp_get_clock_time_utc(
@@ -168,14 +180,9 @@ struct ClockTime
 
 PRESENT_API
 struct ClockTime
-    Timestamp_get_clock_time(
-        const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset);
-
-PRESENT_API
-struct ClockTime
     Timestamp_get_clock_time_local(
         const struct Timestamp * const self);
+
 
 PRESENT_API
 void    Timestamp_add_time_delta(

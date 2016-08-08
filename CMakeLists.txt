@@ -5,7 +5,7 @@ set (Present_VERSION_MAJOR 0)
 set (Present_VERSION_MINOR 9)
 
 option (COMPILE_PRESENTCPP
-    "Compile the C++ Present library (libpresentcpp) in addition to the C library (libpresent) - required to use Present C++ classes or to compile the REPL"
+    "Compile the C++ Present library (libpresent) in addition to the C library (libpresentc) - required to use Present C++ classes or to compile the REPL"
     ON
 )
 
@@ -32,7 +32,7 @@ include_directories ("${PROJECT_BINARY_DIR}/include")
 include_directories ("${PROJECT_SOURCE_DIR}/include")
 
 # Compile the C library
-add_library (present SHARED
+add_library (presentc SHARED
     src/clock-time.c
     src/date.c
     src/month-delta.c
@@ -42,7 +42,7 @@ add_library (present SHARED
 
 # Install the C library
 install (
-    TARGETS present
+    TARGETS presentc
     DESTINATION lib
 )
 
@@ -61,17 +61,20 @@ install (
 
 if (COMPILE_PRESENTCPP)
     # Compile the C++ library
-    add_library (presentcpp SHARED
+    add_library (present SHARED
         src/clock-time.cpp
         src/date.cpp
         src/month-delta.cpp
         src/time-delta.cpp
         src/timestamp.cpp
     )
+    target_link_libraries (present
+        presentc
+    )
 
     # Install the C++ library
     install (
-        TARGETS presentcpp
+        TARGETS present
         DESTINATION lib
     )
 
@@ -81,7 +84,7 @@ if (COMPILE_PRESENTCPP)
             src/repl.cpp
         )
         target_link_libraries (present-repl
-            presentcpp
+            present
         )
 
         # Install the Present REPL

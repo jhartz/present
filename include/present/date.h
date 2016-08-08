@@ -83,7 +83,6 @@ struct PRESENT_API Date {
     }
 
 private:
-    explicit Date(PresentDateData & data) : my_data(data) {}
     Date();
 #endif
 };

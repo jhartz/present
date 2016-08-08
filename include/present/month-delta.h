@@ -67,7 +67,6 @@ struct PRESENT_API MonthDelta {
     }
 
 private:
-    explicit MonthDelta(PresentMonthDeltaData & data) : my_data(data) {}
     MonthDelta();
 #endif
 

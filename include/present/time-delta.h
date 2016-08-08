@@ -88,13 +88,12 @@ struct PRESENT_API TimeDelta {
     friend bool operator>=(const TimeDelta &, const TimeDelta &);
 
 
-    TimeDelta(const TimeDelta & other) : my_data(other) {}
+    TimeDelta(const TimeDelta & other) : my_data(other.my_data) {}
     TimeDelta & operator=(const TimeDelta & other) {
         this->my_data = other.my_data;
     }
 
 private:
-    explicit TimeDelta(PresentTimeDeltaData & data) : my_data(data) {}
     TimeDelta();
 #endif
 };
@@ -139,7 +138,7 @@ struct TimeDelta
 
 PRESENT_API
 struct TimeDelta
-TimeDelta_zero();
+    TimeDelta_zero();
 
 PRESENT_API
 int_delta

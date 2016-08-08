@@ -90,7 +90,6 @@ struct PRESENT_API ClockTime {
     }
 
 private:
-    explicit ClockTime(PresentClockTimeData & data) : my_data(data) {}
     ClockTime();
 #endif
 };
@@ -182,12 +181,12 @@ double  ClockTime_get_second_decimal(
 PRESENT_API
 void    ClockTime_add_time_delta(
         struct ClockTime * const self,
-        struct TimeDelta * const delta);
+        const struct TimeDelta * const delta);
 
 PRESENT_API
 void    ClockTime_subtract_time_delta(
         struct ClockTime * const self,
-        struct TimeDelta * const delta);
+        const struct TimeDelta * const delta);
 
 PRESENT_API
 bool    ClockTime_equal(
