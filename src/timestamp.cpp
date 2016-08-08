@@ -11,8 +11,9 @@
 #include "present/utils/utils.h"
 #include "present/impl/present-timestamp-data.h"
 
-#include "present/date.h"
 #include "present/clock-time.h"
+#include "present/date.h"
+#include "present/time-delta.h"
 
 #include "present/timestamp.h"
 
@@ -61,6 +62,22 @@ Timestamp Timestamp::epoch() {
     return Timestamp_epoch();
 }
 
+time_t Timestamp::get_time_t() const {
+    return Timestamp_get_time_t(this);
+}
+
+struct tm Timestamp::get_struct_tm(const TimeDelta & timeZoneOffset) const {
+    return Timestamp_get_struct_tm(this, &timeZoneOffset);
+}
+
+struct tm Timestamp::get_struct_tm_utc() const {
+    return Timestamp_get_struct_tm_utc(this);
+}
+
+struct tm Timestamp::get_struct_tm_local() const {
+    return Timestamp_get_struct_tm_local(this);
+}
+
 Date Timestamp::get_date(const TimeDelta & timeZoneOffset) const {
     return Timestamp_get_date(this, &timeZoneOffset);
 }
@@ -83,6 +100,14 @@ ClockTime Timestamp::get_clock_time_utc() const {
 
 ClockTime Timestamp::get_clock_time_local() const {
     return Timestamp_get_clock_time_local(this);
+}
+
+TimeDelta Timestamp::get_difference(const Timestamp & other) const {
+    return Timestamp_get_difference(this, &other);
+}
+
+TimeDelta Timestamp::get_absolute_difference(const Timestamp & other) const {
+    return Timestamp_get_absolute_difference(this, &other);
 }
 
 Timestamp & Timestamp::operator+=(const TimeDelta & delta) {
