@@ -95,33 +95,20 @@ private:
 extern "C" {
 #endif
 
-PRESENT_API
-struct Date
-    Date_create_from_year(
-        int_year year);
+PRESENT_API struct Date
+Date_create_from_year(int_year year);
 
-PRESENT_API
-struct Date
-    Date_create_from_year_month(
-        int_year year,
-        int_month month);
+PRESENT_API struct Date
+Date_create_from_year_month(int_year year, int_month month);
 
-PRESENT_API
-struct Date
-    Date_create_from_year_month_day(
-        int_year year,
-        int_month month,
-        int_day day);
+PRESENT_API struct Date
+Date_create_from_year_month_day(int_year year, int_month month, int_day day);
 
-PRESENT_API
-struct Date
-    Date_create_from_year_week(
-        int_year year,
-        int_week_of_year week_of_year);
+PRESENT_API struct Date
+Date_create_from_year_week(int_year year, int_week_of_year week_of_year);
 
-PRESENT_API
-struct Date
-    Date_create_from_year_week_day(
+PRESENT_API struct Date
+Date_create_from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week);
@@ -132,79 +119,57 @@ struct Date
         Date_create_from_year_month,    \
         Date_create_from_year)(__VA_ARGS__)
 
-PRESENT_API
-struct Date
-    Date_today();
+PRESENT_API struct Date
+Date_today();
 
-PRESENT_API
-struct Date
-    Date_yesterday();
+PRESENT_API struct Date
+Date_yesterday();
 
-PRESENT_API
-struct Date
-    Date_tomorrow();
+PRESENT_API struct Date
+Date_tomorrow();
 
-PRESENT_API
-int_year
-    Date_get_year(
-        const struct Date * const self);
+PRESENT_API int_year
+Date_get_year(const struct Date * const self);
 
-PRESENT_API
-int_month
-    Date_get_month(
-        const struct Date * const self);
+PRESENT_API int_month
+Date_get_month(const struct Date * const self);
 
-PRESENT_API
-int_day Date_get_day(
-        const struct Date * const self);
+PRESENT_API int_day
+Date_get_day(const struct Date * const self);
 
-PRESENT_API
-int_day_of_year
-    Date_get_day_of_year(
-        const struct Date * const self);
+PRESENT_API int_day_of_year
+Date_get_day_of_year(const struct Date * const self);
 
-PRESENT_API
-int_week_of_year
-    Date_get_week_of_year(
-        const struct Date * const self);
+PRESENT_API int_week_of_year
+Date_get_week_of_year(const struct Date * const self);
 
-PRESENT_API
-int_day_of_week
-    Date_get_day_of_week(
-        const struct Date * const self);
+PRESENT_API int_day_of_week
+Date_get_day_of_week(const struct Date * const self);
 
-PRESENT_API
-void    Date_add_month_delta(
+PRESENT_API void
+Date_add_month_delta(
         struct Date * const self,
         const struct MonthDelta * const delta);
 
-PRESENT_API
-void    Date_subtract_month_delta(
+PRESENT_API void
+Date_subtract_month_delta(
         struct Date * const self,
         const struct MonthDelta * const delta);
 
-PRESENT_API
-bool    Date_equal(
-        const struct Date * const,
-        const struct Date * const);
+PRESENT_API bool
+Date_equal(const struct Date * const, const struct Date * const);
 
-PRESENT_API
-bool    Date_less_than(
-        const struct Date * const,
-        const struct Date * const);
+PRESENT_API bool
+Date_less_than(const struct Date * const, const struct Date * const);
 
-PRESENT_API
-bool    Date_less_than_or_equal(
-        const struct Date * const,
-        const struct Date * const);
+PRESENT_API bool
+Date_less_than_or_equal(const struct Date * const, const struct Date * const);
 
-PRESENT_API
-bool    Date_greater_than(
-        const struct Date * const,
-        const struct Date * const);
+PRESENT_API bool
+Date_greater_than(const struct Date * const, const struct Date * const);
 
-PRESENT_API
-bool    Date_greater_than_or_equal(
+PRESENT_API bool
+Date_greater_than_or_equal(
         const struct Date * const,
         const struct Date * const);
 

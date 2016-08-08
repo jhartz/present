@@ -102,27 +102,20 @@ private:
 extern "C" {
 #endif
 
-PRESENT_API
-struct ClockTime
-    ClockTime_create_from_hour(
-        int_hour hour);
+PRESENT_API struct ClockTime
+ClockTime_create_from_hour(int_hour hour);
 
-PRESENT_API
-struct ClockTime
-    ClockTime_create_from_hour_minute(
-        int_hour hour,
-        int_minute minute);
+PRESENT_API struct ClockTime
+ClockTime_create_from_hour_minute(int_hour hour, int_minute minute);
 
-PRESENT_API
-struct ClockTime
-    ClockTime_create_from_hour_minute_second(
+PRESENT_API struct ClockTime
+ClockTime_create_from_hour_minute_second(
         int_hour hour,
         int_minute minute,
         int_second second);
 
-PRESENT_API
-struct ClockTime
-    ClockTime_create_from_hour_minute_second_nanosecond(
+PRESENT_API struct ClockTime
+ClockTime_create_from_hour_minute_second_nanosecond(
         int_hour hour,
         int_minute minute,
         int_second second,
@@ -135,81 +128,66 @@ struct ClockTime
         ClockTime_create_from_hour_minute,  \
         ClockTime_create_from_hour)(__VA_ARGS__)
 
-PRESENT_API
-struct ClockTime
-    ClockTime_create_with_decimal_seconds(
+PRESENT_API struct ClockTime
+ClockTime_create_with_decimal_seconds(
         int_hour hour,
         int_minute minute,
         double second);
 
-PRESENT_API
-struct ClockTime
-    ClockTime_midnight();
+PRESENT_API struct ClockTime
+ClockTime_midnight();
 
-PRESENT_API
-struct ClockTime
-    ClockTime_noon();
+PRESENT_API struct ClockTime
+ClockTime_noon();
 
-PRESENT_API
-struct ClockTime
-    ClockTime_now();
+PRESENT_API struct ClockTime
+ClockTime_now();
 
-PRESENT_API
-int_hour
-    ClockTime_get_hour(
-        const struct ClockTime * const self);
+PRESENT_API int_hour
+ClockTime_get_hour(const struct ClockTime * const self);
 
-PRESENT_API
-int_minute
-    ClockTime_get_minute(
-        const struct ClockTime * const self);
+PRESENT_API int_minute
+ClockTime_get_minute(const struct ClockTime * const self);
 
-PRESENT_API
-int_second
-    ClockTime_get_second(
-        const struct ClockTime * const self);
+PRESENT_API int_second
+ClockTime_get_second(const struct ClockTime * const self);
 
-PRESENT_API
-int_nanosecond
-    ClockTime_get_nanosecond(
-        const struct ClockTime * const self);
+PRESENT_API int_nanosecond
+ClockTime_get_nanosecond(const struct ClockTime * const self);
 
-PRESENT_API
-double  ClockTime_get_second_decimal(
-        const struct ClockTime * const self);
+PRESENT_API double
+ClockTime_get_second_decimal(const struct ClockTime * const self);
 
-PRESENT_API
-void    ClockTime_add_time_delta(
+PRESENT_API void
+ClockTime_add_time_delta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta);
 
-PRESENT_API
-void    ClockTime_subtract_time_delta(
+PRESENT_API void
+ClockTime_subtract_time_delta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta);
 
-PRESENT_API
-bool    ClockTime_equal(
+PRESENT_API bool
+ClockTime_equal(const struct ClockTime * const, const struct ClockTime * const);
+
+PRESENT_API bool
+ClockTime_less_than(
         const struct ClockTime * const,
         const struct ClockTime * const);
 
-PRESENT_API
-bool    ClockTime_less_than(
+PRESENT_API bool
+ClockTime_less_than_or_equal(
         const struct ClockTime * const,
         const struct ClockTime * const);
 
-PRESENT_API
-bool    ClockTime_less_than_or_equal(
+PRESENT_API bool
+ClockTime_greater_than(
         const struct ClockTime * const,
         const struct ClockTime * const);
 
-PRESENT_API
-bool    ClockTime_greater_than(
-        const struct ClockTime * const,
-        const struct ClockTime * const);
-
-PRESENT_API
-bool    ClockTime_greater_than_or_equal(
+PRESENT_API bool
+ClockTime_greater_than_or_equal(
         const struct ClockTime * const,
         const struct ClockTime * const);
 

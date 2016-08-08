@@ -80,76 +80,62 @@ private:
 extern "C" {
 #endif
 
-PRESENT_API
-struct MonthDelta
-    MonthDelta_from_months(
-        int_month_delta month_delta);
+PRESENT_API struct MonthDelta
+MonthDelta_from_months(int_month_delta month_delta);
 
-PRESENT_API
-struct MonthDelta
-    MonthDelta_from_years(
-        int_year_delta year_delta);
+PRESENT_API struct MonthDelta
+MonthDelta_from_years(int_year_delta year_delta);
 
-PRESENT_API
-struct MonthDelta
-    MonthDelta_zero();
+PRESENT_API struct MonthDelta
+MonthDelta_zero();
 
-PRESENT_API
-int_month_delta
-    MonthDelta_get_months(
-        const struct MonthDelta * const self);
+PRESENT_API int_month_delta
+MonthDelta_get_months(const struct MonthDelta * const self);
 
-PRESENT_API
-int_year_delta
-    MonthDelta_get_years(
-        const struct MonthDelta * const self);
+PRESENT_API int_year_delta
+MonthDelta_get_years(const struct MonthDelta * const self);
 
-PRESENT_API
-double  MonthDelta_get_years_decimal(
-        const struct MonthDelta * const self);
+PRESENT_API double
+MonthDelta_get_years_decimal(const struct MonthDelta * const self);
 
-PRESENT_API
-void    MonthDelta_multiply_by(
-        struct MonthDelta * const self,
-        int scaleFactor);
+PRESENT_API void
+MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor);
 
-PRESENT_API
-void    MonthDelta_divide_by(
-        struct MonthDelta * const self,
-        int scaleFactor);
+PRESENT_API void
+MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor);
 
-PRESENT_API
-void    MonthDelta_add_month_delta(
+PRESENT_API void
+MonthDelta_add_month_delta(
         struct MonthDelta * const self,
         const struct MonthDelta * const monthDeltaToAdd);
 
-PRESENT_API
-void    MonthDelta_subtract_month_delta(
+PRESENT_API void
+MonthDelta_subtract_month_delta(
         struct MonthDelta * const self,
         const struct MonthDelta * const monthDeltaToSubtract);
 
-PRESENT_API
-bool    MonthDelta_equal(
+PRESENT_API bool
+MonthDelta_equal(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
-PRESENT_API
-bool    MonthDelta_less_than(
+PRESENT_API bool
+MonthDelta_less_than(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
-PRESENT_API
-bool    MonthDelta_less_than_or_equal(
+PRESENT_API bool
+MonthDelta_less_than_or_equal(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
-PRESENT_API
-bool    MonthDelta_greater_than(
+PRESENT_API bool
+MonthDelta_greater_than(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
-PRESENT_API
-bool    MonthDelta_greater_than_or_equal(
+PRESENT_API bool
+MonthDelta_greater_than_or_equal(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
