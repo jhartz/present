@@ -10,8 +10,8 @@
 #ifndef _PRESENT_CONFIG_H_
 #define _PRESENT_CONFIG_H_
 
-#define Present_VERSION_MAJOR @Present_VERSION_MAJOR@
-#define Present_VERSION_MINOR @Present_VERSION_MINOR@
+#define Present_VERSION_MAJOR (@Present_VERSION_MAJOR@)
+#define Present_VERSION_MINOR (@Present_VERSION_MINOR@)
 
 #endif /* _PRESENT_CONFIG_H_ */
 
