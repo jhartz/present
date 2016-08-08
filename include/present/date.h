@@ -25,6 +25,8 @@ struct MonthDelta;
  */
 
 struct PRESENT_API Date {
+    struct PresentDateData my_data;
+
 #ifdef __cplusplus
     static Date create(int_year year);
 
@@ -73,15 +75,17 @@ struct PRESENT_API Date {
     friend bool operator>(const Date &, const Date &);
     friend bool operator>=(const Date &, const Date &);
 
-    Date(const Date &);
-    Date & operator=(const Date &);
+
+    Date(const Date & other) : my_data(other.my_data) {}
+    Date & operator=(const Date & other) {
+        this->my_data = other.my_data;
+        return *this;
+    }
 
 private:
-    explicit Date(PresentDateData &);
+    explicit Date(PresentDateData & data) : my_data(data) {}
     Date();
 #endif
-
-    struct PresentDateData my_data;
 };
 
 /*

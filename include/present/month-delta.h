@@ -24,6 +24,8 @@
  */
 
 struct PRESENT_API MonthDelta {
+    struct PresentMonthDeltaData my_data;
+
 #ifdef __cplusplus
     static MonthDelta from_months(int_month_delta month_delta);
 
@@ -57,15 +59,18 @@ struct PRESENT_API MonthDelta {
     friend bool operator>(const MonthDelta &, const MonthDelta &);
     friend bool operator>=(const MonthDelta &, const MonthDelta &);
 
-    MonthDelta(const MonthDelta &);
-    MonthDelta & operator=(const MonthDelta &);
+
+    MonthDelta(const MonthDelta & other) : my_data(other.my_data) {}
+    MonthDelta & operator=(const MonthDelta & other) {
+        this->my_data = other.my_data;
+        return *this;
+    }
 
 private:
-    explicit MonthDelta(PresentMonthDeltaData &);
+    explicit MonthDelta(PresentMonthDeltaData & data) : my_data(data) {}
     MonthDelta();
 #endif
 
-    struct PresentMonthDeltaData my_data;
 };
 
 /*

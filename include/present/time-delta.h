@@ -24,6 +24,8 @@
  */
 
 struct PRESENT_API TimeDelta {
+    struct PresentTimeDeltaData my_data;
+
 #ifdef __cplusplus
     static TimeDelta from_nanoseconds(int_delta nanoseconds);
 
@@ -85,15 +87,16 @@ struct PRESENT_API TimeDelta {
     friend bool operator>(const TimeDelta &, const TimeDelta &);
     friend bool operator>=(const TimeDelta &, const TimeDelta &);
 
-    TimeDelta(const TimeDelta &);
-    TimeDelta & operator=(const TimeDelta &);
+
+    TimeDelta(const TimeDelta & other) : my_data(other) {}
+    TimeDelta & operator=(const TimeDelta & other) {
+        this->my_data = other.my_data;
+    }
 
 private:
-    explicit TimeDelta(PresentTimeDeltaData &);
+    explicit TimeDelta(PresentTimeDeltaData & data) : my_data(data) {}
     TimeDelta();
 #endif
-
-    struct PresentTimeDeltaData my_data;
 };
 
 /*
