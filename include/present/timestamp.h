@@ -28,7 +28,7 @@ struct TimeDelta;
  */
 
 struct PRESENT_API Timestamp {
-    struct PresentTimestampData my_data;
+    struct PresentTimestampData data_;
 
 #ifdef __cplusplus
     static Timestamp create(const time_t timestamp);
@@ -87,15 +87,7 @@ struct PRESENT_API Timestamp {
     friend bool operator>(const Timestamp &, const Timestamp &);
     friend bool operator>=(const Timestamp &, const Timestamp &);
 
-
-    Timestamp(const Timestamp & other) : my_data(other.my_data) {}
-    Timestamp & operator=(const Timestamp & other) {
-        this->my_data = other.my_data;
-        return *this;
-    }
-
-private:
-    Timestamp();
+    PRESENT_BOILERPLATE_CONSTRUCTORS(Timestamp)
 #endif
 };
 

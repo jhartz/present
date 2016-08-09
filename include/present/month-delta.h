@@ -24,7 +24,7 @@
  */
 
 struct PRESENT_API MonthDelta {
-    struct PresentMonthDeltaData my_data;
+    struct PresentMonthDeltaData data_;
 
 #ifdef __cplusplus
     static MonthDelta from_months(int_month_delta month_delta);
@@ -38,6 +38,17 @@ struct PRESENT_API MonthDelta {
     int_year_delta get_years() const;
 
     double get_years_decimal() const;
+
+    bool is_negative() const;
+
+    void negate();
+
+    MonthDelta operator-() const;
+
+    MonthDelta & operator++();
+    MonthDelta operator++(int);
+    MonthDelta & operator--();
+    MonthDelta operator--(int);
 
     MonthDelta & operator*=(const int &);
     MonthDelta & operator/=(const int &);
@@ -59,17 +70,8 @@ struct PRESENT_API MonthDelta {
     friend bool operator>(const MonthDelta &, const MonthDelta &);
     friend bool operator>=(const MonthDelta &, const MonthDelta &);
 
-
-    MonthDelta(const MonthDelta & other) : my_data(other.my_data) {}
-    MonthDelta & operator=(const MonthDelta & other) {
-        this->my_data = other.my_data;
-        return *this;
-    }
-
-private:
-    MonthDelta();
+    PRESENT_BOILERPLATE_CONSTRUCTORS(MonthDelta)
 #endif
-
 };
 
 /*
@@ -94,6 +96,12 @@ MonthDelta_get_months(const struct MonthDelta * const self);
 
 PRESENT_API int_year_delta
 MonthDelta_get_years(const struct MonthDelta * const self);
+
+PRESENT_API bool
+MonthDelta_is_negative(const struct MonthDelta * const self);
+
+PRESENT_API void
+MonthDelta_negate(struct MonthDelta * const self);
 
 PRESENT_API double
 MonthDelta_get_years_decimal(const struct MonthDelta * const self);

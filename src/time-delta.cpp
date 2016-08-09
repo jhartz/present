@@ -85,6 +85,20 @@ double TimeDelta::get_weeks_decimal() const {
     return TimeDelta_get_weeks_decimal(this);
 }
 
+bool TimeDelta::is_negative() const {
+    return TimeDelta_is_negative(this);
+}
+
+void TimeDelta::negate() {
+    TimeDelta_negate(this);
+}
+
+TimeDelta TimeDelta::operator-() const {
+    TimeDelta other(*this);
+    other.negate();
+    return other;
+}
+
 TimeDelta & TimeDelta::operator*=(const int & scaleFactor) {
     TimeDelta_multiply_by(this, scaleFactor);
     return *this;

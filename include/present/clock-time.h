@@ -32,7 +32,7 @@ struct TimeDelta;
  * ClockTime instance is NOT tied to a specific time zone).
  */
 struct PRESENT_API ClockTime {
-    struct PresentClockTimeData my_data;
+    struct PresentClockTimeData data_;
 
 #ifdef __cplusplus
     static ClockTime create(int_hour hour);
@@ -82,15 +82,7 @@ struct PRESENT_API ClockTime {
     friend bool operator>(const ClockTime &, const ClockTime &);
     friend bool operator>=(const ClockTime &, const ClockTime &);
 
-
-    ClockTime(const ClockTime & other) : my_data(other.my_data) {}
-    ClockTime & operator=(const ClockTime & other) {
-        this->my_data = other.my_data;
-        return *this;
-    }
-
-private:
-    ClockTime();
+    PRESENT_BOILERPLATE_CONSTRUCTORS(ClockTime)
 #endif
 };
 
@@ -122,7 +114,7 @@ ClockTime_create_from_hour_minute_second_nanosecond(
         int_nanosecond nanosecond);
 
 #define ClockTime_create(...)    \
-    OVERLOAD_MAX_4(__VA_ARGS__, \
+    PRESENT_OVERLOAD_MAX_4(__VA_ARGS__, \
         ClockTime_create_from_hour_minute_second_nanosecond,    \
         ClockTime_create_from_hour_minute_second,   \
         ClockTime_create_from_hour_minute,  \

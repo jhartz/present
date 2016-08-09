@@ -25,7 +25,7 @@ struct MonthDelta;
  */
 
 struct PRESENT_API Date {
-    struct PresentDateData my_data;
+    struct PresentDateData data_;
 
 #ifdef __cplusplus
     static Date create(int_year year);
@@ -75,15 +75,7 @@ struct PRESENT_API Date {
     friend bool operator>(const Date &, const Date &);
     friend bool operator>=(const Date &, const Date &);
 
-
-    Date(const Date & other) : my_data(other.my_data) {}
-    Date & operator=(const Date & other) {
-        this->my_data = other.my_data;
-        return *this;
-    }
-
-private:
-    Date();
+    PRESENT_BOILERPLATE_CONSTRUCTORS(Date)
 #endif
 };
 
@@ -114,7 +106,7 @@ Date_create_from_year_week_day(
         int_day_of_week day_of_week);
 
 #define Date_create(...)    \
-    OVERLOAD_MAX_3(__VA_ARGS__, \
+    PRESENT_OVERLOAD_MAX_3(__VA_ARGS__, \
         Date_create_from_year_month_day,    \
         Date_create_from_year_month,    \
         Date_create_from_year)(__VA_ARGS__)

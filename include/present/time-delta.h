@@ -24,7 +24,7 @@
  */
 
 struct PRESENT_API TimeDelta {
-    struct PresentTimeDeltaData my_data;
+    struct PresentTimeDeltaData data_;
 
 #ifdef __cplusplus
     static TimeDelta from_nanoseconds(int_delta nanoseconds);
@@ -63,6 +63,12 @@ struct PRESENT_API TimeDelta {
 
     double get_weeks_decimal() const;
 
+    bool is_negative() const;
+
+    void negate();
+
+    TimeDelta operator-() const;
+
     TimeDelta & operator*=(const int &);
     TimeDelta & operator*=(const double &);
     TimeDelta & operator/=(const int &);
@@ -87,14 +93,7 @@ struct PRESENT_API TimeDelta {
     friend bool operator>(const TimeDelta &, const TimeDelta &);
     friend bool operator>=(const TimeDelta &, const TimeDelta &);
 
-
-    TimeDelta(const TimeDelta & other) : my_data(other.my_data) {}
-    TimeDelta & operator=(const TimeDelta & other) {
-        this->my_data = other.my_data;
-    }
-
-private:
-    TimeDelta();
+    PRESENT_BOILERPLATE_CONSTRUCTORS(TimeDelta)
 #endif
 };
 
@@ -159,6 +158,12 @@ TimeDelta_get_weeks(const struct TimeDelta * const self);
 
 PRESENT_API double
 TimeDelta_get_weeks_decimal(const struct TimeDelta * const self);
+
+PRESENT_API bool
+TimeDelta_is_negative(const struct TimeDelta * const self);
+
+PRESENT_API void
+TimeDelta_negate(struct TimeDelta * const self);
 
 PRESENT_API void
 TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor);

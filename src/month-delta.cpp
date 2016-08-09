@@ -37,6 +37,36 @@ double MonthDelta::get_years_decimal() const {
     return MonthDelta_get_years_decimal(this);
 }
 
+bool MonthDelta::is_negative() const {
+    return MonthDelta_is_negative(this);
+}
+
+void MonthDelta::negate() {
+    MonthDelta_negate(this);
+}
+
+MonthDelta & MonthDelta::operator++() {
+    this->data_.delta_months += 1;
+    return *this;
+}
+
+MonthDelta MonthDelta::operator++(int) {
+    MonthDelta copy(*this);
+    operator++();
+    return copy;
+}
+
+MonthDelta & MonthDelta::operator--() {
+    this->data_.delta_months -= 1;
+    return *this;
+}
+
+MonthDelta MonthDelta::operator--(int) {
+    MonthDelta copy(*this);
+    operator--();
+    return copy;
+}
+
 MonthDelta & MonthDelta::operator*=(const int & scaleFactor) {
     MonthDelta_multiply_by(this, scaleFactor);
     return *this;

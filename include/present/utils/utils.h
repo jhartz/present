@@ -26,8 +26,23 @@
 /*
  * Define macros used for definitions of overloaded functions in C API
  */
-#define OVERLOAD_MAX_3(_1, _2, _3, NAME, ...) NAME
-#define OVERLOAD_MAX_4(_1, _2, _3, _4, NAME, ...) NAME
+#define PRESENT_OVERLOAD_MAX_3(_1, _2, _3, NAME, ...) NAME
+#define PRESENT_OVERLOAD_MAX_4(_1, _2, _3, _4, NAME, ...) NAME
+#define PRESENT_OVERLOAD_MAX_6(_1, _2, _3, _4, _5, _6, NAME, ...) NAME
+
+/*
+ * Define macros used for boilerplate constructors for C++ classes
+ */
+#define PRESENT_BOILERPLATE_CONSTRUCTORS(_ClassName)                \
+    _ClassName(const _ClassName & other) : data_(other.data_) {}    \
+    _ClassName & operator=(const _ClassName & other) {              \
+        this->data_ = other.data_;                                  \
+        return *this;                                               \
+    }                                                               \
+    explicit _ClassName(Present ## _ClassName ## Data & data)       \
+        : data_(data) {}                                            \
+    private:                                                        \
+    _ClassName();
 
 #endif /* _PRESENT_UTILS_H_ */
 
