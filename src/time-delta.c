@@ -273,5 +273,5 @@ TimeDelta_equal(
             lhs->data_.delta_nanoseconds == rhs->data_.delta_nanoseconds);
 }
 
-STRUCT_BOILERPLATE_BINARY_OPERATORS(TimeDelta, delta_seconds, delta_nanoseconds)
+STRUCT_INEQUALITY_OPERATORS(TimeDelta, delta_seconds, delta_nanoseconds)
 

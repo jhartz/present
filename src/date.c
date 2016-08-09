@@ -111,29 +111,5 @@ Date_equal(const struct Date * const lhs, const struct Date * const rhs) {
 
 }
 
-bool
-Date_less_than(const struct Date * const lhs, const struct Date * const rhs) {
-
-}
-
-bool
-Date_less_than_or_equal(
-        const struct Date * const lhs,
-        const struct Date * const rhs) {
-
-}
-
-bool
-Date_greater_than(
-        const struct Date * const lhs,
-        const struct Date * const rhs) {
-
-}
-
-bool
-Date_greater_than_or_equal(
-        const struct Date * const lhs,
-        const struct Date * const rhs) {
-
-}
+STRUCT_INEQUALITY_OPERATORS(Date, year, month, day)
 

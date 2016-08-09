@@ -182,31 +182,5 @@ Timestamp_equal(
 
 }
 
-bool
-Timestamp_less_than(
-        const struct Timestamp * const lhs,
-        const struct Timestamp * const rhs) {
-
-}
-
-bool
-Timestamp_less_than_or_equal(
-        const struct Timestamp * const lhs,
-        const struct Timestamp * const rhs) {
-
-}
-
-bool
-Timestamp_greater_than(
-        const struct Timestamp * const lhs,
-        const struct Timestamp * const rhs) {
-
-}
-
-bool
-Timestamp_greater_than_or_equal(
-        const struct Timestamp * const lhs,
-        const struct Timestamp * const rhs) {
-
-}
+STRUCT_INEQUALITY_OPERATORS(Timestamp, timestamp, nanoseconds)
 

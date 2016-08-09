@@ -109,5 +109,5 @@ MonthDelta_equal(
     return (lhs->data_.delta_months == rhs->data_.delta_months);
 }
 
-STRUCT_BOILERPLATE_BINARY_OPERATORS(MonthDelta, delta_months)
+STRUCT_INEQUALITY_OPERATORS(MonthDelta, delta_months)
 

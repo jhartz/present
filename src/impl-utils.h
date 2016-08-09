@@ -89,7 +89,7 @@
                         STRUCT_BINARY_OPERATOR_INTERNAL(__VA_ARGS__))))))
 
 // Shortcut for implementations of the 4 standard inequality operators
-#define STRUCT_BOILERPLATE_BINARY_OPERATORS(_StructName, ...)           \
+#define STRUCT_INEQUALITY_OPERATORS(_StructName, ...)                   \
     STRUCT_BINARY_OPERATOR(_StructName, less_than, <,                   \
             __VA_ARGS__)                                                \
     STRUCT_BINARY_OPERATOR(_StructName, less_than_or_equal, <=,         \
