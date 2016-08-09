@@ -56,8 +56,6 @@ struct PRESENT_API ClockTime {
 
     static ClockTime noon();
 
-    static ClockTime now();
-
     int_hour get_hour() const;
 
     int_minute get_minute() const;
@@ -131,9 +129,6 @@ ClockTime_midnight();
 
 PRESENT_API struct ClockTime
 ClockTime_noon();
-
-PRESENT_API struct ClockTime
-ClockTime_now();
 
 PRESENT_API int_hour
 ClockTime_get_hour(const struct ClockTime * const self);

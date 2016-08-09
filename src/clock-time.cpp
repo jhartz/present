@@ -52,10 +52,6 @@ ClockTime ClockTime::noon() {
     return ClockTime_noon();
 }
 
-ClockTime ClockTime::now() {
-    return ClockTime_now();
-}
-
 int_hour ClockTime::get_hour() const {
     return ClockTime_get_hour(this);
 }
