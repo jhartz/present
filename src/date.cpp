@@ -36,18 +36,6 @@ Date Date::create_from_year_week_day(
     return Date_create_from_year_week_day(year, week_of_year, day_of_week);
 }
 
-Date Date::today() {
-    return Date_today();
-}
-
-Date Date::yesterday() {
-    return Date_yesterday();
-}
-
-Date Date::tomorrow() {
-    return Date_tomorrow();
-}
-
 int_year Date::get_year() const {
     return Date_get_year(this);
 }

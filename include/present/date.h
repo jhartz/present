@@ -43,12 +43,6 @@ struct PRESENT_API Date {
         int_week_of_year week_of_year,
         int_day_of_week day_of_week);
 
-    static Date today();
-
-    static Date yesterday();
-
-    static Date tomorrow();
-
     int_year get_year() const;
 
     int_month get_month() const;
@@ -110,15 +104,6 @@ Date_create_from_year_week_day(
         Date_create_from_year_month_day,    \
         Date_create_from_year_month,    \
         Date_create_from_year)(__VA_ARGS__)
-
-PRESENT_API struct Date
-Date_today();
-
-PRESENT_API struct Date
-Date_yesterday();
-
-PRESENT_API struct Date
-Date_tomorrow();
 
 PRESENT_API int_year
 Date_get_year(const struct Date * const self);

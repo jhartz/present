@@ -47,21 +47,6 @@ Date_create_from_year_week_day(
 
 }
 
-struct Date
-Date_today() {
-
-}
-
-struct Date
-Date_yesterday() {
-
-}
-
-struct Date
-Date_tomorrow() {
-
-}
-
 int_year
 Date_get_year(const struct Date * const self) {
 

@@ -14,8 +14,9 @@
 #define _PRESENT_DATE_DATA_H_
 
 struct PresentDateData {
-    // This value will ALWAYS be divisible by SECONDS_IN_DAY
-    time_t      startOfDayTime;
+    int_year year;
+    int_month month;
+    int_day day;
 };
 
 #endif /* _PRESENT_DATE_DATA_H_ */
