@@ -19,19 +19,32 @@
 
 #include "present/date.h"
 
+// Create a new Date instance based on its data parameters
+static struct Date
+new_Date(int_year year, int_month month, int_day day) {
+    assert(month >= 1 && month <= 12);
+    assert(day >= 1 && day <= 31);
+
+    struct PresentDateData data;
+    data.year = year;
+    data.month = month;
+    data.day = day;
+    WRAP_DATA_AND_RETURN(Date, data);
+}
+
 struct Date
 Date_create_from_year(int_year year) {
-
+    return new_Date(year, 1, 1);
 }
 
 struct Date
 Date_create_from_year_month(int_year year, int_month month) {
-
+    return new_Date(year, month, 1);
 }
 
 struct Date
 Date_create_from_year_month_day(int_year year, int_month month, int_day day) {
-
+    return new_Date(year, month, day);
 }
 
 struct Date
@@ -49,17 +62,20 @@ Date_create_from_year_week_day(
 
 int_year
 Date_get_year(const struct Date * const self) {
-
+    assert(self != NULL);
+    return self->data_.year;
 }
 
 int_month
 Date_get_month(const struct Date * const self) {
-
+    assert(self != NULL);
+    return self->data_.month;
 }
 
 int_day
 Date_get_day(const struct Date * const self) {
-
+    assert(self != NULL);
+    return self->data_.day;
 }
 
 int_day_of_year
@@ -93,7 +109,11 @@ Date_subtract_month_delta(
 
 bool
 Date_equal(const struct Date * const lhs, const struct Date * const rhs) {
-
+    assert(lhs != NULL);
+    assert(rhs != NULL);
+    return (lhs->data_.year == rhs->data_.year &&
+            lhs->data_.month == rhs->data_.month &&
+            lhs->data_.day == rhs->data_.day);
 }
 
 STRUCT_INEQUALITY_OPERATORS(Date, year, month, day)
