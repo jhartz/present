@@ -84,6 +84,33 @@ specific point in time and have no concept of time of day).
 On the other hand, `MonthDelta` instances do not overlay with the other deltas
 because months cannot be converted to a smaller unit (such as days) accurately.
 
+## Interactions Between Types
+
+One of Present's most powerful features is the simplicity of interactions
+between various types. For example, applying deltas to clock times, dates, and
+timestamps is quick and simple.
+
+Examples of interactions:
+
+- Adding a `TimeDelta` to a `ClockTime`
+- Adding a `DayDelta` or `MonthDelta` to a `Date`
+- Adding any type of delta to a `Timestamp`
+- Using a `TimeDelta` as a time zone offset when creating a `Timestamp`
+
+Additionally, the C++ classes support operator overloading, so all the code
+involving these actions looks and feels intuitive.
+
+## Requirements
+
+Present uses some newer language features that are only available since C99,
+including variadic macros and standard integer and boolean types. Therefore,
+it is recommended that Present is compiled with a C99 (or C++11) compliant
+compiler.
+
+Present is meant to work across platforms. If there is an issue compiling it
+with a C compiler supporting C99 or a C++ compiler supporting C++11, please
+file an issue report.
+
 ## Building
 
 Present consists of the following libraries:
@@ -110,18 +137,57 @@ Present comes with both a traditional `Makefile` or a `CMakeLists.txt` file
 that can be used for compilation. However, using CMake is recommended as it
 exposes more options and features.
 
-## Requirements
-
-Present uses some newer language features that are only available since C99,
-including variadic macros and standard integer and boolean types. Therefore,
-it is recommended that Present is compiled with a C99 (or C++11) compliant
-compiler.
-
-Present is meant to work across platforms. If there is an issue compiling it
-with a C compiler supporting C99 or a C++ compiler supporting C++11, please
-file an issue report.
-
 ## C++ Examples
 
+```C++
+// Create a ClockTime
+ClockTime myClockTime(ClockTime::create(12, 59, 59));
+// Add a TimeDelta of 1 second to make it 13:00:00
+myClockTime += TimeDelta::fromSeconds(1);
+
+// Create a MonthDelta from months and a MonthDelta from years
+MonthDelta myMonthDelta(MonthDelta::from_months(4));
+MonthDelta myYearDelta(MonthDelta::from_years(2));
+// Some arithmetic modifications and comparisons supported by deltas
+myMonthDelta < myYearDelta      // true
+myMonthDelta * 6 == myYearDelta // true
+myMonthDelta - myYearDelta == -MonthDelta::from_months(20)  // true
+
+// Create some Dates
+Date myDate1(Date::create(1969, 4, 19));
+Date myDate2(myDate1 + myMonthDelta);
+// Dates can be compared too
+myDate2 > myDate1       // true
+
+// Create a timestamp based on the date and clock time above, in UTC
+Timestamp myTimestamp(Timestamp::create_utc(myDate, myClockTime));
+// Now, get the clock time in Eastern Daylight Time (UTC-4:00)
+myTimestamp.get_clock_time(TimeDelta::from_hours(-4))   // 09:00:00
+```
+
 ## C Examples
+
+All of the functionality above can be done in C.
+
+```C
+struct ClockTime myClockTime = ClockTime_create(12, 59, 59);
+const struct TimeDelta myTimeDelta = TimeDelta_from_seconds(1);
+ClockTime_add_time_delta(&myClockTime, &myTimeDelta);
+
+struct MonthDelta myMonthDelta = MonthDelta_from_months(4);
+struct MonthDelta myYearDelta = MonthDelta_from_years(2);
+MonthDelta_less_than(&myMonthDelta, &myYearDelta)   // true
+struct MonthDelta tempMonthDelta = myMonthDelta;
+MonthDelta_multiply_by(&tempMonthDelta, 6);
+MonthDelta_equal(&tempMonthDelta, &myYearDelta)     // true
+
+struct Date myDate1 = Date_create(1969, 4, 19);
+struct Date myDate2 = myDate1;
+Date_add_month_delta(&myDate2, &myMonthDelta);
+Date_greater_than(&myDate2, &myDate1)       // true
+
+struct Timestamp myTimestamp = Timestamp_create_utc(&myDate, &myClockTime);
+const struct TimeDelta tempTimeDelta = TimeDelta_from_hours(-4);
+Timestamp_get_clock_time(&myTimestamp, &tempTimeDelta)  // 09:00:00
+```
 
