@@ -159,9 +159,9 @@ Date myDate2(myDate1 + myMonthDelta);
 // Dates can be compared too
 myDate2 > myDate1       // true
 
-// Create a timestamp based on the date and clock time above, in UTC
+// Create a Timestamp based on the Date and ClockTime above, in UTC
 Timestamp myTimestamp(Timestamp::create_utc(myDate, myClockTime));
-// Now, get the clock time in Eastern Daylight Time (UTC-4:00)
+// Now, get the ClockTime in Eastern Daylight Time (UTC-4:00)
 myTimestamp.get_clock_time(TimeDelta::from_hours(-4))   // 09:00:00
 ```
 
@@ -170,23 +170,31 @@ myTimestamp.get_clock_time(TimeDelta::from_hours(-4))   // 09:00:00
 All of the functionality above can be done in C.
 
 ```C
+// Create a ClockTime
 struct ClockTime myClockTime = ClockTime_create(12, 59, 59);
-const struct TimeDelta myTimeDelta = TimeDelta_from_seconds(1);
+// Add a TimeDelta of 1 second to make it 13:00:00
+const struct TimeDelta tempTimeDelta = TimeDelta_from_seconds(1);
 ClockTime_add_time_delta(&myClockTime, &myTimeDelta);
 
+// Create a MonthDelta from months and a MonthDelta from years
 struct MonthDelta myMonthDelta = MonthDelta_from_months(4);
 struct MonthDelta myYearDelta = MonthDelta_from_years(2);
+// Some arithmetic modifications and comparisons supported by deltas
 MonthDelta_less_than(&myMonthDelta, &myYearDelta)   // true
 struct MonthDelta tempMonthDelta = myMonthDelta;
 MonthDelta_multiply_by(&tempMonthDelta, 6);
 MonthDelta_equal(&tempMonthDelta, &myYearDelta)     // true
 
+// Create some Dates
 struct Date myDate1 = Date_create(1969, 4, 19);
 struct Date myDate2 = myDate1;
 Date_add_month_delta(&myDate2, &myMonthDelta);
+// Dates can be compared too
 Date_greater_than(&myDate2, &myDate1)       // true
 
+// Create a Timestamp based on the Date and ClockTime above, in UTC
 struct Timestamp myTimestamp = Timestamp_create_utc(&myDate, &myClockTime);
+// Now, get the ClockTime in Eastern Daylight Time (UTC-4:00)
 const struct TimeDelta tempTimeDelta = TimeDelta_from_hours(-4);
 Timestamp_get_clock_time(&myTimestamp, &tempTimeDelta)  // 09:00:00
 ```
