@@ -22,10 +22,12 @@
 
 #include "present/time-delta.h"
 
-// This macro alters delta_nanoseconds if necessary to ensure that its
-// absolute value is less than NANOSECONDS_IN_SECOND, then ensures that
-// the signs of delta_seconds and delta_nanoseconds match (if either is
-// nonzero).
+/**
+ * This macro alters delta_nanoseconds if necessary to ensure that its
+ * absolute value is less than NANOSECONDS_IN_SECOND, then ensures that
+ * the signs of delta_seconds and delta_nanoseconds match (if either is
+ * nonzero).
+ */
 #define CHECK_DATA(data)    \
     if (data.delta_nanoseconds > NANOSECONDS_IN_SECOND) {               \
         data.delta_seconds +=                                           \
@@ -170,8 +172,8 @@ TimeDelta_get_day_delta_truncated(const struct TimeDelta * const self) {
     if (self->data_.delta_seconds >= 0) {
         return DayDelta_from_days(self->data_.delta_seconds / SECONDS_IN_DAY);
     } else {
-        // Truncation in integer division with negative operands is
-        // implementation-dependent before C99, so we'll just use positives
+        /* Truncation in integer division with negative operands is
+           implementation-dependent before C99, so we'll just use positives */
         struct DayDelta dayDelta = DayDelta_from_days(
                 (-self->data_.delta_seconds) / SECONDS_IN_DAY);
         DayDelta_negate(&dayDelta);
@@ -194,8 +196,8 @@ TimeDelta_get_day_delta_abs_ceil(const struct TimeDelta * const self) {
         return DayDelta_from_days(self->data_.delta_seconds / SECONDS_IN_DAY +
                 1);
     } else {
-        // Truncation in integer division with negative operands is
-        // implementation-dependent before C99, so we'll just use positives
+        /* Truncation in integer division with negative operands is
+           implementation-dependent before C99, so we'll just use positives */
         struct DayDelta dayDelta = DayDelta_from_days(
                 (-self->data_.delta_seconds) / SECONDS_IN_DAY + 1);
         DayDelta_negate(&dayDelta);
@@ -237,8 +239,8 @@ TimeDelta_multiply_by_decimal(
     self->data_.delta_seconds = (int_delta)seconds;
     self->data_.delta_nanoseconds *= scaleFactor;
 
-    // When scaling the seconds, we may have a fractional part that needs to
-    // be stored in the nanoseconds
+    /* When scaling the seconds, we may have a fractional part that needs to
+       be stored in the nanoseconds */
     self->data_.delta_nanoseconds +=
         (seconds - (double)self->data_.delta_seconds) *
         (double)NANOSECONDS_IN_SECOND;
@@ -251,17 +253,17 @@ TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor) {
     assert(self != NULL);
     assert(scaleFactor != 0);
 
-    // Start by scaling just the seconds portion
+    /* Start by scaling just the seconds portion */
     const int_delta origSeconds = self->data_.delta_seconds;
     self->data_.delta_seconds /= scaleFactor;
 
-    // When scaling down, there may be fractional seconds that could be
-    // represented as nanoseconds. Add this to the nanoseconds (which we
-    // haven't scaled yet)
+    /* When scaling down, there may be fractional seconds that could be
+       represented as nanoseconds. Add this to the nanoseconds (which we
+       haven't scaled yet) */
     self->data_.delta_nanoseconds += (origSeconds % scaleFactor) *
         NANOSECONDS_IN_SECOND;
 
-    // Now we can scale the nanoseconds
+    /* Now we can scale the nanoseconds */
     self->data_.delta_nanoseconds /= scaleFactor;
 
     CHECK_DATA(self->data_)
@@ -274,7 +276,7 @@ TimeDelta_divide_by_decimal(
     assert(self != NULL);
     assert(scaleFactor != 0.0);
 
-    // Simplify our lives by reusing the float multiplication implementation
+    /* Simplify our lives by reusing the float multiplication implementation */
     TimeDelta_multiply_by_decimal(self, 1.0/scaleFactor);
 }
 

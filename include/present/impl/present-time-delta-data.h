@@ -15,7 +15,7 @@
 
 struct PresentTimeDeltaData {
     int_delta delta_seconds;
-    // delta_nanoseconds will always be less than NANOSECONDS_IN_SECOND
+    /* delta_nanoseconds will always be less than NANOSECONDS_IN_SECOND */
     int_delta delta_nanoseconds;
 };
 

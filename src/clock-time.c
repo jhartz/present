@@ -21,7 +21,9 @@
 
 #include "present/clock-time.h"
 
-// Create a new ClockTime instance based on its data parameters
+/**
+ * Create a new ClockTime instance based on its data parameters.
+ */
 static struct ClockTime
 newClockTime(
         int_hour hour,
@@ -31,7 +33,7 @@ newClockTime(
     if (hour == 24) hour = 0;
     assert(hour >= 0 && hour < 24);
     assert(minute >= 0 && minute < 60);
-    assert(second >= 0 && second < 61); // leap seconds :(
+    assert(second >= 0 && second < 61); /* leap seconds :( */
     assert(nanosecond >= 0 && nanosecond < NANOSECONDS_IN_SECOND);
 
     struct PresentClockTimeData data;
@@ -42,8 +44,10 @@ newClockTime(
     WRAP_DATA_AND_RETURN(ClockTime, data);
 }
 
-// Check the bounds on data.{nanosecond,second,minute,hour} and modify or
-// wraps around as necessary
+/**
+ * Check the bounds on data.{nanosecond,second,minute,hour} and modify or
+ * wraps around as necessary.
+ */
 void checkClockTime(struct ClockTime * const self) {
 #define d self->data_
     if (d.nanosecond >= NANOSECONDS_IN_SECOND) {

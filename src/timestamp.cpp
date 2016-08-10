@@ -127,14 +127,17 @@ Timestamp & Timestamp::operator+=(const MonthDelta & delta) {
 
 Timestamp & Timestamp::operator-=(const TimeDelta & delta) {
     Timestamp_subtract_time_delta(this, &delta);
+    return *this;
 }
 
 Timestamp & Timestamp::operator-=(const DayDelta & delta) {
     Timestamp_subtract_day_delta(this, &delta);
+    return *this;
 }
 
 Timestamp & Timestamp::operator-=(const MonthDelta & delta) {
     Timestamp_subtract_month_delta(this, &delta);
+    return *this;
 }
 
 const Timestamp operator+(const Timestamp & lhs, const TimeDelta & rhs) {

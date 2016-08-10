@@ -23,8 +23,10 @@
 
 #include "present/date.h"
 
-// Make sure that year, month, and day are valid, and set day_of_year and
-// day_of_week to their correct values
+/**
+ * Make sure that year, month, and day are valid, and set day_of_year and
+ * day_of_week to their correct values.
+ */
 static void checkDateData(struct PresentDateData * const data) {
     struct tm info;
     memset((void *)&info, 0, sizeof(struct tm));
@@ -45,7 +47,9 @@ static void checkDateData(struct PresentDateData * const data) {
     }
 }
 
-// Create a new Date instance based on its data parameters
+/**
+ * Create a new Date instance based on its data parameters.
+ */
 static struct Date
 newDate(int_year year, int_month month, int_day day) {
     assert(month >= 1 && month <= 12);
@@ -59,13 +63,17 @@ newDate(int_year year, int_month month, int_day day) {
     WRAP_DATA_AND_RETURN(Date, data);
 }
 
-// Determine whether a given year is a leap year
+/**
+ * Determine whether a given year is a leap year.
+ */
 #define IS_LEAP_YEAR(year)                      \
     ((year % 4 == 0 && year % 100 != 0) ||      \
      (year % 400 == 0))
 
-// Day of the year that each month starts on
-// (dependent on whether it's a leap year)
+/**
+ * Day of the year that each month starts on
+ * (dependent on whether it's a leap year)
+ */
 static const int_day_of_year DAY_OF_START_OF_MONTH[2][13] = {
     {0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334},
     {0, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335}

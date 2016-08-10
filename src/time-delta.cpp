@@ -156,6 +156,7 @@ TimeDelta & TimeDelta::operator+=(const TimeDelta & timeDeltaToAdd) {
 
 TimeDelta & TimeDelta::operator-=(const TimeDelta & timeDeltaToSubtract) {
     TimeDelta_subtract_time_delta(this, &timeDeltaToSubtract);
+    return *this;
 }
 
 const TimeDelta operator+(const TimeDelta & lhs, const TimeDelta & rhs) {
