@@ -35,6 +35,7 @@ include_directories ("${PROJECT_SOURCE_DIR}/include")
 add_library (presentc SHARED
     src/clock-time.c
     src/date.c
+    src/day-delta.c
     src/month-delta.c
     src/time-delta.c
     src/timestamp.c
@@ -64,6 +65,7 @@ if (COMPILE_PRESENTCPP)
     add_library (present SHARED
         src/clock-time.cpp
         src/date.cpp
+        src/day-delta.cpp
         src/month-delta.cpp
         src/time-delta.cpp
         src/timestamp.cpp
