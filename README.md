@@ -125,21 +125,32 @@ can be used in both C and C++ projects.
 `libpresent` consists of all the source files in `src/`, including both the
 `.c` and `.cpp` files (the `.c` files can be compiled with either a C or a C++
 compiler without issue). The C++ classes in `libpresent` can be linked to from
-other C++ programs, and the C methods in `libpresent` can be linked to from
-both C and C++ programs.
+C++ programs, and the C methods in `libpresent` can be linked to from both C
+and C++ programs.
 
 `libpresentc` consists of only the C source files in `src/`, and thus only
 includes the C methods, not the C++ classes. This library can be used instead
 of `libpresent` when a C++ compiler is not available or the C++ features are
 not needed. It can be compiled by either a C or a C++ compiler.
 
-Present comes with both a traditional `Makefile` or a `CMakeLists.txt` file
+Present comes with both a traditional `Makefile` and a `CMakeLists.txt` file
 that can be used for compilation. However, using CMake is recommended as it
 exposes more options and features.
 
 ## C++ Examples
 
 ```C++
+// Either only include the types you need
+#include "present/clock-time.h"
+#include "present/date.h"
+#include "present/day-delta.h"
+#include "present/month-delta.h"
+#include "present/time-delta.h"
+#include "present/timestamp.h"
+
+// Or include them all with this shortcut
+#include "present.h"
+
 // Create a ClockTime
 ClockTime myClockTime(ClockTime::create(12, 59, 59));
 // Add a TimeDelta of 1 second to make it 13:00:00
@@ -167,7 +178,7 @@ myTimestamp.get_clock_time(TimeDelta::from_hours(-4))   // 09:00:00
 
 ## C Examples
 
-All of the functionality above can be done in C.
+All of the functionality above can be utilized from pure C as well.
 
 ```C
 // Create a ClockTime
