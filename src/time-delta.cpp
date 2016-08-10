@@ -11,6 +11,8 @@
 #include "present/utils/utils.h"
 #include "present/impl/present-time-delta-data.h"
 
+#include "present/day-delta.h"
+
 #include "present/time-delta.h"
 
 TimeDelta TimeDelta::from_nanoseconds(int_delta nanoseconds) {
@@ -83,6 +85,18 @@ int_delta TimeDelta::get_weeks() const {
 
 double TimeDelta::get_weeks_decimal() const {
     return TimeDelta_get_weeks_decimal(this);
+}
+
+DayDelta TimeDelta::get_day_delta_truncated() const {
+    return TimeDelta_get_day_delta_truncated(this);
+}
+
+DayDelta TimeDelta::get_day_delta_rounded() const {
+    return TimeDelta_get_day_delta_rounded(this);
+}
+
+DayDelta TimeDelta::get_day_delta_abs_ceil() const {
+    return TimeDelta_get_day_delta_abs_ceil(this);
 }
 
 bool TimeDelta::is_negative() const {
@@ -174,5 +188,9 @@ bool operator>(const TimeDelta & lhs, const TimeDelta & rhs) {
 
 bool operator>=(const TimeDelta & lhs, const TimeDelta & rhs) {
     return TimeDelta_greater_than_or_equal(&lhs, &rhs);
+}
+
+TimeDelta::TimeDelta(const DayDelta & dayDelta) {
+    this->data_ = dayDelta.get_time_delta().data_;
 }
 

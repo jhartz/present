@@ -17,6 +17,10 @@ struct PresentDateData {
     int_year year;
     int_month month;
     int_day day;
+
+    // These are always calculated to match year/month/day
+    int_day_of_year day_of_year;
+    int_day_of_week day_of_week;
 };
 
 #endif /* _PRESENT_DATE_DATA_H_ */

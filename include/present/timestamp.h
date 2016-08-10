@@ -70,13 +70,17 @@ struct PRESENT_API Timestamp {
     TimeDelta get_absolute_difference(const Timestamp & other) const;
 
     Timestamp & operator+=(const TimeDelta &);
+    Timestamp & operator+=(const DayDelta &);
     Timestamp & operator+=(const MonthDelta &);
     Timestamp & operator-=(const TimeDelta &);
+    Timestamp & operator-=(const DayDelta &);
     Timestamp & operator-=(const MonthDelta &);
 
     friend const Timestamp operator+(const Timestamp &, const TimeDelta &);
+    friend const Timestamp operator+(const Timestamp &, const DayDelta &);
     friend const Timestamp operator+(const Timestamp &, const MonthDelta &);
     friend const Timestamp operator-(const Timestamp &, const TimeDelta &);
+    friend const Timestamp operator-(const Timestamp &, const DayDelta &);
     friend const Timestamp operator-(const Timestamp &, const MonthDelta &);
 
     friend bool operator==(const Timestamp &, const Timestamp &);
@@ -196,6 +200,11 @@ Timestamp_add_time_delta(
         const struct TimeDelta * const delta);
 
 PRESENT_API void
+Timestamp_add_day_delta(
+        struct Timestamp * const self,
+        const struct DayDelta * const delta);
+
+PRESENT_API void
 Timestamp_add_month_delta(
         struct Timestamp * const self,
         const struct MonthDelta * const delta);
@@ -204,6 +213,11 @@ PRESENT_API void
 Timestamp_subtract_time_delta(
         struct Timestamp * const self,
         const struct TimeDelta * const delta);
+
+PRESENT_API void
+Timestamp_subtract_day_delta(
+        struct Timestamp * const self,
+        const struct DayDelta * const delta);
 
 PRESENT_API void
 Timestamp_subtract_month_delta(

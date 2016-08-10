@@ -97,14 +97,14 @@ MonthDelta_get_months(const struct MonthDelta * const self);
 PRESENT_API int_year_delta
 MonthDelta_get_years(const struct MonthDelta * const self);
 
+PRESENT_API double
+MonthDelta_get_years_decimal(const struct MonthDelta * const self);
+
 PRESENT_API bool
 MonthDelta_is_negative(const struct MonthDelta * const self);
 
 PRESENT_API void
 MonthDelta_negate(struct MonthDelta * const self);
-
-PRESENT_API double
-MonthDelta_get_years_decimal(const struct MonthDelta * const self);
 
 PRESENT_API void
 MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor);

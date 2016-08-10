@@ -19,6 +19,8 @@
 
 #include "present/clock-time.h"
 #include "present/date.h"
+#include "present/day-delta.h"
+#include "present/month-delta.h"
 #include "present/time-delta.h"
 
 #include "present/timestamp.h"
@@ -155,6 +157,13 @@ Timestamp_add_time_delta(
 }
 
 void
+Timestamp_add_day_delta(
+        struct Timestamp * const self,
+        const struct DayDelta * const delta) {
+
+}
+
+void
 Timestamp_add_month_delta(
         struct Timestamp * const self,
         const struct MonthDelta * const delta) {
@@ -165,6 +174,13 @@ void
 Timestamp_subtract_time_delta(
         struct Timestamp * const self,
         const struct TimeDelta * const delta) {
+
+}
+
+void
+Timestamp_subtract_day_delta(
+        struct Timestamp * const self,
+        const struct DayDelta * const delta) {
 
 }
 

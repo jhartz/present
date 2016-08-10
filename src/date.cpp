@@ -25,6 +25,10 @@ Date Date::create(int_year year, int_month month, int_day day) {
     return Date_create_from_year_month_day(year, month, day);
 }
 
+Date Date::create_from_year_day(int_year year, int_day_of_year day_of_year) {
+    return Date_create_from_year_day(year, day_of_year);
+}
+
 Date Date::create_from_year_week(int_year year, int_week_of_year week_of_year) {
     return Date_create_from_year_week(year, week_of_year);
 }
@@ -60,8 +64,18 @@ int_day_of_week Date::get_day_of_week() const {
     return Date_get_day_of_week(this);
 }
 
+Date & Date::operator+=(const DayDelta & delta) {
+    Date_add_day_delta(this, &delta);
+    return *this;
+}
+
 Date & Date::operator+=(const MonthDelta & delta) {
     Date_add_month_delta(this, &delta);
+    return *this;
+}
+
+Date & Date::operator-=(const DayDelta & delta) {
+    Date_subtract_day_delta(this, &delta);
     return *this;
 }
 
@@ -70,8 +84,16 @@ Date & Date::operator-=(const MonthDelta & delta) {
     return *this;
 }
 
+const Date operator+(const Date & lhs, const DayDelta & rhs) {
+    return (Date(lhs) += rhs);
+}
+
 const Date operator+(const Date & lhs, const MonthDelta & rhs) {
     return (Date(lhs) += rhs);
+}
+
+const Date operator-(const Date & lhs, const DayDelta & rhs) {
+    return (Date(lhs) -= rhs);
 }
 
 const Date operator-(const Date & lhs, const MonthDelta & rhs) {

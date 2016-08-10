@@ -18,6 +18,7 @@
  * Forward Declarations
  */
 
+struct DayDelta;
 
 /*
  * C++ Class / C Struct Definition
@@ -63,6 +64,12 @@ struct PRESENT_API TimeDelta {
 
     double get_weeks_decimal() const;
 
+    DayDelta get_day_delta_truncated() const;
+
+    DayDelta get_day_delta_rounded() const;
+
+    DayDelta get_day_delta_abs_ceil() const;
+
     bool is_negative() const;
 
     void negate();
@@ -92,6 +99,8 @@ struct PRESENT_API TimeDelta {
     friend bool operator<=(const TimeDelta &, const TimeDelta &);
     friend bool operator>(const TimeDelta &, const TimeDelta &);
     friend bool operator>=(const TimeDelta &, const TimeDelta &);
+
+    TimeDelta(const DayDelta & dayDelta);
 
     PRESENT_BOILERPLATE_CONSTRUCTORS(TimeDelta)
 #endif
@@ -158,6 +167,15 @@ TimeDelta_get_weeks(const struct TimeDelta * const self);
 
 PRESENT_API double
 TimeDelta_get_weeks_decimal(const struct TimeDelta * const self);
+
+PRESENT_API struct DayDelta
+TimeDelta_get_day_delta_truncated(const struct TimeDelta * const self);
+
+PRESENT_API struct DayDelta
+TimeDelta_get_day_delta_rounded(const struct TimeDelta * const self);
+
+PRESENT_API struct DayDelta
+TimeDelta_get_day_delta_abs_ceil(const struct TimeDelta * const self);
 
 PRESENT_API bool
 TimeDelta_is_negative(const struct TimeDelta * const self);

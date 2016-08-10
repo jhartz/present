@@ -8,6 +8,7 @@
  */
 
 #include <assert.h>
+#include <math.h>
 #include <stddef.h>
 
 #include "present/utils/types.h"
@@ -16,6 +17,8 @@
 
 #include "impl-constants.h"
 #include "impl-utils.h"
+
+#include "present/day-delta.h"
 
 #include "present/time-delta.h"
 
@@ -160,6 +163,44 @@ TimeDelta_get_weeks(const struct TimeDelta * const self) {
 double
 TimeDelta_get_weeks_decimal(const struct TimeDelta * const self) {
     return TimeDelta_get_seconds_decimal(self) / (double)SECONDS_IN_WEEK;
+}
+
+struct DayDelta
+TimeDelta_get_day_delta_truncated(const struct TimeDelta * const self) {
+    if (self->data_.delta_seconds >= 0) {
+        return DayDelta_from_days(self->data_.delta_seconds / SECONDS_IN_DAY);
+    } else {
+        // Truncation in integer division with negative operands is
+        // implementation-dependent before C99, so we'll just use positives
+        struct DayDelta dayDelta = DayDelta_from_days(
+                (-self->data_.delta_seconds) / SECONDS_IN_DAY);
+        DayDelta_negate(&dayDelta);
+        return dayDelta;
+    }
+}
+
+struct DayDelta
+TimeDelta_get_day_delta_rounded(const struct TimeDelta * const self) {
+    return DayDelta_from_days((int_delta)round(
+                ((double)self->data_.delta_seconds) /
+                (double)SECONDS_IN_DAY));
+}
+
+struct DayDelta
+TimeDelta_get_day_delta_abs_ceil(const struct TimeDelta * const self) {
+    if (self->data_.delta_seconds % SECONDS_IN_DAY == 0) {
+        return DayDelta_from_days(self->data_.delta_seconds / SECONDS_IN_DAY);
+    } else if (self->data_.delta_seconds >= 0) {
+        return DayDelta_from_days(self->data_.delta_seconds / SECONDS_IN_DAY +
+                1);
+    } else {
+        // Truncation in integer division with negative operands is
+        // implementation-dependent before C99, so we'll just use positives
+        struct DayDelta dayDelta = DayDelta_from_days(
+                (-self->data_.delta_seconds) / SECONDS_IN_DAY + 1);
+        DayDelta_negate(&dayDelta);
+        return dayDelta;
+    }
 }
 
 bool
