@@ -28,6 +28,11 @@ struct TimeDelta;
  */
 
 struct PRESENT_API Timestamp {
+    enum {
+        Timestamp_ERROR_NONE = 0;
+        Timestamp_INVALID_TIME_T;
+        Timestamp_INVALID_STRUCT_TM;
+    } error;
     struct PresentTimestampData data_;
 
 #ifdef __cplusplus

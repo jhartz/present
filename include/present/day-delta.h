@@ -25,6 +25,9 @@ struct TimeDelta;
  */
 
 struct PRESENT_API DayDelta {
+    enum {
+        DayDelta_ERROR_NONE = 0;
+    } error;
     struct PresentDayDeltaData data_;
 
 #ifdef __cplusplus

@@ -26,6 +26,15 @@ struct MonthDelta;
  */
 
 struct PRESENT_API Date {
+    enum {
+        Date_ERROR_NONE = 0;
+        Date_ERROR_YEAR_OUT_OF_RANGE;
+        Date_ERROR_MONTH_OUT_OF_RANGE;
+        Date_ERROR_DAY_OUT_OF_RANGE;
+        Date_ERROR_DAY_OF_YEAR_OUT_OF_RANGE;
+        Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE;
+        Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE;
+    } error;
     struct PresentDateData data_;
 
 #ifdef __cplusplus

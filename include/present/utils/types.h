@@ -7,7 +7,9 @@
  * For details, see LICENSE.
  */
 
+#ifndef __cplusplus
 #include <stdbool.h>
+#endif
 #include <stdint.h>
 #include <time.h>
 

@@ -24,6 +24,9 @@
  */
 
 struct PRESENT_API MonthDelta {
+    enum {
+        MonthDelta_ERROR_NONE = 0;
+    } error;
     struct PresentMonthDeltaData data_;
 
 #ifdef __cplusplus
