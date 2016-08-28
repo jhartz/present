@@ -5,12 +5,17 @@ set (Present_VERSION_MAJOR 0)
 set (Present_VERSION_MINOR 9)
 
 option (COMPILE_PRESENTCPP
-    "Compile the C++ Present library (libpresent) in addition to the C library (libpresentc) - required to use Present C++ classes or to compile the REPL"
+    "Compile the C++ Present library (libpresent) in addition to the C library (libpresentc) - required to use Present C++ classes, to compile the REPL, or to compile the unit tests"
     ON
 )
 
 option (COMPILE_REPL
     "Compile the Present REPL (requires libpresentcpp)"
+    ON
+)
+
+option (COMPILE_TESTS
+    "Compile the Present unit tests"
     ON
 )
 
@@ -109,6 +114,23 @@ if (COMPILE_PRESENTCPP)
             DESTINATION bin
         )
     endif (COMPILE_REPL)
+
+    if (COMPILE_TESTS)
+        # Compile the unit tests
+        add_executable (present-test
+            test/test.cpp
+
+            test/clock-time-test.cpp
+            #test/date-test.cpp
+            #test/day-delta-test.cpp
+            #test/month-delta-test.cpp
+            #test/time-delta-test.cpp
+            #test/timestamp-test.cpp
+        )
+        target_link_libraries (present-test
+            present
+        )
+    endif (COMPILE_TESTS)
 endif (COMPILE_PRESENTCPP)
 
 # Add documentation generation (Doxygen)
