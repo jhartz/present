@@ -31,52 +31,77 @@ enum PresentMonthDeltaError {
  * C++ Class / C Struct Definition
  */
 
+/**
+ * Class or struct representing a positive or negative delta of a number of
+ * months or years.
+ */
 struct PRESENT_API MonthDelta {
     enum PresentMonthDeltaError error;
     struct PresentMonthDeltaData data_;
 
 #ifdef __cplusplus
+    /** @see MonthDelta_from_months */
     static MonthDelta from_months(int_month_delta month_delta);
 
+    /** @see MonthDelta_from_years */
     static MonthDelta from_years(int_year_delta year_delta);
 
+    /** @see MonthDelta_zero */
     static MonthDelta zero();
 
+    /** @see MonthDelta_get_months */
     int_month_delta get_months() const;
 
+    /** @see MonthDelta_get_years */
     int_year_delta get_years() const;
 
+    /** @see MonthDelta_get_years_decimal */
     double get_years_decimal() const;
 
+    /** @see MonthDelta_is_negative */
     bool is_negative() const;
 
+    /** @see MonthDelta_negate */
     void negate();
 
     MonthDelta operator-() const;
 
+    /** Add one month to the MonthDelta. */
     MonthDelta & operator++();
+    /** Add one month to the MonthDelta. */
     MonthDelta operator++(int);
+    /** Subtract one month from the MonthDelta. */
     MonthDelta & operator--();
+    /** Subtract one month from the MonthDelta. */
     MonthDelta operator--(int);
 
+    /** @see MonthDelta_multiply_by */
     MonthDelta & operator*=(const int &);
+    /** @see MonthDelta_divide_by */
     MonthDelta & operator/=(const int &);
 
     friend const MonthDelta operator*(const MonthDelta &, const int &);
     friend const MonthDelta operator/(const MonthDelta &, const int &);
 
+    /** @see MonthDelta_add_month_delta */
     MonthDelta & operator+=(const MonthDelta &);
+    /** @see MonthDelta_subtract_month_delta */
     MonthDelta & operator-=(const MonthDelta &);
 
     friend const MonthDelta operator+(const MonthDelta &, const MonthDelta &);
     friend const MonthDelta operator-(const MonthDelta &, const MonthDelta &);
 
+    /** @see MonthDelta_equal */
     friend bool operator==(const MonthDelta &, const MonthDelta &);
     friend bool operator!=(const MonthDelta &, const MonthDelta &);
 
+    /** @see MonthDelta_less_than */
     friend bool operator<(const MonthDelta &, const MonthDelta &);
+    /** @see MonthDelta_less_than_or_equal */
     friend bool operator<=(const MonthDelta &, const MonthDelta &);
+    /** @see MonthDelta_greater_than */
     friend bool operator>(const MonthDelta &, const MonthDelta &);
+    /** @see MonthDelta_greater_than_or_equal */
     friend bool operator>=(const MonthDelta &, const MonthDelta &);
 
     PRESENT_BOILERPLATE_CONSTRUCTORS(MonthDelta)

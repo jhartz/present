@@ -11,6 +11,8 @@
 #include "present/utils/utils.h"
 #include "present/impl/present-date-data.h"
 
+#include "present/day-delta.h"
+
 #include "present/date.h"
 
 Date Date::create(int_year year) {
@@ -50,6 +52,14 @@ int_month Date::get_month() const {
 
 int_day Date::get_day() const {
     return Date_get_day(this);
+}
+
+DayDelta Date::get_difference(const Date & other) const {
+    return Date_get_difference(this, &other);
+}
+
+DayDelta Date::get_absolute_difference(const Date & other) const {
+    return Date_get_absolute_difference(this, &other);
 }
 
 int_day_of_year Date::get_day_of_year() const {

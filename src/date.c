@@ -153,6 +153,26 @@ Date_get_day_of_week(const struct Date * const self) {
     return self->data_.day_of_week;
 }
 
+struct DayDelta
+Date_get_difference(
+        const struct Date * const self,
+        const struct Date * const other) {
+    assert(self != NULL);
+    assert(other != NULL);
+
+    // TODO
+}
+
+struct DayDelta
+Date_get_absolute_difference(
+        const struct Date * const self,
+        const struct Date * const other) {
+    assert(self != NULL);
+    assert(other != NULL);
+
+    // TODO
+}
+
 void
 Date_add_day_delta(
         struct Date * const self,
