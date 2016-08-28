@@ -34,8 +34,10 @@
  * Define macros used for boilerplate constructors for C++ classes
  */
 #define PRESENT_BOILERPLATE_CONSTRUCTORS(_ClassName)                \
-    _ClassName(const _ClassName & other) : data_(other.data_) {}    \
+    _ClassName(const _ClassName & other)                            \
+        : error(other.error), data_(other.data_) {}                 \
     _ClassName & operator=(const _ClassName & other) {              \
+        this->error = other.error;                                  \
         this->data_ = other.data_;                                  \
         return *this;                                               \
     }                                                               \
