@@ -30,18 +30,30 @@ newClockTime(
         int_minute minute,
         int_second second,
         int_nanosecond nanosecond) {
+
+    CONSTRUCTOR_HEAD(ClockTime);
+
     if (hour == 24) hour = 0;
-    assert(hour >= 0 && hour < 24);
-    assert(minute >= 0 && minute < 60);
-    assert(second >= 0 && second < 61); /* leap seconds :( */
-    assert(nanosecond >= 0 && nanosecond < NANOSECONDS_IN_SECOND);
+    if (hour < 0 || hour > 24) {
+        CONSTRUCTOR_ERROR_RETURN(ClockTime, HOUR_OUT_OF_RANGE);
+    }
+    if (minute < 0 || minute >= 60) {
+        CONSTRUCTOR_ERROR_RETURN(ClockTime, MINUTE_OUT_OF_RANGE);
+    }
+    /* 61 because of leap seconds :( */
+    if (second < 0 || second >= 61) {
+        CONSTRUCTOR_ERROR_RETURN(ClockTime, SECOND_OUT_OF_RANGE);
+    }
+    if (nanosecond < 0 || nanosecond >= NANOSECONDS_IN_SECOND) {
+        CONSTRUCTOR_ERROR_RETURN(ClockTime, NANOSECOND_OUT_OF_RANGE);
+    }
 
     struct PresentClockTimeData data;
     data.hour = hour;
     data.minute = minute;
     data.second = second;
     data.nanosecond = nanosecond;
-    WRAP_DATA_AND_RETURN(ClockTime, data);
+    CONSTRUCTOR_RETURN(ClockTime, data);
 }
 
 /**

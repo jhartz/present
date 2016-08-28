@@ -22,19 +22,25 @@ struct DayDelta;
 struct MonthDelta;
 
 /*
+ * Enum Definitions
+ */
+
+enum PresentDateError {
+    Date_ERROR_NONE = 0
+    , Date_ERROR_YEAR_OUT_OF_RANGE
+    , Date_ERROR_MONTH_OUT_OF_RANGE
+    , Date_ERROR_DAY_OUT_OF_RANGE
+    , Date_ERROR_DAY_OF_YEAR_OUT_OF_RANGE
+    , Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE
+    , Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE
+};
+
+/*
  * C++ Class / C Struct Definition
  */
 
 struct PRESENT_API Date {
-    enum {
-        Date_ERROR_NONE = 0;
-        Date_ERROR_YEAR_OUT_OF_RANGE;
-        Date_ERROR_MONTH_OUT_OF_RANGE;
-        Date_ERROR_DAY_OUT_OF_RANGE;
-        Date_ERROR_DAY_OF_YEAR_OUT_OF_RANGE;
-        Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE;
-        Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE;
-    } error;
+    enum PresentDateError error;
     struct PresentDateData data_;
 
 #ifdef __cplusplus

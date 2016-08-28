@@ -52,58 +52,72 @@
 
 struct TimeDelta
 TimeDelta_from_nanoseconds(int_delta nanoseconds) {
+    CONSTRUCTOR_HEAD(TimeDelta);
+
     struct PresentTimeDeltaData data;
     data.delta_seconds = 0;
     data.delta_nanoseconds = nanoseconds;
-    WRAP_DATA_AND_RETURN(TimeDelta, data);
+    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
 
 struct TimeDelta
 TimeDelta_from_seconds(int_delta seconds) {
+    CONSTRUCTOR_HEAD(TimeDelta);
+
     struct PresentTimeDeltaData data;
     data.delta_seconds = seconds;
     data.delta_nanoseconds = 0;
-    WRAP_DATA_AND_RETURN(TimeDelta, data);
+    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
 
 struct TimeDelta
 TimeDelta_from_minutes(int_delta minutes) {
+    CONSTRUCTOR_HEAD(TimeDelta);
+
     struct PresentTimeDeltaData data;
     data.delta_seconds = minutes * SECONDS_IN_MINUTE;
     data.delta_nanoseconds = 0;
-    WRAP_DATA_AND_RETURN(TimeDelta, data);
+    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
 
 struct TimeDelta
 TimeDelta_from_hours(int_delta hours) {
+    CONSTRUCTOR_HEAD(TimeDelta);
+
     struct PresentTimeDeltaData data;
     data.delta_seconds = hours * SECONDS_IN_HOUR;
     data.delta_nanoseconds = 0;
-    WRAP_DATA_AND_RETURN(TimeDelta, data);
+    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
 
 struct TimeDelta
 TimeDelta_from_days(int_delta days) {
+    CONSTRUCTOR_HEAD(TimeDelta);
+
     struct PresentTimeDeltaData data;
     data.delta_seconds = days * SECONDS_IN_DAY;
     data.delta_nanoseconds = 0;
-    WRAP_DATA_AND_RETURN(TimeDelta, data);
+    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
 
 struct TimeDelta
 TimeDelta_from_weeks(int_delta weeks) {
+    CONSTRUCTOR_HEAD(TimeDelta);
+
     struct PresentTimeDeltaData data;
     data.delta_seconds = weeks * SECONDS_IN_WEEK;
     data.delta_nanoseconds = 0;
-    WRAP_DATA_AND_RETURN(TimeDelta, data);
+    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
 
 struct TimeDelta
 TimeDelta_zero() {
+    CONSTRUCTOR_HEAD(TimeDelta);
+
     struct PresentTimeDeltaData data;
     data.delta_seconds = 0;
     data.delta_nanoseconds = 0;
-    WRAP_DATA_AND_RETURN(TimeDelta, data);
+    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
 
 int_delta

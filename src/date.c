@@ -52,15 +52,21 @@ static void checkDateData(struct PresentDateData * const data) {
  */
 static struct Date
 newDate(int_year year, int_month month, int_day day) {
-    assert(month >= 1 && month <= 12);
-    assert(day >= 1 && day <= 31);
+    CONSTRUCTOR_HEAD(Date);
+
+    if (month >= 1 && month <= 12) {
+        CONSTRUCTOR_ERROR_RETURN(Date, MONTH_OUT_OF_RANGE);
+    }
+    if (day >= 1 && day <= 31) {
+        CONSTRUCTOR_ERROR_RETURN(Date, DAY_OUT_OF_RANGE);
+    }
 
     struct PresentDateData data;
     data.year = year;
     data.month = month;
     data.day = day;
     checkDateData(&data);
-    WRAP_DATA_AND_RETURN(Date, data);
+    CONSTRUCTOR_RETURN(Date, data);
 }
 
 /**
@@ -96,9 +102,6 @@ Date_create_from_year_month_day(int_year year, int_month month, int_day day) {
 
 struct Date
 Date_create_from_year_day(int_year year, int_day_of_year day_of_year) {
-    assert(day_of_year > 0);
-    assert(IS_LEAP_YEAR(year) ? (day_of_year <= 366) : (day_of_year <= 365));
-
     return newDate(year, 0, (int_day)(day_of_year));
 }
 

@@ -21,6 +21,18 @@
 struct TimeDelta;
 
 /*
+ * Enum Definitions
+ */
+
+enum PresentClockTimeError {
+    ClockTime_ERROR_NONE = 0
+    , ClockTime_ERROR_HOUR_OUT_OF_RANGE
+    , ClockTime_ERROR_MINUTE_OUT_OF_RANGE
+    , ClockTime_ERROR_SECOND_OUT_OF_RANGE
+    , ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE
+};
+
+/*
  * C++ Class / C Struct Definition
  */
 
@@ -32,13 +44,7 @@ struct TimeDelta;
  * ClockTime instance is NOT tied to a specific time zone).
  */
 struct PRESENT_API ClockTime {
-    enum {
-        ClockTime_ERROR_NONE = 0;
-        ClockTime_ERROR_HOUR_OUT_OF_RANGE;
-        ClockTime_ERROR_MINUTE_OUT_OF_RANGE;
-        ClockTime_ERROR_SECOND_OUT_OF_RANGE;
-        ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE;
-    } error;
+    enum PresentClockTimeError error;
     struct PresentClockTimeData data_;
 
 #ifdef __cplusplus

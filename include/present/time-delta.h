@@ -21,13 +21,19 @@
 struct DayDelta;
 
 /*
+ * Enum Definitions
+ */
+
+enum PresentTimeDeltaError {
+    TimeDelta_ERROR_NONE = 0
+};
+
+/*
  * C++ Class / C Struct Definition
  */
 
 struct PRESENT_API TimeDelta {
-    enum {
-        TimeDelta_ERROR_NONE = 0;
-    } error;
+    enum PresentTimeDeltaError error;
     struct PresentTimeDeltaData data_;
 
 #ifdef __cplusplus

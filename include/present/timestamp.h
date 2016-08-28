@@ -24,15 +24,21 @@ struct MonthDelta;
 struct TimeDelta;
 
 /*
+ * Enum Definitions
+ */
+
+enum PresentTimestampError {
+    Timestamp_ERROR_NONE = 0
+    , Timestamp_INVALID_TIME_T
+    , Timestamp_INVALID_STRUCT_TM
+};
+
+/*
  * C++ Class / C Struct Definition
  */
 
 struct PRESENT_API Timestamp {
-    enum {
-        Timestamp_ERROR_NONE = 0;
-        Timestamp_INVALID_TIME_T;
-        Timestamp_INVALID_STRUCT_TM;
-    } error;
+    enum PresentTimestampError error;
     struct PresentTimestampData data_;
 
 #ifdef __cplusplus

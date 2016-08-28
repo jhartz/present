@@ -10,24 +10,52 @@
 #ifndef _PRESENT_IMPL_UTILS_H_
 #define _PRESENT_IMPL_UTILS_H_
 
+#include <string.h>
+
 /* Utility macros used to enable macro recursion */
 #define EMPTY(...)
 #define DEFER(...) __VA_ARGS__ EMPTY()
 #define OBSTRUCT(...) __VA_ARGS__ DEFER(EMPTY)()
 #define EXPAND(...) __VA_ARGS__
 
+
 /**
- * Macro to create an instance of a struct, populated with a corresponding
- * data object, and return it (for compatibility with both C and C++).
+ * Macros to create an instance of a struct, populated with either a
+ * corresponding data object or an error, and return it (for compatibility
+ * with both C and C++).
+ *
+ * CONSTRUCTOR_HEAD: must be at the very top of the method
+ * CONSTRUCTOR_RETURN: pass in the ...Data struct to return a struct wrapping
+ * it
+ * CONSTRUCTOR_ERROR_RETURN: pass in the name of an error from the struct's
+ * corresponding error enum (not including "ClassName_ERROR_")
  */
 #ifdef __cplusplus
-#define WRAP_DATA_AND_RETURN(_ClassName, _Data) \
+
+#define CONSTRUCTOR_HEAD(_ClassName)
+#define CONSTRUCTOR_RETURN(_ClassName, _Data)           \
     return _ClassName(_Data);
+#define CONSTRUCTOR_ERROR_RETURN(_ClassName, _Error)    \
+    return _ClassName(_ClassName ## _ERROR_ ## _Error);
+
 #else
-#define WRAP_DATA_AND_RETURN(_ClassName, _Data) \
-    struct _ClassName return_value = {_Data};   \
-    return return_value;
+
+#define CONSTRUCTOR_HEAD(_ClassName)                    \
+    struct _ClassName internal_return_value;            \
+    memset((void *)&internal_return_value, 0,           \
+            sizeof(struct _ClassName));
+
+#define CONSTRUCTOR_RETURN(_ClassName, _Data)           \
+    internal_return_value.data_ = _Data;                \
+    return internal_return_value;
+
+#define CONSTRUCTOR_ERROR_RETURN(_ClassName, _Error)    \
+    internal_return_value.error =                       \
+        _ClassName ## _ERROR_ ## _Error;                \
+    return internal_return_value;
+
 #endif
+
 
 /*
  * Set of macros to support STRUCT_BINARY_OPERATOR (below)
@@ -91,7 +119,7 @@
  */
 #define STRUCT_BINARY_OPERATOR_INTERNAL(                                \
         _StructName, _Operator, _Symbol, ...)                           \
-    bool _StructName##_##_Operator(                                     \
+    bool _StructName ## _ ## _Operator(                                 \
             const struct _StructName * const lhs,                       \
             const struct _StructName * const rhs) {                     \
         assert(lhs != NULL);                                            \

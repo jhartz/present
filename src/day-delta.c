@@ -23,23 +23,29 @@
 
 struct DayDelta
 DayDelta_from_days(int_delta days) {
+    CONSTRUCTOR_HEAD(DayDelta);
+
     struct PresentDayDeltaData data;
     data.delta_days = days;
-    WRAP_DATA_AND_RETURN(DayDelta, data);
+    CONSTRUCTOR_RETURN(DayDelta, data);
 }
 
 struct DayDelta
 DayDelta_from_weeks(int_delta weeks) {
+    CONSTRUCTOR_HEAD(DayDelta);
+
     struct PresentDayDeltaData data;
     data.delta_days = weeks * DAYS_IN_WEEK;
-    WRAP_DATA_AND_RETURN(DayDelta, data);
+    CONSTRUCTOR_RETURN(DayDelta, data);
 }
 
 struct DayDelta
 DayDelta_zero() {
+    CONSTRUCTOR_HEAD(DayDelta);
+
     struct PresentDayDeltaData data;
     data.delta_days = 0;
-    WRAP_DATA_AND_RETURN(DayDelta, data);
+    CONSTRUCTOR_RETURN(DayDelta, data);
 }
 
 int_delta

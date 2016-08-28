@@ -20,13 +20,19 @@
 
 
 /*
+ * Enum Definitions
+ */
+
+enum PresentMonthDeltaError {
+    MonthDelta_ERROR_NONE = 0
+};
+
+/*
  * C++ Class / C Struct Definition
  */
 
 struct PRESENT_API MonthDelta {
-    enum {
-        MonthDelta_ERROR_NONE = 0;
-    } error;
+    enum PresentMonthDeltaError error;
     struct PresentMonthDeltaData data_;
 
 #ifdef __cplusplus

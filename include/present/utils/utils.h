@@ -40,7 +40,9 @@
         return *this;                                               \
     }                                                               \
     explicit _ClassName(Present ## _ClassName ## Data & data)       \
-        : data_(data) {}                                            \
+        : error(_ClassName ## _ERROR_NONE), data_(data) {}          \
+    explicit _ClassName(Present ## _ClassName ## Error & error)     \
+        : error(error) {}                                           \
     private:                                                        \
     _ClassName();
 

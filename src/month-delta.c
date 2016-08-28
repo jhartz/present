@@ -21,23 +21,29 @@
 
 struct MonthDelta
 MonthDelta_from_months(int_month_delta month_delta) {
+    CONSTRUCTOR_HEAD(MonthDelta);
+
     struct PresentMonthDeltaData data;
     data.delta_months = month_delta;
-    WRAP_DATA_AND_RETURN(MonthDelta, data);
+    CONSTRUCTOR_RETURN(MonthDelta, data);
 }
 
 struct MonthDelta
 MonthDelta_from_years(int_year_delta year_delta) {
+    CONSTRUCTOR_HEAD(MonthDelta);
+
     struct PresentMonthDeltaData data;
     data.delta_months = year_delta * MONTHS_IN_YEAR;
-    WRAP_DATA_AND_RETURN(MonthDelta, data);
+    CONSTRUCTOR_RETURN(MonthDelta, data);
 }
 
 struct MonthDelta
 MonthDelta_zero() {
+    CONSTRUCTOR_HEAD(MonthDelta);
+
     struct PresentMonthDeltaData data;
     data.delta_months = 0;
-    WRAP_DATA_AND_RETURN(MonthDelta, data);
+    CONSTRUCTOR_RETURN(MonthDelta, data);
 }
 
 int_month_delta
