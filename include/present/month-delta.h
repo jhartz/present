@@ -116,66 +116,122 @@ struct PRESENT_API MonthDelta {
 extern "C" {
 #endif
 
+/**
+ * Create a new MonthDelta based on a positive or negative number of months.
+ */
 PRESENT_API struct MonthDelta
 MonthDelta_from_months(int_month_delta month_delta);
 
+/**
+ * Create a new MonthDelta based on a positive or negative number of years.
+ */
 PRESENT_API struct MonthDelta
 MonthDelta_from_years(int_year_delta year_delta);
 
+/**
+ * Create a new MonthDelta initialized to zero months.
+ */
 PRESENT_API struct MonthDelta
 MonthDelta_zero();
 
+/**
+ * Get the number of months represented by a MonthDelta.
+ */
 PRESENT_API int_month_delta
 MonthDelta_get_months(const struct MonthDelta * const self);
 
+/**
+ * Get the number of years represented by a MonthDelta. If the MonthDelta does
+ * not represent an exact number of years, the number of years will be
+ * truncated.
+ */
 PRESENT_API int_year_delta
 MonthDelta_get_years(const struct MonthDelta * const self);
 
+/**
+ * Get the number of years represented by a MonthDelta, with a fractional part
+ * if necessary.
+ */
 PRESENT_API double
 MonthDelta_get_years_decimal(const struct MonthDelta * const self);
 
+/**
+ * Determine whether a MonthDelta is negative.
+ */
 PRESENT_API bool
 MonthDelta_is_negative(const struct MonthDelta * const self);
 
+/**
+ * Negate a MonthDelta, making it negative if it was positive or positive if
+ * it was negative.
+ */
 PRESENT_API void
 MonthDelta_negate(struct MonthDelta * const self);
 
+/**
+ * Scale a MonthDelta by multiplying it by a scale factor.
+ */
 PRESENT_API void
 MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor);
 
+/**
+ * Scale a MonthDelta by dividing it by a scale factor.
+ */
 PRESENT_API void
 MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor);
 
+/**
+ * Add another MonthDelta to a MonthDelta.
+ */
 PRESENT_API void
 MonthDelta_add_month_delta(
         struct MonthDelta * const self,
         const struct MonthDelta * const monthDeltaToAdd);
 
+/**
+ * Subtract another MonthDelta from a MonthDelta.
+ */
 PRESENT_API void
 MonthDelta_subtract_month_delta(
         struct MonthDelta * const self,
         const struct MonthDelta * const monthDeltaToSubtract);
 
+/**
+ * Determine whether two MonthDelta instances are equal.
+ */
 PRESENT_API bool
 MonthDelta_equal(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
+/**
+ * Determine whether a MonthDelta is less than another MonthDelta.
+ */
 PRESENT_API bool
 MonthDelta_less_than(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
+/**
+ * Determine whether a MonthDelta is less than or equal to another MonthDelta.
+ */
 PRESENT_API bool
 MonthDelta_less_than_or_equal(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
+/**
+ * Determine whether a MonthDelta is greater than another MonthDelta.
+ */
 PRESENT_API bool
 MonthDelta_greater_than(
         const struct MonthDelta * const,
         const struct MonthDelta * const);
 
+/**
+ * Determine whether a MonthDelta is greater than or equal to another
+ * MonthDelta.
+ */
 PRESENT_API bool
 MonthDelta_greater_than_or_equal(
         const struct MonthDelta * const,

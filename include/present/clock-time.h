@@ -225,25 +225,26 @@ PRESENT_API struct ClockTime
 ClockTime_noon();
 
 /**
- * Get the hour component of a ClockTime.
+ * Get the hour component of a ClockTime (0 to 23, inclusive).
  */
 PRESENT_API int_hour
 ClockTime_get_hour(const struct ClockTime * const self);
 
 /**
- * Get the minute component of a ClockTime.
+ * Get the minute component of a ClockTime (0 to 59, inclusive).
  */
 PRESENT_API int_minute
 ClockTime_get_minute(const struct ClockTime * const self);
 
 /**
- * Get the second component of a ClockTime.
+ * Get the second component of a ClockTime (0 to 59, inclusive).
  */
 PRESENT_API int_second
 ClockTime_get_second(const struct ClockTime * const self);
 
 /**
- * Get the nanosecond component of a ClockTime.
+ * Get the nanosecond component of a ClockTime (less than 10^9, the number of
+ * nanoseconds in a second).
  */
 PRESENT_API int_nanosecond
 ClockTime_get_nanosecond(const struct ClockTime * const self);
@@ -284,7 +285,7 @@ PRESENT_API bool
 ClockTime_equal(const struct ClockTime * const, const struct ClockTime * const);
 
 /**
- * Determine whether a ClockTime is less than another ClockTime.
+ * Determine whether a ClockTime is earlier than another ClockTime.
  */
 PRESENT_API bool
 ClockTime_less_than(
@@ -292,7 +293,8 @@ ClockTime_less_than(
         const struct ClockTime * const);
 
 /**
- * Determine whether a ClockTime is less than or equal to another ClockTime.
+ * Determine whether a ClockTime is earlier than or or the same as another
+ * ClockTime.
  */
 PRESENT_API bool
 ClockTime_less_than_or_equal(
@@ -300,7 +302,7 @@ ClockTime_less_than_or_equal(
         const struct ClockTime * const);
 
 /**
- * Determine whether a ClockTime is greater than another ClockTime.
+ * Determine whether a ClockTime is later than another ClockTime.
  */
 PRESENT_API bool
 ClockTime_greater_than(
@@ -308,7 +310,8 @@ ClockTime_greater_than(
         const struct ClockTime * const);
 
 /**
- * Determine whether a ClockTime is greater than or equal to another ClockTime.
+ * Determine whether a ClockTime is later than or the same as another
+ * ClockTime.
  */
 PRESENT_API bool
 ClockTime_greater_than_or_equal(
