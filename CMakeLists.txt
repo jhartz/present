@@ -19,6 +19,11 @@ option (COMPILE_TESTS
     ON
 )
 
+option (USE_CXX_AS_CC
+    "Use the C++ compiler to compile C files"
+    OFF
+)
+
 set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
@@ -49,6 +54,20 @@ include_directories ("${PROJECT_BINARY_DIR}/include")
 
 # Add the header include files
 include_directories ("${PROJECT_SOURCE_DIR}/include")
+
+# If we're compiling C with a C++ compiler, set that
+if (USE_CXX_AS_CC)
+    set_source_files_properties(
+        src/clock-time.c
+        src/date.c
+        src/day-delta.c
+        src/month-delta.c
+        src/time-delta.c
+        src/timestamp.c
+
+        PROPERTIES LANGUAGE CXX
+    )
+endif (USE_CXX_AS_CC)
 
 # Compile the C library
 add_library (presentc SHARED
