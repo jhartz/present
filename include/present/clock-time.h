@@ -91,6 +91,9 @@ struct PRESENT_API ClockTime {
     /** @see ClockTime_get_second_decimal */
     double get_second_decimal() const;
 
+    /** @see ClockTime_time_since_midnight */
+    TimeDelta time_since_midnight() const;
+
     /** @see ClockTime_add_time_delta */
     ClockTime & operator+=(const TimeDelta &);
     /** @see ClockTime_subtract_time_delta */
@@ -255,6 +258,12 @@ ClockTime_get_nanosecond(const struct ClockTime * const self);
  */
 PRESENT_API double
 ClockTime_get_second_decimal(const struct ClockTime * const self);
+
+/**
+ * Get a @ref TimeDelta with the time since midnight of a ClockTime.
+ */
+PRESENT_API struct TimeDelta
+ClockTime_time_since_midnight(const struct ClockTime * const self);
 
 /**
  * Add a @ref TimeDelta to a ClockTime.

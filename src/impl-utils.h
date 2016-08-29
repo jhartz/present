@@ -123,7 +123,9 @@
             const struct _StructName * const lhs,                       \
             const struct _StructName * const rhs) {                     \
         assert(lhs != NULL);                                            \
+        assert(lhs->error == 0);                                        \
         assert(rhs != NULL);                                            \
+        assert(rhs->error == 0);                                        \
         STRUCT_BINARY_OPERATOR_BODY(_Symbol, __VA_ARGS__)               \
     }
 
@@ -144,9 +146,11 @@
                         STRUCT_BINARY_OPERATOR_INTERNAL(__VA_ARGS__))))))
 
 /**
- * Shortcut for implementations of the 4 standard inequality operators.
+ * Shortcut for implementations of an equality function and the 4 standard
+ * inequality operators.
  */
-#define STRUCT_INEQUALITY_OPERATORS(_StructName, ...)                   \
+#define STRUCT_COMPARISON_OPERATORS(_StructName, ...)                   \
+    STRUCT_BINARY_OPERATOR(_StructName, equal, ==, __VA_ARGS__)         \
     STRUCT_BINARY_OPERATOR(_StructName, less_than, <,                   \
             __VA_ARGS__)                                                \
     STRUCT_BINARY_OPERATOR(_StructName, less_than_or_equal, <=,         \

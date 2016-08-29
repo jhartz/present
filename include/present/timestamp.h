@@ -29,8 +29,8 @@ struct TimeDelta;
 
 enum PresentTimestampError {
     Timestamp_ERROR_NONE = 0
-    , Timestamp_INVALID_TIME_T
-    , Timestamp_INVALID_STRUCT_TM
+    , Timestamp_ERROR_INVALID_CLOCK_TIME
+    , Timestamp_ERROR_INVALID_DATE
 };
 
 /*

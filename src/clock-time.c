@@ -147,32 +147,57 @@ ClockTime_noon() {
 int_hour
 ClockTime_get_hour(const struct ClockTime * const self) {
     assert(self != NULL);
+    assert(self->error == 0);
+
     return self->data_.hour;
 }
 
 int_minute
 ClockTime_get_minute(const struct ClockTime * const self) {
     assert(self != NULL);
+    assert(self->error == 0);
+
     return self->data_.minute;
 }
 
 int_second
 ClockTime_get_second(const struct ClockTime * const self) {
     assert(self != NULL);
+    assert(self->error == 0);
+
     return self->data_.second;
 }
 
 int_nanosecond
 ClockTime_get_nanosecond(const struct ClockTime * const self) {
     assert(self != NULL);
+    assert(self->error == 0);
+
     return self->data_.nanosecond;
 }
 
 double
 ClockTime_get_second_decimal(const struct ClockTime * const self) {
     assert(self != NULL);
+    assert(self->error == 0);
+
     return (self->data_.second +
             ((double)self->data_.nanosecond / (double)NANOSECONDS_IN_SECOND));
+}
+
+struct TimeDelta
+ClockTime_time_since_midnight(const struct ClockTime * const self) {
+    assert(self != NULL);
+    assert(self->error == 0);
+
+    struct TimeDelta delta = TimeDelta_from_seconds(
+            self->data_.second +
+            self->data_.minute * SECONDS_IN_MINUTE +
+            self->data_.hour * SECONDS_IN_HOUR);
+    struct TimeDelta nsDelta = TimeDelta_from_nanoseconds(
+            self->data_.nanosecond);
+    TimeDelta_add_time_delta(&delta, &nsDelta);
+    return delta;
 }
 
 void
@@ -180,7 +205,9 @@ ClockTime_add_time_delta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta) {
     assert(self != NULL);
+    assert(self->error == 0);
     assert(delta != NULL);
+    assert(delta->error == 0);
 
     self->data_.second += delta->data_.delta_seconds;
     self->data_.nanosecond += delta->data_.delta_nanoseconds;
@@ -193,7 +220,9 @@ ClockTime_subtract_time_delta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta) {
     assert(self != NULL);
+    assert(self->error == 0);
     assert(delta != NULL);
+    assert(delta->error == 0);
 
     self->data_.second -= delta->data_.delta_seconds;
     self->data_.nanosecond -= delta->data_.delta_nanoseconds;
@@ -201,17 +230,5 @@ ClockTime_subtract_time_delta(
     checkClockTime(self);
 }
 
-bool
-ClockTime_equal(
-        const struct ClockTime * const lhs,
-        const struct ClockTime * const rhs) {
-    assert(lhs != NULL);
-    assert(rhs != NULL);
-    return (lhs->data_.hour == rhs->data_.hour &&
-            lhs->data_.minute == rhs->data_.minute &&
-            lhs->data_.second == rhs->data_.second &&
-            lhs->data_.nanosecond == rhs->data_.nanosecond);
-}
-
-STRUCT_INEQUALITY_OPERATORS(ClockTime, hour, minute, second, nanosecond)
+STRUCT_COMPARISON_OPERATORS(ClockTime, hour, minute, second, nanosecond)
 

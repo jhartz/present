@@ -20,6 +20,10 @@
  * Typedefs for common components of dates and times
  */
 
+/* Timestamp */
+
+typedef int_fast64_t    int_timestamp;
+
 /* Time */
 
 typedef uint_fast8_t    int_hour;

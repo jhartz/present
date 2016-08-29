@@ -11,6 +11,8 @@
 #include "present/utils/utils.h"
 #include "present/impl/present-clock-time-data.h"
 
+#include "present/time-delta.h"
+
 #include "present/clock-time.h"
 
 ClockTime ClockTime::create(int_hour hour) {
@@ -70,6 +72,10 @@ int_nanosecond ClockTime::get_nanosecond() const {
 
 double ClockTime::get_second_decimal() const {
     return ClockTime_get_second_decimal(this);
+}
+
+TimeDelta ClockTime::time_since_midnight() const {
+    return ClockTime_time_since_midnight(this);
 }
 
 ClockTime & ClockTime::operator+=(const TimeDelta & delta) {
