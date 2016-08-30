@@ -8,6 +8,7 @@
  */
 
 #include <assert.h>
+#include <math.h>
 #include <stddef.h>
 
 #include "present/utils/types.h"
@@ -130,8 +131,10 @@ ClockTime_create_with_decimal_seconds(
         int_hour hour,
         int_minute minute,
         double second) {
-    return new_clock_time(hour, minute, (int_second)second,
-            (int_nanosecond)(second * (double)NANOSECONDS_IN_SECOND));
+    int_second secondInt = (int_second) second;
+    second = (second - secondInt) * (double) NANOSECONDS_IN_SECOND;
+    return new_clock_time(hour, minute, secondInt,
+            (int_nanosecond) round(second));
 }
 
 struct ClockTime

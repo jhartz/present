@@ -32,6 +32,9 @@
 *.dSYM/
 *.su
 
+# Vim
+*.swp
+
 # Build directory
 build/
 build-*/
