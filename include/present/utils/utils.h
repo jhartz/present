@@ -43,7 +43,7 @@
     }                                                               \
     explicit _ClassName(Present ## _ClassName ## Data & data)       \
         : error(_ClassName ## _ERROR_NONE), data_(data) {}          \
-    explicit _ClassName(Present ## _ClassName ## Error & error)     \
+    explicit _ClassName(Present ## _ClassName ## Error error)       \
         : error(error) {}                                           \
     private:                                                        \
     _ClassName();
