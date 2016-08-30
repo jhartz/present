@@ -178,10 +178,11 @@ Date_create_from_year_month_day(int_year year, int_month month, int_day day);
  * @see Date_create_from_year_month_day
  */
 #define Date_create(...)    \
-    PRESENT_OVERLOAD_MAX_3(__VA_ARGS__, \
+    PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
         Date_create_from_year_month_day,    \
-        Date_create_from_year_month,    \
-        Date_create_from_year)(__VA_ARGS__)
+        Date_create_from_year_month,        \
+        Date_create_from_year,              \
+        dummy)(__VA_ARGS__)
 
 /**
  * Create a new Date based on a year and the day of that year.

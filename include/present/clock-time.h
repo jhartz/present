@@ -68,7 +68,10 @@ struct PRESENT_API ClockTime {
         int_nanosecond nanosecond);
 
     /** @see ClockTime_create_with_decimal_seconds */
-    static ClockTime create(int_hour hour, int_minute minute, double second);
+    static ClockTime create_with_decimal_seconds(
+            int_hour hour,
+            int_minute minute,
+            double second);
 
     /** @see ClockTime_midnight */
     static ClockTime midnight();
@@ -196,11 +199,12 @@ ClockTime_create_from_hour_minute_second_nanosecond(
  * @see ClockTime_create_from_hour_minute_second_nanosecond
  */
 #define ClockTime_create(...)    \
-    PRESENT_OVERLOAD_MAX_4(__VA_ARGS__, \
+    PRESENT_OVERLOAD_MAX_4(__VA_ARGS__,                         \
         ClockTime_create_from_hour_minute_second_nanosecond,    \
-        ClockTime_create_from_hour_minute_second,   \
-        ClockTime_create_from_hour_minute,  \
-        ClockTime_create_from_hour)(__VA_ARGS__)
+        ClockTime_create_from_hour_minute_second,               \
+        ClockTime_create_from_hour_minute,                      \
+        ClockTime_create_from_hour,                             \
+        dummy)(__VA_ARGS__)
 
 /**
  * Create a new ClockTime based on an hour, a minute, and a decimal second.

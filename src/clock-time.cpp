@@ -42,7 +42,10 @@ ClockTime ClockTime::create(
         nanosecond);
 }
 
-ClockTime ClockTime::create(int_hour hour, int_minute minute, double second) {
+ClockTime ClockTime::create_with_decimal_seconds(
+        int_hour hour,
+        int_minute minute,
+        double second) {
     return ClockTime_create_with_decimal_seconds(hour, minute, second);
 }
 
