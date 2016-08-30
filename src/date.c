@@ -18,8 +18,11 @@
 #include "impl-constants.h"
 #include "impl-utils.h"
 
+#include "present/clock-time.h"
 #include "present/day-delta.h"
 #include "present/month-delta.h"
+#include "present/time-delta.h"
+#include "present/timestamp.h"
 
 #include "present/date.h"
 
@@ -27,7 +30,7 @@
  * Make sure that year, month, and day are valid, and set day_of_year and
  * day_of_week to their correct values.
  */
-static void checkDateData(struct PresentDateData * const data) {
+static void check_date_data(struct PresentDateData * const data) {
     struct tm info;
     memset((void *)&info, 0, sizeof(struct tm));
 
@@ -51,7 +54,7 @@ static void checkDateData(struct PresentDateData * const data) {
  * Create a new Date instance based on its data parameters.
  */
 static struct Date
-newDate(int_year year, int_month month, int_day day) {
+new_date(int_year year, int_month month, int_day day) {
     CONSTRUCTOR_HEAD(Date);
 
     if (month >= 1 && month <= 12) {
@@ -65,28 +68,28 @@ newDate(int_year year, int_month month, int_day day) {
     data.year = year;
     data.month = month;
     data.day = day;
-    checkDateData(&data);
+    check_date_data(&data);
     CONSTRUCTOR_RETURN(Date, data);
 }
 
 struct Date
 Date_create_from_year(int_year year) {
-    return newDate(year, 1, 1);
+    return new_date(year, 1, 1);
 }
 
 struct Date
 Date_create_from_year_month(int_year year, int_month month) {
-    return newDate(year, month, 1);
+    return new_date(year, month, 1);
 }
 
 struct Date
 Date_create_from_year_month_day(int_year year, int_month month, int_day day) {
-    return newDate(year, month, day);
+    return new_date(year, month, day);
 }
 
 struct Date
 Date_create_from_year_day(int_year year, int_day_of_year day_of_year) {
-    return newDate(year, 0, (int_day)(day_of_year));
+    return new_date(year, 0, (int_day)(day_of_year));
 }
 
 struct Date
@@ -159,7 +162,12 @@ Date_get_difference(
     assert(other != NULL);
     assert(other->error == 0);
 
-    // TODO
+    struct ClockTime noon = ClockTime_noon();
+    struct Timestamp selfTimestamp = Timestamp_create_utc(self, &noon);
+    struct Timestamp otherTimestamp = Timestamp_create_utc(other, &noon);
+    struct TimeDelta timeDelta = Timestamp_get_difference(
+            &selfTimestamp, &otherTimestamp);
+    return TimeDelta_get_day_delta_truncated(&timeDelta);
 }
 
 struct DayDelta
@@ -171,7 +179,11 @@ Date_get_absolute_difference(
     assert(other != NULL);
     assert(other->error == 0);
 
-    // TODO
+    struct DayDelta delta = Date_get_difference(self, other);
+    if (DayDelta_is_negative(&delta)) {
+        DayDelta_negate(&delta);
+    }
+    return delta;
 }
 
 void
@@ -184,7 +196,7 @@ Date_add_day_delta(
     assert(delta->error == 0);
 
     self->data_.day += delta->data_.delta_days;
-    checkDateData(&self->data_);
+    check_date_data(&self->data_);
 }
 
 void
@@ -197,7 +209,7 @@ Date_add_month_delta(
     assert(delta->error == 0);
 
     self->data_.month += delta->data_.delta_months;
-    checkDateData(&self->data_);
+    check_date_data(&self->data_);
 }
 
 void
@@ -210,7 +222,7 @@ Date_subtract_day_delta(
     assert(delta->error == 0);
 
     self->data_.day -= delta->data_.delta_days;
-    checkDateData(&self->data_);
+    check_date_data(&self->data_);
 }
 
 void
@@ -223,7 +235,7 @@ Date_subtract_month_delta(
     assert(delta->error == 0);
 
     self->data_.month -= delta->data_.delta_months;
-    checkDateData(&self->data_);
+    check_date_data(&self->data_);
 }
 
 STRUCT_COMPARISON_OPERATORS(Date, year, month, day)

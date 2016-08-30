@@ -25,17 +25,6 @@
 
 #include "present/timestamp.h"
 
-/** Determine whether a given year is a leap year. */
-#define IS_LEAP_YEAR(year)                      \
-    ((year % 4 == 0 && year % 100 != 0) ||      \
-     (year % 400 == 0))
-
-/** Day of the year that each month starts on (in non-leap years). */
-static const int_day_of_year DAY_OF_START_OF_MONTH[13] = {
-    0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
-};
-
-
 /** Convert a struct tm to a Date. */
 static struct Date
 struct_tm_to_date(const struct tm tm) {
@@ -82,6 +71,20 @@ convert_to_struct_tm(
     return tm;
 }
 
+/** Convert a time_t to a UNIX timestamp. */
+int_timestamp
+time_t_to_timestamp(const time_t timestamp) {
+    // TODO: We're just assuming that time_t is already a UNIX timestamp
+    return (int_timestamp) timestamp;
+}
+
+/** Convert a UNIX timestamp to a time_t. */
+time_t
+timestamp_to_time_t(const int_timestamp timestamp_seconds) {
+    // TODO: We're just assuming that time_t is a UNIX timestamp
+    return (time_t) timestamp_seconds;
+}
+
 /**
  * Check additional_nanoseconds to make sure it is a positive integer less
  * than NANOSECONDS_IN_SECOND.
@@ -109,18 +112,14 @@ new_timestamp(
     CONSTRUCTOR_RETURN(Timestamp, data);
 }
 
-/**
- * Create a Timestamp with an "invalid ClockTime" error.
- */
+/** Create a Timestamp with an "invalid ClockTime" error. */
 static struct Timestamp
 invalid_clock_time() {
     CONSTRUCTOR_HEAD(Timestamp);
     CONSTRUCTOR_ERROR_RETURN(Timestamp, INVALID_CLOCK_TIME);
 }
 
-/**
- * Create a Timestamp with an "invalid Date" error.
- */
+/** Create a Timestamp with an "invalid Date" error. */
 static struct Timestamp
 invalid_date() {
     CONSTRUCTOR_HEAD(Timestamp);
@@ -129,8 +128,7 @@ invalid_date() {
 
 struct Timestamp
 Timestamp_create_from_time_t(const time_t timestamp) {
-    // Assuming that time_t is a UNIX timestamp
-    return new_timestamp((int_timestamp) timestamp, 0);
+    return new_timestamp(time_t_to_timestamp(timestamp), 0);
 }
 
 struct Timestamp
@@ -155,7 +153,7 @@ Timestamp_create_from_struct_tm_local(const struct tm tm) {
     // Throw it right through mktime
     time_t timestamp = mktime(&tmCopy);
     assert(timestamp != -1);
-    return Timestamp_create_from_time_t(timestamp);
+    return new_timestamp(time_t_to_timestamp(timestamp), 0);
 }
 
 struct Timestamp
@@ -192,6 +190,11 @@ Timestamp_create_utc(
     assert(date->error == 0);
     assert(clockTime != NULL);
     assert(clockTime->error == 0);
+
+    /** Day of the year that each month starts on (in non-leap years). */
+    static const int_day_of_year DAY_OF_START_OF_MONTH[13] = {
+        0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
+    };
 
     // Make sure the Date and ClockTime aren't erroneous
     if (date->error) {
@@ -253,7 +256,7 @@ Timestamp_create_local(
 
 struct Timestamp
 Timestamp_now() {
-    return Timestamp_create_from_time_t(time(NULL));
+    return new_timestamp(time_t_to_timestamp(time(NULL)), 0);
 }
 
 struct Timestamp
@@ -266,7 +269,7 @@ Timestamp_get_time_t(const struct Timestamp * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
-    return (time_t) self->data_.timestamp_seconds;
+    return timestamp_to_time_t(self->data_.timestamp_seconds);
 }
 
 struct tm
@@ -289,7 +292,8 @@ Timestamp_get_struct_tm_utc(const struct Timestamp * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
-    return *gmtime((time_t *) &self->data_.timestamp_seconds);
+    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
+    return *gmtime(&timestamp);
 }
 
 struct tm
@@ -297,7 +301,8 @@ Timestamp_get_struct_tm_local(const struct Timestamp * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
-    return *localtime((time_t *) &self->data_.timestamp_seconds);
+    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
+    return *localtime(&timestamp);
 }
 
 struct Date
@@ -424,7 +429,8 @@ Timestamp_add_month_delta(
     assert(delta != NULL);
     assert(delta->error == 0);
 
-    struct tm tm = *localtime((time_t *) &self->data_.timestamp_seconds);
+    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
+    struct tm tm = *localtime(&timestamp);
     tm.tm_mon += delta->data_.delta_months;
     self->data_.timestamp_seconds = mktime(&tm);
     assert(self->data_.timestamp_seconds != -1);
@@ -465,7 +471,8 @@ Timestamp_subtract_month_delta(
     assert(delta != NULL);
     assert(delta->error == 0);
 
-    struct tm tm = *localtime((time_t *) &self->data_.timestamp_seconds);
+    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
+    struct tm tm = *localtime(&timestamp);
     tm.tm_mon -= delta->data_.delta_months;
     self->data_.timestamp_seconds = mktime(&tm);
     assert(self->data_.timestamp_seconds != -1);

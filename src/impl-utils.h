@@ -19,6 +19,12 @@
 #define EXPAND(...) __VA_ARGS__
 
 
+/** Determine whether a given year is a leap year. */
+#define IS_LEAP_YEAR(year)                      \
+    ((year % 4 == 0 && year % 100 != 0) ||      \
+     (year % 400 == 0))
+
+
 /**
  * Macros to create an instance of a struct, populated with either a
  * corresponding data object or an error, and return it (for compatibility
