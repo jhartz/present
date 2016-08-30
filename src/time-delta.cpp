@@ -19,6 +19,14 @@ TimeDelta TimeDelta::from_nanoseconds(int_delta nanoseconds) {
     return TimeDelta_from_nanoseconds(nanoseconds);
 }
 
+TimeDelta TimeDelta::from_microseconds(int_delta microseconds) {
+    return TimeDelta_from_microseconds(microseconds);
+}
+
+TimeDelta TimeDelta::from_milliseconds(int_delta milliseconds) {
+    return TimeDelta_from_milliseconds(milliseconds);
+}
+
 TimeDelta TimeDelta::from_seconds(int_delta seconds) {
     return TimeDelta_from_seconds(seconds);
 }
@@ -45,6 +53,22 @@ TimeDelta TimeDelta::zero() {
 
 int_delta TimeDelta::get_nanoseconds() const {
     return TimeDelta_get_nanoseconds(this);
+}
+
+int_delta TimeDelta::get_microseconds() const {
+    return TimeDelta_get_microseconds(this);
+}
+
+double TimeDelta::get_microseconds_decimal() const {
+    return TimeDelta_get_microseconds_decimal(this);
+}
+
+int_delta TimeDelta::get_milliseconds() const {
+    return TimeDelta_get_milliseconds(this);
+}
+
+double TimeDelta::get_milliseconds_decimal() const {
+    return TimeDelta_get_milliseconds_decimal(this);
 }
 
 int_delta TimeDelta::get_seconds() const {

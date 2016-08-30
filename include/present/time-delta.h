@@ -44,6 +44,12 @@ struct PRESENT_API TimeDelta {
     /** @see TimeDelta_from_nanoseconds */
     static TimeDelta from_nanoseconds(int_delta nanoseconds);
 
+    /** @see TimeDelta_from_microseconds */
+    static TimeDelta from_microseconds(int_delta microseconds);
+
+    /** @see TimeDelta_from_milliseconds */
+    static TimeDelta from_milliseconds(int_delta milliseconds);
+
     /** @see TimeDelta_from_seconds */
     static TimeDelta from_seconds(int_delta seconds);
 
@@ -65,33 +71,38 @@ struct PRESENT_API TimeDelta {
     /** @see TimeDelta_get_nanoseconds */
     int_delta get_nanoseconds() const;
 
+    /** @see TimeDelta_get_microseconds */
+    int_delta get_microseconds() const;
+    /** @see TimeDelta_get_microseconds_decimal */
+    double get_microseconds_decimal() const;
+
+    /** @see TimeDelta_get_milliseconds */
+    int_delta get_milliseconds() const;
+    /** @see TimeDelta_get_milliseconds_decimal */
+    double get_milliseconds_decimal() const;
+
     /** @see TimeDelta_get_seconds */
     int_delta get_seconds() const;
-
     /** @see TimeDelta_get_seconds_decimal */
     double get_seconds_decimal() const;
 
     /** @see TimeDelta_get_minutes */
     int_delta get_minutes() const;
-
     /** @see TimeDelta_get_minutes_decimal */
     double get_minutes_decimal() const;
 
     /** @see TimeDelta_get_hours */
     int_delta get_hours() const;
-
     /** @see TimeDelta_get_hours_decimal */
     double get_hours_decimal() const;
 
     /** @see TimeDelta_get_days */
     int_delta get_days() const;
-
     /** @see TimeDelta_get_days_decimal */
     double get_days_decimal() const;
 
     /** @see TimeDelta_get_weeks */
     int_delta get_weeks() const;
-
     /** @see TimeDelta_get_weeks_decimal */
     double get_weeks_decimal() const;
 
@@ -173,6 +184,20 @@ PRESENT_API struct TimeDelta
 TimeDelta_from_nanoseconds(int_delta nanoseconds);
 
 /**
+ * Create a new TimeDelta based on a positive or negative number of
+ * microseconds.
+ */
+PRESENT_API struct TimeDelta
+TimeDelta_from_microseconds(int_delta microseconds);
+
+/**
+ * Create a new TimeDelta based on a positive or negative number of
+ * milliseconds.
+ */
+PRESENT_API struct TimeDelta
+TimeDelta_from_milliseconds(int_delta milliseconds);
+
+/**
  * Create a new TimeDelta based on a positive or negative number of seconds.
  */
 PRESENT_API struct TimeDelta
@@ -213,6 +238,36 @@ TimeDelta_zero();
  */
 PRESENT_API int_delta
 TimeDelta_get_nanoseconds(const struct TimeDelta * const self);
+
+/**
+ * Get the number of microseconds represented by a TimeDelta. If the TimeDelta
+ * does not represent an exact number of microseconds, the return value will
+ * be truncated.
+ */
+PRESENT_API int_delta
+TimeDelta_get_microseconds(const struct TimeDelta * const self);
+
+/**
+ * Get the number of microseconds represented by a TimeDelta, with a
+ * fractional part if necessary.
+ */
+PRESENT_API double
+TimeDelta_get_microseconds_decimal(const struct TimeDelta * const self);
+
+/**
+ * Get the number of milliseconds represented by a TimeDelta. If the TimeDelta
+ * does not represent an exact number of milliseconds, the return value will
+ * be truncated.
+ */
+PRESENT_API int_delta
+TimeDelta_get_milliseconds(const struct TimeDelta * const self);
+
+/**
+ * Get the number of milliseconds represented by a TimeDelta, with a
+ * fractional part if necessary.
+ */
+PRESENT_API double
+TimeDelta_get_milliseconds_decimal(const struct TimeDelta * const self);
 
 /**
  * Get the number of seconds represented by a TimeDelta. If the TimeDelta does

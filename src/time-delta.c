@@ -29,95 +29,86 @@
  * nonzero).
  */
 #define CHECK_DATA(data)    \
-    if (data.delta_nanoseconds > NANOSECONDS_IN_SECOND) {               \
-        data.delta_seconds +=                                           \
-            data.delta_nanoseconds / NANOSECONDS_IN_SECOND;             \
-        data.delta_nanoseconds %= NANOSECONDS_IN_SECOND;                \
-    } else if (data.delta_nanoseconds < -NANOSECONDS_IN_SECOND) {       \
-        data.delta_seconds -=                                           \
-            (-data.delta_nanoseconds) / NANOSECONDS_IN_SECOND;          \
-        data.delta_nanoseconds = -(                                     \
-            (-data.delta_nanoseconds) % NANOSECONDS_IN_SECOND);         \
-    }                                                                   \
-    if (data.delta_seconds > 0 && data.delta_nanoseconds < 0) {         \
-        data.delta_seconds -= 1;                                        \
-        data.delta_nanoseconds += NANOSECONDS_IN_SECOND;                \
-    }                                                                   \
-    if (data.delta_seconds < 0 && data.delta_nanoseconds > 0) {         \
-        data.delta_seconds += 1;                                        \
-        data.delta_nanoseconds -= NANOSECONDS_IN_SECOND;                \
-    }                                                                   \
-    if (data.delta_seconds > 0) assert(data.delta_nanoseconds >= 0);    \
-    if (data.delta_seconds < 0) assert(data.delta_nanoseconds <= 0);
+    do {                                                                    \
+        if (data.delta_nanoseconds > NANOSECONDS_IN_SECOND) {               \
+            data.delta_seconds +=                                           \
+                data.delta_nanoseconds / NANOSECONDS_IN_SECOND;             \
+            data.delta_nanoseconds %= NANOSECONDS_IN_SECOND;                \
+        } else if (data.delta_nanoseconds < -NANOSECONDS_IN_SECOND) {       \
+            data.delta_seconds -=                                           \
+                (-data.delta_nanoseconds) / NANOSECONDS_IN_SECOND;          \
+            data.delta_nanoseconds = -(                                     \
+                (-data.delta_nanoseconds) % NANOSECONDS_IN_SECOND);         \
+        }                                                                   \
+        if (data.delta_seconds > 0 && data.delta_nanoseconds < 0) {         \
+            data.delta_seconds -= 1;                                        \
+            data.delta_nanoseconds += NANOSECONDS_IN_SECOND;                \
+        }                                                                   \
+        if (data.delta_seconds < 0 && data.delta_nanoseconds > 0) {         \
+            data.delta_seconds += 1;                                        \
+            data.delta_nanoseconds -= NANOSECONDS_IN_SECOND;                \
+        }                                                                   \
+        if (data.delta_seconds > 0) assert(data.delta_nanoseconds >= 0);    \
+        if (data.delta_seconds < 0) assert(data.delta_nanoseconds <= 0);    \
+    } while (0)
 
+/** Create a new TimeDelta based on seconds and nanoseconds. */
 struct TimeDelta
-TimeDelta_from_nanoseconds(int_delta nanoseconds) {
-    CONSTRUCTOR_HEAD(TimeDelta);
-
-    struct PresentTimeDeltaData data;
-    data.delta_seconds = 0;
-    data.delta_nanoseconds = nanoseconds;
-    CONSTRUCTOR_RETURN(TimeDelta, data);
-}
-
-struct TimeDelta
-TimeDelta_from_seconds(int_delta seconds) {
+new_time_delta(int_delta seconds, int_delta nanoseconds) {
     CONSTRUCTOR_HEAD(TimeDelta);
 
     struct PresentTimeDeltaData data;
     data.delta_seconds = seconds;
-    data.delta_nanoseconds = 0;
+    data.delta_nanoseconds = nanoseconds;
+    if (nanoseconds) {
+        CHECK_DATA(data);
+    }
     CONSTRUCTOR_RETURN(TimeDelta, data);
+}
+
+struct TimeDelta
+TimeDelta_from_nanoseconds(int_delta nanoseconds) {
+    return new_time_delta(0, nanoseconds);
+}
+
+struct TimeDelta
+TimeDelta_from_microseconds(int_delta microseconds) {
+    return new_time_delta(0, microseconds * NANOSECONDS_IN_MICROSECOND);
+}
+
+struct TimeDelta
+TimeDelta_from_milliseconds(int_delta milliseconds) {
+    return new_time_delta(0, milliseconds * NANOSECONDS_IN_MILLISECOND);
+}
+
+struct TimeDelta
+TimeDelta_from_seconds(int_delta seconds) {
+    return new_time_delta(seconds, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_minutes(int_delta minutes) {
-    CONSTRUCTOR_HEAD(TimeDelta);
-
-    struct PresentTimeDeltaData data;
-    data.delta_seconds = minutes * SECONDS_IN_MINUTE;
-    data.delta_nanoseconds = 0;
-    CONSTRUCTOR_RETURN(TimeDelta, data);
+    return new_time_delta(minutes * SECONDS_IN_MINUTE, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_hours(int_delta hours) {
-    CONSTRUCTOR_HEAD(TimeDelta);
-
-    struct PresentTimeDeltaData data;
-    data.delta_seconds = hours * SECONDS_IN_HOUR;
-    data.delta_nanoseconds = 0;
-    CONSTRUCTOR_RETURN(TimeDelta, data);
+    return new_time_delta(hours * SECONDS_IN_HOUR, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_days(int_delta days) {
-    CONSTRUCTOR_HEAD(TimeDelta);
-
-    struct PresentTimeDeltaData data;
-    data.delta_seconds = days * SECONDS_IN_DAY;
-    data.delta_nanoseconds = 0;
-    CONSTRUCTOR_RETURN(TimeDelta, data);
+    return new_time_delta(days * SECONDS_IN_DAY, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_weeks(int_delta weeks) {
-    CONSTRUCTOR_HEAD(TimeDelta);
-
-    struct PresentTimeDeltaData data;
-    data.delta_seconds = weeks * SECONDS_IN_WEEK;
-    data.delta_nanoseconds = 0;
-    CONSTRUCTOR_RETURN(TimeDelta, data);
+    return new_time_delta(weeks * SECONDS_IN_WEEK, 0);
 }
 
 struct TimeDelta
 TimeDelta_zero() {
-    CONSTRUCTOR_HEAD(TimeDelta);
-
-    struct PresentTimeDeltaData data;
-    data.delta_seconds = 0;
-    data.delta_nanoseconds = 0;
-    CONSTRUCTOR_RETURN(TimeDelta, data);
+    return new_time_delta(0, 0);
 }
 
 int_delta
@@ -127,6 +118,44 @@ TimeDelta_get_nanoseconds(const struct TimeDelta * const self) {
 
     return (self->data_.delta_seconds * NANOSECONDS_IN_SECOND +
             self->data_.delta_nanoseconds);
+}
+
+int_delta
+TimeDelta_get_microseconds(const struct TimeDelta * const self) {
+    assert(self != NULL);
+    assert(self->error == 0);
+
+    return (self->data_.delta_seconds * MICROSECONDS_IN_SECOND +
+            self->data_.delta_nanoseconds / NANOSECONDS_IN_MICROSECOND);
+}
+
+double
+TimeDelta_get_microseconds_decimal(const struct TimeDelta * const self) {
+    assert(self != NULL);
+    assert(self->error == 0);
+
+    return (self->data_.delta_seconds * MICROSECONDS_IN_SECOND +
+            (double)(self->data_.delta_nanoseconds) /
+            (double)NANOSECONDS_IN_MICROSECOND);
+}
+
+int_delta
+TimeDelta_get_milliseconds(const struct TimeDelta * const self) {
+    assert(self != NULL);
+    assert(self->error == 0);
+
+    return (self->data_.delta_seconds * MILLISECONDS_IN_SECOND +
+            self->data_.delta_nanoseconds / NANOSECONDS_IN_MILLISECOND);
+}
+
+double
+TimeDelta_get_milliseconds_decimal(const struct TimeDelta * const self) {
+    assert(self != NULL);
+    assert(self->error == 0);
+
+    return (self->data_.delta_seconds * MILLISECONDS_IN_SECOND +
+            (double)(self->data_.delta_nanoseconds) /
+            (double)NANOSECONDS_IN_MILLISECOND);
 }
 
 int_delta
@@ -259,7 +288,7 @@ TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor) {
     self->data_.delta_seconds *= scaleFactor;
     self->data_.delta_nanoseconds *= scaleFactor;
 
-    CHECK_DATA(self->data_)
+    CHECK_DATA(self->data_);
 }
 
 void
@@ -279,7 +308,7 @@ TimeDelta_multiply_by_decimal(
         (seconds - (double)self->data_.delta_seconds) *
         (double)NANOSECONDS_IN_SECOND;
 
-    CHECK_DATA(self->data_)
+    CHECK_DATA(self->data_);
 }
 
 void
@@ -301,7 +330,7 @@ TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor) {
     /* Now we can scale the nanoseconds */
     self->data_.delta_nanoseconds /= scaleFactor;
 
-    CHECK_DATA(self->data_)
+    CHECK_DATA(self->data_);
 }
 
 void
@@ -328,7 +357,7 @@ TimeDelta_add_time_delta(
     self->data_.delta_seconds += timeDeltaToAdd->data_.delta_seconds;
     self->data_.delta_nanoseconds += timeDeltaToAdd->data_.delta_nanoseconds;
 
-    CHECK_DATA(self->data_)
+    CHECK_DATA(self->data_);
 }
 
 void
@@ -343,7 +372,7 @@ TimeDelta_subtract_time_delta(
     self->data_.delta_seconds -= timeDeltaToSubtract->data_.delta_seconds;
     self->data_.delta_nanoseconds -= timeDeltaToSubtract->data_.delta_nanoseconds;
 
-    CHECK_DATA(self->data_)
+    CHECK_DATA(self->data_);
 }
 
 STRUCT_COMPARISON_OPERATORS(TimeDelta, delta_seconds, delta_nanoseconds)
