@@ -12,27 +12,40 @@ status() {
     echo ""
 }
 
+# Only publish documentation/coverage if it's master (and not a pull request)
+PUBLISH_DOC=
+if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
+    PUBLISH_DOC=yup
+fi
+
+# Make the build directory
 mkdir -v build
 cd build
 
-cmake_args=("-DCMAKE_BUILD_TYPE=Debug" "-DCOMPILE_TESTS=ON")
-if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-    cmake_args=("${cmake_args[@]}" "-DCOMPILE_WITH_COVERAGE=ON")
+# Set up cmake to run tests (with coverage, if necessary)
+CMAKE_ARGS=("-DCMAKE_BUILD_TYPE=Debug" "-DCOMPILE_TESTS=ON")
+if [ "$PUBLISH_DOC" = "yup" ]; then
+    CMAKE_ARGS=("${CMAKE_ARGS[@]}" "-DCOMPILE_WITH_COVERAGE=ON")
 fi
 
-status "Running cmake with args:" "${cmake_args[@]}"
-cmake "${cmake_args[@]}" ..
+# Run cmake
+status "Running cmake with args:" "${CMAKE_ARGS[@]}"
+cmake "${CMAKE_ARGS[@]}" ..
 
+# Compile present
 status "Compiling..."
 make
 
-status "Compiling and running tests..."
+# Compile and run the tests
+status "Running tests..."
 make test
 
-if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+# Update online API documentation and code coverage report, if necessary
+if [ "$PUBLISH_DOC" = "yup" ] &&; then
     status "Updating doc and coverage..."
     if [ -z "$GITHUB_API_KEY" ]; then
         echo "ERROR: Missing GitHub API key"
+        exit 2
     else
         make present_coverage
         make doc
