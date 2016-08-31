@@ -1,0 +1,28 @@
+var date_8h =
+[
+    [ "Date_create", "date_8h.html#a50971f537fbc1beb17b1729e1de0e9b3", null ],
+    [ "PresentDateError", "date_8h.html#a42798e6b91456e88f492437d3e826c0b", null ],
+    [ "Date_add_day_delta", "date_8h.html#a4c6d6ed2a1d7979412a79e84d54aeac4", null ],
+    [ "Date_add_month_delta", "date_8h.html#a57ea0878d7e184ce8caae809f80c4274", null ],
+    [ "Date_create_from_year", "date_8h.html#a43ab3f61f00546461d3f85eb51517a6d", null ],
+    [ "Date_create_from_year_day", "date_8h.html#a31812f70db4d0656099c7aae0d3305ef", null ],
+    [ "Date_create_from_year_month", "date_8h.html#a7d059ef251f488538ccbc22ead794db6", null ],
+    [ "Date_create_from_year_month_day", "date_8h.html#a42ad855ee9519639db894432f44d97e9", null ],
+    [ "Date_create_from_year_week", "date_8h.html#afb76dd22f944f4b2c032fee614135467", null ],
+    [ "Date_create_from_year_week_day", "date_8h.html#a8e4d7a96e87a9405605c0adc8362d234", null ],
+    [ "Date_equal", "date_8h.html#a77eadd9d79f983618b888d9810c506d0", null ],
+    [ "Date_get_absolute_difference", "date_8h.html#a8639bedc8fc415809cbad76b72fb388b", null ],
+    [ "Date_get_day", "date_8h.html#a9a89250ddc944586f86223ea8727a328", null ],
+    [ "Date_get_day_of_week", "date_8h.html#a99bd609ba0bacc5d415693f90a7113af", null ],
+    [ "Date_get_day_of_year", "date_8h.html#a4f71610e1041fbb7e3b530d118d65151", null ],
+    [ "Date_get_difference", "date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03", null ],
+    [ "Date_get_month", "date_8h.html#a4159afd50df428b740f4485925e7c5b6", null ],
+    [ "Date_get_week_of_year", "date_8h.html#a8420160a915ad3804b93a5a0f9ccb227", null ],
+    [ "Date_get_year", "date_8h.html#ad26cbac6bc416b358941b580dba7fe3c", null ],
+    [ "Date_greater_than", "date_8h.html#ae4b19bd7c984619f04644bca7fa43f83", null ],
+    [ "Date_greater_than_or_equal", "date_8h.html#acacc333b8cccf95f14d8040b811455c9", null ],
+    [ "Date_less_than", "date_8h.html#ad59fd8e95642ece085fe87745e8d1942", null ],
+    [ "Date_less_than_or_equal", "date_8h.html#a353c04aca98ffc7f5661f4488dd7bdb9", null ],
+    [ "Date_subtract_day_delta", "date_8h.html#aff3dde3e7758ebafc0a04c16ab8099b7", null ],
+    [ "Date_subtract_month_delta", "date_8h.html#a1df0a3764eef73161f411d0f67e52014", null ]
+];

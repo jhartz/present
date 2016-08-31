@@ -1,0 +1,25 @@
+var clock-time_8h =
+[
+    [ "ClockTime_create", "clock-time_8h.html#a58ff623c2c94ef13508ea9d85cbdfad7", null ],
+    [ "PresentClockTimeError", "clock-time_8h.html#a40f97cceae12156ea6da9bd1c170d455", null ],
+    [ "ClockTime_add_time_delta", "clock-time_8h.html#adc2c863dfec0b56604b3153b226139fb", null ],
+    [ "ClockTime_create_from_hour", "clock-time_8h.html#a172dd5f4ae9a67a7d0efe2b7c3e1a7b9", null ],
+    [ "ClockTime_create_from_hour_minute", "clock-time_8h.html#ab1d019479c07792ba3789d4611bf47bd", null ],
+    [ "ClockTime_create_from_hour_minute_second", "clock-time_8h.html#a1015eecfae508e22c54a4f1b52634fbf", null ],
+    [ "ClockTime_create_from_hour_minute_second_nanosecond", "clock-time_8h.html#acc3b0e5400f78e25499a815f4068739e", null ],
+    [ "ClockTime_create_with_decimal_seconds", "clock-time_8h.html#a519b7c6074cf1addc815f7495048c30b", null ],
+    [ "ClockTime_equal", "clock-time_8h.html#a33f1b59fd2b998d61ea80c908aeb274c", null ],
+    [ "ClockTime_get_hour", "clock-time_8h.html#a1688a98fb161dc7a743085b09cb3c1de", null ],
+    [ "ClockTime_get_minute", "clock-time_8h.html#a3ea78f71041658c2f9530c3603b7b9ec", null ],
+    [ "ClockTime_get_nanosecond", "clock-time_8h.html#ad74a9b1b36f0fd4b4a739b69fb65869e", null ],
+    [ "ClockTime_get_second", "clock-time_8h.html#a77c448c2991009dbcb662696a7ceedca", null ],
+    [ "ClockTime_get_second_decimal", "clock-time_8h.html#a7cf42452da58eb906b00e92fe3efb159", null ],
+    [ "ClockTime_greater_than", "clock-time_8h.html#a9e2265b76612f6f7618ede2d78f10083", null ],
+    [ "ClockTime_greater_than_or_equal", "clock-time_8h.html#ace253f56caf8df157d630aa590b658cc", null ],
+    [ "ClockTime_less_than", "clock-time_8h.html#a3e68308f034226dd04f361fb173ea6ac", null ],
+    [ "ClockTime_less_than_or_equal", "clock-time_8h.html#a79d34170a100cdf5654080e9e1c1d7a9", null ],
+    [ "ClockTime_midnight", "clock-time_8h.html#ae320c2e30dedf0b33d5306b9e8841261", null ],
+    [ "ClockTime_noon", "clock-time_8h.html#a183049a7386a7b7377ba3059d15485c4", null ],
+    [ "ClockTime_subtract_time_delta", "clock-time_8h.html#a5305df919aa0992ba4703f9b9f292a67", null ],
+    [ "ClockTime_time_since_midnight", "clock-time_8h.html#ace4db26641fe01b2edd311b09589ebbb", null ]
+];
