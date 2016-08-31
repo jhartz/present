@@ -14,15 +14,23 @@
 #include "present/clock-time.h"
 
 /**
- * Shortcut macro to compare hour/minute/second/nanosecond all in one.
+ * Shortcut macro to compare seconds and nanoseconds all in one.
  * Expects that the ClockTime is "c".
  */
-#define IS(test_hour, test_minute, test_second, test_nanosecond)    \
-    REQUIRE(c.error == ClockTime_ERROR_NONE);                       \
-    CHECK(c.data_.hour == test_hour);                             \
-    CHECK(c.data_.minute == test_minute);                         \
-    CHECK(c.data_.second == test_second);                         \
-    CHECK(c.data_.nanosecond == test_nanosecond);
+#define IS(test_seconds, test_nanoseconds)          \
+    REQUIRE(c.error == ClockTime_ERROR_NONE);       \
+    CHECK(c.data_.seconds == test_seconds);         \
+    CHECK(c.data_.nanoseconds == test_nanoseconds);
+
+/**
+ * Shortcut macro to compare hour/minute/second/nanosecond.
+ * Expects that the ClockTime is "c".
+ */
+#define IS_HMS(test_hour, test_minute, test_second, test_nanosecond)    \
+    REQUIRE(c.error == ClockTime_ERROR_NONE);                           \
+    CHECK(c.data_.seconds == test_hour*3600 +                           \
+            test_minute*60 + test_second);                              \
+    CHECK(c.data_.nanoseconds == test_nanosecond);
 
 
 /**
@@ -33,13 +41,13 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     // create_from_hour
 
     ClockTime c = ClockTime::create(0);
-    IS(0, 0, 0, 0);
+    IS_HMS(0, 0, 0, 0);
     c = ClockTime::create(1);
-    IS(1, 0, 0, 0);
+    IS_HMS(1, 0, 0, 0);
     c = ClockTime::create(23);
-    IS(23, 0, 0, 0);
+    IS_HMS(23, 0, 0, 0);
     c = ClockTime::create(24);  // 24:00 should go to 00:00
-    IS(0, 0, 0, 0);
+    IS_HMS(0, 0, 0, 0);
     c = ClockTime::create(25);
     REQUIRE(c.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
     c = ClockTime::create(-1);
@@ -48,11 +56,11 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     // create_from_hour_minute
 
     c = ClockTime::create(0, 0);
-    IS(0, 0, 0, 0);
+    IS_HMS(0, 0, 0, 0);
     c = ClockTime::create(0, 1);
-    IS(0, 1, 0, 0);
+    IS_HMS(0, 1, 0, 0);
     c = ClockTime::create(0, 59);
-    IS(0, 59, 0, 0);
+    IS_HMS(0, 59, 0, 0);
     c = ClockTime::create(0, 60);
     REQUIRE(c.error == ClockTime_ERROR_MINUTE_OUT_OF_RANGE);
     c = ClockTime::create(0, -1);
@@ -61,13 +69,13 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     // create_from_hour_minute_second
 
     c = ClockTime::create(0, 0, 0);
-    IS(0, 0, 0, 0);
+    IS_HMS(0, 0, 0, 0);
     c = ClockTime::create(0, 0, 1);
-    IS(0, 0, 1, 0);
+    IS_HMS(0, 0, 1, 0);
     c = ClockTime::create(0, 0, 59);
-    IS(0, 0, 59, 0);
+    IS_HMS(0, 0, 59, 0);
     c = ClockTime::create(0, 0, 60);    // leap second
-    IS(0, 0, 60, 0);
+    IS_HMS(0, 0, 60, 0);
     c = ClockTime::create(0, 0, 61);
     REQUIRE(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
     c = ClockTime::create(0, 0, -1);
@@ -76,11 +84,11 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     // create_from_hour_minute_second_nanosecond
 
     c = ClockTime::create(0, 0, 0, 0);
-    IS(0, 0, 0, 0);
+    IS_HMS(0, 0, 0, 0);
     c = ClockTime::create(0, 0, 0, 1);
-    IS(0, 0, 0, 1);
+    IS_HMS(0, 0, 0, 1);
     c = ClockTime::create(0, 0, 0, 999999999);
-    IS(0, 0, 0, 999999999);
+    IS_HMS(0, 0, 0, 999999999);
     c = ClockTime::create(0, 0, 0, 1000000000);
     REQUIRE(c.error == ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE);
     c = ClockTime::create(0, 0, 0, -1);
@@ -89,24 +97,24 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     // ClockTime_create (macro - shortcut for C methods)
 
     c = ClockTime_create(5);
-    IS(5, 0, 0, 0);
+    IS_HMS(5, 0, 0, 0);
     c = ClockTime_create(5, 6);
-    IS(5, 6, 0, 0);
+    IS_HMS(5, 6, 0, 0);
     c = ClockTime_create(5, 6, 7);
-    IS(5, 6, 7, 0);
+    IS_HMS(5, 6, 7, 0);
     c = ClockTime_create(5, 6, 7, 8);
-    IS(5, 6, 7, 8);
+    IS_HMS(5, 6, 7, 8);
 
     // create_with_decimal_seconds
 
     c = ClockTime::create_with_decimal_seconds(1, 2, 3.0);
-    IS(1, 2, 3, 0);
+    IS_HMS(1, 2, 3, 0);
     c = ClockTime::create_with_decimal_seconds(1, 2, 3.5);
-    IS(1, 2, 3, 500000000.0);
+    IS_HMS(1, 2, 3, 500000000.0);
     c = ClockTime::create_with_decimal_seconds(1, 2, 59.9);
-    IS(1, 2, 59, 900000000.0);
+    IS_HMS(1, 2, 59, 900000000.0);
     c = ClockTime::create_with_decimal_seconds(1, 2, 60);   // leap second
-    IS(1, 2, 60, 0);
+    IS_HMS(1, 2, 60, 0);
     c = ClockTime::create_with_decimal_seconds(1, 2, 61);
     REQUIRE(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
     c = ClockTime::create_with_decimal_seconds(1, 2, -1);
@@ -115,9 +123,9 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     // midnight, noon
 
     c = ClockTime::midnight();
-    IS(0, 0, 0, 0);
+    IS_HMS(0, 0, 0, 0);
     c = ClockTime::noon();
-    IS(12, 0, 0, 0);
+    IS_HMS(12, 0, 0, 0);
 }
 
 TEST_CASE("ClockTime::get... functions", "[clock-time]") {
@@ -151,5 +159,101 @@ TEST_CASE("ClockTime::time_since_midnight function", "[clock-time]") {
     CHECK(c.time_since_midnight() == TimeDelta::from_nanoseconds(45000007000));
 }
 
-// Tests for items in the C++ class but not in the C-compatible methods
-// (operator overloading)
+TEST_CASE("ClockTime arithmetic operators", "[clock-time]") {
+    TimeDelta d = TimeDelta::from_hours(2) + TimeDelta::from_minutes(4) +
+        TimeDelta::from_seconds(6);
+
+    ClockTime c = ClockTime::create(1, 3, 5, 0);
+    c += d;
+    IS_HMS(3, 7, 11, 0);
+
+    c = ClockTime::create(10, 10, 10, 0);
+    c -= d;
+    IS_HMS(8, 6, 4, 0);
+
+    c = ClockTime::create(10, 10, 10, 0);
+    ClockTime c1 = c + d;
+    ClockTime c2 = c - d;
+    IS_HMS(10, 10, 10, 0);
+    c = c1;
+    IS_HMS(12, 14, 16, 0);
+    c = c2;
+    IS_HMS(8, 6, 4, 0);
+
+    // Testing nanoseconds spilling into seconds
+    c = ClockTime::create(0, 0, 0, 999999998);
+    TimeDelta d2 = TimeDelta::from_nanoseconds(5);
+    c += d2;
+    IS_HMS(0, 0, 1, 3);
+
+    c = ClockTime::create(0, 0, 1, 2);
+    c -= d2;
+    IS_HMS(0, 0, 0, 999999997);
+
+    // Testing wrap-around
+    c = ClockTime::create(23, 0, 0, 0);
+    d = TimeDelta::from_hours(1);
+    c += d;
+    IS_HMS(0, 0, 0, 0);
+
+    c = ClockTime::create(1, 0, 0, 0);
+    d = TimeDelta::from_hours(2);
+    c -= d;
+    IS_HMS(23, 0, 0, 0);
+}
+
+TEST_CASE("ClockTime comparison operators", "[clock-time]") {
+    ClockTime c1 = ClockTime::create(0, 0, 0, 0),
+              c2 = ClockTime::create(0, 0, 0, 1),
+              c3 = ClockTime::create(12, 13, 14, 15),
+              c4 = ClockTime::create(12, 13, 14, 15);
+
+    CHECK(c3 == c4);
+    CHECK(!(c1 == c3));
+    CHECK(c1 != c3);
+    CHECK(c1 != c2);
+
+    CHECK(c1 < c2);
+    CHECK(c1 < c3);
+    CHECK(c2 < c3);
+
+    CHECK(c1 <= c2);
+    CHECK(c1 <= c3);
+    CHECK(c2 <= c3);
+    CHECK(c3 <= c4);
+    CHECK(c4 <= c3);
+
+    CHECK(c2 > c1);
+    CHECK(c3 > c1);
+    CHECK(c3 > c2);
+
+    CHECK(c2 >= c1);
+    CHECK(c3 >= c1);
+    CHECK(c3 >= c2);
+    CHECK(c4 >= c3);
+    CHECK(c3 >= c4);
+}
+
+TEST_CASE("ClockTime boilerplate constructors", "[clock-time]") {
+    // data_ constructor
+    struct PresentClockTimeData d = {3, 4};
+    ClockTime c(d);
+    IS_HMS(0, 0, 3, 4);
+
+    // assignment operator
+    struct PresentClockTimeData d2 = {7, 8};
+    ClockTime c2(d2);
+    c = c2;
+    IS_HMS(0, 0, 7, 8);
+
+    // copy constructor
+    {
+        ClockTime c(c2);
+        IS_HMS(0, 0, 7, 8);
+    }
+
+    // error constructor
+    ClockTime c3(ClockTime_ERROR_HOUR_OUT_OF_RANGE);
+    CHECK(c3.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
+}
+

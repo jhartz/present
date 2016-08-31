@@ -35,9 +35,9 @@ typedef uint_fast64_t   int_nanosecond;
 
 typedef int_fast32_t    int_year;
 typedef uint_fast8_t    int_month;
-/* The day is at least 16-bit to make calculations (when adding/subtracting
-   deltas) easier */
-typedef uint_fast16_t   int_day;
+/* The day is at least 16-bit, and signed, to make calculations
+   (when adding/subtracting deltas) easier */
+typedef int_fast16_t    int_day;
 
 typedef uint_fast16_t   int_day_of_year;
 typedef uint_fast8_t    int_week_of_year;
