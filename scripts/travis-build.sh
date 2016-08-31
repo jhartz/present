@@ -61,7 +61,7 @@ if [ "$PUBLISH_DOC" = "yup" ]; then
         status "Sending to gh-pages branch..."
         # Make sure to make the output quiet, or else the API token will leak!
         #git push -q https://jhartz:$GITHUB_API_KEY@github.com/jhartz/present gh-pages &2>/dev/null
-        git push https://jhartz:test123@github.com/jhartz/present gh-pages
+        git push https://jhartz:$GITHUB_API_KEY@github.com/jhartz/present gh-pages 2>&1 | sed s/$GITHUB_API_KEY/[censored]/g
         cd ..
     fi
 fi
