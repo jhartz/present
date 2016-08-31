@@ -3,4 +3,4 @@ layout: present
 ---
 # Present
 
-https://github.com/jhartz/present
+[See Present on GitHub](https://github.com/jhartz/present)
