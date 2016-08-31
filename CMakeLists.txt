@@ -1,4 +1,5 @@
 cmake_minimum_required (VERSION 2.6)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/bilke-cmake-modules")
 project (Present)
 
 set (Present_VERSION_MAJOR 0)
@@ -19,6 +20,11 @@ option (COMPILE_TESTS
     ON
 )
 
+option (COMPILE_WITH_COVERAGE
+    "Compile with support for code coverage tools"
+    ON
+)
+
 option (USE_CXX_AS_CC
     "Use the C++ compiler to compile C files"
     OFF
@@ -28,19 +34,17 @@ set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 
-# Set compiler warnings
-if (MSVC)
-    # If a warning level is already set, don't change it
-    if(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
-        #string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-    else()
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
-    endif()
-elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-    # Update if necessary (to disable annoying warnings)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Wno-type-limits")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -Wno-type-limits")
-endif()
+# Set up compiler warnings
+include(EnableExtraCompilerWarnings)
+globally_enable_extra_compiler_warnings()
+
+# Set up coverage if necessary
+if (COMPILE_WITH_COVERAGE)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+    include(CodeCoverage)
+    setup_target_for_coverage(present_coverage present-test coverage)
+endif (COMPILE_WITH_COVERAGE)
 
 # Configure a header file to pass some of the CMake settings to the source code
 configure_file (
@@ -98,6 +102,7 @@ install (
     DESTINATION include
 )
 
+# Alrighty, let's get compiling!
 if (COMPILE_PRESENTCPP)
     # Compile the C++ library
     add_library (present SHARED
@@ -149,6 +154,9 @@ if (COMPILE_PRESENTCPP)
         target_link_libraries (present-test
             present
         )
+
+        enable_testing()
+        add_test(NAME present-test COMMAND present-test)
     endif (COMPILE_TESTS)
 endif (COMPILE_PRESENTCPP)
 

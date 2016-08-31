@@ -1,0 +1,3 @@
+[submodule "external/bilke-cmake-modules"]
+	path = external/bilke-cmake-modules
+	url = https://github.com/bilke/cmake-modules.git
