@@ -55,7 +55,7 @@ if [ "$PUBLISH_DOC" = "yup" ]; then
         cd present
         rm -rf coverage doc
         cp -R ../../coverage ../../doc .
-        cp doc-index.html doc/
+        cp doc-index.html doc/index.html
         git add coverage doc
         git -c user.name=travis -c user.email=travis commit -m "Travis doc commit"
 
