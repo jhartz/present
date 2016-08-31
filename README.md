@@ -146,7 +146,12 @@ not needed. It can be compiled by either a C or a C++ compiler.
 
 Present comes with both a traditional `Makefile` and a `CMakeLists.txt` file
 that can be used for compilation. However, using CMake is recommended as it
-exposes more options and features.
+exposes more options and features. Basic CMake usage on UNIX-like systems:
+
+    mkdir build-cmake
+    cd build-cmake
+    cmake ..
+    make
 
 ## C++ Examples
 
