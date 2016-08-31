@@ -41,7 +41,7 @@ status "Running tests..."
 make test
 
 # Update online API documentation and code coverage report, if necessary
-if [ "$PUBLISH_DOC" = "yup" ] &&; then
+if [ "$PUBLISH_DOC" = "yup" ]; then
     status "Updating doc and coverage..."
     if [ -z "$GITHUB_API_KEY" ]; then
         echo "ERROR: Missing GitHub API key"
