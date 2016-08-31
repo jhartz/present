@@ -105,6 +105,304 @@ bool \hyperlink{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\-Timestamp\-\_\
 
 
 \subsection{\-Function \-Documentation}
+\hypertarget{timestamp_8h_a7d372547899db25e3dcf0d24a881978c}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t@{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t}}
+\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t@{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t} (
+\begin{DoxyParamCaption}
+\item[{const time\-\_\-t}]{timestamp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a7d372547899db25e3dcf0d24a881978c}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from \-C's time library). 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em timestamp} & \-The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
+\hline
+\end{DoxyParams}
+\hypertarget{timestamp_8h_a5436dfa8208ef35db6c8590582424367}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm}}
+\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm} (
+\begin{DoxyParamCaption}
+\item[{const struct tm}]{tm, }
+\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a5436dfa8208ef35db6c8590582424367}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from \-C's time library) in a certain time zone. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em tm} & \-The \char`\"{}struct tm\char`\"{} value representing the date and time. \\
+\hline
+{\em time\-Zone\-Offset} & \-The time zone offset (from \-U\-T\-C) used to interpret {\ttfamily tm}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{timestamp_8h_a81e8c556023803d2c5f21d86006316ad}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc}}
+\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc} (
+\begin{DoxyParamCaption}
+\item[{const struct tm}]{tm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a81e8c556023803d2c5f21d86006316ad}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from \-C's time library) in \-Coordinated \-Universal \-Time. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em tm} & \-The \char`\"{}struct tm\char`\"{} value representing the date and time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{timestamp_8h_a8e6f70545ff39b11c9fb088582946ab4}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local}}
+\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local} (
+\begin{DoxyParamCaption}
+\item[{const struct tm}]{tm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a8e6f70545ff39b11c9fb088582946ab4}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from \-C's time library) in the system's current local time zone. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em tm} & \-The \char`\"{}struct tm\char`\"{} value representing the date and time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{timestamp_8h_a0978d294580f3099fca19c64da9649e6}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create@{\-Timestamp\-\_\-create}}
+\index{\-Timestamp\-\_\-create@{\-Timestamp\-\_\-create}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Date} $\ast$const}]{date, }
+\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{clock\-Time, }
+\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a0978d294580f3099fca19c64da9649e6}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in a certain time zone. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
+\hline
+{\em clock\-Time} & \-The \hyperlink{structClockTime}{\-Clock\-Time} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
+\hline
+{\em time\-Zone\-Offset} & \-The time zone offset (from \-U\-T\-C) used to interpret {\ttfamily date} and {\ttfamily clock\-Time}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{timestamp_8h_a755ee07524c14032598d0e1f3d5ad4ac}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-utc}}
+\index{\-Timestamp\-\_\-create\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-utc}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-create\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-utc} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Date} $\ast$const}]{date, }
+\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{clock\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a755ee07524c14032598d0e1f3d5ad4ac}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in \-Coordinated \-Universal \-Time. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
+\hline
+{\em clock\-Time} & \-The \hyperlink{structClockTime}{\-Clock\-Time} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{timestamp_8h_a0c2c7797eae227342d18e6c7d3488114}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-local@{\-Timestamp\-\_\-create\-\_\-local}}
+\index{\-Timestamp\-\_\-create\-\_\-local@{\-Timestamp\-\_\-create\-\_\-local}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-create\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-local} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Date} $\ast$const}]{date, }
+\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{clock\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a0c2c7797eae227342d18e6c7d3488114}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in the system's current local time zone. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
+\hline
+{\em clock\-Time} & \-The \hyperlink{structClockTime}{\-Clock\-Time} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{timestamp_8h_ae3155f9c8fed278bfbef2254ab7bf71a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-now@{\-Timestamp\-\_\-now}}
+\index{\-Timestamp\-\_\-now@{\-Timestamp\-\_\-now}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-now}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-now} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_ae3155f9c8fed278bfbef2254ab7bf71a}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} representing the exact time right now. 
+
+\hypertarget{timestamp_8h_a810edf0892d3ff0eb177a47edbb35f39}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-epoch@{\-Timestamp\-\_\-epoch}}
+\index{\-Timestamp\-\_\-epoch@{\-Timestamp\-\_\-epoch}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-epoch}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-epoch} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a810edf0892d3ff0eb177a47edbb35f39}
+
+
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} representing the \-U\-N\-I\-X epoch (\-Jan. 
+
+1, 1970 00\-:00\-:00 \-U\-T\-C). \hypertarget{timestamp_8h_aec236bdb1608452e3f668c3378376db5}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-time\-\_\-t@{\-Timestamp\-\_\-get\-\_\-time\-\_\-t}}
+\index{\-Timestamp\-\_\-get\-\_\-time\-\_\-t@{\-Timestamp\-\_\-get\-\_\-time\-\_\-t}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}time\-\_\-t {\bf \-Timestamp\-\_\-get\-\_\-time\-\_\-t} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{timestamp_8h_aec236bdb1608452e3f668c3378376db5}
+
+
+\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}time\-\_\-t\char`\"{} (from \-C's time library). 
+
+\hypertarget{timestamp_8h_adccc0d3c9c451b75efd6685de7f58885}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm}}
+\index{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm}]{\setlength{\rightskip}{0pt plus 5cm}struct tm {\bf \-Timestamp\-\_\-get\-\_\-struct\-\_\-tm} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
+\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_adccc0d3c9c451b75efd6685de7f58885}
+
+
+\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}struct tm\char`\"{} (from \-C's time library) in a certain time zone (represented by an offset from \-U\-T\-C). 
+
+\hypertarget{timestamp_8h_aab6022022f369033d16a3284c2053a1a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc}}
+\index{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct tm {\bf \-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_aab6022022f369033d16a3284c2053a1a}
+
+
+\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}struct tm\char`\"{} (from \-C's time library) in \-Coordinated \-Universal \-Time. 
+
+\hypertarget{timestamp_8h_a29f6692cb1298ff18f527ad9f4c4a73b}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local}}
+\index{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct tm {\bf \-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a29f6692cb1298ff18f527ad9f4c4a73b}
+
+
+\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}struct tm\char`\"{} (from \-C's time library) in the system's current local time zone. 
+
+\hypertarget{timestamp_8h_a365b582da44dea6b5350feb2d069bc73}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date@{\-Timestamp\-\_\-get\-\_\-date}}
+\index{\-Timestamp\-\_\-get\-\_\-date@{\-Timestamp\-\_\-get\-\_\-date}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
+\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a365b582da44dea6b5350feb2d069bc73}
+
+
+\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
+
+\hypertarget{timestamp_8h_addc273dcb8e7f91aeb2139b43815763f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}}
+\index{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date\-\_\-utc} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_addc273dcb8e7f91aeb2139b43815763f}
+
+
+\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
+
+\hypertarget{timestamp_8h_ad10794935d04f9bb8cc143daa9d5aa3f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-local@{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}}
+\index{\-Timestamp\-\_\-get\-\_\-date\-\_\-local@{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date\-\_\-local} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_ad10794935d04f9bb8cc143daa9d5aa3f}
+
+
+\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
+
+\hypertarget{timestamp_8h_a18be2e5546df7e884fc8a318383f550a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}}
+\index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
+\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a18be2e5546df7e884fc8a318383f550a}
+
+
+\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
+
+\hypertarget{timestamp_8h_aa684345ce22c80cb130af19188ca5afe}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}}
+\index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_aa684345ce22c80cb130af19188ca5afe}
+
+
+\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
+
+\hypertarget{timestamp_8h_a361bdde37e188e9501ecaea7db86ee34}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}}
+\index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a361bdde37e188e9501ecaea7db86ee34}
+
+
+\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
+
+\hypertarget{timestamp_8h_ac84dca2c53b78a0dab7d265f51c33f69}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-difference}}
+\index{\-Timestamp\-\_\-get\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-difference}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-get\-\_\-difference} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_ac84dca2c53b78a0dab7d265f51c33f69}
+
+
+\-Get the difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
+
+\hypertarget{timestamp_8h_a7cfa689d47dec9a256c7cb6901fe07e9}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}}
+\index{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a7cfa689d47dec9a256c7cb6901fe07e9}
+
+
+\-Get the absolute difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
+
+\hypertarget{timestamp_8h_acdba02838b0ba9ecefffe7c23a629c3e}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-add\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta}}
+\index{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timestamp\-\_\-add\-\_\-time\-\_\-delta} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Timestamp} $\ast$const}]{self, }
+\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{delta}
+\end{DoxyParamCaption}
+)}}\label{timestamp_8h_acdba02838b0ba9ecefffe7c23a629c3e}
+
+
+\-Add a \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structTimestamp}{\-Timestamp}. 
+
 \hypertarget{timestamp_8h_a9650714b7c9f08f361d770092889f2c1}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-add\-\_\-day\-\_\-delta@{\-Timestamp\-\_\-add\-\_\-day\-\_\-delta}}
 \index{\-Timestamp\-\_\-add\-\_\-day\-\_\-delta@{\-Timestamp\-\_\-add\-\_\-day\-\_\-delta}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-add\-\_\-day\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timestamp\-\_\-add\-\_\-day\-\_\-delta} (
@@ -129,363 +427,17 @@ bool \hyperlink{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\-Timestamp\-\_\
 
 \-Add a \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structTimestamp}{\-Timestamp}. 
 
-\hypertarget{timestamp_8h_acdba02838b0ba9ecefffe7c23a629c3e}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-add\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta}}
-\index{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timestamp\-\_\-add\-\_\-time\-\_\-delta} (
+\hypertarget{timestamp_8h_afa28c1d4e2aa355e4b7eb1ead44cd039}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta}}
+\index{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta} (
 \begin{DoxyParamCaption}
 \item[{struct {\bf \-Timestamp} $\ast$const}]{self, }
 \item[{const struct {\bf \-Time\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_acdba02838b0ba9ecefffe7c23a629c3e}
+)}}\label{timestamp_8h_afa28c1d4e2aa355e4b7eb1ead44cd039}
 
 
-\-Add a \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structTimestamp}{\-Timestamp}. 
-
-\hypertarget{timestamp_8h_a0978d294580f3099fca19c64da9649e6}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create@{\-Timestamp\-\_\-create}}
-\index{\-Timestamp\-\_\-create@{\-Timestamp\-\_\-create}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{date, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{clock\-Time, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a0978d294580f3099fca19c64da9649e6}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in a certain time zone. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
-\hline
-{\em clock\-Time} & \-The \hyperlink{structClockTime}{\-Clock\-Time} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
-\hline
-{\em time\-Zone\-Offset} & \-The time zone offset (from \-U\-T\-C) used to interpret {\ttfamily date} and {\ttfamily clock\-Time}. \\
-\hline
-\end{DoxyParams}
-\hypertarget{timestamp_8h_a5436dfa8208ef35db6c8590582424367}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm}}
-\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm} (
-\begin{DoxyParamCaption}
-\item[{const struct tm}]{tm, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a5436dfa8208ef35db6c8590582424367}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from \-C's time library) in a certain time zone. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em tm} & \-The \char`\"{}struct tm\char`\"{} value representing the date and time. \\
-\hline
-{\em time\-Zone\-Offset} & \-The time zone offset (from \-U\-T\-C) used to interpret {\ttfamily tm}. \\
-\hline
-\end{DoxyParams}
-\hypertarget{timestamp_8h_a8e6f70545ff39b11c9fb088582946ab4}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local}}
-\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-local} (
-\begin{DoxyParamCaption}
-\item[{const struct tm}]{tm}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a8e6f70545ff39b11c9fb088582946ab4}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from \-C's time library) in the system's current local time zone. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em tm} & \-The \char`\"{}struct tm\char`\"{} value representing the date and time. \\
-\hline
-\end{DoxyParams}
-\hypertarget{timestamp_8h_a81e8c556023803d2c5f21d86006316ad}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc}}
-\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-struct\-\_\-tm\-\_\-utc} (
-\begin{DoxyParamCaption}
-\item[{const struct tm}]{tm}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a81e8c556023803d2c5f21d86006316ad}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from \-C's time library) in \-Coordinated \-Universal \-Time. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em tm} & \-The \char`\"{}struct tm\char`\"{} value representing the date and time. \\
-\hline
-\end{DoxyParams}
-\hypertarget{timestamp_8h_a7d372547899db25e3dcf0d24a881978c}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t@{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t}}
-\index{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t@{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-from\-\_\-time\-\_\-t} (
-\begin{DoxyParamCaption}
-\item[{const time\-\_\-t}]{timestamp}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a7d372547899db25e3dcf0d24a881978c}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from \-C's time library). 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em timestamp} & \-The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
-\hline
-\end{DoxyParams}
-\hypertarget{timestamp_8h_a0c2c7797eae227342d18e6c7d3488114}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-local@{\-Timestamp\-\_\-create\-\_\-local}}
-\index{\-Timestamp\-\_\-create\-\_\-local@{\-Timestamp\-\_\-create\-\_\-local}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-create\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-local} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{date, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{clock\-Time}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a0c2c7797eae227342d18e6c7d3488114}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in the system's current local time zone. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
-\hline
-{\em clock\-Time} & \-The \hyperlink{structClockTime}{\-Clock\-Time} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
-\hline
-\end{DoxyParams}
-\hypertarget{timestamp_8h_a755ee07524c14032598d0e1f3d5ad4ac}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-create\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-utc}}
-\index{\-Timestamp\-\_\-create\-\_\-utc@{\-Timestamp\-\_\-create\-\_\-utc}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-create\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-create\-\_\-utc} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{date, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{clock\-Time}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a755ee07524c14032598d0e1f3d5ad4ac}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in \-Coordinated \-Universal \-Time. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
-\hline
-{\em clock\-Time} & \-The \hyperlink{structClockTime}{\-Clock\-Time} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
-\hline
-\end{DoxyParams}
-\hypertarget{timestamp_8h_a810edf0892d3ff0eb177a47edbb35f39}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-epoch@{\-Timestamp\-\_\-epoch}}
-\index{\-Timestamp\-\_\-epoch@{\-Timestamp\-\_\-epoch}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-epoch}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-epoch} (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a810edf0892d3ff0eb177a47edbb35f39}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} representing the \-U\-N\-I\-X epoch (\-Jan. 
-
-1, 1970 00\-:00\-:00 \-U\-T\-C). \hypertarget{timestamp_8h_a01ec54f54ff983ec29dd84ded9239694}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-equal@{\-Timestamp\-\_\-equal}}
-\index{\-Timestamp\-\_\-equal@{\-Timestamp\-\_\-equal}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-equal} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
-\end{DoxyParamCaption}
-)}}\label{timestamp_8h_a01ec54f54ff983ec29dd84ded9239694}
-
-
-\-Determine whether two \hyperlink{structTimestamp}{\-Timestamp} instances represent the exact same point in time. 
-
-\hypertarget{timestamp_8h_a7cfa689d47dec9a256c7cb6901fe07e9}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}}
-\index{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{other}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a7cfa689d47dec9a256c7cb6901fe07e9}
-
-
-\-Get the absolute difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
-
-\hypertarget{timestamp_8h_a18be2e5546df7e884fc8a318383f550a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}}
-\index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a18be2e5546df7e884fc8a318383f550a}
-
-
-\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
-
-\hypertarget{timestamp_8h_a361bdde37e188e9501ecaea7db86ee34}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}}
-\index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a361bdde37e188e9501ecaea7db86ee34}
-
-
-\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
-
-\hypertarget{timestamp_8h_aa684345ce22c80cb130af19188ca5afe}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}}
-\index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_aa684345ce22c80cb130af19188ca5afe}
-
-
-\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
-
-\hypertarget{timestamp_8h_a365b582da44dea6b5350feb2d069bc73}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date@{\-Timestamp\-\_\-get\-\_\-date}}
-\index{\-Timestamp\-\_\-get\-\_\-date@{\-Timestamp\-\_\-get\-\_\-date}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a365b582da44dea6b5350feb2d069bc73}
-
-
-\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
-
-\hypertarget{timestamp_8h_ad10794935d04f9bb8cc143daa9d5aa3f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-local@{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}}
-\index{\-Timestamp\-\_\-get\-\_\-date\-\_\-local@{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date\-\_\-local} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_ad10794935d04f9bb8cc143daa9d5aa3f}
-
-
-\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
-
-\hypertarget{timestamp_8h_addc273dcb8e7f91aeb2139b43815763f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}}
-\index{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date\-\_\-utc} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_addc273dcb8e7f91aeb2139b43815763f}
-
-
-\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
-
-\hypertarget{timestamp_8h_ac84dca2c53b78a0dab7d265f51c33f69}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-difference}}
-\index{\-Timestamp\-\_\-get\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-difference}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-get\-\_\-difference} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{other}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_ac84dca2c53b78a0dab7d265f51c33f69}
-
-
-\-Get the difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
-
-\hypertarget{timestamp_8h_adccc0d3c9c451b75efd6685de7f58885}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm}}
-\index{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm}]{\setlength{\rightskip}{0pt plus 5cm}struct tm {\bf \-Timestamp\-\_\-get\-\_\-struct\-\_\-tm} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{time\-Zone\-Offset}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_adccc0d3c9c451b75efd6685de7f58885}
-
-
-\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}struct tm\char`\"{} (from \-C's time library) in a certain time zone (represented by an offset from \-U\-T\-C). 
-
-\hypertarget{timestamp_8h_a29f6692cb1298ff18f527ad9f4c4a73b}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local}}
-\index{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct tm {\bf \-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-local} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a29f6692cb1298ff18f527ad9f4c4a73b}
-
-
-\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}struct tm\char`\"{} (from \-C's time library) in the system's current local time zone. 
-
-\hypertarget{timestamp_8h_aab6022022f369033d16a3284c2053a1a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc}}
-\index{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct tm {\bf \-Timestamp\-\_\-get\-\_\-struct\-\_\-tm\-\_\-utc} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_aab6022022f369033d16a3284c2053a1a}
-
-
-\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}struct tm\char`\"{} (from \-C's time library) in \-Coordinated \-Universal \-Time. 
-
-\hypertarget{timestamp_8h_aec236bdb1608452e3f668c3378376db5}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-time\-\_\-t@{\-Timestamp\-\_\-get\-\_\-time\-\_\-t}}
-\index{\-Timestamp\-\_\-get\-\_\-time\-\_\-t@{\-Timestamp\-\_\-get\-\_\-time\-\_\-t}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}time\-\_\-t {\bf \-Timestamp\-\_\-get\-\_\-time\-\_\-t} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)}}\label{timestamp_8h_aec236bdb1608452e3f668c3378376db5}
-
-
-\-Convert a \hyperlink{structTimestamp}{\-Timestamp} to a \char`\"{}time\-\_\-t\char`\"{} (from \-C's time library). 
-
-\hypertarget{timestamp_8h_a96f31ed79e616bdae7dd9313ad400675}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than@{\-Timestamp\-\_\-greater\-\_\-than}}
-\index{\-Timestamp\-\_\-greater\-\_\-than@{\-Timestamp\-\_\-greater\-\_\-than}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-greater\-\_\-than} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
-\end{DoxyParamCaption}
-)}}\label{timestamp_8h_a96f31ed79e616bdae7dd9313ad400675}
-
-
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than another \hyperlink{structTimestamp}{\-Timestamp}. 
-
-\hypertarget{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
-\index{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
-\end{DoxyParamCaption}
-)}}\label{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}
-
-
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. 
-
-\hypertarget{timestamp_8h_aafa1f1053066f8a4f8a18c8d3a7adb41}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than@{\-Timestamp\-\_\-less\-\_\-than}}
-\index{\-Timestamp\-\_\-less\-\_\-than@{\-Timestamp\-\_\-less\-\_\-than}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-less\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-less\-\_\-than} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
-\end{DoxyParamCaption}
-)}}\label{timestamp_8h_aafa1f1053066f8a4f8a18c8d3a7adb41}
-
-
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than another \hyperlink{structTimestamp}{\-Timestamp}. 
-
-\hypertarget{timestamp_8h_a73158018e2e8ac52f3e0e461031780cc}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
-\index{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
-\end{DoxyParamCaption}
-)}}\label{timestamp_8h_a73158018e2e8ac52f3e0e461031780cc}
-
-
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. 
-
-\hypertarget{timestamp_8h_ae3155f9c8fed278bfbef2254ab7bf71a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-now@{\-Timestamp\-\_\-now}}
-\index{\-Timestamp\-\_\-now@{\-Timestamp\-\_\-now}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-now}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Timestamp} {\bf \-Timestamp\-\_\-now} (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_ae3155f9c8fed278bfbef2254ab7bf71a}
-
-
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} representing the exact time right now. 
+\-Subtract a \hyperlink{structTimeDelta}{\-Time\-Delta} from a \hyperlink{structTimestamp}{\-Timestamp}. 
 
 \hypertarget{timestamp_8h_ada864b991017215cc60ad453c795d73f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-subtract\-\_\-day\-\_\-delta@{\-Timestamp\-\_\-subtract\-\_\-day\-\_\-delta}}
 \index{\-Timestamp\-\_\-subtract\-\_\-day\-\_\-delta@{\-Timestamp\-\_\-subtract\-\_\-day\-\_\-delta}!timestamp.h@{timestamp.\-h}}
@@ -511,15 +463,63 @@ bool \hyperlink{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\-Timestamp\-\_\
 
 \-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structTimestamp}{\-Timestamp}. 
 
-\hypertarget{timestamp_8h_afa28c1d4e2aa355e4b7eb1ead44cd039}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta}}
-\index{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta@{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timestamp\-\_\-subtract\-\_\-time\-\_\-delta} (
+\hypertarget{timestamp_8h_a01ec54f54ff983ec29dd84ded9239694}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-equal@{\-Timestamp\-\_\-equal}}
+\index{\-Timestamp\-\_\-equal@{\-Timestamp\-\_\-equal}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{struct {\bf \-Timestamp} $\ast$const}]{self, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{delta}
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_afa28c1d4e2aa355e4b7eb1ead44cd039}
+)}}\label{timestamp_8h_a01ec54f54ff983ec29dd84ded9239694}
 
 
-\-Subtract a \hyperlink{structTimeDelta}{\-Time\-Delta} from a \hyperlink{structTimestamp}{\-Timestamp}. 
+\-Determine whether two \hyperlink{structTimestamp}{\-Timestamp} instances represent the exact same point in time. 
+
+\hypertarget{timestamp_8h_aafa1f1053066f8a4f8a18c8d3a7adb41}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than@{\-Timestamp\-\_\-less\-\_\-than}}
+\index{\-Timestamp\-\_\-less\-\_\-than@{\-Timestamp\-\_\-less\-\_\-than}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-less\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-less\-\_\-than} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{timestamp_8h_aafa1f1053066f8a4f8a18c8d3a7adb41}
+
+
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than another \hyperlink{structTimestamp}{\-Timestamp}. 
+
+\hypertarget{timestamp_8h_a73158018e2e8ac52f3e0e461031780cc}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
+\index{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{timestamp_8h_a73158018e2e8ac52f3e0e461031780cc}
+
+
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. 
+
+\hypertarget{timestamp_8h_a96f31ed79e616bdae7dd9313ad400675}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than@{\-Timestamp\-\_\-greater\-\_\-than}}
+\index{\-Timestamp\-\_\-greater\-\_\-than@{\-Timestamp\-\_\-greater\-\_\-than}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-greater\-\_\-than} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{timestamp_8h_a96f31ed79e616bdae7dd9313ad400675}
+
+
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than another \hyperlink{structTimestamp}{\-Timestamp}. 
+
+\hypertarget{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
+\index{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
+\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}
+
+
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. 
 

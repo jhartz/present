@@ -161,93 +161,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="a426015ccd513669683eeea86fcd0f738"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_add_day_delta" ref="a426015ccd513669683eeea86fcd0f738" args="(struct DayDelta *const self, const struct DayDelta *const dayDeltaToAdd)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="day-delta_8h.html#a426015ccd513669683eeea86fcd0f738">DayDelta_add_day_delta</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>dayDeltaToAdd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Add another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> to a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a21da0fd2d2396c2334bf15c462d82ed1"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_divide_by" ref="a21da0fd2d2396c2334bf15c462d82ed1" args="(struct DayDelta *const self, int scaleFactor)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="day-delta_8h.html#a21da0fd2d2396c2334bf15c462d82ed1">DayDelta_divide_by</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Scale a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> by dividing it by a scale factor. </p>
-
-</div>
-</div>
-<a class="anchor" id="af7fb70b781745298c9017fefb858a985"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_equal" ref="af7fb70b781745298c9017fefb858a985" args="(const struct DayDelta *const, const struct DayDelta *const)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="day-delta_8h.html#af7fb70b781745298c9017fefb858a985">DayDelta_equal</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Determine whether two <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> instances are equal. </p>
-
-</div>
-</div>
 <a class="anchor" id="a50a5b111e380372e918e4d67f4b1814d"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_from_days" ref="a50a5b111e380372e918e4d67f4b1814d" args="(int_delta days)" -->
 <div class="memitem">
 <div class="memproto">
@@ -286,6 +199,24 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab87d828518fe1bdc7e7662be3e5e6289"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_zero" ref="ab87d828518fe1bdc7e7662be3e5e6289" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structDayDelta.html">DayDelta</a> <a class="el" href="day-delta_8h.html#ab87d828518fe1bdc7e7662be3e5e6289">DayDelta_zero</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> initialized to zero days. </p>
+
+</div>
+</div>
 <a class="anchor" id="a1a191ca724a310625caee1f2250796d9"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_get_days" ref="a1a191ca724a310625caee1f2250796d9" args="(const struct DayDelta *const self)" -->
 <div class="memitem">
 <div class="memproto">
@@ -302,25 +233,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the number of days represented by a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a62765dd1d10d3358a5b41469ef9520a6"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_get_time_delta" ref="a62765dd1d10d3358a5b41469ef9520a6" args="(const struct DayDelta *const self)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="day-delta_8h.html#a62765dd1d10d3358a5b41469ef9520a6">DayDelta_get_time_delta</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td><code> [read]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Convert a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> into an equivalent <a class="el" href="structTimeDelta.html">TimeDelta</a>. </p>
 
 </div>
 </div>
@@ -363,61 +275,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac7ac548c954029ed6b237b4e732f67fd"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_greater_than" ref="ac7ac548c954029ed6b237b4e732f67fd" args="(const struct DayDelta *const, const struct DayDelta *const)" -->
+<a class="anchor" id="a62765dd1d10d3358a5b41469ef9520a6"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_get_time_delta" ref="a62765dd1d10d3358a5b41469ef9520a6" args="(const struct DayDelta *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="day-delta_8h.html#ac7ac548c954029ed6b237b4e732f67fd">DayDelta_greater_than</a> </td>
+          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="day-delta_8h.html#a62765dd1d10d3358a5b41469ef9520a6">DayDelta_get_time_delta</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td><code> [read]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a241336d3cf0a1c682f730d1ac5ad59a1"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_greater_than_or_equal" ref="a241336d3cf0a1c682f730d1ac5ad59a1" args="(const struct DayDelta *const, const struct DayDelta *const)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="day-delta_8h.html#a241336d3cf0a1c682f730d1ac5ad59a1">DayDelta_greater_than_or_equal</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than or equal to another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<p>Convert a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> into an equivalent <a class="el" href="structTimeDelta.html">TimeDelta</a>. </p>
 
 </div>
 </div>
@@ -437,6 +310,170 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is negative. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9deb74bc8d748a21449a16e658f16432"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_negate" ref="a9deb74bc8d748a21449a16e658f16432" args="(struct DayDelta *const self)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="day-delta_8h.html#a9deb74bc8d748a21449a16e658f16432">DayDelta_negate</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Negate a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>, making it negative if it was positive or positive if it was negative. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad41c3944938dda1471842ff64055591e"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_multiply_by" ref="ad41c3944938dda1471842ff64055591e" args="(struct DayDelta *const self, int scaleFactor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="day-delta_8h.html#ad41c3944938dda1471842ff64055591e">DayDelta_multiply_by</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scale a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> by multiplying it by a scale factor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a21da0fd2d2396c2334bf15c462d82ed1"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_divide_by" ref="a21da0fd2d2396c2334bf15c462d82ed1" args="(struct DayDelta *const self, int scaleFactor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="day-delta_8h.html#a21da0fd2d2396c2334bf15c462d82ed1">DayDelta_divide_by</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scale a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> by dividing it by a scale factor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a426015ccd513669683eeea86fcd0f738"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_add_day_delta" ref="a426015ccd513669683eeea86fcd0f738" args="(struct DayDelta *const self, const struct DayDelta *const dayDeltaToAdd)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="day-delta_8h.html#a426015ccd513669683eeea86fcd0f738">DayDelta_add_day_delta</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>dayDeltaToAdd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> to a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a17a8ff4ad84533fa91d3ec4e1c863ef5"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_subtract_day_delta" ref="a17a8ff4ad84533fa91d3ec4e1c863ef5" args="(struct DayDelta *const self, const struct DayDelta *const dayDeltaToSubtract)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="day-delta_8h.html#a17a8ff4ad84533fa91d3ec4e1c863ef5">DayDelta_subtract_day_delta</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
+          <td class="paramname"><em>dayDeltaToSubtract</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Subtract another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> from a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="af7fb70b781745298c9017fefb858a985"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_equal" ref="af7fb70b781745298c9017fefb858a985" args="(const struct DayDelta *const, const struct DayDelta *const)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="day-delta_8h.html#af7fb70b781745298c9017fefb858a985">DayDelta_equal</a> </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determine whether two <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> instances are equal. </p>
 
 </div>
 </div>
@@ -498,21 +535,21 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad41c3944938dda1471842ff64055591e"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_multiply_by" ref="ad41c3944938dda1471842ff64055591e" args="(struct DayDelta *const self, int scaleFactor)" -->
+<a class="anchor" id="ac7ac548c954029ed6b237b4e732f67fd"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_greater_than" ref="ac7ac548c954029ed6b237b4e732f67fd" args="(const struct DayDelta *const, const struct DayDelta *const)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="day-delta_8h.html#ad41c3944938dda1471842ff64055591e">DayDelta_multiply_by</a> </td>
+          <td class="memname">bool <a class="el" href="day-delta_8h.html#ac7ac548c954029ed6b237b4e732f67fd">DayDelta_greater_than</a> </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -523,44 +560,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Scale a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> by multiplying it by a scale factor. </p>
+<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
 
 </div>
 </div>
-<a class="anchor" id="a9deb74bc8d748a21449a16e658f16432"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_negate" ref="a9deb74bc8d748a21449a16e658f16432" args="(struct DayDelta *const self)" -->
+<a class="anchor" id="a241336d3cf0a1c682f730d1ac5ad59a1"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_greater_than_or_equal" ref="a241336d3cf0a1c682f730d1ac5ad59a1" args="(const struct DayDelta *const, const struct DayDelta *const)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="day-delta_8h.html#a9deb74bc8d748a21449a16e658f16432">DayDelta_negate</a> </td>
+          <td class="memname">bool <a class="el" href="day-delta_8h.html#a241336d3cf0a1c682f730d1ac5ad59a1">DayDelta_greater_than_or_equal</a> </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Negate a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>, making it negative if it was positive or positive if it was negative. </p>
-
-</div>
-</div>
-<a class="anchor" id="a17a8ff4ad84533fa91d3ec4e1c863ef5"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_subtract_day_delta" ref="a17a8ff4ad84533fa91d3ec4e1c863ef5" args="(struct DayDelta *const self, const struct DayDelta *const dayDeltaToSubtract)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="day-delta_8h.html#a17a8ff4ad84533fa91d3ec4e1c863ef5">DayDelta_subtract_day_delta</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
-          <td class="paramname"><em>dayDeltaToSubtract</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -571,25 +589,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Subtract another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> from a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab87d828518fe1bdc7e7662be3e5e6289"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_zero" ref="ab87d828518fe1bdc7e7662be3e5e6289" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structDayDelta.html">DayDelta</a> <a class="el" href="day-delta_8h.html#ab87d828518fe1bdc7e7662be3e5e6289">DayDelta_zero</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [read]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Create a new <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> initialized to zero days. </p>
+<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than or equal to another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
 
 </div>
 </div>

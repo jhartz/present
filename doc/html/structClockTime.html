@@ -330,6 +330,40 @@ Friends</h2></td></tr>
  
 </div>
 </div>
+<a class="anchor" id="a7baab35d60ad3a2236c14133d8d0083b"></a><!-- doxytag: member="ClockTime::midnight" ref="a7baab35d60ad3a2236c14133d8d0083b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="structClockTime.html#a7baab35d60ad3a2236c14133d8d0083b">ClockTime::midnight</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to midnight (00:00). </p>
+ 
+</div>
+</div>
+<a class="anchor" id="ae206b86808ff1d0158cbc920eb289797"></a><!-- doxytag: member="ClockTime::noon" ref="ae206b86808ff1d0158cbc920eb289797" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="structClockTime.html#ae206b86808ff1d0158cbc920eb289797">ClockTime::noon</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to noon (12:00). </p>
+ 
+</div>
+</div>
 <a class="anchor" id="ab188f450c2b8519296c96529afc8d92f"></a><!-- doxytag: member="ClockTime::get_hour" ref="ab188f450c2b8519296c96529afc8d92f" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -364,23 +398,6 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a4ddf3b506ad8f3576df034fbf3febae4"></a><!-- doxytag: member="ClockTime::get_nanosecond" ref="a4ddf3b506ad8f3576df034fbf3febae4" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int_nanosecond <a class="el" href="structClockTime.html#a4ddf3b506ad8f3576df034fbf3febae4">ClockTime::get_nanosecond</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get the nanosecond component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (less than 10^9, the number of nanoseconds in a second). </p>
- 
-</div>
-</div>
 <a class="anchor" id="a054e575b6ba259efdf3d79ebdf7fc501"></a><!-- doxytag: member="ClockTime::get_second" ref="a054e575b6ba259efdf3d79ebdf7fc501" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -395,6 +412,23 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Get the second component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (0 to 59, inclusive). </p>
+ 
+</div>
+</div>
+<a class="anchor" id="a4ddf3b506ad8f3576df034fbf3febae4"></a><!-- doxytag: member="ClockTime::get_nanosecond" ref="a4ddf3b506ad8f3576df034fbf3febae4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int_nanosecond <a class="el" href="structClockTime.html#a4ddf3b506ad8f3576df034fbf3febae4">ClockTime::get_nanosecond</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the nanosecond component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (less than 10^9, the number of nanoseconds in a second). </p>
  
 </div>
 </div>
@@ -415,37 +449,20 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a7baab35d60ad3a2236c14133d8d0083b"></a><!-- doxytag: member="ClockTime::midnight" ref="a7baab35d60ad3a2236c14133d8d0083b" args="()" -->
+<a class="anchor" id="a9c6423703cb0026435fb6e5b2d261d54"></a><!-- doxytag: member="ClockTime::time_since_midnight" ref="a9c6423703cb0026435fb6e5b2d261d54" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="structClockTime.html#a7baab35d60ad3a2236c14133d8d0083b">ClockTime::midnight</a> </td>
+          <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="structClockTime.html#a9c6423703cb0026435fb6e5b2d261d54">ClockTime::time_since_midnight</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [static]</code></td>
+          <td> const</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to midnight (00:00). </p>
- 
-</div>
-</div>
-<a class="anchor" id="ae206b86808ff1d0158cbc920eb289797"></a><!-- doxytag: member="ClockTime::noon" ref="ae206b86808ff1d0158cbc920eb289797" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="structClockTime.html#ae206b86808ff1d0158cbc920eb289797">ClockTime::noon</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to noon (12:00). </p>
+<p>Get a <a class="el" href="structTimeDelta.html">TimeDelta</a> with the time since midnight of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
  
 </div>
 </div>
@@ -487,51 +504,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a9c6423703cb0026435fb6e5b2d261d54"></a><!-- doxytag: member="ClockTime::time_since_midnight" ref="a9c6423703cb0026435fb6e5b2d261d54" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="structClockTime.html#a9c6423703cb0026435fb6e5b2d261d54">ClockTime::time_since_midnight</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get a <a class="el" href="structTimeDelta.html">TimeDelta</a> with the time since midnight of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
- 
-</div>
-</div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="ab6293206508b6c5fcc7107c5fa20c0ab"></a><!-- doxytag: member="ClockTime::operator!=" ref="ab6293206508b6c5fcc7107c5fa20c0ab" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [friend]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a5931b57cfa225de613d50e5de740794b"></a><!-- doxytag: member="ClockTime::operator+" ref="a5931b57cfa225de613d50e5de740794b" args="(const ClockTime &amp;, const TimeDelta &amp;)" -->
 <div class="memitem">
 <div class="memproto">
@@ -573,6 +546,61 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7135b0c2995c1809f4a0cdd9e692ffe5"></a><!-- doxytag: member="ClockTime::operator==" ref="a7135b0c2995c1809f4a0cdd9e692ffe5" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Determine whether two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances are equal. </p>
+ 
+</div>
+</div>
+<a class="anchor" id="ab6293206508b6c5fcc7107c5fa20c0ab"></a><!-- doxytag: member="ClockTime::operator!=" ref="ab6293206508b6c5fcc7107c5fa20c0ab" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -642,34 +670,6 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a7135b0c2995c1809f4a0cdd9e692ffe5"></a><!-- doxytag: member="ClockTime::operator==" ref="a7135b0c2995c1809f4a0cdd9e692ffe5" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [friend]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Determine whether two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances are equal. </p>
- 
-</div>
-</div>
 <a class="anchor" id="a985095ef213439f0aa9644f95b486bda"></a><!-- doxytag: member="ClockTime::operator&gt;" ref="a985095ef213439f0aa9644f95b486bda" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
 <div class="memitem">
 <div class="memproto">
@@ -727,12 +727,12 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a3fe115dffef3ba153e1fff6e0b2c0a23"></a><!-- doxytag: member="ClockTime::data_" ref="a3fe115dffef3ba153e1fff6e0b2c0a23" args="" -->
+<a class="anchor" id="a58f5305f36468eee0d1c489b5d72d717"></a><!-- doxytag: member="ClockTime::error" ref="a58f5305f36468eee0d1c489b5d72d717" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct PresentClockTimeData <a class="el" href="structClockTime.html#a3fe115dffef3ba153e1fff6e0b2c0a23">ClockTime::data_</a></td>
+          <td class="memname">enum <a class="el" href="clock-time_8h.html#a40f97cceae12156ea6da9bd1c170d455">PresentClockTimeError</a> <a class="el" href="structClockTime.html#a58f5305f36468eee0d1c489b5d72d717">ClockTime::error</a></td>
         </tr>
       </table>
 </div>
@@ -740,12 +740,12 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a58f5305f36468eee0d1c489b5d72d717"></a><!-- doxytag: member="ClockTime::error" ref="a58f5305f36468eee0d1c489b5d72d717" args="" -->
+<a class="anchor" id="a3fe115dffef3ba153e1fff6e0b2c0a23"></a><!-- doxytag: member="ClockTime::data_" ref="a3fe115dffef3ba153e1fff6e0b2c0a23" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="clock-time_8h.html#a40f97cceae12156ea6da9bd1c170d455">PresentClockTimeError</a> <a class="el" href="structClockTime.html#a58f5305f36468eee0d1c489b5d72d717">ClockTime::error</a></td>
+          <td class="memname">struct PresentClockTimeData <a class="el" href="structClockTime.html#a3fe115dffef3ba153e1fff6e0b2c0a23">ClockTime::data_</a></td>
         </tr>
       </table>
 </div>

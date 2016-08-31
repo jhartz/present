@@ -221,36 +221,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="adc2c863dfec0b56604b3153b226139fb"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_add_time_delta" ref="adc2c863dfec0b56604b3153b226139fb" args="(struct ClockTime *const self, const struct TimeDelta *const delta)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="clock-time_8h.html#adc2c863dfec0b56604b3153b226139fb">ClockTime_add_time_delta</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
-          <td class="paramname"><em>delta</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Add a <a class="el" href="structTimeDelta.html">TimeDelta</a> to a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
-<p>If the result goes above 23:59:59.999... or below 00:00, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will wrap around. </p>
-
-</div>
-</div>
 <a class="anchor" id="a172dd5f4ae9a67a7d0efe2b7c3e1a7b9"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_create_from_hour" ref="a172dd5f4ae9a67a7d0efe2b7c3e1a7b9" args="(int_hour hour)" -->
 <div class="memitem">
 <div class="memproto">
@@ -451,32 +421,39 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a33f1b59fd2b998d61ea80c908aeb274c"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_equal" ref="a33f1b59fd2b998d61ea80c908aeb274c" args="(const struct ClockTime *const, const struct ClockTime *const)" -->
+<a class="anchor" id="ae320c2e30dedf0b33d5306b9e8841261"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_midnight" ref="ae320c2e30dedf0b33d5306b9e8841261" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="clock-time_8h.html#a33f1b59fd2b998d61ea80c908aeb274c">ClockTime_equal</a> </td>
+          <td class="memname">struct <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="clock-time_8h.html#ae320c2e30dedf0b33d5306b9e8841261">ClockTime_midnight</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [read]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Determine whether two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances are equal. </p>
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to midnight (00:00). </p>
+
+</div>
+</div>
+<a class="anchor" id="a183049a7386a7b7377ba3059d15485c4"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_noon" ref="a183049a7386a7b7377ba3059d15485c4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="clock-time_8h.html#a183049a7386a7b7377ba3059d15485c4">ClockTime_noon</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to noon (12:00). </p>
 
 </div>
 </div>
@@ -518,25 +495,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad74a9b1b36f0fd4b4a739b69fb65869e"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_get_nanosecond" ref="ad74a9b1b36f0fd4b4a739b69fb65869e" args="(const struct ClockTime *const self)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int_nanosecond <a class="el" href="clock-time_8h.html#ad74a9b1b36f0fd4b4a739b69fb65869e">ClockTime_get_nanosecond</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the nanosecond component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (less than 10^9, the number of nanoseconds in a second). </p>
-
-</div>
-</div>
 <a class="anchor" id="a77c448c2991009dbcb662696a7ceedca"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_get_second" ref="a77c448c2991009dbcb662696a7ceedca" args="(const struct ClockTime *const self)" -->
 <div class="memitem">
 <div class="memproto">
@@ -553,6 +511,25 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the second component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (0 to 59, inclusive). </p>
+
+</div>
+</div>
+<a class="anchor" id="ad74a9b1b36f0fd4b4a739b69fb65869e"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_get_nanosecond" ref="ad74a9b1b36f0fd4b4a739b69fb65869e" args="(const struct ClockTime *const self)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int_nanosecond <a class="el" href="clock-time_8h.html#ad74a9b1b36f0fd4b4a739b69fb65869e">ClockTime_get_nanosecond</a> </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the nanosecond component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (less than 10^9, the number of nanoseconds in a second). </p>
 
 </div>
 </div>
@@ -575,12 +552,91 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9e2265b76612f6f7618ede2d78f10083"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_greater_than" ref="a9e2265b76612f6f7618ede2d78f10083" args="(const struct ClockTime *const, const struct ClockTime *const)" -->
+<a class="anchor" id="ace4db26641fe01b2edd311b09589ebbb"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_time_since_midnight" ref="ace4db26641fe01b2edd311b09589ebbb" args="(const struct ClockTime *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="clock-time_8h.html#a9e2265b76612f6f7618ede2d78f10083">ClockTime_greater_than</a> </td>
+          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="clock-time_8h.html#ace4db26641fe01b2edd311b09589ebbb">ClockTime_time_since_midnight</a> </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get a <a class="el" href="structTimeDelta.html">TimeDelta</a> with the time since midnight of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="adc2c863dfec0b56604b3153b226139fb"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_add_time_delta" ref="adc2c863dfec0b56604b3153b226139fb" args="(struct ClockTime *const self, const struct TimeDelta *const delta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="clock-time_8h.html#adc2c863dfec0b56604b3153b226139fb">ClockTime_add_time_delta</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>delta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add a <a class="el" href="structTimeDelta.html">TimeDelta</a> to a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>If the result goes above 23:59:59.999... or below 00:00, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will wrap around. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5305df919aa0992ba4703f9b9f292a67"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_subtract_time_delta" ref="a5305df919aa0992ba4703f9b9f292a67" args="(struct ClockTime *const self, const struct TimeDelta *const delta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="clock-time_8h.html#a5305df919aa0992ba4703f9b9f292a67">ClockTime_subtract_time_delta</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>delta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Subtract a <a class="el" href="structTimeDelta.html">TimeDelta</a> from a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>If the result goes above 23:59:59.999... or below 00:00, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will wrap around. </p>
+
+</div>
+</div>
+<a class="anchor" id="a33f1b59fd2b998d61ea80c908aeb274c"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_equal" ref="a33f1b59fd2b998d61ea80c908aeb274c" args="(const struct ClockTime *const, const struct ClockTime *const)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="clock-time_8h.html#a33f1b59fd2b998d61ea80c908aeb274c">ClockTime_equal</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
           <td class="paramname"><em>const</em>, </td>
@@ -600,36 +656,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="ace253f56caf8df157d630aa590b658cc"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_greater_than_or_equal" ref="ace253f56caf8df157d630aa590b658cc" args="(const struct ClockTime *const, const struct ClockTime *const)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="clock-time_8h.html#ace253f56caf8df157d630aa590b658cc">ClockTime_greater_than_or_equal</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>Determine whether two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances are equal. </p>
 
 </div>
 </div>
@@ -691,57 +718,21 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae320c2e30dedf0b33d5306b9e8841261"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_midnight" ref="ae320c2e30dedf0b33d5306b9e8841261" args="()" -->
+<a class="anchor" id="a9e2265b76612f6f7618ede2d78f10083"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_greater_than" ref="a9e2265b76612f6f7618ede2d78f10083" args="(const struct ClockTime *const, const struct ClockTime *const)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="clock-time_8h.html#ae320c2e30dedf0b33d5306b9e8841261">ClockTime_midnight</a> </td>
+          <td class="memname">bool <a class="el" href="clock-time_8h.html#a9e2265b76612f6f7618ede2d78f10083">ClockTime_greater_than</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [read]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to midnight (00:00). </p>
-
-</div>
-</div>
-<a class="anchor" id="a183049a7386a7b7377ba3059d15485c4"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_noon" ref="a183049a7386a7b7377ba3059d15485c4" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structClockTime.html">ClockTime</a> <a class="el" href="clock-time_8h.html#a183049a7386a7b7377ba3059d15485c4">ClockTime_noon</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [read]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to noon (12:00). </p>
-
-</div>
-</div>
-<a class="anchor" id="a5305df919aa0992ba4703f9b9f292a67"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_subtract_time_delta" ref="a5305df919aa0992ba4703f9b9f292a67" args="(struct ClockTime *const self, const struct TimeDelta *const delta)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="clock-time_8h.html#a5305df919aa0992ba4703f9b9f292a67">ClockTime_subtract_time_delta</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
-          <td class="paramname"><em>delta</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -752,27 +743,36 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Subtract a <a class="el" href="structTimeDelta.html">TimeDelta</a> from a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
-<p>If the result goes above 23:59:59.999... or below 00:00, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will wrap around. </p>
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
 
 </div>
 </div>
-<a class="anchor" id="ace4db26641fe01b2edd311b09589ebbb"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_time_since_midnight" ref="ace4db26641fe01b2edd311b09589ebbb" args="(const struct ClockTime *const self)" -->
+<a class="anchor" id="ace253f56caf8df157d630aa590b658cc"></a><!-- doxytag: member="clock&#45;time.h::ClockTime_greater_than_or_equal" ref="ace253f56caf8df157d630aa590b658cc" args="(const struct ClockTime *const, const struct ClockTime *const)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="clock-time_8h.html#ace4db26641fe01b2edd311b09589ebbb">ClockTime_time_since_midnight</a> </td>
+          <td class="memname">bool <a class="el" href="clock-time_8h.html#ace253f56caf8df157d630aa590b658cc">ClockTime_greater_than_or_equal</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *const&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td><code> [read]</code></td>
+          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structClockTime.html">ClockTime</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Get a <a class="el" href="structTimeDelta.html">TimeDelta</a> with the time since midnight of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
 
 </div>
 </div>

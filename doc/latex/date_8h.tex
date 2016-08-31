@@ -129,30 +129,6 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 
 \subsection{\-Function \-Documentation}
-\hypertarget{date_8h_a4c6d6ed2a1d7979412a79e84d54aeac4}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-day\-\_\-delta@{\-Date\-\_\-add\-\_\-day\-\_\-delta}}
-\index{\-Date\-\_\-add\-\_\-day\-\_\-delta@{\-Date\-\_\-add\-\_\-day\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-add\-\_\-day\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-day\-\_\-delta} (
-\begin{DoxyParamCaption}
-\item[{struct {\bf \-Date} $\ast$const}]{self, }
-\item[{const struct {\bf \-Day\-Delta} $\ast$const}]{delta}
-\end{DoxyParamCaption}
-)}}\label{date_8h_a4c6d6ed2a1d7979412a79e84d54aeac4}
-
-
-\-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structDate}{\-Date}. 
-
-\hypertarget{date_8h_a57ea0878d7e184ce8caae809f80c4274}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-month\-\_\-delta@{\-Date\-\_\-add\-\_\-month\-\_\-delta}}
-\index{\-Date\-\_\-add\-\_\-month\-\_\-delta@{\-Date\-\_\-add\-\_\-month\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-add\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-month\-\_\-delta} (
-\begin{DoxyParamCaption}
-\item[{struct {\bf \-Date} $\ast$const}]{self, }
-\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{delta}
-\end{DoxyParamCaption}
-)}}\label{date_8h_a57ea0878d7e184ce8caae809f80c4274}
-
-
-\-Add a \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structDate}{\-Date}. 
-
 \hypertarget{date_8h_a43ab3f61f00546461d3f85eb51517a6d}{\index{date.\-h@{date.\-h}!\-Date\-\_\-create\-\_\-from\-\_\-year@{\-Date\-\_\-create\-\_\-from\-\_\-year}}
 \index{\-Date\-\_\-create\-\_\-from\-\_\-year@{\-Date\-\_\-create\-\_\-from\-\_\-year}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-create\-\_\-from\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Date\-\_\-create\-\_\-from\-\_\-year} (
@@ -169,25 +145,6 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 \begin{DoxyParams}{\-Parameters}
 {\em year} & \-The year. \\
-\hline
-\end{DoxyParams}
-\hypertarget{date_8h_a31812f70db4d0656099c7aae0d3305ef}{\index{date.\-h@{date.\-h}!\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day}}
-\index{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day} (
-\begin{DoxyParamCaption}
-\item[{int\-\_\-year}]{year, }
-\item[{int\-\_\-day\-\_\-of\-\_\-year}]{day\-\_\-of\-\_\-year}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{date_8h_a31812f70db4d0656099c7aae0d3305ef}
-
-
-\-Create a new \hyperlink{structDate}{\-Date} based on a year and the day of that year. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em year} & \-The year. \\
-\hline
-{\em day\-\_\-of\-\_\-year} & \-The day of the year. \\
 \hline
 \end{DoxyParams}
 \hypertarget{date_8h_a7d059ef251f488538ccbc22ead794db6}{\index{date.\-h@{date.\-h}!\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-month@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-month}}
@@ -235,6 +192,25 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 {\em month} & \-The month of the year (1 to 12, inclusive). \\
 \hline
 {\em day} & \-The day of the month (1 to either 28, 29, 30, or 31, inclusive, depending on the month). \\
+\hline
+\end{DoxyParams}
+\hypertarget{date_8h_a31812f70db4d0656099c7aae0d3305ef}{\index{date.\-h@{date.\-h}!\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day}}
+\index{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-year}]{year, }
+\item[{int\-\_\-day\-\_\-of\-\_\-year}]{day\-\_\-of\-\_\-year}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{date_8h_a31812f70db4d0656099c7aae0d3305ef}
+
+
+\-Create a new \hyperlink{structDate}{\-Date} based on a year and the day of that year. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em year} & \-The year. \\
+\hline
+{\em day\-\_\-of\-\_\-year} & \-The day of the year. \\
 \hline
 \end{DoxyParams}
 \hypertarget{date_8h_afb76dd22f944f4b2c032fee614135467}{\index{date.\-h@{date.\-h}!\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week}}
@@ -286,29 +262,27 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 {\em day\-\_\-of\-\_\-week} & \-The day of the week (1 to 7, inclusive). \-See present/utils/types.\-h for constants for each day of the week. \\
 \hline
 \end{DoxyParams}
-\hypertarget{date_8h_a77eadd9d79f983618b888d9810c506d0}{\index{date.\-h@{date.\-h}!\-Date\-\_\-equal@{\-Date\-\_\-equal}}
-\index{\-Date\-\_\-equal@{\-Date\-\_\-equal}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-equal} (
+\hypertarget{date_8h_ad26cbac6bc416b358941b580dba7fe3c}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-year@{\-Date\-\_\-get\-\_\-year}}
+\index{\-Date\-\_\-get\-\_\-year@{\-Date\-\_\-get\-\_\-year}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-get\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-year {\bf \-Date\-\_\-get\-\_\-year} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$}]{const, }
-\item[{const struct {\bf \-Date} $\ast$}]{const}
+\item[{const struct {\bf \-Date} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a77eadd9d79f983618b888d9810c506d0}
+)}}\label{date_8h_ad26cbac6bc416b358941b580dba7fe3c}
 
 
-\-Determine whether two \hyperlink{structDate}{\-Date} instances are equal. 
+\-Get the year of a \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_a8639bedc8fc415809cbad76b72fb388b}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-absolute\-\_\-difference@{\-Date\-\_\-get\-\_\-absolute\-\_\-difference}}
-\index{\-Date\-\_\-get\-\_\-absolute\-\_\-difference@{\-Date\-\_\-get\-\_\-absolute\-\_\-difference}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-get\-\_\-absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Date\-\_\-get\-\_\-absolute\-\_\-difference} (
+\hypertarget{date_8h_a4159afd50df428b740f4485925e7c5b6}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-month@{\-Date\-\_\-get\-\_\-month}}
+\index{\-Date\-\_\-get\-\_\-month@{\-Date\-\_\-get\-\_\-month}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-get\-\_\-month}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-month {\bf \-Date\-\_\-get\-\_\-month} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{self, }
-\item[{const struct {\bf \-Date} $\ast$const}]{other}
+\item[{const struct {\bf \-Date} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{date_8h_a8639bedc8fc415809cbad76b72fb388b}
+)}}\label{date_8h_a4159afd50df428b740f4485925e7c5b6}
 
 
-\-Get the absolute difference between two \hyperlink{structDate}{\-Date} instances. 
+\-Get the month of a \hyperlink{structDate}{\-Date} (1 to 12, inclusive). 
 
 \hypertarget{date_8h_a9a89250ddc944586f86223ea8727a328}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-day@{\-Date\-\_\-get\-\_\-day}}
 \index{\-Date\-\_\-get\-\_\-day@{\-Date\-\_\-get\-\_\-day}!date.h@{date.\-h}}
@@ -321,17 +295,6 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 \-Get the day of month of a \hyperlink{structDate}{\-Date} (1 to 31, inclusive). 
 
-\hypertarget{date_8h_a99bd609ba0bacc5d415693f90a7113af}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}}
-\index{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-day\-\_\-of\-\_\-week {\bf \-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{self}
-\end{DoxyParamCaption}
-)}}\label{date_8h_a99bd609ba0bacc5d415693f90a7113af}
-
-
-\-Get the day of the week of a \hyperlink{structDate}{\-Date} (1 to 7, inclusive, with 1 being \-Monday, 2 being \-Tuesday, ..., 6 being \-Saturday, and 7 being \-Sunday). 
-
 \hypertarget{date_8h_a4f71610e1041fbb7e3b530d118d65151}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year}}
 \index{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-day\-\_\-of\-\_\-year {\bf \-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year} (
@@ -342,6 +305,28 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 
 \-Get the day of the year of a \hyperlink{structDate}{\-Date} (1 to 366, inclusive). 
+
+\hypertarget{date_8h_a8420160a915ad3804b93a5a0f9ccb227}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}}
+\index{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-week\-\_\-of\-\_\-year {\bf \-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Date} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{date_8h_a8420160a915ad3804b93a5a0f9ccb227}
+
+
+\-Get the week of the year of a \hyperlink{structDate}{\-Date}. 
+
+\-T\-O\-D\-O\-: \-What are the bounds? \hypertarget{date_8h_a99bd609ba0bacc5d415693f90a7113af}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}}
+\index{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-day\-\_\-of\-\_\-week {\bf \-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Date} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{date_8h_a99bd609ba0bacc5d415693f90a7113af}
+
+
+\-Get the day of the week of a \hyperlink{structDate}{\-Date} (1 to 7, inclusive, with 1 being \-Monday, 2 being \-Tuesday, ..., 6 being \-Saturday, and 7 being \-Sunday). 
 
 \hypertarget{date_8h_a2d32fb808c31d8592f3641ef2f2a6b03}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-difference@{\-Date\-\_\-get\-\_\-difference}}
 \index{\-Date\-\_\-get\-\_\-difference@{\-Date\-\_\-get\-\_\-difference}!date.h@{date.\-h}}
@@ -355,62 +340,77 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 \-Get the difference between two \hyperlink{structDate}{\-Date} instances. 
 
-\hypertarget{date_8h_a4159afd50df428b740f4485925e7c5b6}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-month@{\-Date\-\_\-get\-\_\-month}}
-\index{\-Date\-\_\-get\-\_\-month@{\-Date\-\_\-get\-\_\-month}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-get\-\_\-month}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-month {\bf \-Date\-\_\-get\-\_\-month} (
+\hypertarget{date_8h_a8639bedc8fc415809cbad76b72fb388b}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-absolute\-\_\-difference@{\-Date\-\_\-get\-\_\-absolute\-\_\-difference}}
+\index{\-Date\-\_\-get\-\_\-absolute\-\_\-difference@{\-Date\-\_\-get\-\_\-absolute\-\_\-difference}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-get\-\_\-absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Date\-\_\-get\-\_\-absolute\-\_\-difference} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{self}
+\item[{const struct {\bf \-Date} $\ast$const}]{self, }
+\item[{const struct {\bf \-Date} $\ast$const}]{other}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a4159afd50df428b740f4485925e7c5b6}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{date_8h_a8639bedc8fc415809cbad76b72fb388b}
 
 
-\-Get the month of a \hyperlink{structDate}{\-Date} (1 to 12, inclusive). 
+\-Get the absolute difference between two \hyperlink{structDate}{\-Date} instances. 
 
-\hypertarget{date_8h_a8420160a915ad3804b93a5a0f9ccb227}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}}
-\index{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-week\-\_\-of\-\_\-year {\bf \-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year} (
+\hypertarget{date_8h_a4c6d6ed2a1d7979412a79e84d54aeac4}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-day\-\_\-delta@{\-Date\-\_\-add\-\_\-day\-\_\-delta}}
+\index{\-Date\-\_\-add\-\_\-day\-\_\-delta@{\-Date\-\_\-add\-\_\-day\-\_\-delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-add\-\_\-day\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-day\-\_\-delta} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{self}
+\item[{struct {\bf \-Date} $\ast$const}]{self, }
+\item[{const struct {\bf \-Day\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a8420160a915ad3804b93a5a0f9ccb227}
+)}}\label{date_8h_a4c6d6ed2a1d7979412a79e84d54aeac4}
 
 
-\-Get the week of the year of a \hyperlink{structDate}{\-Date}. 
+\-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structDate}{\-Date}. 
 
-\-T\-O\-D\-O\-: \-What are the bounds? \hypertarget{date_8h_ad26cbac6bc416b358941b580dba7fe3c}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-year@{\-Date\-\_\-get\-\_\-year}}
-\index{\-Date\-\_\-get\-\_\-year@{\-Date\-\_\-get\-\_\-year}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-get\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-year {\bf \-Date\-\_\-get\-\_\-year} (
+\hypertarget{date_8h_a57ea0878d7e184ce8caae809f80c4274}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-month\-\_\-delta@{\-Date\-\_\-add\-\_\-month\-\_\-delta}}
+\index{\-Date\-\_\-add\-\_\-month\-\_\-delta@{\-Date\-\_\-add\-\_\-month\-\_\-delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-add\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-month\-\_\-delta} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$const}]{self}
+\item[{struct {\bf \-Date} $\ast$const}]{self, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
-)}}\label{date_8h_ad26cbac6bc416b358941b580dba7fe3c}
+)}}\label{date_8h_a57ea0878d7e184ce8caae809f80c4274}
 
 
-\-Get the year of a \hyperlink{structDate}{\-Date}. 
+\-Add a \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_ae4b19bd7c984619f04644bca7fa43f83}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than@{\-Date\-\_\-greater\-\_\-than}}
-\index{\-Date\-\_\-greater\-\_\-than@{\-Date\-\_\-greater\-\_\-than}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-greater\-\_\-than} (
+\hypertarget{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-day\-\_\-delta@{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}}
+\index{\-Date\-\_\-subtract\-\_\-day\-\_\-delta@{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-day\-\_\-delta} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Date} $\ast$const}]{self, }
+\item[{const struct {\bf \-Day\-Delta} $\ast$const}]{delta}
+\end{DoxyParamCaption}
+)}}\label{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}
+
+
+\-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structDate}{\-Date}. 
+
+\hypertarget{date_8h_a1df0a3764eef73161f411d0f67e52014}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-month\-\_\-delta@{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}}
+\index{\-Date\-\_\-subtract\-\_\-month\-\_\-delta@{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-month\-\_\-delta} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Date} $\ast$const}]{self, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{delta}
+\end{DoxyParamCaption}
+)}}\label{date_8h_a1df0a3764eef73161f411d0f67e52014}
+
+
+\-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}. 
+
+\hypertarget{date_8h_a77eadd9d79f983618b888d9810c506d0}{\index{date.\-h@{date.\-h}!\-Date\-\_\-equal@{\-Date\-\_\-equal}}
+\index{\-Date\-\_\-equal@{\-Date\-\_\-equal}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-equal} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Date} $\ast$}]{const, }
 \item[{const struct {\bf \-Date} $\ast$}]{const}
 \end{DoxyParamCaption}
-)}}\label{date_8h_ae4b19bd7c984619f04644bca7fa43f83}
+)}}\label{date_8h_a77eadd9d79f983618b888d9810c506d0}
 
 
-\-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date}. 
-
-\hypertarget{date_8h_acacc333b8cccf95f14d8040b811455c9}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
-\index{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
-\begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$}]{const, }
-\item[{const struct {\bf \-Date} $\ast$}]{const}
-\end{DoxyParamCaption}
-)}}\label{date_8h_acacc333b8cccf95f14d8040b811455c9}
-
-
-\-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date}. 
+\-Determine whether two \hyperlink{structDate}{\-Date} instances are equal. 
 
 \hypertarget{date_8h_ad59fd8e95642ece085fe87745e8d1942}{\index{date.\-h@{date.\-h}!\-Date\-\_\-less\-\_\-than@{\-Date\-\_\-less\-\_\-than}}
 \index{\-Date\-\_\-less\-\_\-than@{\-Date\-\_\-less\-\_\-than}!date.h@{date.\-h}}
@@ -436,27 +436,27 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 \-Determine whether a \hyperlink{structDate}{\-Date} is earlier than or the same as another \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-day\-\_\-delta@{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}}
-\index{\-Date\-\_\-subtract\-\_\-day\-\_\-delta@{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-day\-\_\-delta} (
+\hypertarget{date_8h_ae4b19bd7c984619f04644bca7fa43f83}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than@{\-Date\-\_\-greater\-\_\-than}}
+\index{\-Date\-\_\-greater\-\_\-than@{\-Date\-\_\-greater\-\_\-than}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-greater\-\_\-than} (
 \begin{DoxyParamCaption}
-\item[{struct {\bf \-Date} $\ast$const}]{self, }
-\item[{const struct {\bf \-Day\-Delta} $\ast$const}]{delta}
+\item[{const struct {\bf \-Date} $\ast$}]{const, }
+\item[{const struct {\bf \-Date} $\ast$}]{const}
 \end{DoxyParamCaption}
-)}}\label{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}
+)}}\label{date_8h_ae4b19bd7c984619f04644bca7fa43f83}
 
 
-\-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structDate}{\-Date}. 
+\-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_a1df0a3764eef73161f411d0f67e52014}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-month\-\_\-delta@{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}}
-\index{\-Date\-\_\-subtract\-\_\-month\-\_\-delta@{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-month\-\_\-delta} (
+\hypertarget{date_8h_acacc333b8cccf95f14d8040b811455c9}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
+\index{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{struct {\bf \-Date} $\ast$const}]{self, }
-\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{delta}
+\item[{const struct {\bf \-Date} $\ast$}]{const, }
+\item[{const struct {\bf \-Date} $\ast$}]{const}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a1df0a3764eef73161f411d0f67e52014}
+)}}\label{date_8h_acacc333b8cccf95f14d8040b811455c9}
 
 
-\-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}. 
+\-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date}. 
 

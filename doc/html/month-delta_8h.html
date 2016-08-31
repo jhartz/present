@@ -159,93 +159,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="a9f725b1f782ab8ddd1aa734d2cdbce27"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_add_month_delta" ref="a9f725b1f782ab8ddd1aa734d2cdbce27" args="(struct MonthDelta *const self, const struct MonthDelta *const monthDeltaToAdd)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="month-delta_8h.html#a9f725b1f782ab8ddd1aa734d2cdbce27">MonthDelta_add_month_delta</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
-          <td class="paramname"><em>monthDeltaToAdd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Add another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> to a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="acd94c6f51a37b55c6e6b6ebd5a39cf7e"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_divide_by" ref="acd94c6f51a37b55c6e6b6ebd5a39cf7e" args="(struct MonthDelta *const self, int scaleFactor)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="month-delta_8h.html#acd94c6f51a37b55c6e6b6ebd5a39cf7e">MonthDelta_divide_by</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Scale a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> by dividing it by a scale factor. </p>
-
-</div>
-</div>
-<a class="anchor" id="a346d0c310255f1f720506a15446497a3"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_equal" ref="a346d0c310255f1f720506a15446497a3" args="(const struct MonthDelta *const, const struct MonthDelta *const)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="month-delta_8h.html#a346d0c310255f1f720506a15446497a3">MonthDelta_equal</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Determine whether two <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> instances are equal. </p>
-
-</div>
-</div>
 <a class="anchor" id="ab2435ae92655bed23406d37b4b8f4750"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_from_months" ref="ab2435ae92655bed23406d37b4b8f4750" args="(int_month_delta month_delta)" -->
 <div class="memitem">
 <div class="memproto">
@@ -281,6 +194,24 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Create a new <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> based on a positive or negative number of years. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca81ef97d8ec1cd052ab391636f16bf7"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_zero" ref="aca81ef97d8ec1cd052ab391636f16bf7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> <a class="el" href="month-delta_8h.html#aca81ef97d8ec1cd052ab391636f16bf7">MonthDelta_zero</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> initialized to zero months. </p>
 
 </div>
 </div>
@@ -342,64 +273,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a87f541ed67c5071e5bf359f08a0c4413"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_greater_than" ref="a87f541ed67c5071e5bf359f08a0c4413" args="(const struct MonthDelta *const, const struct MonthDelta *const)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="month-delta_8h.html#a87f541ed67c5071e5bf359f08a0c4413">MonthDelta_greater_than</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Determine whether a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> is greater than another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac025396048e81af1dc75bc21b7a7c3a8"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_greater_than_or_equal" ref="ac025396048e81af1dc75bc21b7a7c3a8" args="(const struct MonthDelta *const, const struct MonthDelta *const)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="month-delta_8h.html#ac025396048e81af1dc75bc21b7a7c3a8">MonthDelta_greater_than_or_equal</a> </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Determine whether a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> is greater than or equal to another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
-
-</div>
-</div>
 <a class="anchor" id="a03c4b1b8f6edca4c798b469e3f03bdfa"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_is_negative" ref="a03c4b1b8f6edca4c798b469e3f03bdfa" args="(const struct MonthDelta *const self)" -->
 <div class="memitem">
 <div class="memproto">
@@ -416,6 +289,170 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Determine whether a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> is negative. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4d77c910d4ec5841e5e3f59d63490078"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_negate" ref="a4d77c910d4ec5841e5e3f59d63490078" args="(struct MonthDelta *const self)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="month-delta_8h.html#a4d77c910d4ec5841e5e3f59d63490078">MonthDelta_negate</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Negate a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>, making it negative if it was positive or positive if it was negative. </p>
+
+</div>
+</div>
+<a class="anchor" id="a147987d17fd1c580240979fde395b723"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_multiply_by" ref="a147987d17fd1c580240979fde395b723" args="(struct MonthDelta *const self, int scaleFactor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="month-delta_8h.html#a147987d17fd1c580240979fde395b723">MonthDelta_multiply_by</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scale a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> by multiplying it by a scale factor. </p>
+
+</div>
+</div>
+<a class="anchor" id="acd94c6f51a37b55c6e6b6ebd5a39cf7e"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_divide_by" ref="acd94c6f51a37b55c6e6b6ebd5a39cf7e" args="(struct MonthDelta *const self, int scaleFactor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="month-delta_8h.html#acd94c6f51a37b55c6e6b6ebd5a39cf7e">MonthDelta_divide_by</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scale a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> by dividing it by a scale factor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9f725b1f782ab8ddd1aa734d2cdbce27"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_add_month_delta" ref="a9f725b1f782ab8ddd1aa734d2cdbce27" args="(struct MonthDelta *const self, const struct MonthDelta *const monthDeltaToAdd)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="month-delta_8h.html#a9f725b1f782ab8ddd1aa734d2cdbce27">MonthDelta_add_month_delta</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
+          <td class="paramname"><em>monthDeltaToAdd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> to a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aba1962383fdb09d60f24b863ee738982"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_subtract_month_delta" ref="aba1962383fdb09d60f24b863ee738982" args="(struct MonthDelta *const self, const struct MonthDelta *const monthDeltaToSubtract)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="month-delta_8h.html#aba1962383fdb09d60f24b863ee738982">MonthDelta_subtract_month_delta</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
+          <td class="paramname"><em>monthDeltaToSubtract</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Subtract another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> from a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a346d0c310255f1f720506a15446497a3"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_equal" ref="a346d0c310255f1f720506a15446497a3" args="(const struct MonthDelta *const, const struct MonthDelta *const)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="month-delta_8h.html#a346d0c310255f1f720506a15446497a3">MonthDelta_equal</a> </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determine whether two <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> instances are equal. </p>
 
 </div>
 </div>
@@ -477,21 +514,21 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a147987d17fd1c580240979fde395b723"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_multiply_by" ref="a147987d17fd1c580240979fde395b723" args="(struct MonthDelta *const self, int scaleFactor)" -->
+<a class="anchor" id="a87f541ed67c5071e5bf359f08a0c4413"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_greater_than" ref="a87f541ed67c5071e5bf359f08a0c4413" args="(const struct MonthDelta *const, const struct MonthDelta *const)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="month-delta_8h.html#a147987d17fd1c580240979fde395b723">MonthDelta_multiply_by</a> </td>
+          <td class="memname">bool <a class="el" href="month-delta_8h.html#a87f541ed67c5071e5bf359f08a0c4413">MonthDelta_greater_than</a> </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -502,44 +539,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Scale a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> by multiplying it by a scale factor. </p>
+<p>Determine whether a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> is greater than another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
 
 </div>
 </div>
-<a class="anchor" id="a4d77c910d4ec5841e5e3f59d63490078"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_negate" ref="a4d77c910d4ec5841e5e3f59d63490078" args="(struct MonthDelta *const self)" -->
+<a class="anchor" id="ac025396048e81af1dc75bc21b7a7c3a8"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_greater_than_or_equal" ref="ac025396048e81af1dc75bc21b7a7c3a8" args="(const struct MonthDelta *const, const struct MonthDelta *const)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="month-delta_8h.html#a4d77c910d4ec5841e5e3f59d63490078">MonthDelta_negate</a> </td>
+          <td class="memname">bool <a class="el" href="month-delta_8h.html#ac025396048e81af1dc75bc21b7a7c3a8">MonthDelta_greater_than_or_equal</a> </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Negate a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>, making it negative if it was positive or positive if it was negative. </p>
-
-</div>
-</div>
-<a class="anchor" id="aba1962383fdb09d60f24b863ee738982"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_subtract_month_delta" ref="aba1962383fdb09d60f24b863ee738982" args="(struct MonthDelta *const self, const struct MonthDelta *const monthDeltaToSubtract)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="month-delta_8h.html#aba1962383fdb09d60f24b863ee738982">MonthDelta_subtract_month_delta</a> </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const&#160;</td>
-          <td class="paramname"><em>monthDeltaToSubtract</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *&#160;</td>
+          <td class="paramname"><em>const</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -550,25 +568,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Subtract another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> from a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="aca81ef97d8ec1cd052ab391636f16bf7"></a><!-- doxytag: member="month&#45;delta.h::MonthDelta_zero" ref="aca81ef97d8ec1cd052ab391636f16bf7" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structMonthDelta.html">MonthDelta</a> <a class="el" href="month-delta_8h.html#aca81ef97d8ec1cd052ab391636f16bf7">MonthDelta_zero</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [read]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Create a new <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> initialized to zero months. </p>
+<p>Determine whether a <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> is greater than or equal to another <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a>. </p>
 
 </div>
 </div>
