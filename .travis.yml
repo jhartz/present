@@ -14,7 +14,9 @@ script:
 - cmake -DCMAKE_BUILD_TYPE=Debug -DCOMPILE_TESTS=ON -DCOMPILE_WITH_COVERAGE=ON .. && make && make test
 
 after_success: |
-  if [ -n "$GITHUB_API_KEY" ]; then
+  if [ -z "$GITHUB_API_KEY" ]; then
+    echo "ERROR: Missing GitHub API key"
+  else
     make present_coverage
     make doc
     cd "$TRAVIS_BUILD_DIR"
