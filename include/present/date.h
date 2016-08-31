@@ -164,7 +164,8 @@ Date_create_from_year_month(int_year year, int_month month);
  *
  * @param year The year.
  * @param month The month of the year (1 to 12, inclusive).
- * @param day The day of the month (1 to 31, inclusive).
+ * @param day The day of the month (1 to either 28, 29, 30, or 31, inclusive,
+ * depending on the month).
  */
 PRESENT_API struct Date
 Date_create_from_year_month_day(int_year year, int_month month, int_day day);

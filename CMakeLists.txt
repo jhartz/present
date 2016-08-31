@@ -140,7 +140,7 @@ if (COMPILE_PRESENTCPP)
             test/test.cpp
 
             test/clock-time-test.cpp
-            #test/date-test.cpp
+            test/date-test.cpp
             #test/day-delta-test.cpp
             #test/month-delta-test.cpp
             #test/time-delta-test.cpp

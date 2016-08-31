@@ -57,12 +57,35 @@ static struct Date
 new_date(int_year year, int_month month, int_day day) {
     CONSTRUCTOR_HEAD(Date);
 
-    if (month >= 1 && month <= 12) {
+    static const int_day DAYS_PER_MONTH[13] = {
+        0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    };
+
+    if (month < 1 || month > 12) {
         CONSTRUCTOR_ERROR_RETURN(Date, MONTH_OUT_OF_RANGE);
     }
-    if (day >= 1 && day <= 31) {
+
+    int_day days_in_month = (IS_LEAP_YEAR(year) && month == 2) ? 29 :
+        DAYS_PER_MONTH[month];
+    if (day < 1 || day > days_in_month) {
         CONSTRUCTOR_ERROR_RETURN(Date, DAY_OUT_OF_RANGE);
     }
+
+    struct PresentDateData data;
+    data.year = year;
+    data.month = month;
+    data.day = day;
+    check_date_data(&data);
+    CONSTRUCTOR_RETURN(Date, data);
+}
+
+/**
+ * Create a new Date instance based on its data parameters, without checking
+ * any bounds.
+ */
+static struct Date
+new_date_no_bounds_check(int_year year, int_month month, int_day day) {
+    CONSTRUCTOR_HEAD(Date);
 
     struct PresentDateData data;
     data.year = year;
@@ -89,7 +112,7 @@ Date_create_from_year_month_day(int_year year, int_month month, int_day day) {
 
 struct Date
 Date_create_from_year_day(int_year year, int_day_of_year day_of_year) {
-    return new_date(year, 0, (int_day)(day_of_year));
+    return new_date_no_bounds_check(year, 1, (int_day)(day_of_year));
 }
 
 struct Date

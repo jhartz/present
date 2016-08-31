@@ -49,9 +49,9 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create(24);  // 24:00 should go to 00:00
     IS_HMS(0, 0, 0, 0);
     c = ClockTime::create(25);
-    REQUIRE(c.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
     c = ClockTime::create(-1);
-    REQUIRE(c.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
 
     // create_from_hour_minute
 
@@ -62,9 +62,9 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create(0, 59);
     IS_HMS(0, 59, 0, 0);
     c = ClockTime::create(0, 60);
-    REQUIRE(c.error == ClockTime_ERROR_MINUTE_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_MINUTE_OUT_OF_RANGE);
     c = ClockTime::create(0, -1);
-    REQUIRE(c.error == ClockTime_ERROR_MINUTE_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_MINUTE_OUT_OF_RANGE);
 
     // create_from_hour_minute_second
 
@@ -77,9 +77,9 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create(0, 0, 60);    // leap second
     IS_HMS(0, 0, 60, 0);
     c = ClockTime::create(0, 0, 61);
-    REQUIRE(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
     c = ClockTime::create(0, 0, -1);
-    REQUIRE(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
 
     // create_from_hour_minute_second_nanosecond
 
@@ -90,9 +90,9 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create(0, 0, 0, 999999999);
     IS_HMS(0, 0, 0, 999999999);
     c = ClockTime::create(0, 0, 0, 1000000000);
-    REQUIRE(c.error == ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE);
     c = ClockTime::create(0, 0, 0, -1);
-    REQUIRE(c.error == ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE);
 
     // ClockTime_create (macro - shortcut for C methods)
 
@@ -116,9 +116,9 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create_with_decimal_seconds(1, 2, 60);   // leap second
     IS_HMS(1, 2, 60, 0);
     c = ClockTime::create_with_decimal_seconds(1, 2, 61);
-    REQUIRE(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
     c = ClockTime::create_with_decimal_seconds(1, 2, -1);
-    REQUIRE(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
+    CHECK(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
 
     // midnight, noon
 
@@ -236,8 +236,8 @@ TEST_CASE("ClockTime comparison operators", "[clock-time]") {
 
 TEST_CASE("ClockTime boilerplate constructors", "[clock-time]") {
     // data_ constructor
-    struct PresentClockTimeData d = {3, 4};
-    ClockTime c(d);
+    struct PresentClockTimeData d1 = {3, 4};
+    ClockTime c(d1);
     IS_HMS(0, 0, 3, 4);
 
     // assignment operator
