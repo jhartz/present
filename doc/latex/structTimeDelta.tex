@@ -1,0 +1,627 @@
+\hypertarget{structTimeDelta}{\section{\-Time\-Delta \-Struct \-Reference}
+\label{structTimeDelta}\index{\-Time\-Delta@{\-Time\-Delta}}
+}
+
+
+\-Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.  
+
+
+
+
+{\ttfamily \#include $<$time-\/delta.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_ac5f5521afb1b6118b34bf8987bd3b46f}{get\-\_\-nanoseconds} () const 
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_aea0305bf51cadc48b987ff97454201a0}{get\-\_\-microseconds} () const 
+\item 
+double \hyperlink{structTimeDelta_ad4563212afb3c7e4307a900ceac74995}{get\-\_\-microseconds\-\_\-decimal} () const 
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_a3cbd0c925ee1f8f0e028737643a830f6}{get\-\_\-milliseconds} () const 
+\item 
+double \hyperlink{structTimeDelta_ac7d647ea74d5b3abb8fdcfed1408d139}{get\-\_\-milliseconds\-\_\-decimal} () const 
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_a30cec240d3ae960182b5ad473f1f426c}{get\-\_\-seconds} () const 
+\item 
+double \hyperlink{structTimeDelta_a8d5ce7355977a739fe2330472bf50965}{get\-\_\-seconds\-\_\-decimal} () const 
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_a5f96f06d84489a75c4e52c76c682bd43}{get\-\_\-minutes} () const 
+\item 
+double \hyperlink{structTimeDelta_a9778c70f343b8238c30d72f79832ee68}{get\-\_\-minutes\-\_\-decimal} () const 
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_ad2e561054006c1a65a3e610eaf8e6e5e}{get\-\_\-hours} () const 
+\item 
+double \hyperlink{structTimeDelta_af64fa27b7580167e18cd30ab1bec06ac}{get\-\_\-hours\-\_\-decimal} () const 
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_a0ce6b1715ab92fa1e66e14e952a64268}{get\-\_\-days} () const 
+\item 
+double \hyperlink{structTimeDelta_a76f968368aff4b45c80b0b147c417fd3}{get\-\_\-days\-\_\-decimal} () const 
+\item 
+int\-\_\-delta \hyperlink{structTimeDelta_aab4f773272785b9421b101ee243c0eaf}{get\-\_\-weeks} () const 
+\item 
+double \hyperlink{structTimeDelta_a927aad8d85f646d3712ded9c09ae957a}{get\-\_\-weeks\-\_\-decimal} () const 
+\item 
+\hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structTimeDelta_a159836075fddd7cef439a08b206f0e97}{get\-\_\-day\-\_\-delta\-\_\-truncated} () const 
+\item 
+\hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structTimeDelta_a188dd345b8e7eeceff4320103c727d15}{get\-\_\-day\-\_\-delta\-\_\-rounded} () const 
+\item 
+\hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structTimeDelta_a50d3fe29ff74cd653c6b063c0ba05528}{get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil} () const 
+\item 
+bool \hyperlink{structTimeDelta_acc2faf0e9a1563c84fb68cad42521c54}{is\-\_\-negative} () const 
+\item 
+void \hyperlink{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}{negate} ()
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}{operator-\/} () const 
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_ae317349e9984990e3d2ff2489036055b}{operator$\ast$=} (const int \&)
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_a9d7e96eccef60bf752488a94b6b54939}{operator$\ast$=} (const double \&)
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_a099195e2bc83ea7f217a566732c8037d}{operator/=} (const int \&)
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_aaf7f4de78973da02b04891bab2f49ca3}{operator/=} (const double \&)
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_a71cc0f1b1f3bf080e34a73902b1a1a81}{operator+=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_aca3281505a032868194e2e9a890b2e49}{operator-\/=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+\hyperlink{structTimeDelta_a57ef1bc875d370aaaf8ce7c4aba1cd75}{\-Time\-Delta} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&day\-Delta)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}{from\-\_\-nanoseconds} (int\-\_\-delta nanoseconds)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}{from\-\_\-microseconds} (int\-\_\-delta microseconds)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a01e0919f444379030aa37559fa13542c}{from\-\_\-milliseconds} (int\-\_\-delta milliseconds)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_aad4311d8580ade36d8c567576630c967}{from\-\_\-seconds} (int\-\_\-delta seconds)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}{from\-\_\-minutes} (int\-\_\-delta minutes)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}{from\-\_\-hours} (int\-\_\-delta hours)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}{from\-\_\-days} (int\-\_\-delta days)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}{from\-\_\-weeks} (int\-\_\-delta weeks)
+\item 
+static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}{zero} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{time-delta_8h_a6090105e9137c36754994cda35937b59}{\-Present\-Time\-Delta\-Error} \hyperlink{structTimeDelta_a212d89d50dc636a4e12ceac5fd9f0bfd}{error}
+\item 
+struct \-Present\-Time\-Delta\-Data \hyperlink{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}{data\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_aef7928284f0439b514b32ca5617617b0}{operator$\ast$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const int \&)
+\item 
+const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a00a2a0306b1e3547d02b905dccf2ff36}{operator$\ast$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const double \&)
+\item 
+const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a3427dfdb6732015310d97872edbf97cb}{operator/} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const int \&)
+\item 
+const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a5f9b18fe821ce2448e044667f158e8fb}{operator/} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const double \&)
+\item 
+const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a4410e687a3a92f9a48c1d28ae61ee41a}{operator+} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_abb568533c9d0e4c9625faba58f3e129d}{operator-\/} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+bool \hyperlink{structTimeDelta_a9f553200840baea8eca578e7702bebb3}{operator==} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+bool \hyperlink{structTimeDelta_a5be2899748df249dff26a5c20f15fe3f}{operator!=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+bool \hyperlink{structTimeDelta_a04aff1caeb09c0580d802803ad2e1a40}{operator$<$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+bool \hyperlink{structTimeDelta_a676bbb918c9bb5a9ee2429116c204345}{operator$<$=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+bool \hyperlink{structTimeDelta_a7c3491579f393a434bf5ef180fd0a83c}{operator$>$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+bool \hyperlink{structTimeDelta_aa776c7c03929c0d67e2b207ea75e0819}{operator$>$=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structTimeDelta_a57ef1bc875d370aaaf8ce7c4aba1cd75}{\index{\-Time\-Delta@{\-Time\-Delta}!\-Time\-Delta@{\-Time\-Delta}}
+\index{\-Time\-Delta@{\-Time\-Delta}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{\-Time\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta\-::\-Time\-Delta} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Day\-Delta} \&}]{day\-Delta}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_a57ef1bc875d370aaaf8ce7c4aba1cd75}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-days@{from\-\_\-days}}
+\index{from\-\_\-days@{from\-\_\-days}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-days}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-days} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{days}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a63cc9a37b13e1ea2c9517a15254761dd}{\-Time\-Delta\-\_\-from\-\_\-days} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-hours@{from\-\_\-hours}}
+\index{from\-\_\-hours@{from\-\_\-hours}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-hours}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-hours} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{hours}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a56f1c443994cd0cbe306cd04e378eabe}{\-Time\-Delta\-\_\-from\-\_\-hours} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-microseconds@{from\-\_\-microseconds}}
+\index{from\-\_\-microseconds@{from\-\_\-microseconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-microseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-microseconds} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{microseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a8a5b10cada34e6093d985bb757671842}{\-Time\-Delta\-\_\-from\-\_\-microseconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a01e0919f444379030aa37559fa13542c}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-milliseconds@{from\-\_\-milliseconds}}
+\index{from\-\_\-milliseconds@{from\-\_\-milliseconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-milliseconds} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{milliseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a01e0919f444379030aa37559fa13542c}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ae7919eccd5d372f5f954d560792699b5}{\-Time\-Delta\-\_\-from\-\_\-milliseconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-minutes@{from\-\_\-minutes}}
+\index{from\-\_\-minutes@{from\-\_\-minutes}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-minutes}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-minutes} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{minutes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a18b5bed19a394a36890c2578fe05e5b1}{\-Time\-Delta\-\_\-from\-\_\-minutes} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-nanoseconds@{from\-\_\-nanoseconds}}
+\index{from\-\_\-nanoseconds@{from\-\_\-nanoseconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-nanoseconds} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{nanoseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a4d69e5c655907802b1278e2bc0567c6b}{\-Time\-Delta\-\_\-from\-\_\-nanoseconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_aad4311d8580ade36d8c567576630c967}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-seconds@{from\-\_\-seconds}}
+\index{from\-\_\-seconds@{from\-\_\-seconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-seconds} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{seconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_aad4311d8580ade36d8c567576630c967}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ae0ba972261d5dd8b375af9b207311baf}{\-Time\-Delta\-\_\-from\-\_\-seconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-weeks@{from\-\_\-weeks}}
+\index{from\-\_\-weeks@{from\-\_\-weeks}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{from\-\_\-weeks}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-weeks} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-delta}]{weeks}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_adeaef2754da892c29f03834c14ad1204}{\-Time\-Delta\-\_\-from\-\_\-weeks} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a50d3fe29ff74cd653c6b063c0ba05528}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil@{get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil}}
+\index{get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil@{get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Day\-Delta} {\bf \-Time\-Delta\-::get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a50d3fe29ff74cd653c6b063c0ba05528}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ad86ae02779b9fde0613cba364522ec99}{\-Time\-Delta\-\_\-get\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a188dd345b8e7eeceff4320103c727d15}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-day\-\_\-delta\-\_\-rounded@{get\-\_\-day\-\_\-delta\-\_\-rounded}}
+\index{get\-\_\-day\-\_\-delta\-\_\-rounded@{get\-\_\-day\-\_\-delta\-\_\-rounded}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-day\-\_\-delta\-\_\-rounded}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Day\-Delta} {\bf \-Time\-Delta\-::get\-\_\-day\-\_\-delta\-\_\-rounded} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a188dd345b8e7eeceff4320103c727d15}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_aae6864e3044344d9f27dab1bf22cb33c}{\-Time\-Delta\-\_\-get\-\_\-day\-\_\-delta\-\_\-rounded} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a159836075fddd7cef439a08b206f0e97}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-day\-\_\-delta\-\_\-truncated@{get\-\_\-day\-\_\-delta\-\_\-truncated}}
+\index{get\-\_\-day\-\_\-delta\-\_\-truncated@{get\-\_\-day\-\_\-delta\-\_\-truncated}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-day\-\_\-delta\-\_\-truncated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Day\-Delta} {\bf \-Time\-Delta\-::get\-\_\-day\-\_\-delta\-\_\-truncated} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a159836075fddd7cef439a08b206f0e97}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a22e42b82fef74a330b892197c3fe4586}{\-Time\-Delta\-\_\-get\-\_\-day\-\_\-delta\-\_\-truncated} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a0ce6b1715ab92fa1e66e14e952a64268}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-days@{get\-\_\-days}}
+\index{get\-\_\-days@{get\-\_\-days}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-days}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-days} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a0ce6b1715ab92fa1e66e14e952a64268}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a8394c0ca6720f02f68004e69be2a140b}{\-Time\-Delta\-\_\-get\-\_\-days} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a76f968368aff4b45c80b0b147c417fd3}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-days\-\_\-decimal@{get\-\_\-days\-\_\-decimal}}
+\index{get\-\_\-days\-\_\-decimal@{get\-\_\-days\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-days\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::get\-\_\-days\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a76f968368aff4b45c80b0b147c417fd3}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a1cd230549ae6fbd0329212e2da4f3477}{\-Time\-Delta\-\_\-get\-\_\-days\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_ad2e561054006c1a65a3e610eaf8e6e5e}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-hours@{get\-\_\-hours}}
+\index{get\-\_\-hours@{get\-\_\-hours}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-hours}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-hours} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_ad2e561054006c1a65a3e610eaf8e6e5e}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ab0df8098dd251b0374f3ec9fbb8d2214}{\-Time\-Delta\-\_\-get\-\_\-hours} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_af64fa27b7580167e18cd30ab1bec06ac}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-hours\-\_\-decimal@{get\-\_\-hours\-\_\-decimal}}
+\index{get\-\_\-hours\-\_\-decimal@{get\-\_\-hours\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-hours\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::get\-\_\-hours\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_af64fa27b7580167e18cd30ab1bec06ac}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ab30868a5efcd2da10005cb24a72963e6}{\-Time\-Delta\-\_\-get\-\_\-hours\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_aea0305bf51cadc48b987ff97454201a0}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-microseconds@{get\-\_\-microseconds}}
+\index{get\-\_\-microseconds@{get\-\_\-microseconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-microseconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-microseconds} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_aea0305bf51cadc48b987ff97454201a0}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_abb6e5f84d388603a3435795055628238}{\-Time\-Delta\-\_\-get\-\_\-microseconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_ad4563212afb3c7e4307a900ceac74995}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-microseconds\-\_\-decimal@{get\-\_\-microseconds\-\_\-decimal}}
+\index{get\-\_\-microseconds\-\_\-decimal@{get\-\_\-microseconds\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-microseconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::get\-\_\-microseconds\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_ad4563212afb3c7e4307a900ceac74995}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a1a423d7912a4f1cafa24a51c6aa83529}{\-Time\-Delta\-\_\-get\-\_\-microseconds\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a3cbd0c925ee1f8f0e028737643a830f6}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-milliseconds@{get\-\_\-milliseconds}}
+\index{get\-\_\-milliseconds@{get\-\_\-milliseconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-milliseconds} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a3cbd0c925ee1f8f0e028737643a830f6}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a975595bac014708aef45bf7f2b6c1eb6}{\-Time\-Delta\-\_\-get\-\_\-milliseconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_ac7d647ea74d5b3abb8fdcfed1408d139}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-milliseconds\-\_\-decimal@{get\-\_\-milliseconds\-\_\-decimal}}
+\index{get\-\_\-milliseconds\-\_\-decimal@{get\-\_\-milliseconds\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-milliseconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::get\-\_\-milliseconds\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_ac7d647ea74d5b3abb8fdcfed1408d139}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a3f2a375289348737273a4c5054e8e290}{\-Time\-Delta\-\_\-get\-\_\-milliseconds\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a5f96f06d84489a75c4e52c76c682bd43}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-minutes@{get\-\_\-minutes}}
+\index{get\-\_\-minutes@{get\-\_\-minutes}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-minutes}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-minutes} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a5f96f06d84489a75c4e52c76c682bd43}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_acd6e692b20c8d6dbb68f83382eb48fbd}{\-Time\-Delta\-\_\-get\-\_\-minutes} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a9778c70f343b8238c30d72f79832ee68}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-minutes\-\_\-decimal@{get\-\_\-minutes\-\_\-decimal}}
+\index{get\-\_\-minutes\-\_\-decimal@{get\-\_\-minutes\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-minutes\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::get\-\_\-minutes\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a9778c70f343b8238c30d72f79832ee68}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a2c6277da4b2e51368680acec96f096df}{\-Time\-Delta\-\_\-get\-\_\-minutes\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_ac5f5521afb1b6118b34bf8987bd3b46f}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-nanoseconds@{get\-\_\-nanoseconds}}
+\index{get\-\_\-nanoseconds@{get\-\_\-nanoseconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-nanoseconds} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_ac5f5521afb1b6118b34bf8987bd3b46f}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a1c5687bfcf6d342dd152e1085e53c777}{\-Time\-Delta\-\_\-get\-\_\-nanoseconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a30cec240d3ae960182b5ad473f1f426c}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-seconds@{get\-\_\-seconds}}
+\index{get\-\_\-seconds@{get\-\_\-seconds}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-seconds} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a30cec240d3ae960182b5ad473f1f426c}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a828a74fdc1d24a5086d727b1522167d3}{\-Time\-Delta\-\_\-get\-\_\-seconds} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a8d5ce7355977a739fe2330472bf50965}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-seconds\-\_\-decimal@{get\-\_\-seconds\-\_\-decimal}}
+\index{get\-\_\-seconds\-\_\-decimal@{get\-\_\-seconds\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-seconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::get\-\_\-seconds\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a8d5ce7355977a739fe2330472bf50965}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ac23e1641d7d997d8c9be88a72cf6ee15}{\-Time\-Delta\-\_\-get\-\_\-seconds\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_aab4f773272785b9421b101ee243c0eaf}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-weeks@{get\-\_\-weeks}}
+\index{get\-\_\-weeks@{get\-\_\-weeks}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-weeks}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::get\-\_\-weeks} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_aab4f773272785b9421b101ee243c0eaf}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ac0d5f3dc0f6ce1d76c9addf0ef23a01f}{\-Time\-Delta\-\_\-get\-\_\-weeks} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a927aad8d85f646d3712ded9c09ae957a}{\index{\-Time\-Delta@{\-Time\-Delta}!get\-\_\-weeks\-\_\-decimal@{get\-\_\-weeks\-\_\-decimal}}
+\index{get\-\_\-weeks\-\_\-decimal@{get\-\_\-weeks\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{get\-\_\-weeks\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::get\-\_\-weeks\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a927aad8d85f646d3712ded9c09ae957a}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a17b67c52a855f556cb84371f83ade7cf}{\-Time\-Delta\-\_\-get\-\_\-weeks\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_acc2faf0e9a1563c84fb68cad42521c54}{\index{\-Time\-Delta@{\-Time\-Delta}!is\-\_\-negative@{is\-\_\-negative}}
+\index{is\-\_\-negative@{is\-\_\-negative}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{is\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Time\-Delta\-::is\-\_\-negative} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_acc2faf0e9a1563c84fb68cad42521c54}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a8b0be83d6cd6ab623f05ea0eb5d560c7}{\-Time\-Delta\-\_\-is\-\_\-negative} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}{\index{\-Time\-Delta@{\-Time\-Delta}!negate@{negate}}
+\index{negate@{negate}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{negate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-::negate} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a906aa66074e2d9ef675ea2d2a1d25084}{\-Time\-Delta\-\_\-negate} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_ae317349e9984990e3d2ff2489036055b}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_ae317349e9984990e3d2ff2489036055b}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ab70f5dfbbe9363021f533a4b1e3bf2be}{\-Time\-Delta\-\_\-multiply\-\_\-by} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a9d7e96eccef60bf752488a94b6b54939}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_a9d7e96eccef60bf752488a94b6b54939}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_aa1e03be2346f1441127a828a3fe02568}{\-Time\-Delta\-\_\-multiply\-\_\-by\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a71cc0f1b1f3bf080e34a73902b1a1a81}{\index{\-Time\-Delta@{\-Time\-Delta}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_a71cc0f1b1f3bf080e34a73902b1a1a81}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a7b8c837c0a4c63f4a214ffca0e8c9592}{\-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} \-Time\-Delta\-::operator-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}
+\hypertarget{structTimeDelta_aca3281505a032868194e2e9a890b2e49}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_aca3281505a032868194e2e9a890b2e49}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a24fafdc5f4cef060d1d2ad269952f82a}{\-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a099195e2bc83ea7f217a566732c8037d}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_a099195e2bc83ea7f217a566732c8037d}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a5c6754df68d1166d92e15c48885e861e}{\-Time\-Delta\-\_\-divide\-\_\-by} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_aaf7f4de78973da02b04891bab2f49ca3}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structTimeDelta_aaf7f4de78973da02b04891bab2f49ca3}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a31fffdb820891d79283aca56a3aeb853}{\-Time\-Delta\-\_\-divide\-\_\-by\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}{\index{\-Time\-Delta@{\-Time\-Delta}!zero@{zero}}
+\index{zero@{zero}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::zero} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a4d78cdef19464e2c645923c831f38910}{\-Time\-Delta\-\_\-zero} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{structTimeDelta_a5be2899748df249dff26a5c20f15fe3f}{\index{\-Time\-Delta@{\-Time\-Delta}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a5be2899748df249dff26a5c20f15fe3f}
+\hypertarget{structTimeDelta_aef7928284f0439b514b32ca5617617b0}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_aef7928284f0439b514b32ca5617617b0}
+\hypertarget{structTimeDelta_a00a2a0306b1e3547d02b905dccf2ff36}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const double \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a00a2a0306b1e3547d02b905dccf2ff36}
+\hypertarget{structTimeDelta_a4410e687a3a92f9a48c1d28ae61ee41a}{\index{\-Time\-Delta@{\-Time\-Delta}!operator+@{operator+}}
+\index{operator+@{operator+}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a4410e687a3a92f9a48c1d28ae61ee41a}
+\hypertarget{structTimeDelta_abb568533c9d0e4c9625faba58f3e129d}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_abb568533c9d0e4c9625faba58f3e129d}
+\hypertarget{structTimeDelta_a3427dfdb6732015310d97872edbf97cb}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/@{operator/}}
+\index{operator/@{operator/}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a3427dfdb6732015310d97872edbf97cb}
+\hypertarget{structTimeDelta_a5f9b18fe821ce2448e044667f158e8fb}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/@{operator/}}
+\index{operator/@{operator/}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const double \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a5f9b18fe821ce2448e044667f158e8fb}
+\hypertarget{structTimeDelta_a04aff1caeb09c0580d802803ad2e1a40}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a04aff1caeb09c0580d802803ad2e1a40}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a9494ddb1994d09d928a17bc5d8f12a5a}{\-Time\-Delta\-\_\-less\-\_\-than} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a676bbb918c9bb5a9ee2429116c204345}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a676bbb918c9bb5a9ee2429116c204345}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a97644eac25e86eb3b1895cb5a668c25b}{\-Time\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a9f553200840baea8eca578e7702bebb3}{\index{\-Time\-Delta@{\-Time\-Delta}!operator==@{operator==}}
+\index{operator==@{operator==}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a9f553200840baea8eca578e7702bebb3}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_ae43460348083663634bd5bef6c5ab885}{\-Time\-Delta\-\_\-equal} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_a7c3491579f393a434bf5ef180fd0a83c}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a7c3491579f393a434bf5ef180fd0a83c}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_a7ef30d66e1eeea47ea7000775614020e}{\-Time\-Delta\-\_\-greater\-\_\-than} 
+\end{DoxySeeAlso}
+\hypertarget{structTimeDelta_aa776c7c03929c0d67e2b207ea75e0819}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_aa776c7c03929c0d67e2b207ea75e0819}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{time-delta_8h_aca2a28b813b68c66a3754ecf311350b8}{\-Time\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}{\index{\-Time\-Delta@{\-Time\-Delta}!data\-\_\-@{data\-\_\-}}
+\index{data\-\_\-@{data\-\_\-}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{data\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}struct \-Present\-Time\-Delta\-Data {\bf \-Time\-Delta\-::data\-\_\-}}}\label{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}
+\hypertarget{structTimeDelta_a212d89d50dc636a4e12ceac5fd9f0bfd}{\index{\-Time\-Delta@{\-Time\-Delta}!error@{error}}
+\index{error@{error}!TimeDelta@{\-Time\-Delta}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Present\-Time\-Delta\-Error} {\bf \-Time\-Delta\-::error}}}\label{structTimeDelta_a212d89d50dc636a4e12ceac5fd9f0bfd}
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/jhartz/present/include/present/\hyperlink{time-delta_8h}{time-\/delta.\-h}\end{DoxyCompactItemize}

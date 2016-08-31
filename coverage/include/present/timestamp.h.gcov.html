@@ -1,0 +1,524 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info.cleaned - include/present/timestamp.h</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">include/present</a> - timestamp.h<span style="font-size: 80%;"> (source / <a href="timestamp.h.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2016-08-31</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : /*</a>
+<span class="lineNum">       2 </span>                :            :  * Present - Date/Time Library
+<span class="lineNum">       3 </span>                :            :  *
+<span class="lineNum">       4 </span>                :            :  * Definition of the Timestamp structure and related methods
+<span class="lineNum">       5 </span>                :            :  *
+<span class="lineNum">       6 </span>                :            :  * Licensed under the MIT License.
+<span class="lineNum">       7 </span>                :            :  * For details, see LICENSE.
+<span class="lineNum">       8 </span>                :            :  */
+<span class="lineNum">       9 </span>                :            : 
+<span class="lineNum">      10 </span>                :            : #include &quot;present/utils/types.h&quot;
+<span class="lineNum">      11 </span>                :            : #include &quot;present/utils/utils.h&quot;
+<span class="lineNum">      12 </span>                :            : #include &quot;present/impl/present-timestamp-data.h&quot;
+<span class="lineNum">      13 </span>                :            : 
+<span class="lineNum">      14 </span>                :            : #ifndef _PRESENT_TIMESTAMP_H_
+<span class="lineNum">      15 </span>                :            : #define _PRESENT_TIMESTAMP_H_
+<span class="lineNum">      16 </span>                :            : 
+<span class="lineNum">      17 </span>                :            : /*
+<span class="lineNum">      18 </span>                :            :  * Forward Declarations
+<span class="lineNum">      19 </span>                :            :  */
+<span class="lineNum">      20 </span>                :            : 
+<span class="lineNum">      21 </span>                :            : struct ClockTime;
+<span class="lineNum">      22 </span>                :            : struct Date;
+<span class="lineNum">      23 </span>                :            : struct MonthDelta;
+<span class="lineNum">      24 </span>                :            : struct TimeDelta;
+<span class="lineNum">      25 </span>                :            : 
+<span class="lineNum">      26 </span>                :            : /*
+<span class="lineNum">      27 </span>                :            :  * Enum Definitions
+<span class="lineNum">      28 </span>                :            :  */
+<span class="lineNum">      29 </span>                :            : 
+<span class="lineNum">      30 </span>                :            : enum PresentTimestampError {
+<span class="lineNum">      31 </span>                :            :     Timestamp_ERROR_NONE = 0
+<span class="lineNum">      32 </span>                :            :     , Timestamp_ERROR_INVALID_CLOCK_TIME
+<span class="lineNum">      33 </span>                :            :     , Timestamp_ERROR_INVALID_DATE
+<span class="lineNum">      34 </span>                :            : };
+<span class="lineNum">      35 </span>                :            : 
+<span class="lineNum">      36 </span>                :            : /*
+<span class="lineNum">      37 </span>                :            :  * C++ Class / C Struct Definition
+<span class="lineNum">      38 </span>                :            :  */
+<span class="lineNum">      39 </span>                :            : 
+<span class="lineNum">      40 </span>                :            : /**
+<span class="lineNum">      41 </span>                :            :  * Class or struct representing an exact point in time.
+<span class="lineNum">      42 </span>                :            :  *
+<span class="lineNum">      43 </span>                :            :  * This includes a full date and time, and is sensitive to time zones.
+<span class="lineNum">      44 </span>                :            :  */
+<span class="lineNum">      45 </span>                :            : struct PRESENT_API Timestamp {
+<span class="lineNum">      46 </span>                :            :     enum PresentTimestampError error;
+<span class="lineNum">      47 </span>                :            :     struct PresentTimestampData data_;
+<span class="lineNum">      48 </span>                :            : 
+<span class="lineNum">      49 </span>                :            : #ifdef __cplusplus
+<span class="lineNum">      50 </span>                :            :     /** @see Timestamp_create_from_time_t */
+<span class="lineNum">      51 </span>                :            :     static Timestamp create(const time_t timestamp);
+<span class="lineNum">      52 </span>                :            : 
+<span class="lineNum">      53 </span>                :            :     /** @see Timestamp_create_from_struct_tm */
+<span class="lineNum">      54 </span>                :            :     static Timestamp create(
+<span class="lineNum">      55 </span>                :            :         const struct tm &amp; tm,
+<span class="lineNum">      56 </span>                :            :         const TimeDelta &amp; timeZoneOffset);
+<span class="lineNum">      57 </span>                :            :     /** @see Timestamp_create_from_struct_tm_utc */
+<span class="lineNum">      58 </span>                :            :     static Timestamp create_utc(const struct tm &amp; tm);
+<span class="lineNum">      59 </span>                :            :     /** @see Timestamp_create_from_struct_tm_local */
+<span class="lineNum">      60 </span>                :            :     static Timestamp create_local(const struct tm &amp; tm);
+<span class="lineNum">      61 </span>                :            : 
+<span class="lineNum">      62 </span>                :            :     /** @see Timestamp_create */
+<span class="lineNum">      63 </span>                :            :     static Timestamp create(
+<span class="lineNum">      64 </span>                :            :         const Date &amp; date,
+<span class="lineNum">      65 </span>                :            :         const ClockTime &amp; clockTime,
+<span class="lineNum">      66 </span>                :            :         const TimeDelta &amp; timeZoneOffset);
+<span class="lineNum">      67 </span>                :            :     /** @see Timestamp_create_utc */
+<span class="lineNum">      68 </span>                :            :     static Timestamp create_utc(const Date &amp; date, const ClockTime &amp; clockTime);
+<span class="lineNum">      69 </span>                :            :     /** @see Timestamp_create_local */
+<span class="lineNum">      70 </span>                :            :     static Timestamp create_local(
+<span class="lineNum">      71 </span>                :            :         const Date &amp; date,
+<span class="lineNum">      72 </span>                :            :         const ClockTime &amp; clockTime);
+<span class="lineNum">      73 </span>                :            : 
+<span class="lineNum">      74 </span>                :            :     /** @see Timestamp_now */
+<span class="lineNum">      75 </span>                :            :     static Timestamp now();
+<span class="lineNum">      76 </span>                :            : 
+<span class="lineNum">      77 </span>                :            :     /** @see Timestamp_epoch */
+<span class="lineNum">      78 </span>                :            :     static Timestamp epoch();
+<span class="lineNum">      79 </span>                :            : 
+<span class="lineNum">      80 </span>                :            :     /** @see Timestamp_get_time_t */
+<span class="lineNum">      81 </span>                :            :     time_t get_time_t() const;
+<span class="lineNum">      82 </span>                :            : 
+<span class="lineNum">      83 </span>                :            :     /** @see Timestamp_get_struct_tm */
+<span class="lineNum">      84 </span>                :            :     struct tm get_struct_tm(const TimeDelta &amp; timeZoneOffset) const;
+<span class="lineNum">      85 </span>                :            :     /** @see Timestamp_get_struct_tm_utc */
+<span class="lineNum">      86 </span>                :            :     struct tm get_struct_tm_utc() const;
+<span class="lineNum">      87 </span>                :            :     /** @see Timestamp_get_struct_tm_local */
+<span class="lineNum">      88 </span>                :            :     struct tm get_struct_tm_local() const;
+<span class="lineNum">      89 </span>                :            : 
+<span class="lineNum">      90 </span>                :            :     /** @see Timestamp_get_date */
+<span class="lineNum">      91 </span>                :            :     Date get_date(const TimeDelta &amp; timeZoneOffset) const;
+<span class="lineNum">      92 </span>                :            :     /** @see Timestamp_get_date_utc */
+<span class="lineNum">      93 </span>                :            :     Date get_date_utc() const;
+<span class="lineNum">      94 </span>                :            :     /** @see Timestamp_get_date_local */
+<span class="lineNum">      95 </span>                :            :     Date get_date_local() const;
+<span class="lineNum">      96 </span>                :            : 
+<span class="lineNum">      97 </span>                :            :     /** @see Timestamp_get_clock_time */
+<span class="lineNum">      98 </span>                :            :     ClockTime get_clock_time(const TimeDelta &amp; timeZoneOffset) const;
+<span class="lineNum">      99 </span>                :            :     /** @see Timestamp_get_clock_time_utc */
+<span class="lineNum">     100 </span>                :            :     ClockTime get_clock_time_utc() const;
+<span class="lineNum">     101 </span>                :            :     /** @see Timestamp_get_clock_time_local */
+<span class="lineNum">     102 </span>                :            :     ClockTime get_clock_time_local() const;
+<span class="lineNum">     103 </span>                :            : 
+<span class="lineNum">     104 </span>                :            :     /** @see Timestamp_get_difference */
+<span class="lineNum">     105 </span>                :            :     TimeDelta get_difference(const Timestamp &amp; other) const;
+<span class="lineNum">     106 </span>                :            :     /** @see Timestamp_get_absolute_difference */
+<span class="lineNum">     107 </span>                :            :     TimeDelta get_absolute_difference(const Timestamp &amp; other) const;
+<span class="lineNum">     108 </span>                :            : 
+<span class="lineNum">     109 </span>                :            :     /** @see Timestamp_add_time_delta */
+<span class="lineNum">     110 </span>                :            :     Timestamp &amp; operator+=(const TimeDelta &amp;);
+<span class="lineNum">     111 </span>                :            :     /** @see Timestamp_add_day_delta */
+<span class="lineNum">     112 </span>                :            :     Timestamp &amp; operator+=(const DayDelta &amp;);
+<span class="lineNum">     113 </span>                :            :     /** @see Timestamp_add_month_delta */
+<span class="lineNum">     114 </span>                :            :     Timestamp &amp; operator+=(const MonthDelta &amp;);
+<span class="lineNum">     115 </span>                :            :     /** @see Timestamp_subtract_time_delta */
+<span class="lineNum">     116 </span>                :            :     Timestamp &amp; operator-=(const TimeDelta &amp;);
+<span class="lineNum">     117 </span>                :            :     /** @see Timestamp_subtract_day_delta */
+<span class="lineNum">     118 </span>                :            :     Timestamp &amp; operator-=(const DayDelta &amp;);
+<span class="lineNum">     119 </span>                :            :     /** @see Timestamp_subtract_month_delta */
+<span class="lineNum">     120 </span>                :            :     Timestamp &amp; operator-=(const MonthDelta &amp;);
+<span class="lineNum">     121 </span>                :            : 
+<span class="lineNum">     122 </span>                :            :     friend const Timestamp operator+(const Timestamp &amp;, const TimeDelta &amp;);
+<span class="lineNum">     123 </span>                :            :     friend const Timestamp operator+(const Timestamp &amp;, const DayDelta &amp;);
+<span class="lineNum">     124 </span>                :            :     friend const Timestamp operator+(const Timestamp &amp;, const MonthDelta &amp;);
+<span class="lineNum">     125 </span>                :            :     friend const Timestamp operator-(const Timestamp &amp;, const TimeDelta &amp;);
+<span class="lineNum">     126 </span>                :            :     friend const Timestamp operator-(const Timestamp &amp;, const DayDelta &amp;);
+<span class="lineNum">     127 </span>                :            :     friend const Timestamp operator-(const Timestamp &amp;, const MonthDelta &amp;);
+<span class="lineNum">     128 </span>                :            : 
+<span class="lineNum">     129 </span>                :            :     /** @see Timestamp_equal */
+<span class="lineNum">     130 </span>                :            :     friend bool operator==(const Timestamp &amp;, const Timestamp &amp;);
+<span class="lineNum">     131 </span>                :            :     friend bool operator!=(const Timestamp &amp;, const Timestamp &amp;);
+<span class="lineNum">     132 </span>                :            : 
+<span class="lineNum">     133 </span>                :            :     /** @see Timestamp_less_than */
+<span class="lineNum">     134 </span>                :            :     friend bool operator&lt;(const Timestamp &amp;, const Timestamp &amp;);
+<span class="lineNum">     135 </span>                :            :     /** @see Timestamp_less_than_or_equal */
+<span class="lineNum">     136 </span>                :            :     friend bool operator&lt;=(const Timestamp &amp;, const Timestamp &amp;);
+<span class="lineNum">     137 </span>                :            :     /** @see Timestamp_greater_than */
+<span class="lineNum">     138 </span>                :            :     friend bool operator&gt;(const Timestamp &amp;, const Timestamp &amp;);
+<span class="lineNum">     139 </span>                :            :     /** @see Timestamp_greater_than_or_equal */
+<a name="140"><span class="lineNum">     140 </span>                :            :     friend bool operator&gt;=(const Timestamp &amp;, const Timestamp &amp;);</a>
+<span class="lineNum">     141 </span>                :            : 
+<span class="lineNum">     142 </span>                :<span class="lineNoCov">          0 :     PRESENT_BOILERPLATE_CONSTRUCTORS(Timestamp)</span>
+<span class="lineNum">     143 </span>                :            : #endif
+<span class="lineNum">     144 </span>                :            : };
+<span class="lineNum">     145 </span>                :            : 
+<span class="lineNum">     146 </span>                :            : /*
+<span class="lineNum">     147 </span>                :            :  * C Method Definitions
+<span class="lineNum">     148 </span>                :            :  */
+<span class="lineNum">     149 </span>                :            : 
+<span class="lineNum">     150 </span>                :            : #ifdef __cplusplus
+<span class="lineNum">     151 </span>                :            : extern &quot;C&quot; {
+<span class="lineNum">     152 </span>                :            : #endif
+<span class="lineNum">     153 </span>                :            : 
+<span class="lineNum">     154 </span>                :            : /**
+<span class="lineNum">     155 </span>                :            :  * Create a new Timestamp based on a &quot;time_t&quot; value (from C's time library).
+<span class="lineNum">     156 </span>                :            :  *
+<span class="lineNum">     157 </span>                :            :  * @param timestamp The &quot;time_t&quot; value representing the timestamp.
+<span class="lineNum">     158 </span>                :            :  */
+<span class="lineNum">     159 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     160 </span>                :            : Timestamp_create_from_time_t(const time_t timestamp);
+<span class="lineNum">     161 </span>                :            : 
+<span class="lineNum">     162 </span>                :            : 
+<span class="lineNum">     163 </span>                :            : /**
+<span class="lineNum">     164 </span>                :            :  * Create a new Timestamp based on a &quot;struct tm&quot; value (from C's time library)
+<span class="lineNum">     165 </span>                :            :  * in a certain time zone.
+<span class="lineNum">     166 </span>                :            :  *
+<span class="lineNum">     167 </span>                :            :  * @param tm The &quot;struct tm&quot; value representing the date and time.
+<span class="lineNum">     168 </span>                :            :  * @param timeZoneOffset The time zone offset (from UTC) used to interpret
+<span class="lineNum">     169 </span>                :            :  * @p tm.
+<span class="lineNum">     170 </span>                :            :  */
+<span class="lineNum">     171 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     172 </span>                :            : Timestamp_create_from_struct_tm(
+<span class="lineNum">     173 </span>                :            :         const struct tm tm,
+<span class="lineNum">     174 </span>                :            :         const struct TimeDelta * const timeZoneOffset);
+<span class="lineNum">     175 </span>                :            : 
+<span class="lineNum">     176 </span>                :            : /**
+<span class="lineNum">     177 </span>                :            :  * Create a new Timestamp based on a &quot;struct tm&quot; value (from C's time library)
+<span class="lineNum">     178 </span>                :            :  * in Coordinated Universal Time.
+<span class="lineNum">     179 </span>                :            :  *
+<span class="lineNum">     180 </span>                :            :  * @param tm The &quot;struct tm&quot; value representing the date and time.
+<span class="lineNum">     181 </span>                :            :  */
+<span class="lineNum">     182 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     183 </span>                :            : Timestamp_create_from_struct_tm_utc(const struct tm tm);
+<span class="lineNum">     184 </span>                :            : 
+<span class="lineNum">     185 </span>                :            : /**
+<span class="lineNum">     186 </span>                :            :  * Create a new Timestamp based on a &quot;struct tm&quot; value (from C's time library)
+<span class="lineNum">     187 </span>                :            :  * in the system's current local time zone.
+<span class="lineNum">     188 </span>                :            :  *
+<span class="lineNum">     189 </span>                :            :  * @param tm The &quot;struct tm&quot; value representing the date and time.
+<span class="lineNum">     190 </span>                :            :  */
+<span class="lineNum">     191 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     192 </span>                :            : Timestamp_create_from_struct_tm_local(const struct tm tm);
+<span class="lineNum">     193 </span>                :            : 
+<span class="lineNum">     194 </span>                :            : 
+<span class="lineNum">     195 </span>                :            : /**
+<span class="lineNum">     196 </span>                :            :  * Create a new Timestamp based on a @ref Date and @ref ClockTime in a certain
+<span class="lineNum">     197 </span>                :            :  * time zone.
+<span class="lineNum">     198 </span>                :            :  *
+<span class="lineNum">     199 </span>                :            :  * @param date The @ref Date component of the Timestamp.
+<span class="lineNum">     200 </span>                :            :  * @param clockTime The @ref ClockTime component of the Timestamp.
+<span class="lineNum">     201 </span>                :            :  * @param timeZoneOffset The time zone offset (from UTC) used to interpret
+<span class="lineNum">     202 </span>                :            :  * @p date and @p clockTime.
+<span class="lineNum">     203 </span>                :            :  */
+<span class="lineNum">     204 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     205 </span>                :            : Timestamp_create(
+<span class="lineNum">     206 </span>                :            :         const struct Date * const date,
+<span class="lineNum">     207 </span>                :            :         const struct ClockTime * const clockTime,
+<span class="lineNum">     208 </span>                :            :         const struct TimeDelta * const timeZoneOffset);
+<span class="lineNum">     209 </span>                :            : 
+<span class="lineNum">     210 </span>                :            : /**
+<span class="lineNum">     211 </span>                :            :  * Create a new Timestamp based on a @ref Date and @ref ClockTime in
+<span class="lineNum">     212 </span>                :            :  * Coordinated Universal Time.
+<span class="lineNum">     213 </span>                :            :  *
+<span class="lineNum">     214 </span>                :            :  * @param date The @ref Date component of the Timestamp.
+<span class="lineNum">     215 </span>                :            :  * @param clockTime The @ref ClockTime component of the Timestamp.
+<span class="lineNum">     216 </span>                :            :  */
+<span class="lineNum">     217 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     218 </span>                :            : Timestamp_create_utc(
+<span class="lineNum">     219 </span>                :            :         const struct Date * const date,
+<span class="lineNum">     220 </span>                :            :         const struct ClockTime * const clockTime);
+<span class="lineNum">     221 </span>                :            : 
+<span class="lineNum">     222 </span>                :            : /**
+<span class="lineNum">     223 </span>                :            :  * Create a new Timestamp based on a @ref Date and @ref ClockTime in the
+<span class="lineNum">     224 </span>                :            :  * system's current local time zone.
+<span class="lineNum">     225 </span>                :            :  *
+<span class="lineNum">     226 </span>                :            :  * @param date The @ref Date component of the Timestamp.
+<span class="lineNum">     227 </span>                :            :  * @param clockTime The @ref ClockTime component of the Timestamp.
+<span class="lineNum">     228 </span>                :            :  */
+<span class="lineNum">     229 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     230 </span>                :            : Timestamp_create_local(
+<span class="lineNum">     231 </span>                :            :         const struct Date * const date,
+<span class="lineNum">     232 </span>                :            :         const struct ClockTime * const clockTime);
+<span class="lineNum">     233 </span>                :            : 
+<span class="lineNum">     234 </span>                :            : 
+<span class="lineNum">     235 </span>                :            : /**
+<span class="lineNum">     236 </span>                :            :  * Create a new Timestamp representing the exact time right now.
+<span class="lineNum">     237 </span>                :            :  */
+<span class="lineNum">     238 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     239 </span>                :            : Timestamp_now();
+<span class="lineNum">     240 </span>                :            : 
+<span class="lineNum">     241 </span>                :            : /**
+<span class="lineNum">     242 </span>                :            :  * Create a new Timestamp representing the UNIX epoch
+<span class="lineNum">     243 </span>                :            :  * (Jan. 1, 1970 00:00:00 UTC).
+<span class="lineNum">     244 </span>                :            :  */
+<span class="lineNum">     245 </span>                :            : PRESENT_API struct Timestamp
+<span class="lineNum">     246 </span>                :            : Timestamp_epoch();
+<span class="lineNum">     247 </span>                :            : 
+<span class="lineNum">     248 </span>                :            : 
+<span class="lineNum">     249 </span>                :            : /**
+<span class="lineNum">     250 </span>                :            :  * Convert a Timestamp to a &quot;time_t&quot; (from C's time library).
+<span class="lineNum">     251 </span>                :            :  */
+<span class="lineNum">     252 </span>                :            : PRESENT_API time_t
+<span class="lineNum">     253 </span>                :            : Timestamp_get_time_t(const struct Timestamp * const self);
+<span class="lineNum">     254 </span>                :            : 
+<span class="lineNum">     255 </span>                :            : 
+<span class="lineNum">     256 </span>                :            : /**
+<span class="lineNum">     257 </span>                :            :  * Convert a Timestamp to a &quot;struct tm&quot; (from C's time library) in a certain
+<span class="lineNum">     258 </span>                :            :  * time zone (represented by an offset from UTC).
+<span class="lineNum">     259 </span>                :            :  */
+<span class="lineNum">     260 </span>                :            : PRESENT_API struct tm
+<span class="lineNum">     261 </span>                :            : Timestamp_get_struct_tm(
+<span class="lineNum">     262 </span>                :            :         const struct Timestamp * const self,
+<span class="lineNum">     263 </span>                :            :         const struct TimeDelta * const timeZoneOffset);
+<span class="lineNum">     264 </span>                :            : 
+<span class="lineNum">     265 </span>                :            : /**
+<span class="lineNum">     266 </span>                :            :  * Convert a Timestamp to a &quot;struct tm&quot; (from C's time library) in Coordinated
+<span class="lineNum">     267 </span>                :            :  * Universal Time.
+<span class="lineNum">     268 </span>                :            :  */
+<span class="lineNum">     269 </span>                :            : PRESENT_API struct tm
+<span class="lineNum">     270 </span>                :            : Timestamp_get_struct_tm_utc(const struct Timestamp * const self);
+<span class="lineNum">     271 </span>                :            : 
+<span class="lineNum">     272 </span>                :            : /**
+<span class="lineNum">     273 </span>                :            :  * Convert a Timestamp to a &quot;struct tm&quot; (from C's time library) in the system's
+<span class="lineNum">     274 </span>                :            :  * current local time zone.
+<span class="lineNum">     275 </span>                :            :  */
+<span class="lineNum">     276 </span>                :            : PRESENT_API struct tm
+<span class="lineNum">     277 </span>                :            : Timestamp_get_struct_tm_local(const struct Timestamp * const self);
+<span class="lineNum">     278 </span>                :            : 
+<span class="lineNum">     279 </span>                :            : 
+<span class="lineNum">     280 </span>                :            : /**
+<span class="lineNum">     281 </span>                :            :  * Get the @ref Date component of a Timestamp in a certain time zone
+<span class="lineNum">     282 </span>                :            :  * (represented by an offset from UTC).
+<span class="lineNum">     283 </span>                :            :  */
+<span class="lineNum">     284 </span>                :            : PRESENT_API struct Date
+<span class="lineNum">     285 </span>                :            : Timestamp_get_date(
+<span class="lineNum">     286 </span>                :            :         const struct Timestamp * const self,
+<span class="lineNum">     287 </span>                :            :         const struct TimeDelta * const timeZoneOffset);
+<span class="lineNum">     288 </span>                :            : 
+<span class="lineNum">     289 </span>                :            : /**
+<span class="lineNum">     290 </span>                :            :  * Get the @ref Date component of a Timestamp in Coordinated Universal Time.
+<span class="lineNum">     291 </span>                :            :  */
+<span class="lineNum">     292 </span>                :            : PRESENT_API struct Date
+<span class="lineNum">     293 </span>                :            : Timestamp_get_date_utc(const struct Timestamp * const self);
+<span class="lineNum">     294 </span>                :            : 
+<span class="lineNum">     295 </span>                :            : /**
+<span class="lineNum">     296 </span>                :            :  * Get the @ref Date component of a Timestamp in the system's current local
+<span class="lineNum">     297 </span>                :            :  * time zone.
+<span class="lineNum">     298 </span>                :            :  */
+<span class="lineNum">     299 </span>                :            : PRESENT_API struct Date
+<span class="lineNum">     300 </span>                :            : Timestamp_get_date_local(const struct Timestamp * const self);
+<span class="lineNum">     301 </span>                :            : 
+<span class="lineNum">     302 </span>                :            : 
+<span class="lineNum">     303 </span>                :            : /**
+<span class="lineNum">     304 </span>                :            :  * Get the @ref ClockTime component of a Timestamp in a certain time zone
+<span class="lineNum">     305 </span>                :            :  * (represented by an offset from UTC).
+<span class="lineNum">     306 </span>                :            :  */
+<span class="lineNum">     307 </span>                :            : PRESENT_API struct ClockTime
+<span class="lineNum">     308 </span>                :            : Timestamp_get_clock_time(
+<span class="lineNum">     309 </span>                :            :         const struct Timestamp * const self,
+<span class="lineNum">     310 </span>                :            :         const struct TimeDelta * const timeZoneOffset);
+<span class="lineNum">     311 </span>                :            : 
+<span class="lineNum">     312 </span>                :            : /**
+<span class="lineNum">     313 </span>                :            :  * Get the @ref ClockTime component of a Timestamp in Coordinated Universal
+<span class="lineNum">     314 </span>                :            :  * Time.
+<span class="lineNum">     315 </span>                :            :  */
+<span class="lineNum">     316 </span>                :            : PRESENT_API struct ClockTime
+<span class="lineNum">     317 </span>                :            : Timestamp_get_clock_time_utc(const struct Timestamp * const self);
+<span class="lineNum">     318 </span>                :            : 
+<span class="lineNum">     319 </span>                :            : /**
+<span class="lineNum">     320 </span>                :            :  * Get the @ref ClockTime component of a Timestamp in the system's current
+<span class="lineNum">     321 </span>                :            :  * local time zone.
+<span class="lineNum">     322 </span>                :            :  */
+<span class="lineNum">     323 </span>                :            : PRESENT_API struct ClockTime
+<span class="lineNum">     324 </span>                :            : Timestamp_get_clock_time_local(const struct Timestamp * const self);
+<span class="lineNum">     325 </span>                :            : 
+<span class="lineNum">     326 </span>                :            : 
+<span class="lineNum">     327 </span>                :            : /**
+<span class="lineNum">     328 </span>                :            :  * Get the difference between two Timestamp instances as a @ref TimeDelta.
+<span class="lineNum">     329 </span>                :            :  */
+<span class="lineNum">     330 </span>                :            : PRESENT_API struct TimeDelta
+<span class="lineNum">     331 </span>                :            : Timestamp_get_difference(
+<span class="lineNum">     332 </span>                :            :         const struct Timestamp * const self,
+<span class="lineNum">     333 </span>                :            :         const struct Timestamp * const other);
+<span class="lineNum">     334 </span>                :            : 
+<span class="lineNum">     335 </span>                :            : /**
+<span class="lineNum">     336 </span>                :            :  * Get the absolute difference between two Timestamp instances as a
+<span class="lineNum">     337 </span>                :            :  * @ref TimeDelta.
+<span class="lineNum">     338 </span>                :            :  */
+<span class="lineNum">     339 </span>                :            : PRESENT_API struct TimeDelta
+<span class="lineNum">     340 </span>                :            : Timestamp_get_absolute_difference(
+<span class="lineNum">     341 </span>                :            :         const struct Timestamp * const self,
+<span class="lineNum">     342 </span>                :            :         const struct Timestamp * const other);
+<span class="lineNum">     343 </span>                :            : 
+<span class="lineNum">     344 </span>                :            : 
+<span class="lineNum">     345 </span>                :            : /**
+<span class="lineNum">     346 </span>                :            :  * Add a @ref TimeDelta to a Timestamp.
+<span class="lineNum">     347 </span>                :            :  */
+<span class="lineNum">     348 </span>                :            : PRESENT_API void
+<span class="lineNum">     349 </span>                :            : Timestamp_add_time_delta(
+<span class="lineNum">     350 </span>                :            :         struct Timestamp * const self,
+<span class="lineNum">     351 </span>                :            :         const struct TimeDelta * const delta);
+<span class="lineNum">     352 </span>                :            : 
+<span class="lineNum">     353 </span>                :            : /**
+<span class="lineNum">     354 </span>                :            :  * Add a @ref DayDelta to a Timestamp.
+<span class="lineNum">     355 </span>                :            :  */
+<span class="lineNum">     356 </span>                :            : PRESENT_API void
+<span class="lineNum">     357 </span>                :            : Timestamp_add_day_delta(
+<span class="lineNum">     358 </span>                :            :         struct Timestamp * const self,
+<span class="lineNum">     359 </span>                :            :         const struct DayDelta * const delta);
+<span class="lineNum">     360 </span>                :            : 
+<span class="lineNum">     361 </span>                :            : /**
+<span class="lineNum">     362 </span>                :            :  * Add a @ref MonthDelta to a Timestamp.
+<span class="lineNum">     363 </span>                :            :  */
+<span class="lineNum">     364 </span>                :            : PRESENT_API void
+<span class="lineNum">     365 </span>                :            : Timestamp_add_month_delta(
+<span class="lineNum">     366 </span>                :            :         struct Timestamp * const self,
+<span class="lineNum">     367 </span>                :            :         const struct MonthDelta * const delta);
+<span class="lineNum">     368 </span>                :            : 
+<span class="lineNum">     369 </span>                :            : /**
+<span class="lineNum">     370 </span>                :            :  * Subtract a @ref TimeDelta from a Timestamp.
+<span class="lineNum">     371 </span>                :            :  */
+<span class="lineNum">     372 </span>                :            : PRESENT_API void
+<span class="lineNum">     373 </span>                :            : Timestamp_subtract_time_delta(
+<span class="lineNum">     374 </span>                :            :         struct Timestamp * const self,
+<span class="lineNum">     375 </span>                :            :         const struct TimeDelta * const delta);
+<span class="lineNum">     376 </span>                :            : 
+<span class="lineNum">     377 </span>                :            : /**
+<span class="lineNum">     378 </span>                :            :  * Subtract a @ref DayDelta from a Timestamp.
+<span class="lineNum">     379 </span>                :            :  */
+<span class="lineNum">     380 </span>                :            : PRESENT_API void
+<span class="lineNum">     381 </span>                :            : Timestamp_subtract_day_delta(
+<span class="lineNum">     382 </span>                :            :         struct Timestamp * const self,
+<span class="lineNum">     383 </span>                :            :         const struct DayDelta * const delta);
+<span class="lineNum">     384 </span>                :            : 
+<span class="lineNum">     385 </span>                :            : /**
+<span class="lineNum">     386 </span>                :            :  * Subtract a @ref MonthDelta from a Timestamp.
+<span class="lineNum">     387 </span>                :            :  */
+<span class="lineNum">     388 </span>                :            : PRESENT_API void
+<span class="lineNum">     389 </span>                :            : Timestamp_subtract_month_delta(
+<span class="lineNum">     390 </span>                :            :         struct Timestamp * const self,
+<span class="lineNum">     391 </span>                :            :         const struct MonthDelta * const delta);
+<span class="lineNum">     392 </span>                :            : 
+<span class="lineNum">     393 </span>                :            : /**
+<span class="lineNum">     394 </span>                :            :  * Determine whether two Timestamp instances represent the exact same point in
+<span class="lineNum">     395 </span>                :            :  * time.
+<span class="lineNum">     396 </span>                :            :  */
+<span class="lineNum">     397 </span>                :            : PRESENT_API bool
+<span class="lineNum">     398 </span>                :            : Timestamp_equal(const struct Timestamp * const, const struct Timestamp * const);
+<span class="lineNum">     399 </span>                :            : 
+<span class="lineNum">     400 </span>                :            : /**
+<span class="lineNum">     401 </span>                :            :  * Determine whether a Timestamp occurs earlier than another Timestamp.
+<span class="lineNum">     402 </span>                :            :  */
+<span class="lineNum">     403 </span>                :            : PRESENT_API bool
+<span class="lineNum">     404 </span>                :            : Timestamp_less_than(
+<span class="lineNum">     405 </span>                :            :         const struct Timestamp * const,
+<span class="lineNum">     406 </span>                :            :         const struct Timestamp * const);
+<span class="lineNum">     407 </span>                :            : 
+<span class="lineNum">     408 </span>                :            : /**
+<span class="lineNum">     409 </span>                :            :  * Determine whether a Timestamp occurs earlier than or at the same time as
+<span class="lineNum">     410 </span>                :            :  * another Timestamp.
+<span class="lineNum">     411 </span>                :            :  */
+<span class="lineNum">     412 </span>                :            : PRESENT_API bool
+<span class="lineNum">     413 </span>                :            : Timestamp_less_than_or_equal(
+<span class="lineNum">     414 </span>                :            :         const struct Timestamp * const,
+<span class="lineNum">     415 </span>                :            :         const struct Timestamp * const);
+<span class="lineNum">     416 </span>                :            : 
+<span class="lineNum">     417 </span>                :            : /**
+<span class="lineNum">     418 </span>                :            :  * Determine whether a Timestamp occurs later than another Timestamp.
+<span class="lineNum">     419 </span>                :            :  */
+<span class="lineNum">     420 </span>                :            : PRESENT_API bool
+<span class="lineNum">     421 </span>                :            : Timestamp_greater_than(
+<span class="lineNum">     422 </span>                :            :         const struct Timestamp * const,
+<span class="lineNum">     423 </span>                :            :         const struct Timestamp * const);
+<span class="lineNum">     424 </span>                :            : 
+<span class="lineNum">     425 </span>                :            : /**
+<span class="lineNum">     426 </span>                :            :  * Determine whether a Timestamp occurs later than or at the same time as
+<span class="lineNum">     427 </span>                :            :  * another Timestamp.
+<span class="lineNum">     428 </span>                :            :  */
+<span class="lineNum">     429 </span>                :            : PRESENT_API bool
+<span class="lineNum">     430 </span>                :            : Timestamp_greater_than_or_equal(
+<span class="lineNum">     431 </span>                :            :         const struct Timestamp * const,
+<span class="lineNum">     432 </span>                :            :         const struct Timestamp * const);
+<span class="lineNum">     433 </span>                :            : 
+<span class="lineNum">     434 </span>                :            : #ifdef __cplusplus
+<span class="lineNum">     435 </span>                :            : }
+<span class="lineNum">     436 </span>                :            : #endif
+<span class="lineNum">     437 </span>                :            : 
+<span class="lineNum">     438 </span>                :            : #endif /* _PRESENT_TIMESTAMP_H_ */
+<span class="lineNum">     439 </span>                :            : 
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.9</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+\hypertarget{month-delta_8h}{\section{/home/travis/build/jhartz/present/include/present/month-\/delta.h \-File \-Reference}
+\label{month-delta_8h}\index{/home/travis/build/jhartz/present/include/present/month-\/delta.\-h@{/home/travis/build/jhartz/present/include/present/month-\/delta.\-h}}
+}
+{\ttfamily \#include \char`\"{}present/utils/types.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}present/utils/utils.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}present/impl/present-\/month-\/delta-\/data.\-h\char`\"{}}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMonthDelta}{\-Month\-Delta}
+\begin{DoxyCompactList}\small\item\em \-Class or struct representing a positive or negative delta of a number of months or years. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{month-delta_8h_aee28c4c9b4054448713e954a7944cb51}{\-Present\-Month\-Delta\-Error} \{ \hyperlink{month-delta_8h_aee28c4c9b4054448713e954a7944cb51a880d48faec79524a948ad81b1ab2e87e}{\-Month\-Delta\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E} =  0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{month-delta_8h_ab2435ae92655bed23406d37b4b8f4750}{\-Month\-Delta\-\_\-from\-\_\-months} (int\-\_\-month\-\_\-delta month\-\_\-delta)
+\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structMonthDelta}{\-Month\-Delta} based on a positive or negative number of months. \end{DoxyCompactList}\item 
+struct \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{month-delta_8h_aec5607ad9e7e090c39b2f50a68974ef0}{\-Month\-Delta\-\_\-from\-\_\-years} (int\-\_\-year\-\_\-delta year\-\_\-delta)
+\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structMonthDelta}{\-Month\-Delta} based on a positive or negative number of years. \end{DoxyCompactList}\item 
+struct \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{month-delta_8h_aca81ef97d8ec1cd052ab391636f16bf7}{\-Month\-Delta\-\_\-zero} ()
+\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structMonthDelta}{\-Month\-Delta} initialized to zero months. \end{DoxyCompactList}\item 
+int\-\_\-month\-\_\-delta \hyperlink{month-delta_8h_aa01811194746354457e2b5e7a70dd59d}{\-Month\-Delta\-\_\-get\-\_\-months} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em \-Get the number of months represented by a \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+int\-\_\-year\-\_\-delta \hyperlink{month-delta_8h_a37279655ebb7be159cdf2fcfbf460348}{\-Month\-Delta\-\_\-get\-\_\-years} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em \-Get the number of years represented by a \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+double \hyperlink{month-delta_8h_afa5436ebc73fc5ce02c99f86a05d377c}{\-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em \-Get the number of years represented by a \hyperlink{structMonthDelta}{\-Month\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+bool \hyperlink{month-delta_8h_a03c4b1b8f6edca4c798b469e3f03bdfa}{\-Month\-Delta\-\_\-is\-\_\-negative} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is negative. \end{DoxyCompactList}\item 
+void \hyperlink{month-delta_8h_a4d77c910d4ec5841e5e3f59d63490078}{\-Month\-Delta\-\_\-negate} (struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em \-Negate a \hyperlink{structMonthDelta}{\-Month\-Delta}, making it negative if it was positive or positive if it was negative. \end{DoxyCompactList}\item 
+void \hyperlink{month-delta_8h_a147987d17fd1c580240979fde395b723}{\-Month\-Delta\-\_\-multiply\-\_\-by} (struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self, int scale\-Factor)
+\begin{DoxyCompactList}\small\item\em \-Scale a \hyperlink{structMonthDelta}{\-Month\-Delta} by multiplying it by a scale factor. \end{DoxyCompactList}\item 
+void \hyperlink{month-delta_8h_acd94c6f51a37b55c6e6b6ebd5a39cf7e}{\-Month\-Delta\-\_\-divide\-\_\-by} (struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self, int scale\-Factor)
+\begin{DoxyCompactList}\small\item\em \-Scale a \hyperlink{structMonthDelta}{\-Month\-Delta} by dividing it by a scale factor. \end{DoxyCompactList}\item 
+void \hyperlink{month-delta_8h_a9f725b1f782ab8ddd1aa734d2cdbce27}{\-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta} (struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const month\-Delta\-To\-Add)
+\begin{DoxyCompactList}\small\item\em \-Add another \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+void \hyperlink{month-delta_8h_aba1962383fdb09d60f24b863ee738982}{\-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta} (struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const month\-Delta\-To\-Subtract)
+\begin{DoxyCompactList}\small\item\em \-Subtract another \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+bool \hyperlink{month-delta_8h_a346d0c310255f1f720506a15446497a3}{\-Month\-Delta\-\_\-equal} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const)
+\begin{DoxyCompactList}\small\item\em \-Determine whether two \hyperlink{structMonthDelta}{\-Month\-Delta} instances are equal. \end{DoxyCompactList}\item 
+bool \hyperlink{month-delta_8h_ac38bd594e6541d7943021c7fcf337c9d}{\-Month\-Delta\-\_\-less\-\_\-than} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is less than another \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+bool \hyperlink{month-delta_8h_a6aa021d2410c395010cb579eb49249db}{\-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is less than or equal to another \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+bool \hyperlink{month-delta_8h_a87f541ed67c5071e5bf359f08a0c4413}{\-Month\-Delta\-\_\-greater\-\_\-than} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is greater than another \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+bool \hyperlink{month-delta_8h_ac025396048e81af1dc75bc21b7a7c3a8}{\-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is greater than or equal to another \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{month-delta_8h_aee28c4c9b4054448713e954a7944cb51}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Present\-Month\-Delta\-Error@{\-Present\-Month\-Delta\-Error}}
+\index{\-Present\-Month\-Delta\-Error@{\-Present\-Month\-Delta\-Error}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Present\-Month\-Delta\-Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Present\-Month\-Delta\-Error}}}\label{month-delta_8h_aee28c4c9b4054448713e954a7944cb51}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Month\-Delta\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E@{\-Month\-Delta\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E}!month-\/delta.\-h@{month-\/delta.\-h}}\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E@{\-Month\-Delta\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{month-delta_8h_aee28c4c9b4054448713e954a7944cb51a880d48faec79524a948ad81b1ab2e87e}{\-Month\-Delta\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E}\label{month-delta_8h_aee28c4c9b4054448713e954a7944cb51a880d48faec79524a948ad81b1ab2e87e}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{month-delta_8h_a9f725b1f782ab8ddd1aa734d2cdbce27}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta@{\-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta}}
+\index{\-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta@{\-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Month\-Delta} $\ast$const}]{self, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{month\-Delta\-To\-Add}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a9f725b1f782ab8ddd1aa734d2cdbce27}
+
+
+\-Add another \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{month-delta_8h_acd94c6f51a37b55c6e6b6ebd5a39cf7e}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-divide\-\_\-by@{\-Month\-Delta\-\_\-divide\-\_\-by}}
+\index{\-Month\-Delta\-\_\-divide\-\_\-by@{\-Month\-Delta\-\_\-divide\-\_\-by}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-divide\-\_\-by}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Month\-Delta\-\_\-divide\-\_\-by} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Month\-Delta} $\ast$const}]{self, }
+\item[{int}]{scale\-Factor}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_acd94c6f51a37b55c6e6b6ebd5a39cf7e}
+
+
+\-Scale a \hyperlink{structMonthDelta}{\-Month\-Delta} by dividing it by a scale factor. 
+
+\hypertarget{month-delta_8h_a346d0c310255f1f720506a15446497a3}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-equal@{\-Month\-Delta\-\_\-equal}}
+\index{\-Month\-Delta\-\_\-equal@{\-Month\-Delta\-\_\-equal}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Month\-Delta\-\_\-equal} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a346d0c310255f1f720506a15446497a3}
+
+
+\-Determine whether two \hyperlink{structMonthDelta}{\-Month\-Delta} instances are equal. 
+
+\hypertarget{month-delta_8h_ab2435ae92655bed23406d37b4b8f4750}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-from\-\_\-months@{\-Month\-Delta\-\_\-from\-\_\-months}}
+\index{\-Month\-Delta\-\_\-from\-\_\-months@{\-Month\-Delta\-\_\-from\-\_\-months}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-from\-\_\-months}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Month\-Delta} {\bf \-Month\-Delta\-\_\-from\-\_\-months} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-month\-\_\-delta}]{month\-\_\-delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{month-delta_8h_ab2435ae92655bed23406d37b4b8f4750}
+
+
+\-Create a new \hyperlink{structMonthDelta}{\-Month\-Delta} based on a positive or negative number of months. 
+
+\hypertarget{month-delta_8h_aec5607ad9e7e090c39b2f50a68974ef0}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-from\-\_\-years@{\-Month\-Delta\-\_\-from\-\_\-years}}
+\index{\-Month\-Delta\-\_\-from\-\_\-years@{\-Month\-Delta\-\_\-from\-\_\-years}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-from\-\_\-years}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Month\-Delta} {\bf \-Month\-Delta\-\_\-from\-\_\-years} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-year\-\_\-delta}]{year\-\_\-delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{month-delta_8h_aec5607ad9e7e090c39b2f50a68974ef0}
+
+
+\-Create a new \hyperlink{structMonthDelta}{\-Month\-Delta} based on a positive or negative number of years. 
+
+\hypertarget{month-delta_8h_aa01811194746354457e2b5e7a70dd59d}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-get\-\_\-months@{\-Month\-Delta\-\_\-get\-\_\-months}}
+\index{\-Month\-Delta\-\_\-get\-\_\-months@{\-Month\-Delta\-\_\-get\-\_\-months}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-get\-\_\-months}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-month\-\_\-delta {\bf \-Month\-Delta\-\_\-get\-\_\-months} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_aa01811194746354457e2b5e7a70dd59d}
+
+
+\-Get the number of months represented by a \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{month-delta_8h_a37279655ebb7be159cdf2fcfbf460348}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-get\-\_\-years@{\-Month\-Delta\-\_\-get\-\_\-years}}
+\index{\-Month\-Delta\-\_\-get\-\_\-years@{\-Month\-Delta\-\_\-get\-\_\-years}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-get\-\_\-years}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-year\-\_\-delta {\bf \-Month\-Delta\-\_\-get\-\_\-years} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a37279655ebb7be159cdf2fcfbf460348}
+
+
+\-Get the number of years represented by a \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\-If the \hyperlink{structMonthDelta}{\-Month\-Delta} does not represent an exact number of years, the number of years will be truncated. \hypertarget{month-delta_8h_afa5436ebc73fc5ce02c99f86a05d377c}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal@{\-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal}}
+\index{\-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal@{\-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_afa5436ebc73fc5ce02c99f86a05d377c}
+
+
+\-Get the number of years represented by a \hyperlink{structMonthDelta}{\-Month\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{month-delta_8h_a87f541ed67c5071e5bf359f08a0c4413}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-greater\-\_\-than@{\-Month\-Delta\-\_\-greater\-\_\-than}}
+\index{\-Month\-Delta\-\_\-greater\-\_\-than@{\-Month\-Delta\-\_\-greater\-\_\-than}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Month\-Delta\-\_\-greater\-\_\-than} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a87f541ed67c5071e5bf359f08a0c4413}
+
+
+\-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is greater than another \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{month-delta_8h_ac025396048e81af1dc75bc21b7a7c3a8}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
+\index{\-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_ac025396048e81af1dc75bc21b7a7c3a8}
+
+
+\-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is greater than or equal to another \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{month-delta_8h_a03c4b1b8f6edca4c798b469e3f03bdfa}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-is\-\_\-negative@{\-Month\-Delta\-\_\-is\-\_\-negative}}
+\index{\-Month\-Delta\-\_\-is\-\_\-negative@{\-Month\-Delta\-\_\-is\-\_\-negative}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-is\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Month\-Delta\-\_\-is\-\_\-negative} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a03c4b1b8f6edca4c798b469e3f03bdfa}
+
+
+\-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is negative. 
+
+\hypertarget{month-delta_8h_ac38bd594e6541d7943021c7fcf337c9d}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-less\-\_\-than@{\-Month\-Delta\-\_\-less\-\_\-than}}
+\index{\-Month\-Delta\-\_\-less\-\_\-than@{\-Month\-Delta\-\_\-less\-\_\-than}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-less\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Month\-Delta\-\_\-less\-\_\-than} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_ac38bd594e6541d7943021c7fcf337c9d}
+
+
+\-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is less than another \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{month-delta_8h_a6aa021d2410c395010cb579eb49249db}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
+\index{\-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$}]{const}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a6aa021d2410c395010cb579eb49249db}
+
+
+\-Determine whether a \hyperlink{structMonthDelta}{\-Month\-Delta} is less than or equal to another \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{month-delta_8h_a147987d17fd1c580240979fde395b723}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-multiply\-\_\-by@{\-Month\-Delta\-\_\-multiply\-\_\-by}}
+\index{\-Month\-Delta\-\_\-multiply\-\_\-by@{\-Month\-Delta\-\_\-multiply\-\_\-by}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-multiply\-\_\-by}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Month\-Delta\-\_\-multiply\-\_\-by} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Month\-Delta} $\ast$const}]{self, }
+\item[{int}]{scale\-Factor}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a147987d17fd1c580240979fde395b723}
+
+
+\-Scale a \hyperlink{structMonthDelta}{\-Month\-Delta} by multiplying it by a scale factor. 
+
+\hypertarget{month-delta_8h_a4d77c910d4ec5841e5e3f59d63490078}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-negate@{\-Month\-Delta\-\_\-negate}}
+\index{\-Month\-Delta\-\_\-negate@{\-Month\-Delta\-\_\-negate}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-negate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Month\-Delta\-\_\-negate} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Month\-Delta} $\ast$const}]{self}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_a4d77c910d4ec5841e5e3f59d63490078}
+
+
+\-Negate a \hyperlink{structMonthDelta}{\-Month\-Delta}, making it negative if it was positive or positive if it was negative. 
+
+\hypertarget{month-delta_8h_aba1962383fdb09d60f24b863ee738982}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta@{\-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta}}
+\index{\-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta@{\-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Month\-Delta} $\ast$const}]{self, }
+\item[{const struct {\bf \-Month\-Delta} $\ast$const}]{month\-Delta\-To\-Subtract}
+\end{DoxyParamCaption}
+)}}\label{month-delta_8h_aba1962383fdb09d60f24b863ee738982}
+
+
+\-Subtract another \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{month-delta_8h_aca81ef97d8ec1cd052ab391636f16bf7}{\index{month-\/delta.\-h@{month-\/delta.\-h}!\-Month\-Delta\-\_\-zero@{\-Month\-Delta\-\_\-zero}}
+\index{\-Month\-Delta\-\_\-zero@{\-Month\-Delta\-\_\-zero}!month-delta.h@{month-\/delta.\-h}}
+\subsubsection[{\-Month\-Delta\-\_\-zero}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Month\-Delta} {\bf \-Month\-Delta\-\_\-zero} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{month-delta_8h_aca81ef97d8ec1cd052ab391636f16bf7}
+
+
+\-Create a new \hyperlink{structMonthDelta}{\-Month\-Delta} initialized to zero months. 
+

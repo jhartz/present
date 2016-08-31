@@ -1,0 +1,371 @@
+\hypertarget{structMonthDelta}{\section{\-Month\-Delta \-Struct \-Reference}
+\label{structMonthDelta}\index{\-Month\-Delta@{\-Month\-Delta}}
+}
+
+
+\-Class or struct representing a positive or negative delta of a number of months or years.  
+
+
+
+
+{\ttfamily \#include $<$month-\/delta.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int\-\_\-month\-\_\-delta \hyperlink{structMonthDelta_a2359cd00364588c01724c71b223faeec}{get\-\_\-months} () const 
+\item 
+int\-\_\-year\-\_\-delta \hyperlink{structMonthDelta_a6e0788916adc59ac112d1f64cb42084d}{get\-\_\-years} () const 
+\item 
+double \hyperlink{structMonthDelta_abe185d4ea3e055f8eacab3077fbda465}{get\-\_\-years\-\_\-decimal} () const 
+\item 
+bool \hyperlink{structMonthDelta_a4f0b4051d92cd180ac5f9f7466a36f57}{is\-\_\-negative} () const 
+\item 
+void \hyperlink{structMonthDelta_a88f17c6793e3e48ac00a70e12b9045d3}{negate} ()
+\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_a5d754349cccfb68c729461b7a96d666f}{operator-\/} () const 
+\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \& \hyperlink{structMonthDelta_a2d925db7f08eb18d1dcd4961d8149b48}{operator++} ()
+\begin{DoxyCompactList}\small\item\em \-Add one month to the \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_afcbef7f90cde7cf06a312da4acd5a1b9}{operator++} (int)
+\begin{DoxyCompactList}\small\item\em \-Add one month to the \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \& \hyperlink{structMonthDelta_a792c4dd313efad2aec9dc80b7d18dc4e}{operator-\/-\/} ()
+\begin{DoxyCompactList}\small\item\em \-Subtract one month from the \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_a57b2bfc986e466491dc6ae5546988de7}{operator-\/-\/} (int)
+\begin{DoxyCompactList}\small\item\em \-Subtract one month from the \hyperlink{structMonthDelta}{\-Month\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \& \hyperlink{structMonthDelta_ad80b56e9007353c7e71f262fad0146a6}{operator$\ast$=} (const int \&)
+\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \& \hyperlink{structMonthDelta_ae1aafe21948a9865384e4d1ef1786b27}{operator/=} (const int \&)
+\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \& \hyperlink{structMonthDelta_a9b3e2752469f43e31bf71390149717ef}{operator+=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+\hyperlink{structMonthDelta}{\-Month\-Delta} \& \hyperlink{structMonthDelta_aead99fd037d1a43ab477733c105d1d6e}{operator-\/=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_afc96dd6ca914abc1ddd067f8f3755a89}{from\-\_\-months} (int\-\_\-month\-\_\-delta month\-\_\-delta)
+\item 
+static \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_a02632b6ef33850d9329bd04a686ce1ed}{from\-\_\-years} (int\-\_\-year\-\_\-delta year\-\_\-delta)
+\item 
+static \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_a847cb9c956c133957dbaffb32fb9bd15}{zero} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{month-delta_8h_aee28c4c9b4054448713e954a7944cb51}{\-Present\-Month\-Delta\-Error} \hyperlink{structMonthDelta_a437eb7cd23ab33a773a8fb97b5923454}{error}
+\item 
+struct \-Present\-Month\-Delta\-Data \hyperlink{structMonthDelta_a428f2591ca57d192424b298f95c87978}{data\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_a766914d0071f3b05bb8207fb43ed8a7f}{operator$\ast$} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const int \&)
+\item 
+const \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_a1dda088a057b9b834a81182b177811a3}{operator/} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const int \&)
+\item 
+const \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_adf6400ab47cfda30bcf0e52c489dcd65}{operator+} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+const \hyperlink{structMonthDelta}{\-Month\-Delta} \hyperlink{structMonthDelta_a22a21f373298f477cfd559740b9e5e4d}{operator-\/} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+bool \hyperlink{structMonthDelta_aa0803460a688c23c8e65d9fa9b543001}{operator==} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+bool \hyperlink{structMonthDelta_a18026b840e36147e3568f3a4a054e047}{operator!=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+bool \hyperlink{structMonthDelta_a67951bca9aab80b5d53a38d6332ff38a}{operator$<$} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+bool \hyperlink{structMonthDelta_a56be34fa0a6a432cebfacc21acecaf88}{operator$<$=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+bool \hyperlink{structMonthDelta_a583a0205709b2d14afb855f8656c783c}{operator$>$} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\item 
+bool \hyperlink{structMonthDelta_a6ffa4372b018021cc399ff18b0e26774}{operator$>$=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Class or struct representing a positive or negative delta of a number of months or years. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structMonthDelta_afc96dd6ca914abc1ddd067f8f3755a89}{\index{\-Month\-Delta@{\-Month\-Delta}!from\-\_\-months@{from\-\_\-months}}
+\index{from\-\_\-months@{from\-\_\-months}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{from\-\_\-months}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Month\-Delta} {\bf \-Month\-Delta\-::from\-\_\-months} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-month\-\_\-delta}]{month\-\_\-delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structMonthDelta_afc96dd6ca914abc1ddd067f8f3755a89}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_ab2435ae92655bed23406d37b4b8f4750}{\-Month\-Delta\-\_\-from\-\_\-months} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a02632b6ef33850d9329bd04a686ce1ed}{\index{\-Month\-Delta@{\-Month\-Delta}!from\-\_\-years@{from\-\_\-years}}
+\index{from\-\_\-years@{from\-\_\-years}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{from\-\_\-years}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Month\-Delta} {\bf \-Month\-Delta\-::from\-\_\-years} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-year\-\_\-delta}]{year\-\_\-delta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structMonthDelta_a02632b6ef33850d9329bd04a686ce1ed}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_aec5607ad9e7e090c39b2f50a68974ef0}{\-Month\-Delta\-\_\-from\-\_\-years} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a2359cd00364588c01724c71b223faeec}{\index{\-Month\-Delta@{\-Month\-Delta}!get\-\_\-months@{get\-\_\-months}}
+\index{get\-\_\-months@{get\-\_\-months}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{get\-\_\-months}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-month\-\_\-delta {\bf \-Month\-Delta\-::get\-\_\-months} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structMonthDelta_a2359cd00364588c01724c71b223faeec}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_aa01811194746354457e2b5e7a70dd59d}{\-Month\-Delta\-\_\-get\-\_\-months} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a6e0788916adc59ac112d1f64cb42084d}{\index{\-Month\-Delta@{\-Month\-Delta}!get\-\_\-years@{get\-\_\-years}}
+\index{get\-\_\-years@{get\-\_\-years}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{get\-\_\-years}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-year\-\_\-delta {\bf \-Month\-Delta\-::get\-\_\-years} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structMonthDelta_a6e0788916adc59ac112d1f64cb42084d}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a37279655ebb7be159cdf2fcfbf460348}{\-Month\-Delta\-\_\-get\-\_\-years} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_abe185d4ea3e055f8eacab3077fbda465}{\index{\-Month\-Delta@{\-Month\-Delta}!get\-\_\-years\-\_\-decimal@{get\-\_\-years\-\_\-decimal}}
+\index{get\-\_\-years\-\_\-decimal@{get\-\_\-years\-\_\-decimal}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{get\-\_\-years\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Month\-Delta\-::get\-\_\-years\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structMonthDelta_abe185d4ea3e055f8eacab3077fbda465}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_afa5436ebc73fc5ce02c99f86a05d377c}{\-Month\-Delta\-\_\-get\-\_\-years\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a4f0b4051d92cd180ac5f9f7466a36f57}{\index{\-Month\-Delta@{\-Month\-Delta}!is\-\_\-negative@{is\-\_\-negative}}
+\index{is\-\_\-negative@{is\-\_\-negative}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{is\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Month\-Delta\-::is\-\_\-negative} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structMonthDelta_a4f0b4051d92cd180ac5f9f7466a36f57}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a03c4b1b8f6edca4c798b469e3f03bdfa}{\-Month\-Delta\-\_\-is\-\_\-negative} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a88f17c6793e3e48ac00a70e12b9045d3}{\index{\-Month\-Delta@{\-Month\-Delta}!negate@{negate}}
+\index{negate@{negate}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{negate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Month\-Delta\-::negate} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_a88f17c6793e3e48ac00a70e12b9045d3}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a4d77c910d4ec5841e5e3f59d63490078}{\-Month\-Delta\-\_\-negate} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_ad80b56e9007353c7e71f262fad0146a6}{\index{\-Month\-Delta@{\-Month\-Delta}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta}\& \-Month\-Delta\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_ad80b56e9007353c7e71f262fad0146a6}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a147987d17fd1c580240979fde395b723}{\-Month\-Delta\-\_\-multiply\-\_\-by} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a2d925db7f08eb18d1dcd4961d8149b48}{\index{\-Month\-Delta@{\-Month\-Delta}!operator++@{operator++}}
+\index{operator++@{operator++}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta}\& \-Month\-Delta\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_a2d925db7f08eb18d1dcd4961d8149b48}
+
+
+\-Add one month to the \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{structMonthDelta_afcbef7f90cde7cf06a312da4acd5a1b9}{\index{\-Month\-Delta@{\-Month\-Delta}!operator++@{operator++}}
+\index{operator++@{operator++}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta} \-Month\-Delta\-::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_afcbef7f90cde7cf06a312da4acd5a1b9}
+
+
+\-Add one month to the \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{structMonthDelta_a9b3e2752469f43e31bf71390149717ef}{\index{\-Month\-Delta@{\-Month\-Delta}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta}\& \-Month\-Delta\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_a9b3e2752469f43e31bf71390149717ef}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a9f725b1f782ab8ddd1aa734d2cdbce27}{\-Month\-Delta\-\_\-add\-\_\-month\-\_\-delta} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a5d754349cccfb68c729461b7a96d666f}{\index{\-Month\-Delta@{\-Month\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta} \-Month\-Delta\-::operator-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structMonthDelta_a5d754349cccfb68c729461b7a96d666f}
+\hypertarget{structMonthDelta_a792c4dd313efad2aec9dc80b7d18dc4e}{\index{\-Month\-Delta@{\-Month\-Delta}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta}\& \-Month\-Delta\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_a792c4dd313efad2aec9dc80b7d18dc4e}
+
+
+\-Subtract one month from the \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{structMonthDelta_a57b2bfc986e466491dc6ae5546988de7}{\index{\-Month\-Delta@{\-Month\-Delta}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta} \-Month\-Delta\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_a57b2bfc986e466491dc6ae5546988de7}
+
+
+\-Subtract one month from the \hyperlink{structMonthDelta}{\-Month\-Delta}. 
+
+\hypertarget{structMonthDelta_aead99fd037d1a43ab477733c105d1d6e}{\index{\-Month\-Delta@{\-Month\-Delta}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta}\& \-Month\-Delta\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_aead99fd037d1a43ab477733c105d1d6e}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_aba1962383fdb09d60f24b863ee738982}{\-Month\-Delta\-\_\-subtract\-\_\-month\-\_\-delta} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_ae1aafe21948a9865384e4d1ef1786b27}{\index{\-Month\-Delta@{\-Month\-Delta}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Month\-Delta}\& \-Month\-Delta\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structMonthDelta_ae1aafe21948a9865384e4d1ef1786b27}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_acd94c6f51a37b55c6e6b6ebd5a39cf7e}{\-Month\-Delta\-\_\-divide\-\_\-by} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a847cb9c956c133957dbaffb32fb9bd15}{\index{\-Month\-Delta@{\-Month\-Delta}!zero@{zero}}
+\index{zero@{zero}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Month\-Delta} {\bf \-Month\-Delta\-::zero} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structMonthDelta_a847cb9c956c133957dbaffb32fb9bd15}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_aca81ef97d8ec1cd052ab391636f16bf7}{\-Month\-Delta\-\_\-zero} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{structMonthDelta_a18026b840e36147e3568f3a4a054e047}{\index{\-Month\-Delta@{\-Month\-Delta}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a18026b840e36147e3568f3a4a054e047}
+\hypertarget{structMonthDelta_a766914d0071f3b05bb8207fb43ed8a7f}{\index{\-Month\-Delta@{\-Month\-Delta}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Month\-Delta} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a766914d0071f3b05bb8207fb43ed8a7f}
+\hypertarget{structMonthDelta_adf6400ab47cfda30bcf0e52c489dcd65}{\index{\-Month\-Delta@{\-Month\-Delta}!operator+@{operator+}}
+\index{operator+@{operator+}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Month\-Delta} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_adf6400ab47cfda30bcf0e52c489dcd65}
+\hypertarget{structMonthDelta_a22a21f373298f477cfd559740b9e5e4d}{\index{\-Month\-Delta@{\-Month\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Month\-Delta} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a22a21f373298f477cfd559740b9e5e4d}
+\hypertarget{structMonthDelta_a1dda088a057b9b834a81182b177811a3}{\index{\-Month\-Delta@{\-Month\-Delta}!operator/@{operator/}}
+\index{operator/@{operator/}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Month\-Delta} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const int \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a1dda088a057b9b834a81182b177811a3}
+\hypertarget{structMonthDelta_a67951bca9aab80b5d53a38d6332ff38a}{\index{\-Month\-Delta@{\-Month\-Delta}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a67951bca9aab80b5d53a38d6332ff38a}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_ac38bd594e6541d7943021c7fcf337c9d}{\-Month\-Delta\-\_\-less\-\_\-than} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a56be34fa0a6a432cebfacc21acecaf88}{\index{\-Month\-Delta@{\-Month\-Delta}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a56be34fa0a6a432cebfacc21acecaf88}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a6aa021d2410c395010cb579eb49249db}{\-Month\-Delta\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_aa0803460a688c23c8e65d9fa9b543001}{\index{\-Month\-Delta@{\-Month\-Delta}!operator==@{operator==}}
+\index{operator==@{operator==}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_aa0803460a688c23c8e65d9fa9b543001}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a346d0c310255f1f720506a15446497a3}{\-Month\-Delta\-\_\-equal} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a583a0205709b2d14afb855f8656c783c}{\index{\-Month\-Delta@{\-Month\-Delta}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a583a0205709b2d14afb855f8656c783c}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_a87f541ed67c5071e5bf359f08a0c4413}{\-Month\-Delta\-\_\-greater\-\_\-than} 
+\end{DoxySeeAlso}
+\hypertarget{structMonthDelta_a6ffa4372b018021cc399ff18b0e26774}{\index{\-Month\-Delta@{\-Month\-Delta}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Month\-Delta} \&}]{, }
+\item[{const {\bf \-Month\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structMonthDelta_a6ffa4372b018021cc399ff18b0e26774}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{month-delta_8h_ac025396048e81af1dc75bc21b7a7c3a8}{\-Month\-Delta\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structMonthDelta_a428f2591ca57d192424b298f95c87978}{\index{\-Month\-Delta@{\-Month\-Delta}!data\-\_\-@{data\-\_\-}}
+\index{data\-\_\-@{data\-\_\-}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{data\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}struct \-Present\-Month\-Delta\-Data {\bf \-Month\-Delta\-::data\-\_\-}}}\label{structMonthDelta_a428f2591ca57d192424b298f95c87978}
+\hypertarget{structMonthDelta_a437eb7cd23ab33a773a8fb97b5923454}{\index{\-Month\-Delta@{\-Month\-Delta}!error@{error}}
+\index{error@{error}!MonthDelta@{\-Month\-Delta}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Present\-Month\-Delta\-Error} {\bf \-Month\-Delta\-::error}}}\label{structMonthDelta_a437eb7cd23ab33a773a8fb97b5923454}
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/jhartz/present/include/present/\hyperlink{month-delta_8h}{month-\/delta.\-h}\end{DoxyCompactItemize}

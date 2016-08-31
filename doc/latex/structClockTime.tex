@@ -1,0 +1,336 @@
+\hypertarget{structClockTime}{\section{\-Clock\-Time \-Struct \-Reference}
+\label{structClockTime}\index{\-Clock\-Time@{\-Clock\-Time}}
+}
+
+
+\-Class or struct representing a time as seen on a clock.  
+
+
+
+
+{\ttfamily \#include $<$clock-\/time.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int\-\_\-hour \hyperlink{structClockTime_ab188f450c2b8519296c96529afc8d92f}{get\-\_\-hour} () const 
+\item 
+int\-\_\-minute \hyperlink{structClockTime_ae882482085d1cc290b055381f407cb6a}{get\-\_\-minute} () const 
+\item 
+int\-\_\-second \hyperlink{structClockTime_a054e575b6ba259efdf3d79ebdf7fc501}{get\-\_\-second} () const 
+\item 
+int\-\_\-nanosecond \hyperlink{structClockTime_a4ddf3b506ad8f3576df034fbf3febae4}{get\-\_\-nanosecond} () const 
+\item 
+double \hyperlink{structClockTime_a174f09985d45efc748ca956c9ca2fb2e}{get\-\_\-second\-\_\-decimal} () const 
+\item 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structClockTime_a9c6423703cb0026435fb6e5b2d261d54}{time\-\_\-since\-\_\-midnight} () const 
+\item 
+\hyperlink{structClockTime}{\-Clock\-Time} \& \hyperlink{structClockTime_aec48dca559fd8b1f97c624eb45205d51}{operator+=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+\hyperlink{structClockTime}{\-Clock\-Time} \& \hyperlink{structClockTime_ac5197cbbfba2f45bfeb9f24175c60b14}{operator-\/=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_a72284f0c4f53d026688e55cea607f219}{create} (int\-\_\-hour hour)
+\item 
+static \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_aa4429a92963b67343bc6eab885938a5a}{create} (int\-\_\-hour hour, int\-\_\-minute minute)
+\item 
+static \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_a3a34039699358c31a6f68d545f228728}{create} (int\-\_\-hour hour, int\-\_\-minute minute, int\-\_\-second second)
+\item 
+static \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_afdf4e7a0b63e536f24a5eb85a3eb1ae8}{create} (int\-\_\-hour hour, int\-\_\-minute minute, int\-\_\-second second, int\-\_\-nanosecond nanosecond)
+\item 
+static \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_a71e4e398da2cb0cfd3adb3f87cb6f3c2}{create\-\_\-with\-\_\-decimal\-\_\-seconds} (int\-\_\-hour hour, int\-\_\-minute minute, double second)
+\item 
+static \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_a7baab35d60ad3a2236c14133d8d0083b}{midnight} ()
+\item 
+static \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_ae206b86808ff1d0158cbc920eb289797}{noon} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455}{\-Present\-Clock\-Time\-Error} \hyperlink{structClockTime_a58f5305f36468eee0d1c489b5d72d717}{error}
+\item 
+struct \-Present\-Clock\-Time\-Data \hyperlink{structClockTime_a3fe115dffef3ba153e1fff6e0b2c0a23}{data\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_a5931b57cfa225de613d50e5de740794b}{operator+} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+const \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structClockTime_a5ad78ff449a6926520e1ecc71351f51d}{operator-\/} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&)
+\item 
+bool \hyperlink{structClockTime_a7135b0c2995c1809f4a0cdd9e692ffe5}{operator==} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structClockTime}{\-Clock\-Time} \&)
+\item 
+bool \hyperlink{structClockTime_ab6293206508b6c5fcc7107c5fa20c0ab}{operator!=} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structClockTime}{\-Clock\-Time} \&)
+\item 
+bool \hyperlink{structClockTime_a3b391b14edbe6b08f3f615173af8aae1}{operator$<$} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structClockTime}{\-Clock\-Time} \&)
+\item 
+bool \hyperlink{structClockTime_a220837ade82b091aabc96ab5aa44c168}{operator$<$=} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structClockTime}{\-Clock\-Time} \&)
+\item 
+bool \hyperlink{structClockTime_a985095ef213439f0aa9644f95b486bda}{operator$>$} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structClockTime}{\-Clock\-Time} \&)
+\item 
+bool \hyperlink{structClockTime_a329bc543b94a71802572c915efc3656b}{operator$>$=} (const \hyperlink{structClockTime}{\-Clock\-Time} \&, const \hyperlink{structClockTime}{\-Clock\-Time} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Class or struct representing a time as seen on a clock. 
+
+\-This includes hours, minutes, and seconds (up to nanosecond precision). \-There is no date information stored with the time, nor a time zone (so a \hyperlink{structClockTime}{\-Clock\-Time} instance is \-N\-O\-T tied to a specific time zone). 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structClockTime_a72284f0c4f53d026688e55cea607f219}{\index{\-Clock\-Time@{\-Clock\-Time}!create@{create}}
+\index{create@{create}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Clock\-Time} {\bf \-Clock\-Time\-::create} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-hour}]{hour}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structClockTime_a72284f0c4f53d026688e55cea607f219}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a172dd5f4ae9a67a7d0efe2b7c3e1a7b9}{\-Clock\-Time\-\_\-create\-\_\-from\-\_\-hour} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_aa4429a92963b67343bc6eab885938a5a}{\index{\-Clock\-Time@{\-Clock\-Time}!create@{create}}
+\index{create@{create}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Clock\-Time} {\bf \-Clock\-Time\-::create} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-hour}]{hour, }
+\item[{int\-\_\-minute}]{minute}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structClockTime_aa4429a92963b67343bc6eab885938a5a}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_ab1d019479c07792ba3789d4611bf47bd}{\-Clock\-Time\-\_\-create\-\_\-from\-\_\-hour\-\_\-minute} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a3a34039699358c31a6f68d545f228728}{\index{\-Clock\-Time@{\-Clock\-Time}!create@{create}}
+\index{create@{create}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Clock\-Time} {\bf \-Clock\-Time\-::create} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-hour}]{hour, }
+\item[{int\-\_\-minute}]{minute, }
+\item[{int\-\_\-second}]{second}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structClockTime_a3a34039699358c31a6f68d545f228728}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a1015eecfae508e22c54a4f1b52634fbf}{\-Clock\-Time\-\_\-create\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_afdf4e7a0b63e536f24a5eb85a3eb1ae8}{\index{\-Clock\-Time@{\-Clock\-Time}!create@{create}}
+\index{create@{create}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Clock\-Time} {\bf \-Clock\-Time\-::create} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-hour}]{hour, }
+\item[{int\-\_\-minute}]{minute, }
+\item[{int\-\_\-second}]{second, }
+\item[{int\-\_\-nanosecond}]{nanosecond}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structClockTime_afdf4e7a0b63e536f24a5eb85a3eb1ae8}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_acc3b0e5400f78e25499a815f4068739e}{\-Clock\-Time\-\_\-create\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a71e4e398da2cb0cfd3adb3f87cb6f3c2}{\index{\-Clock\-Time@{\-Clock\-Time}!create\-\_\-with\-\_\-decimal\-\_\-seconds@{create\-\_\-with\-\_\-decimal\-\_\-seconds}}
+\index{create\-\_\-with\-\_\-decimal\-\_\-seconds@{create\-\_\-with\-\_\-decimal\-\_\-seconds}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{create\-\_\-with\-\_\-decimal\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Clock\-Time} {\bf \-Clock\-Time\-::create\-\_\-with\-\_\-decimal\-\_\-seconds} (
+\begin{DoxyParamCaption}
+\item[{int\-\_\-hour}]{hour, }
+\item[{int\-\_\-minute}]{minute, }
+\item[{double}]{second}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structClockTime_a71e4e398da2cb0cfd3adb3f87cb6f3c2}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}{\-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_ab188f450c2b8519296c96529afc8d92f}{\index{\-Clock\-Time@{\-Clock\-Time}!get\-\_\-hour@{get\-\_\-hour}}
+\index{get\-\_\-hour@{get\-\_\-hour}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{get\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-hour {\bf \-Clock\-Time\-::get\-\_\-hour} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structClockTime_ab188f450c2b8519296c96529afc8d92f}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a1688a98fb161dc7a743085b09cb3c1de}{\-Clock\-Time\-\_\-get\-\_\-hour} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_ae882482085d1cc290b055381f407cb6a}{\index{\-Clock\-Time@{\-Clock\-Time}!get\-\_\-minute@{get\-\_\-minute}}
+\index{get\-\_\-minute@{get\-\_\-minute}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{get\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-minute {\bf \-Clock\-Time\-::get\-\_\-minute} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structClockTime_ae882482085d1cc290b055381f407cb6a}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a3ea78f71041658c2f9530c3603b7b9ec}{\-Clock\-Time\-\_\-get\-\_\-minute} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a4ddf3b506ad8f3576df034fbf3febae4}{\index{\-Clock\-Time@{\-Clock\-Time}!get\-\_\-nanosecond@{get\-\_\-nanosecond}}
+\index{get\-\_\-nanosecond@{get\-\_\-nanosecond}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{get\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-nanosecond {\bf \-Clock\-Time\-::get\-\_\-nanosecond} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structClockTime_a4ddf3b506ad8f3576df034fbf3febae4}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_ad74a9b1b36f0fd4b4a739b69fb65869e}{\-Clock\-Time\-\_\-get\-\_\-nanosecond} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a054e575b6ba259efdf3d79ebdf7fc501}{\index{\-Clock\-Time@{\-Clock\-Time}!get\-\_\-second@{get\-\_\-second}}
+\index{get\-\_\-second@{get\-\_\-second}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{get\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-second {\bf \-Clock\-Time\-::get\-\_\-second} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structClockTime_a054e575b6ba259efdf3d79ebdf7fc501}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a77c448c2991009dbcb662696a7ceedca}{\-Clock\-Time\-\_\-get\-\_\-second} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a174f09985d45efc748ca956c9ca2fb2e}{\index{\-Clock\-Time@{\-Clock\-Time}!get\-\_\-second\-\_\-decimal@{get\-\_\-second\-\_\-decimal}}
+\index{get\-\_\-second\-\_\-decimal@{get\-\_\-second\-\_\-decimal}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{get\-\_\-second\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Clock\-Time\-::get\-\_\-second\-\_\-decimal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structClockTime_a174f09985d45efc748ca956c9ca2fb2e}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a7cf42452da58eb906b00e92fe3efb159}{\-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a7baab35d60ad3a2236c14133d8d0083b}{\index{\-Clock\-Time@{\-Clock\-Time}!midnight@{midnight}}
+\index{midnight@{midnight}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{midnight}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Clock\-Time} {\bf \-Clock\-Time\-::midnight} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structClockTime_a7baab35d60ad3a2236c14133d8d0083b}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_ae320c2e30dedf0b33d5306b9e8841261}{\-Clock\-Time\-\_\-midnight} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_ae206b86808ff1d0158cbc920eb289797}{\index{\-Clock\-Time@{\-Clock\-Time}!noon@{noon}}
+\index{noon@{noon}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{noon}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Clock\-Time} {\bf \-Clock\-Time\-::noon} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structClockTime_ae206b86808ff1d0158cbc920eb289797}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}{\-Clock\-Time\-\_\-noon} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_aec48dca559fd8b1f97c624eb45205d51}{\index{\-Clock\-Time@{\-Clock\-Time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Clock\-Time}\& \-Clock\-Time\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structClockTime_aec48dca559fd8b1f97c624eb45205d51}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_adc2c863dfec0b56604b3153b226139fb}{\-Clock\-Time\-\_\-add\-\_\-time\-\_\-delta} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_ac5197cbbfba2f45bfeb9f24175c60b14}{\index{\-Clock\-Time@{\-Clock\-Time}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Clock\-Time}\& \-Clock\-Time\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{structClockTime_ac5197cbbfba2f45bfeb9f24175c60b14}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a5305df919aa0992ba4703f9b9f292a67}{\-Clock\-Time\-\_\-subtract\-\_\-time\-\_\-delta} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a9c6423703cb0026435fb6e5b2d261d54}{\index{\-Clock\-Time@{\-Clock\-Time}!time\-\_\-since\-\_\-midnight@{time\-\_\-since\-\_\-midnight}}
+\index{time\-\_\-since\-\_\-midnight@{time\-\_\-since\-\_\-midnight}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{time\-\_\-since\-\_\-midnight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Clock\-Time\-::time\-\_\-since\-\_\-midnight} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structClockTime_a9c6423703cb0026435fb6e5b2d261d54}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}{\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{structClockTime_ab6293206508b6c5fcc7107c5fa20c0ab}{\index{\-Clock\-Time@{\-Clock\-Time}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Clock\-Time} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_ab6293206508b6c5fcc7107c5fa20c0ab}
+\hypertarget{structClockTime_a5931b57cfa225de613d50e5de740794b}{\index{\-Clock\-Time@{\-Clock\-Time}!operator+@{operator+}}
+\index{operator+@{operator+}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Clock\-Time} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_a5931b57cfa225de613d50e5de740794b}
+\hypertarget{structClockTime_a5ad78ff449a6926520e1ecc71351f51d}{\index{\-Clock\-Time@{\-Clock\-Time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Clock\-Time} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Time\-Delta} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_a5ad78ff449a6926520e1ecc71351f51d}
+\hypertarget{structClockTime_a3b391b14edbe6b08f3f615173af8aae1}{\index{\-Clock\-Time@{\-Clock\-Time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Clock\-Time} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_a3b391b14edbe6b08f3f615173af8aae1}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a3e68308f034226dd04f361fb173ea6ac}{\-Clock\-Time\-\_\-less\-\_\-than} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a220837ade82b091aabc96ab5aa44c168}{\index{\-Clock\-Time@{\-Clock\-Time}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Clock\-Time} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_a220837ade82b091aabc96ab5aa44c168}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a79d34170a100cdf5654080e9e1c1d7a9}{\-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a7135b0c2995c1809f4a0cdd9e692ffe5}{\index{\-Clock\-Time@{\-Clock\-Time}!operator==@{operator==}}
+\index{operator==@{operator==}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Clock\-Time} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_a7135b0c2995c1809f4a0cdd9e692ffe5}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a33f1b59fd2b998d61ea80c908aeb274c}{\-Clock\-Time\-\_\-equal} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a985095ef213439f0aa9644f95b486bda}{\index{\-Clock\-Time@{\-Clock\-Time}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Clock\-Time} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_a985095ef213439f0aa9644f95b486bda}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_a9e2265b76612f6f7618ede2d78f10083}{\-Clock\-Time\-\_\-greater\-\_\-than} 
+\end{DoxySeeAlso}
+\hypertarget{structClockTime_a329bc543b94a71802572c915efc3656b}{\index{\-Clock\-Time@{\-Clock\-Time}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Clock\-Time} \&}]{, }
+\item[{const {\bf \-Clock\-Time} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structClockTime_a329bc543b94a71802572c915efc3656b}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{clock-time_8h_ace253f56caf8df157d630aa590b658cc}{\-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structClockTime_a3fe115dffef3ba153e1fff6e0b2c0a23}{\index{\-Clock\-Time@{\-Clock\-Time}!data\-\_\-@{data\-\_\-}}
+\index{data\-\_\-@{data\-\_\-}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{data\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}struct \-Present\-Clock\-Time\-Data {\bf \-Clock\-Time\-::data\-\_\-}}}\label{structClockTime_a3fe115dffef3ba153e1fff6e0b2c0a23}
+\hypertarget{structClockTime_a58f5305f36468eee0d1c489b5d72d717}{\index{\-Clock\-Time@{\-Clock\-Time}!error@{error}}
+\index{error@{error}!ClockTime@{\-Clock\-Time}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Present\-Clock\-Time\-Error} {\bf \-Clock\-Time\-::error}}}\label{structClockTime_a58f5305f36468eee0d1c489b5d72d717}
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/jhartz/present/include/present/\hyperlink{clock-time_8h}{clock-\/time.\-h}\end{DoxyCompactItemize}
