@@ -1,6 +1,4 @@
 ---
-layout: present
+#layout: present
+redirect: https://github.com/jhartz/present
 ---
-# Present
-
-[Present on GitHub](https://github.com/jhartz/present)
