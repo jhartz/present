@@ -111,18 +111,7 @@ is always up to date with the code in `master`.
 - [C++ Documentation](https://jhartz.github.io/present/doc/html/annotated.html)
 - [C Documentation](https://jhartz.github.io/present/doc/html/files.html)
 
-## Requirements
-
-Present uses some newer language features that are only available since C99,
-including variadic macros and standard integer and boolean types. Therefore,
-it is recommended that Present is compiled with a C99 (or C++11) compliant
-compiler.
-
-Present is meant to work across platforms. If there is an issue compiling it
-with a C compiler supporting C99 or a C++ compiler supporting C++11, please
-file an issue report.
-
-## Building
+## Present Libraries
 
 Present consists of the following libraries:
 
@@ -143,6 +132,23 @@ and C++ programs.
 includes the C methods, not the C++ classes. This library can be used instead
 of `libpresent` when a C++ compiler is not available or the C++ features are
 not needed. It can be compiled by either a C or a C++ compiler.
+
+## Requirements
+
+Present uses some newer language features that are only available since C99,
+including variadic macros and standard integer and boolean types. Therefore,
+it is recommended that Present is compiled with a C99 (or C++11) compliant
+compiler.
+
+Present is meant to work across platforms. If there is an issue compiling it
+with a C compiler supporting C99 or a C++ compiler supporting C++11, please
+file an issue report.
+
+## Building
+
+First, make sure you have all git submodules:
+
+    git submodule update --init --recursive
 
 Present comes with both a traditional `Makefile` and a `CMakeLists.txt` file
 that can be used for compilation. However, using CMake is recommended as it
