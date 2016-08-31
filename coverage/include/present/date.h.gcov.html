@@ -119,61 +119,61 @@
 <span class="lineNum">      48 </span>                :            :     struct PresentDateData data_;
 <span class="lineNum">      49 </span>                :            : 
 <span class="lineNum">      50 </span>                :            : #ifdef __cplusplus
-<span class="lineNum">      51 </span>                :            :     /** @see Date_create_from_year */
+<span class="lineNum">      51 </span>                :            :     /** @copydoc Date_create_from_year */
 <span class="lineNum">      52 </span>                :            :     static Date create(int_year year);
 <span class="lineNum">      53 </span>                :            : 
-<span class="lineNum">      54 </span>                :            :     /** @see Date_create_from_year_month */
+<span class="lineNum">      54 </span>                :            :     /** @copydoc Date_create_from_year_month */
 <span class="lineNum">      55 </span>                :            :     static Date create(int_year year, int_month month);
 <span class="lineNum">      56 </span>                :            : 
-<span class="lineNum">      57 </span>                :            :     /** @see Date_create_from_year_month_day */
+<span class="lineNum">      57 </span>                :            :     /** @copydoc Date_create_from_year_month_day */
 <span class="lineNum">      58 </span>                :            :     static Date create(int_year year, int_month month, int_day day);
 <span class="lineNum">      59 </span>                :            : 
-<span class="lineNum">      60 </span>                :            :     /** @see Date_create_from_year_day */
+<span class="lineNum">      60 </span>                :            :     /** @copydoc Date_create_from_year_day */
 <span class="lineNum">      61 </span>                :            :     static Date create_from_year_day(
 <span class="lineNum">      62 </span>                :            :         int_year year,
 <span class="lineNum">      63 </span>                :            :         int_day_of_year day_of_year);
 <span class="lineNum">      64 </span>                :            : 
-<span class="lineNum">      65 </span>                :            :     /** @see Date_create_from_year_week */
+<span class="lineNum">      65 </span>                :            :     /** @copydoc Date_create_from_year_week */
 <span class="lineNum">      66 </span>                :            :     static Date create_from_year_week(
 <span class="lineNum">      67 </span>                :            :         int_year year,
 <span class="lineNum">      68 </span>                :            :         int_week_of_year week_of_year);
 <span class="lineNum">      69 </span>                :            : 
-<span class="lineNum">      70 </span>                :            :     /** @see Date_create_from_year_week_day */
+<span class="lineNum">      70 </span>                :            :     /** @copydoc Date_create_from_year_week_day */
 <span class="lineNum">      71 </span>                :            :     static Date create_from_year_week_day(
 <span class="lineNum">      72 </span>                :            :         int_year year,
 <span class="lineNum">      73 </span>                :            :         int_week_of_year week_of_year,
 <span class="lineNum">      74 </span>                :            :         int_day_of_week day_of_week);
 <span class="lineNum">      75 </span>                :            : 
-<span class="lineNum">      76 </span>                :            :     /** @see Date_get_year */
+<span class="lineNum">      76 </span>                :            :     /** @copydoc Date_get_year */
 <span class="lineNum">      77 </span>                :            :     int_year get_year() const;
 <span class="lineNum">      78 </span>                :            : 
-<span class="lineNum">      79 </span>                :            :     /** @see Date_get_month */
+<span class="lineNum">      79 </span>                :            :     /** @copydoc Date_get_month */
 <span class="lineNum">      80 </span>                :            :     int_month get_month() const;
 <span class="lineNum">      81 </span>                :            : 
-<span class="lineNum">      82 </span>                :            :     /** @see Date_get_day */
+<span class="lineNum">      82 </span>                :            :     /** @copydoc Date_get_day */
 <span class="lineNum">      83 </span>                :            :     int_day get_day() const;
 <span class="lineNum">      84 </span>                :            : 
-<span class="lineNum">      85 </span>                :            :     /** @see Date_get_day_of_year */
+<span class="lineNum">      85 </span>                :            :     /** @copydoc Date_get_day_of_year */
 <span class="lineNum">      86 </span>                :            :     int_day_of_year get_day_of_year() const;
 <span class="lineNum">      87 </span>                :            : 
-<span class="lineNum">      88 </span>                :            :     /** @see Date_get_week_of_year */
+<span class="lineNum">      88 </span>                :            :     /** @copydoc Date_get_week_of_year */
 <span class="lineNum">      89 </span>                :            :     int_week_of_year get_week_of_year() const;
 <span class="lineNum">      90 </span>                :            : 
-<span class="lineNum">      91 </span>                :            :     /** @see Date_get_day_of_week */
+<span class="lineNum">      91 </span>                :            :     /** @copydoc Date_get_day_of_week */
 <span class="lineNum">      92 </span>                :            :     int_day_of_week get_day_of_week() const;
 <span class="lineNum">      93 </span>                :            : 
-<span class="lineNum">      94 </span>                :            :     /** @see Date_get_difference */
+<span class="lineNum">      94 </span>                :            :     /** @copydoc Date_get_difference */
 <span class="lineNum">      95 </span>                :            :     DayDelta get_difference(const Date &amp; other) const;
-<span class="lineNum">      96 </span>                :            :     /** @see Date_get_absolute_difference */
+<span class="lineNum">      96 </span>                :            :     /** @copydoc Date_get_absolute_difference */
 <span class="lineNum">      97 </span>                :            :     DayDelta get_absolute_difference(const Date &amp; other) const;
 <span class="lineNum">      98 </span>                :            : 
-<span class="lineNum">      99 </span>                :            :     /** @see Date_add_day_delta */
+<span class="lineNum">      99 </span>                :            :     /** @copydoc Date_add_day_delta */
 <span class="lineNum">     100 </span>                :            :     Date &amp; operator+=(const DayDelta &amp;);
-<span class="lineNum">     101 </span>                :            :     /** @see Date_add_month_delta */
+<span class="lineNum">     101 </span>                :            :     /** @copydoc Date_add_month_delta */
 <span class="lineNum">     102 </span>                :            :     Date &amp; operator+=(const MonthDelta &amp;);
-<span class="lineNum">     103 </span>                :            :     /** @see Date_subtract_day_delta */
+<span class="lineNum">     103 </span>                :            :     /** @copydoc Date_subtract_day_delta */
 <span class="lineNum">     104 </span>                :            :     Date &amp; operator-=(const DayDelta &amp;);
-<span class="lineNum">     105 </span>                :            :     /** @see Date_subtract_month_delta */
+<span class="lineNum">     105 </span>                :            :     /** @copydoc Date_subtract_month_delta */
 <span class="lineNum">     106 </span>                :            :     Date &amp; operator-=(const MonthDelta &amp;);
 <span class="lineNum">     107 </span>                :            : 
 <span class="lineNum">     108 </span>                :            :     friend const Date operator+(const Date &amp;, const DayDelta &amp;);
@@ -181,17 +181,17 @@
 <span class="lineNum">     110 </span>                :            :     friend const Date operator-(const Date &amp;, const DayDelta &amp;);
 <span class="lineNum">     111 </span>                :            :     friend const Date operator-(const Date &amp;, const MonthDelta &amp;);
 <span class="lineNum">     112 </span>                :            : 
-<span class="lineNum">     113 </span>                :            :     /** @see Date_equal */
+<span class="lineNum">     113 </span>                :            :     /** @copydoc Date_equal */
 <span class="lineNum">     114 </span>                :            :     friend bool operator==(const Date &amp;, const Date &amp;);
 <span class="lineNum">     115 </span>                :            :     friend bool operator!=(const Date &amp;, const Date &amp;);
 <span class="lineNum">     116 </span>                :            : 
-<span class="lineNum">     117 </span>                :            :     /** @see Date_less_than */
+<span class="lineNum">     117 </span>                :            :     /** @copydoc Date_less_than */
 <span class="lineNum">     118 </span>                :            :     friend bool operator&lt;(const Date &amp;, const Date &amp;);
-<span class="lineNum">     119 </span>                :            :     /** @see Date_less_than_or_equal */
+<span class="lineNum">     119 </span>                :            :     /** @copydoc Date_less_than_or_equal */
 <span class="lineNum">     120 </span>                :            :     friend bool operator&lt;=(const Date &amp;, const Date &amp;);
-<span class="lineNum">     121 </span>                :            :     /** @see Date_greater_than */
+<span class="lineNum">     121 </span>                :            :     /** @copydoc Date_greater_than */
 <span class="lineNum">     122 </span>                :            :     friend bool operator&gt;(const Date &amp;, const Date &amp;);
-<span class="lineNum">     123 </span>                :            :     /** @see Date_greater_than_or_equal */
+<span class="lineNum">     123 </span>                :            :     /** @copydoc Date_greater_than_or_equal */
 <a name="124"><span class="lineNum">     124 </span>                :            :     friend bool operator&gt;=(const Date &amp;, const Date &amp;);</a>
 <span class="lineNum">     125 </span>                :            : 
 <span class="lineNum">     126 </span>                :<span class="lineCov">         29 :     PRESENT_BOILERPLATE_CONSTRUCTORS(Date)</span>

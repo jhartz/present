@@ -111,28 +111,28 @@
 <span class="lineNum">      40 </span>                :            :     struct PresentMonthDeltaData data_;
 <span class="lineNum">      41 </span>                :            : 
 <span class="lineNum">      42 </span>                :            : #ifdef __cplusplus
-<span class="lineNum">      43 </span>                :            :     /** @see MonthDelta_from_months */
+<span class="lineNum">      43 </span>                :            :     /** @copydoc MonthDelta_from_months */
 <span class="lineNum">      44 </span>                :            :     static MonthDelta from_months(int_month_delta month_delta);
 <span class="lineNum">      45 </span>                :            : 
-<span class="lineNum">      46 </span>                :            :     /** @see MonthDelta_from_years */
+<span class="lineNum">      46 </span>                :            :     /** @copydoc MonthDelta_from_years */
 <span class="lineNum">      47 </span>                :            :     static MonthDelta from_years(int_year_delta year_delta);
 <span class="lineNum">      48 </span>                :            : 
-<span class="lineNum">      49 </span>                :            :     /** @see MonthDelta_zero */
+<span class="lineNum">      49 </span>                :            :     /** @copydoc MonthDelta_zero */
 <span class="lineNum">      50 </span>                :            :     static MonthDelta zero();
 <span class="lineNum">      51 </span>                :            : 
-<span class="lineNum">      52 </span>                :            :     /** @see MonthDelta_get_months */
+<span class="lineNum">      52 </span>                :            :     /** @copydoc MonthDelta_get_months */
 <span class="lineNum">      53 </span>                :            :     int_month_delta get_months() const;
 <span class="lineNum">      54 </span>                :            : 
-<span class="lineNum">      55 </span>                :            :     /** @see MonthDelta_get_years */
+<span class="lineNum">      55 </span>                :            :     /** @copydoc MonthDelta_get_years */
 <span class="lineNum">      56 </span>                :            :     int_year_delta get_years() const;
 <span class="lineNum">      57 </span>                :            : 
-<span class="lineNum">      58 </span>                :            :     /** @see MonthDelta_get_years_decimal */
+<span class="lineNum">      58 </span>                :            :     /** @copydoc MonthDelta_get_years_decimal */
 <span class="lineNum">      59 </span>                :            :     double get_years_decimal() const;
 <span class="lineNum">      60 </span>                :            : 
-<span class="lineNum">      61 </span>                :            :     /** @see MonthDelta_is_negative */
+<span class="lineNum">      61 </span>                :            :     /** @copydoc MonthDelta_is_negative */
 <span class="lineNum">      62 </span>                :            :     bool is_negative() const;
 <span class="lineNum">      63 </span>                :            : 
-<span class="lineNum">      64 </span>                :            :     /** @see MonthDelta_negate */
+<span class="lineNum">      64 </span>                :            :     /** @copydoc MonthDelta_negate */
 <span class="lineNum">      65 </span>                :            :     void negate();
 <span class="lineNum">      66 </span>                :            : 
 <span class="lineNum">      67 </span>                :            :     MonthDelta operator-() const;
@@ -146,33 +146,33 @@
 <span class="lineNum">      75 </span>                :            :     /** Subtract one month from the MonthDelta. */
 <span class="lineNum">      76 </span>                :            :     MonthDelta operator--(int);
 <span class="lineNum">      77 </span>                :            : 
-<span class="lineNum">      78 </span>                :            :     /** @see MonthDelta_multiply_by */
+<span class="lineNum">      78 </span>                :            :     /** @copydoc MonthDelta_multiply_by */
 <span class="lineNum">      79 </span>                :            :     MonthDelta &amp; operator*=(const int &amp;);
-<span class="lineNum">      80 </span>                :            :     /** @see MonthDelta_divide_by */
+<span class="lineNum">      80 </span>                :            :     /** @copydoc MonthDelta_divide_by */
 <span class="lineNum">      81 </span>                :            :     MonthDelta &amp; operator/=(const int &amp;);
 <span class="lineNum">      82 </span>                :            : 
 <span class="lineNum">      83 </span>                :            :     friend const MonthDelta operator*(const MonthDelta &amp;, const int &amp;);
 <span class="lineNum">      84 </span>                :            :     friend const MonthDelta operator/(const MonthDelta &amp;, const int &amp;);
 <span class="lineNum">      85 </span>                :            : 
-<span class="lineNum">      86 </span>                :            :     /** @see MonthDelta_add_month_delta */
+<span class="lineNum">      86 </span>                :            :     /** @copydoc MonthDelta_add_month_delta */
 <span class="lineNum">      87 </span>                :            :     MonthDelta &amp; operator+=(const MonthDelta &amp;);
-<span class="lineNum">      88 </span>                :            :     /** @see MonthDelta_subtract_month_delta */
+<span class="lineNum">      88 </span>                :            :     /** @copydoc MonthDelta_subtract_month_delta */
 <span class="lineNum">      89 </span>                :            :     MonthDelta &amp; operator-=(const MonthDelta &amp;);
 <span class="lineNum">      90 </span>                :            : 
 <span class="lineNum">      91 </span>                :            :     friend const MonthDelta operator+(const MonthDelta &amp;, const MonthDelta &amp;);
 <span class="lineNum">      92 </span>                :            :     friend const MonthDelta operator-(const MonthDelta &amp;, const MonthDelta &amp;);
 <span class="lineNum">      93 </span>                :            : 
-<span class="lineNum">      94 </span>                :            :     /** @see MonthDelta_equal */
+<span class="lineNum">      94 </span>                :            :     /** @copydoc MonthDelta_equal */
 <span class="lineNum">      95 </span>                :            :     friend bool operator==(const MonthDelta &amp;, const MonthDelta &amp;);
 <span class="lineNum">      96 </span>                :            :     friend bool operator!=(const MonthDelta &amp;, const MonthDelta &amp;);
 <span class="lineNum">      97 </span>                :            : 
-<span class="lineNum">      98 </span>                :            :     /** @see MonthDelta_less_than */
+<span class="lineNum">      98 </span>                :            :     /** @copydoc MonthDelta_less_than */
 <span class="lineNum">      99 </span>                :            :     friend bool operator&lt;(const MonthDelta &amp;, const MonthDelta &amp;);
-<span class="lineNum">     100 </span>                :            :     /** @see MonthDelta_less_than_or_equal */
+<span class="lineNum">     100 </span>                :            :     /** @copydoc MonthDelta_less_than_or_equal */
 <span class="lineNum">     101 </span>                :            :     friend bool operator&lt;=(const MonthDelta &amp;, const MonthDelta &amp;);
-<span class="lineNum">     102 </span>                :            :     /** @see MonthDelta_greater_than */
+<span class="lineNum">     102 </span>                :            :     /** @copydoc MonthDelta_greater_than */
 <span class="lineNum">     103 </span>                :            :     friend bool operator&gt;(const MonthDelta &amp;, const MonthDelta &amp;);
-<span class="lineNum">     104 </span>                :            :     /** @see MonthDelta_greater_than_or_equal */
+<span class="lineNum">     104 </span>                :            :     /** @copydoc MonthDelta_greater_than_or_equal */
 <a name="105"><span class="lineNum">     105 </span>                :            :     friend bool operator&gt;=(const MonthDelta &amp;, const MonthDelta &amp;);</a>
 <span class="lineNum">     106 </span>                :            : 
 <span class="lineNum">     107 </span>                :<span class="lineNoCov">          0 :     PRESENT_BOILERPLATE_CONSTRUCTORS(MonthDelta)</span>

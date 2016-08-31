@@ -154,8 +154,15 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a43ab3f61f00546461d3f85eb51517a6d" title="Create a new Date based on a year.">Date_create_from_year</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year. </p>
+<p>The month and day will be set to January 1.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year. </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="a0b1280e69ec6310ec8cdfb730e8dd7f6"></a><!-- doxytag: member="Date::create" ref="a0b1280e69ec6310ec8cdfb730e8dd7f6" args="(int_year year, int_month month)" -->
@@ -182,8 +189,17 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a7d059ef251f488538ccbc22ead794db6" title="Create a new Date based on a year and a month.">Date_create_from_year_month</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year and a month. </p>
+<p>The day will be set to the first of the month.</p>
+<p>If the month is out of range, a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> will be returned with "error" set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year. </td></tr>
+    <tr><td class="paramname">month</td><td>The month of the year (1 to 12, inclusive). </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="ae0bcc2332237bf0f5b57ed646a00e6ac"></a><!-- doxytag: member="Date::create" ref="ae0bcc2332237bf0f5b57ed646a00e6ac" args="(int_year year, int_month month, int_day day)" -->
@@ -216,8 +232,17 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a42ad855ee9519639db894432f44d97e9" title="Create a new Date based on a year, a month, and a day.">Date_create_from_year_month_day</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year, a month, and a day. </p>
+<p>If the month or the day is out of range, a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> will be returned with "error" set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year. </td></tr>
+    <tr><td class="paramname">month</td><td>The month of the year (1 to 12, inclusive). </td></tr>
+    <tr><td class="paramname">day</td><td>The day of the month (1 to either 28, 29, 30, or 31, inclusive, depending on the month). </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="afed458a3a1ff055cebdbd153bb00d5a4"></a><!-- doxytag: member="Date::create_from_year_day" ref="afed458a3a1ff055cebdbd153bb00d5a4" args="(int_year year, int_day_of_year day_of_year)" -->
@@ -244,8 +269,15 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a31812f70db4d0656099c7aae0d3305ef" title="Create a new Date based on a year and the day of that year.">Date_create_from_year_day</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year and the day of that year. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year. </td></tr>
+    <tr><td class="paramname">day_of_year</td><td>The day of the year. </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="a1758de1f6dbead95e0728032cb05a6dd"></a><!-- doxytag: member="Date::create_from_year_week" ref="a1758de1f6dbead95e0728032cb05a6dd" args="(int_year year, int_week_of_year week_of_year)" -->
@@ -272,8 +304,17 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#afb76dd22f944f4b2c032fee614135467" title="Create a new Date based on a year and the week of that year.">Date_create_from_year_week</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year and the week of that year. </p>
+<p>Weeks of the year are determined in the same way that the ISO8601 standard determines week numbers.</p>
+<p>If the week of the year is out of range, a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> will be returned with "error" set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year. </td></tr>
+    <tr><td class="paramname">week_of_year</td><td>The week of the year (TODO: what are the bounds?) </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="a282993d00829e727eac88615cb2f1146"></a><!-- doxytag: member="Date::create_from_year_week_day" ref="a282993d00829e727eac88615cb2f1146" args="(int_year year, int_week_of_year week_of_year, int_day_of_week day_of_week)" -->
@@ -306,8 +347,18 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a8e4d7a96e87a9405605c0adc8362d234" title="Create a new Date based on a year, a week of that year, and a day of the week.">Date_create_from_year_week_day</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year, a week of that year, and a day of the week. </p>
+<p>Weeks of the year are determined in the same way that the ISO8601 standard defines week numbers.</p>
+<p>If the week of the year or the day of the week is out of range, a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> will be returned with "error" set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year. </td></tr>
+    <tr><td class="paramname">week_of_year</td><td>The week of the year (TODO: what are the bounds?) </td></tr>
+    <tr><td class="paramname">day_of_week</td><td>The day of the week (1 to 7, inclusive). See present/utils/types.h for constants for each day of the week. </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="a293adccbbf2f42bd54dde9fb0de81f92"></a><!-- doxytag: member="Date::get_absolute_difference" ref="a293adccbbf2f42bd54dde9fb0de81f92" args="(const Date &amp;other) const " -->
@@ -324,8 +375,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a8639bedc8fc415809cbad76b72fb388b" title="Get the absolute difference between two Date instances.">Date_get_absolute_difference</a> </dd></dl>
-
+<p>Get the absolute difference between two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a044d6531a4335e3136f7aedd67fc0db0"></a><!-- doxytag: member="Date::get_day" ref="a044d6531a4335e3136f7aedd67fc0db0" args="() const " -->
@@ -341,8 +392,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a9a89250ddc944586f86223ea8727a328" title="Get the day of month of a Date (1 to 31, inclusive).">Date_get_day</a> </dd></dl>
-
+<p>Get the day of month of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 31, inclusive). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ad5ff9ecae53c65ba2b45dc4f69f37d5c"></a><!-- doxytag: member="Date::get_day_of_week" ref="ad5ff9ecae53c65ba2b45dc4f69f37d5c" args="() const " -->
@@ -358,8 +409,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a99bd609ba0bacc5d415693f90a7113af" title="Get the day of the week of a Date (1 to 7, inclusive, with 1 being Monday, 2 being Tuesday...">Date_get_day_of_week</a> </dd></dl>
-
+<p>Get the day of the week of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 7, inclusive, with 1 being Monday, 2 being Tuesday, ..., 6 being Saturday, and 7 being Sunday). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="af19ad4f968f7799a336d2112c784bc9b"></a><!-- doxytag: member="Date::get_day_of_year" ref="af19ad4f968f7799a336d2112c784bc9b" args="() const " -->
@@ -375,8 +426,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a4f71610e1041fbb7e3b530d118d65151" title="Get the day of the year of a Date (1 to 366, inclusive).">Date_get_day_of_year</a> </dd></dl>
-
+<p>Get the day of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 366, inclusive). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ae175df5ffb7f12378d41453209994e59"></a><!-- doxytag: member="Date::get_difference" ref="ae175df5ffb7f12378d41453209994e59" args="(const Date &amp;other) const " -->
@@ -393,8 +444,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03" title="Get the difference between two Date instances.">Date_get_difference</a> </dd></dl>
-
+<p>Get the difference between two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="afa1025e5868c30b20b1ff1481e30f08d"></a><!-- doxytag: member="Date::get_month" ref="afa1025e5868c30b20b1ff1481e30f08d" args="() const " -->
@@ -410,8 +461,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a4159afd50df428b740f4485925e7c5b6" title="Get the month of a Date (1 to 12, inclusive).">Date_get_month</a> </dd></dl>
-
+<p>Get the month of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 12, inclusive). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="acd84e3844957e82014a2c17bb45bcce3"></a><!-- doxytag: member="Date::get_week_of_year" ref="acd84e3844957e82014a2c17bb45bcce3" args="() const " -->
@@ -427,8 +478,9 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a8420160a915ad3804b93a5a0f9ccb227" title="Get the week of the year of a Date.">Date_get_week_of_year</a> </dd></dl>
-
+<p>Get the week of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+<p>TODO: What are the bounds? </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a970cb8375d137e19cea4c042a0b8d64a"></a><!-- doxytag: member="Date::get_year" ref="a970cb8375d137e19cea4c042a0b8d64a" args="() const " -->
@@ -444,8 +496,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#ad26cbac6bc416b358941b580dba7fe3c" title="Get the year of a Date.">Date_get_year</a> </dd></dl>
-
+<p>Get the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a0a5674bd1757acf8b229a8448c200bf7"></a><!-- doxytag: member="Date::operator+=" ref="a0a5674bd1757acf8b229a8448c200bf7" args="(const DayDelta &amp;)" -->
@@ -462,8 +514,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a4c6d6ed2a1d7979412a79e84d54aeac4" title="Add a DayDelta to a Date.">Date_add_day_delta</a> </dd></dl>
-
+<p>Add a <a class="el" href="structDayDelta.html">DayDelta</a> to a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ad5a2f681fdc34cbff1511fd7e6dd6f91"></a><!-- doxytag: member="Date::operator+=" ref="ad5a2f681fdc34cbff1511fd7e6dd6f91" args="(const MonthDelta &amp;)" -->
@@ -480,8 +532,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a57ea0878d7e184ce8caae809f80c4274" title="Add a MonthDelta to a Date.">Date_add_month_delta</a> </dd></dl>
-
+<p>Add a <a class="el" href="structMonthDelta.html">MonthDelta</a> to a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a43159e68f1bceedbb169931b85feeee8"></a><!-- doxytag: member="Date::operator&#45;=" ref="a43159e68f1bceedbb169931b85feeee8" args="(const DayDelta &amp;)" -->
@@ -498,8 +550,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#aff3dde3e7758ebafc0a04c16ab8099b7" title="Subtract a DayDelta from a Date.">Date_subtract_day_delta</a> </dd></dl>
-
+<p>Subtract a <a class="el" href="structDayDelta.html">DayDelta</a> from a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ac7b9e1798bc482f9847d6f87921e4975"></a><!-- doxytag: member="Date::operator&#45;=" ref="ac7b9e1798bc482f9847d6f87921e4975" args="(const MonthDelta &amp;)" -->
@@ -516,8 +568,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a1df0a3764eef73161f411d0f67e52014" title="Subtract a MonthDelta from a Date.">Date_subtract_month_delta</a> </dd></dl>
-
+<p>Subtract a <a class="el" href="structMonthDelta.html">MonthDelta</a> from a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
@@ -680,8 +732,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#ad59fd8e95642ece085fe87745e8d1942" title="Determine whether a Date is earlier than another Date.">Date_less_than</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="aec251fea3c00fa40e6e9e07a90620f78"></a><!-- doxytag: member="Date::operator&lt;=" ref="aec251fea3c00fa40e6e9e07a90620f78" args="(const Date &amp;, const Date &amp;)" -->
@@ -708,8 +760,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a353c04aca98ffc7f5661f4488dd7bdb9" title="Determine whether a Date is earlier than or the same as another Date.">Date_less_than_or_equal</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ad51822da99f2cc001b6326ac28bd49d6"></a><!-- doxytag: member="Date::operator==" ref="ad51822da99f2cc001b6326ac28bd49d6" args="(const Date &amp;, const Date &amp;)" -->
@@ -736,8 +788,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#a77eadd9d79f983618b888d9810c506d0" title="Determine whether two Date instances are equal.">Date_equal</a> </dd></dl>
-
+<p>Determine whether two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances are equal. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a042bfc86a816127e316415634bb99107"></a><!-- doxytag: member="Date::operator&gt;" ref="a042bfc86a816127e316415634bb99107" args="(const Date &amp;, const Date &amp;)" -->
@@ -764,8 +816,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#ae4b19bd7c984619f04644bca7fa43f83" title="Determine whether a Date is later than another Date.">Date_greater_than</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a04118d56c46df4ac9054f0e34d2a6ce2"></a><!-- doxytag: member="Date::operator&gt;=" ref="a04118d56c46df4ac9054f0e34d2a6ce2" args="(const Date &amp;, const Date &amp;)" -->
@@ -792,8 +844,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="date_8h.html#acacc333b8cccf95f14d8040b811455c9" title="Determine whether a Date is later than or the same as another Date.">Date_greater_than_or_equal</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+ 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -824,7 +876,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/travis/build/jhartz/present/include/present/<a class="el" href="date_8h_source.html">date.h</a></li>
+<li>present/<a class="el" href="date_8h_source.html">date.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>

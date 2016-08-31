@@ -149,8 +149,15 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a172dd5f4ae9a67a7d0efe2b7c3e1a7b9" title="Create a new ClockTime based on an hour of the day.">ClockTime_create_from_hour</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> based on an hour of the day. </p>
+<p>If any parameter is out of range, a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will be returned with "error" set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="aa4429a92963b67343bc6eab885938a5a"></a><!-- doxytag: member="ClockTime::create" ref="aa4429a92963b67343bc6eab885938a5a" args="(int_hour hour, int_minute minute)" -->
@@ -177,8 +184,16 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#ab1d019479c07792ba3789d4611bf47bd" title="Create a new ClockTime based on an hour and a minute.">ClockTime_create_from_hour_minute</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> based on an hour and a minute. </p>
+<p>If any parameter is out of range, a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will be returned with "error" set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="a3a34039699358c31a6f68d545f228728"></a><!-- doxytag: member="ClockTime::create" ref="a3a34039699358c31a6f68d545f228728" args="(int_hour hour, int_minute minute, int_second second)" -->
@@ -211,8 +226,17 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a1015eecfae508e22c54a4f1b52634fbf" title="Create a new ClockTime based on an hour, a minute, and a second.">ClockTime_create_from_hour_minute_second</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> based on an hour, a minute, and a second. </p>
+<p>If any parameter is out of range, a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will be returned with "error" set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramname">second</td><td>The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="afdf4e7a0b63e536f24a5eb85a3eb1ae8"></a><!-- doxytag: member="ClockTime::create" ref="afdf4e7a0b63e536f24a5eb85a3eb1ae8" args="(int_hour hour, int_minute minute, int_second second, int_nanosecond nanosecond)" -->
@@ -251,8 +275,17 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#acc3b0e5400f78e25499a815f4068739e" title="Create a new ClockTime based on an hour, a minute, a second, and a nanosecond.">ClockTime_create_from_hour_minute_second_nanosecond</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> based on an hour, a minute, a second, and a nanosecond. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramname">second</td><td>The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). </td></tr>
+    <tr><td class="paramname">nanosecond</td><td>The nanosecond (0 to 10^9-1, inclusive, i.e. no bigger than the number of nanoseconds in a second). </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="a71e4e398da2cb0cfd3adb3f87cb6f3c2"></a><!-- doxytag: member="ClockTime::create_with_decimal_seconds" ref="a71e4e398da2cb0cfd3adb3f87cb6f3c2" args="(int_hour hour, int_minute minute, double second)" -->
@@ -285,8 +318,16 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a519b7c6074cf1addc815f7495048c30b" title="Create a new ClockTime based on an hour, a minute, and a decimal second.">ClockTime_create_with_decimal_seconds</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> based on an hour, a minute, and a decimal second. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramname">second</td><td>The second of the minute (0 up to, but not including, 60). </td></tr>
+  </table>
+  </dd>
+</dl>
+ 
 </div>
 </div>
 <a class="anchor" id="ab188f450c2b8519296c96529afc8d92f"></a><!-- doxytag: member="ClockTime::get_hour" ref="ab188f450c2b8519296c96529afc8d92f" args="() const " -->
@@ -302,8 +343,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a1688a98fb161dc7a743085b09cb3c1de" title="Get the hour component of a ClockTime (0 to 23, inclusive).">ClockTime_get_hour</a> </dd></dl>
-
+<p>Get the hour component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (0 to 23, inclusive). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ae882482085d1cc290b055381f407cb6a"></a><!-- doxytag: member="ClockTime::get_minute" ref="ae882482085d1cc290b055381f407cb6a" args="() const " -->
@@ -319,8 +360,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a3ea78f71041658c2f9530c3603b7b9ec" title="Get the minute component of a ClockTime (0 to 59, inclusive).">ClockTime_get_minute</a> </dd></dl>
-
+<p>Get the minute component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (0 to 59, inclusive). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a4ddf3b506ad8f3576df034fbf3febae4"></a><!-- doxytag: member="ClockTime::get_nanosecond" ref="a4ddf3b506ad8f3576df034fbf3febae4" args="() const " -->
@@ -336,8 +377,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#ad74a9b1b36f0fd4b4a739b69fb65869e" title="Get the nanosecond component of a ClockTime (less than 10^9, the number of nanoseconds in a second)...">ClockTime_get_nanosecond</a> </dd></dl>
-
+<p>Get the nanosecond component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (less than 10^9, the number of nanoseconds in a second). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a054e575b6ba259efdf3d79ebdf7fc501"></a><!-- doxytag: member="ClockTime::get_second" ref="a054e575b6ba259efdf3d79ebdf7fc501" args="() const " -->
@@ -353,8 +394,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a77c448c2991009dbcb662696a7ceedca" title="Get the second component of a ClockTime (0 to 59, inclusive).">ClockTime_get_second</a> </dd></dl>
-
+<p>Get the second component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (0 to 59, inclusive). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a174f09985d45efc748ca956c9ca2fb2e"></a><!-- doxytag: member="ClockTime::get_second_decimal" ref="a174f09985d45efc748ca956c9ca2fb2e" args="() const " -->
@@ -370,8 +411,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a7cf42452da58eb906b00e92fe3efb159" title="Get the second component of a ClockTime as a decimal, based on both the second and nanosecond compone...">ClockTime_get_second_decimal</a> </dd></dl>
-
+<p>Get the second component of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> as a decimal, based on both the second and nanosecond components. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a7baab35d60ad3a2236c14133d8d0083b"></a><!-- doxytag: member="ClockTime::midnight" ref="a7baab35d60ad3a2236c14133d8d0083b" args="()" -->
@@ -387,8 +428,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#ae320c2e30dedf0b33d5306b9e8841261" title="Create a new ClockTime initialized to midnight (00:00).">ClockTime_midnight</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to midnight (00:00). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ae206b86808ff1d0158cbc920eb289797"></a><!-- doxytag: member="ClockTime::noon" ref="ae206b86808ff1d0158cbc920eb289797" args="()" -->
@@ -404,8 +445,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a183049a7386a7b7377ba3059d15485c4" title="Create a new ClockTime initialized to noon (12:00).">ClockTime_noon</a> </dd></dl>
-
+<p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> initialized to noon (12:00). </p>
+ 
 </div>
 </div>
 <a class="anchor" id="aec48dca559fd8b1f97c624eb45205d51"></a><!-- doxytag: member="ClockTime::operator+=" ref="aec48dca559fd8b1f97c624eb45205d51" args="(const TimeDelta &amp;)" -->
@@ -422,8 +463,9 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#adc2c863dfec0b56604b3153b226139fb" title="Add a TimeDelta to a ClockTime.">ClockTime_add_time_delta</a> </dd></dl>
-
+<p>Add a <a class="el" href="structTimeDelta.html">TimeDelta</a> to a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>If the result goes above 23:59:59.999... or below 00:00, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will wrap around. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="ac5197cbbfba2f45bfeb9f24175c60b14"></a><!-- doxytag: member="ClockTime::operator&#45;=" ref="ac5197cbbfba2f45bfeb9f24175c60b14" args="(const TimeDelta &amp;)" -->
@@ -440,8 +482,9 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a5305df919aa0992ba4703f9b9f292a67" title="Subtract a TimeDelta from a ClockTime.">ClockTime_subtract_time_delta</a> </dd></dl>
-
+<p>Subtract a <a class="el" href="structTimeDelta.html">TimeDelta</a> from a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>If the result goes above 23:59:59.999... or below 00:00, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> will wrap around. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a9c6423703cb0026435fb6e5b2d261d54"></a><!-- doxytag: member="ClockTime::time_since_midnight" ref="a9c6423703cb0026435fb6e5b2d261d54" args="() const " -->
@@ -457,8 +500,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#ace4db26641fe01b2edd311b09589ebbb" title="Get a TimeDelta with the time since midnight of a ClockTime.">ClockTime_time_since_midnight</a> </dd></dl>
-
+<p>Get a <a class="el" href="structTimeDelta.html">TimeDelta</a> with the time since midnight of a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+ 
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
@@ -567,8 +610,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a3e68308f034226dd04f361fb173ea6ac" title="Determine whether a ClockTime is earlier than another ClockTime.">ClockTime_less_than</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is earlier than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a220837ade82b091aabc96ab5aa44c168"></a><!-- doxytag: member="ClockTime::operator&lt;=" ref="a220837ade82b091aabc96ab5aa44c168" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
@@ -595,8 +638,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a79d34170a100cdf5654080e9e1c1d7a9" title="Determine whether a ClockTime is earlier than or or the same as another ClockTime.">ClockTime_less_than_or_equal</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is earlier than or or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a7135b0c2995c1809f4a0cdd9e692ffe5"></a><!-- doxytag: member="ClockTime::operator==" ref="a7135b0c2995c1809f4a0cdd9e692ffe5" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
@@ -623,8 +666,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a33f1b59fd2b998d61ea80c908aeb274c" title="Determine whether two ClockTime instances are equal.">ClockTime_equal</a> </dd></dl>
-
+<p>Determine whether two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances are equal. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a985095ef213439f0aa9644f95b486bda"></a><!-- doxytag: member="ClockTime::operator&gt;" ref="a985095ef213439f0aa9644f95b486bda" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
@@ -651,8 +694,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#a9e2265b76612f6f7618ede2d78f10083" title="Determine whether a ClockTime is later than another ClockTime.">ClockTime_greater_than</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+ 
 </div>
 </div>
 <a class="anchor" id="a329bc543b94a71802572c915efc3656b"></a><!-- doxytag: member="ClockTime::operator&gt;=" ref="a329bc543b94a71802572c915efc3656b" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
@@ -679,8 +722,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="clock-time_8h.html#ace253f56caf8df157d630aa590b658cc" title="Determine whether a ClockTime is later than or the same as another ClockTime.">ClockTime_greater_than_or_equal</a> </dd></dl>
-
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+ 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -711,7 +754,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/travis/build/jhartz/present/include/present/<a class="el" href="clock-time_8h_source.html">clock-time.h</a></li>
+<li>present/<a class="el" href="clock-time_8h_source.html">clock-time.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>

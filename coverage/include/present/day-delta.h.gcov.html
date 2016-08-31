@@ -112,31 +112,31 @@
 <span class="lineNum">      41 </span>                :            :     struct PresentDayDeltaData data_;
 <span class="lineNum">      42 </span>                :            : 
 <span class="lineNum">      43 </span>                :            : #ifdef __cplusplus
-<span class="lineNum">      44 </span>                :            :     /** @see DayDelta_from_days */
+<span class="lineNum">      44 </span>                :            :     /** @copydoc DayDelta_from_days */
 <span class="lineNum">      45 </span>                :            :     static DayDelta from_days(int_delta days);
 <span class="lineNum">      46 </span>                :            : 
-<span class="lineNum">      47 </span>                :            :     /** @see DayDelta_from_weeks */
+<span class="lineNum">      47 </span>                :            :     /** @copydoc DayDelta_from_weeks */
 <span class="lineNum">      48 </span>                :            :     static DayDelta from_weeks(int_delta weeks);
 <span class="lineNum">      49 </span>                :            : 
-<span class="lineNum">      50 </span>                :            :     /** @see DayDelta_zero */
+<span class="lineNum">      50 </span>                :            :     /** @copydoc DayDelta_zero */
 <span class="lineNum">      51 </span>                :            :     static DayDelta zero();
 <span class="lineNum">      52 </span>                :            : 
-<span class="lineNum">      53 </span>                :            :     /** @see DayDelta_get_days */
+<span class="lineNum">      53 </span>                :            :     /** @copydoc DayDelta_get_days */
 <span class="lineNum">      54 </span>                :            :     int_delta get_days() const;
 <span class="lineNum">      55 </span>                :            : 
-<span class="lineNum">      56 </span>                :            :     /** @see DayDelta_get_weeks */
+<span class="lineNum">      56 </span>                :            :     /** @copydoc DayDelta_get_weeks */
 <span class="lineNum">      57 </span>                :            :     int_delta get_weeks() const;
 <span class="lineNum">      58 </span>                :            : 
-<span class="lineNum">      59 </span>                :            :     /** @see DayDelta_get_weeks_decimal */
+<span class="lineNum">      59 </span>                :            :     /** @copydoc DayDelta_get_weeks_decimal */
 <span class="lineNum">      60 </span>                :            :     double get_weeks_decimal() const;
 <span class="lineNum">      61 </span>                :            : 
-<span class="lineNum">      62 </span>                :            :     /** @see DayDelta_get_time_delta */
+<span class="lineNum">      62 </span>                :            :     /** @copydoc DayDelta_get_time_delta */
 <span class="lineNum">      63 </span>                :            :     TimeDelta get_time_delta() const;
 <span class="lineNum">      64 </span>                :            : 
-<span class="lineNum">      65 </span>                :            :     /** @see DayDelta_is_negative */
+<span class="lineNum">      65 </span>                :            :     /** @copydoc DayDelta_is_negative */
 <span class="lineNum">      66 </span>                :            :     bool is_negative() const;
 <span class="lineNum">      67 </span>                :            : 
-<span class="lineNum">      68 </span>                :            :     /** @see DayDelta_negate */
+<span class="lineNum">      68 </span>                :            :     /** @copydoc DayDelta_negate */
 <span class="lineNum">      69 </span>                :            :     void negate();
 <span class="lineNum">      70 </span>                :            : 
 <span class="lineNum">      71 </span>                :            :     DayDelta operator-() const;
@@ -150,33 +150,33 @@
 <span class="lineNum">      79 </span>                :            :     /** Subtract one day from the DayDelta. */
 <span class="lineNum">      80 </span>                :            :     DayDelta operator--(int);
 <span class="lineNum">      81 </span>                :            : 
-<span class="lineNum">      82 </span>                :            :     /** @see DayDelta_multiply_by */
+<span class="lineNum">      82 </span>                :            :     /** @copydoc DayDelta_multiply_by */
 <span class="lineNum">      83 </span>                :            :     DayDelta &amp; operator*=(const int &amp;);
-<span class="lineNum">      84 </span>                :            :     /** @see DayDelta_divide_by */
+<span class="lineNum">      84 </span>                :            :     /** @copydoc DayDelta_divide_by */
 <span class="lineNum">      85 </span>                :            :     DayDelta &amp; operator/=(const int &amp;);
 <span class="lineNum">      86 </span>                :            : 
 <span class="lineNum">      87 </span>                :            :     friend const DayDelta operator*(const DayDelta &amp;, const int &amp;);
 <span class="lineNum">      88 </span>                :            :     friend const DayDelta operator/(const DayDelta &amp;, const int &amp;);
 <span class="lineNum">      89 </span>                :            : 
-<span class="lineNum">      90 </span>                :            :     /** @see DayDelta_add_day_delta */
+<span class="lineNum">      90 </span>                :            :     /** @copydoc DayDelta_add_day_delta */
 <span class="lineNum">      91 </span>                :            :     DayDelta &amp; operator+=(const DayDelta &amp;);
-<span class="lineNum">      92 </span>                :            :     /** @see DayDelta_subtract_day_delta */
+<span class="lineNum">      92 </span>                :            :     /** @copydoc DayDelta_subtract_day_delta */
 <span class="lineNum">      93 </span>                :            :     DayDelta &amp; operator-=(const DayDelta &amp;);
 <span class="lineNum">      94 </span>                :            : 
 <span class="lineNum">      95 </span>                :            :     friend const DayDelta operator+(const DayDelta &amp;, const DayDelta &amp;);
 <span class="lineNum">      96 </span>                :            :     friend const DayDelta operator-(const DayDelta &amp;, const DayDelta &amp;);
 <span class="lineNum">      97 </span>                :            : 
-<span class="lineNum">      98 </span>                :            :     /** @see DayDelta_equal */
+<span class="lineNum">      98 </span>                :            :     /** @copydoc DayDelta_equal */
 <span class="lineNum">      99 </span>                :            :     friend bool operator==(const DayDelta &amp;, const DayDelta &amp;);
 <span class="lineNum">     100 </span>                :            :     friend bool operator!=(const DayDelta &amp;, const DayDelta &amp;);
 <span class="lineNum">     101 </span>                :            : 
-<span class="lineNum">     102 </span>                :            :     /** @see DayDelta_less_than */
+<span class="lineNum">     102 </span>                :            :     /** @copydoc DayDelta_less_than */
 <span class="lineNum">     103 </span>                :            :     friend bool operator&lt;(const DayDelta &amp;, const DayDelta &amp;);
-<span class="lineNum">     104 </span>                :            :     /** @see DayDelta_less_than_or_equal */
+<span class="lineNum">     104 </span>                :            :     /** @copydoc DayDelta_less_than_or_equal */
 <span class="lineNum">     105 </span>                :            :     friend bool operator&lt;=(const DayDelta &amp;, const DayDelta &amp;);
-<span class="lineNum">     106 </span>                :            :     /** @see DayDelta_greater_than */
+<span class="lineNum">     106 </span>                :            :     /** @copydoc DayDelta_greater_than */
 <span class="lineNum">     107 </span>                :            :     friend bool operator&gt;(const DayDelta &amp;, const DayDelta &amp;);
-<span class="lineNum">     108 </span>                :            :     /** @see DayDelta_greater_than_or_equal */
+<span class="lineNum">     108 </span>                :            :     /** @copydoc DayDelta_greater_than_or_equal */
 <a name="109"><span class="lineNum">     109 </span>                :            :     friend bool operator&gt;=(const DayDelta &amp;, const DayDelta &amp;);</a>
 <span class="lineNum">     110 </span>                :            : 
 <span class="lineNum">     111 </span>                :<span class="lineNoCov">          0 :     PRESENT_BOILERPLATE_CONSTRUCTORS(DayDelta)</span>
