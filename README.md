@@ -1,6 +1,7 @@
 # Present
 
 [![Build Status](https://travis-ci.org/jhartz/present.svg?branch=master)](https://travis-ci.org/jhartz/present)
+[Code Coverage](https://jhartz.github.io/present/coverage/src/index.html) (work in progress)
 
 **A date/time library for C and C++**
 
@@ -101,6 +102,14 @@ Examples of interactions:
 
 Additionally, the C++ classes support operator overloading, so all the code
 involving these actions looks and feels intuitive.
+
+## API Documentation
+
+The full API documentation is automatically generated from the code, and thus
+is always up to date with the code in `master`.
+
+- [C++ Documentation](https://jhartz.github.io/present/doc/html/annotated.html)
+- [C Documentation](https://jhartz.github.io/present/doc/html/files.html)
 
 ## Requirements
 
