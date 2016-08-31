@@ -17,12 +17,12 @@ option (COMPILE_REPL
 
 option (COMPILE_TESTS
     "Compile the Present unit tests"
-    ON
+    OFF
 )
 
 option (COMPILE_WITH_COVERAGE
     "Compile with support for code coverage tools"
-    ON
+    OFF
 )
 
 option (USE_CXX_AS_CC
