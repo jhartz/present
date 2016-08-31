@@ -1,5 +1,7 @@
 # Present
 
+[![Build Status](https://travis-ci.org/jhartz/present.svg?branch=master)](https://travis-ci.org/jhartz/present)
+
 **A date/time library for C and C++**
 
 Present makes working with dates, times, and durations simple in both C and
