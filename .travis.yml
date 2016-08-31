@@ -4,6 +4,10 @@ compiler:
 - clang
 - gcc
 
+before_install:
+- sudo apt-get -qq update
+- sudo apt-get install -y lcov
+
 script:
 - mkdir build
 - cd build
