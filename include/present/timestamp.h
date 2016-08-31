@@ -47,76 +47,76 @@ struct PRESENT_API Timestamp {
     struct PresentTimestampData data_;
 
 #ifdef __cplusplus
-    /** @see Timestamp_create_from_time_t */
+    /** @copydoc Timestamp_create_from_time_t */
     static Timestamp create(const time_t timestamp);
 
-    /** @see Timestamp_create_from_struct_tm */
+    /** @copydoc Timestamp_create_from_struct_tm */
     static Timestamp create(
         const struct tm & tm,
         const TimeDelta & timeZoneOffset);
-    /** @see Timestamp_create_from_struct_tm_utc */
+    /** @copydoc Timestamp_create_from_struct_tm_utc */
     static Timestamp create_utc(const struct tm & tm);
-    /** @see Timestamp_create_from_struct_tm_local */
+    /** @copydoc Timestamp_create_from_struct_tm_local */
     static Timestamp create_local(const struct tm & tm);
 
-    /** @see Timestamp_create */
+    /** @copydoc Timestamp_create */
     static Timestamp create(
         const Date & date,
         const ClockTime & clockTime,
         const TimeDelta & timeZoneOffset);
-    /** @see Timestamp_create_utc */
+    /** @copydoc Timestamp_create_utc */
     static Timestamp create_utc(const Date & date, const ClockTime & clockTime);
-    /** @see Timestamp_create_local */
+    /** @copydoc Timestamp_create_local */
     static Timestamp create_local(
         const Date & date,
         const ClockTime & clockTime);
 
-    /** @see Timestamp_now */
+    /** @copydoc Timestamp_now */
     static Timestamp now();
 
-    /** @see Timestamp_epoch */
+    /** @copydoc Timestamp_epoch */
     static Timestamp epoch();
 
-    /** @see Timestamp_get_time_t */
+    /** @copydoc Timestamp_get_time_t */
     time_t get_time_t() const;
 
-    /** @see Timestamp_get_struct_tm */
+    /** @copydoc Timestamp_get_struct_tm */
     struct tm get_struct_tm(const TimeDelta & timeZoneOffset) const;
-    /** @see Timestamp_get_struct_tm_utc */
+    /** @copydoc Timestamp_get_struct_tm_utc */
     struct tm get_struct_tm_utc() const;
-    /** @see Timestamp_get_struct_tm_local */
+    /** @copydoc Timestamp_get_struct_tm_local */
     struct tm get_struct_tm_local() const;
 
-    /** @see Timestamp_get_date */
+    /** @copydoc Timestamp_get_date */
     Date get_date(const TimeDelta & timeZoneOffset) const;
-    /** @see Timestamp_get_date_utc */
+    /** @copydoc Timestamp_get_date_utc */
     Date get_date_utc() const;
-    /** @see Timestamp_get_date_local */
+    /** @copydoc Timestamp_get_date_local */
     Date get_date_local() const;
 
-    /** @see Timestamp_get_clock_time */
+    /** @copydoc Timestamp_get_clock_time */
     ClockTime get_clock_time(const TimeDelta & timeZoneOffset) const;
-    /** @see Timestamp_get_clock_time_utc */
+    /** @copydoc Timestamp_get_clock_time_utc */
     ClockTime get_clock_time_utc() const;
-    /** @see Timestamp_get_clock_time_local */
+    /** @copydoc Timestamp_get_clock_time_local */
     ClockTime get_clock_time_local() const;
 
-    /** @see Timestamp_get_difference */
+    /** @copydoc Timestamp_get_difference */
     TimeDelta get_difference(const Timestamp & other) const;
-    /** @see Timestamp_get_absolute_difference */
+    /** @copydoc Timestamp_get_absolute_difference */
     TimeDelta get_absolute_difference(const Timestamp & other) const;
 
-    /** @see Timestamp_add_time_delta */
+    /** @copydoc Timestamp_add_time_delta */
     Timestamp & operator+=(const TimeDelta &);
-    /** @see Timestamp_add_day_delta */
+    /** @copydoc Timestamp_add_day_delta */
     Timestamp & operator+=(const DayDelta &);
-    /** @see Timestamp_add_month_delta */
+    /** @copydoc Timestamp_add_month_delta */
     Timestamp & operator+=(const MonthDelta &);
-    /** @see Timestamp_subtract_time_delta */
+    /** @copydoc Timestamp_subtract_time_delta */
     Timestamp & operator-=(const TimeDelta &);
-    /** @see Timestamp_subtract_day_delta */
+    /** @copydoc Timestamp_subtract_day_delta */
     Timestamp & operator-=(const DayDelta &);
-    /** @see Timestamp_subtract_month_delta */
+    /** @copydoc Timestamp_subtract_month_delta */
     Timestamp & operator-=(const MonthDelta &);
 
     friend const Timestamp operator+(const Timestamp &, const TimeDelta &);
@@ -126,17 +126,17 @@ struct PRESENT_API Timestamp {
     friend const Timestamp operator-(const Timestamp &, const DayDelta &);
     friend const Timestamp operator-(const Timestamp &, const MonthDelta &);
 
-    /** @see Timestamp_equal */
+    /** @copydoc Timestamp_equal */
     friend bool operator==(const Timestamp &, const Timestamp &);
     friend bool operator!=(const Timestamp &, const Timestamp &);
 
-    /** @see Timestamp_less_than */
+    /** @copydoc Timestamp_less_than */
     friend bool operator<(const Timestamp &, const Timestamp &);
-    /** @see Timestamp_less_than_or_equal */
+    /** @copydoc Timestamp_less_than_or_equal */
     friend bool operator<=(const Timestamp &, const Timestamp &);
-    /** @see Timestamp_greater_than */
+    /** @copydoc Timestamp_greater_than */
     friend bool operator>(const Timestamp &, const Timestamp &);
-    /** @see Timestamp_greater_than_or_equal */
+    /** @copydoc Timestamp_greater_than_or_equal */
     friend bool operator>=(const Timestamp &, const Timestamp &);
 
     PRESENT_BOILERPLATE_CONSTRUCTORS(Timestamp)

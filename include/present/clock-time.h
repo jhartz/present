@@ -48,74 +48,74 @@ struct PRESENT_API ClockTime {
     struct PresentClockTimeData data_;
 
 #ifdef __cplusplus
-    /** @see ClockTime_create_from_hour */
+    /** @copydoc ClockTime_create_from_hour */
     static ClockTime create(int_hour hour);
 
-    /** @see ClockTime_create_from_hour_minute */
+    /** @copydoc ClockTime_create_from_hour_minute */
     static ClockTime create(int_hour hour, int_minute minute);
 
-    /** @see ClockTime_create_from_hour_minute_second */
+    /** @copydoc ClockTime_create_from_hour_minute_second */
     static ClockTime create(
         int_hour hour,
         int_minute minute,
         int_second second);
 
-    /** @see ClockTime_create_from_hour_minute_second_nanosecond */
+    /** @copydoc ClockTime_create_from_hour_minute_second_nanosecond */
     static ClockTime create(
         int_hour hour,
         int_minute minute,
         int_second second,
         int_nanosecond nanosecond);
 
-    /** @see ClockTime_create_with_decimal_seconds */
+    /** @copydoc ClockTime_create_with_decimal_seconds */
     static ClockTime create_with_decimal_seconds(
             int_hour hour,
             int_minute minute,
             double second);
 
-    /** @see ClockTime_midnight */
+    /** @copydoc ClockTime_midnight */
     static ClockTime midnight();
 
-    /** @see ClockTime_noon */
+    /** @copydoc ClockTime_noon */
     static ClockTime noon();
 
-    /** @see ClockTime_get_hour */
+    /** @copydoc ClockTime_get_hour */
     int_hour get_hour() const;
 
-    /** @see ClockTime_get_minute */
+    /** @copydoc ClockTime_get_minute */
     int_minute get_minute() const;
 
-    /** @see ClockTime_get_second */
+    /** @copydoc ClockTime_get_second */
     int_second get_second() const;
 
-    /** @see ClockTime_get_nanosecond */
+    /** @copydoc ClockTime_get_nanosecond */
     int_nanosecond get_nanosecond() const;
 
-    /** @see ClockTime_get_second_decimal */
+    /** @copydoc ClockTime_get_second_decimal */
     double get_second_decimal() const;
 
-    /** @see ClockTime_time_since_midnight */
+    /** @copydoc ClockTime_time_since_midnight */
     TimeDelta time_since_midnight() const;
 
-    /** @see ClockTime_add_time_delta */
+    /** @copydoc ClockTime_add_time_delta */
     ClockTime & operator+=(const TimeDelta &);
-    /** @see ClockTime_subtract_time_delta */
+    /** @copydoc ClockTime_subtract_time_delta */
     ClockTime & operator-=(const TimeDelta &);
 
     friend const ClockTime operator+(const ClockTime &, const TimeDelta &);
     friend const ClockTime operator-(const ClockTime &, const TimeDelta &);
 
-    /** @see ClockTime_equal */
+    /** @copydoc ClockTime_equal */
     friend bool operator==(const ClockTime &, const ClockTime &);
     friend bool operator!=(const ClockTime &, const ClockTime &);
 
-    /** @see ClockTime_less_than */
+    /** @copydoc ClockTime_less_than */
     friend bool operator<(const ClockTime &, const ClockTime &);
-    /** @see ClockTime_less_than_or_equal */
+    /** @copydoc ClockTime_less_than_or_equal */
     friend bool operator<=(const ClockTime &, const ClockTime &);
-    /** @see ClockTime_greater_than */
+    /** @copydoc ClockTime_greater_than */
     friend bool operator>(const ClockTime &, const ClockTime &);
-    /** @see ClockTime_greater_than_or_equal */
+    /** @copydoc ClockTime_greater_than_or_equal */
     friend bool operator>=(const ClockTime &, const ClockTime &);
 
     PRESENT_BOILERPLATE_CONSTRUCTORS(ClockTime)

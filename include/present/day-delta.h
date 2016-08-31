@@ -41,31 +41,31 @@ struct PRESENT_API DayDelta {
     struct PresentDayDeltaData data_;
 
 #ifdef __cplusplus
-    /** @see DayDelta_from_days */
+    /** @copydoc DayDelta_from_days */
     static DayDelta from_days(int_delta days);
 
-    /** @see DayDelta_from_weeks */
+    /** @copydoc DayDelta_from_weeks */
     static DayDelta from_weeks(int_delta weeks);
 
-    /** @see DayDelta_zero */
+    /** @copydoc DayDelta_zero */
     static DayDelta zero();
 
-    /** @see DayDelta_get_days */
+    /** @copydoc DayDelta_get_days */
     int_delta get_days() const;
 
-    /** @see DayDelta_get_weeks */
+    /** @copydoc DayDelta_get_weeks */
     int_delta get_weeks() const;
 
-    /** @see DayDelta_get_weeks_decimal */
+    /** @copydoc DayDelta_get_weeks_decimal */
     double get_weeks_decimal() const;
 
-    /** @see DayDelta_get_time_delta */
+    /** @copydoc DayDelta_get_time_delta */
     TimeDelta get_time_delta() const;
 
-    /** @see DayDelta_is_negative */
+    /** @copydoc DayDelta_is_negative */
     bool is_negative() const;
 
-    /** @see DayDelta_negate */
+    /** @copydoc DayDelta_negate */
     void negate();
 
     DayDelta operator-() const;
@@ -79,33 +79,33 @@ struct PRESENT_API DayDelta {
     /** Subtract one day from the DayDelta. */
     DayDelta operator--(int);
 
-    /** @see DayDelta_multiply_by */
+    /** @copydoc DayDelta_multiply_by */
     DayDelta & operator*=(const int &);
-    /** @see DayDelta_divide_by */
+    /** @copydoc DayDelta_divide_by */
     DayDelta & operator/=(const int &);
 
     friend const DayDelta operator*(const DayDelta &, const int &);
     friend const DayDelta operator/(const DayDelta &, const int &);
 
-    /** @see DayDelta_add_day_delta */
+    /** @copydoc DayDelta_add_day_delta */
     DayDelta & operator+=(const DayDelta &);
-    /** @see DayDelta_subtract_day_delta */
+    /** @copydoc DayDelta_subtract_day_delta */
     DayDelta & operator-=(const DayDelta &);
 
     friend const DayDelta operator+(const DayDelta &, const DayDelta &);
     friend const DayDelta operator-(const DayDelta &, const DayDelta &);
 
-    /** @see DayDelta_equal */
+    /** @copydoc DayDelta_equal */
     friend bool operator==(const DayDelta &, const DayDelta &);
     friend bool operator!=(const DayDelta &, const DayDelta &);
 
-    /** @see DayDelta_less_than */
+    /** @copydoc DayDelta_less_than */
     friend bool operator<(const DayDelta &, const DayDelta &);
-    /** @see DayDelta_less_than_or_equal */
+    /** @copydoc DayDelta_less_than_or_equal */
     friend bool operator<=(const DayDelta &, const DayDelta &);
-    /** @see DayDelta_greater_than */
+    /** @copydoc DayDelta_greater_than */
     friend bool operator>(const DayDelta &, const DayDelta &);
-    /** @see DayDelta_greater_than_or_equal */
+    /** @copydoc DayDelta_greater_than_or_equal */
     friend bool operator>=(const DayDelta &, const DayDelta &);
 
     PRESENT_BOILERPLATE_CONSTRUCTORS(DayDelta)

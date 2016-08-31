@@ -48,61 +48,61 @@ struct PRESENT_API Date {
     struct PresentDateData data_;
 
 #ifdef __cplusplus
-    /** @see Date_create_from_year */
+    /** @copydoc Date_create_from_year */
     static Date create(int_year year);
 
-    /** @see Date_create_from_year_month */
+    /** @copydoc Date_create_from_year_month */
     static Date create(int_year year, int_month month);
 
-    /** @see Date_create_from_year_month_day */
+    /** @copydoc Date_create_from_year_month_day */
     static Date create(int_year year, int_month month, int_day day);
 
-    /** @see Date_create_from_year_day */
+    /** @copydoc Date_create_from_year_day */
     static Date create_from_year_day(
         int_year year,
         int_day_of_year day_of_year);
 
-    /** @see Date_create_from_year_week */
+    /** @copydoc Date_create_from_year_week */
     static Date create_from_year_week(
         int_year year,
         int_week_of_year week_of_year);
 
-    /** @see Date_create_from_year_week_day */
+    /** @copydoc Date_create_from_year_week_day */
     static Date create_from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week);
 
-    /** @see Date_get_year */
+    /** @copydoc Date_get_year */
     int_year get_year() const;
 
-    /** @see Date_get_month */
+    /** @copydoc Date_get_month */
     int_month get_month() const;
 
-    /** @see Date_get_day */
+    /** @copydoc Date_get_day */
     int_day get_day() const;
 
-    /** @see Date_get_day_of_year */
+    /** @copydoc Date_get_day_of_year */
     int_day_of_year get_day_of_year() const;
 
-    /** @see Date_get_week_of_year */
+    /** @copydoc Date_get_week_of_year */
     int_week_of_year get_week_of_year() const;
 
-    /** @see Date_get_day_of_week */
+    /** @copydoc Date_get_day_of_week */
     int_day_of_week get_day_of_week() const;
 
-    /** @see Date_get_difference */
+    /** @copydoc Date_get_difference */
     DayDelta get_difference(const Date & other) const;
-    /** @see Date_get_absolute_difference */
+    /** @copydoc Date_get_absolute_difference */
     DayDelta get_absolute_difference(const Date & other) const;
 
-    /** @see Date_add_day_delta */
+    /** @copydoc Date_add_day_delta */
     Date & operator+=(const DayDelta &);
-    /** @see Date_add_month_delta */
+    /** @copydoc Date_add_month_delta */
     Date & operator+=(const MonthDelta &);
-    /** @see Date_subtract_day_delta */
+    /** @copydoc Date_subtract_day_delta */
     Date & operator-=(const DayDelta &);
-    /** @see Date_subtract_month_delta */
+    /** @copydoc Date_subtract_month_delta */
     Date & operator-=(const MonthDelta &);
 
     friend const Date operator+(const Date &, const DayDelta &);
@@ -110,17 +110,17 @@ struct PRESENT_API Date {
     friend const Date operator-(const Date &, const DayDelta &);
     friend const Date operator-(const Date &, const MonthDelta &);
 
-    /** @see Date_equal */
+    /** @copydoc Date_equal */
     friend bool operator==(const Date &, const Date &);
     friend bool operator!=(const Date &, const Date &);
 
-    /** @see Date_less_than */
+    /** @copydoc Date_less_than */
     friend bool operator<(const Date &, const Date &);
-    /** @see Date_less_than_or_equal */
+    /** @copydoc Date_less_than_or_equal */
     friend bool operator<=(const Date &, const Date &);
-    /** @see Date_greater_than */
+    /** @copydoc Date_greater_than */
     friend bool operator>(const Date &, const Date &);
-    /** @see Date_greater_than_or_equal */
+    /** @copydoc Date_greater_than_or_equal */
     friend bool operator>=(const Date &, const Date &);
 
     PRESENT_BOILERPLATE_CONSTRUCTORS(Date)

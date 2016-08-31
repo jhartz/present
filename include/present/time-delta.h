@@ -41,95 +41,95 @@ struct PRESENT_API TimeDelta {
     struct PresentTimeDeltaData data_;
 
 #ifdef __cplusplus
-    /** @see TimeDelta_from_nanoseconds */
+    /** @copydoc TimeDelta_from_nanoseconds */
     static TimeDelta from_nanoseconds(int_delta nanoseconds);
 
-    /** @see TimeDelta_from_microseconds */
+    /** @copydoc TimeDelta_from_microseconds */
     static TimeDelta from_microseconds(int_delta microseconds);
 
-    /** @see TimeDelta_from_milliseconds */
+    /** @copydoc TimeDelta_from_milliseconds */
     static TimeDelta from_milliseconds(int_delta milliseconds);
 
-    /** @see TimeDelta_from_seconds */
+    /** @copydoc TimeDelta_from_seconds */
     static TimeDelta from_seconds(int_delta seconds);
 
-    /** @see TimeDelta_from_minutes */
+    /** @copydoc TimeDelta_from_minutes */
     static TimeDelta from_minutes(int_delta minutes);
 
-    /** @see TimeDelta_from_hours */
+    /** @copydoc TimeDelta_from_hours */
     static TimeDelta from_hours(int_delta hours);
 
-    /** @see TimeDelta_from_days */
+    /** @copydoc TimeDelta_from_days */
     static TimeDelta from_days(int_delta days);
 
-    /** @see TimeDelta_from_weeks */
+    /** @copydoc TimeDelta_from_weeks */
     static TimeDelta from_weeks(int_delta weeks);
 
-    /** @see TimeDelta_zero */
+    /** @copydoc TimeDelta_zero */
     static TimeDelta zero();
 
-    /** @see TimeDelta_get_nanoseconds */
+    /** @copydoc TimeDelta_get_nanoseconds */
     int_delta get_nanoseconds() const;
 
-    /** @see TimeDelta_get_microseconds */
+    /** @copydoc TimeDelta_get_microseconds */
     int_delta get_microseconds() const;
-    /** @see TimeDelta_get_microseconds_decimal */
+    /** @copydoc TimeDelta_get_microseconds_decimal */
     double get_microseconds_decimal() const;
 
-    /** @see TimeDelta_get_milliseconds */
+    /** @copydoc TimeDelta_get_milliseconds */
     int_delta get_milliseconds() const;
-    /** @see TimeDelta_get_milliseconds_decimal */
+    /** @copydoc TimeDelta_get_milliseconds_decimal */
     double get_milliseconds_decimal() const;
 
-    /** @see TimeDelta_get_seconds */
+    /** @copydoc TimeDelta_get_seconds */
     int_delta get_seconds() const;
-    /** @see TimeDelta_get_seconds_decimal */
+    /** @copydoc TimeDelta_get_seconds_decimal */
     double get_seconds_decimal() const;
 
-    /** @see TimeDelta_get_minutes */
+    /** @copydoc TimeDelta_get_minutes */
     int_delta get_minutes() const;
-    /** @see TimeDelta_get_minutes_decimal */
+    /** @copydoc TimeDelta_get_minutes_decimal */
     double get_minutes_decimal() const;
 
-    /** @see TimeDelta_get_hours */
+    /** @copydoc TimeDelta_get_hours */
     int_delta get_hours() const;
-    /** @see TimeDelta_get_hours_decimal */
+    /** @copydoc TimeDelta_get_hours_decimal */
     double get_hours_decimal() const;
 
-    /** @see TimeDelta_get_days */
+    /** @copydoc TimeDelta_get_days */
     int_delta get_days() const;
-    /** @see TimeDelta_get_days_decimal */
+    /** @copydoc TimeDelta_get_days_decimal */
     double get_days_decimal() const;
 
-    /** @see TimeDelta_get_weeks */
+    /** @copydoc TimeDelta_get_weeks */
     int_delta get_weeks() const;
-    /** @see TimeDelta_get_weeks_decimal */
+    /** @copydoc TimeDelta_get_weeks_decimal */
     double get_weeks_decimal() const;
 
-    /** @see TimeDelta_get_day_delta_truncated */
+    /** @copydoc TimeDelta_get_day_delta_truncated */
     DayDelta get_day_delta_truncated() const;
 
-    /** @see TimeDelta_get_day_delta_rounded */
+    /** @copydoc TimeDelta_get_day_delta_rounded */
     DayDelta get_day_delta_rounded() const;
 
-    /** @see TimeDelta_get_day_delta_abs_ceil */
+    /** @copydoc TimeDelta_get_day_delta_abs_ceil */
     DayDelta get_day_delta_abs_ceil() const;
 
-    /** @see TimeDelta_is_negative */
+    /** @copydoc TimeDelta_is_negative */
     bool is_negative() const;
 
-    /** @see TimeDelta_negate */
+    /** @copydoc TimeDelta_negate */
     void negate();
 
     TimeDelta operator-() const;
 
-    /** @see TimeDelta_multiply_by */
+    /** @copydoc TimeDelta_multiply_by */
     TimeDelta & operator*=(const int &);
-    /** @see TimeDelta_multiply_by_decimal */
+    /** @copydoc TimeDelta_multiply_by_decimal */
     TimeDelta & operator*=(const double &);
-    /** @see TimeDelta_divide_by */
+    /** @copydoc TimeDelta_divide_by */
     TimeDelta & operator/=(const int &);
-    /** @see TimeDelta_divide_by_decimal */
+    /** @copydoc TimeDelta_divide_by_decimal */
     TimeDelta & operator/=(const double &);
 
     friend const TimeDelta operator*(const TimeDelta &, const int &);
@@ -137,25 +137,25 @@ struct PRESENT_API TimeDelta {
     friend const TimeDelta operator/(const TimeDelta &, const int &);
     friend const TimeDelta operator/(const TimeDelta &, const double &);
 
-    /** @see TimeDelta_add_time_delta */
+    /** @copydoc TimeDelta_add_time_delta */
     TimeDelta & operator+=(const TimeDelta &);
-    /** @see TimeDelta_subtract_time_delta */
+    /** @copydoc TimeDelta_subtract_time_delta */
     TimeDelta & operator-=(const TimeDelta &);
 
     friend const TimeDelta operator+(const TimeDelta &, const TimeDelta &);
     friend const TimeDelta operator-(const TimeDelta &, const TimeDelta &);
 
-    /** @see TimeDelta_equal */
+    /** @copydoc TimeDelta_equal */
     friend bool operator==(const TimeDelta &, const TimeDelta &);
     friend bool operator!=(const TimeDelta &, const TimeDelta &);
 
-    /** @see TimeDelta_less_than */
+    /** @copydoc TimeDelta_less_than */
     friend bool operator<(const TimeDelta &, const TimeDelta &);
-    /** @see TimeDelta_less_than_or_equal */
+    /** @copydoc TimeDelta_less_than_or_equal */
     friend bool operator<=(const TimeDelta &, const TimeDelta &);
-    /** @see TimeDelta_greater_than */
+    /** @copydoc TimeDelta_greater_than */
     friend bool operator>(const TimeDelta &, const TimeDelta &);
-    /** @see TimeDelta_greater_than_or_equal */
+    /** @copydoc TimeDelta_greater_than_or_equal */
     friend bool operator>=(const TimeDelta &, const TimeDelta &);
 
     /*
