@@ -56,7 +56,7 @@ if [ "$PUBLISH_DOC" = "yup" ]; then
         rm -rf coverage doc
         cp -R ../../coverage ../../doc .
         cp doc-index.html doc/index.html
-        git add coverage doc
+        git add -A coverage doc
         git -c user.name=travis -c user.email=travis commit -m "Travis doc commit"
 
         status "Sending to gh-pages branch..."
