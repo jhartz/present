@@ -4,7 +4,6 @@ var structDate =
     [ "create", "structDate.html#a0b1280e69ec6310ec8cdfb730e8dd7f6", null ],
     [ "create", "structDate.html#ae0bcc2332237bf0f5b57ed646a00e6ac", null ],
     [ "create_from_year_day", "structDate.html#afed458a3a1ff055cebdbd153bb00d5a4", null ],
-    [ "create_from_year_week", "structDate.html#a1758de1f6dbead95e0728032cb05a6dd", null ],
     [ "create_from_year_week_day", "structDate.html#a282993d00829e727eac88615cb2f1146", null ],
     [ "get_year", "structDate.html#a970cb8375d137e19cea4c042a0b8d64a", null ],
     [ "get_month", "structDate.html#afa1025e5868c30b20b1ff1481e30f08d", null ],

@@ -117,7 +117,6 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#a0b1280e69ec6310ec8cdfb730e8dd7f6">create</a> (<a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year, <a class="el" href="types_8h.html#ae68f4f515f242b927830881ea4cffae2">int_month</a> month)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#ae0bcc2332237bf0f5b57ed646a00e6ac">create</a> (<a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year, <a class="el" href="types_8h.html#ae68f4f515f242b927830881ea4cffae2">int_month</a> month, <a class="el" href="types_8h.html#a5269b564286b0eecff0b944afb81d4e2">int_day</a> day)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#afed458a3a1ff055cebdbd153bb00d5a4">create_from_year_day</a> (<a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year, <a class="el" href="types_8h.html#a3fb1af069c4170879c1a5946cb541c69">int_day_of_year</a> day_of_year)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#a1758de1f6dbead95e0728032cb05a6dd">create_from_year_week</a> (<a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year, <a class="el" href="types_8h.html#a893fea48b40c218c9d3edec68cccba83">int_week_of_year</a> week_of_year)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#a282993d00829e727eac88615cb2f1146">create_from_year_week_day</a> (<a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year, <a class="el" href="types_8h.html#a893fea48b40c218c9d3edec68cccba83">int_week_of_year</a> week_of_year, <a class="el" href="types_8h.html#a8132950de7fc3f98373a4d384d8b6eca">int_day_of_week</a> day_of_week)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -274,43 +273,6 @@ Friends</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">year</td><td>The year. </td></tr>
     <tr><td class="paramname">day_of_year</td><td>The day of the year. </td></tr>
-  </table>
-  </dd>
-</dl>
- 
-</div>
-</div>
-<a class="anchor" id="a1758de1f6dbead95e0728032cb05a6dd"></a><!-- doxytag: member="Date::create_from_year_week" ref="a1758de1f6dbead95e0728032cb05a6dd" args="(int_year year, int_week_of_year week_of_year)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="structDate.html">Date</a> <a class="el" href="structDate.html#a1758de1f6dbead95e0728032cb05a6dd">Date::create_from_year_week</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a>&#160;</td>
-          <td class="paramname"><em>year</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a893fea48b40c218c9d3edec68cccba83">int_week_of_year</a>&#160;</td>
-          <td class="paramname"><em>week_of_year</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year and the week of that year. </p>
-<p>Weeks of the year are determined in the same way that the ISO8601 standard determines week numbers.</p>
-<p>If the week of the year is out of range, a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> will be returned with "error" set.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">year</td><td>The year. </td></tr>
-    <tr><td class="paramname">week_of_year</td><td>The week of the year (TODO: what are the bounds?) </td></tr>
   </table>
   </dd>
 </dl>

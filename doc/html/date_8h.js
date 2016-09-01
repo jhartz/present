@@ -6,7 +6,6 @@ var date_8h =
     [ "Date_create_from_year_month", "date_8h.html#a7d059ef251f488538ccbc22ead794db6", null ],
     [ "Date_create_from_year_month_day", "date_8h.html#a42ad855ee9519639db894432f44d97e9", null ],
     [ "Date_create_from_year_day", "date_8h.html#a31812f70db4d0656099c7aae0d3305ef", null ],
-    [ "Date_create_from_year_week", "date_8h.html#afb76dd22f944f4b2c032fee614135467", null ],
     [ "Date_create_from_year_week_day", "date_8h.html#a8e4d7a96e87a9405605c0adc8362d234", null ],
     [ "Date_get_year", "date_8h.html#ad26cbac6bc416b358941b580dba7fe3c", null ],
     [ "Date_get_month", "date_8h.html#a4159afd50df428b740f4485925e7c5b6", null ],

@@ -6,7 +6,6 @@ var searchData=
   ['date_5fcreate_5ffrom_5fyear_5fday',['Date_create_from_year_day',['../date_8h.html#a31812f70db4d0656099c7aae0d3305ef',1,'date.h']]],
   ['date_5fcreate_5ffrom_5fyear_5fmonth',['Date_create_from_year_month',['../date_8h.html#a7d059ef251f488538ccbc22ead794db6',1,'date.h']]],
   ['date_5fcreate_5ffrom_5fyear_5fmonth_5fday',['Date_create_from_year_month_day',['../date_8h.html#a42ad855ee9519639db894432f44d97e9',1,'date.h']]],
-  ['date_5fcreate_5ffrom_5fyear_5fweek',['Date_create_from_year_week',['../date_8h.html#afb76dd22f944f4b2c032fee614135467',1,'date.h']]],
   ['date_5fcreate_5ffrom_5fyear_5fweek_5fday',['Date_create_from_year_week_day',['../date_8h.html#a8e4d7a96e87a9405605c0adc8362d234',1,'date.h']]],
   ['date_5fequal',['Date_equal',['../date_8h.html#a77eadd9d79f983618b888d9810c506d0',1,'date.h']]],
   ['date_5fget_5fabsolute_5fdifference',['Date_get_absolute_difference',['../date_8h.html#a8639bedc8fc415809cbad76b72fb388b',1,'date.h']]],

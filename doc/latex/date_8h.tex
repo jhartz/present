@@ -37,8 +37,6 @@ struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a42ad855ee9519639db8944
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year, a month, and a day. \end{DoxyCompactList}\item 
 struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a31812f70db4d0656099c7aae0d3305ef}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_a3fb1af069c4170879c1a5946cb541c69}{int\-\_\-day\-\_\-of\-\_\-year} day\-\_\-of\-\_\-year)
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year and the day of that year. \end{DoxyCompactList}\item 
-struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_afb76dd22f944f4b2c032fee614135467}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_a893fea48b40c218c9d3edec68cccba83}{int\-\_\-week\-\_\-of\-\_\-year} week\-\_\-of\-\_\-year)
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year and the week of that year. \end{DoxyCompactList}\item 
 struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a8e4d7a96e87a9405605c0adc8362d234}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_a893fea48b40c218c9d3edec68cccba83}{int\-\_\-week\-\_\-of\-\_\-year} week\-\_\-of\-\_\-year, \hyperlink{types_8h_a8132950de7fc3f98373a4d384d8b6eca}{int\-\_\-day\-\_\-of\-\_\-week} day\-\_\-of\-\_\-week)
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year, a week of that year, and a day of the week. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} \hyperlink{date_8h_ad26cbac6bc416b358941b580dba7fe3c}{\-Date\-\_\-get\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
@@ -211,29 +209,6 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 {\em year} & \-The year. \\
 \hline
 {\em day\-\_\-of\-\_\-year} & \-The day of the year. \\
-\hline
-\end{DoxyParams}
-\hypertarget{date_8h_afb76dd22f944f4b2c032fee614135467}{\index{date.\-h@{date.\-h}!\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week}}
-\index{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week} (
-\begin{DoxyParamCaption}
-\item[{{\bf int\-\_\-year}}]{year, }
-\item[{{\bf int\-\_\-week\-\_\-of\-\_\-year}}]{week\-\_\-of\-\_\-year}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{date_8h_afb76dd22f944f4b2c032fee614135467}
-
-
-\-Create a new \hyperlink{structDate}{\-Date} based on a year and the week of that year. 
-
-\-Weeks of the year are determined in the same way that the \-I\-S\-O8601 standard determines week numbers.
-
-\-If the week of the year is out of range, a \hyperlink{structDate}{\-Date} will be returned with \char`\"{}error\char`\"{} set.
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em year} & \-The year. \\
-\hline
-{\em week\-\_\-of\-\_\-year} & \-The week of the year (\-T\-O\-D\-O\-: what are the bounds?) \\
 \hline
 \end{DoxyParams}
 \hypertarget{date_8h_a8e4d7a96e87a9405605c0adc8362d234}{\index{date.\-h@{date.\-h}!\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week\-\_\-day@{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week\-\_\-day}}
