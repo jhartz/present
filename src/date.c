@@ -116,11 +116,6 @@ Date_create_from_year_day(int_year year, int_day_of_year day_of_year) {
 }
 
 struct Date
-Date_create_from_year_week(int_year year, int_week_of_year week_of_year) {
-    // TODO
-}
-
-struct Date
 Date_create_from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,

@@ -62,11 +62,6 @@ struct PRESENT_API Date {
         int_year year,
         int_day_of_year day_of_year);
 
-    /** @copydoc Date_create_from_year_week */
-    static Date create_from_year_week(
-        int_year year,
-        int_week_of_year week_of_year);
-
     /** @copydoc Date_create_from_year_week_day */
     static Date create_from_year_week_day(
         int_year year,
@@ -193,20 +188,6 @@ Date_create_from_year_month_day(int_year year, int_month month, int_day day);
  */
 PRESENT_API struct Date
 Date_create_from_year_day(int_year year, int_day_of_year day_of_year);
-
-/**
- * Create a new Date based on a year and the week of that year. Weeks of the
- * year are determined in the same way that the ISO8601 standard determines
- * week numbers.
- *
- * If the week of the year is out of range, a Date will be returned with
- * "error" set.
- *
- * @param year The year.
- * @param week_of_year The week of the year (TODO: what are the bounds?)
- */
-PRESENT_API struct Date
-Date_create_from_year_week(int_year year, int_week_of_year week_of_year);
 
 /**
  * Create a new Date based on a year, a week of that year, and a day of the
