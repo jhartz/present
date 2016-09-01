@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="comment"> * For details, see LICENSE.</span>
 <a name="l00008"></a>00008 <span class="comment"> */</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;present/utils/types.h&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">present/utils/types.h</a>&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;present/utils/utils.h&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;present/impl/present-clock-time-data.h&quot;</span>
 <a name="l00013"></a>00013 
@@ -130,37 +130,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050 <span class="preprocessor">#ifdef __cplusplus</span>
 <a name="l00051"></a>00051 <span class="preprocessor"></span>
-<a name="l00052"></a>00052     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> create(int_hour hour);
+<a name="l00052"></a>00052     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> create(<a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour);
 <a name="l00053"></a>00053 
-<a name="l00055"></a>00055     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> create(int_hour hour, int_minute minute);
+<a name="l00055"></a>00055     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> create(<a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour, <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute);
 <a name="l00056"></a>00056 
 <a name="l00058"></a>00058     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> create(
-<a name="l00059"></a>00059         int_hour hour,
-<a name="l00060"></a>00060         int_minute minute,
-<a name="l00061"></a>00061         int_second second);
+<a name="l00059"></a>00059         <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour,
+<a name="l00060"></a>00060         <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute,
+<a name="l00061"></a>00061         <a class="code" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a> second);
 <a name="l00062"></a>00062 
 <a name="l00064"></a>00064     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> create(
-<a name="l00065"></a>00065         int_hour hour,
-<a name="l00066"></a>00066         int_minute minute,
-<a name="l00067"></a>00067         int_second second,
-<a name="l00068"></a>00068         int_nanosecond nanosecond);
+<a name="l00065"></a>00065         <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour,
+<a name="l00066"></a>00066         <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute,
+<a name="l00067"></a>00067         <a class="code" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a> second,
+<a name="l00068"></a>00068         <a class="code" href="types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6">int_nanosecond</a> nanosecond);
 <a name="l00069"></a>00069 
 <a name="l00071"></a>00071     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> create_with_decimal_seconds(
-<a name="l00072"></a>00072             int_hour hour,
-<a name="l00073"></a>00073             int_minute minute,
+<a name="l00072"></a>00072             <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour,
+<a name="l00073"></a>00073             <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute,
 <a name="l00074"></a>00074             <span class="keywordtype">double</span> second);
 <a name="l00075"></a>00075 
 <a name="l00077"></a>00077     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> midnight();
 <a name="l00078"></a>00078 
 <a name="l00080"></a>00080     <span class="keyword">static</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> noon();
 <a name="l00081"></a>00081 
-<a name="l00083"></a>00083     int_hour get_hour() <span class="keyword">const</span>;
+<a name="l00083"></a>00083     <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> get_hour() <span class="keyword">const</span>;
 <a name="l00084"></a>00084 
-<a name="l00086"></a>00086     int_minute get_minute() <span class="keyword">const</span>;
+<a name="l00086"></a>00086     <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> get_minute() <span class="keyword">const</span>;
 <a name="l00087"></a>00087 
-<a name="l00089"></a>00089     int_second get_second() <span class="keyword">const</span>;
+<a name="l00089"></a>00089     <a class="code" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a> get_second() <span class="keyword">const</span>;
 <a name="l00090"></a>00090 
-<a name="l00092"></a>00092     int_nanosecond get_nanosecond() <span class="keyword">const</span>;
+<a name="l00092"></a>00092     <a class="code" href="types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6">int_nanosecond</a> get_nanosecond() <span class="keyword">const</span>;
 <a name="l00093"></a>00093 
 <a name="l00095"></a>00095     <span class="keywordtype">double</span> get_second_decimal() <span class="keyword">const</span>;
 <a name="l00096"></a>00096 
@@ -193,23 +193,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00131"></a>00131 <span class="preprocessor">#endif</span>
 <a name="l00132"></a>00132 <span class="preprocessor"></span>
 <a name="l00141"></a>00141 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
-<a name="l00142"></a>00142 <a class="code" href="clock-time_8h.html#a172dd5f4ae9a67a7d0efe2b7c3e1a7b9" title="Create a new ClockTime based on an hour of the day.">ClockTime_create_from_hour</a>(int_hour hour);
+<a name="l00142"></a>00142 <a class="code" href="clock-time_8h.html#a172dd5f4ae9a67a7d0efe2b7c3e1a7b9" title="Create a new ClockTime based on an hour of the day.">ClockTime_create_from_hour</a>(<a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour);
 <a name="l00143"></a>00143 
 <a name="l00153"></a>00153 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
-<a name="l00154"></a>00154 <a class="code" href="clock-time_8h.html#ab1d019479c07792ba3789d4611bf47bd" title="Create a new ClockTime based on an hour and a minute.">ClockTime_create_from_hour_minute</a>(int_hour hour, int_minute minute);
+<a name="l00154"></a>00154 <a class="code" href="clock-time_8h.html#ab1d019479c07792ba3789d4611bf47bd" title="Create a new ClockTime based on an hour and a minute.">ClockTime_create_from_hour_minute</a>(<a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour, <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute);
 <a name="l00155"></a>00155 
 <a name="l00167"></a>00167 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
 <a name="l00168"></a>00168 <a class="code" href="clock-time_8h.html#a1015eecfae508e22c54a4f1b52634fbf" title="Create a new ClockTime based on an hour, a minute, and a second.">ClockTime_create_from_hour_minute_second</a>(
-<a name="l00169"></a>00169         int_hour hour,
-<a name="l00170"></a>00170         int_minute minute,
-<a name="l00171"></a>00171         int_second second);
+<a name="l00169"></a>00169         <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour,
+<a name="l00170"></a>00170         <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute,
+<a name="l00171"></a>00171         <a class="code" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a> second);
 <a name="l00172"></a>00172 
 <a name="l00184"></a>00184 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
 <a name="l00185"></a>00185 <a class="code" href="clock-time_8h.html#acc3b0e5400f78e25499a815f4068739e" title="Create a new ClockTime based on an hour, a minute, a second, and a nanosecond.">ClockTime_create_from_hour_minute_second_nanosecond</a>(
-<a name="l00186"></a>00186         int_hour hour,
-<a name="l00187"></a>00187         int_minute minute,
-<a name="l00188"></a>00188         int_second second,
-<a name="l00189"></a>00189         int_nanosecond nanosecond);
+<a name="l00186"></a>00186         <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour,
+<a name="l00187"></a>00187         <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute,
+<a name="l00188"></a>00188         <a class="code" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a> second,
+<a name="l00189"></a>00189         <a class="code" href="types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6">int_nanosecond</a> nanosecond);
 <a name="l00190"></a>00190 
 <a name="l00201"></a><a class="code" href="clock-time_8h.html#a58ff623c2c94ef13508ea9d85cbdfad7">00201</a> <span class="preprocessor">#define ClockTime_create(...)    \</span>
 <a name="l00202"></a>00202 <span class="preprocessor">    PRESENT_OVERLOAD_MAX_4(__VA_ARGS__,                         \</span>
@@ -221,8 +221,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00208"></a>00208 <span class="preprocessor"></span>
 <a name="l00216"></a>00216 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
 <a name="l00217"></a>00217 <a class="code" href="clock-time_8h.html#a519b7c6074cf1addc815f7495048c30b" title="Create a new ClockTime based on an hour, a minute, and a decimal second.">ClockTime_create_with_decimal_seconds</a>(
-<a name="l00218"></a>00218         int_hour hour,
-<a name="l00219"></a>00219         int_minute minute,
+<a name="l00218"></a>00218         <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour,
+<a name="l00219"></a>00219         <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute,
 <a name="l00220"></a>00220         double second);
 <a name="l00221"></a>00221 
 <a name="l00225"></a>00225 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
@@ -231,16 +231,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00231"></a>00231 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
 <a name="l00232"></a>00232 <a class="code" href="clock-time_8h.html#a183049a7386a7b7377ba3059d15485c4" title="Create a new ClockTime initialized to noon (12:00).">ClockTime_noon</a>();
 <a name="l00233"></a>00233 
-<a name="l00237"></a>00237 PRESENT_API int_hour
+<a name="l00237"></a>00237 PRESENT_API <a class="code" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a>
 <a name="l00238"></a>00238 <a class="code" href="clock-time_8h.html#a1688a98fb161dc7a743085b09cb3c1de" title="Get the hour component of a ClockTime (0 to 23, inclusive).">ClockTime_get_hour</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00239"></a>00239 
-<a name="l00243"></a>00243 PRESENT_API int_minute
+<a name="l00243"></a>00243 PRESENT_API <a class="code" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a>
 <a name="l00244"></a>00244 <a class="code" href="clock-time_8h.html#a3ea78f71041658c2f9530c3603b7b9ec" title="Get the minute component of a ClockTime (0 to 59, inclusive).">ClockTime_get_minute</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00245"></a>00245 
-<a name="l00249"></a>00249 PRESENT_API int_second
+<a name="l00249"></a>00249 PRESENT_API <a class="code" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a>
 <a name="l00250"></a>00250 <a class="code" href="clock-time_8h.html#a77c448c2991009dbcb662696a7ceedca" title="Get the second component of a ClockTime (0 to 59, inclusive).">ClockTime_get_second</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00251"></a>00251 
-<a name="l00256"></a>00256 PRESENT_API int_nanosecond
+<a name="l00256"></a>00256 PRESENT_API <a class="code" href="types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6">int_nanosecond</a>
 <a name="l00257"></a>00257 <a class="code" href="clock-time_8h.html#ad74a9b1b36f0fd4b4a739b69fb65869e" title="Get the nanosecond component of a ClockTime (less than 10^9, the number of nanoseconds in a second)...">ClockTime_get_nanosecond</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00258"></a>00258 
 <a name="l00263"></a>00263 PRESENT_API <span class="keywordtype">double</span>
@@ -295,7 +295,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

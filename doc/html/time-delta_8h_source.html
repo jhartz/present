@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="comment"> * For details, see LICENSE.</span>
 <a name="l00008"></a>00008 <span class="comment"> */</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;present/utils/types.h&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">present/utils/types.h</a>&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;present/utils/utils.h&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;present/impl/present-time-delta-data.h&quot;</span>
 <a name="l00013"></a>00013 
@@ -126,45 +126,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043 <span class="preprocessor">#ifdef __cplusplus</span>
 <a name="l00044"></a>00044 <span class="preprocessor"></span>
-<a name="l00045"></a>00045     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_nanoseconds(int_delta nanoseconds);
+<a name="l00045"></a>00045     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_nanoseconds(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> nanoseconds);
 <a name="l00046"></a>00046 
-<a name="l00048"></a>00048     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_microseconds(int_delta microseconds);
+<a name="l00048"></a>00048     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_microseconds(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> microseconds);
 <a name="l00049"></a>00049 
-<a name="l00051"></a>00051     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_milliseconds(int_delta milliseconds);
+<a name="l00051"></a>00051     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_milliseconds(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> milliseconds);
 <a name="l00052"></a>00052 
-<a name="l00054"></a>00054     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_seconds(int_delta seconds);
+<a name="l00054"></a>00054     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_seconds(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> seconds);
 <a name="l00055"></a>00055 
-<a name="l00057"></a>00057     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_minutes(int_delta minutes);
+<a name="l00057"></a>00057     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_minutes(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> minutes);
 <a name="l00058"></a>00058 
-<a name="l00060"></a>00060     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_hours(int_delta hours);
+<a name="l00060"></a>00060     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_hours(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> hours);
 <a name="l00061"></a>00061 
-<a name="l00063"></a>00063     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_days(int_delta days);
+<a name="l00063"></a>00063     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_days(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> days);
 <a name="l00064"></a>00064 
-<a name="l00066"></a>00066     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_weeks(int_delta weeks);
+<a name="l00066"></a>00066     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from_weeks(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> weeks);
 <a name="l00067"></a>00067 
 <a name="l00069"></a>00069     <span class="keyword">static</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> zero();
 <a name="l00070"></a>00070 
-<a name="l00072"></a>00072     int_delta get_nanoseconds() <span class="keyword">const</span>;
+<a name="l00072"></a>00072     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_nanoseconds() <span class="keyword">const</span>;
 <a name="l00073"></a>00073 
-<a name="l00075"></a>00075     int_delta get_microseconds() <span class="keyword">const</span>;
+<a name="l00075"></a>00075     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_microseconds() <span class="keyword">const</span>;
 <a name="l00077"></a>00077     <span class="keywordtype">double</span> get_microseconds_decimal() <span class="keyword">const</span>;
 <a name="l00078"></a>00078 
-<a name="l00080"></a>00080     int_delta get_milliseconds() <span class="keyword">const</span>;
+<a name="l00080"></a>00080     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_milliseconds() <span class="keyword">const</span>;
 <a name="l00082"></a>00082     <span class="keywordtype">double</span> get_milliseconds_decimal() <span class="keyword">const</span>;
 <a name="l00083"></a>00083 
-<a name="l00085"></a>00085     int_delta get_seconds() <span class="keyword">const</span>;
+<a name="l00085"></a>00085     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_seconds() <span class="keyword">const</span>;
 <a name="l00087"></a>00087     <span class="keywordtype">double</span> get_seconds_decimal() <span class="keyword">const</span>;
 <a name="l00088"></a>00088 
-<a name="l00090"></a>00090     int_delta get_minutes() <span class="keyword">const</span>;
+<a name="l00090"></a>00090     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_minutes() <span class="keyword">const</span>;
 <a name="l00092"></a>00092     <span class="keywordtype">double</span> get_minutes_decimal() <span class="keyword">const</span>;
 <a name="l00093"></a>00093 
-<a name="l00095"></a>00095     int_delta get_hours() <span class="keyword">const</span>;
+<a name="l00095"></a>00095     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_hours() <span class="keyword">const</span>;
 <a name="l00097"></a>00097     <span class="keywordtype">double</span> get_hours_decimal() <span class="keyword">const</span>;
 <a name="l00098"></a>00098 
-<a name="l00100"></a>00100     int_delta get_days() <span class="keyword">const</span>;
+<a name="l00100"></a>00100     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_days() <span class="keyword">const</span>;
 <a name="l00102"></a>00102     <span class="keywordtype">double</span> get_days_decimal() <span class="keyword">const</span>;
 <a name="l00103"></a>00103 
-<a name="l00105"></a>00105     int_delta get_weeks() <span class="keyword">const</span>;
+<a name="l00105"></a>00105     <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> get_weeks() <span class="keyword">const</span>;
 <a name="l00107"></a>00107     <span class="keywordtype">double</span> get_weeks_decimal() <span class="keyword">const</span>;
 <a name="l00108"></a>00108 
 <a name="l00110"></a>00110     <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> get_day_delta_truncated() <span class="keyword">const</span>;
@@ -222,72 +222,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00177"></a>00177 <span class="preprocessor">#endif</span>
 <a name="l00178"></a>00178 <span class="preprocessor"></span>
 <a name="l00183"></a>00183 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00184"></a>00184 <a class="code" href="time-delta_8h.html#a4d69e5c655907802b1278e2bc0567c6b" title="Create a new TimeDelta based on a positive or negative number of nanoseconds.">TimeDelta_from_nanoseconds</a>(int_delta nanoseconds);
+<a name="l00184"></a>00184 <a class="code" href="time-delta_8h.html#a4d69e5c655907802b1278e2bc0567c6b" title="Create a new TimeDelta based on a positive or negative number of nanoseconds.">TimeDelta_from_nanoseconds</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> nanoseconds);
 <a name="l00185"></a>00185 
 <a name="l00190"></a>00190 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00191"></a>00191 <a class="code" href="time-delta_8h.html#a8a5b10cada34e6093d985bb757671842" title="Create a new TimeDelta based on a positive or negative number of microseconds.">TimeDelta_from_microseconds</a>(int_delta microseconds);
+<a name="l00191"></a>00191 <a class="code" href="time-delta_8h.html#a8a5b10cada34e6093d985bb757671842" title="Create a new TimeDelta based on a positive or negative number of microseconds.">TimeDelta_from_microseconds</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> microseconds);
 <a name="l00192"></a>00192 
 <a name="l00197"></a>00197 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00198"></a>00198 <a class="code" href="time-delta_8h.html#ae7919eccd5d372f5f954d560792699b5" title="Create a new TimeDelta based on a positive or negative number of milliseconds.">TimeDelta_from_milliseconds</a>(int_delta milliseconds);
+<a name="l00198"></a>00198 <a class="code" href="time-delta_8h.html#ae7919eccd5d372f5f954d560792699b5" title="Create a new TimeDelta based on a positive or negative number of milliseconds.">TimeDelta_from_milliseconds</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> milliseconds);
 <a name="l00199"></a>00199 
 <a name="l00203"></a>00203 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00204"></a>00204 <a class="code" href="time-delta_8h.html#ae0ba972261d5dd8b375af9b207311baf" title="Create a new TimeDelta based on a positive or negative number of seconds.">TimeDelta_from_seconds</a>(int_delta seconds);
+<a name="l00204"></a>00204 <a class="code" href="time-delta_8h.html#ae0ba972261d5dd8b375af9b207311baf" title="Create a new TimeDelta based on a positive or negative number of seconds.">TimeDelta_from_seconds</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> seconds);
 <a name="l00205"></a>00205 
 <a name="l00209"></a>00209 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00210"></a>00210 <a class="code" href="time-delta_8h.html#a18b5bed19a394a36890c2578fe05e5b1" title="Create a new TimeDelta based on a positive or negative number of minutes.">TimeDelta_from_minutes</a>(int_delta minutes);
+<a name="l00210"></a>00210 <a class="code" href="time-delta_8h.html#a18b5bed19a394a36890c2578fe05e5b1" title="Create a new TimeDelta based on a positive or negative number of minutes.">TimeDelta_from_minutes</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> minutes);
 <a name="l00211"></a>00211 
 <a name="l00215"></a>00215 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00216"></a>00216 <a class="code" href="time-delta_8h.html#a56f1c443994cd0cbe306cd04e378eabe" title="Create a new TimeDelta based on a positive or negative number of hours.">TimeDelta_from_hours</a>(int_delta hours);
+<a name="l00216"></a>00216 <a class="code" href="time-delta_8h.html#a56f1c443994cd0cbe306cd04e378eabe" title="Create a new TimeDelta based on a positive or negative number of hours.">TimeDelta_from_hours</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> hours);
 <a name="l00217"></a>00217 
 <a name="l00221"></a>00221 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00222"></a>00222 <a class="code" href="time-delta_8h.html#a63cc9a37b13e1ea2c9517a15254761dd" title="Create a new TimeDelta based on a positive or negative number of days.">TimeDelta_from_days</a>(int_delta days);
+<a name="l00222"></a>00222 <a class="code" href="time-delta_8h.html#a63cc9a37b13e1ea2c9517a15254761dd" title="Create a new TimeDelta based on a positive or negative number of days.">TimeDelta_from_days</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> days);
 <a name="l00223"></a>00223 
 <a name="l00227"></a>00227 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00228"></a>00228 <a class="code" href="time-delta_8h.html#adeaef2754da892c29f03834c14ad1204" title="Create a new TimeDelta based on a positive or negative number of weeks.">TimeDelta_from_weeks</a>(int_delta weeks);
+<a name="l00228"></a>00228 <a class="code" href="time-delta_8h.html#adeaef2754da892c29f03834c14ad1204" title="Create a new TimeDelta based on a positive or negative number of weeks.">TimeDelta_from_weeks</a>(<a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> weeks);
 <a name="l00229"></a>00229 
 <a name="l00233"></a>00233 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
 <a name="l00234"></a>00234 <a class="code" href="time-delta_8h.html#a4d78cdef19464e2c645923c831f38910" title="Create a new TimeDelta initialized to zero time.">TimeDelta_zero</a>();
 <a name="l00235"></a>00235 
-<a name="l00239"></a>00239 PRESENT_API int_delta
+<a name="l00239"></a>00239 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00240"></a>00240 <a class="code" href="time-delta_8h.html#a1c5687bfcf6d342dd152e1085e53c777" title="Get the number of nanoseconds represented by a TimeDelta.">TimeDelta_get_nanoseconds</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00241"></a>00241 
-<a name="l00247"></a>00247 PRESENT_API int_delta
+<a name="l00247"></a>00247 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00248"></a>00248 <a class="code" href="time-delta_8h.html#abb6e5f84d388603a3435795055628238" title="Get the number of microseconds represented by a TimeDelta.">TimeDelta_get_microseconds</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00249"></a>00249 
 <a name="l00254"></a>00254 PRESENT_API <span class="keywordtype">double</span>
 <a name="l00255"></a>00255 <a class="code" href="time-delta_8h.html#a1a423d7912a4f1cafa24a51c6aa83529" title="Get the number of microseconds represented by a TimeDelta, with a fractional part if necessary...">TimeDelta_get_microseconds_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00256"></a>00256 
-<a name="l00262"></a>00262 PRESENT_API int_delta
+<a name="l00262"></a>00262 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00263"></a>00263 <a class="code" href="time-delta_8h.html#a975595bac014708aef45bf7f2b6c1eb6" title="Get the number of milliseconds represented by a TimeDelta.">TimeDelta_get_milliseconds</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00264"></a>00264 
 <a name="l00269"></a>00269 PRESENT_API <span class="keywordtype">double</span>
 <a name="l00270"></a>00270 <a class="code" href="time-delta_8h.html#a3f2a375289348737273a4c5054e8e290" title="Get the number of milliseconds represented by a TimeDelta, with a fractional part if necessary...">TimeDelta_get_milliseconds_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00271"></a>00271 
-<a name="l00277"></a>00277 PRESENT_API int_delta
+<a name="l00277"></a>00277 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00278"></a>00278 <a class="code" href="time-delta_8h.html#a828a74fdc1d24a5086d727b1522167d3" title="Get the number of seconds represented by a TimeDelta.">TimeDelta_get_seconds</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00279"></a>00279 
 <a name="l00284"></a>00284 PRESENT_API <span class="keywordtype">double</span>
 <a name="l00285"></a>00285 <a class="code" href="time-delta_8h.html#ac23e1641d7d997d8c9be88a72cf6ee15" title="Get the number of seconds represented by a TimeDelta, with a fractional part if necessary.">TimeDelta_get_seconds_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00286"></a>00286 
-<a name="l00292"></a>00292 PRESENT_API int_delta
+<a name="l00292"></a>00292 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00293"></a>00293 <a class="code" href="time-delta_8h.html#acd6e692b20c8d6dbb68f83382eb48fbd" title="Get the number of minutes represented by a TimeDelta.">TimeDelta_get_minutes</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00294"></a>00294 
 <a name="l00299"></a>00299 PRESENT_API <span class="keywordtype">double</span>
 <a name="l00300"></a>00300 <a class="code" href="time-delta_8h.html#a2c6277da4b2e51368680acec96f096df" title="Get the number of minutes represented by a TimeDelta, with a fractional part if necessary.">TimeDelta_get_minutes_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00301"></a>00301 
-<a name="l00307"></a>00307 PRESENT_API int_delta
+<a name="l00307"></a>00307 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00308"></a>00308 <a class="code" href="time-delta_8h.html#ab0df8098dd251b0374f3ec9fbb8d2214" title="Get the number of hours represented by a TimeDelta.">TimeDelta_get_hours</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00309"></a>00309 
 <a name="l00314"></a>00314 PRESENT_API <span class="keywordtype">double</span>
 <a name="l00315"></a>00315 <a class="code" href="time-delta_8h.html#ab30868a5efcd2da10005cb24a72963e6" title="Get the number of hours represented by a TimeDelta, with a fractional part if necessary.">TimeDelta_get_hours_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00316"></a>00316 
-<a name="l00322"></a>00322 PRESENT_API int_delta
+<a name="l00322"></a>00322 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00323"></a>00323 <a class="code" href="time-delta_8h.html#a8394c0ca6720f02f68004e69be2a140b" title="Get the number of days represented by a TimeDelta.">TimeDelta_get_days</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00324"></a>00324 
 <a name="l00329"></a>00329 PRESENT_API <span class="keywordtype">double</span>
 <a name="l00330"></a>00330 <a class="code" href="time-delta_8h.html#a1cd230549ae6fbd0329212e2da4f3477" title="Get the number of days represented by a TimeDelta, with a fractional part if necessary.">TimeDelta_get_days_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00331"></a>00331 
-<a name="l00337"></a>00337 PRESENT_API int_delta
+<a name="l00337"></a>00337 PRESENT_API <a class="code" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a>
 <a name="l00338"></a>00338 <a class="code" href="time-delta_8h.html#ac0d5f3dc0f6ce1d76c9addf0ef23a01f" title="Get the number of weeks represented by a TimeDelta.">TimeDelta_get_weeks</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00339"></a>00339 
 <a name="l00344"></a>00344 PRESENT_API <span class="keywordtype">double</span>
@@ -370,7 +370,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

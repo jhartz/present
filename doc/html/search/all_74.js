@@ -80,5 +80,6 @@ var searchData=
   ['timestamp_5fnow',['Timestamp_now',['../timestamp_8h.html#ae3155f9c8fed278bfbef2254ab7bf71a',1,'timestamp.h']]],
   ['timestamp_5fsubtract_5fday_5fdelta',['Timestamp_subtract_day_delta',['../timestamp_8h.html#ada864b991017215cc60ad453c795d73f',1,'timestamp.h']]],
   ['timestamp_5fsubtract_5fmonth_5fdelta',['Timestamp_subtract_month_delta',['../timestamp_8h.html#af2d7ebff8bd72b975d0fe7a3e8971460',1,'timestamp.h']]],
-  ['timestamp_5fsubtract_5ftime_5fdelta',['Timestamp_subtract_time_delta',['../timestamp_8h.html#afa28c1d4e2aa355e4b7eb1ead44cd039',1,'timestamp.h']]]
+  ['timestamp_5fsubtract_5ftime_5fdelta',['Timestamp_subtract_time_delta',['../timestamp_8h.html#afa28c1d4e2aa355e4b7eb1ead44cd039',1,'timestamp.h']]],
+  ['types_2eh',['types.h',['../types_8h.html',1,'']]]
 ];
