@@ -24,7 +24,7 @@
 
 typedef int_fast64_t    int_timestamp;
 
-/* Time */
+/* Time (only used to describe parameters, not used for internal storage) */
 
 typedef uint_fast8_t    int_hour;
 typedef uint_fast8_t    int_minute;
@@ -34,9 +34,9 @@ typedef uint_fast64_t   int_nanosecond;
 /* Date */
 
 typedef int_fast32_t    int_year;
-typedef uint_fast8_t    int_month;
-/* The day is at least 16-bit, and signed, to make calculations
+/* The day and month are at least 16-bit, and signed, to make calculations
    (when adding/subtracting deltas) easier */
+typedef int_fast16_t    int_month;
 typedef int_fast16_t    int_day;
 
 typedef uint_fast16_t   int_day_of_year;
