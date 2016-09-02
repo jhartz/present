@@ -48,13 +48,13 @@ last_week_of_year(int_year year) {
         day_of_week = DAY_OF_WEEK_SUNDAY;
     }
 
-    // If the year starts on a Thursday, it has 53 days
+    // If the year starts on a Thursday, it has 53 weeks
     if (day_of_week == DAY_OF_WEEK_THURSDAY) {
         week = 53;
     }
 
     // If this year is a leap year, and it starts on a Wednesday,
-    // it has 53 days
+    // it has 53 weeks
     if (IS_LEAP_YEAR(year) && day_of_week == DAY_OF_WEEK_WEDNESDAY) {
         week = 53;
     }

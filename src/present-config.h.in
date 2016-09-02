@@ -13,5 +13,7 @@
 #define Present_VERSION_MAJOR (@Present_VERSION_MAJOR@)
 #define Present_VERSION_MINOR (@Present_VERSION_MINOR@)
 
+#cmakedefine USE_PTHREAD
+
 #endif /* _PRESENT_CONFIG_H_ */
 

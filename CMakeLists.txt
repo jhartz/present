@@ -30,6 +30,11 @@ option (USE_CXX_AS_CC
     OFF
 )
 
+option (PRESENT_USE_PTHREAD
+    "Use the pthread library to ensure thread safety"
+    ON
+)
+
 set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
@@ -89,6 +94,14 @@ add_library (presentc SHARED
     src/time-delta.c
     src/timestamp.c
 )
+
+# Link librt if necessary
+find_library (LIBRT_PATH rt)
+if (LIBRT_PATH)
+    target_link_libraries (presentc
+        rt
+    )
+endif (LIBRT_PATH)
 
 # Install the C library
 install (
