@@ -11,7 +11,7 @@ var date_8h =
     [ "Date_get_month", "date_8h.html#a4159afd50df428b740f4485925e7c5b6", null ],
     [ "Date_get_day", "date_8h.html#a9a89250ddc944586f86223ea8727a328", null ],
     [ "Date_get_day_of_year", "date_8h.html#a4f71610e1041fbb7e3b530d118d65151", null ],
-    [ "Date_get_week_of_year", "date_8h.html#a8420160a915ad3804b93a5a0f9ccb227", null ],
+    [ "Date_get_week_of_year", "date_8h.html#a1ea792798541f63ea48a80c871314429", null ],
     [ "Date_get_day_of_week", "date_8h.html#a99bd609ba0bacc5d415693f90a7113af", null ],
     [ "Date_get_difference", "date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03", null ],
     [ "Date_get_absolute_difference", "date_8h.html#a8639bedc8fc415809cbad76b72fb388b", null ],

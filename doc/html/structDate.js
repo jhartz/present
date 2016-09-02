@@ -9,7 +9,7 @@ var structDate =
     [ "get_month", "structDate.html#afa1025e5868c30b20b1ff1481e30f08d", null ],
     [ "get_day", "structDate.html#a044d6531a4335e3136f7aedd67fc0db0", null ],
     [ "get_day_of_year", "structDate.html#af19ad4f968f7799a336d2112c784bc9b", null ],
-    [ "get_week_of_year", "structDate.html#acd84e3844957e82014a2c17bb45bcce3", null ],
+    [ "get_week_of_year", "structDate.html#a138ce231feac1890d4e69d253e0e8e8c", null ],
     [ "get_day_of_week", "structDate.html#ad5ff9ecae53c65ba2b45dc4f69f37d5c", null ],
     [ "get_difference", "structDate.html#ae175df5ffb7f12378d41453209994e59", null ],
     [ "get_absolute_difference", "structDate.html#a293adccbbf2f42bd54dde9fb0de81f92", null ],

@@ -23,7 +23,7 @@ var searchData=
   ['date_5fget_5fday_5fof_5fyear',['Date_get_day_of_year',['../date_8h.html#a4f71610e1041fbb7e3b530d118d65151',1,'date.h']]],
   ['date_5fget_5fdifference',['Date_get_difference',['../date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03',1,'date.h']]],
   ['date_5fget_5fmonth',['Date_get_month',['../date_8h.html#a4159afd50df428b740f4485925e7c5b6',1,'date.h']]],
-  ['date_5fget_5fweek_5fof_5fyear',['Date_get_week_of_year',['../date_8h.html#a8420160a915ad3804b93a5a0f9ccb227',1,'date.h']]],
+  ['date_5fget_5fweek_5fof_5fyear',['Date_get_week_of_year',['../date_8h.html#a1ea792798541f63ea48a80c871314429',1,'date.h']]],
   ['date_5fget_5fyear',['Date_get_year',['../date_8h.html#ad26cbac6bc416b358941b580dba7fe3c',1,'date.h']]],
   ['date_5fgreater_5fthan',['Date_greater_than',['../date_8h.html#ae4b19bd7c984619f04644bca7fa43f83',1,'date.h']]],
   ['date_5fgreater_5fthan_5for_5fequal',['Date_greater_than_or_equal',['../date_8h.html#acacc333b8cccf95f14d8040b811455c9',1,'date.h']]],

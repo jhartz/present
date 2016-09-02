@@ -228,7 +228,9 @@ bool \hyperlink{structTimestamp_ab53468a00b24c60130785a547517e97b}{operator$>$=}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimestamp_ab2b17140c0c966ad672395f3f90b8653}
-\-Create a new \hyperlink{structTimestamp}{\-Timestamp} representing the exact time right now.  \hypertarget{structTimestamp_aa2f108710dbe1372d8fc7146a2e66c37}{\index{\-Timestamp@{\-Timestamp}!epoch@{epoch}}
+\-Create a new \hyperlink{structTimestamp}{\-Timestamp} representing the exact time right now. 
+
+\-On most \-P\-O\-S\-I\-X systems, this will return a \hyperlink{structTimestamp}{\-Timestamp} with up to nanosecond precision (depending on the maximum precision of the machine). \-On other systems, the \hyperlink{structTimestamp}{\-Timestamp} will only be to the nearest second.  \hypertarget{structTimestamp_aa2f108710dbe1372d8fc7146a2e66c37}{\index{\-Timestamp@{\-Timestamp}!epoch@{epoch}}
 \index{epoch@{epoch}!Timestamp@{\-Timestamp}}
 \subsubsection[{epoch}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Timestamp} {\bf \-Timestamp\-::epoch} (
 \begin{DoxyParamCaption}

@@ -39,7 +39,7 @@ var searchData=
   ['get_5fstruct_5ftm_5futc',['get_struct_tm_utc',['../structTimestamp.html#a763f8ab757e5d6cfb45c7931f75c5654',1,'Timestamp']]],
   ['get_5ftime_5fdelta',['get_time_delta',['../structDayDelta.html#ab10777d5c043236aa613081d56317642',1,'DayDelta']]],
   ['get_5ftime_5ft',['get_time_t',['../structTimestamp.html#a54782bcc812fdeea952ec0e0880aac5f',1,'Timestamp']]],
-  ['get_5fweek_5fof_5fyear',['get_week_of_year',['../structDate.html#acd84e3844957e82014a2c17bb45bcce3',1,'Date']]],
+  ['get_5fweek_5fof_5fyear',['get_week_of_year',['../structDate.html#a138ce231feac1890d4e69d253e0e8e8c',1,'Date']]],
   ['get_5fweeks',['get_weeks',['../structDayDelta.html#a2f4510044f51ebb61ffef942ee173de2',1,'DayDelta::get_weeks()'],['../structTimeDelta.html#aab4f773272785b9421b101ee243c0eaf',1,'TimeDelta::get_weeks()']]],
   ['get_5fweeks_5fdecimal',['get_weeks_decimal',['../structDayDelta.html#a2e3251e65463940ef87d447d51948e05',1,'DayDelta::get_weeks_decimal()'],['../structTimeDelta.html#a927aad8d85f646d3712ded9c09ae957a',1,'TimeDelta::get_weeks_decimal()']]],
   ['get_5fyear',['get_year',['../structDate.html#a970cb8375d137e19cea4c042a0b8d64a',1,'Date']]],

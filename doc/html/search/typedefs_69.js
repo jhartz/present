@@ -2,7 +2,7 @@ var searchData=
 [
   ['int_5fday',['int_day',['../types_8h.html#a5269b564286b0eecff0b944afb81d4e2',1,'types.h']]],
   ['int_5fday_5fof_5fweek',['int_day_of_week',['../types_8h.html#a8132950de7fc3f98373a4d384d8b6eca',1,'types.h']]],
-  ['int_5fday_5fof_5fyear',['int_day_of_year',['../types_8h.html#a3fb1af069c4170879c1a5946cb541c69',1,'types.h']]],
+  ['int_5fday_5fof_5fyear',['int_day_of_year',['../types_8h.html#aaaf288114a6279e071420e8e20324b13',1,'types.h']]],
   ['int_5fdelta',['int_delta',['../types_8h.html#a10729255b1946fd4fb654b2fe814910b',1,'types.h']]],
   ['int_5fhour',['int_hour',['../types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7',1,'types.h']]],
   ['int_5fminute',['int_minute',['../types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86',1,'types.h']]],
@@ -11,7 +11,7 @@ var searchData=
   ['int_5fnanosecond',['int_nanosecond',['../types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6',1,'types.h']]],
   ['int_5fsecond',['int_second',['../types_8h.html#acdee90940aea1c6f3e71652fb525a987',1,'types.h']]],
   ['int_5ftimestamp',['int_timestamp',['../types_8h.html#a5832406ea257c172eb711ae2e27b4501',1,'types.h']]],
-  ['int_5fweek_5fof_5fyear',['int_week_of_year',['../types_8h.html#a893fea48b40c218c9d3edec68cccba83',1,'types.h']]],
+  ['int_5fweek_5fof_5fyear',['int_week_of_year',['../types_8h.html#a8f4ececac5f6a2cb2ec9ba25de8e996b',1,'types.h']]],
   ['int_5fyear',['int_year',['../types_8h.html#a5b021e50b656f4efcc69340c01a17997',1,'types.h']]],
   ['int_5fyear_5fdelta',['int_year_delta',['../types_8h.html#a6a5c8fde0b5ed80727db4db4bdd2173d',1,'types.h']]]
 ];

@@ -236,123 +236,123 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00232"></a>00232         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> * <span class="keyword">const</span> clockTime);
 <a name="l00233"></a>00233 
 <a name="l00234"></a>00234 
-<a name="l00238"></a>00238 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>
-<a name="l00239"></a>00239 <a class="code" href="timestamp_8h.html#ae3155f9c8fed278bfbef2254ab7bf71a" title="Create a new Timestamp representing the exact time right now.">Timestamp_now</a>();
-<a name="l00240"></a>00240 
-<a name="l00245"></a>00245 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>
-<a name="l00246"></a>00246 <a class="code" href="timestamp_8h.html#a810edf0892d3ff0eb177a47edbb35f39" title="Create a new Timestamp representing the UNIX epoch (Jan.">Timestamp_epoch</a>();
-<a name="l00247"></a>00247 
-<a name="l00248"></a>00248 
-<a name="l00252"></a>00252 PRESENT_API time_t
-<a name="l00253"></a>00253 <a class="code" href="timestamp_8h.html#aec236bdb1608452e3f668c3378376db5" title="Convert a Timestamp to a &quot;time_t&quot; (from C&#39;s time library).">Timestamp_get_time_t</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00254"></a>00254 
-<a name="l00255"></a>00255 
-<a name="l00260"></a>00260 PRESENT_API <span class="keyword">struct </span>tm
-<a name="l00261"></a>00261 <a class="code" href="timestamp_8h.html#adccc0d3c9c451b75efd6685de7f58885" title="Convert a Timestamp to a &quot;struct tm&quot; (from C&#39;s time library) in a certain time zone (represented by...">Timestamp_get_struct_tm</a>(
-<a name="l00262"></a>00262         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00263"></a>00263         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> timeZoneOffset);
-<a name="l00264"></a>00264 
-<a name="l00269"></a>00269 PRESENT_API <span class="keyword">struct </span>tm
-<a name="l00270"></a>00270 <a class="code" href="timestamp_8h.html#aab6022022f369033d16a3284c2053a1a" title="Convert a Timestamp to a &quot;struct tm&quot; (from C&#39;s time library) in Coordinated Universal Time...">Timestamp_get_struct_tm_utc</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00271"></a>00271 
-<a name="l00276"></a>00276 PRESENT_API <span class="keyword">struct </span>tm
-<a name="l00277"></a>00277 <a class="code" href="timestamp_8h.html#a29f6692cb1298ff18f527ad9f4c4a73b" title="Convert a Timestamp to a &quot;struct tm&quot; (from C&#39;s time library) in the system&#39;s current local time zon...">Timestamp_get_struct_tm_local</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00278"></a>00278 
-<a name="l00279"></a>00279 
-<a name="l00284"></a>00284 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
-<a name="l00285"></a>00285 <a class="code" href="timestamp_8h.html#a365b582da44dea6b5350feb2d069bc73" title="Get the Date component of a Timestamp in a certain time zone (represented by an offset from UTC)...">Timestamp_get_date</a>(
-<a name="l00286"></a>00286         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00287"></a>00287         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> timeZoneOffset);
-<a name="l00288"></a>00288 
-<a name="l00292"></a>00292 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
-<a name="l00293"></a>00293 <a class="code" href="timestamp_8h.html#addc273dcb8e7f91aeb2139b43815763f" title="Get the Date component of a Timestamp in Coordinated Universal Time.">Timestamp_get_date_utc</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00294"></a>00294 
-<a name="l00299"></a>00299 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
-<a name="l00300"></a>00300 <a class="code" href="timestamp_8h.html#ad10794935d04f9bb8cc143daa9d5aa3f" title="Get the Date component of a Timestamp in the system&#39;s current local time zone.">Timestamp_get_date_local</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00301"></a>00301 
-<a name="l00302"></a>00302 
-<a name="l00307"></a>00307 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
-<a name="l00308"></a>00308 <a class="code" href="timestamp_8h.html#a18be2e5546df7e884fc8a318383f550a" title="Get the ClockTime component of a Timestamp in a certain time zone (represented by an offset from UTC)...">Timestamp_get_clock_time</a>(
-<a name="l00309"></a>00309         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00310"></a>00310         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> timeZoneOffset);
-<a name="l00311"></a>00311 
-<a name="l00316"></a>00316 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
-<a name="l00317"></a>00317 <a class="code" href="timestamp_8h.html#aa684345ce22c80cb130af19188ca5afe" title="Get the ClockTime component of a Timestamp in Coordinated Universal Time.">Timestamp_get_clock_time_utc</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00318"></a>00318 
-<a name="l00323"></a>00323 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
-<a name="l00324"></a>00324 <a class="code" href="timestamp_8h.html#a361bdde37e188e9501ecaea7db86ee34" title="Get the ClockTime component of a Timestamp in the system&#39;s current local time zone.">Timestamp_get_clock_time_local</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00325"></a>00325 
-<a name="l00326"></a>00326 
-<a name="l00330"></a>00330 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00331"></a>00331 <a class="code" href="timestamp_8h.html#ac84dca2c53b78a0dab7d265f51c33f69" title="Get the difference between two Timestamp instances as a TimeDelta.">Timestamp_get_difference</a>(
-<a name="l00332"></a>00332         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00333"></a>00333         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> other);
-<a name="l00334"></a>00334 
-<a name="l00339"></a>00339 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
-<a name="l00340"></a>00340 <a class="code" href="timestamp_8h.html#a7cfa689d47dec9a256c7cb6901fe07e9" title="Get the absolute difference between two Timestamp instances as a TimeDelta.">Timestamp_get_absolute_difference</a>(
-<a name="l00341"></a>00341         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00342"></a>00342         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> other);
-<a name="l00343"></a>00343 
-<a name="l00344"></a>00344 
-<a name="l00348"></a>00348 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00349"></a>00349 <a class="code" href="timestamp_8h.html#acdba02838b0ba9ecefffe7c23a629c3e" title="Add a TimeDelta to a Timestamp.">Timestamp_add_time_delta</a>(
-<a name="l00350"></a>00350         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00351"></a>00351         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00352"></a>00352 
-<a name="l00356"></a>00356 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00357"></a>00357 <a class="code" href="timestamp_8h.html#a9650714b7c9f08f361d770092889f2c1" title="Add a DayDelta to a Timestamp.">Timestamp_add_day_delta</a>(
-<a name="l00358"></a>00358         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00359"></a>00359         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00360"></a>00360 
-<a name="l00364"></a>00364 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00365"></a>00365 <a class="code" href="timestamp_8h.html#a42c064d1def096a67a397c2f796cc98b" title="Add a MonthDelta to a Timestamp.">Timestamp_add_month_delta</a>(
-<a name="l00366"></a>00366         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00367"></a>00367         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00368"></a>00368 
-<a name="l00372"></a>00372 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00373"></a>00373 <a class="code" href="timestamp_8h.html#afa28c1d4e2aa355e4b7eb1ead44cd039" title="Subtract a TimeDelta from a Timestamp.">Timestamp_subtract_time_delta</a>(
-<a name="l00374"></a>00374         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00375"></a>00375         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00376"></a>00376 
-<a name="l00380"></a>00380 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00381"></a>00381 <a class="code" href="timestamp_8h.html#ada864b991017215cc60ad453c795d73f" title="Subtract a DayDelta from a Timestamp.">Timestamp_subtract_day_delta</a>(
-<a name="l00382"></a>00382         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00383"></a>00383         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00384"></a>00384 
-<a name="l00388"></a>00388 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00389"></a>00389 <a class="code" href="timestamp_8h.html#af2d7ebff8bd72b975d0fe7a3e8971460" title="Subtract a MonthDelta from a Timestamp.">Timestamp_subtract_month_delta</a>(
-<a name="l00390"></a>00390         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00391"></a>00391         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00392"></a>00392 
-<a name="l00397"></a>00397 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00398"></a>00398 <a class="code" href="timestamp_8h.html#a01ec54f54ff983ec29dd84ded9239694" title="Determine whether two Timestamp instances represent the exact same point in time.">Timestamp_equal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
-<a name="l00399"></a>00399 
-<a name="l00403"></a>00403 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00404"></a>00404 <a class="code" href="timestamp_8h.html#aafa1f1053066f8a4f8a18c8d3a7adb41" title="Determine whether a Timestamp occurs earlier than another Timestamp.">Timestamp_less_than</a>(
-<a name="l00405"></a>00405         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
-<a name="l00406"></a>00406         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
-<a name="l00407"></a>00407 
-<a name="l00412"></a>00412 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00413"></a>00413 <a class="code" href="timestamp_8h.html#a73158018e2e8ac52f3e0e461031780cc" title="Determine whether a Timestamp occurs earlier than or at the same time as another Timestamp.">Timestamp_less_than_or_equal</a>(
-<a name="l00414"></a>00414         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
-<a name="l00415"></a>00415         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
-<a name="l00416"></a>00416 
-<a name="l00420"></a>00420 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00421"></a>00421 <a class="code" href="timestamp_8h.html#a96f31ed79e616bdae7dd9313ad400675" title="Determine whether a Timestamp occurs later than another Timestamp.">Timestamp_greater_than</a>(
-<a name="l00422"></a>00422         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
-<a name="l00423"></a>00423         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
-<a name="l00424"></a>00424 
-<a name="l00429"></a>00429 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00430"></a>00430 <a class="code" href="timestamp_8h.html#ac8e73c119be15b81647851f16f4013b9" title="Determine whether a Timestamp occurs later than or at the same time as another Timestamp.">Timestamp_greater_than_or_equal</a>(
-<a name="l00431"></a>00431         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
-<a name="l00432"></a>00432         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
-<a name="l00433"></a>00433 
-<a name="l00434"></a>00434 <span class="preprocessor">#ifdef __cplusplus</span>
-<a name="l00435"></a>00435 <span class="preprocessor"></span>}
-<a name="l00436"></a>00436 <span class="preprocessor">#endif</span>
-<a name="l00437"></a>00437 <span class="preprocessor"></span>
-<a name="l00438"></a>00438 <span class="preprocessor">#endif </span><span class="comment">/* _PRESENT_TIMESTAMP_H_ */</span>
-<a name="l00439"></a>00439 
+<a name="l00242"></a>00242 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>
+<a name="l00243"></a>00243 <a class="code" href="timestamp_8h.html#ae3155f9c8fed278bfbef2254ab7bf71a" title="Create a new Timestamp representing the exact time right now.">Timestamp_now</a>();
+<a name="l00244"></a>00244 
+<a name="l00249"></a>00249 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>
+<a name="l00250"></a>00250 <a class="code" href="timestamp_8h.html#a810edf0892d3ff0eb177a47edbb35f39" title="Create a new Timestamp representing the UNIX epoch (Jan.">Timestamp_epoch</a>();
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252 
+<a name="l00256"></a>00256 PRESENT_API time_t
+<a name="l00257"></a>00257 <a class="code" href="timestamp_8h.html#aec236bdb1608452e3f668c3378376db5" title="Convert a Timestamp to a &quot;time_t&quot; (from C&#39;s time library).">Timestamp_get_time_t</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259 
+<a name="l00264"></a>00264 PRESENT_API <span class="keyword">struct </span>tm
+<a name="l00265"></a>00265 <a class="code" href="timestamp_8h.html#adccc0d3c9c451b75efd6685de7f58885" title="Convert a Timestamp to a &quot;struct tm&quot; (from C&#39;s time library) in a certain time zone (represented by...">Timestamp_get_struct_tm</a>(
+<a name="l00266"></a>00266         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00267"></a>00267         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> timeZoneOffset);
+<a name="l00268"></a>00268 
+<a name="l00273"></a>00273 PRESENT_API <span class="keyword">struct </span>tm
+<a name="l00274"></a>00274 <a class="code" href="timestamp_8h.html#aab6022022f369033d16a3284c2053a1a" title="Convert a Timestamp to a &quot;struct tm&quot; (from C&#39;s time library) in Coordinated Universal Time...">Timestamp_get_struct_tm_utc</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00275"></a>00275 
+<a name="l00280"></a>00280 PRESENT_API <span class="keyword">struct </span>tm
+<a name="l00281"></a>00281 <a class="code" href="timestamp_8h.html#a29f6692cb1298ff18f527ad9f4c4a73b" title="Convert a Timestamp to a &quot;struct tm&quot; (from C&#39;s time library) in the system&#39;s current local time zon...">Timestamp_get_struct_tm_local</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00282"></a>00282 
+<a name="l00283"></a>00283 
+<a name="l00288"></a>00288 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
+<a name="l00289"></a>00289 <a class="code" href="timestamp_8h.html#a365b582da44dea6b5350feb2d069bc73" title="Get the Date component of a Timestamp in a certain time zone (represented by an offset from UTC)...">Timestamp_get_date</a>(
+<a name="l00290"></a>00290         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00291"></a>00291         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> timeZoneOffset);
+<a name="l00292"></a>00292 
+<a name="l00296"></a>00296 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
+<a name="l00297"></a>00297 <a class="code" href="timestamp_8h.html#addc273dcb8e7f91aeb2139b43815763f" title="Get the Date component of a Timestamp in Coordinated Universal Time.">Timestamp_get_date_utc</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00298"></a>00298 
+<a name="l00303"></a>00303 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
+<a name="l00304"></a>00304 <a class="code" href="timestamp_8h.html#ad10794935d04f9bb8cc143daa9d5aa3f" title="Get the Date component of a Timestamp in the system&#39;s current local time zone.">Timestamp_get_date_local</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306 
+<a name="l00311"></a>00311 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
+<a name="l00312"></a>00312 <a class="code" href="timestamp_8h.html#a18be2e5546df7e884fc8a318383f550a" title="Get the ClockTime component of a Timestamp in a certain time zone (represented by an offset from UTC)...">Timestamp_get_clock_time</a>(
+<a name="l00313"></a>00313         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00314"></a>00314         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> timeZoneOffset);
+<a name="l00315"></a>00315 
+<a name="l00320"></a>00320 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
+<a name="l00321"></a>00321 <a class="code" href="timestamp_8h.html#aa684345ce22c80cb130af19188ca5afe" title="Get the ClockTime component of a Timestamp in Coordinated Universal Time.">Timestamp_get_clock_time_utc</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00322"></a>00322 
+<a name="l00327"></a>00327 PRESENT_API <span class="keyword">struct </span><a class="code" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>
+<a name="l00328"></a>00328 <a class="code" href="timestamp_8h.html#a361bdde37e188e9501ecaea7db86ee34" title="Get the ClockTime component of a Timestamp in the system&#39;s current local time zone.">Timestamp_get_clock_time_local</a>(const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330 
+<a name="l00334"></a>00334 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
+<a name="l00335"></a>00335 <a class="code" href="timestamp_8h.html#ac84dca2c53b78a0dab7d265f51c33f69" title="Get the difference between two Timestamp instances as a TimeDelta.">Timestamp_get_difference</a>(
+<a name="l00336"></a>00336         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00337"></a>00337         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> other);
+<a name="l00338"></a>00338 
+<a name="l00343"></a>00343 PRESENT_API <span class="keyword">struct </span><a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>
+<a name="l00344"></a>00344 <a class="code" href="timestamp_8h.html#a7cfa689d47dec9a256c7cb6901fe07e9" title="Get the absolute difference between two Timestamp instances as a TimeDelta.">Timestamp_get_absolute_difference</a>(
+<a name="l00345"></a>00345         const struct <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00346"></a>00346         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> other);
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348 
+<a name="l00352"></a>00352 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00353"></a>00353 <a class="code" href="timestamp_8h.html#acdba02838b0ba9ecefffe7c23a629c3e" title="Add a TimeDelta to a Timestamp.">Timestamp_add_time_delta</a>(
+<a name="l00354"></a>00354         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00355"></a>00355         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00356"></a>00356 
+<a name="l00360"></a>00360 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00361"></a>00361 <a class="code" href="timestamp_8h.html#a9650714b7c9f08f361d770092889f2c1" title="Add a DayDelta to a Timestamp.">Timestamp_add_day_delta</a>(
+<a name="l00362"></a>00362         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00363"></a>00363         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00364"></a>00364 
+<a name="l00368"></a>00368 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00369"></a>00369 <a class="code" href="timestamp_8h.html#a42c064d1def096a67a397c2f796cc98b" title="Add a MonthDelta to a Timestamp.">Timestamp_add_month_delta</a>(
+<a name="l00370"></a>00370         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00371"></a>00371         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00372"></a>00372 
+<a name="l00376"></a>00376 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00377"></a>00377 <a class="code" href="timestamp_8h.html#afa28c1d4e2aa355e4b7eb1ead44cd039" title="Subtract a TimeDelta from a Timestamp.">Timestamp_subtract_time_delta</a>(
+<a name="l00378"></a>00378         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00379"></a>00379         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00380"></a>00380 
+<a name="l00384"></a>00384 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00385"></a>00385 <a class="code" href="timestamp_8h.html#ada864b991017215cc60ad453c795d73f" title="Subtract a DayDelta from a Timestamp.">Timestamp_subtract_day_delta</a>(
+<a name="l00386"></a>00386         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00387"></a>00387         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00388"></a>00388 
+<a name="l00392"></a>00392 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00393"></a>00393 <a class="code" href="timestamp_8h.html#af2d7ebff8bd72b975d0fe7a3e8971460" title="Subtract a MonthDelta from a Timestamp.">Timestamp_subtract_month_delta</a>(
+<a name="l00394"></a>00394         <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00395"></a>00395         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00396"></a>00396 
+<a name="l00401"></a>00401 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00402"></a>00402 <a class="code" href="timestamp_8h.html#a01ec54f54ff983ec29dd84ded9239694" title="Determine whether two Timestamp instances represent the exact same point in time.">Timestamp_equal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
+<a name="l00403"></a>00403 
+<a name="l00407"></a>00407 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00408"></a>00408 <a class="code" href="timestamp_8h.html#aafa1f1053066f8a4f8a18c8d3a7adb41" title="Determine whether a Timestamp occurs earlier than another Timestamp.">Timestamp_less_than</a>(
+<a name="l00409"></a>00409         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
+<a name="l00410"></a>00410         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
+<a name="l00411"></a>00411 
+<a name="l00416"></a>00416 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00417"></a>00417 <a class="code" href="timestamp_8h.html#a73158018e2e8ac52f3e0e461031780cc" title="Determine whether a Timestamp occurs earlier than or at the same time as another Timestamp.">Timestamp_less_than_or_equal</a>(
+<a name="l00418"></a>00418         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
+<a name="l00419"></a>00419         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
+<a name="l00420"></a>00420 
+<a name="l00424"></a>00424 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00425"></a>00425 <a class="code" href="timestamp_8h.html#a96f31ed79e616bdae7dd9313ad400675" title="Determine whether a Timestamp occurs later than another Timestamp.">Timestamp_greater_than</a>(
+<a name="l00426"></a>00426         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
+<a name="l00427"></a>00427         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
+<a name="l00428"></a>00428 
+<a name="l00433"></a>00433 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00434"></a>00434 <a class="code" href="timestamp_8h.html#ac8e73c119be15b81647851f16f4013b9" title="Determine whether a Timestamp occurs later than or at the same time as another Timestamp.">Timestamp_greater_than_or_equal</a>(
+<a name="l00435"></a>00435         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>,
+<a name="l00436"></a>00436         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> * <span class="keyword">const</span>);
+<a name="l00437"></a>00437 
+<a name="l00438"></a>00438 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00439"></a>00439 <span class="preprocessor"></span>}
+<a name="l00440"></a>00440 <span class="preprocessor">#endif</span>
+<a name="l00441"></a>00441 <span class="preprocessor"></span>
+<a name="l00442"></a>00442 <span class="preprocessor">#endif </span><span class="comment">/* _PRESENT_TIMESTAMP_H_ */</span>
+<a name="l00443"></a>00443 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

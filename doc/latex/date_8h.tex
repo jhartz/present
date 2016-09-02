@@ -4,6 +4,8 @@
 \subsection*{\-Classes}
 \begin{DoxyCompactItemize}
 \item 
+struct \hyperlink{structPresentWeekYear}{\-Present\-Week\-Year}
+\begin{DoxyCompactList}\small\item\em \-Struct containing a year and a week of the year. \end{DoxyCompactList}\item 
 struct \hyperlink{structDate}{\-Date}
 \begin{DoxyCompactList}\small\item\em \-Class or struct representing a calendar date. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Defines}
@@ -35,9 +37,9 @@ struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a7d059ef251f488538ccbc2
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year and a month. \end{DoxyCompactList}\item 
 struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a42ad855ee9519639db894432f44d97e9}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-month\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_ae68f4f515f242b927830881ea4cffae2}{int\-\_\-month} month, \hyperlink{types_8h_a5269b564286b0eecff0b944afb81d4e2}{int\-\_\-day} day)
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year, a month, and a day. \end{DoxyCompactList}\item 
-struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a31812f70db4d0656099c7aae0d3305ef}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_a3fb1af069c4170879c1a5946cb541c69}{int\-\_\-day\-\_\-of\-\_\-year} day\-\_\-of\-\_\-year)
+struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a31812f70db4d0656099c7aae0d3305ef}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_aaaf288114a6279e071420e8e20324b13}{int\-\_\-day\-\_\-of\-\_\-year} day\-\_\-of\-\_\-year)
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year and the day of that year. \end{DoxyCompactList}\item 
-struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a8e4d7a96e87a9405605c0adc8362d234}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_a893fea48b40c218c9d3edec68cccba83}{int\-\_\-week\-\_\-of\-\_\-year} week\-\_\-of\-\_\-year, \hyperlink{types_8h_a8132950de7fc3f98373a4d384d8b6eca}{int\-\_\-day\-\_\-of\-\_\-week} day\-\_\-of\-\_\-week)
+struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a8e4d7a96e87a9405605c0adc8362d234}{\-Date\-\_\-create\-\_\-from\-\_\-year\-\_\-week\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_a8f4ececac5f6a2cb2ec9ba25de8e996b}{int\-\_\-week\-\_\-of\-\_\-year} week\-\_\-of\-\_\-year, \hyperlink{types_8h_a8132950de7fc3f98373a4d384d8b6eca}{int\-\_\-day\-\_\-of\-\_\-week} day\-\_\-of\-\_\-week)
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structDate}{\-Date} based on a year, a week of that year, and a day of the week. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} \hyperlink{date_8h_ad26cbac6bc416b358941b580dba7fe3c}{\-Date\-\_\-get\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the year of a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
@@ -45,10 +47,10 @@ struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a8e4d7a96e87a9405605c0a
 \begin{DoxyCompactList}\small\item\em \-Get the month of a \hyperlink{structDate}{\-Date} (1 to 12, inclusive). \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a5269b564286b0eecff0b944afb81d4e2}{int\-\_\-day} \hyperlink{date_8h_a9a89250ddc944586f86223ea8727a328}{\-Date\-\_\-get\-\_\-day} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the day of month of a \hyperlink{structDate}{\-Date} (1 to 31, inclusive). \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a3fb1af069c4170879c1a5946cb541c69}{int\-\_\-day\-\_\-of\-\_\-year} \hyperlink{date_8h_a4f71610e1041fbb7e3b530d118d65151}{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
+\hyperlink{types_8h_aaaf288114a6279e071420e8e20324b13}{int\-\_\-day\-\_\-of\-\_\-year} \hyperlink{date_8h_a4f71610e1041fbb7e3b530d118d65151}{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the day of the year of a \hyperlink{structDate}{\-Date} (1 to 366, inclusive). \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a893fea48b40c218c9d3edec68cccba83}{int\-\_\-week\-\_\-of\-\_\-year} \hyperlink{date_8h_a8420160a915ad3804b93a5a0f9ccb227}{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get the week of the year of a \hyperlink{structDate}{\-Date} (1 to 53, inclusive). \end{DoxyCompactList}\item 
+struct \hyperlink{structPresentWeekYear}{\-Present\-Week\-Year} \hyperlink{date_8h_a1ea792798541f63ea48a80c871314429}{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em \-Get the week of the year of a \hyperlink{structDate}{\-Date} (1 to 53, inclusive), and the year corresponding to that week. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a8132950de7fc3f98373a4d384d8b6eca}{int\-\_\-day\-\_\-of\-\_\-week} \hyperlink{date_8h_a99bd609ba0bacc5d415693f90a7113af}{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the day of the week of a \hyperlink{structDate}{\-Date} (1 to 7, inclusive, with 1 being \-Monday, 2 being \-Tuesday, ..., 6 being \-Saturday, and 7 being \-Sunday). \end{DoxyCompactList}\item 
 struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{date_8h_a2d32fb808c31d8592f3641ef2f2a6b03}{\-Date\-\_\-get\-\_\-difference} (const struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structDate}{\-Date} $\ast$const other)
@@ -281,17 +283,20 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 \-Get the day of the year of a \hyperlink{structDate}{\-Date} (1 to 366, inclusive). 
 
-\hypertarget{date_8h_a8420160a915ad3804b93a5a0f9ccb227}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}}
+\hypertarget{date_8h_a1ea792798541f63ea48a80c871314429}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}}
 \index{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year@{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-week\-\_\-of\-\_\-year} {\bf \-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year} (
+\subsubsection[{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Present\-Week\-Year} {\bf \-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Date} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a8420160a915ad3804b93a5a0f9ccb227}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{date_8h_a1ea792798541f63ea48a80c871314429}
 
 
-\-Get the week of the year of a \hyperlink{structDate}{\-Date} (1 to 53, inclusive). 
+\-Get the week of the year of a \hyperlink{structDate}{\-Date} (1 to 53, inclusive), and the year corresponding to that week. 
 
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{structPresentWeekYear}{\-Present\-Week\-Year} 
+\end{DoxySeeAlso}
 \hypertarget{date_8h_a99bd609ba0bacc5d415693f90a7113af}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}}
 \index{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-day\-\_\-of\-\_\-week} {\bf \-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week} (
