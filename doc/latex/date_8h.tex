@@ -48,7 +48,7 @@ struct \hyperlink{structDate}{\-Date} \hyperlink{date_8h_a8e4d7a96e87a9405605c0a
 \hyperlink{types_8h_a3fb1af069c4170879c1a5946cb541c69}{int\-\_\-day\-\_\-of\-\_\-year} \hyperlink{date_8h_a4f71610e1041fbb7e3b530d118d65151}{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the day of the year of a \hyperlink{structDate}{\-Date} (1 to 366, inclusive). \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a893fea48b40c218c9d3edec68cccba83}{int\-\_\-week\-\_\-of\-\_\-year} \hyperlink{date_8h_a8420160a915ad3804b93a5a0f9ccb227}{\-Date\-\_\-get\-\_\-week\-\_\-of\-\_\-year} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get the week of the year of a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Get the week of the year of a \hyperlink{structDate}{\-Date} (1 to 53, inclusive). \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a8132950de7fc3f98373a4d384d8b6eca}{int\-\_\-day\-\_\-of\-\_\-week} \hyperlink{date_8h_a99bd609ba0bacc5d415693f90a7113af}{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week} (const struct \hyperlink{structDate}{\-Date} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the day of the week of a \hyperlink{structDate}{\-Date} (1 to 7, inclusive, with 1 being \-Monday, 2 being \-Tuesday, ..., 6 being \-Saturday, and 7 being \-Sunday). \end{DoxyCompactList}\item 
 struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{date_8h_a2d32fb808c31d8592f3641ef2f2a6b03}{\-Date\-\_\-get\-\_\-difference} (const struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structDate}{\-Date} $\ast$const other)
@@ -224,7 +224,7 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 \-Create a new \hyperlink{structDate}{\-Date} based on a year, a week of that year, and a day of the week. 
 
-\-Weeks of the year are determined in the same way that the \-I\-S\-O8601 standard defines week numbers.
+\-Weeks of the year are determined in the same way that the \-I\-S\-O8601 standard defines week numbers. \-For more info, see\-: \href{https://en.wikipedia.org/wiki/ISO_week_date}{\tt https\-://en.\-wikipedia.\-org/wiki/\-I\-S\-O\-\_\-week\-\_\-date}
 
 \-If the week of the year or the day of the week is out of range, a \hyperlink{structDate}{\-Date} will be returned with \char`\"{}error\char`\"{} set.
 
@@ -232,7 +232,7 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 \begin{DoxyParams}{\-Parameters}
 {\em year} & \-The year. \\
 \hline
-{\em week\-\_\-of\-\_\-year} & \-The week of the year (\-T\-O\-D\-O\-: what are the bounds?) \\
+{\em week\-\_\-of\-\_\-year} & \-The week of the year (1 to 52 or 53, inclusive, depending on the year). \\
 \hline
 {\em day\-\_\-of\-\_\-week} & \-The day of the week (1 to 7, inclusive). \-See \hyperlink{types_8h}{present/utils/types.\-h} for constants for each day of the week. \\
 \hline
@@ -290,9 +290,9 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 )}}\label{date_8h_a8420160a915ad3804b93a5a0f9ccb227}
 
 
-\-Get the week of the year of a \hyperlink{structDate}{\-Date}. 
+\-Get the week of the year of a \hyperlink{structDate}{\-Date} (1 to 53, inclusive). 
 
-\-T\-O\-D\-O\-: \-What are the bounds? \hypertarget{date_8h_a99bd609ba0bacc5d415693f90a7113af}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}}
+\hypertarget{date_8h_a99bd609ba0bacc5d415693f90a7113af}{\index{date.\-h@{date.\-h}!\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}}
 \index{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week@{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-day\-\_\-of\-\_\-week} {\bf \-Date\-\_\-get\-\_\-day\-\_\-of\-\_\-week} (
 \begin{DoxyParamCaption}

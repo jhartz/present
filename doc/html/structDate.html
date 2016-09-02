@@ -310,12 +310,12 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year, a week of that year, and a day of the week. </p>
-<p>Weeks of the year are determined in the same way that the ISO8601 standard defines week numbers.</p>
+<p>Weeks of the year are determined in the same way that the ISO8601 standard defines week numbers. For more info, see: <a href="https://en.wikipedia.org/wiki/ISO_week_date">https://en.wikipedia.org/wiki/ISO_week_date</a></p>
 <p>If the week of the year or the day of the week is out of range, a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> will be returned with "error" set.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>The year. </td></tr>
-    <tr><td class="paramname">week_of_year</td><td>The week of the year (TODO: what are the bounds?) </td></tr>
+    <tr><td class="paramname">week_of_year</td><td>The week of the year (1 to 52 or 53, inclusive, depending on the year). </td></tr>
     <tr><td class="paramname">day_of_week</td><td>The day of the week (1 to 7, inclusive). See <a class="el" href="types_8h.html">present/utils/types.h</a> for constants for each day of the week. </td></tr>
   </table>
   </dd>
@@ -404,8 +404,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the week of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
-<p>TODO: What are the bounds? </p>
+<p>Get the week of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 53, inclusive). </p>
  
 </div>
 </div>

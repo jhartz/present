@@ -171,7 +171,7 @@ bool \hyperlink{structDate_a04118d56c46df4ac9054f0e34d2a6ce2}{operator$>$=} (con
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structDate_a282993d00829e727eac88615cb2f1146}
 \-Create a new \hyperlink{structDate}{\-Date} based on a year, a week of that year, and a day of the week. 
 
-\-Weeks of the year are determined in the same way that the \-I\-S\-O8601 standard defines week numbers.
+\-Weeks of the year are determined in the same way that the \-I\-S\-O8601 standard defines week numbers. \-For more info, see\-: \href{https://en.wikipedia.org/wiki/ISO_week_date}{\tt https\-://en.\-wikipedia.\-org/wiki/\-I\-S\-O\-\_\-week\-\_\-date}
 
 \-If the week of the year or the day of the week is out of range, a \hyperlink{structDate}{\-Date} will be returned with \char`\"{}error\char`\"{} set.
 
@@ -179,7 +179,7 @@ bool \hyperlink{structDate_a04118d56c46df4ac9054f0e34d2a6ce2}{operator$>$=} (con
 \begin{DoxyParams}{\-Parameters}
 {\em year} & \-The year. \\
 \hline
-{\em week\-\_\-of\-\_\-year} & \-The week of the year (\-T\-O\-D\-O\-: what are the bounds?) \\
+{\em week\-\_\-of\-\_\-year} & \-The week of the year (1 to 52 or 53, inclusive, depending on the year). \\
 \hline
 {\em day\-\_\-of\-\_\-week} & \-The day of the week (1 to 7, inclusive). \-See \hyperlink{types_8h}{present/utils/types.\-h} for constants for each day of the week. \\
 \hline
@@ -219,9 +219,7 @@ bool \hyperlink{structDate_a04118d56c46df4ac9054f0e34d2a6ce2}{operator$>$=} (con
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structDate_acd84e3844957e82014a2c17bb45bcce3}
-\-Get the week of the year of a \hyperlink{structDate}{\-Date}. 
-
-\-T\-O\-D\-O\-: \-What are the bounds?  \hypertarget{structDate_ad5ff9ecae53c65ba2b45dc4f69f37d5c}{\index{\-Date@{\-Date}!get\-\_\-day\-\_\-of\-\_\-week@{get\-\_\-day\-\_\-of\-\_\-week}}
+\-Get the week of the year of a \hyperlink{structDate}{\-Date} (1 to 53, inclusive).  \hypertarget{structDate_ad5ff9ecae53c65ba2b45dc4f69f37d5c}{\index{\-Date@{\-Date}!get\-\_\-day\-\_\-of\-\_\-week@{get\-\_\-day\-\_\-of\-\_\-week}}
 \index{get\-\_\-day\-\_\-of\-\_\-week@{get\-\_\-day\-\_\-of\-\_\-week}!Date@{\-Date}}
 \subsubsection[{get\-\_\-day\-\_\-of\-\_\-week}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-day\-\_\-of\-\_\-week} {\bf \-Date\-::get\-\_\-day\-\_\-of\-\_\-week} (
 \begin{DoxyParamCaption}

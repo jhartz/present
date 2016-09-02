@@ -210,83 +210,83 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00189"></a>00189 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
 <a name="l00190"></a>00190 <a class="code" href="date_8h.html#a31812f70db4d0656099c7aae0d3305ef" title="Create a new Date based on a year and the day of that year.">Date_create_from_year_day</a>(<a class="code" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year, <a class="code" href="types_8h.html#a3fb1af069c4170879c1a5946cb541c69">int_day_of_year</a> day_of_year);
 <a name="l00191"></a>00191 
-<a name="l00205"></a>00205 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
-<a name="l00206"></a>00206 <a class="code" href="date_8h.html#a8e4d7a96e87a9405605c0adc8362d234" title="Create a new Date based on a year, a week of that year, and a day of the week.">Date_create_from_year_week_day</a>(
-<a name="l00207"></a>00207         <a class="code" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year,
-<a name="l00208"></a>00208         <a class="code" href="types_8h.html#a893fea48b40c218c9d3edec68cccba83">int_week_of_year</a> week_of_year,
-<a name="l00209"></a>00209         <a class="code" href="types_8h.html#a8132950de7fc3f98373a4d384d8b6eca">int_day_of_week</a> day_of_week);
-<a name="l00210"></a>00210 
-<a name="l00214"></a>00214 PRESENT_API <a class="code" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a>
-<a name="l00215"></a>00215 <a class="code" href="date_8h.html#ad26cbac6bc416b358941b580dba7fe3c" title="Get the year of a Date.">Date_get_year</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00216"></a>00216 
-<a name="l00220"></a>00220 PRESENT_API <a class="code" href="types_8h.html#ae68f4f515f242b927830881ea4cffae2">int_month</a>
-<a name="l00221"></a>00221 <a class="code" href="date_8h.html#a4159afd50df428b740f4485925e7c5b6" title="Get the month of a Date (1 to 12, inclusive).">Date_get_month</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00222"></a>00222 
-<a name="l00226"></a>00226 PRESENT_API <a class="code" href="types_8h.html#a5269b564286b0eecff0b944afb81d4e2">int_day</a>
-<a name="l00227"></a>00227 <a class="code" href="date_8h.html#a9a89250ddc944586f86223ea8727a328" title="Get the day of month of a Date (1 to 31, inclusive).">Date_get_day</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00228"></a>00228 
-<a name="l00232"></a>00232 PRESENT_API <a class="code" href="types_8h.html#a3fb1af069c4170879c1a5946cb541c69">int_day_of_year</a>
-<a name="l00233"></a>00233 <a class="code" href="date_8h.html#a4f71610e1041fbb7e3b530d118d65151" title="Get the day of the year of a Date (1 to 366, inclusive).">Date_get_day_of_year</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00234"></a>00234 
-<a name="l00239"></a>00239 PRESENT_API <a class="code" href="types_8h.html#a893fea48b40c218c9d3edec68cccba83">int_week_of_year</a>
-<a name="l00240"></a>00240 <a class="code" href="date_8h.html#a8420160a915ad3804b93a5a0f9ccb227" title="Get the week of the year of a Date.">Date_get_week_of_year</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00241"></a>00241 
-<a name="l00246"></a>00246 PRESENT_API <a class="code" href="types_8h.html#a8132950de7fc3f98373a4d384d8b6eca">int_day_of_week</a>
-<a name="l00247"></a>00247 <a class="code" href="date_8h.html#a99bd609ba0bacc5d415693f90a7113af" title="Get the day of the week of a Date (1 to 7, inclusive, with 1 being Monday, 2 being Tuesday...">Date_get_day_of_week</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
-<a name="l00248"></a>00248 
-<a name="l00252"></a>00252 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>
-<a name="l00253"></a>00253 <a class="code" href="date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03" title="Get the difference between two Date instances.">Date_get_difference</a>(
-<a name="l00254"></a>00254         const struct <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00255"></a>00255         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> other);
-<a name="l00256"></a>00256 
-<a name="l00260"></a>00260 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>
-<a name="l00261"></a>00261 <a class="code" href="date_8h.html#a8639bedc8fc415809cbad76b72fb388b" title="Get the absolute difference between two Date instances.">Date_get_absolute_difference</a>(
-<a name="l00262"></a>00262         const struct <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00263"></a>00263         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> other);
-<a name="l00264"></a>00264 
-<a name="l00268"></a>00268 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00269"></a>00269 <a class="code" href="date_8h.html#a4c6d6ed2a1d7979412a79e84d54aeac4" title="Add a DayDelta to a Date.">Date_add_day_delta</a>(
-<a name="l00270"></a>00270         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00271"></a>00271         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00272"></a>00272 
-<a name="l00276"></a>00276 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00277"></a>00277 <a class="code" href="date_8h.html#a57ea0878d7e184ce8caae809f80c4274" title="Add a MonthDelta to a Date.">Date_add_month_delta</a>(
-<a name="l00278"></a>00278         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00279"></a>00279         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00280"></a>00280 
-<a name="l00284"></a>00284 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00285"></a>00285 <a class="code" href="date_8h.html#aff3dde3e7758ebafc0a04c16ab8099b7" title="Subtract a DayDelta from a Date.">Date_subtract_day_delta</a>(
-<a name="l00286"></a>00286         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00287"></a>00287         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00288"></a>00288 
-<a name="l00292"></a>00292 PRESENT_API <span class="keywordtype">void</span>
-<a name="l00293"></a>00293 <a class="code" href="date_8h.html#a1df0a3764eef73161f411d0f67e52014" title="Subtract a MonthDelta from a Date.">Date_subtract_month_delta</a>(
-<a name="l00294"></a>00294         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
-<a name="l00295"></a>00295         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
-<a name="l00296"></a>00296 
-<a name="l00300"></a>00300 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00301"></a>00301 <a class="code" href="date_8h.html#a77eadd9d79f983618b888d9810c506d0" title="Determine whether two Date instances are equal.">Date_equal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
-<a name="l00302"></a>00302 
-<a name="l00306"></a>00306 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00307"></a>00307 <a class="code" href="date_8h.html#ad59fd8e95642ece085fe87745e8d1942" title="Determine whether a Date is earlier than another Date.">Date_less_than</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
-<a name="l00308"></a>00308 
-<a name="l00312"></a>00312 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00313"></a>00313 <a class="code" href="date_8h.html#a353c04aca98ffc7f5661f4488dd7bdb9" title="Determine whether a Date is earlier than or the same as another Date.">Date_less_than_or_equal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
-<a name="l00314"></a>00314 
-<a name="l00318"></a>00318 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00319"></a>00319 <a class="code" href="date_8h.html#ae4b19bd7c984619f04644bca7fa43f83" title="Determine whether a Date is later than another Date.">Date_greater_than</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
-<a name="l00320"></a>00320 
-<a name="l00324"></a>00324 PRESENT_API <span class="keywordtype">bool</span>
-<a name="l00325"></a>00325 <a class="code" href="date_8h.html#acacc333b8cccf95f14d8040b811455c9" title="Determine whether a Date is later than or the same as another Date.">Date_greater_than_or_equal</a>(
-<a name="l00326"></a>00326         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>,
-<a name="l00327"></a>00327         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
-<a name="l00328"></a>00328 
-<a name="l00329"></a>00329 <span class="preprocessor">#ifdef __cplusplus</span>
-<a name="l00330"></a>00330 <span class="preprocessor"></span>}
-<a name="l00331"></a>00331 <span class="preprocessor">#endif</span>
-<a name="l00332"></a>00332 <span class="preprocessor"></span>
-<a name="l00333"></a>00333 <span class="preprocessor">#endif </span><span class="comment">/* _PRESENT_DATE_H_ */</span>
-<a name="l00334"></a>00334 
+<a name="l00207"></a>00207 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>
+<a name="l00208"></a>00208 <a class="code" href="date_8h.html#a8e4d7a96e87a9405605c0adc8362d234" title="Create a new Date based on a year, a week of that year, and a day of the week.">Date_create_from_year_week_day</a>(
+<a name="l00209"></a>00209         <a class="code" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a> year,
+<a name="l00210"></a>00210         <a class="code" href="types_8h.html#a893fea48b40c218c9d3edec68cccba83">int_week_of_year</a> week_of_year,
+<a name="l00211"></a>00211         <a class="code" href="types_8h.html#a8132950de7fc3f98373a4d384d8b6eca">int_day_of_week</a> day_of_week);
+<a name="l00212"></a>00212 
+<a name="l00216"></a>00216 PRESENT_API <a class="code" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a>
+<a name="l00217"></a>00217 <a class="code" href="date_8h.html#ad26cbac6bc416b358941b580dba7fe3c" title="Get the year of a Date.">Date_get_year</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00218"></a>00218 
+<a name="l00222"></a>00222 PRESENT_API <a class="code" href="types_8h.html#ae68f4f515f242b927830881ea4cffae2">int_month</a>
+<a name="l00223"></a>00223 <a class="code" href="date_8h.html#a4159afd50df428b740f4485925e7c5b6" title="Get the month of a Date (1 to 12, inclusive).">Date_get_month</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00224"></a>00224 
+<a name="l00228"></a>00228 PRESENT_API <a class="code" href="types_8h.html#a5269b564286b0eecff0b944afb81d4e2">int_day</a>
+<a name="l00229"></a>00229 <a class="code" href="date_8h.html#a9a89250ddc944586f86223ea8727a328" title="Get the day of month of a Date (1 to 31, inclusive).">Date_get_day</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00230"></a>00230 
+<a name="l00234"></a>00234 PRESENT_API <a class="code" href="types_8h.html#a3fb1af069c4170879c1a5946cb541c69">int_day_of_year</a>
+<a name="l00235"></a>00235 <a class="code" href="date_8h.html#a4f71610e1041fbb7e3b530d118d65151" title="Get the day of the year of a Date (1 to 366, inclusive).">Date_get_day_of_year</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00236"></a>00236 
+<a name="l00240"></a>00240 PRESENT_API <a class="code" href="types_8h.html#a893fea48b40c218c9d3edec68cccba83">int_week_of_year</a>
+<a name="l00241"></a>00241 <a class="code" href="date_8h.html#a8420160a915ad3804b93a5a0f9ccb227" title="Get the week of the year of a Date (1 to 53, inclusive).">Date_get_week_of_year</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00242"></a>00242 
+<a name="l00247"></a>00247 PRESENT_API <a class="code" href="types_8h.html#a8132950de7fc3f98373a4d384d8b6eca">int_day_of_week</a>
+<a name="l00248"></a>00248 <a class="code" href="date_8h.html#a99bd609ba0bacc5d415693f90a7113af" title="Get the day of the week of a Date (1 to 7, inclusive, with 1 being Monday, 2 being Tuesday...">Date_get_day_of_week</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00249"></a>00249 
+<a name="l00253"></a>00253 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>
+<a name="l00254"></a>00254 <a class="code" href="date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03" title="Get the difference between two Date instances.">Date_get_difference</a>(
+<a name="l00255"></a>00255         const struct <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00256"></a>00256         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> other);
+<a name="l00257"></a>00257 
+<a name="l00261"></a>00261 PRESENT_API <span class="keyword">struct </span><a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>
+<a name="l00262"></a>00262 <a class="code" href="date_8h.html#a8639bedc8fc415809cbad76b72fb388b" title="Get the absolute difference between two Date instances.">Date_get_absolute_difference</a>(
+<a name="l00263"></a>00263         const struct <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00264"></a>00264         <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> other);
+<a name="l00265"></a>00265 
+<a name="l00269"></a>00269 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00270"></a>00270 <a class="code" href="date_8h.html#a4c6d6ed2a1d7979412a79e84d54aeac4" title="Add a DayDelta to a Date.">Date_add_day_delta</a>(
+<a name="l00271"></a>00271         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00272"></a>00272         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00273"></a>00273 
+<a name="l00277"></a>00277 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00278"></a>00278 <a class="code" href="date_8h.html#a57ea0878d7e184ce8caae809f80c4274" title="Add a MonthDelta to a Date.">Date_add_month_delta</a>(
+<a name="l00279"></a>00279         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00280"></a>00280         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00281"></a>00281 
+<a name="l00285"></a>00285 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00286"></a>00286 <a class="code" href="date_8h.html#aff3dde3e7758ebafc0a04c16ab8099b7" title="Subtract a DayDelta from a Date.">Date_subtract_day_delta</a>(
+<a name="l00287"></a>00287         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00288"></a>00288         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00289"></a>00289 
+<a name="l00293"></a>00293 PRESENT_API <span class="keywordtype">void</span>
+<a name="l00294"></a>00294 <a class="code" href="date_8h.html#a1df0a3764eef73161f411d0f67e52014" title="Subtract a MonthDelta from a Date.">Date_subtract_month_delta</a>(
+<a name="l00295"></a>00295         <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span> <span class="keyword">self</span>,
+<a name="l00296"></a>00296         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> delta);
+<a name="l00297"></a>00297 
+<a name="l00301"></a>00301 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00302"></a>00302 <a class="code" href="date_8h.html#a77eadd9d79f983618b888d9810c506d0" title="Determine whether two Date instances are equal.">Date_equal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
+<a name="l00303"></a>00303 
+<a name="l00307"></a>00307 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00308"></a>00308 <a class="code" href="date_8h.html#ad59fd8e95642ece085fe87745e8d1942" title="Determine whether a Date is earlier than another Date.">Date_less_than</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
+<a name="l00309"></a>00309 
+<a name="l00313"></a>00313 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00314"></a>00314 <a class="code" href="date_8h.html#a353c04aca98ffc7f5661f4488dd7bdb9" title="Determine whether a Date is earlier than or the same as another Date.">Date_less_than_or_equal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
+<a name="l00315"></a>00315 
+<a name="l00319"></a>00319 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00320"></a>00320 <a class="code" href="date_8h.html#ae4b19bd7c984619f04644bca7fa43f83" title="Determine whether a Date is later than another Date.">Date_greater_than</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
+<a name="l00321"></a>00321 
+<a name="l00325"></a>00325 PRESENT_API <span class="keywordtype">bool</span>
+<a name="l00326"></a>00326 <a class="code" href="date_8h.html#acacc333b8cccf95f14d8040b811455c9" title="Determine whether a Date is later than or the same as another Date.">Date_greater_than_or_equal</a>(
+<a name="l00327"></a>00327         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>,
+<a name="l00328"></a>00328         <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> * <span class="keyword">const</span>);
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00331"></a>00331 <span class="preprocessor"></span>}
+<a name="l00332"></a>00332 <span class="preprocessor">#endif</span>
+<a name="l00333"></a>00333 <span class="preprocessor"></span>
+<a name="l00334"></a>00334 <span class="preprocessor">#endif </span><span class="comment">/* _PRESENT_DATE_H_ */</span>
+<a name="l00335"></a>00335 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
