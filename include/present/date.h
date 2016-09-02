@@ -34,6 +34,22 @@ enum PresentDateError {
 };
 
 /*
+ * Helper Struct Definitions
+ */
+
+/**
+ * Struct containing a year and a week of the year.
+ *
+ * This is used as the return value for functions that return a week of the
+ * year since a date's "week of the year" may be of a different year than the
+ * date's actual year.
+ */
+struct PresentWeekYear {
+    int_week_of_year week;
+    int_year year;
+};
+
+/*
  * C++ Class / C Struct Definition
  */
 
@@ -81,7 +97,7 @@ struct PRESENT_API Date {
     int_day_of_year get_day_of_year() const;
 
     /** @copydoc Date_get_week_of_year */
-    int_week_of_year get_week_of_year() const;
+    PresentWeekYear get_week_of_year() const;
 
     /** @copydoc Date_get_day_of_week */
     int_day_of_week get_day_of_week() const;
@@ -235,9 +251,12 @@ PRESENT_API int_day_of_year
 Date_get_day_of_year(const struct Date * const self);
 
 /**
- * Get the week of the year of a Date (1 to 53, inclusive).
+ * Get the week of the year of a Date (1 to 53, inclusive), and the year
+ * corresponding to that week.
+ *
+ * @see PresentWeekYear
  */
-PRESENT_API int_week_of_year
+PRESENT_API struct PresentWeekYear
 Date_get_week_of_year(const struct Date * const self);
 
 /**

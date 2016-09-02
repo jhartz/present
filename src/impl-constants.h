@@ -27,6 +27,7 @@
 
 #define STRUCT_TM_YEAR_OFFSET   (1900)
 #define STRUCT_TM_MONTH_OFFSET  (1)
+#define STRUCT_TM_DAY_OF_YEAR_OFFSET    (1)
 
 #endif /* _PRESENT_CONSTANTS_H_ */
 

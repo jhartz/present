@@ -50,24 +50,24 @@ int_day Date::get_day() const {
     return Date_get_day(this);
 }
 
+int_day_of_year Date::get_day_of_year() const {
+    return Date_get_day_of_year(this);
+}
+
+struct PresentWeekYear Date::get_week_of_year() const {
+    return Date_get_week_of_year(this);
+}
+
+int_day_of_week Date::get_day_of_week() const {
+    return Date_get_day_of_week(this);
+}
+
 DayDelta Date::get_difference(const Date & other) const {
     return Date_get_difference(this, &other);
 }
 
 DayDelta Date::get_absolute_difference(const Date & other) const {
     return Date_get_absolute_difference(this, &other);
-}
-
-int_day_of_year Date::get_day_of_year() const {
-    return Date_get_day_of_year(this);
-}
-
-int_week_of_year Date::get_week_of_year() const {
-    return Date_get_week_of_year(this);
-}
-
-int_day_of_week Date::get_day_of_week() const {
-    return Date_get_day_of_week(this);
 }
 
 Date & Date::operator+=(const DayDelta & delta) {

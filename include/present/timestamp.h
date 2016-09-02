@@ -234,6 +234,10 @@ Timestamp_create_local(
 
 /**
  * Create a new Timestamp representing the exact time right now.
+ *
+ * On most POSIX systems, this will return a Timestamp with up to nanosecond
+ * precision (depending on the maximum precision of the machine). On other
+ * systems, the Timestamp will only be to the nearest second.
  */
 PRESENT_API struct Timestamp
 Timestamp_now();

@@ -101,11 +101,58 @@ TEST_CASE("Date::create... methods", "[date]") {
     d = Date::create_from_year_day(2000, 366);
     IS(2000, 12, 31);
 
-    // create_from_year_week
-
-    // TODO
-
     // create_from_year_week_day
 
-    // TODO
+    d = Date::create_from_year_week_day(2016, 31, DAY_OF_WEEK_WEDNESDAY);
+    IS(2016, 8, 3);
+
+    // In 2004, the first week of the year started in the end of 2003
+    d = Date::create_from_year_week_day(2004, 1, DAY_OF_WEEK_MONDAY);
+    IS(2003, 12, 29);
+
+    // But not in 2007
+    d = Date::create_from_year_week_day(2007, 1, DAY_OF_WEEK_MONDAY);
+    IS(2007, 1, 1);
+
+    // The last week of 2005 was week 52
+    d = Date::create_from_year_week_day(2005, 52, DAY_OF_WEEK_MONDAY);
+    IS(2005, 12, 26);
+
+    // It rolls over into 2006
+    d = Date::create_from_year_week_day(2005, 52, DAY_OF_WEEK_SUNDAY);
+    IS(2006, 1, 1);
+
+    // Even if we use the wrong Sunday
+    d = Date::create_from_year_week_day(2005, 52, DAY_OF_WEEK_SUNDAY_COMPAT);
+    IS(2006, 1, 1);
+
+    // 2005 didn't have a week 53
+    d = Date::create_from_year_week_day(2005, 53, DAY_OF_WEEK_MONDAY);
+    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+
+    // 2009 did, though
+    d = Date::create_from_year_week_day(2009, 53, DAY_OF_WEEK_MONDAY);
+    IS(2009, 12, 28);
+
+    // And it rolls over into 2010
+    d = Date::create_from_year_week_day(2009, 53, DAY_OF_WEEK_FRIDAY);
+    IS(2010, 1, 1);
+
+    // But 2009 didn't have a week 54
+    d = Date::create_from_year_week_day(2009, 54, DAY_OF_WEEK_MONDAY);
+    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+
+    // And nobody should have weeks less than 1
+    d = Date::create_from_year_week_day(1999, 0, DAY_OF_WEEK_MONDAY);
+    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+    d = Date::create_from_year_week_day(1999, -1, DAY_OF_WEEK_MONDAY);
+    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+
+    // Nor days of the week outside 0 to 7
+    d = Date::create_from_year_week_day(2007, 1, 8);
+    CHECK(d.error == Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE);
+    d = Date::create_from_year_week_day(2007, 1, -1);
+    CHECK(d.error == Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE);
 }
+
+

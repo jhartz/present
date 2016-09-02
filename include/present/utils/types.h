@@ -34,13 +34,13 @@ typedef uint_fast64_t   int_nanosecond;
 /* Date */
 
 typedef int_fast32_t    int_year;
-/* The day and month are at least 16-bit, and signed, to make calculations
+/* These values are at least 16-bit, and signed, to make calculations
    (when adding/subtracting deltas) easier */
 typedef int_fast16_t    int_month;
 typedef int_fast16_t    int_day;
+typedef int_fast16_t    int_day_of_year;
+typedef int_fast8_t     int_week_of_year;
 
-typedef uint_fast16_t   int_day_of_year;
-typedef uint_fast8_t    int_week_of_year;
 typedef uint_fast8_t    int_day_of_week;
 
 /* NOTE: 0 is also a valid identifier for Sunday to be compatible with the

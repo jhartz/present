@@ -24,6 +24,10 @@
     ((year % 4 == 0 && year % 100 != 0) ||      \
      (year % 400 == 0))
 
+/** Determine the number of days in a year. */
+#define DAYS_IN_YEAR(year)                      \
+    (IS_LEAP_YEAR(year) ? 366 : 365)
+
 
 /**
  * Macros to create an instance of a struct, populated with either a

@@ -67,6 +67,7 @@ include_directories ("${PROJECT_SOURCE_DIR}/include")
 # If we're compiling C with a C++ compiler, set that
 if (USE_CXX_AS_CC)
     set_source_files_properties(
+        src/present-syscalls.c
         src/clock-time.c
         src/date.c
         src/day-delta.c
@@ -80,6 +81,7 @@ endif (USE_CXX_AS_CC)
 
 # Compile the C library
 add_library (presentc SHARED
+    src/present-syscalls.c
     src/clock-time.c
     src/date.c
     src/day-delta.c

@@ -27,24 +27,62 @@
 #include "present/date.h"
 
 /**
+ * Get the week number of the last week of a given year (either 52 or 53).
+ */
+static int_week_of_year
+last_week_of_year(int_year year) {
+    // https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year
+    int_week_of_year week = 52;
+
+    // Get some information on Jan. 1 of this year
+    struct tm tm;
+    memset((void *)&tm, 0, sizeof(struct tm));
+    tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
+    tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET;
+    tm.tm_mday = 1;
+    tm.tm_isdst = -1;
+    assert(mktime(&tm) != -1);
+
+    int_day_of_week day_of_week = tm.tm_wday;
+    if (day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
+        day_of_week = DAY_OF_WEEK_SUNDAY;
+    }
+
+    // If the year starts on a Thursday, it has 53 days
+    if (day_of_week == DAY_OF_WEEK_THURSDAY) {
+        week = 53;
+    }
+
+    // If this year is a leap year, and it starts on a Wednesday,
+    // it has 53 days
+    if (IS_LEAP_YEAR(year) && day_of_week == DAY_OF_WEEK_WEDNESDAY) {
+        week = 53;
+    }
+
+    return week;
+}
+
+/**
  * Make sure that year, month, and day are valid, and set day_of_year and
  * day_of_week to their correct values.
  */
-static void check_date_data(struct PresentDateData * const data) {
-    struct tm info;
-    memset((void *)&info, 0, sizeof(struct tm));
+static void
+check_date_data(struct PresentDateData * const data) {
+    struct tm tm;
+    memset((void *)&tm, 0, sizeof(struct tm));
 
-    info.tm_year = (int)data->year - STRUCT_TM_YEAR_OFFSET;
-    info.tm_mon = (int)data->month - STRUCT_TM_MONTH_OFFSET;
-    info.tm_mday = (int)data->day;
-    info.tm_isdst = -1;
-    assert(mktime(&info) != -1);
+    tm.tm_year = (int)data->year - STRUCT_TM_YEAR_OFFSET;
+    tm.tm_mon = (int)data->month - STRUCT_TM_MONTH_OFFSET;
+    tm.tm_mday = (int)data->day;
+    tm.tm_isdst = -1;
+    assert(mktime(&tm) != -1);
 
-    data->year = (int_year)info.tm_year + STRUCT_TM_YEAR_OFFSET;
-    data->month = (int_month)info.tm_mon + STRUCT_TM_MONTH_OFFSET;
-    data->day = (int_day)info.tm_mday;
-    data->day_of_year = (int_day_of_year)info.tm_yday;
-    data->day_of_week = (int_day_of_week)info.tm_wday;
+    data->year = (int_year)tm.tm_year + STRUCT_TM_YEAR_OFFSET;
+    data->month = (int_month)tm.tm_mon + STRUCT_TM_MONTH_OFFSET;
+    data->day = (int_day)tm.tm_mday;
+    data->day_of_year = (int_day_of_year)tm.tm_yday +
+        STRUCT_TM_DAY_OF_YEAR_OFFSET;
+    data->day_of_week = (int_day_of_week)tm.tm_wday;
     if (data->day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
         data->day_of_week = DAY_OF_WEEK_SUNDAY;
     }
@@ -120,7 +158,49 @@ Date_create_from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week) {
-    // TODO
+    CONSTRUCTOR_HEAD(Date);
+
+    if (week_of_year < 1 || week_of_year > last_week_of_year(year)) {
+        CONSTRUCTOR_ERROR_RETURN(Date, WEEK_OF_YEAR_OUT_OF_RANGE);
+    }
+
+    if (day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
+        day_of_week = DAY_OF_WEEK_SUNDAY;
+    }
+    if (day_of_week < 1 || day_of_week > 7) {
+        CONSTRUCTOR_ERROR_RETURN(Date, DAY_OF_WEEK_OUT_OF_RANGE);
+    }
+
+    // Get the weekday of Jan. 4 of this year
+    struct tm tm;
+    memset((void *)&tm, 0, sizeof(struct tm));
+    tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
+    tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; // January
+    tm.tm_mday = 4; // 4th day of the month
+    // tm_wday will be filled in
+    tm.tm_isdst = -1;
+    assert(mktime(&tm) != -1);
+
+    int_day_of_week jan_4_day_of_week = tm.tm_wday;
+    if (jan_4_day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
+        jan_4_day_of_week = DAY_OF_WEEK_SUNDAY;
+    }
+    assert(jan_4_day_of_week >= 1 && jan_4_day_of_week <= 7);
+
+    // Calculate the date using voodoo magic
+    // https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+    int_day_of_year ordinal_date = week_of_year * 7 + day_of_week -
+        (jan_4_day_of_week + 3);
+    if (ordinal_date < 1) {
+        year -= 1;
+        ordinal_date += DAYS_IN_YEAR(year);
+    }
+    if (ordinal_date > DAYS_IN_YEAR(year)) {
+        ordinal_date -= DAYS_IN_YEAR(year);
+        year += 1;
+    }
+
+    return Date_create_from_year_day(year, ordinal_date);
 }
 
 int_year
@@ -155,12 +235,30 @@ Date_get_day_of_year(const struct Date * const self) {
     return self->data_.day_of_year;
 }
 
-int_week_of_year
+struct PresentWeekYear
 Date_get_week_of_year(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
-    // TODO
+    // Caculate the week number using pure voodoo magic
+    // https://en.wikipedia.org/wiki/ISO_week_date#Calculating_the_week_number_of_a_given_date
+    int_year year = self->data_.year;
+    int_week_of_year week = (self->data_.day_of_year -
+            self->data_.day_of_week + 10) / 7;
+
+    if (week == 0) {
+        // It's the last week of the previous year
+        year -= 1;
+        week = last_week_of_year(year);
+    }
+    if (week > last_week_of_year(year)) {
+        // It's the first week of the next year
+        year += 1;
+        week = 1;
+    }
+
+    struct PresentWeekYear p = {week, year};
+    return p;
 }
 
 int_day_of_week

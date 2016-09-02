@@ -16,6 +16,7 @@
 
 #include "impl-constants.h"
 #include "impl-utils.h"
+#include "present-syscalls.h"
 
 #include "present/clock-time.h"
 #include "present/date.h"
@@ -256,7 +257,8 @@ Timestamp_create_local(
 
 struct Timestamp
 Timestamp_now() {
-    return new_timestamp(time_t_to_timestamp(time(NULL)), 0);
+    struct present_now_struct now = present_now();
+    return new_timestamp(time_t_to_timestamp(now.sec), now.nsec);
 }
 
 struct Timestamp

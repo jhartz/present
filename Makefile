@@ -28,7 +28,7 @@ CXXFLAGS += $(FLAGS) -std=c++11
 
 
 MODULES = clock-time date day-delta month-delta time-delta timestamp
-C_OBJECTS = $(MODULES:%=build/%.c.o)
+C_OBJECTS = $(MODULES:%=build/%.c.o) build/present-syscalls.c.o
 CXX_OBJECTS = $(MODULES:%=build/%.cpp.o)
 TEST_SRC = $(MODULES:%=test/%-test.cpp)
 
