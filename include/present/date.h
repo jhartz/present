@@ -192,13 +192,15 @@ Date_create_from_year_day(int_year year, int_day_of_year day_of_year);
 /**
  * Create a new Date based on a year, a week of that year, and a day of the
  * week. Weeks of the year are determined in the same way that the ISO8601
- * standard defines week numbers.
+ * standard defines week numbers. For more info, see:
+ * https://en.wikipedia.org/wiki/ISO_week_date
  *
  * If the week of the year or the day of the week is out of range, a Date will
  * be returned with "error" set.
  *
  * @param year The year.
- * @param week_of_year The week of the year (TODO: what are the bounds?)
+ * @param week_of_year The week of the year (1 to 52 or 53, inclusive,
+ * depending on the year).
  * @param day_of_week The day of the week (1 to 7, inclusive). See
  * present/utils/types.h for constants for each day of the week.
  */
@@ -233,8 +235,7 @@ PRESENT_API int_day_of_year
 Date_get_day_of_year(const struct Date * const self);
 
 /**
- * Get the week of the year of a Date.
- * TODO: What are the bounds?
+ * Get the week of the year of a Date (1 to 53, inclusive).
  */
 PRESENT_API int_week_of_year
 Date_get_week_of_year(const struct Date * const self);
