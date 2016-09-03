@@ -23,8 +23,6 @@
 static pthread_mutex_t syscall_access;
 int is_initialized = 0;
 
-// TODO: We're gonna need to link in pthread
-
 #define INITIALIZE                          \
     do {                                    \
         if (!is_initialized) {              \
@@ -90,7 +88,6 @@ struct present_now_struct present_now() {
         value = present_test_time;
     } else {
 #ifdef _POSIX_TIMERS
-        // TODO: clock_gettime requires linking librt for most systems
         clock_gettime(CLOCK_REALTIME, &tp);
         value.sec = tp.tv_sec;
         value.nsec = tp.tv_nsec;

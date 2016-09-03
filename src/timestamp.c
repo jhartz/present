@@ -14,9 +14,9 @@
 #include "present/utils/utils.h"
 #include "present/impl/present-timestamp-data.h"
 
-#include "impl-constants.h"
-#include "impl-utils.h"
+#include "present-constants.h"
 #include "present-syscalls.h"
+#include "present-utils.h"
 
 #include "present/clock-time.h"
 #include "present/date.h"
@@ -31,7 +31,7 @@ static struct Date
 struct_tm_to_date(const struct tm tm) {
     struct tm tmCopy = tm;
     // Throw it through mktime to fix any weirdness
-    assert(mktime(&tmCopy) != -1);
+    assert(present_mktime(&tmCopy) != -1);
 
     return Date_create_from_year_month_day(
             tmCopy.tm_year + STRUCT_TM_YEAR_OFFSET,
@@ -44,7 +44,7 @@ static struct ClockTime
 struct_tm_to_clock_time(const struct tm tm) {
     struct tm tmCopy = tm;
     // Throw it through mktime to fix any weirdness
-    assert(mktime(&tmCopy) != -1);
+    assert(present_mktime(&tmCopy) != -1);
 
     return ClockTime_create_from_hour_minute_second(
             tmCopy.tm_hour,
@@ -67,7 +67,7 @@ convert_to_struct_tm(
     tm.tm_mon = (int) Date_get_month(date) - STRUCT_TM_MONTH_OFFSET;
     tm.tm_year = (int) Date_get_year(date) - STRUCT_TM_YEAR_OFFSET;
     tm.tm_isdst = -1;
-    assert(mktime(&tm) != -1);
+    assert(present_mktime(&tm) != -1);
 
     return tm;
 }
@@ -152,7 +152,7 @@ struct Timestamp
 Timestamp_create_from_struct_tm_local(const struct tm tm) {
     struct tm tmCopy = tm;
     // Throw it right through mktime
-    time_t timestamp = mktime(&tmCopy);
+    time_t timestamp = present_mktime(&tmCopy);
     assert(timestamp != -1);
     return new_timestamp(time_t_to_timestamp(timestamp), 0);
 }
@@ -295,7 +295,9 @@ Timestamp_get_struct_tm_utc(const struct Timestamp * const self) {
     assert(self->error == 0);
 
     time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    return *gmtime(&timestamp);
+    struct tm result;
+    present_gmtime(&timestamp, &result);
+    return result;
 }
 
 struct tm
@@ -304,7 +306,9 @@ Timestamp_get_struct_tm_local(const struct Timestamp * const self) {
     assert(self->error == 0);
 
     time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    return *localtime(&timestamp);
+    struct tm result;
+    present_localtime(&timestamp, &result);
+    return result;
 }
 
 struct Date
@@ -432,9 +436,10 @@ Timestamp_add_month_delta(
     assert(delta->error == 0);
 
     time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    struct tm tm = *localtime(&timestamp);
+    struct tm tm;
+    present_localtime(&timestamp, &tm);
     tm.tm_mon += delta->data_.delta_months;
-    self->data_.timestamp_seconds = mktime(&tm);
+    self->data_.timestamp_seconds = present_mktime(&tm);
     assert(self->data_.timestamp_seconds != -1);
 }
 
@@ -474,9 +479,10 @@ Timestamp_subtract_month_delta(
     assert(delta->error == 0);
 
     time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    struct tm tm = *localtime(&timestamp);
+    struct tm tm;
+    present_localtime(&timestamp, &tm);
     tm.tm_mon -= delta->data_.delta_months;
-    self->data_.timestamp_seconds = mktime(&tm);
+    self->data_.timestamp_seconds = present_mktime(&tm);
     assert(self->data_.timestamp_seconds != -1);
 }
 

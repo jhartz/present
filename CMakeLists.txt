@@ -25,7 +25,7 @@ option (COMPILE_WITH_COVERAGE
     OFF
 )
 
-option (USE_CXX_AS_CC
+option (COMPILE_WITH_CXX_AS_CC
     "Use the C++ compiler to compile C files"
     OFF
 )
@@ -70,7 +70,7 @@ include_directories ("${PROJECT_BINARY_DIR}/include")
 include_directories ("${PROJECT_SOURCE_DIR}/include")
 
 # If we're compiling C with a C++ compiler, set that
-if (USE_CXX_AS_CC)
+if (COMPILE_WITH_CXX_AS_CC)
     set_source_files_properties(
         src/present-syscalls.c
         src/clock-time.c
@@ -82,7 +82,7 @@ if (USE_CXX_AS_CC)
 
         PROPERTIES LANGUAGE CXX
     )
-endif (USE_CXX_AS_CC)
+endif (COMPILE_WITH_CXX_AS_CC)
 
 # Compile the C library
 add_library (presentc SHARED
@@ -102,6 +102,13 @@ if (LIBRT_PATH)
         rt
     )
 endif (LIBRT_PATH)
+
+# Link pthread if necessary
+if (PRESENT_USE_PTHREAD)
+    target_link_libraries (presentc
+        pthread
+    )
+endif (PRESENT_USE_PTHREAD)
 
 # Install the C library
 install (

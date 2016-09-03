@@ -15,8 +15,9 @@
 #include "present/utils/utils.h"
 #include "present/impl/present-date-data.h"
 
-#include "impl-constants.h"
-#include "impl-utils.h"
+#include "present-constants.h"
+#include "present-syscalls.h"
+#include "present-utils.h"
 
 #include "present/clock-time.h"
 #include "present/day-delta.h"
@@ -41,7 +42,7 @@ last_week_of_year(int_year year) {
     tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET;
     tm.tm_mday = 1;
     tm.tm_isdst = -1;
-    assert(mktime(&tm) != -1);
+    assert(present_mktime(&tm) != -1);
 
     int_day_of_week day_of_week = tm.tm_wday;
     if (day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
@@ -75,7 +76,7 @@ check_date_data(struct PresentDateData * const data) {
     tm.tm_mon = (int)data->month - STRUCT_TM_MONTH_OFFSET;
     tm.tm_mday = (int)data->day;
     tm.tm_isdst = -1;
-    assert(mktime(&tm) != -1);
+    assert(present_mktime(&tm) != -1);
 
     data->year = (int_year)tm.tm_year + STRUCT_TM_YEAR_OFFSET;
     data->month = (int_month)tm.tm_mon + STRUCT_TM_MONTH_OFFSET;
@@ -179,7 +180,7 @@ Date_create_from_year_week_day(
     tm.tm_mday = 4; // 4th day of the month
     // tm_wday will be filled in
     tm.tm_isdst = -1;
-    assert(mktime(&tm) != -1);
+    assert(present_mktime(&tm) != -1);
 
     int_day_of_week jan_4_day_of_week = tm.tm_wday;
     if (jan_4_day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
