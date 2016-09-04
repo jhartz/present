@@ -35,6 +35,9 @@ option (PRESENT_USE_PTHREAD
     ON
 )
 
+###############################################################################
+## Setup
+
 set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
@@ -68,6 +71,22 @@ include_directories ("${PROJECT_BINARY_DIR}/include")
 
 # Add the header include files
 include_directories ("${PROJECT_SOURCE_DIR}/include")
+
+# Install the header files (shared by both the C and C++ libraries)
+install (
+    FILES
+        "${PROJECT_SOURCE_DIR}/include/present.h"
+        "${PROJECT_BINARY_DIR}/include/present-config.h"
+    DESTINATION include
+)
+install (
+    DIRECTORY
+        "${PROJECT_SOURCE_DIR}/include/present"
+    DESTINATION include
+)
+
+###############################################################################
+## libpresentc (Present C library)
 
 # If we're compiling C with a C++ compiler, set that
 if (COMPILE_WITH_CXX_AS_CC)
@@ -116,20 +135,9 @@ install (
     DESTINATION lib
 )
 
-# Install the header files (shared by both the C and C++ libraries)
-install (
-    FILES
-        "${PROJECT_SOURCE_DIR}/include/present.h"
-        "${PROJECT_BINARY_DIR}/include/present-config.h"
-    DESTINATION include
-)
-install (
-    DIRECTORY
-        "${PROJECT_SOURCE_DIR}/include/present"
-    DESTINATION include
-)
+###############################################################################
+## libpresent (Present C++ library), REPL, unit tests
 
-# Alrighty, let's get compiling!
 if (COMPILE_PRESENTCPP)
     # Compile the C++ library
     add_library (present SHARED
@@ -187,7 +195,9 @@ if (COMPILE_PRESENTCPP)
     endif (COMPILE_TESTS)
 endif (COMPILE_PRESENTCPP)
 
-# Add documentation generation (Doxygen)
+###############################################################################
+## Documentation generation (Doxygen)
+
 find_package(Doxygen)
 if (DOXYGEN_FOUND)
     configure_file (
@@ -202,7 +212,9 @@ if (DOXYGEN_FOUND)
     )
 endif (DOXYGEN_FOUND)
 
-# Add support for installing as a package
+###############################################################################
+## Support for installing as a package
+
 include (InstallRequiredSystemLibraries)
 set (CPACK_RESOURCE_FILE_LICENSE
     "${PROJECT_SOURCE_DIR}/LICENSE"
