@@ -51,15 +51,17 @@
 #else
 
 #define CONSTRUCTOR_HEAD(_ClassName)                    \
-    struct _ClassName internal_return_value;            \
-    memset((void *)&internal_return_value, 0,           \
-            sizeof(struct _ClassName));
+    struct _ClassName internal_return_value;
 
 #define CONSTRUCTOR_RETURN(_ClassName, _Data)           \
+    memset((void *)&internal_return_value, 0,           \
+            sizeof(struct _ClassName));                 \
     internal_return_value.data_ = _Data;                \
     return internal_return_value;
 
 #define CONSTRUCTOR_ERROR_RETURN(_ClassName, _Error)    \
+    memset((void *)&internal_return_value, 0,           \
+            sizeof(struct _ClassName));                 \
     internal_return_value.error =                       \
         _ClassName ## _ERROR_ ## _Error;                \
     return internal_return_value;
