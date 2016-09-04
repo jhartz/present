@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <assert.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-day-delta-data.h"
@@ -51,23 +53,39 @@ void DayDelta::negate() {
     DayDelta_negate(this);
 }
 
+DayDelta DayDelta::operator-() const {
+    assert(this->error == 0);
+
+    DayDelta copy(*this);
+    copy.negate();
+    return copy;
+}
+
 DayDelta & DayDelta::operator++() {
+    assert(this->error == 0);
+
     this->data_.delta_days += 1;
     return *this;
 }
 
 DayDelta DayDelta::operator++(int) {
+    assert(this->error == 0);
+
     DayDelta copy(*this);
     operator++();
     return copy;
 }
 
 DayDelta & DayDelta::operator--() {
+    assert(this->error == 0);
+
     this->data_.delta_days -= 1;
     return *this;
 }
 
 DayDelta DayDelta::operator--(int) {
+    assert(this->error == 0);
+
     DayDelta copy(*this);
     operator--();
     return copy;

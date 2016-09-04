@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <assert.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-month-delta-data.h"
@@ -45,23 +47,39 @@ void MonthDelta::negate() {
     MonthDelta_negate(this);
 }
 
+MonthDelta MonthDelta::operator-() const {
+    assert(this->error == 0);
+
+    MonthDelta copy(*this);
+    copy.negate();
+    return copy;
+}
+
 MonthDelta & MonthDelta::operator++() {
+    assert(this->error == 0);
+
     this->data_.delta_months += 1;
     return *this;
 }
 
 MonthDelta MonthDelta::operator++(int) {
+    assert(this->error == 0);
+
     MonthDelta copy(*this);
     operator++();
     return copy;
 }
 
 MonthDelta & MonthDelta::operator--() {
+    assert(this->error == 0);
+
     this->data_.delta_months -= 1;
     return *this;
 }
 
 MonthDelta MonthDelta::operator--(int) {
+    assert(this->error == 0);
+
     MonthDelta copy(*this);
     operator--();
     return copy;

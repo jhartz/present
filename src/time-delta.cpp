@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <assert.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-time-delta-data.h"
@@ -132,9 +134,11 @@ void TimeDelta::negate() {
 }
 
 TimeDelta TimeDelta::operator-() const {
-    TimeDelta other(*this);
-    other.negate();
-    return other;
+    assert(this->error == 0);
+
+    TimeDelta copy(*this);
+    copy.negate();
+    return copy;
 }
 
 TimeDelta & TimeDelta::operator*=(const int & scaleFactor) {
