@@ -2,7 +2,7 @@ var searchData=
 [
   ['time_2ddelta_2eh',['time-delta.h',['../time-delta_8h.html',1,'']]],
   ['time_5fsince_5fmidnight',['time_since_midnight',['../structClockTime.html#a9c6423703cb0026435fb6e5b2d261d54',1,'ClockTime']]],
-  ['timedelta',['TimeDelta',['../structTimeDelta.html',1,'TimeDelta'],['../structTimeDelta.html#a57ef1bc875d370aaaf8ce7c4aba1cd75',1,'TimeDelta::TimeDelta()']]],
+  ['timedelta',['TimeDelta',['../structTimeDelta.html',1,'']]],
   ['timedelta_5fadd_5ftime_5fdelta',['TimeDelta_add_time_delta',['../time-delta_8h.html#a7b8c837c0a4c63f4a214ffca0e8c9592',1,'time-delta.h']]],
   ['timedelta_5fdivide_5fby',['TimeDelta_divide_by',['../time-delta_8h.html#a5c6754df68d1166d92e15c48885e861e',1,'time-delta.h']]],
   ['timedelta_5fdivide_5fby_5fdecimal',['TimeDelta_divide_by_decimal',['../time-delta_8h.html#a31fffdb820891d79283aca56a3aeb853',1,'time-delta.h']]],

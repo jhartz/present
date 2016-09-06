@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info.cleaned - present/src/clock-time.c</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">present/src</a> - clock-time.c<span style="font-size: 80%;"> (source / <a href="clock-time.c.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">92</td>
+            <td class="headerCovTableEntry">92</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2016-09-06</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">68</td>
+            <td class="headerCovTableEntry">108</td>
+            <td class="headerCovTableEntryLo">63.0 %</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : /*</a>
+<span class="lineNum">       2 </span>                :            :  * Present - Date/Time Library
+<span class="lineNum">       3 </span>                :            :  *
+<span class="lineNum">       4 </span>                :            :  * Implementation of the ClockTime methods
+<span class="lineNum">       5 </span>                :            :  *
+<span class="lineNum">       6 </span>                :            :  * Licensed under the MIT License.
+<span class="lineNum">       7 </span>                :            :  * For details, see LICENSE.
+<span class="lineNum">       8 </span>                :            :  */
+<span class="lineNum">       9 </span>                :            : 
+<span class="lineNum">      10 </span>                :            : #include &lt;assert.h&gt;
+<span class="lineNum">      11 </span>                :            : #include &lt;math.h&gt;
+<span class="lineNum">      12 </span>                :            : #include &lt;stddef.h&gt;
+<span class="lineNum">      13 </span>                :            : 
+<span class="lineNum">      14 </span>                :            : #include &quot;present/utils/types.h&quot;
+<span class="lineNum">      15 </span>                :            : #include &quot;present/utils/utils.h&quot;
+<span class="lineNum">      16 </span>                :            : #include &quot;present/impl/present-clock-time-data.h&quot;
+<span class="lineNum">      17 </span>                :            : 
+<span class="lineNum">      18 </span>                :            : #include &quot;present-constants.h&quot;
+<span class="lineNum">      19 </span>                :            : #include &quot;present-syscalls.h&quot;
+<span class="lineNum">      20 </span>                :            : #include &quot;present-utils.h&quot;
+<span class="lineNum">      21 </span>                :            : 
+<span class="lineNum">      22 </span>                :            : #include &quot;present/time-delta.h&quot;
+<span class="lineNum">      23 </span>                :            : 
+<span class="lineNum">      24 </span>                :            : #include &quot;present/clock-time.h&quot;
+<span class="lineNum">      25 </span>                :            : 
+<span class="lineNum">      26 </span>                :            : /**
+<span class="lineNum">      27 </span>                :            :  * Create a new ClockTime instance based on its data parameters.
+<a name="28"><span class="lineNum">      28 </span>                :            :  */</a>
+<span class="lineNum">      29 </span>                :            : static struct ClockTime
+<span class="lineNum">      30 </span>                :<span class="lineCov">         54 : new_clock_time(</span>
+<span class="lineNum">      31 </span>                :            :         int_hour hour,
+<span class="lineNum">      32 </span>                :            :         int_minute minute,
+<span class="lineNum">      33 </span>                :            :         int_second second,
+<span class="lineNum">      34 </span>                :            :         int_nanosecond nanosecond) {
+<span class="lineNum">      35 </span>                :            : 
+<span class="lineNum">      36 </span>                :<span class="lineCov">         54 :     CONSTRUCTOR_HEAD(ClockTime);</span>
+<span class="lineNum">      37 </span>                :            : 
+<span class="lineNum">      38 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 53 times"> + </span>]:<span class="lineCov">         54 :     if (hour == 24) hour = 0;</span>
+<span class="lineNum">      39 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 52 times"> + </span>]:<span class="lineCov">         54 :     if (hour &lt; 0 || hour &gt; 24) {</span>
+<span class="lineNum">      40 </span>                :<span class="lineCov">          2 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, HOUR_OUT_OF_RANGE);</span>
+<span class="lineNum">      41 </span>                :            :     }
+<span class="lineNum">      42 </span>                :            : 
+<span class="lineNum">      43 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         52 :     if (minute &lt; 0 || minute &gt;= 60) {</span>
+<span class="lineNum">      44 </span>                :<span class="lineCov">          2 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, MINUTE_OUT_OF_RANGE);</span>
+<span class="lineNum">      45 </span>                :            :     }
+<span class="lineNum">      46 </span>                :            : 
+<span class="lineNum">      47 </span>                :            :     /* 61 because of leap seconds :( */
+<span class="lineNum">      48 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         50 :     if (second &lt; 0 || second &gt;= 61) {</span>
+<span class="lineNum">      49 </span>                :<span class="lineCov">          4 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, SECOND_OUT_OF_RANGE);</span>
+<span class="lineNum">      50 </span>                :            :     }
+<span class="lineNum">      51 </span>                :            : 
+<span class="lineNum">      52 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 44 times"> + </span>]:<span class="lineCov">         46 :     if (nanosecond &lt; 0 || nanosecond &gt;= NANOSECONDS_IN_SECOND) {</span>
+<span class="lineNum">      53 </span>                :<span class="lineCov">          2 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, NANOSECOND_OUT_OF_RANGE);</span>
+<span class="lineNum">      54 </span>                :            :     }
+<span class="lineNum">      55 </span>                :            : 
+<span class="lineNum">      56 </span>                :            :     struct PresentClockTimeData data;
+<span class="lineNum">      57 </span>                :<span class="lineCov">         44 :     data.seconds = second +</span>
+<span class="lineNum">      58 </span>                :<span class="lineCov">         88 :         minute * SECONDS_IN_MINUTE +</span>
+<span class="lineNum">      59 </span>                :<span class="lineCov">         44 :         hour * SECONDS_IN_HOUR;</span>
+<span class="lineNum">      60 </span>                :<span class="lineCov">         44 :     data.nanoseconds = nanosecond;</span>
+<span class="lineNum">      61 </span>                :<span class="lineCov">         54 :     CONSTRUCTOR_RETURN(ClockTime, data);</span>
+<span class="lineNum">      62 </span>                :            : }
+<span class="lineNum">      63 </span>                :            : 
+<span class="lineNum">      64 </span>                :            : /**
+<span class="lineNum">      65 </span>                :            :  * Check the bounds on data.{nanosecond,second} and modify or wrap around if
+<a name="66"><span class="lineNum">      66 </span>                :            :  * necessary.</a>
+<span class="lineNum">      67 </span>                :            :  */
+<span class="lineNum">      68 </span>                :<span class="lineCov">          8 : void check_clock_time(struct ClockTime * const self) {</span>
+<span class="lineNum">      69 </span>                :            : #define d self-&gt;data_
+<span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          8 :     if (d.nanoseconds &gt;= NANOSECONDS_IN_SECOND) {</span>
+<span class="lineNum">      71 </span>                :<span class="lineCov">          1 :         d.seconds += d.nanoseconds / NANOSECONDS_IN_SECOND;</span>
+<span class="lineNum">      72 </span>                :<span class="lineCov">          1 :         d.nanoseconds %= NANOSECONDS_IN_SECOND;</span>
+<span class="lineNum">      73 </span>                :            :     }
+<span class="lineNum">      74 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          9 :     while (d.nanoseconds &lt; 0) {</span>
+<span class="lineNum">      75 </span>                :<span class="lineCov">          1 :         d.seconds -= 1;</span>
+<span class="lineNum">      76 </span>                :<span class="lineCov">          1 :         d.nanoseconds += NANOSECONDS_IN_SECOND;</span>
+<span class="lineNum">      77 </span>                :            :     }
+<span class="lineNum">      78 </span>                :            : 
+<span class="lineNum">      79 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          8 :     if (d.seconds &gt;= SECONDS_IN_DAY) {</span>
+<span class="lineNum">      80 </span>                :<span class="lineCov">          1 :         d.seconds %= SECONDS_IN_DAY;</span>
+<span class="lineNum">      81 </span>                :            :     }
+<span class="lineNum">      82 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          9 :     while (d.seconds &lt; 0) {</span>
+<span class="lineNum">      83 </span>                :<span class="lineCov">          1 :         d.seconds += SECONDS_IN_DAY;</span>
+<span class="lineNum">      84 </span>                :            :     }
+<span class="lineNum">      85 </span>                :            : #undef d
+<span class="lineNum">      86 </span>                :<span class="lineCov">          8 : }</span>
+<a name="87"><span class="lineNum">      87 </span>                :            : </a>
+<span class="lineNum">      88 </span>                :            : struct ClockTime
+<span class="lineNum">      89 </span>                :<span class="lineCov">          7 : ClockTime_create_from_hour(int_hour hour) {</span>
+<span class="lineNum">      90 </span>                :<span class="lineCov">          7 :     return new_clock_time(hour, 0, 0, 0);</span>
+<span class="lineNum">      91 </span>                :            : }
+<a name="92"><span class="lineNum">      92 </span>                :            : </a>
+<span class="lineNum">      93 </span>                :            : struct ClockTime
+<span class="lineNum">      94 </span>                :<span class="lineCov">          6 : ClockTime_create_from_hour_minute(int_hour hour, int_minute minute) {</span>
+<span class="lineNum">      95 </span>                :<span class="lineCov">          6 :     return new_clock_time(hour, minute, 0, 0);</span>
+<span class="lineNum">      96 </span>                :            : }
+<a name="97"><span class="lineNum">      97 </span>                :            : </a>
+<span class="lineNum">      98 </span>                :            : struct ClockTime
+<span class="lineNum">      99 </span>                :<span class="lineCov">          8 : ClockTime_create_from_hour_minute_second(</span>
+<span class="lineNum">     100 </span>                :            :         int_hour hour,
+<span class="lineNum">     101 </span>                :            :         int_minute minute,
+<span class="lineNum">     102 </span>                :            :         int_second second) {
+<span class="lineNum">     103 </span>                :<span class="lineCov">          8 :     return new_clock_time(hour, minute, second, 0);</span>
+<span class="lineNum">     104 </span>                :            : }
+<a name="105"><span class="lineNum">     105 </span>                :            : </a>
+<span class="lineNum">     106 </span>                :            : struct ClockTime
+<span class="lineNum">     107 </span>                :<span class="lineCov">         21 : ClockTime_create_from_hour_minute_second_nanosecond(</span>
+<span class="lineNum">     108 </span>                :            :         int_hour hour,
+<span class="lineNum">     109 </span>                :            :         int_minute minute,
+<span class="lineNum">     110 </span>                :            :         int_second second,
+<span class="lineNum">     111 </span>                :            :         int_nanosecond nanosecond) {
+<span class="lineNum">     112 </span>                :<span class="lineCov">         21 :     return new_clock_time(hour, minute, second, nanosecond);</span>
+<span class="lineNum">     113 </span>                :            : }
+<a name="114"><span class="lineNum">     114 </span>                :            : </a>
+<span class="lineNum">     115 </span>                :            : struct ClockTime
+<span class="lineNum">     116 </span>                :<span class="lineCov">          6 : ClockTime_create_with_decimal_seconds(</span>
+<span class="lineNum">     117 </span>                :            :         int_hour hour,
+<span class="lineNum">     118 </span>                :            :         int_minute minute,
+<span class="lineNum">     119 </span>                :            :         double second) {
+<span class="lineNum">     120 </span>                :<span class="lineCov">          6 :     int_second secondInt = (int_second) second;</span>
+<span class="lineNum">     121 </span>                :<span class="lineCov">          6 :     second = (second - secondInt) * (double) NANOSECONDS_IN_SECOND;</span>
+<span class="lineNum">     122 </span>                :<span class="lineCov">          6 :     return new_clock_time(hour, minute, secondInt,</span>
+<span class="lineNum">     123 </span>                :<span class="lineCov">          6 :             (int_nanosecond) round(second));</span>
+<span class="lineNum">     124 </span>                :            : }
+<a name="125"><span class="lineNum">     125 </span>                :            : </a>
+<span class="lineNum">     126 </span>                :            : struct ClockTime
+<span class="lineNum">     127 </span>                :<span class="lineCov">          1 : ClockTime_midnight() {</span>
+<span class="lineNum">     128 </span>                :<span class="lineCov">          1 :     return new_clock_time(0, 0, 0, 0);</span>
+<span class="lineNum">     129 </span>                :            : }
+<a name="130"><span class="lineNum">     130 </span>                :            : </a>
+<span class="lineNum">     131 </span>                :            : struct ClockTime
+<span class="lineNum">     132 </span>                :<span class="lineCov">          5 : ClockTime_noon() {</span>
+<span class="lineNum">     133 </span>                :<span class="lineCov">          5 :     return new_clock_time(12, 0, 0, 0);</span>
+<span class="lineNum">     134 </span>                :            : }
+<a name="135"><span class="lineNum">     135 </span>                :            : </a>
+<span class="lineNum">     136 </span>                :            : int_hour
+<span class="lineNum">     137 </span>                :<span class="lineCov">          2 : ClockTime_get_hour(const struct ClockTime * const self) {</span>
+<span class="lineNum">     138 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     139 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     140 </span>                :            : 
+<span class="lineNum">     141 </span>                :<span class="lineCov">          2 :     return self-&gt;data_.seconds / SECONDS_IN_HOUR;</span>
+<span class="lineNum">     142 </span>                :            : }
+<a name="143"><span class="lineNum">     143 </span>                :            : </a>
+<span class="lineNum">     144 </span>                :            : int_minute
+<span class="lineNum">     145 </span>                :<span class="lineCov">          2 : ClockTime_get_minute(const struct ClockTime * const self) {</span>
+<span class="lineNum">     146 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     147 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     148 </span>                :            : 
+<span class="lineNum">     149 </span>                :<span class="lineCov">          2 :     return self-&gt;data_.seconds % SECONDS_IN_HOUR / SECONDS_IN_MINUTE;</span>
+<span class="lineNum">     150 </span>                :            : }
+<a name="151"><span class="lineNum">     151 </span>                :            : </a>
+<span class="lineNum">     152 </span>                :            : int_second
+<span class="lineNum">     153 </span>                :<span class="lineCov">          2 : ClockTime_get_second(const struct ClockTime * const self) {</span>
+<span class="lineNum">     154 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     155 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     156 </span>                :            : 
+<span class="lineNum">     157 </span>                :<span class="lineCov">          2 :     return self-&gt;data_.seconds % SECONDS_IN_MINUTE;</span>
+<span class="lineNum">     158 </span>                :            : }
+<a name="159"><span class="lineNum">     159 </span>                :            : </a>
+<span class="lineNum">     160 </span>                :            : int_nanosecond
+<span class="lineNum">     161 </span>                :<span class="lineCov">          2 : ClockTime_get_nanosecond(const struct ClockTime * const self) {</span>
+<span class="lineNum">     162 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     163 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     164 </span>                :            : 
+<span class="lineNum">     165 </span>                :<span class="lineCov">          2 :     return self-&gt;data_.nanoseconds;</span>
+<span class="lineNum">     166 </span>                :            : }
+<a name="167"><span class="lineNum">     167 </span>                :            : </a>
+<span class="lineNum">     168 </span>                :            : double
+<span class="lineNum">     169 </span>                :<span class="lineCov">          2 : ClockTime_get_second_decimal(const struct ClockTime * const self) {</span>
+<span class="lineNum">     170 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     171 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     172 </span>                :            : 
+<span class="lineNum">     173 </span>                :<span class="lineCov">          2 :     return (self-&gt;data_.seconds % SECONDS_IN_MINUTE) +</span>
+<span class="lineNum">     174 </span>                :<span class="lineCov">          2 :            ((double)self-&gt;data_.nanoseconds / (double)NANOSECONDS_IN_SECOND);</span>
+<span class="lineNum">     175 </span>                :            : }
+<a name="176"><span class="lineNum">     176 </span>                :            : </a>
+<span class="lineNum">     177 </span>                :            : struct TimeDelta
+<span class="lineNum">     178 </span>                :<span class="lineCov">         11 : ClockTime_time_since_midnight(const struct ClockTime * const self) {</span>
+<span class="lineNum">     179 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         11 :     assert(self != NULL);</span>
+<span class="lineNum">     180 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         11 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     181 </span>                :            : 
+<span class="lineNum">     182 </span>                :<span class="lineCov">         11 :     struct TimeDelta delta = TimeDelta_from_seconds(</span>
+<span class="lineNum">     183 </span>                :            :             self-&gt;data_.seconds);
+<span class="lineNum">     184 </span>                :<span class="lineCov">         11 :     struct TimeDelta nsDelta = TimeDelta_from_nanoseconds(</span>
+<span class="lineNum">     185 </span>                :            :             self-&gt;data_.nanoseconds);
+<span class="lineNum">     186 </span>                :<span class="lineCov">         11 :     TimeDelta_add_time_delta(&amp;delta, &amp;nsDelta);</span>
+<span class="lineNum">     187 </span>                :<span class="lineCov">         11 :     return delta;</span>
+<span class="lineNum">     188 </span>                :            : }
+<a name="189"><span class="lineNum">     189 </span>                :            : </a>
+<span class="lineNum">     190 </span>                :            : void
+<span class="lineNum">     191 </span>                :<span class="lineCov">          4 : ClockTime_add_time_delta(</span>
+<span class="lineNum">     192 </span>                :            :         struct ClockTime * const self,
+<span class="lineNum">     193 </span>                :            :         const struct TimeDelta * const delta) {
+<span class="lineNum">     194 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(self != NULL);</span>
+<span class="lineNum">     195 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     196 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(delta != NULL);</span>
+<span class="lineNum">     197 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(delta-&gt;error == 0);</span>
+<span class="lineNum">     198 </span>                :            : 
+<span class="lineNum">     199 </span>                :<span class="lineCov">          4 :     self-&gt;data_.seconds += delta-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     200 </span>                :<span class="lineCov">          4 :     self-&gt;data_.nanoseconds += delta-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     201 </span>                :            : 
+<span class="lineNum">     202 </span>                :<span class="lineCov">          4 :     check_clock_time(self);</span>
+<span class="lineNum">     203 </span>                :<span class="lineCov">          4 : }</span>
+<a name="204"><span class="lineNum">     204 </span>                :            : </a>
+<span class="lineNum">     205 </span>                :            : void
+<span class="lineNum">     206 </span>                :<span class="lineCov">          4 : ClockTime_subtract_time_delta(</span>
+<span class="lineNum">     207 </span>                :            :         struct ClockTime * const self,
+<span class="lineNum">     208 </span>                :            :         const struct TimeDelta * const delta) {
+<span class="lineNum">     209 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(self != NULL);</span>
+<span class="lineNum">     210 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     211 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(delta != NULL);</span>
+<span class="lineNum">     212 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(delta-&gt;error == 0);</span>
+<span class="lineNum">     213 </span>                :            : 
+<span class="lineNum">     214 </span>                :<span class="lineCov">          4 :     self-&gt;data_.seconds -= delta-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     215 </span>                :<span class="lineCov">          4 :     self-&gt;data_.nanoseconds -= delta-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     216 </span>                :            : 
+<span class="lineNum">     217 </span>                :<span class="lineCov">          4 :     check_clock_time(self);</span>
+<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">          4 : }</span></a>
+<span class="lineNum">     219 </span>                :            : 
+<span class="lineNum">     220 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 3 was not taken"> - </span><span class="branchCov" title="Branch 4 was taken 5 times"> + </span>]:<span class="lineCov">         20 : STRUCT_COMPARISON_OPERATORS(ClockTime, seconds, nanoseconds)</span>
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 5 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 12 was taken 3 times"> + </span><span class="branchCov" title="Branch 13 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchCov" title="Branch 15 was taken 3 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 3 times"> + </span>][<span class="branchNoCov" title="Branch 20 was not taken"> - </span><span class="branchCov" title="Branch 21 was taken 3 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 23 was not taken"> - </span><span class="branchCov" title="Branch 24 was taken 3 times"> + </span>][<span class="branchCov" title="Branch 26 was taken 1 time"> + </span><span class="branchCov" title="Branch 27 was taken 2 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 28 was not taken"> - </span><span class="branchCov" title="Branch 29 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 31 was not taken"> - </span><span class="branchCov" title="Branch 32 was taken 5 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 34 was not taken"> - </span><span class="branchCov" title="Branch 35 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 37 was not taken"> - </span><span class="branchCov" title="Branch 38 was taken 5 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 40 was taken 3 times"> + </span><span class="branchCov" title="Branch 41 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 42 was not taken"> - </span><span class="branchCov" title="Branch 43 was taken 3 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 45 was not taken"> - </span><span class="branchCov" title="Branch 46 was taken 3 times"> + </span>][<span class="branchNoCov" title="Branch 48 was not taken"> - </span><span class="branchCov" title="Branch 49 was taken 3 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 51 was not taken"> - </span><span class="branchCov" title="Branch 52 was taken 3 times"> + </span>][<span class="branchCov" title="Branch 54 was taken 1 time"> + </span><span class="branchCov" title="Branch 55 was taken 2 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 56 was not taken"> - </span><span class="branchCov" title="Branch 57 was taken 4 times"> + </span>][<span class="branchNoCov" title="Branch 59 was not taken"> - </span><span class="branchCov" title="Branch 60 was taken 4 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 62 was not taken"> - </span><span class="branchCov" title="Branch 63 was taken 4 times"> + </span>][<span class="branchNoCov" title="Branch 65 was not taken"> - </span><span class="branchCov" title="Branch 66 was taken 4 times"> + </span>]
+<span class="lineNum">         </span>        [<span class="branchCov" title="Branch 68 was taken 2 times"> + </span><span class="branchCov" title="Branch 69 was taken 2 times"> + </span>]
+<span class="lineNum">     221 </span>                :            : 
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.9</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

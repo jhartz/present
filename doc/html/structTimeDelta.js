@@ -1,6 +1,5 @@
 var structTimeDelta =
 [
-    [ "TimeDelta", "structTimeDelta.html#a57ef1bc875d370aaaf8ce7c4aba1cd75", null ],
     [ "from_nanoseconds", "structTimeDelta.html#abc1b517c2156b2d9627fd07d42aecb2f", null ],
     [ "from_microseconds", "structTimeDelta.html#a32f3fa21ba37d81507383d001f3b704b", null ],
     [ "from_milliseconds", "structTimeDelta.html#a01e0919f444379030aa37559fa13542c", null ],
