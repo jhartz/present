@@ -42,19 +42,23 @@ set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 
+# Set up C/C++ standard
+#set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -std=c99")
+#set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 # Set up compiler warnings
 include(EnableExtraCompilerWarnings)
 globally_enable_extra_compiler_warnings()
 if (CMAKE_COMPILER_IS_GNUCXX)
     # -Wtype-limits is annoying, and -Wno-parentheses blows up for each unit test
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-type-limits -Wno-parentheses")
     set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -Wno-type-limits -Wno-parentheses")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-type-limits -Wno-parentheses")
 endif (CMAKE_COMPILER_IS_GNUCXX)
 
 # Set up coverage if necessary
 if (COMPILE_WITH_COVERAGE)
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
-    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+    SET(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -O0 -fprofile-arcs -ftest-coverage")
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -fprofile-arcs -ftest-coverage")
     include(CodeCoverage)
     setup_target_for_coverage(present_coverage present-test coverage)
 endif (COMPILE_WITH_COVERAGE)
