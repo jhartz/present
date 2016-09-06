@@ -162,13 +162,13 @@
 <span class="lineNum">      91 </span>                :<span class="lineNoCov">          0 :     return copy;</span>
 <a name="92"><span class="lineNum">      92 </span>                :            : }</a>
 <span class="lineNum">      93 </span>                :            : 
-<span class="lineNum">      94 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator*=(const int &amp; scaleFactor) {</span>
-<span class="lineNum">      95 </span>                :<span class="lineNoCov">          0 :     DayDelta_multiply_by(this, scaleFactor);</span>
+<span class="lineNum">      94 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator*=(const int &amp; scale_factor) {</span>
+<span class="lineNum">      95 </span>                :<span class="lineNoCov">          0 :     DayDelta_multiply_by(this, scale_factor);</span>
 <span class="lineNum">      96 </span>                :<span class="lineNoCov">          0 :     return *this;</span>
 <a name="97"><span class="lineNum">      97 </span>                :            : }</a>
 <span class="lineNum">      98 </span>                :            : 
-<span class="lineNum">      99 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator/=(const int &amp; scaleFactor) {</span>
-<span class="lineNum">     100 </span>                :<span class="lineNoCov">          0 :     DayDelta_divide_by(this, scaleFactor);</span>
+<span class="lineNum">      99 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator/=(const int &amp; scale_factor) {</span>
+<span class="lineNum">     100 </span>                :<span class="lineNoCov">          0 :     DayDelta_divide_by(this, scale_factor);</span>
 <span class="lineNum">     101 </span>                :<span class="lineNoCov">          0 :     return *this;</span>
 <a name="102"><span class="lineNum">     102 </span>                :            : }</a>
 <span class="lineNum">     103 </span>                :            : 
@@ -180,13 +180,13 @@
 <span class="lineNum">     109 </span>                :<span class="lineNoCov">          0 :     return (DayDelta(lhs) /= rhs);</span>
 <a name="110"><span class="lineNum">     110 </span>                :            : }</a>
 <span class="lineNum">     111 </span>                :            : 
-<span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator+=(const DayDelta &amp; dayDeltaToAdd) {</span>
-<span class="lineNum">     113 </span>                :<span class="lineNoCov">          0 :     DayDelta_add_day_delta(this, &amp;dayDeltaToAdd);</span>
+<span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator+=(const DayDelta &amp; other) {</span>
+<span class="lineNum">     113 </span>                :<span class="lineNoCov">          0 :     DayDelta_add_day_delta(this, &amp;other);</span>
 <span class="lineNum">     114 </span>                :<span class="lineNoCov">          0 :     return *this;</span>
 <a name="115"><span class="lineNum">     115 </span>                :            : }</a>
 <span class="lineNum">     116 </span>                :            : 
-<span class="lineNum">     117 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator-=(const DayDelta &amp; dayDeltaToSubtract) {</span>
-<span class="lineNum">     118 </span>                :<span class="lineNoCov">          0 :     DayDelta_subtract_day_delta(this, &amp;dayDeltaToSubtract);</span>
+<span class="lineNum">     117 </span>                :<span class="lineNoCov">          0 : DayDelta &amp; DayDelta::operator-=(const DayDelta &amp; other) {</span>
+<span class="lineNum">     118 </span>                :<span class="lineNoCov">          0 :     DayDelta_subtract_day_delta(this, &amp;other);</span>
 <span class="lineNum">     119 </span>                :<span class="lineNoCov">          0 :     return *this;</span>
 <a name="120"><span class="lineNum">     120 </span>                :            : }</a>
 <span class="lineNum">     121 </span>                :            : 

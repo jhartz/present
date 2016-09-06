@@ -161,28 +161,30 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is negative.  <a href="#a8b0be83d6cd6ab623f05ea0eb5d560c7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a906aa66074e2d9ef675ea2d2a1d25084">TimeDelta_negate</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Negate a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>, making it negative if it was positive or positive if it was negative.  <a href="#a906aa66074e2d9ef675ea2d2a1d25084"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#ab70f5dfbbe9363021f533a4b1e3bf2be">TimeDelta_multiply_by</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const int scaleFactor)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by multiplying it by an integer scale factor.  <a href="#ab70f5dfbbe9363021f533a4b1e3bf2be"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#aa1e03be2346f1441127a828a3fe02568">TimeDelta_multiply_by_decimal</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const double scaleFactor)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by multiplying it by a floating point scale factor.  <a href="#aa1e03be2346f1441127a828a3fe02568"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a5c6754df68d1166d92e15c48885e861e">TimeDelta_divide_by</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const int scaleFactor)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by dividing it by an integer scale factor.  <a href="#a5c6754df68d1166d92e15c48885e861e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a31fffdb820891d79283aca56a3aeb853">TimeDelta_divide_by_decimal</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const double scaleFactor)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by dividing it by a floating point scale factor.  <a href="#a31fffdb820891d79283aca56a3aeb853"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a7b8c837c0a4c63f4a214ffca0e8c9592">TimeDelta_add_time_delta</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const timeDeltaToAdd)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> to a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a7b8c837c0a4c63f4a214ffca0e8c9592"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a24fafdc5f4cef060d1d2ad269952f82a">TimeDelta_subtract_time_delta</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const timeDeltaToSubtract)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a24fafdc5f4cef060d1d2ad269952f82a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#ae43460348083663634bd5bef6c5ab885">TimeDelta_equal</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances are equal.  <a href="#ae43460348083663634bd5bef6c5ab885"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a9494ddb1994d09d928a17bc5d8f12a5a">TimeDelta_less_than</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a9494ddb1994d09d928a17bc5d8f12a5a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a97644eac25e86eb3b1895cb5a668c25b">TimeDelta_less_than_or_equal</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a97644eac25e86eb3b1895cb5a668c25b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a7ef30d66e1eeea47ea7000775614020e">TimeDelta_greater_than</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a7ef30d66e1eeea47ea7000775614020e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#aca2a28b813b68c66a3754ecf311350b8">TimeDelta_greater_than_or_equal</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#aca2a28b813b68c66a3754ecf311350b8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a772db85da3c67f149da8877ac8d04fad">TimeDelta_multiply_by</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const int scale_factor)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by multiplying it by an integer scale factor.  <a href="#a772db85da3c67f149da8877ac8d04fad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a561fba60f8ba4648928fec8e18069ebb">TimeDelta_multiply_by_decimal</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const double scale_factor)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by multiplying it by a floating point scale factor.  <a href="#a561fba60f8ba4648928fec8e18069ebb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#abab39f5630f78511f708765da0be8632">TimeDelta_divide_by</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const int scale_factor)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by dividing it by an integer scale factor.  <a href="#abab39f5630f78511f708765da0be8632"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#acca21ee20d4addbd3925461259f4f12a">TimeDelta_divide_by_decimal</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const double scale_factor)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> by dividing it by a floating point scale factor.  <a href="#acca21ee20d4addbd3925461259f4f12a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a33057bdcfab84bd7d6b2e54f2e244bc4">TimeDelta_add_time_delta</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> to a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a33057bdcfab84bd7d6b2e54f2e244bc4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a330935197046fb801abc7912aa909508">TimeDelta_subtract_time_delta</a> (struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const self, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> from a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a330935197046fb801abc7912aa909508"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a1864d69bcd1b4cf445555bc72c21a653">TimeDelta_compare</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const lhs, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances.  <a href="#a1864d69bcd1b4cf445555bc72c21a653"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a7db38b37aac9487c278a42220c114e1f">TimeDelta_equal</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const lhs, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances are equal (lhs == rhs).  <a href="#a7db38b37aac9487c278a42220c114e1f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#af24c777c13189265da630889ece952e6">TimeDelta_less_than</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const lhs, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &lt; rhs).  <a href="#af24c777c13189265da630889ece952e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#ad7360904634ace2d35968776c5222d7a">TimeDelta_less_than_or_equal</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const lhs, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &lt;= rhs).  <a href="#ad7360904634ace2d35968776c5222d7a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#a80a01f3646dde93f81bad4b2c23fdadb">TimeDelta_greater_than</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const lhs, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &gt; rhs).  <a href="#a80a01f3646dde93f81bad4b2c23fdadb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time-delta_8h.html#acaed23a2a6076ecfcd0540c4865f3bc5">TimeDelta_greater_than_or_equal</a> (const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const lhs, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &gt;= rhs).  <a href="#acaed23a2a6076ecfcd0540c4865f3bc5"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="a6090105e9137c36754994cda35937b59"></a><!-- doxytag: member="time&#45;delta.h::PresentTimeDeltaError" ref="a6090105e9137c36754994cda35937b59" args="" -->
@@ -762,12 +764,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab70f5dfbbe9363021f533a4b1e3bf2be"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_multiply_by" ref="ab70f5dfbbe9363021f533a4b1e3bf2be" args="(struct TimeDelta *const self, const int scaleFactor)" -->
+<a class="anchor" id="a772db85da3c67f149da8877ac8d04fad"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_multiply_by" ref="a772db85da3c67f149da8877ac8d04fad" args="(struct TimeDelta *const self, const int scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="time-delta_8h.html#ab70f5dfbbe9363021f533a4b1e3bf2be">TimeDelta_multiply_by</a> </td>
+          <td class="memname">void <a class="el" href="time-delta_8h.html#a772db85da3c67f149da8877ac8d04fad">TimeDelta_multiply_by</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -776,7 +778,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -791,12 +793,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa1e03be2346f1441127a828a3fe02568"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_multiply_by_decimal" ref="aa1e03be2346f1441127a828a3fe02568" args="(struct TimeDelta *const self, const double scaleFactor)" -->
+<a class="anchor" id="a561fba60f8ba4648928fec8e18069ebb"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_multiply_by_decimal" ref="a561fba60f8ba4648928fec8e18069ebb" args="(struct TimeDelta *const self, const double scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="time-delta_8h.html#aa1e03be2346f1441127a828a3fe02568">TimeDelta_multiply_by_decimal</a> </td>
+          <td class="memname">void <a class="el" href="time-delta_8h.html#a561fba60f8ba4648928fec8e18069ebb">TimeDelta_multiply_by_decimal</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -805,7 +807,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -820,12 +822,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5c6754df68d1166d92e15c48885e861e"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_divide_by" ref="a5c6754df68d1166d92e15c48885e861e" args="(struct TimeDelta *const self, const int scaleFactor)" -->
+<a class="anchor" id="abab39f5630f78511f708765da0be8632"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_divide_by" ref="abab39f5630f78511f708765da0be8632" args="(struct TimeDelta *const self, const int scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="time-delta_8h.html#a5c6754df68d1166d92e15c48885e861e">TimeDelta_divide_by</a> </td>
+          <td class="memname">void <a class="el" href="time-delta_8h.html#abab39f5630f78511f708765da0be8632">TimeDelta_divide_by</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -834,7 +836,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -849,12 +851,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a31fffdb820891d79283aca56a3aeb853"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_divide_by_decimal" ref="a31fffdb820891d79283aca56a3aeb853" args="(struct TimeDelta *const self, const double scaleFactor)" -->
+<a class="anchor" id="acca21ee20d4addbd3925461259f4f12a"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_divide_by_decimal" ref="acca21ee20d4addbd3925461259f4f12a" args="(struct TimeDelta *const self, const double scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="time-delta_8h.html#a31fffdb820891d79283aca56a3aeb853">TimeDelta_divide_by_decimal</a> </td>
+          <td class="memname">void <a class="el" href="time-delta_8h.html#acca21ee20d4addbd3925461259f4f12a">TimeDelta_divide_by_decimal</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -863,7 +865,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>scaleFactor</em>&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -878,12 +880,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7b8c837c0a4c63f4a214ffca0e8c9592"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_add_time_delta" ref="a7b8c837c0a4c63f4a214ffca0e8c9592" args="(struct TimeDelta *const self, const struct TimeDelta *const timeDeltaToAdd)" -->
+<a class="anchor" id="a33057bdcfab84bd7d6b2e54f2e244bc4"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_add_time_delta" ref="a33057bdcfab84bd7d6b2e54f2e244bc4" args="(struct TimeDelta *const self, const struct TimeDelta *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="time-delta_8h.html#a7b8c837c0a4c63f4a214ffca0e8c9592">TimeDelta_add_time_delta</a> </td>
+          <td class="memname">void <a class="el" href="time-delta_8h.html#a33057bdcfab84bd7d6b2e54f2e244bc4">TimeDelta_add_time_delta</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -892,7 +894,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
-          <td class="paramname"><em>timeDeltaToAdd</em>&#160;</td>
+          <td class="paramname"><em>other</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -907,12 +909,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a24fafdc5f4cef060d1d2ad269952f82a"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_subtract_time_delta" ref="a24fafdc5f4cef060d1d2ad269952f82a" args="(struct TimeDelta *const self, const struct TimeDelta *const timeDeltaToSubtract)" -->
+<a class="anchor" id="a330935197046fb801abc7912aa909508"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_subtract_time_delta" ref="a330935197046fb801abc7912aa909508" args="(struct TimeDelta *const self, const struct TimeDelta *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="time-delta_8h.html#a24fafdc5f4cef060d1d2ad269952f82a">TimeDelta_subtract_time_delta</a> </td>
+          <td class="memname">void <a class="el" href="time-delta_8h.html#a330935197046fb801abc7912aa909508">TimeDelta_subtract_time_delta</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -921,7 +923,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
-          <td class="paramname"><em>timeDeltaToSubtract</em>&#160;</td>
+          <td class="paramname"><em>other</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -936,21 +938,21 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae43460348083663634bd5bef6c5ab885"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_equal" ref="ae43460348083663634bd5bef6c5ab885" args="(const struct TimeDelta *const, const struct TimeDelta *const)" -->
+<a class="anchor" id="a1864d69bcd1b4cf445555bc72c21a653"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_compare" ref="a1864d69bcd1b4cf445555bc72c21a653" args="(const struct TimeDelta *const lhs, const struct TimeDelta *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="time-delta_8h.html#ae43460348083663634bd5bef6c5ab885">TimeDelta_equal</a> </td>
+          <td class="memname">int <a class="el" href="time-delta_8h.html#a1864d69bcd1b4cf445555bc72c21a653">TimeDelta_compare</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -961,25 +963,26 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances are equal. </p>
+<p>Compare two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances. </p>
+<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
 
 </div>
 </div>
-<a class="anchor" id="a9494ddb1994d09d928a17bc5d8f12a5a"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_less_than" ref="a9494ddb1994d09d928a17bc5d8f12a5a" args="(const struct TimeDelta *const, const struct TimeDelta *const)" -->
+<a class="anchor" id="a7db38b37aac9487c278a42220c114e1f"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_equal" ref="a7db38b37aac9487c278a42220c114e1f" args="(const struct TimeDelta *const lhs, const struct TimeDelta *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="time-delta_8h.html#a9494ddb1994d09d928a17bc5d8f12a5a">TimeDelta_less_than</a> </td>
+          <td class="memname">bool <a class="el" href="time-delta_8h.html#a7db38b37aac9487c278a42220c114e1f">TimeDelta_equal</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -990,25 +993,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances are equal (lhs == rhs). </p>
 
 </div>
 </div>
-<a class="anchor" id="a97644eac25e86eb3b1895cb5a668c25b"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_less_than_or_equal" ref="a97644eac25e86eb3b1895cb5a668c25b" args="(const struct TimeDelta *const, const struct TimeDelta *const)" -->
+<a class="anchor" id="af24c777c13189265da630889ece952e6"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_less_than" ref="af24c777c13189265da630889ece952e6" args="(const struct TimeDelta *const lhs, const struct TimeDelta *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="time-delta_8h.html#a97644eac25e86eb3b1895cb5a668c25b">TimeDelta_less_than_or_equal</a> </td>
+          <td class="memname">bool <a class="el" href="time-delta_8h.html#af24c777c13189265da630889ece952e6">TimeDelta_less_than</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1019,25 +1022,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &lt; rhs). </p>
 
 </div>
 </div>
-<a class="anchor" id="a7ef30d66e1eeea47ea7000775614020e"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_greater_than" ref="a7ef30d66e1eeea47ea7000775614020e" args="(const struct TimeDelta *const, const struct TimeDelta *const)" -->
+<a class="anchor" id="ad7360904634ace2d35968776c5222d7a"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_less_than_or_equal" ref="ad7360904634ace2d35968776c5222d7a" args="(const struct TimeDelta *const lhs, const struct TimeDelta *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="time-delta_8h.html#a7ef30d66e1eeea47ea7000775614020e">TimeDelta_greater_than</a> </td>
+          <td class="memname">bool <a class="el" href="time-delta_8h.html#ad7360904634ace2d35968776c5222d7a">TimeDelta_less_than_or_equal</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1048,25 +1051,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &lt;= rhs). </p>
 
 </div>
 </div>
-<a class="anchor" id="aca2a28b813b68c66a3754ecf311350b8"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_greater_than_or_equal" ref="aca2a28b813b68c66a3754ecf311350b8" args="(const struct TimeDelta *const, const struct TimeDelta *const)" -->
+<a class="anchor" id="a80a01f3646dde93f81bad4b2c23fdadb"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_greater_than" ref="a80a01f3646dde93f81bad4b2c23fdadb" args="(const struct TimeDelta *const lhs, const struct TimeDelta *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="time-delta_8h.html#aca2a28b813b68c66a3754ecf311350b8">TimeDelta_greater_than_or_equal</a> </td>
+          <td class="memname">bool <a class="el" href="time-delta_8h.html#a80a01f3646dde93f81bad4b2c23fdadb">TimeDelta_greater_than</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1077,7 +1080,36 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &gt; rhs). </p>
+
+</div>
+</div>
+<a class="anchor" id="acaed23a2a6076ecfcd0540c4865f3bc5"></a><!-- doxytag: member="time&#45;delta.h::TimeDelta_greater_than_or_equal" ref="acaed23a2a6076ecfcd0540c4865f3bc5" args="(const struct TimeDelta *const lhs, const struct TimeDelta *const rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="time-delta_8h.html#acaed23a2a6076ecfcd0540c4865f3bc5">TimeDelta_greater_than_or_equal</a> </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &gt;= rhs). </p>
 
 </div>
 </div>

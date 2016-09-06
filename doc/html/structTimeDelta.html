@@ -120,12 +120,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#acc2faf0e9a1563c84fb68cad42521c54">is_negative</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a858c8d0eae6070a24ba7fd3e18a3cf3f">negate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a660df6f5ba7291bef24d5a05639563b6">operator-</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ae317349e9984990e3d2ff2489036055b">operator*=</a> (const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a9d7e96eccef60bf752488a94b6b54939">operator*=</a> (const double &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a099195e2bc83ea7f217a566732c8037d">operator/=</a> (const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#aaf7f4de78973da02b04891bab2f49ca3">operator/=</a> (const double &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a71cc0f1b1f3bf080e34a73902b1a1a81">operator+=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#aca3281505a032868194e2e9a890b2e49">operator-=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the negated version of this <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>.  <a href="#a660df6f5ba7291bef24d5a05639563b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#aa1417029a51a1e2e7cf20445ad6cfa01">operator*=</a> (const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a8301b98264ca9539a160a756e4014559">operator*=</a> (const double &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ac3180211824572ea2f198ca1ad6887c9">operator/=</a> (const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ae514c2f5fa4266b53bb0220b89e50e54">operator/=</a> (const double &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ae8d415b1d359e1f6c6a68ee3c44ea21e">operator+=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#adcacf2fa162c98c9a8c7278f0e32ce56">operator-=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;other)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#abc1b517c2156b2d9627fd07d42aecb2f">from_nanoseconds</a> (<a class="el" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> nanoseconds)</td></tr>
@@ -137,24 +138,25 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a9bb1a85b6f27ad8488ae06e238d5808e">from_days</a> (<a class="el" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> days)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ae0f0a41d899e62b9d17bc4542c443ec6">from_weeks</a> (<a class="el" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> weeks)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a2dec837a107c5e46e14b9c69557209fa">zero</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a1bee789870de5a374ee472ffa4bff172">compare</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="time-delta_8h.html#a6090105e9137c36754994cda35937b59">PresentTimeDeltaError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a212d89d50dc636a4e12ceac5fd9f0bfd">error</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct PresentTimeDeltaData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ab88989772d6ab486e1e008238d96eb81">data_</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#aef7928284f0439b514b32ca5617617b0">operator*</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a00a2a0306b1e3547d02b905dccf2ff36">operator*</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const double &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a3427dfdb6732015310d97872edbf97cb">operator/</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a5f9b18fe821ce2448e044667f158e8fb">operator/</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const double &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a4410e687a3a92f9a48c1d28ae61ee41a">operator+</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#abb568533c9d0e4c9625faba58f3e129d">operator-</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a9f553200840baea8eca578e7702bebb3">operator==</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a5be2899748df249dff26a5c20f15fe3f">operator!=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a04aff1caeb09c0580d802803ad2e1a40">operator&lt;</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a676bbb918c9bb5a9ee2429116c204345">operator&lt;=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a7c3491579f393a434bf5ef180fd0a83c">operator&gt;</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#aa776c7c03929c0d67e2b207ea75e0819">operator&gt;=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ab7a91eba5b4f059a62b8514db14fc53b">operator*</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;delta, const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#adab5720acc96114e1dc60fee9e515cb8">operator*</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;delta, const double &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ad9091904936708075238c1211784ac72">operator/</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;delta, const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#aa3ef692470498914c3a3da20f5689333">operator/</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;delta, const double &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#ab9dcf443fb6dde4d15657f270e5f1111">operator+</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a0298dd60abe0bb412961af7325925999">operator-</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a9a4d0c810cfb1ede0c5abd2058ffa880">operator==</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a34ecf194f14217e5a53721b47b55afea">operator!=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a46cbd1394d5b9a671a2663d1ec292133">operator&lt;</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#af313f41f00c31292ebf02d238270f925">operator&lt;=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a321108cfb9e3902874cc743d899c4076">operator&gt;</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeDelta.html#a044ffed3fee34cab3b4abaf4869c5c0c">operator&gt;=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. </p>
@@ -681,9 +683,12 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Return the negated version of this <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structTimeDelta.html#a858c8d0eae6070a24ba7fd3e18a3cf3f">TimeDelta::negate</a> </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="ae317349e9984990e3d2ff2489036055b"></a><!-- doxytag: member="TimeDelta::operator*=" ref="ae317349e9984990e3d2ff2489036055b" args="(const int &amp;)" -->
+<a class="anchor" id="aa1417029a51a1e2e7cf20445ad6cfa01"></a><!-- doxytag: member="TimeDelta::operator*=" ref="aa1417029a51a1e2e7cf20445ad6cfa01" args="(const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -691,7 +696,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a>&amp; TimeDelta::operator*= </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>scale_factor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -701,7 +706,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a9d7e96eccef60bf752488a94b6b54939"></a><!-- doxytag: member="TimeDelta::operator*=" ref="a9d7e96eccef60bf752488a94b6b54939" args="(const double &amp;)" -->
+<a class="anchor" id="a8301b98264ca9539a160a756e4014559"></a><!-- doxytag: member="TimeDelta::operator*=" ref="a8301b98264ca9539a160a756e4014559" args="(const double &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -709,7 +714,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a>&amp; TimeDelta::operator*= </td>
           <td>(</td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>scale_factor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -719,7 +724,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a099195e2bc83ea7f217a566732c8037d"></a><!-- doxytag: member="TimeDelta::operator/=" ref="a099195e2bc83ea7f217a566732c8037d" args="(const int &amp;)" -->
+<a class="anchor" id="ac3180211824572ea2f198ca1ad6887c9"></a><!-- doxytag: member="TimeDelta::operator/=" ref="ac3180211824572ea2f198ca1ad6887c9" args="(const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -727,7 +732,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a>&amp; TimeDelta::operator/= </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>scale_factor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -737,7 +742,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="aaf7f4de78973da02b04891bab2f49ca3"></a><!-- doxytag: member="TimeDelta::operator/=" ref="aaf7f4de78973da02b04891bab2f49ca3" args="(const double &amp;)" -->
+<a class="anchor" id="ae514c2f5fa4266b53bb0220b89e50e54"></a><!-- doxytag: member="TimeDelta::operator/=" ref="ae514c2f5fa4266b53bb0220b89e50e54" args="(const double &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -745,7 +750,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a>&amp; TimeDelta::operator/= </td>
           <td>(</td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>scale_factor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -755,7 +760,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a71cc0f1b1f3bf080e34a73902b1a1a81"></a><!-- doxytag: member="TimeDelta::operator+=" ref="a71cc0f1b1f3bf080e34a73902b1a1a81" args="(const TimeDelta &amp;)" -->
+<a class="anchor" id="ae8d415b1d359e1f6c6a68ee3c44ea21e"></a><!-- doxytag: member="TimeDelta::operator+=" ref="ae8d415b1d359e1f6c6a68ee3c44ea21e" args="(const TimeDelta &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -763,7 +768,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a>&amp; TimeDelta::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -773,7 +778,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="aca3281505a032868194e2e9a890b2e49"></a><!-- doxytag: member="TimeDelta::operator&#45;=" ref="aca3281505a032868194e2e9a890b2e49" args="(const TimeDelta &amp;)" -->
+<a class="anchor" id="adcacf2fa162c98c9a8c7278f0e32ce56"></a><!-- doxytag: member="TimeDelta::operator&#45;=" ref="adcacf2fa162c98c9a8c7278f0e32ce56" args="(const TimeDelta &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -781,7 +786,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a>&amp; TimeDelta::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -791,8 +796,37 @@ Friends</h2></td></tr>
  
 </div>
 </div>
+<a class="anchor" id="a1bee789870de5a374ee472ffa4bff172"></a><!-- doxytag: member="TimeDelta::compare" ref="a1bee789870de5a374ee472ffa4bff172" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int <a class="el" href="structTimeDelta.html#a1bee789870de5a374ee472ffa4bff172">TimeDelta::compare</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Compare two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances. </p>
+<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
+ 
+</div>
+</div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="aef7928284f0439b514b32ca5617617b0"></a><!-- doxytag: member="TimeDelta::operator*" ref="aef7928284f0439b514b32ca5617617b0" args="(const TimeDelta &amp;, const int &amp;)" -->
+<a class="anchor" id="ab7a91eba5b4f059a62b8514db14fc53b"></a><!-- doxytag: member="TimeDelta::operator*" ref="ab7a91eba5b4f059a62b8514db14fc53b" args="(const TimeDelta &amp;delta, const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -800,13 +834,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structTimeDelta.html">TimeDelta</a> operator* </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>delta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -816,10 +850,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structTimeDelta.html#aa1417029a51a1e2e7cf20445ad6cfa01">TimeDelta::operator*=(const int &amp; scale_factor)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a00a2a0306b1e3547d02b905dccf2ff36"></a><!-- doxytag: member="TimeDelta::operator*" ref="a00a2a0306b1e3547d02b905dccf2ff36" args="(const TimeDelta &amp;, const double &amp;)" -->
+<a class="anchor" id="adab5720acc96114e1dc60fee9e515cb8"></a><!-- doxytag: member="TimeDelta::operator*" ref="adab5720acc96114e1dc60fee9e515cb8" args="(const TimeDelta &amp;delta, const double &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -827,13 +862,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structTimeDelta.html">TimeDelta</a> operator* </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>delta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -843,10 +878,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structTimeDelta.html#a8301b98264ca9539a160a756e4014559">TimeDelta::operator*=(const double &amp; scale_factor)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a3427dfdb6732015310d97872edbf97cb"></a><!-- doxytag: member="TimeDelta::operator/" ref="a3427dfdb6732015310d97872edbf97cb" args="(const TimeDelta &amp;, const int &amp;)" -->
+<a class="anchor" id="ad9091904936708075238c1211784ac72"></a><!-- doxytag: member="TimeDelta::operator/" ref="ad9091904936708075238c1211784ac72" args="(const TimeDelta &amp;delta, const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -854,13 +890,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structTimeDelta.html">TimeDelta</a> operator/ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>delta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -870,10 +906,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structTimeDelta.html#ac3180211824572ea2f198ca1ad6887c9">TimeDelta::operator/=(const int &amp; scale_factor)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a5f9b18fe821ce2448e044667f158e8fb"></a><!-- doxytag: member="TimeDelta::operator/" ref="a5f9b18fe821ce2448e044667f158e8fb" args="(const TimeDelta &amp;, const double &amp;)" -->
+<a class="anchor" id="aa3ef692470498914c3a3da20f5689333"></a><!-- doxytag: member="TimeDelta::operator/" ref="aa3ef692470498914c3a3da20f5689333" args="(const TimeDelta &amp;delta, const double &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -881,13 +918,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structTimeDelta.html">TimeDelta</a> operator/ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>delta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -897,10 +934,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structTimeDelta.html#ae514c2f5fa4266b53bb0220b89e50e54">TimeDelta::operator/=(const double &amp; scale_factor)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a4410e687a3a92f9a48c1d28ae61ee41a"></a><!-- doxytag: member="TimeDelta::operator+" ref="a4410e687a3a92f9a48c1d28ae61ee41a" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="ab9dcf443fb6dde4d15657f270e5f1111"></a><!-- doxytag: member="TimeDelta::operator+" ref="ab9dcf443fb6dde4d15657f270e5f1111" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -908,13 +946,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structTimeDelta.html">TimeDelta</a> operator+ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -924,10 +962,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structTimeDelta.html#ae8d415b1d359e1f6c6a68ee3c44ea21e">TimeDelta::operator+=(const TimeDelta &amp; other)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="abb568533c9d0e4c9625faba58f3e129d"></a><!-- doxytag: member="TimeDelta::operator&#45;" ref="abb568533c9d0e4c9625faba58f3e129d" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="a0298dd60abe0bb412961af7325925999"></a><!-- doxytag: member="TimeDelta::operator&#45;" ref="a0298dd60abe0bb412961af7325925999" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -935,13 +974,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structTimeDelta.html">TimeDelta</a> operator- </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -951,10 +990,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structTimeDelta.html#adcacf2fa162c98c9a8c7278f0e32ce56">TimeDelta::operator-=(const TimeDelta &amp; other)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a9f553200840baea8eca578e7702bebb3"></a><!-- doxytag: member="TimeDelta::operator==" ref="a9f553200840baea8eca578e7702bebb3" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="a9a4d0c810cfb1ede0c5abd2058ffa880"></a><!-- doxytag: member="TimeDelta::operator==" ref="a9a4d0c810cfb1ede0c5abd2058ffa880" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -962,13 +1002,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -978,11 +1018,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances are equal. </p>
+<p>Determine whether two <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> instances are equal (lhs == rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a5be2899748df249dff26a5c20f15fe3f"></a><!-- doxytag: member="TimeDelta::operator!=" ref="a5be2899748df249dff26a5c20f15fe3f" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="a34ecf194f14217e5a53721b47b55afea"></a><!-- doxytag: member="TimeDelta::operator!=" ref="a34ecf194f14217e5a53721b47b55afea" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -990,13 +1030,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator!= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1009,7 +1049,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a04aff1caeb09c0580d802803ad2e1a40"></a><!-- doxytag: member="TimeDelta::operator&lt;" ref="a04aff1caeb09c0580d802803ad2e1a40" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="a46cbd1394d5b9a671a2663d1ec292133"></a><!-- doxytag: member="TimeDelta::operator&lt;" ref="a46cbd1394d5b9a671a2663d1ec292133" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1017,13 +1057,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&lt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1033,11 +1073,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &lt; rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a676bbb918c9bb5a9ee2429116c204345"></a><!-- doxytag: member="TimeDelta::operator&lt;=" ref="a676bbb918c9bb5a9ee2429116c204345" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="af313f41f00c31292ebf02d238270f925"></a><!-- doxytag: member="TimeDelta::operator&lt;=" ref="af313f41f00c31292ebf02d238270f925" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1045,13 +1085,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&lt;= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1061,11 +1101,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is less than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &lt;= rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a7c3491579f393a434bf5ef180fd0a83c"></a><!-- doxytag: member="TimeDelta::operator&gt;" ref="a7c3491579f393a434bf5ef180fd0a83c" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="a321108cfb9e3902874cc743d899c4076"></a><!-- doxytag: member="TimeDelta::operator&gt;" ref="a321108cfb9e3902874cc743d899c4076" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1073,13 +1113,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&gt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1089,11 +1129,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &gt; rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="aa776c7c03929c0d67e2b207ea75e0819"></a><!-- doxytag: member="TimeDelta::operator&gt;=" ref="aa776c7c03929c0d67e2b207ea75e0819" args="(const TimeDelta &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="a044ffed3fee34cab3b4abaf4869c5c0c"></a><!-- doxytag: member="TimeDelta::operator&gt;=" ref="a044ffed3fee34cab3b4abaf4869c5c0c" args="(const TimeDelta &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1101,13 +1141,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&gt;= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1117,7 +1157,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> is greater than or equal to another <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.">TimeDelta</a> (lhs &gt;= rhs). </p>
  
 </div>
 </div>

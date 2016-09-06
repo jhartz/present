@@ -25,13 +25,13 @@
 \item 
 \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structDate_a293adccbbf2f42bd54dde9fb0de81f92}{get\-\_\-absolute\-\_\-difference} (const \hyperlink{structDate}{\-Date} \&other) const 
 \item 
-\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_a0a5674bd1757acf8b229a8448c200bf7}{operator+=} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&)
+\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_a0d7e72cd689c957e981f64da5565c5cc}{operator+=} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&delta)
 \item 
-\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_ad5a2f681fdc34cbff1511fd7e6dd6f91}{operator+=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_a6a69c92d288794dc5f33647b7fb67d67}{operator+=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&delta)
 \item 
-\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_a43159e68f1bceedbb169931b85feeee8}{operator-\/=} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&)
+\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_a4fd0dac9dc8aeb5dbd008717c6bc8974}{operator-\/=} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&delta)
 \item 
-\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_ac7b9e1798bc482f9847d6f87921e4975}{operator-\/=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+\hyperlink{structDate}{\-Date} \& \hyperlink{structDate_afe99434d7c9419d5505e9ba8ff599d05}{operator-\/=} (const \hyperlink{structMonthDelta}{\-Month\-Delta} \&delta)
 \end{DoxyCompactItemize}
 \subsection*{\-Static \-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
@@ -45,6 +45,8 @@ static \hyperlink{structDate}{\-Date} \hyperlink{structDate_ae0bcc2332237bf0f5b5
 static \hyperlink{structDate}{\-Date} \hyperlink{structDate_afed458a3a1ff055cebdbd153bb00d5a4}{create\-\_\-from\-\_\-year\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_aaaf288114a6279e071420e8e20324b13}{int\-\_\-day\-\_\-of\-\_\-year} day\-\_\-of\-\_\-year)
 \item 
 static \hyperlink{structDate}{\-Date} \hyperlink{structDate_a282993d00829e727eac88615cb2f1146}{create\-\_\-from\-\_\-year\-\_\-week\-\_\-day} (\hyperlink{types_8h_a5b021e50b656f4efcc69340c01a17997}{int\-\_\-year} year, \hyperlink{types_8h_a8f4ececac5f6a2cb2ec9ba25de8e996b}{int\-\_\-week\-\_\-of\-\_\-year} week\-\_\-of\-\_\-year, \hyperlink{types_8h_a8132950de7fc3f98373a4d384d8b6eca}{int\-\_\-day\-\_\-of\-\_\-week} day\-\_\-of\-\_\-week)
+\item 
+static int \hyperlink{structDate_afc234509ba1c8b1717e52181e7ad256d}{compare} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDate}{\-Date} \&rhs)
 \end{DoxyCompactItemize}
 \subsection*{\-Public \-Attributes}
 \begin{DoxyCompactItemize}
@@ -56,25 +58,25 @@ struct \-Present\-Date\-Data \hyperlink{structDate_a15a7ce699435bf3c9c60bfff5e18
 \subsection*{\-Friends}
 \begin{DoxyCompactItemize}
 \item 
-const \hyperlink{structDate}{\-Date} \hyperlink{structDate_afc6646e7b6659756a35c69d580b6f4de}{operator+} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDayDelta}{\-Day\-Delta} \&)
+const \hyperlink{structDate}{\-Date} \hyperlink{structDate_a88a01e03ad6e96a22ee81ed7a38bdd5a}{operator+} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDayDelta}{\-Day\-Delta} \&rhs)
 \item 
-const \hyperlink{structDate}{\-Date} \hyperlink{structDate_a157166d061bacfeb288cd353596085ee}{operator+} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+const \hyperlink{structDate}{\-Date} \hyperlink{structDate_a0c895c337e87874cc232482d703db30e}{operator+} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&rhs)
 \item 
-const \hyperlink{structDate}{\-Date} \hyperlink{structDate_a15dda58b1fd26ac63d64049c8f984881}{operator-\/} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDayDelta}{\-Day\-Delta} \&)
+const \hyperlink{structDate}{\-Date} \hyperlink{structDate_a10a73b5010e589b98f3929f9b36e2387}{operator-\/} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDayDelta}{\-Day\-Delta} \&rhs)
 \item 
-const \hyperlink{structDate}{\-Date} \hyperlink{structDate_ac17b7b59d24c18ff7bdf4bc60434174d}{operator-\/} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&)
+const \hyperlink{structDate}{\-Date} \hyperlink{structDate_a61933f732562f4d15602110136ad536c}{operator-\/} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structMonthDelta}{\-Month\-Delta} \&rhs)
 \item 
-bool \hyperlink{structDate_ad51822da99f2cc001b6326ac28bd49d6}{operator==} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDate}{\-Date} \&)
+bool \hyperlink{structDate_a27425be265a0cc57e4f731825154ec4d}{operator==} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDate}{\-Date} \&rhs)
 \item 
-bool \hyperlink{structDate_a5ac1b43688828377f31de974e061006f}{operator!=} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDate}{\-Date} \&)
+bool \hyperlink{structDate_ad12683e4457513f4f834e13c4e7f72f8}{operator!=} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDate}{\-Date} \&rhs)
 \item 
-bool \hyperlink{structDate_acbc7a012dc46ebcd65dfd2887e3a3ad4}{operator$<$} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDate}{\-Date} \&)
+bool \hyperlink{structDate_a611ba98c72bec2ae82bbf086b81563ef}{operator$<$} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDate}{\-Date} \&rhs)
 \item 
-bool \hyperlink{structDate_aec251fea3c00fa40e6e9e07a90620f78}{operator$<$=} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDate}{\-Date} \&)
+bool \hyperlink{structDate_acacb699d0fcffd2443c121586b7c22da}{operator$<$=} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDate}{\-Date} \&rhs)
 \item 
-bool \hyperlink{structDate_a042bfc86a816127e316415634bb99107}{operator$>$} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDate}{\-Date} \&)
+bool \hyperlink{structDate_a4e4faf476e7d66ef88aaca8b11a60175}{operator$>$} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDate}{\-Date} \&rhs)
 \item 
-bool \hyperlink{structDate_a04118d56c46df4ac9054f0e34d2a6ce2}{operator$>$=} (const \hyperlink{structDate}{\-Date} \&, const \hyperlink{structDate}{\-Date} \&)
+bool \hyperlink{structDate_aa72d3f6e17c7aab4d16e9e50b5069e1a}{operator$>$=} (const \hyperlink{structDate}{\-Date} \&lhs, const \hyperlink{structDate}{\-Date} \&rhs)
 \end{DoxyCompactItemize}
 
 
@@ -245,118 +247,140 @@ bool \hyperlink{structDate_a04118d56c46df4ac9054f0e34d2a6ce2}{operator$>$=} (con
 \item[{const {\bf \-Date} \&}]{other}
 \end{DoxyParamCaption}
 ) const}}\label{structDate_a293adccbbf2f42bd54dde9fb0de81f92}
-\-Get the absolute difference between two \hyperlink{structDate}{\-Date} instances.  \hypertarget{structDate_a0a5674bd1757acf8b229a8448c200bf7}{\index{\-Date@{\-Date}!operator+=@{operator+=}}
+\-Get the absolute difference between two \hyperlink{structDate}{\-Date} instances.  \hypertarget{structDate_a0d7e72cd689c957e981f64da5565c5cc}{\index{\-Date@{\-Date}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!Date@{\-Date}}
 \subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Date}\& \-Date\-::operator+= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Day\-Delta} \&}]{}
+\item[{const {\bf \-Day\-Delta} \&}]{delta}
 \end{DoxyParamCaption}
-)}}\label{structDate_a0a5674bd1757acf8b229a8448c200bf7}
-\-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_ad5a2f681fdc34cbff1511fd7e6dd6f91}{\index{\-Date@{\-Date}!operator+=@{operator+=}}
+)}}\label{structDate_a0d7e72cd689c957e981f64da5565c5cc}
+\-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_a6a69c92d288794dc5f33647b7fb67d67}{\index{\-Date@{\-Date}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!Date@{\-Date}}
 \subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Date}\& \-Date\-::operator+= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Month\-Delta} \&}]{}
+\item[{const {\bf \-Month\-Delta} \&}]{delta}
 \end{DoxyParamCaption}
-)}}\label{structDate_ad5a2f681fdc34cbff1511fd7e6dd6f91}
-\-Add a \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_a43159e68f1bceedbb169931b85feeee8}{\index{\-Date@{\-Date}!operator-\/=@{operator-\/=}}
+)}}\label{structDate_a6a69c92d288794dc5f33647b7fb67d67}
+\-Add a \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_a4fd0dac9dc8aeb5dbd008717c6bc8974}{\index{\-Date@{\-Date}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!Date@{\-Date}}
 \subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Date}\& \-Date\-::operator-\/= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Day\-Delta} \&}]{}
+\item[{const {\bf \-Day\-Delta} \&}]{delta}
 \end{DoxyParamCaption}
-)}}\label{structDate_a43159e68f1bceedbb169931b85feeee8}
-\-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_ac7b9e1798bc482f9847d6f87921e4975}{\index{\-Date@{\-Date}!operator-\/=@{operator-\/=}}
+)}}\label{structDate_a4fd0dac9dc8aeb5dbd008717c6bc8974}
+\-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_afe99434d7c9419d5505e9ba8ff599d05}{\index{\-Date@{\-Date}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!Date@{\-Date}}
 \subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Date}\& \-Date\-::operator-\/= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Month\-Delta} \&}]{}
+\item[{const {\bf \-Month\-Delta} \&}]{delta}
 \end{DoxyParamCaption}
-)}}\label{structDate_ac7b9e1798bc482f9847d6f87921e4975}
-\-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}.  
+)}}\label{structDate_afe99434d7c9419d5505e9ba8ff599d05}
+\-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_afc234509ba1c8b1717e52181e7ad256d}{\index{\-Date@{\-Date}!compare@{compare}}
+\index{compare@{compare}!Date@{\-Date}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int {\bf \-Date\-::compare} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Date} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structDate_afc234509ba1c8b1717e52181e7ad256d}
+\-Compare two \hyperlink{structDate}{\-Date} instances. 
+
+\-If lhs $<$ rhs, then a negative integer will be returned. \-If lhs == rhs, then 0 will be returned. \-If lhs $>$ rhs, then a positive integer will be returned.  
 
 \subsection{\-Friends \-And \-Related \-Function \-Documentation}
-\hypertarget{structDate_afc6646e7b6659756a35c69d580b6f4de}{\index{\-Date@{\-Date}!operator+@{operator+}}
+\hypertarget{structDate_a88a01e03ad6e96a22ee81ed7a38bdd5a}{\index{\-Date@{\-Date}!operator+@{operator+}}
 \index{operator+@{operator+}!Date@{\-Date}}
 \subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Date} operator+ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Day\-Delta} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Day\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_afc6646e7b6659756a35c69d580b6f4de}
-\hypertarget{structDate_a157166d061bacfeb288cd353596085ee}{\index{\-Date@{\-Date}!operator+@{operator+}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a88a01e03ad6e96a22ee81ed7a38bdd5a}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{structDate_a0d7e72cd689c957e981f64da5565c5cc}{\-Date\-::operator+=(const Day\-Delta \& delta)} 
+\end{DoxySeeAlso}
+\hypertarget{structDate_a0c895c337e87874cc232482d703db30e}{\index{\-Date@{\-Date}!operator+@{operator+}}
 \index{operator+@{operator+}!Date@{\-Date}}
 \subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Date} operator+ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Month\-Delta} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Month\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a157166d061bacfeb288cd353596085ee}
-\hypertarget{structDate_a15dda58b1fd26ac63d64049c8f984881}{\index{\-Date@{\-Date}!operator-\/@{operator-\/}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a0c895c337e87874cc232482d703db30e}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{structDate_a6a69c92d288794dc5f33647b7fb67d67}{\-Date\-::operator+=(const Month\-Delta \& delta)} 
+\end{DoxySeeAlso}
+\hypertarget{structDate_a10a73b5010e589b98f3929f9b36e2387}{\index{\-Date@{\-Date}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!Date@{\-Date}}
 \subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Date} operator-\/ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Day\-Delta} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Day\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a15dda58b1fd26ac63d64049c8f984881}
-\hypertarget{structDate_ac17b7b59d24c18ff7bdf4bc60434174d}{\index{\-Date@{\-Date}!operator-\/@{operator-\/}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a10a73b5010e589b98f3929f9b36e2387}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{structDate_a4fd0dac9dc8aeb5dbd008717c6bc8974}{\-Date\-::operator-\/=(const Day\-Delta \& delta)} 
+\end{DoxySeeAlso}
+\hypertarget{structDate_a61933f732562f4d15602110136ad536c}{\index{\-Date@{\-Date}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!Date@{\-Date}}
 \subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Date} operator-\/ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Month\-Delta} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Month\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_ac17b7b59d24c18ff7bdf4bc60434174d}
-\hypertarget{structDate_ad51822da99f2cc001b6326ac28bd49d6}{\index{\-Date@{\-Date}!operator==@{operator==}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a61933f732562f4d15602110136ad536c}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{structDate_afe99434d7c9419d5505e9ba8ff599d05}{\-Date\-::operator-\/=(const Month\-Delta \& delta)} 
+\end{DoxySeeAlso}
+\hypertarget{structDate_a27425be265a0cc57e4f731825154ec4d}{\index{\-Date@{\-Date}!operator==@{operator==}}
 \index{operator==@{operator==}!Date@{\-Date}}
 \subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Date} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Date} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_ad51822da99f2cc001b6326ac28bd49d6}
-\-Determine whether two \hyperlink{structDate}{\-Date} instances are equal.  \hypertarget{structDate_a5ac1b43688828377f31de974e061006f}{\index{\-Date@{\-Date}!operator!=@{operator!=}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a27425be265a0cc57e4f731825154ec4d}
+\-Determine whether two \hyperlink{structDate}{\-Date} instances are equal (lhs == rhs).  \hypertarget{structDate_ad12683e4457513f4f834e13c4e7f72f8}{\index{\-Date@{\-Date}!operator!=@{operator!=}}
 \index{operator!=@{operator!=}!Date@{\-Date}}
 \subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Date} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Date} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a5ac1b43688828377f31de974e061006f}
-\hypertarget{structDate_acbc7a012dc46ebcd65dfd2887e3a3ad4}{\index{\-Date@{\-Date}!operator$<$@{operator$<$}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_ad12683e4457513f4f834e13c4e7f72f8}
+\hypertarget{structDate_a611ba98c72bec2ae82bbf086b81563ef}{\index{\-Date@{\-Date}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Date@{\-Date}}
 \subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Date} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Date} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_acbc7a012dc46ebcd65dfd2887e3a3ad4}
-\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than another \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_aec251fea3c00fa40e6e9e07a90620f78}{\index{\-Date@{\-Date}!operator$<$=@{operator$<$=}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a611ba98c72bec2ae82bbf086b81563ef}
+\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than another \hyperlink{structDate}{\-Date} (lhs $<$ rhs).  \hypertarget{structDate_acacb699d0fcffd2443c121586b7c22da}{\index{\-Date@{\-Date}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!Date@{\-Date}}
 \subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Date} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Date} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_aec251fea3c00fa40e6e9e07a90620f78}
-\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than or the same as another \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_a042bfc86a816127e316415634bb99107}{\index{\-Date@{\-Date}!operator$>$@{operator$>$}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_acacb699d0fcffd2443c121586b7c22da}
+\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than or the same as another \hyperlink{structDate}{\-Date} (lhs $<$= rhs).  \hypertarget{structDate_a4e4faf476e7d66ef88aaca8b11a60175}{\index{\-Date@{\-Date}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!Date@{\-Date}}
 \subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Date} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Date} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a042bfc86a816127e316415634bb99107}
-\-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date}.  \hypertarget{structDate_a04118d56c46df4ac9054f0e34d2a6ce2}{\index{\-Date@{\-Date}!operator$>$=@{operator$>$=}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a4e4faf476e7d66ef88aaca8b11a60175}
+\-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date} (lhs $>$ rhs).  \hypertarget{structDate_aa72d3f6e17c7aab4d16e9e50b5069e1a}{\index{\-Date@{\-Date}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!Date@{\-Date}}
 \subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Date} \&}]{, }
-\item[{const {\bf \-Date} \&}]{}
+\item[{const {\bf \-Date} \&}]{lhs, }
+\item[{const {\bf \-Date} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_a04118d56c46df4ac9054f0e34d2a6ce2}
-\-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date}.  
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structDate_aa72d3f6e17c7aab4d16e9e50b5069e1a}
+\-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date} (lhs $>$= rhs).  
 
 \subsection{\-Member \-Data \-Documentation}
 \hypertarget{structDate_adb2a42cb857f6462788b856b2f60cfb2}{\index{\-Date@{\-Date}!error@{error}}

@@ -65,16 +65,18 @@ void \hyperlink{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}{\-Date\-\_\-subtract\
 \begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
 void \hyperlink{date_8h_a1df0a3764eef73161f411d0f67e52014}{\-Date\-\_\-subtract\-\_\-month\-\_\-delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
-bool \hyperlink{date_8h_a77eadd9d79f983618b888d9810c506d0}{\-Date\-\_\-equal} (const struct \hyperlink{structDate}{\-Date} $\ast$const, const struct \hyperlink{structDate}{\-Date} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether two \hyperlink{structDate}{\-Date} instances are equal. \end{DoxyCompactList}\item 
-bool \hyperlink{date_8h_ad59fd8e95642ece085fe87745e8d1942}{\-Date\-\_\-less\-\_\-than} (const struct \hyperlink{structDate}{\-Date} $\ast$const, const struct \hyperlink{structDate}{\-Date} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is earlier than another \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
-bool \hyperlink{date_8h_a353c04aca98ffc7f5661f4488dd7bdb9}{\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structDate}{\-Date} $\ast$const, const struct \hyperlink{structDate}{\-Date} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is earlier than or the same as another \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
-bool \hyperlink{date_8h_ae4b19bd7c984619f04644bca7fa43f83}{\-Date\-\_\-greater\-\_\-than} (const struct \hyperlink{structDate}{\-Date} $\ast$const, const struct \hyperlink{structDate}{\-Date} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
-bool \hyperlink{date_8h_acacc333b8cccf95f14d8040b811455c9}{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structDate}{\-Date} $\ast$const, const struct \hyperlink{structDate}{\-Date} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{date_8h_a3d60efd11d46f93eda8a02d7103c4fab}{\-Date\-\_\-compare} (const struct \hyperlink{structDate}{\-Date} $\ast$const lhs, const struct \hyperlink{structDate}{\-Date} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Compare two \hyperlink{structDate}{\-Date} instances. \end{DoxyCompactList}\item 
+bool \hyperlink{date_8h_a85013bec53ba6a1886288822276ff97f}{\-Date\-\_\-equal} (const struct \hyperlink{structDate}{\-Date} $\ast$const lhs, const struct \hyperlink{structDate}{\-Date} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether two \hyperlink{structDate}{\-Date} instances are equal (lhs == rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{date_8h_a0cd06ad252483f5c5a431c1199cc0aef}{\-Date\-\_\-less\-\_\-than} (const struct \hyperlink{structDate}{\-Date} $\ast$const lhs, const struct \hyperlink{structDate}{\-Date} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is earlier than another \hyperlink{structDate}{\-Date} (lhs $<$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{date_8h_a10ceef6feeb7fdf3b5b393bdaaf58569}{\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structDate}{\-Date} $\ast$const lhs, const struct \hyperlink{structDate}{\-Date} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is earlier than or the same as another \hyperlink{structDate}{\-Date} (lhs $<$= rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{date_8h_a7fd78318b36db6e6654dada67e4f39dc}{\-Date\-\_\-greater\-\_\-than} (const struct \hyperlink{structDate}{\-Date} $\ast$const lhs, const struct \hyperlink{structDate}{\-Date} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date} (lhs $>$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{date_8h_a8536c7220594131c22267d3f049eea67}{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structDate}{\-Date} $\ast$const lhs, const struct \hyperlink{structDate}{\-Date} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date} (lhs $>$= rhs). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{\-Define \-Documentation}
@@ -380,63 +382,75 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
 
 \-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_a77eadd9d79f983618b888d9810c506d0}{\index{date.\-h@{date.\-h}!\-Date\-\_\-equal@{\-Date\-\_\-equal}}
+\hypertarget{date_8h_a3d60efd11d46f93eda8a02d7103c4fab}{\index{date.\-h@{date.\-h}!\-Date\-\_\-compare@{\-Date\-\_\-compare}}
+\index{\-Date\-\_\-compare@{\-Date\-\_\-compare}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Date\-\_\-compare} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Date} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Date} $\ast$const}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{date_8h_a3d60efd11d46f93eda8a02d7103c4fab}
+
+
+\-Compare two \hyperlink{structDate}{\-Date} instances. 
+
+\-If lhs $<$ rhs, then a negative integer will be returned. \-If lhs == rhs, then 0 will be returned. \-If lhs $>$ rhs, then a positive integer will be returned. \hypertarget{date_8h_a85013bec53ba6a1886288822276ff97f}{\index{date.\-h@{date.\-h}!\-Date\-\_\-equal@{\-Date\-\_\-equal}}
 \index{\-Date\-\_\-equal@{\-Date\-\_\-equal}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$}]{const, }
-\item[{const struct {\bf \-Date} $\ast$}]{const}
+\item[{const struct {\bf \-Date} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Date} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a77eadd9d79f983618b888d9810c506d0}
+)}}\label{date_8h_a85013bec53ba6a1886288822276ff97f}
 
 
-\-Determine whether two \hyperlink{structDate}{\-Date} instances are equal. 
+\-Determine whether two \hyperlink{structDate}{\-Date} instances are equal (lhs == rhs). 
 
-\hypertarget{date_8h_ad59fd8e95642ece085fe87745e8d1942}{\index{date.\-h@{date.\-h}!\-Date\-\_\-less\-\_\-than@{\-Date\-\_\-less\-\_\-than}}
+\hypertarget{date_8h_a0cd06ad252483f5c5a431c1199cc0aef}{\index{date.\-h@{date.\-h}!\-Date\-\_\-less\-\_\-than@{\-Date\-\_\-less\-\_\-than}}
 \index{\-Date\-\_\-less\-\_\-than@{\-Date\-\_\-less\-\_\-than}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-less\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-less\-\_\-than} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$}]{const, }
-\item[{const struct {\bf \-Date} $\ast$}]{const}
+\item[{const struct {\bf \-Date} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Date} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{date_8h_ad59fd8e95642ece085fe87745e8d1942}
+)}}\label{date_8h_a0cd06ad252483f5c5a431c1199cc0aef}
 
 
-\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than another \hyperlink{structDate}{\-Date}. 
+\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than another \hyperlink{structDate}{\-Date} (lhs $<$ rhs). 
 
-\hypertarget{date_8h_a353c04aca98ffc7f5661f4488dd7bdb9}{\index{date.\-h@{date.\-h}!\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
+\hypertarget{date_8h_a10ceef6feeb7fdf3b5b393bdaaf58569}{\index{date.\-h@{date.\-h}!\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
 \index{\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$}]{const, }
-\item[{const struct {\bf \-Date} $\ast$}]{const}
+\item[{const struct {\bf \-Date} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Date} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a353c04aca98ffc7f5661f4488dd7bdb9}
+)}}\label{date_8h_a10ceef6feeb7fdf3b5b393bdaaf58569}
 
 
-\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than or the same as another \hyperlink{structDate}{\-Date}. 
+\-Determine whether a \hyperlink{structDate}{\-Date} is earlier than or the same as another \hyperlink{structDate}{\-Date} (lhs $<$= rhs). 
 
-\hypertarget{date_8h_ae4b19bd7c984619f04644bca7fa43f83}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than@{\-Date\-\_\-greater\-\_\-than}}
+\hypertarget{date_8h_a7fd78318b36db6e6654dada67e4f39dc}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than@{\-Date\-\_\-greater\-\_\-than}}
 \index{\-Date\-\_\-greater\-\_\-than@{\-Date\-\_\-greater\-\_\-than}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-greater\-\_\-than} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$}]{const, }
-\item[{const struct {\bf \-Date} $\ast$}]{const}
+\item[{const struct {\bf \-Date} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Date} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{date_8h_ae4b19bd7c984619f04644bca7fa43f83}
+)}}\label{date_8h_a7fd78318b36db6e6654dada67e4f39dc}
 
 
-\-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date}. 
+\-Determine whether a \hyperlink{structDate}{\-Date} is later than another \hyperlink{structDate}{\-Date} (lhs $>$ rhs). 
 
-\hypertarget{date_8h_acacc333b8cccf95f14d8040b811455c9}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
+\hypertarget{date_8h_a8536c7220594131c22267d3f049eea67}{\index{date.\-h@{date.\-h}!\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
 \index{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!date.h@{date.\-h}}
 \subsubsection[{\-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Date\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Date} $\ast$}]{const, }
-\item[{const struct {\bf \-Date} $\ast$}]{const}
+\item[{const struct {\bf \-Date} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Date} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{date_8h_acacc333b8cccf95f14d8040b811455c9}
+)}}\label{date_8h_a8536c7220594131c22267d3f049eea67}
 
 
-\-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date}. 
+\-Determine whether a \hyperlink{structDate}{\-Date} is later than or the same as another \hyperlink{structDate}{\-Date} (lhs $>$= rhs). 
 

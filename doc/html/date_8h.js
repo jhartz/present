@@ -19,9 +19,10 @@ var date_8h =
     [ "Date_add_month_delta", "date_8h.html#a57ea0878d7e184ce8caae809f80c4274", null ],
     [ "Date_subtract_day_delta", "date_8h.html#aff3dde3e7758ebafc0a04c16ab8099b7", null ],
     [ "Date_subtract_month_delta", "date_8h.html#a1df0a3764eef73161f411d0f67e52014", null ],
-    [ "Date_equal", "date_8h.html#a77eadd9d79f983618b888d9810c506d0", null ],
-    [ "Date_less_than", "date_8h.html#ad59fd8e95642ece085fe87745e8d1942", null ],
-    [ "Date_less_than_or_equal", "date_8h.html#a353c04aca98ffc7f5661f4488dd7bdb9", null ],
-    [ "Date_greater_than", "date_8h.html#ae4b19bd7c984619f04644bca7fa43f83", null ],
-    [ "Date_greater_than_or_equal", "date_8h.html#acacc333b8cccf95f14d8040b811455c9", null ]
+    [ "Date_compare", "date_8h.html#a3d60efd11d46f93eda8a02d7103c4fab", null ],
+    [ "Date_equal", "date_8h.html#a85013bec53ba6a1886288822276ff97f", null ],
+    [ "Date_less_than", "date_8h.html#a0cd06ad252483f5c5a431c1199cc0aef", null ],
+    [ "Date_less_than_or_equal", "date_8h.html#a10ceef6feeb7fdf3b5b393bdaaf58569", null ],
+    [ "Date_greater_than", "date_8h.html#a7fd78318b36db6e6654dada67e4f39dc", null ],
+    [ "Date_greater_than_or_equal", "date_8h.html#a8536c7220594131c22267d3f049eea67", null ]
 ];

@@ -74,16 +74,18 @@ void \hyperlink{timestamp_8h_ada864b991017215cc60ad453c795d73f}{\-Timestamp\-\_\
 \begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structTimestamp}{\-Timestamp}. \end{DoxyCompactList}\item 
 void \hyperlink{timestamp_8h_af2d7ebff8bd72b975d0fe7a3e8971460}{\-Timestamp\-\_\-subtract\-\_\-month\-\_\-delta} (struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structTimestamp}{\-Timestamp}. \end{DoxyCompactList}\item 
-bool \hyperlink{timestamp_8h_a01ec54f54ff983ec29dd84ded9239694}{\-Timestamp\-\_\-equal} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether two \hyperlink{structTimestamp}{\-Timestamp} instances represent the exact same point in time. \end{DoxyCompactList}\item 
-bool \hyperlink{timestamp_8h_aafa1f1053066f8a4f8a18c8d3a7adb41}{\-Timestamp\-\_\-less\-\_\-than} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than another \hyperlink{structTimestamp}{\-Timestamp}. \end{DoxyCompactList}\item 
-bool \hyperlink{timestamp_8h_a73158018e2e8ac52f3e0e461031780cc}{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. \end{DoxyCompactList}\item 
-bool \hyperlink{timestamp_8h_a96f31ed79e616bdae7dd9313ad400675}{\-Timestamp\-\_\-greater\-\_\-than} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than another \hyperlink{structTimestamp}{\-Timestamp}. \end{DoxyCompactList}\item 
-bool \hyperlink{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}{\-Timestamp\-\_\-compare} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Compare two \hyperlink{structTimestamp}{\-Timestamp} instances. \end{DoxyCompactList}\item 
+bool \hyperlink{timestamp_8h_aa824bbc8b1cce71c6a478301589de2a3}{\-Timestamp\-\_\-equal} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether two \hyperlink{structTimestamp}{\-Timestamp} instances represent the exact same point in time (lhs == rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{timestamp_8h_ab8b4b64fddbf257f6990041cd2502ce5}{\-Timestamp\-\_\-less\-\_\-than} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than another \hyperlink{structTimestamp}{\-Timestamp} (lhs $<$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{timestamp_8h_a1f0766185a14acb30625b9d0ecc56c84}{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp} (lhs $<$= rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{timestamp_8h_ad3e223e90de28e4e0eaa1837607d5a94}{\-Timestamp\-\_\-greater\-\_\-than} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than another \hyperlink{structTimestamp}{\-Timestamp} (lhs $>$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{timestamp_8h_afb36ec0cf2d2995d6ee298f10397d968}{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp} (lhs $>$= rhs). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{\-Enumeration \-Type \-Documentation}
@@ -463,63 +465,75 @@ bool \hyperlink{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\-Timestamp\-\_\
 
 \-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structTimestamp}{\-Timestamp}. 
 
-\hypertarget{timestamp_8h_a01ec54f54ff983ec29dd84ded9239694}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-equal@{\-Timestamp\-\_\-equal}}
+\hypertarget{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-compare@{\-Timestamp\-\_\-compare}}
+\index{\-Timestamp\-\_\-compare@{\-Timestamp\-\_\-compare}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Timestamp\-\_\-compare} (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}
+
+
+\-Compare two \hyperlink{structTimestamp}{\-Timestamp} instances. 
+
+\-If lhs $<$ rhs, then a negative integer will be returned. \-If lhs == rhs, then 0 will be returned. \-If lhs $>$ rhs, then a positive integer will be returned. \hypertarget{timestamp_8h_aa824bbc8b1cce71c6a478301589de2a3}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-equal@{\-Timestamp\-\_\-equal}}
 \index{\-Timestamp\-\_\-equal@{\-Timestamp\-\_\-equal}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_a01ec54f54ff983ec29dd84ded9239694}
+)}}\label{timestamp_8h_aa824bbc8b1cce71c6a478301589de2a3}
 
 
-\-Determine whether two \hyperlink{structTimestamp}{\-Timestamp} instances represent the exact same point in time. 
+\-Determine whether two \hyperlink{structTimestamp}{\-Timestamp} instances represent the exact same point in time (lhs == rhs). 
 
-\hypertarget{timestamp_8h_aafa1f1053066f8a4f8a18c8d3a7adb41}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than@{\-Timestamp\-\_\-less\-\_\-than}}
+\hypertarget{timestamp_8h_ab8b4b64fddbf257f6990041cd2502ce5}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than@{\-Timestamp\-\_\-less\-\_\-than}}
 \index{\-Timestamp\-\_\-less\-\_\-than@{\-Timestamp\-\_\-less\-\_\-than}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-less\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-less\-\_\-than} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_aafa1f1053066f8a4f8a18c8d3a7adb41}
+)}}\label{timestamp_8h_ab8b4b64fddbf257f6990041cd2502ce5}
 
 
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than another \hyperlink{structTimestamp}{\-Timestamp}. 
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than another \hyperlink{structTimestamp}{\-Timestamp} (lhs $<$ rhs). 
 
-\hypertarget{timestamp_8h_a73158018e2e8ac52f3e0e461031780cc}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
+\hypertarget{timestamp_8h_a1f0766185a14acb30625b9d0ecc56c84}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
 \index{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_a73158018e2e8ac52f3e0e461031780cc}
+)}}\label{timestamp_8h_a1f0766185a14acb30625b9d0ecc56c84}
 
 
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. 
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs earlier than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp} (lhs $<$= rhs). 
 
-\hypertarget{timestamp_8h_a96f31ed79e616bdae7dd9313ad400675}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than@{\-Timestamp\-\_\-greater\-\_\-than}}
+\hypertarget{timestamp_8h_ad3e223e90de28e4e0eaa1837607d5a94}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than@{\-Timestamp\-\_\-greater\-\_\-than}}
 \index{\-Timestamp\-\_\-greater\-\_\-than@{\-Timestamp\-\_\-greater\-\_\-than}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-greater\-\_\-than} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_a96f31ed79e616bdae7dd9313ad400675}
+)}}\label{timestamp_8h_ad3e223e90de28e4e0eaa1837607d5a94}
 
 
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than another \hyperlink{structTimestamp}{\-Timestamp}. 
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than another \hyperlink{structTimestamp}{\-Timestamp} (lhs $>$ rhs). 
 
-\hypertarget{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
+\hypertarget{timestamp_8h_afb36ec0cf2d2995d6ee298f10397d968}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
 \index{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Timestamp\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const, }
-\item[{const struct {\bf \-Timestamp} $\ast$}]{const}
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{lhs, }
+\item[{const struct {\bf \-Timestamp} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_ac8e73c119be15b81647851f16f4013b9}
+)}}\label{timestamp_8h_afb36ec0cf2d2995d6ee298f10397d968}
 
 
-\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp}. 
+\-Determine whether a \hyperlink{structTimestamp}{\-Timestamp} occurs later than or at the same time as another \hyperlink{structTimestamp}{\-Timestamp} (lhs $>$= rhs). 
 

@@ -17,9 +17,10 @@ var clock-time_8h =
     [ "ClockTime_time_since_midnight", "clock-time_8h.html#ace4db26641fe01b2edd311b09589ebbb", null ],
     [ "ClockTime_add_time_delta", "clock-time_8h.html#adc2c863dfec0b56604b3153b226139fb", null ],
     [ "ClockTime_subtract_time_delta", "clock-time_8h.html#a5305df919aa0992ba4703f9b9f292a67", null ],
-    [ "ClockTime_equal", "clock-time_8h.html#a33f1b59fd2b998d61ea80c908aeb274c", null ],
-    [ "ClockTime_less_than", "clock-time_8h.html#a3e68308f034226dd04f361fb173ea6ac", null ],
-    [ "ClockTime_less_than_or_equal", "clock-time_8h.html#a79d34170a100cdf5654080e9e1c1d7a9", null ],
-    [ "ClockTime_greater_than", "clock-time_8h.html#a9e2265b76612f6f7618ede2d78f10083", null ],
-    [ "ClockTime_greater_than_or_equal", "clock-time_8h.html#ace253f56caf8df157d630aa590b658cc", null ]
+    [ "ClockTime_compare", "clock-time_8h.html#a769989ae3695814b6f64b17ff059d76a", null ],
+    [ "ClockTime_equal", "clock-time_8h.html#a221f7f46e31399e80f81f5ec0a1517f4", null ],
+    [ "ClockTime_less_than", "clock-time_8h.html#ad3add1702953b5ca410e45215ca9406b", null ],
+    [ "ClockTime_less_than_or_equal", "clock-time_8h.html#a161740b6fe1f98b11be56a9769c988ca", null ],
+    [ "ClockTime_greater_than", "clock-time_8h.html#abcaa281176bc5f975aed97b7564bcdb3", null ],
+    [ "ClockTime_greater_than_or_equal", "clock-time_8h.html#a68e12fd4a679f6060b1fd89dbefbc35d", null ]
 ];

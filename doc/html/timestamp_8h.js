@@ -28,9 +28,10 @@ var timestamp_8h =
     [ "Timestamp_subtract_time_delta", "timestamp_8h.html#afa28c1d4e2aa355e4b7eb1ead44cd039", null ],
     [ "Timestamp_subtract_day_delta", "timestamp_8h.html#ada864b991017215cc60ad453c795d73f", null ],
     [ "Timestamp_subtract_month_delta", "timestamp_8h.html#af2d7ebff8bd72b975d0fe7a3e8971460", null ],
-    [ "Timestamp_equal", "timestamp_8h.html#a01ec54f54ff983ec29dd84ded9239694", null ],
-    [ "Timestamp_less_than", "timestamp_8h.html#aafa1f1053066f8a4f8a18c8d3a7adb41", null ],
-    [ "Timestamp_less_than_or_equal", "timestamp_8h.html#a73158018e2e8ac52f3e0e461031780cc", null ],
-    [ "Timestamp_greater_than", "timestamp_8h.html#a96f31ed79e616bdae7dd9313ad400675", null ],
-    [ "Timestamp_greater_than_or_equal", "timestamp_8h.html#ac8e73c119be15b81647851f16f4013b9", null ]
+    [ "Timestamp_compare", "timestamp_8h.html#a93e685bff6dd607d1cfbfdef53690149", null ],
+    [ "Timestamp_equal", "timestamp_8h.html#aa824bbc8b1cce71c6a478301589de2a3", null ],
+    [ "Timestamp_less_than", "timestamp_8h.html#ab8b4b64fddbf257f6990041cd2502ce5", null ],
+    [ "Timestamp_less_than_or_equal", "timestamp_8h.html#a1f0766185a14acb30625b9d0ecc56c84", null ],
+    [ "Timestamp_greater_than", "timestamp_8h.html#ad3e223e90de28e4e0eaa1837607d5a94", null ],
+    [ "Timestamp_greater_than_or_equal", "timestamp_8h.html#afb36ec0cf2d2995d6ee298f10397d968", null ]
 ];

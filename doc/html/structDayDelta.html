@@ -106,6 +106,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a10d6b9eac43322a957f7c3dfbedc2862">is_negative</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a23b9453556a255f5413aee21b12938a6">negate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#ab147a13f61362001a4acdaa1b782d1cf">operator-</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the negated version of this <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#ab147a13f61362001a4acdaa1b782d1cf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#aa0a78ca9d3a6a3241211e22d638e0323">operator++</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one day to the <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#aa0a78ca9d3a6a3241211e22d638e0323"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a6f5ca65ca16018cdf39bd5543cbec127">operator++</a> (int)</td></tr>
@@ -114,31 +115,32 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract one day from the <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#aa0ca3c6a73df1946150a1c7e555b79b9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a7e0ffb0cc2aeff7414fee2edfb8e3424">operator--</a> (int)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract one day from the <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#a7e0ffb0cc2aeff7414fee2edfb8e3424"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#ac8af8f0ee6001377aac49a5620a9f200">operator*=</a> (const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a06fe33615accc5c07c9d7c79e1c2e92f">operator/=</a> (const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#acb705c5865b8439db80762adf0c45f13">operator+=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a9f12d06900c7480bdf21b5f27d1eaeef">operator-=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a4312a7090a3365dc3646f91f44ae7654">operator*=</a> (const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a892e28fb54b113684d1f5078d6f607c8">operator/=</a> (const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a081325e9acba450f7446d1d59ed65518">operator+=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a886f81ff8427ad7712a246fcd3b139f7">operator-=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;other)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a7421a2d8448dd7d5329d72d0d6a04cbd">from_days</a> (<a class="el" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> days)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a871bbf34275016d74c7ef8c8777c3258">from_weeks</a> (<a class="el" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a> weeks)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#acfcc09473305041a930a1ea6a3c20409">zero</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a1059465fe1c1bfb8d7136ad887b00d30">compare</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="day-delta_8h.html#a1fc28c3187bc8bcf286a214ee7168f8f">PresentDayDeltaError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a240b38d4510157302ec42efc62ee498d">error</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct PresentDayDeltaData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#af256f16b6700e43995186eea83db9ebc">data_</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#ad744ce917d84eeb36a714a0743082a9e">operator*</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a78fe4e3a74d889ef0743b4fd1aee1481">operator/</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const int &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a281859b3e03b46be983288815761aa6b">operator+</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a33ace0bde4e898436bfd1bb430e09ca3">operator-</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#afd3daebb578fdeba71f41dca9e485a71">operator==</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a84010ae193d86bdbd3eff7a719c86204">operator!=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#aa93123e48cb4ba1c40133fbce862143e">operator&lt;</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#af89fa21d1b6be6acb7d5ff574640d8f1">operator&lt;=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a8ea55528acf383ece24abc904204cf28">operator&gt;</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a84d75c6dd0271ab2443667bee622847c">operator&gt;=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#af888d4911eda6f27731cbf92bb393c32">operator*</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;delta, const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a9469df031e6aba7593890989a954ae35">operator/</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;delta, const int &amp;scale_factor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a371e4babc2d194244a5b4cea3ea66d7e">operator+</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a1b59f350f113499fac66fe2f180fca7a">operator-</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a04f6712422789b8ec3f19d3e1789bf4f">operator==</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#ad0581c91724489d68bd79382831a5a1e">operator!=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#ad6792531d3979ec77fd7ddce40a1a496">operator&lt;</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#abdcc1adeaad32dd0ae90569e52f514dd">operator&lt;=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#aaf9360c064df44a15781807e4a26c296">operator&gt;</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayDelta.html#a78c4c340fdd0331b761215aeb08f56e6">operator&gt;=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;lhs, const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;rhs)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Class or struct representing a positive or negative delta of a number of days or weeks. </p>
@@ -313,6 +315,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Return the negated version of this <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structDayDelta.html#a23b9453556a255f5413aee21b12938a6">DayDelta::negate</a> </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="aa0a78ca9d3a6a3241211e22d638e0323"></a><!-- doxytag: member="DayDelta::operator++" ref="aa0a78ca9d3a6a3241211e22d638e0323" args="()" -->
@@ -389,7 +394,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac8af8f0ee6001377aac49a5620a9f200"></a><!-- doxytag: member="DayDelta::operator*=" ref="ac8af8f0ee6001377aac49a5620a9f200" args="(const int &amp;)" -->
+<a class="anchor" id="a4312a7090a3365dc3646f91f44ae7654"></a><!-- doxytag: member="DayDelta::operator*=" ref="a4312a7090a3365dc3646f91f44ae7654" args="(const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -397,7 +402,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structDayDelta.html">DayDelta</a>&amp; DayDelta::operator*= </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>scale_factor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -407,7 +412,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a06fe33615accc5c07c9d7c79e1c2e92f"></a><!-- doxytag: member="DayDelta::operator/=" ref="a06fe33615accc5c07c9d7c79e1c2e92f" args="(const int &amp;)" -->
+<a class="anchor" id="a892e28fb54b113684d1f5078d6f607c8"></a><!-- doxytag: member="DayDelta::operator/=" ref="a892e28fb54b113684d1f5078d6f607c8" args="(const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -415,7 +420,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structDayDelta.html">DayDelta</a>&amp; DayDelta::operator/= </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>scale_factor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -425,7 +430,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="acb705c5865b8439db80762adf0c45f13"></a><!-- doxytag: member="DayDelta::operator+=" ref="acb705c5865b8439db80762adf0c45f13" args="(const DayDelta &amp;)" -->
+<a class="anchor" id="a081325e9acba450f7446d1d59ed65518"></a><!-- doxytag: member="DayDelta::operator+=" ref="a081325e9acba450f7446d1d59ed65518" args="(const DayDelta &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -433,7 +438,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structDayDelta.html">DayDelta</a>&amp; DayDelta::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -443,7 +448,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a9f12d06900c7480bdf21b5f27d1eaeef"></a><!-- doxytag: member="DayDelta::operator&#45;=" ref="a9f12d06900c7480bdf21b5f27d1eaeef" args="(const DayDelta &amp;)" -->
+<a class="anchor" id="a886f81ff8427ad7712a246fcd3b139f7"></a><!-- doxytag: member="DayDelta::operator&#45;=" ref="a886f81ff8427ad7712a246fcd3b139f7" args="(const DayDelta &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -451,7 +456,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structDayDelta.html">DayDelta</a>&amp; DayDelta::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -461,8 +466,37 @@ Friends</h2></td></tr>
  
 </div>
 </div>
+<a class="anchor" id="a1059465fe1c1bfb8d7136ad887b00d30"></a><!-- doxytag: member="DayDelta::compare" ref="a1059465fe1c1bfb8d7136ad887b00d30" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int <a class="el" href="structDayDelta.html#a1059465fe1c1bfb8d7136ad887b00d30">DayDelta::compare</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Compare two <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> instances. </p>
+<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
+ 
+</div>
+</div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="ad744ce917d84eeb36a714a0743082a9e"></a><!-- doxytag: member="DayDelta::operator*" ref="ad744ce917d84eeb36a714a0743082a9e" args="(const DayDelta &amp;, const int &amp;)" -->
+<a class="anchor" id="af888d4911eda6f27731cbf92bb393c32"></a><!-- doxytag: member="DayDelta::operator*" ref="af888d4911eda6f27731cbf92bb393c32" args="(const DayDelta &amp;delta, const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -470,13 +504,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structDayDelta.html">DayDelta</a> operator* </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>delta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -486,10 +520,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structDayDelta.html#a4312a7090a3365dc3646f91f44ae7654">DayDelta::operator*=(const int &amp; scale_factor)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a78fe4e3a74d889ef0743b4fd1aee1481"></a><!-- doxytag: member="DayDelta::operator/" ref="a78fe4e3a74d889ef0743b4fd1aee1481" args="(const DayDelta &amp;, const int &amp;)" -->
+<a class="anchor" id="a9469df031e6aba7593890989a954ae35"></a><!-- doxytag: member="DayDelta::operator/" ref="a9469df031e6aba7593890989a954ae35" args="(const DayDelta &amp;delta, const int &amp;scale_factor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -497,13 +532,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structDayDelta.html">DayDelta</a> operator/ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>delta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -513,10 +548,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structDayDelta.html#a892e28fb54b113684d1f5078d6f607c8">DayDelta::operator/=(const int &amp; scale_factor)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a281859b3e03b46be983288815761aa6b"></a><!-- doxytag: member="DayDelta::operator+" ref="a281859b3e03b46be983288815761aa6b" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="a371e4babc2d194244a5b4cea3ea66d7e"></a><!-- doxytag: member="DayDelta::operator+" ref="a371e4babc2d194244a5b4cea3ea66d7e" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -524,13 +560,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structDayDelta.html">DayDelta</a> operator+ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -540,10 +576,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structDayDelta.html#a081325e9acba450f7446d1d59ed65518">DayDelta::operator+=(const DayDelta &amp; other)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a33ace0bde4e898436bfd1bb430e09ca3"></a><!-- doxytag: member="DayDelta::operator&#45;" ref="a33ace0bde4e898436bfd1bb430e09ca3" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="a1b59f350f113499fac66fe2f180fca7a"></a><!-- doxytag: member="DayDelta::operator&#45;" ref="a1b59f350f113499fac66fe2f180fca7a" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -551,13 +588,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structDayDelta.html">DayDelta</a> operator- </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -567,10 +604,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structDayDelta.html#a886f81ff8427ad7712a246fcd3b139f7">DayDelta::operator-=(const DayDelta &amp; other)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="afd3daebb578fdeba71f41dca9e485a71"></a><!-- doxytag: member="DayDelta::operator==" ref="afd3daebb578fdeba71f41dca9e485a71" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="a04f6712422789b8ec3f19d3e1789bf4f"></a><!-- doxytag: member="DayDelta::operator==" ref="a04f6712422789b8ec3f19d3e1789bf4f" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -578,13 +616,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -594,11 +632,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether two <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> instances are equal. </p>
+<p>Determine whether two <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> instances are equal (lhs == rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a84010ae193d86bdbd3eff7a719c86204"></a><!-- doxytag: member="DayDelta::operator!=" ref="a84010ae193d86bdbd3eff7a719c86204" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="ad0581c91724489d68bd79382831a5a1e"></a><!-- doxytag: member="DayDelta::operator!=" ref="ad0581c91724489d68bd79382831a5a1e" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -606,13 +644,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator!= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -625,7 +663,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa93123e48cb4ba1c40133fbce862143e"></a><!-- doxytag: member="DayDelta::operator&lt;" ref="aa93123e48cb4ba1c40133fbce862143e" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="ad6792531d3979ec77fd7ddce40a1a496"></a><!-- doxytag: member="DayDelta::operator&lt;" ref="ad6792531d3979ec77fd7ddce40a1a496" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -633,13 +671,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&lt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -649,11 +687,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is less than another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is less than another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> (lhs &lt; rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="af89fa21d1b6be6acb7d5ff574640d8f1"></a><!-- doxytag: member="DayDelta::operator&lt;=" ref="af89fa21d1b6be6acb7d5ff574640d8f1" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="abdcc1adeaad32dd0ae90569e52f514dd"></a><!-- doxytag: member="DayDelta::operator&lt;=" ref="abdcc1adeaad32dd0ae90569e52f514dd" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -661,13 +699,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&lt;= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -677,11 +715,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is less than or equal to another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is less than or equal to another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> (lhs &lt;= rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a8ea55528acf383ece24abc904204cf28"></a><!-- doxytag: member="DayDelta::operator&gt;" ref="a8ea55528acf383ece24abc904204cf28" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="aaf9360c064df44a15781807e4a26c296"></a><!-- doxytag: member="DayDelta::operator&gt;" ref="aaf9360c064df44a15781807e4a26c296" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -689,13 +727,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&gt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -705,11 +743,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> (lhs &gt; rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a84d75c6dd0271ab2443667bee622847c"></a><!-- doxytag: member="DayDelta::operator&gt;=" ref="a84d75c6dd0271ab2443667bee622847c" args="(const DayDelta &amp;, const DayDelta &amp;)" -->
+<a class="anchor" id="a78c4c340fdd0331b761215aeb08f56e6"></a><!-- doxytag: member="DayDelta::operator&gt;=" ref="a78c4c340fdd0331b761215aeb08f56e6" args="(const DayDelta &amp;lhs, const DayDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -717,13 +755,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&gt;= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -733,7 +771,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than or equal to another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<p>Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is greater than or equal to another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> (lhs &gt;= rhs). </p>
  
 </div>
 </div>

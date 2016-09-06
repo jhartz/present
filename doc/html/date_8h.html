@@ -154,16 +154,18 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract a <a class="el" href="structDayDelta.html">DayDelta</a> from a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#aff3dde3e7758ebafc0a04c16ab8099b7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a1df0a3764eef73161f411d0f67e52014">Date_subtract_month_delta</a> (struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const delta)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract a <a class="el" href="structMonthDelta.html">MonthDelta</a> from a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#a1df0a3764eef73161f411d0f67e52014"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a77eadd9d79f983618b888d9810c506d0">Date_equal</a> (const struct <a class="el" href="structDate.html">Date</a> *const, const struct <a class="el" href="structDate.html">Date</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances are equal.  <a href="#a77eadd9d79f983618b888d9810c506d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#ad59fd8e95642ece085fe87745e8d1942">Date_less_than</a> (const struct <a class="el" href="structDate.html">Date</a> *const, const struct <a class="el" href="structDate.html">Date</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#ad59fd8e95642ece085fe87745e8d1942"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a353c04aca98ffc7f5661f4488dd7bdb9">Date_less_than_or_equal</a> (const struct <a class="el" href="structDate.html">Date</a> *const, const struct <a class="el" href="structDate.html">Date</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#a353c04aca98ffc7f5661f4488dd7bdb9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#ae4b19bd7c984619f04644bca7fa43f83">Date_greater_than</a> (const struct <a class="el" href="structDate.html">Date</a> *const, const struct <a class="el" href="structDate.html">Date</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#ae4b19bd7c984619f04644bca7fa43f83"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#acacc333b8cccf95f14d8040b811455c9">Date_greater_than_or_equal</a> (const struct <a class="el" href="structDate.html">Date</a> *const, const struct <a class="el" href="structDate.html">Date</a> *const)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#acacc333b8cccf95f14d8040b811455c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a3d60efd11d46f93eda8a02d7103c4fab">Date_compare</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances.  <a href="#a3d60efd11d46f93eda8a02d7103c4fab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a85013bec53ba6a1886288822276ff97f">Date_equal</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances are equal (lhs == rhs).  <a href="#a85013bec53ba6a1886288822276ff97f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a0cd06ad252483f5c5a431c1199cc0aef">Date_less_than</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &lt; rhs).  <a href="#a0cd06ad252483f5c5a431c1199cc0aef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a10ceef6feeb7fdf3b5b393bdaaf58569">Date_less_than_or_equal</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &lt;= rhs).  <a href="#a10ceef6feeb7fdf3b5b393bdaaf58569"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a7fd78318b36db6e6654dada67e4f39dc">Date_greater_than</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &gt; rhs).  <a href="#a7fd78318b36db6e6654dada67e4f39dc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a8536c7220594131c22267d3f049eea67">Date_greater_than_or_equal</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &gt;= rhs).  <a href="#a8536c7220594131c22267d3f049eea67"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a50971f537fbc1beb17b1729e1de0e9b3"></a><!-- doxytag: member="date.h::Date_create" ref="a50971f537fbc1beb17b1729e1de0e9b3" args="(...)" -->
@@ -702,21 +704,21 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a77eadd9d79f983618b888d9810c506d0"></a><!-- doxytag: member="date.h::Date_equal" ref="a77eadd9d79f983618b888d9810c506d0" args="(const struct Date *const, const struct Date *const)" -->
+<a class="anchor" id="a3d60efd11d46f93eda8a02d7103c4fab"></a><!-- doxytag: member="date.h::Date_compare" ref="a3d60efd11d46f93eda8a02d7103c4fab" args="(const struct Date *const lhs, const struct Date *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="date_8h.html#a77eadd9d79f983618b888d9810c506d0">Date_equal</a> </td>
+          <td class="memname">int <a class="el" href="date_8h.html#a3d60efd11d46f93eda8a02d7103c4fab">Date_compare</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -727,25 +729,26 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances are equal. </p>
+<p>Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances. </p>
+<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
 
 </div>
 </div>
-<a class="anchor" id="ad59fd8e95642ece085fe87745e8d1942"></a><!-- doxytag: member="date.h::Date_less_than" ref="ad59fd8e95642ece085fe87745e8d1942" args="(const struct Date *const, const struct Date *const)" -->
+<a class="anchor" id="a85013bec53ba6a1886288822276ff97f"></a><!-- doxytag: member="date.h::Date_equal" ref="a85013bec53ba6a1886288822276ff97f" args="(const struct Date *const lhs, const struct Date *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="date_8h.html#ad59fd8e95642ece085fe87745e8d1942">Date_less_than</a> </td>
+          <td class="memname">bool <a class="el" href="date_8h.html#a85013bec53ba6a1886288822276ff97f">Date_equal</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -756,25 +759,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+<p>Determine whether two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances are equal (lhs == rhs). </p>
 
 </div>
 </div>
-<a class="anchor" id="a353c04aca98ffc7f5661f4488dd7bdb9"></a><!-- doxytag: member="date.h::Date_less_than_or_equal" ref="a353c04aca98ffc7f5661f4488dd7bdb9" args="(const struct Date *const, const struct Date *const)" -->
+<a class="anchor" id="a0cd06ad252483f5c5a431c1199cc0aef"></a><!-- doxytag: member="date.h::Date_less_than" ref="a0cd06ad252483f5c5a431c1199cc0aef" args="(const struct Date *const lhs, const struct Date *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="date_8h.html#a353c04aca98ffc7f5661f4488dd7bdb9">Date_less_than_or_equal</a> </td>
+          <td class="memname">bool <a class="el" href="date_8h.html#a0cd06ad252483f5c5a431c1199cc0aef">Date_less_than</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -785,25 +788,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &lt; rhs). </p>
 
 </div>
 </div>
-<a class="anchor" id="ae4b19bd7c984619f04644bca7fa43f83"></a><!-- doxytag: member="date.h::Date_greater_than" ref="ae4b19bd7c984619f04644bca7fa43f83" args="(const struct Date *const, const struct Date *const)" -->
+<a class="anchor" id="a10ceef6feeb7fdf3b5b393bdaaf58569"></a><!-- doxytag: member="date.h::Date_less_than_or_equal" ref="a10ceef6feeb7fdf3b5b393bdaaf58569" args="(const struct Date *const lhs, const struct Date *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="date_8h.html#ae4b19bd7c984619f04644bca7fa43f83">Date_greater_than</a> </td>
+          <td class="memname">bool <a class="el" href="date_8h.html#a10ceef6feeb7fdf3b5b393bdaaf58569">Date_less_than_or_equal</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -814,25 +817,25 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is earlier than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &lt;= rhs). </p>
 
 </div>
 </div>
-<a class="anchor" id="acacc333b8cccf95f14d8040b811455c9"></a><!-- doxytag: member="date.h::Date_greater_than_or_equal" ref="acacc333b8cccf95f14d8040b811455c9" args="(const struct Date *const, const struct Date *const)" -->
+<a class="anchor" id="a7fd78318b36db6e6654dada67e4f39dc"></a><!-- doxytag: member="date.h::Date_greater_than" ref="a7fd78318b36db6e6654dada67e4f39dc" args="(const struct Date *const lhs, const struct Date *const rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="date_8h.html#acacc333b8cccf95f14d8040b811455c9">Date_greater_than_or_equal</a> </td>
+          <td class="memname">bool <a class="el" href="date_8h.html#a7fd78318b36db6e6654dada67e4f39dc">Date_greater_than</a> </td>
           <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>, </td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *&#160;</td>
-          <td class="paramname"><em>const</em>&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -843,7 +846,36 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>. </p>
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &gt; rhs). </p>
+
+</div>
+</div>
+<a class="anchor" id="a8536c7220594131c22267d3f049eea67"></a><!-- doxytag: member="date.h::Date_greater_than_or_equal" ref="a8536c7220594131c22267d3f049eea67" args="(const struct Date *const lhs, const struct Date *const rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="date_8h.html#a8536c7220594131c22267d3f049eea67">Date_greater_than_or_equal</a> </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determine whether a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> is later than or the same as another <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (lhs &gt;= rhs). </p>
 
 </div>
 </div>

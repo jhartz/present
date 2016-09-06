@@ -9,13 +9,14 @@ var month-delta_8h =
     [ "MonthDelta_get_years_decimal", "month-delta_8h.html#afa5436ebc73fc5ce02c99f86a05d377c", null ],
     [ "MonthDelta_is_negative", "month-delta_8h.html#a03c4b1b8f6edca4c798b469e3f03bdfa", null ],
     [ "MonthDelta_negate", "month-delta_8h.html#a4d77c910d4ec5841e5e3f59d63490078", null ],
-    [ "MonthDelta_multiply_by", "month-delta_8h.html#a147987d17fd1c580240979fde395b723", null ],
-    [ "MonthDelta_divide_by", "month-delta_8h.html#acd94c6f51a37b55c6e6b6ebd5a39cf7e", null ],
-    [ "MonthDelta_add_month_delta", "month-delta_8h.html#a9f725b1f782ab8ddd1aa734d2cdbce27", null ],
-    [ "MonthDelta_subtract_month_delta", "month-delta_8h.html#aba1962383fdb09d60f24b863ee738982", null ],
-    [ "MonthDelta_equal", "month-delta_8h.html#a346d0c310255f1f720506a15446497a3", null ],
-    [ "MonthDelta_less_than", "month-delta_8h.html#ac38bd594e6541d7943021c7fcf337c9d", null ],
-    [ "MonthDelta_less_than_or_equal", "month-delta_8h.html#a6aa021d2410c395010cb579eb49249db", null ],
-    [ "MonthDelta_greater_than", "month-delta_8h.html#a87f541ed67c5071e5bf359f08a0c4413", null ],
-    [ "MonthDelta_greater_than_or_equal", "month-delta_8h.html#ac025396048e81af1dc75bc21b7a7c3a8", null ]
+    [ "MonthDelta_multiply_by", "month-delta_8h.html#a24e21fbf270d561b1dccf2ab9e083ba0", null ],
+    [ "MonthDelta_divide_by", "month-delta_8h.html#ad7d99e42e53f6f55ef885d754f433500", null ],
+    [ "MonthDelta_add_month_delta", "month-delta_8h.html#a83addeaf706975d666783697489c70ce", null ],
+    [ "MonthDelta_subtract_month_delta", "month-delta_8h.html#a3766040b320189e4548ab4a648877319", null ],
+    [ "MonthDelta_compare", "month-delta_8h.html#a1428161f8576c24beb2208127abd890e", null ],
+    [ "MonthDelta_equal", "month-delta_8h.html#aa22a1b2c869af023e7c40dea79043369", null ],
+    [ "MonthDelta_less_than", "month-delta_8h.html#afa8b7517ec32257cb7f196b2eaad97ee", null ],
+    [ "MonthDelta_less_than_or_equal", "month-delta_8h.html#a5fd5dc59d42e27e3be82bff093be6f6f", null ],
+    [ "MonthDelta_greater_than", "month-delta_8h.html#ad593c05a77acc33e936064942494391b", null ],
+    [ "MonthDelta_greater_than_or_equal", "month-delta_8h.html#a3f943a75a1b03dddd0749fc5481caa40", null ]
 ];

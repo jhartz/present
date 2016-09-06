@@ -105,8 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6">int_nanosecond</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a4ddf3b506ad8f3576df034fbf3febae4">get_nanosecond</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a174f09985d45efc748ca956c9ca2fb2e">get_second_decimal</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a9c6423703cb0026435fb6e5b2d261d54">time_since_midnight</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#aec48dca559fd8b1f97c624eb45205d51">operator+=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#ac5197cbbfba2f45bfeb9f24175c60b14">operator-=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a8a98c385f805022b1bc229e472e8c1e9">operator+=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;delta)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a50a16387217243bc8986735c7cebd012">operator-=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;delta)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a72284f0c4f53d026688e55cea607f219">create</a> (<a class="el" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour)</td></tr>
@@ -116,20 +116,21 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a71e4e398da2cb0cfd3adb3f87cb6f3c2">create_with_decimal_seconds</a> (<a class="el" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a> hour, <a class="el" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a> minute, double second)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a7baab35d60ad3a2236c14133d8d0083b">midnight</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#ae206b86808ff1d0158cbc920eb289797">noon</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a4c185648dcfc28f46ac3fc700b3415c2">compare</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="clock-time_8h.html#a40f97cceae12156ea6da9bd1c170d455">PresentClockTimeError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a58f5305f36468eee0d1c489b5d72d717">error</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct PresentClockTimeData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a3fe115dffef3ba153e1fff6e0b2c0a23">data_</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a5931b57cfa225de613d50e5de740794b">operator+</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a5ad78ff449a6926520e1ecc71351f51d">operator-</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a7135b0c2995c1809f4a0cdd9e692ffe5">operator==</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#ab6293206508b6c5fcc7107c5fa20c0ab">operator!=</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a3b391b14edbe6b08f3f615173af8aae1">operator&lt;</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a220837ade82b091aabc96ab5aa44c168">operator&lt;=</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a985095ef213439f0aa9644f95b486bda">operator&gt;</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a329bc543b94a71802572c915efc3656b">operator&gt;=</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#afceb2935d4b931a097145e4967ac71b6">operator+</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a21ba0831914be0b997460299bf287cf3">operator-</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a69e5484eac6807a928f087cfa84637df">operator==</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a9a90069d85b56c30d69ab78e949c3911">operator!=</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a1559fb2a3b03d37e75624999c9da2bc8">operator&lt;</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#ae86e4ffa336f7ef101ab39631a143c19">operator&lt;=</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#af8b6940e326db070a338d4adb7d54bd9">operator&gt;</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#af2d17dcdd53d7cb57311cebe530be868">operator&gt;=</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Class or struct representing a time as seen on a clock. </p>
@@ -466,7 +467,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="aec48dca559fd8b1f97c624eb45205d51"></a><!-- doxytag: member="ClockTime::operator+=" ref="aec48dca559fd8b1f97c624eb45205d51" args="(const TimeDelta &amp;)" -->
+<a class="anchor" id="a8a98c385f805022b1bc229e472e8c1e9"></a><!-- doxytag: member="ClockTime::operator+=" ref="a8a98c385f805022b1bc229e472e8c1e9" args="(const TimeDelta &amp;delta)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -474,7 +475,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structClockTime.html">ClockTime</a>&amp; ClockTime::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -485,7 +486,7 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="ac5197cbbfba2f45bfeb9f24175c60b14"></a><!-- doxytag: member="ClockTime::operator&#45;=" ref="ac5197cbbfba2f45bfeb9f24175c60b14" args="(const TimeDelta &amp;)" -->
+<a class="anchor" id="a50a16387217243bc8986735c7cebd012"></a><!-- doxytag: member="ClockTime::operator&#45;=" ref="a50a16387217243bc8986735c7cebd012" args="(const TimeDelta &amp;delta)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -493,7 +494,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="structClockTime.html">ClockTime</a>&amp; ClockTime::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -504,8 +505,37 @@ Friends</h2></td></tr>
  
 </div>
 </div>
+<a class="anchor" id="a4c185648dcfc28f46ac3fc700b3415c2"></a><!-- doxytag: member="ClockTime::compare" ref="a4c185648dcfc28f46ac3fc700b3415c2" args="(const ClockTime &amp;lhs, const ClockTime &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int <a class="el" href="structClockTime.html#a4c185648dcfc28f46ac3fc700b3415c2">ClockTime::compare</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Compare two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances. </p>
+<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
+ 
+</div>
+</div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="a5931b57cfa225de613d50e5de740794b"></a><!-- doxytag: member="ClockTime::operator+" ref="a5931b57cfa225de613d50e5de740794b" args="(const ClockTime &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="afceb2935d4b931a097145e4967ac71b6"></a><!-- doxytag: member="ClockTime::operator+" ref="afceb2935d4b931a097145e4967ac71b6" args="(const ClockTime &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -513,13 +543,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structClockTime.html">ClockTime</a> operator+ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -529,10 +559,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structClockTime.html#a8a98c385f805022b1bc229e472e8c1e9">ClockTime::operator+=(const TimeDelta &amp; delta)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a5ad78ff449a6926520e1ecc71351f51d"></a><!-- doxytag: member="ClockTime::operator&#45;" ref="a5ad78ff449a6926520e1ecc71351f51d" args="(const ClockTime &amp;, const TimeDelta &amp;)" -->
+<a class="anchor" id="a21ba0831914be0b997460299bf287cf3"></a><!-- doxytag: member="ClockTime::operator&#45;" ref="a21ba0831914be0b997460299bf287cf3" args="(const ClockTime &amp;lhs, const TimeDelta &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -540,13 +571,13 @@ Friends</h2></td></tr>
           <td class="memname">const <a class="el" href="structClockTime.html">ClockTime</a> operator- </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -556,10 +587,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="structClockTime.html#a50a16387217243bc8986735c7cebd012">ClockTime::operator-=(const TimeDelta &amp; delta)</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7135b0c2995c1809f4a0cdd9e692ffe5"></a><!-- doxytag: member="ClockTime::operator==" ref="a7135b0c2995c1809f4a0cdd9e692ffe5" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<a class="anchor" id="a69e5484eac6807a928f087cfa84637df"></a><!-- doxytag: member="ClockTime::operator==" ref="a69e5484eac6807a928f087cfa84637df" args="(const ClockTime &amp;lhs, const ClockTime &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -567,13 +599,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -583,11 +615,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances are equal. </p>
+<p>Determine whether two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> instances are equal (lhs == rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="ab6293206508b6c5fcc7107c5fa20c0ab"></a><!-- doxytag: member="ClockTime::operator!=" ref="ab6293206508b6c5fcc7107c5fa20c0ab" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<a class="anchor" id="a9a90069d85b56c30d69ab78e949c3911"></a><!-- doxytag: member="ClockTime::operator!=" ref="a9a90069d85b56c30d69ab78e949c3911" args="(const ClockTime &amp;lhs, const ClockTime &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -595,13 +627,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator!= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -614,7 +646,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3b391b14edbe6b08f3f615173af8aae1"></a><!-- doxytag: member="ClockTime::operator&lt;" ref="a3b391b14edbe6b08f3f615173af8aae1" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<a class="anchor" id="a1559fb2a3b03d37e75624999c9da2bc8"></a><!-- doxytag: member="ClockTime::operator&lt;" ref="a1559fb2a3b03d37e75624999c9da2bc8" args="(const ClockTime &amp;lhs, const ClockTime &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -622,13 +654,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&lt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -638,11 +670,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is earlier than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is earlier than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (lhs &lt; rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a220837ade82b091aabc96ab5aa44c168"></a><!-- doxytag: member="ClockTime::operator&lt;=" ref="a220837ade82b091aabc96ab5aa44c168" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<a class="anchor" id="ae86e4ffa336f7ef101ab39631a143c19"></a><!-- doxytag: member="ClockTime::operator&lt;=" ref="ae86e4ffa336f7ef101ab39631a143c19" args="(const ClockTime &amp;lhs, const ClockTime &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -650,13 +682,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&lt;= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -666,11 +698,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is earlier than or or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is earlier than or or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (lhs &lt;= rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a985095ef213439f0aa9644f95b486bda"></a><!-- doxytag: member="ClockTime::operator&gt;" ref="a985095ef213439f0aa9644f95b486bda" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<a class="anchor" id="af8b6940e326db070a338d4adb7d54bd9"></a><!-- doxytag: member="ClockTime::operator&gt;" ref="af8b6940e326db070a338d4adb7d54bd9" args="(const ClockTime &amp;lhs, const ClockTime &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -678,13 +710,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&gt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -694,11 +726,11 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (lhs &gt; rhs). </p>
  
 </div>
 </div>
-<a class="anchor" id="a329bc543b94a71802572c915efc3656b"></a><!-- doxytag: member="ClockTime::operator&gt;=" ref="a329bc543b94a71802572c915efc3656b" args="(const ClockTime &amp;, const ClockTime &amp;)" -->
+<a class="anchor" id="af2d17dcdd53d7cb57311cebe530be868"></a><!-- doxytag: member="ClockTime::operator&gt;=" ref="af2d17dcdd53d7cb57311cebe530be868" args="(const ClockTime &amp;lhs, const ClockTime &amp;rhs)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -706,13 +738,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator&gt;= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -722,7 +754,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a>. </p>
+<p>Determine whether a <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> is later than or the same as another <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock.">ClockTime</a> (lhs &gt;= rhs). </p>
  
 </div>
 </div>
