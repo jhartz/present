@@ -234,26 +234,3 @@ TEST_CASE("ClockTime comparison operators", "[clock-time]") {
     CHECK(c3 >= c4);
 }
 
-TEST_CASE("ClockTime boilerplate constructors", "[clock-time]") {
-    // data_ constructor
-    struct PresentClockTimeData d1 = {3, 4};
-    ClockTime c(d1);
-    IS_HMS(0, 0, 3, 4);
-
-    // assignment operator
-    struct PresentClockTimeData d2 = {7, 8};
-    ClockTime c2(d2);
-    c = c2;
-    IS_HMS(0, 0, 7, 8);
-
-    // copy constructor
-    {
-        ClockTime c(c2);
-        IS_HMS(0, 0, 7, 8);
-    }
-
-    // error constructor
-    ClockTime c3(ClockTime_ERROR_HOUR_OUT_OF_RANGE);
-    CHECK(c3.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
-}
-

@@ -133,8 +133,6 @@ struct PRESENT_API Date {
     friend bool operator>(const Date &, const Date &);
     /** @copydoc Date_greater_than_or_equal */
     friend bool operator>=(const Date &, const Date &);
-
-    PRESENT_BOILERPLATE_CONSTRUCTORS(Date)
 #endif
 };
 

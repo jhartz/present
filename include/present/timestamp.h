@@ -138,8 +138,6 @@ struct PRESENT_API Timestamp {
     friend bool operator>(const Timestamp &, const Timestamp &);
     /** @copydoc Timestamp_greater_than_or_equal */
     friend bool operator>=(const Timestamp &, const Timestamp &);
-
-    PRESENT_BOILERPLATE_CONSTRUCTORS(Timestamp)
 #endif
 };
 

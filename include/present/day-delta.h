@@ -107,8 +107,6 @@ struct PRESENT_API DayDelta {
     friend bool operator>(const DayDelta &, const DayDelta &);
     /** @copydoc DayDelta_greater_than_or_equal */
     friend bool operator>=(const DayDelta &, const DayDelta &);
-
-    PRESENT_BOILERPLATE_CONSTRUCTORS(DayDelta)
 #endif
 };
 

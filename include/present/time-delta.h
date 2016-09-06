@@ -157,14 +157,6 @@ struct PRESENT_API TimeDelta {
     friend bool operator>(const TimeDelta &, const TimeDelta &);
     /** @copydoc TimeDelta_greater_than_or_equal */
     friend bool operator>=(const TimeDelta &, const TimeDelta &);
-
-    /*
-     * This constructor exists so that DayDeltas can be used wherever a
-     * TimeDelta is expected (since DayDeltas are a subset of TimeDeltas).
-     */
-    TimeDelta(const DayDelta & dayDelta);
-
-    PRESENT_BOILERPLATE_CONSTRUCTORS(TimeDelta)
 #endif
 };
 

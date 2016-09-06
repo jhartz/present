@@ -117,8 +117,6 @@ struct PRESENT_API ClockTime {
     friend bool operator>(const ClockTime &, const ClockTime &);
     /** @copydoc ClockTime_greater_than_or_equal */
     friend bool operator>=(const ClockTime &, const ClockTime &);
-
-    PRESENT_BOILERPLATE_CONSTRUCTORS(ClockTime)
 #endif
 };
 

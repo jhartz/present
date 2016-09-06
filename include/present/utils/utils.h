@@ -30,23 +30,5 @@
 #define PRESENT_OVERLOAD_MAX_4(_1, _2, _3, _4, NAME, ...) NAME
 #define PRESENT_OVERLOAD_MAX_6(_1, _2, _3, _4, _5, _6, NAME, ...) NAME
 
-/*
- * Define macros used for boilerplate constructors for C++ classes
- */
-#define PRESENT_BOILERPLATE_CONSTRUCTORS(_ClassName)                \
-    _ClassName(const _ClassName & other)                            \
-        : error(other.error), data_(other.data_) {}                 \
-    _ClassName & operator=(const _ClassName & other) {              \
-        this->error = other.error;                                  \
-        this->data_ = other.data_;                                  \
-        return *this;                                               \
-    }                                                               \
-    explicit _ClassName(Present ## _ClassName ## Data & data)       \
-        : error(_ClassName ## _ERROR_NONE), data_(data) {}          \
-    explicit _ClassName(Present ## _ClassName ## Error error)       \
-        : error(error) {}                                           \
-    private:                                                        \
-    _ClassName();
-
 #endif /* _PRESENT_UTILS_H_ */
 

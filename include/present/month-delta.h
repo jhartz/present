@@ -103,8 +103,6 @@ struct PRESENT_API MonthDelta {
     friend bool operator>(const MonthDelta &, const MonthDelta &);
     /** @copydoc MonthDelta_greater_than_or_equal */
     friend bool operator>=(const MonthDelta &, const MonthDelta &);
-
-    PRESENT_BOILERPLATE_CONSTRUCTORS(MonthDelta)
 #endif
 };
 

@@ -219,7 +219,3 @@ bool operator>=(const TimeDelta & lhs, const TimeDelta & rhs) {
     return TimeDelta_greater_than_or_equal(&lhs, &rhs);
 }
 
-TimeDelta::TimeDelta(const DayDelta & dayDelta) {
-    this->data_ = dayDelta.get_time_delta().data_;
-}
-
