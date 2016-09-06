@@ -108,31 +108,38 @@ struct PRESENT_API Date {
     DayDelta get_absolute_difference(const Date & other) const;
 
     /** @copydoc Date_add_day_delta */
-    Date & operator+=(const DayDelta &);
+    Date & operator+=(const DayDelta & delta);
     /** @copydoc Date_add_month_delta */
-    Date & operator+=(const MonthDelta &);
+    Date & operator+=(const MonthDelta & delta);
     /** @copydoc Date_subtract_day_delta */
-    Date & operator-=(const DayDelta &);
+    Date & operator-=(const DayDelta & delta);
     /** @copydoc Date_subtract_month_delta */
-    Date & operator-=(const MonthDelta &);
+    Date & operator-=(const MonthDelta & delta);
 
-    friend const Date operator+(const Date &, const DayDelta &);
-    friend const Date operator+(const Date &, const MonthDelta &);
-    friend const Date operator-(const Date &, const DayDelta &);
-    friend const Date operator-(const Date &, const MonthDelta &);
+    /** @see Date::operator+=(const DayDelta & delta) */
+    friend const Date operator+(const Date & lhs, const DayDelta & rhs);
+    /** @see Date::operator+=(const MonthDelta & delta) */
+    friend const Date operator+(const Date & lhs, const MonthDelta & rhs);
+    /** @see Date::operator-=(const DayDelta & delta) */
+    friend const Date operator-(const Date & lhs, const DayDelta & rhs);
+    /** @see Date::operator-=(const MonthDelta & delta) */
+    friend const Date operator-(const Date & lhs, const MonthDelta & rhs);
+
+    /** @copydoc Date_compare */
+    static int compare(const Date & lhs, const Date & rhs);
 
     /** @copydoc Date_equal */
-    friend bool operator==(const Date &, const Date &);
-    friend bool operator!=(const Date &, const Date &);
+    friend bool operator==(const Date & lhs, const Date & rhs);
+    friend bool operator!=(const Date & lhs, const Date & rhs);
 
     /** @copydoc Date_less_than */
-    friend bool operator<(const Date &, const Date &);
+    friend bool operator<(const Date & lhs, const Date & rhs);
     /** @copydoc Date_less_than_or_equal */
-    friend bool operator<=(const Date &, const Date &);
+    friend bool operator<=(const Date & lhs, const Date & rhs);
     /** @copydoc Date_greater_than */
-    friend bool operator>(const Date &, const Date &);
+    friend bool operator>(const Date & lhs, const Date & rhs);
     /** @copydoc Date_greater_than_or_equal */
-    friend bool operator>=(const Date &, const Date &);
+    friend bool operator>=(const Date & lhs, const Date & rhs);
 #endif
 };
 
@@ -313,36 +320,54 @@ Date_subtract_month_delta(
         const struct MonthDelta * const delta);
 
 /**
- * Determine whether two Date instances are equal.
+ * Compare two Date instances.
+ *
+ * If lhs < rhs, then a negative integer will be returned.
+ * If lhs == rhs, then 0 will be returned.
+ * If lhs > rhs, then a positive integer will be returned.
  */
-PRESENT_API bool
-Date_equal(const struct Date * const, const struct Date * const);
+PRESENT_API int
+Date_compare(
+        const struct Date * const lhs,
+        const struct Date * const rhs);
 
 /**
- * Determine whether a Date is earlier than another Date.
+ * Determine whether two Date instances are equal (lhs == rhs).
  */
 PRESENT_API bool
-Date_less_than(const struct Date * const, const struct Date * const);
+Date_equal(const struct Date * const lhs, const struct Date * const rhs);
 
 /**
- * Determine whether a Date is earlier than or the same as another Date.
+ * Determine whether a Date is earlier than another Date (lhs < rhs).
  */
 PRESENT_API bool
-Date_less_than_or_equal(const struct Date * const, const struct Date * const);
+Date_less_than(const struct Date * const lhs, const struct Date * const rhs);
 
 /**
- * Determine whether a Date is later than another Date.
+ * Determine whether a Date is earlier than or the same as another Date
+ * (lhs <= rhs).
  */
 PRESENT_API bool
-Date_greater_than(const struct Date * const, const struct Date * const);
+Date_less_than_or_equal(
+        const struct Date * const lhs,
+        const struct Date * const rhs);
 
 /**
- * Determine whether a Date is later than or the same as another Date.
+ * Determine whether a Date is later than another Date (lhs > rhs).
+ */
+PRESENT_API bool
+Date_greater_than(
+        const struct Date * const lhs,
+        const struct Date * const rhs);
+
+/**
+ * Determine whether a Date is later than or the same as another Date
+ * (lhs >= rhs).
  */
 PRESENT_API bool
 Date_greater_than_or_equal(
-        const struct Date * const,
-        const struct Date * const);
+        const struct Date * const lhs,
+        const struct Date * const rhs);
 
 #ifdef __cplusplus
 }

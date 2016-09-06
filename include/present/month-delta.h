@@ -64,6 +64,10 @@ struct PRESENT_API MonthDelta {
     /** @copydoc MonthDelta_negate */
     void negate();
 
+    /**
+     * Return the negated version of this MonthDelta.
+     * @see MonthDelta::negate
+     */
     MonthDelta operator-() const;
 
     /** Add one month to the MonthDelta. */
@@ -76,33 +80,48 @@ struct PRESENT_API MonthDelta {
     MonthDelta operator--(int);
 
     /** @copydoc MonthDelta_multiply_by */
-    MonthDelta & operator*=(const int &);
+    MonthDelta & operator*=(const int & scale_factor);
     /** @copydoc MonthDelta_divide_by */
-    MonthDelta & operator/=(const int &);
+    MonthDelta & operator/=(const int & scale_factor);
 
-    friend const MonthDelta operator*(const MonthDelta &, const int &);
-    friend const MonthDelta operator/(const MonthDelta &, const int &);
+    /** @see MonthDelta::operator*=(const int & scale_factor) */
+    friend const MonthDelta operator*(
+            const MonthDelta & delta,
+            const int & scale_factor);
+    /** @see MonthDelta::operator/=(const int & scale_factor) */
+    friend const MonthDelta operator/(
+            const MonthDelta & delta,
+            const int & scale_factor);
 
     /** @copydoc MonthDelta_add_month_delta */
-    MonthDelta & operator+=(const MonthDelta &);
+    MonthDelta & operator+=(const MonthDelta & other);
     /** @copydoc MonthDelta_subtract_month_delta */
-    MonthDelta & operator-=(const MonthDelta &);
+    MonthDelta & operator-=(const MonthDelta & other);
 
-    friend const MonthDelta operator+(const MonthDelta &, const MonthDelta &);
-    friend const MonthDelta operator-(const MonthDelta &, const MonthDelta &);
+    /** @see MonthDelta::operator+=(const MonthDelta & other) */
+    friend const MonthDelta operator+(
+            const MonthDelta & lhs,
+            const MonthDelta & rhs);
+    /** @see MonthDelta::operator-=(const MonthDelta & other) */
+    friend const MonthDelta operator-(
+            const MonthDelta & lhs,
+            const MonthDelta & rhs);
+
+    /** @copydoc MonthDelta_compare */
+    static int compare(const MonthDelta & lhs, const MonthDelta & rhs);
 
     /** @copydoc MonthDelta_equal */
-    friend bool operator==(const MonthDelta &, const MonthDelta &);
-    friend bool operator!=(const MonthDelta &, const MonthDelta &);
+    friend bool operator==(const MonthDelta &, const MonthDelta & rhs);
+    friend bool operator!=(const MonthDelta &, const MonthDelta & rhs);
 
     /** @copydoc MonthDelta_less_than */
-    friend bool operator<(const MonthDelta &, const MonthDelta &);
+    friend bool operator<(const MonthDelta & lhs, const MonthDelta & rhs);
     /** @copydoc MonthDelta_less_than_or_equal */
-    friend bool operator<=(const MonthDelta &, const MonthDelta &);
+    friend bool operator<=(const MonthDelta & lhs, const MonthDelta & rhs);
     /** @copydoc MonthDelta_greater_than */
-    friend bool operator>(const MonthDelta &, const MonthDelta &);
+    friend bool operator>(const MonthDelta & lhs, const MonthDelta & rhs);
     /** @copydoc MonthDelta_greater_than_or_equal */
-    friend bool operator>=(const MonthDelta &, const MonthDelta &);
+    friend bool operator>=(const MonthDelta & lhs, const MonthDelta & rhs);
 #endif
 };
 
@@ -170,13 +189,13 @@ MonthDelta_negate(struct MonthDelta * const self);
  * Scale a MonthDelta by multiplying it by a scale factor.
  */
 PRESENT_API void
-MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor);
+MonthDelta_multiply_by(struct MonthDelta * const self, int scale_factor);
 
 /**
  * Scale a MonthDelta by dividing it by a scale factor.
  */
 PRESENT_API void
-MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor);
+MonthDelta_divide_by(struct MonthDelta * const self, int scale_factor);
 
 /**
  * Add another MonthDelta to a MonthDelta.
@@ -184,7 +203,7 @@ MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor);
 PRESENT_API void
 MonthDelta_add_month_delta(
         struct MonthDelta * const self,
-        const struct MonthDelta * const monthDeltaToAdd);
+        const struct MonthDelta * const other);
 
 /**
  * Subtract another MonthDelta from a MonthDelta.
@@ -192,48 +211,62 @@ MonthDelta_add_month_delta(
 PRESENT_API void
 MonthDelta_subtract_month_delta(
         struct MonthDelta * const self,
-        const struct MonthDelta * const monthDeltaToSubtract);
+        const struct MonthDelta * const other);
 
 /**
- * Determine whether two MonthDelta instances are equal.
+ * Compare two MonthDelta instances.
+ *
+ * If lhs < rhs, then a negative integer will be returned.
+ * If lhs == rhs, then 0 will be returned.
+ * If lhs > rhs, then a positive integer will be returned.
+ */
+PRESENT_API int
+MonthDelta_compare(
+        const struct MonthDelta * const lhs,
+        const struct MonthDelta * const rhs);
+
+/**
+ * Determine whether two MonthDelta instances are equal (lhs == rhs).
  */
 PRESENT_API bool
 MonthDelta_equal(
-        const struct MonthDelta * const,
-        const struct MonthDelta * const);
+        const struct MonthDelta * const lhs,
+        const struct MonthDelta * const rhs);
 
 /**
- * Determine whether a MonthDelta is less than another MonthDelta.
+ * Determine whether a MonthDelta is less than another MonthDelta (lhs < rhs).
  */
 PRESENT_API bool
 MonthDelta_less_than(
-        const struct MonthDelta * const,
-        const struct MonthDelta * const);
+        const struct MonthDelta * const lhs,
+        const struct MonthDelta * const rhs);
 
 /**
- * Determine whether a MonthDelta is less than or equal to another MonthDelta.
+ * Determine whether a MonthDelta is less than or equal to another MonthDelta
+ * (lhs <= rhs).
  */
 PRESENT_API bool
 MonthDelta_less_than_or_equal(
-        const struct MonthDelta * const,
-        const struct MonthDelta * const);
+        const struct MonthDelta * const lhs,
+        const struct MonthDelta * const rhs);
 
 /**
- * Determine whether a MonthDelta is greater than another MonthDelta.
+ * Determine whether a MonthDelta is greater than another MonthDelta
+ * (lhs > rhs).
  */
 PRESENT_API bool
 MonthDelta_greater_than(
-        const struct MonthDelta * const,
-        const struct MonthDelta * const);
+        const struct MonthDelta * const lhs,
+        const struct MonthDelta * const rhs);
 
 /**
  * Determine whether a MonthDelta is greater than or equal to another
- * MonthDelta.
+ * MonthDelta (lhs >= rhs).
  */
 PRESENT_API bool
 MonthDelta_greater_than_or_equal(
-        const struct MonthDelta * const,
-        const struct MonthDelta * const);
+        const struct MonthDelta * const lhs,
+        const struct MonthDelta * const rhs);
 
 #ifdef __cplusplus
 }

@@ -121,42 +121,67 @@ struct PRESENT_API TimeDelta {
     /** @copydoc TimeDelta_negate */
     void negate();
 
+    /**
+     * Return the negated version of this TimeDelta.
+     * @see TimeDelta::negate
+     */
     TimeDelta operator-() const;
 
     /** @copydoc TimeDelta_multiply_by */
-    TimeDelta & operator*=(const int &);
+    TimeDelta & operator*=(const int & scale_factor);
     /** @copydoc TimeDelta_multiply_by_decimal */
-    TimeDelta & operator*=(const double &);
+    TimeDelta & operator*=(const double & scale_factor);
     /** @copydoc TimeDelta_divide_by */
-    TimeDelta & operator/=(const int &);
+    TimeDelta & operator/=(const int & scale_factor);
     /** @copydoc TimeDelta_divide_by_decimal */
-    TimeDelta & operator/=(const double &);
+    TimeDelta & operator/=(const double & scale_factor);
 
-    friend const TimeDelta operator*(const TimeDelta &, const int &);
-    friend const TimeDelta operator*(const TimeDelta &, const double &);
-    friend const TimeDelta operator/(const TimeDelta &, const int &);
-    friend const TimeDelta operator/(const TimeDelta &, const double &);
+    /** @see TimeDelta::operator*=(const int & scale_factor) */
+    friend const TimeDelta operator*(
+            const TimeDelta & delta,
+            const int & scale_factor);
+    /** @see TimeDelta::operator*=(const double & scale_factor) */
+    friend const TimeDelta operator*(
+            const TimeDelta & delta,
+            const double & scale_factor);
+    /** @see TimeDelta::operator/=(const int & scale_factor) */
+    friend const TimeDelta operator/(
+            const TimeDelta & delta,
+            const int & scale_factor);
+    /** @see TimeDelta::operator/=(const double & scale_factor) */
+    friend const TimeDelta operator/(
+            const TimeDelta & delta,
+            const double & scale_factor);
 
     /** @copydoc TimeDelta_add_time_delta */
-    TimeDelta & operator+=(const TimeDelta &);
+    TimeDelta & operator+=(const TimeDelta & other);
     /** @copydoc TimeDelta_subtract_time_delta */
-    TimeDelta & operator-=(const TimeDelta &);
+    TimeDelta & operator-=(const TimeDelta & other);
 
-    friend const TimeDelta operator+(const TimeDelta &, const TimeDelta &);
-    friend const TimeDelta operator-(const TimeDelta &, const TimeDelta &);
+    /** @see TimeDelta::operator+=(const TimeDelta & other) */
+    friend const TimeDelta operator+(
+            const TimeDelta & lhs,
+            const TimeDelta & rhs);
+    /** @see TimeDelta::operator-=(const TimeDelta & other) */
+    friend const TimeDelta operator-(
+            const TimeDelta & lhs,
+            const TimeDelta & rhs);
+
+    /** @copydoc TimeDelta_compare */
+    static int compare(const TimeDelta & lhs, const TimeDelta & rhs);
 
     /** @copydoc TimeDelta_equal */
-    friend bool operator==(const TimeDelta &, const TimeDelta &);
-    friend bool operator!=(const TimeDelta &, const TimeDelta &);
+    friend bool operator==(const TimeDelta & lhs, const TimeDelta & rhs);
+    friend bool operator!=(const TimeDelta & lhs, const TimeDelta & rhs);
 
     /** @copydoc TimeDelta_less_than */
-    friend bool operator<(const TimeDelta &, const TimeDelta &);
+    friend bool operator<(const TimeDelta & lhs, const TimeDelta & rhs);
     /** @copydoc TimeDelta_less_than_or_equal */
-    friend bool operator<=(const TimeDelta &, const TimeDelta &);
+    friend bool operator<=(const TimeDelta & lhs, const TimeDelta & rhs);
     /** @copydoc TimeDelta_greater_than */
-    friend bool operator>(const TimeDelta &, const TimeDelta &);
+    friend bool operator>(const TimeDelta & lhs, const TimeDelta & rhs);
     /** @copydoc TimeDelta_greater_than_or_equal */
-    friend bool operator>=(const TimeDelta &, const TimeDelta &);
+    friend bool operator>=(const TimeDelta & lhs, const TimeDelta & rhs);
 #endif
 };
 
@@ -374,7 +399,7 @@ TimeDelta_negate(struct TimeDelta * const self);
  * Scale a TimeDelta by multiplying it by an integer scale factor.
  */
 PRESENT_API void
-TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor);
+TimeDelta_multiply_by(struct TimeDelta * const self, const int scale_factor);
 
 /**
  * Scale a TimeDelta by multiplying it by a floating point scale factor.
@@ -382,13 +407,13 @@ TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor);
 PRESENT_API void
 TimeDelta_multiply_by_decimal(
         struct TimeDelta * const self,
-        const double scaleFactor);
+        const double scale_factor);
 
 /**
  * Scale a TimeDelta by dividing it by an integer scale factor.
  */
 PRESENT_API void
-TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor);
+TimeDelta_divide_by(struct TimeDelta * const self, const int scale_factor);
 
 /**
  * Scale a TimeDelta by dividing it by a floating point scale factor.
@@ -396,7 +421,7 @@ TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor);
 PRESENT_API void
 TimeDelta_divide_by_decimal(
         struct TimeDelta * const self,
-        const double scaleFactor);
+        const double scale_factor);
 
 /**
  * Add another TimeDelta to a TimeDelta.
@@ -404,7 +429,7 @@ TimeDelta_divide_by_decimal(
 PRESENT_API void
 TimeDelta_add_time_delta(
         struct TimeDelta * const self,
-        const struct TimeDelta * const timeDeltaToAdd);
+        const struct TimeDelta * const other);
 
 /**
  * Subtract another TimeDelta from a TimeDelta.
@@ -412,45 +437,61 @@ TimeDelta_add_time_delta(
 PRESENT_API void
 TimeDelta_subtract_time_delta(
         struct TimeDelta * const self,
-        const struct TimeDelta * const timeDeltaToSubtract);
+        const struct TimeDelta * const other);
 
 /**
- * Determine whether two TimeDelta instances are equal.
+ * Compare two TimeDelta instances.
+ *
+ * If lhs < rhs, then a negative integer will be returned.
+ * If lhs == rhs, then 0 will be returned.
+ * If lhs > rhs, then a positive integer will be returned.
+ */
+PRESENT_API int
+TimeDelta_compare(
+        const struct TimeDelta * const lhs,
+        const struct TimeDelta * const rhs);
+
+/**
+ * Determine whether two TimeDelta instances are equal (lhs == rhs).
  */
 PRESENT_API bool
-TimeDelta_equal(const struct TimeDelta * const, const struct TimeDelta * const);
+TimeDelta_equal(
+        const struct TimeDelta * const lhs,
+        const struct TimeDelta * const rhs);
 
 /**
- * Determine whether a TimeDelta is less than another TimeDelta.
+ * Determine whether a TimeDelta is less than another TimeDelta (lhs < rhs).
  */
 PRESENT_API bool
 TimeDelta_less_than(
-        const struct TimeDelta * const,
-        const struct TimeDelta * const);
+        const struct TimeDelta * const lhs,
+        const struct TimeDelta * const rhs);
 
 /**
- * Determine whether a TimeDelta is less than or equal to another TimeDelta.
+ * Determine whether a TimeDelta is less than or equal to another TimeDelta
+ * (lhs <= rhs).
  */
 PRESENT_API bool
 TimeDelta_less_than_or_equal(
-        const struct TimeDelta * const,
-        const struct TimeDelta * const);
+        const struct TimeDelta * const lhs,
+        const struct TimeDelta * const rhs);
 
 /**
- * Determine whether a TimeDelta is greater than another TimeDelta.
+ * Determine whether a TimeDelta is greater than another TimeDelta (lhs > rhs).
  */
 PRESENT_API bool
 TimeDelta_greater_than(
-        const struct TimeDelta * const,
-        const struct TimeDelta * const);
+        const struct TimeDelta * const lhs,
+        const struct TimeDelta * const rhs);
 
 /**
- * Determine whether a TimeDelta is greater than or equal to another TimeDelta.
+ * Determine whether a TimeDelta is greater than or equal to another TimeDelta
+ * (lhs >= rhs).
  */
 PRESENT_API bool
 TimeDelta_greater_than_or_equal(
-        const struct TimeDelta * const,
-        const struct TimeDelta * const);
+        const struct TimeDelta * const lhs,
+        const struct TimeDelta * const rhs);
 
 #ifdef __cplusplus
 }

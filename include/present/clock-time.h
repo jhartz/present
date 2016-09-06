@@ -98,25 +98,34 @@ struct PRESENT_API ClockTime {
     TimeDelta time_since_midnight() const;
 
     /** @copydoc ClockTime_add_time_delta */
-    ClockTime & operator+=(const TimeDelta &);
+    ClockTime & operator+=(const TimeDelta & delta);
     /** @copydoc ClockTime_subtract_time_delta */
-    ClockTime & operator-=(const TimeDelta &);
+    ClockTime & operator-=(const TimeDelta & delta);
 
-    friend const ClockTime operator+(const ClockTime &, const TimeDelta &);
-    friend const ClockTime operator-(const ClockTime &, const TimeDelta &);
+    /** @see ClockTime::operator+=(const TimeDelta & delta) */
+    friend const ClockTime operator+(
+            const ClockTime & lhs,
+            const TimeDelta & rhs);
+    /** @see ClockTime::operator-=(const TimeDelta & delta) */
+    friend const ClockTime operator-(
+            const ClockTime & lhs,
+            const TimeDelta & rhs);
+
+    /** @copydoc ClockTime_compare */
+    static int compare(const ClockTime & lhs, const ClockTime & rhs);
 
     /** @copydoc ClockTime_equal */
-    friend bool operator==(const ClockTime &, const ClockTime &);
-    friend bool operator!=(const ClockTime &, const ClockTime &);
+    friend bool operator==(const ClockTime & lhs, const ClockTime & rhs);
+    friend bool operator!=(const ClockTime & lhs, const ClockTime & rhs);
 
     /** @copydoc ClockTime_less_than */
-    friend bool operator<(const ClockTime &, const ClockTime &);
+    friend bool operator<(const ClockTime & lhs, const ClockTime & rhs);
     /** @copydoc ClockTime_less_than_or_equal */
-    friend bool operator<=(const ClockTime &, const ClockTime &);
+    friend bool operator<=(const ClockTime & lhs, const ClockTime & rhs);
     /** @copydoc ClockTime_greater_than */
-    friend bool operator>(const ClockTime &, const ClockTime &);
+    friend bool operator>(const ClockTime & lhs, const ClockTime & rhs);
     /** @copydoc ClockTime_greater_than_or_equal */
-    friend bool operator>=(const ClockTime &, const ClockTime &);
+    friend bool operator>=(const ClockTime & lhs, const ClockTime & rhs);
 #endif
 };
 
@@ -290,44 +299,58 @@ ClockTime_subtract_time_delta(
         const struct TimeDelta * const delta);
 
 /**
- * Determine whether two ClockTime instances are equal.
+ * Compare two ClockTime instances.
+ *
+ * If lhs < rhs, then a negative integer will be returned.
+ * If lhs == rhs, then 0 will be returned.
+ * If lhs > rhs, then a positive integer will be returned.
  */
-PRESENT_API bool
-ClockTime_equal(const struct ClockTime * const, const struct ClockTime * const);
+PRESENT_API int
+ClockTime_compare(
+        const struct ClockTime * const lhs,
+        const struct ClockTime * const rhs);
 
 /**
- * Determine whether a ClockTime is earlier than another ClockTime.
+ * Determine whether two ClockTime instances are equal (lhs == rhs).
+ */
+PRESENT_API bool
+ClockTime_equal(
+        const struct ClockTime * const lhs,
+        const struct ClockTime * const rhs);
+
+/**
+ * Determine whether a ClockTime is earlier than another ClockTime (lhs < rhs).
  */
 PRESENT_API bool
 ClockTime_less_than(
-        const struct ClockTime * const,
-        const struct ClockTime * const);
+        const struct ClockTime * const lhs,
+        const struct ClockTime * const rhs);
 
 /**
  * Determine whether a ClockTime is earlier than or or the same as another
- * ClockTime.
+ * ClockTime (lhs <= rhs).
  */
 PRESENT_API bool
 ClockTime_less_than_or_equal(
-        const struct ClockTime * const,
-        const struct ClockTime * const);
+        const struct ClockTime * const lhs,
+        const struct ClockTime * const rhs);
 
 /**
- * Determine whether a ClockTime is later than another ClockTime.
+ * Determine whether a ClockTime is later than another ClockTime (lhs > rhs).
  */
 PRESENT_API bool
 ClockTime_greater_than(
-        const struct ClockTime * const,
-        const struct ClockTime * const);
+        const struct ClockTime * const lhs,
+        const struct ClockTime * const rhs);
 
 /**
  * Determine whether a ClockTime is later than or the same as another
- * ClockTime.
+ * ClockTime (lhs >= rhs).
  */
 PRESENT_API bool
 ClockTime_greater_than_or_equal(
-        const struct ClockTime * const,
-        const struct ClockTime * const);
+        const struct ClockTime * const lhs,
+        const struct ClockTime * const rhs);
 
 #ifdef __cplusplus
 }

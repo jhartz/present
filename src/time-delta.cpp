@@ -141,23 +141,23 @@ TimeDelta TimeDelta::operator-() const {
     return copy;
 }
 
-TimeDelta & TimeDelta::operator*=(const int & scaleFactor) {
-    TimeDelta_multiply_by(this, scaleFactor);
+TimeDelta & TimeDelta::operator*=(const int & scale_factor) {
+    TimeDelta_multiply_by(this, scale_factor);
     return *this;
 }
 
-TimeDelta & TimeDelta::operator*=(const double & scaleFactor) {
-    TimeDelta_multiply_by_decimal(this, scaleFactor);
+TimeDelta & TimeDelta::operator*=(const double & scale_factor) {
+    TimeDelta_multiply_by_decimal(this, scale_factor);
     return *this;
 }
 
-TimeDelta & TimeDelta::operator/=(const int & scaleFactor) {
-    TimeDelta_divide_by(this, scaleFactor);
+TimeDelta & TimeDelta::operator/=(const int & scale_factor) {
+    TimeDelta_divide_by(this, scale_factor);
     return *this;
 }
 
-TimeDelta & TimeDelta::operator/=(const double & scaleFactor) {
-    TimeDelta_divide_by_decimal(this, scaleFactor);
+TimeDelta & TimeDelta::operator/=(const double & scale_factor) {
+    TimeDelta_divide_by_decimal(this, scale_factor);
     return *this;
 }
 
@@ -177,13 +177,13 @@ const TimeDelta operator/(const TimeDelta & lhs, const double & rhs) {
     return (TimeDelta(lhs) /= rhs);
 }
 
-TimeDelta & TimeDelta::operator+=(const TimeDelta & timeDeltaToAdd) {
-    TimeDelta_add_time_delta(this, &timeDeltaToAdd);
+TimeDelta & TimeDelta::operator+=(const TimeDelta & other) {
+    TimeDelta_add_time_delta(this, &other);
     return *this;
 }
 
-TimeDelta & TimeDelta::operator-=(const TimeDelta & timeDeltaToSubtract) {
-    TimeDelta_subtract_time_delta(this, &timeDeltaToSubtract);
+TimeDelta & TimeDelta::operator-=(const TimeDelta & other) {
+    TimeDelta_subtract_time_delta(this, &other);
     return *this;
 }
 

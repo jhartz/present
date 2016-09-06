@@ -91,13 +91,13 @@ DayDelta DayDelta::operator--(int) {
     return copy;
 }
 
-DayDelta & DayDelta::operator*=(const int & scaleFactor) {
-    DayDelta_multiply_by(this, scaleFactor);
+DayDelta & DayDelta::operator*=(const int & scale_factor) {
+    DayDelta_multiply_by(this, scale_factor);
     return *this;
 }
 
-DayDelta & DayDelta::operator/=(const int & scaleFactor) {
-    DayDelta_divide_by(this, scaleFactor);
+DayDelta & DayDelta::operator/=(const int & scale_factor) {
+    DayDelta_divide_by(this, scale_factor);
     return *this;
 }
 
@@ -109,13 +109,13 @@ const DayDelta operator/(const DayDelta & lhs, const int & rhs) {
     return (DayDelta(lhs) /= rhs);
 }
 
-DayDelta & DayDelta::operator+=(const DayDelta & dayDeltaToAdd) {
-    DayDelta_add_day_delta(this, &dayDeltaToAdd);
+DayDelta & DayDelta::operator+=(const DayDelta & other) {
+    DayDelta_add_day_delta(this, &other);
     return *this;
 }
 
-DayDelta & DayDelta::operator-=(const DayDelta & dayDeltaToSubtract) {
-    DayDelta_subtract_day_delta(this, &dayDeltaToSubtract);
+DayDelta & DayDelta::operator-=(const DayDelta & other) {
+    DayDelta_subtract_day_delta(this, &other);
     return *this;
 }
 

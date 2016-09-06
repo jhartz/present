@@ -68,6 +68,10 @@ struct PRESENT_API DayDelta {
     /** @copydoc DayDelta_negate */
     void negate();
 
+    /**
+     * Return the negated version of this DayDelta.
+     * @see DayDelta::negate
+     */
     DayDelta operator-() const;
 
     /** Add one day to the DayDelta. */
@@ -80,33 +84,48 @@ struct PRESENT_API DayDelta {
     DayDelta operator--(int);
 
     /** @copydoc DayDelta_multiply_by */
-    DayDelta & operator*=(const int &);
+    DayDelta & operator*=(const int & scale_factor);
     /** @copydoc DayDelta_divide_by */
-    DayDelta & operator/=(const int &);
+    DayDelta & operator/=(const int & scale_factor);
 
-    friend const DayDelta operator*(const DayDelta &, const int &);
-    friend const DayDelta operator/(const DayDelta &, const int &);
+    /** @see DayDelta::operator*=(const int & scale_factor) */
+    friend const DayDelta operator*(
+            const DayDelta & delta,
+            const int & scale_factor);
+    /** @see DayDelta::operator/=(const int & scale_factor) */
+    friend const DayDelta operator/(
+            const DayDelta & delta,
+            const int & scale_factor);
 
     /** @copydoc DayDelta_add_day_delta */
-    DayDelta & operator+=(const DayDelta &);
+    DayDelta & operator+=(const DayDelta & other);
     /** @copydoc DayDelta_subtract_day_delta */
-    DayDelta & operator-=(const DayDelta &);
+    DayDelta & operator-=(const DayDelta & other);
 
-    friend const DayDelta operator+(const DayDelta &, const DayDelta &);
-    friend const DayDelta operator-(const DayDelta &, const DayDelta &);
+    /** @see DayDelta::operator+=(const DayDelta & other) */
+    friend const DayDelta operator+(
+            const DayDelta & lhs,
+            const DayDelta & rhs);
+    /** @see DayDelta::operator-=(const DayDelta & other) */
+    friend const DayDelta operator-(
+            const DayDelta & lhs,
+            const DayDelta & rhs);
+
+    /** @copydoc DayDelta_compare */
+    static int compare(const DayDelta & lhs, const DayDelta & rhs);
 
     /** @copydoc DayDelta_equal */
-    friend bool operator==(const DayDelta &, const DayDelta &);
-    friend bool operator!=(const DayDelta &, const DayDelta &);
+    friend bool operator==(const DayDelta & lhs, const DayDelta & rhs);
+    friend bool operator!=(const DayDelta & lhs, const DayDelta & rhs);
 
     /** @copydoc DayDelta_less_than */
-    friend bool operator<(const DayDelta &, const DayDelta &);
+    friend bool operator<(const DayDelta & lhs, const DayDelta & rhs);
     /** @copydoc DayDelta_less_than_or_equal */
-    friend bool operator<=(const DayDelta &, const DayDelta &);
+    friend bool operator<=(const DayDelta & lhs, const DayDelta & rhs);
     /** @copydoc DayDelta_greater_than */
-    friend bool operator>(const DayDelta &, const DayDelta &);
+    friend bool operator>(const DayDelta & lhs, const DayDelta & rhs);
     /** @copydoc DayDelta_greater_than_or_equal */
-    friend bool operator>=(const DayDelta &, const DayDelta &);
+    friend bool operator>=(const DayDelta & lhs, const DayDelta & rhs);
 #endif
 };
 
@@ -179,13 +198,13 @@ DayDelta_negate(struct DayDelta * const self);
  * Scale a DayDelta by multiplying it by a scale factor.
  */
 PRESENT_API void
-DayDelta_multiply_by(struct DayDelta * const self, int scaleFactor);
+DayDelta_multiply_by(struct DayDelta * const self, int scale_factor);
 
 /**
  * Scale a DayDelta by dividing it by a scale factor.
  */
 PRESENT_API void
-DayDelta_divide_by(struct DayDelta * const self, int scaleFactor);
+DayDelta_divide_by(struct DayDelta * const self, int scale_factor);
 
 /**
  * Add another DayDelta to a DayDelta.
@@ -193,7 +212,7 @@ DayDelta_divide_by(struct DayDelta * const self, int scaleFactor);
 PRESENT_API void
 DayDelta_add_day_delta(
         struct DayDelta * const self,
-        const struct DayDelta * const dayDeltaToAdd);
+        const struct DayDelta * const other);
 
 /**
  * Subtract another DayDelta from a DayDelta.
@@ -201,47 +220,61 @@ DayDelta_add_day_delta(
 PRESENT_API void
 DayDelta_subtract_day_delta(
         struct DayDelta * const self,
-        const struct DayDelta * const dayDeltaToSubtract);
+        const struct DayDelta * const other);
 
 /**
- * Determine whether two DayDelta instances are equal.
+ * Compare two DayDelta instances.
+ *
+ * If lhs < rhs, then a negative integer will be returned.
+ * If lhs == rhs, then 0 will be returned.
+ * If lhs > rhs, then a positive integer will be returned.
+ */
+PRESENT_API int
+DayDelta_compare(
+        const struct DayDelta * const lhs,
+        const struct DayDelta * const rhs);
+
+/**
+ * Determine whether two DayDelta instances are equal (lhs == rhs).
  */
 PRESENT_API bool
 DayDelta_equal(
-        const struct DayDelta * const,
-        const struct DayDelta * const);
+        const struct DayDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 /**
- * Determine whether a DayDelta is less than another DayDelta.
+ * Determine whether a DayDelta is less than another DayDelta (lhs < rhs).
  */
 PRESENT_API bool
 DayDelta_less_than(
-        const struct DayDelta * const,
-        const struct DayDelta * const);
+        const struct DayDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 /**
- * Determine whether a DayDelta is less than or equal to another DayDelta.
+ * Determine whether a DayDelta is less than or equal to another DayDelta
+ * (lhs <= rhs).
  */
 PRESENT_API bool
 DayDelta_less_than_or_equal(
-        const struct DayDelta * const,
-        const struct DayDelta * const);
+        const struct DayDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 /**
- * Determine whether a DayDelta is greater than another DayDelta.
+ * Determine whether a DayDelta is greater than another DayDelta (lhs > rhs).
  */
 PRESENT_API bool
 DayDelta_greater_than(
-        const struct DayDelta * const,
-        const struct DayDelta * const);
+        const struct DayDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 /**
- * Determine whether a DayDelta is greater than or equal to another DayDelta.
+ * Determine whether a DayDelta is greater than or equal to another DayDelta
+ * (lhs >= rhs).
  */
 PRESENT_API bool
 DayDelta_greater_than_or_equal(
-        const struct DayDelta * const,
-        const struct DayDelta * const);
+        const struct DayDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 #ifdef __cplusplus
 }

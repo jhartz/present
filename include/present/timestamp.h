@@ -107,37 +107,58 @@ struct PRESENT_API Timestamp {
     TimeDelta get_absolute_difference(const Timestamp & other) const;
 
     /** @copydoc Timestamp_add_time_delta */
-    Timestamp & operator+=(const TimeDelta &);
+    Timestamp & operator+=(const TimeDelta & delta);
     /** @copydoc Timestamp_add_day_delta */
-    Timestamp & operator+=(const DayDelta &);
+    Timestamp & operator+=(const DayDelta & delta);
     /** @copydoc Timestamp_add_month_delta */
-    Timestamp & operator+=(const MonthDelta &);
+    Timestamp & operator+=(const MonthDelta & delta);
     /** @copydoc Timestamp_subtract_time_delta */
-    Timestamp & operator-=(const TimeDelta &);
+    Timestamp & operator-=(const TimeDelta & delta);
     /** @copydoc Timestamp_subtract_day_delta */
-    Timestamp & operator-=(const DayDelta &);
+    Timestamp & operator-=(const DayDelta & delta);
     /** @copydoc Timestamp_subtract_month_delta */
-    Timestamp & operator-=(const MonthDelta &);
+    Timestamp & operator-=(const MonthDelta & delta);
 
-    friend const Timestamp operator+(const Timestamp &, const TimeDelta &);
-    friend const Timestamp operator+(const Timestamp &, const DayDelta &);
-    friend const Timestamp operator+(const Timestamp &, const MonthDelta &);
-    friend const Timestamp operator-(const Timestamp &, const TimeDelta &);
-    friend const Timestamp operator-(const Timestamp &, const DayDelta &);
-    friend const Timestamp operator-(const Timestamp &, const MonthDelta &);
+    /** @see Timestamp::operator+=(const TimeDelta & delta) */
+    friend const Timestamp operator+(
+            const Timestamp & lhs,
+            const TimeDelta & rhs);
+    /** @see Timestamp::operator+=(const DayDelta & delta) */
+    friend const Timestamp operator+(
+            const Timestamp & lhs,
+            const DayDelta & rhs);
+    /** @see Timestamp::operator+=(const MonthDelta & delta) */
+    friend const Timestamp operator+(
+            const Timestamp & lhs,
+            const MonthDelta & rhs);
+    /** @see Timestamp::operator-=(const TimeDelta & delta) */
+    friend const Timestamp operator-(
+            const Timestamp & lhs,
+            const TimeDelta & rhs);
+    /** @see Timestamp::operator-=(const DayDelta & delta) */
+    friend const Timestamp operator-(
+            const Timestamp & lhs,
+            const DayDelta & rhs);
+    /** @see Timestamp::operator-=(const MonthDelta & delta) */
+    friend const Timestamp operator-(
+            const Timestamp & lhs,
+            const MonthDelta & rhs);
+
+    /** @copydoc Timestamp_compare */
+    static int compare(const Timestamp & lhs, const Timestamp & rhs);
 
     /** @copydoc Timestamp_equal */
-    friend bool operator==(const Timestamp &, const Timestamp &);
-    friend bool operator!=(const Timestamp &, const Timestamp &);
+    friend bool operator==(const Timestamp & lhs, const Timestamp & rhs);
+    friend bool operator!=(const Timestamp & lhs, const Timestamp & rhs);
 
     /** @copydoc Timestamp_less_than */
-    friend bool operator<(const Timestamp &, const Timestamp &);
+    friend bool operator<(const Timestamp & lhs, const Timestamp & rhs);
     /** @copydoc Timestamp_less_than_or_equal */
-    friend bool operator<=(const Timestamp &, const Timestamp &);
+    friend bool operator<=(const Timestamp & lhs, const Timestamp & rhs);
     /** @copydoc Timestamp_greater_than */
-    friend bool operator>(const Timestamp &, const Timestamp &);
+    friend bool operator>(const Timestamp & lhs, const Timestamp & rhs);
     /** @copydoc Timestamp_greater_than_or_equal */
-    friend bool operator>=(const Timestamp &, const Timestamp &);
+    friend bool operator>=(const Timestamp & lhs, const Timestamp & rhs);
 #endif
 };
 
@@ -393,45 +414,61 @@ Timestamp_subtract_month_delta(
         const struct MonthDelta * const delta);
 
 /**
- * Determine whether two Timestamp instances represent the exact same point in
- * time.
+ * Compare two Timestamp instances.
+ *
+ * If lhs < rhs, then a negative integer will be returned.
+ * If lhs == rhs, then 0 will be returned.
+ * If lhs > rhs, then a positive integer will be returned.
  */
-PRESENT_API bool
-Timestamp_equal(const struct Timestamp * const, const struct Timestamp * const);
+PRESENT_API int
+Timestamp_compare(
+        const struct Timestamp * const lhs,
+        const struct Timestamp * const rhs);
 
 /**
- * Determine whether a Timestamp occurs earlier than another Timestamp.
+ * Determine whether two Timestamp instances represent the exact same point in
+ * time (lhs == rhs).
+ */
+PRESENT_API bool
+Timestamp_equal(
+        const struct Timestamp * const lhs,
+        const struct Timestamp * const rhs);
+
+/**
+ * Determine whether a Timestamp occurs earlier than another Timestamp
+ * (lhs < rhs).
  */
 PRESENT_API bool
 Timestamp_less_than(
-        const struct Timestamp * const,
-        const struct Timestamp * const);
+        const struct Timestamp * const lhs,
+        const struct Timestamp * const rhs);
 
 /**
  * Determine whether a Timestamp occurs earlier than or at the same time as
- * another Timestamp.
+ * another Timestamp (lhs <= rhs).
  */
 PRESENT_API bool
 Timestamp_less_than_or_equal(
-        const struct Timestamp * const,
-        const struct Timestamp * const);
+        const struct Timestamp * const lhs,
+        const struct Timestamp * const rhs);
 
 /**
- * Determine whether a Timestamp occurs later than another Timestamp.
+ * Determine whether a Timestamp occurs later than another Timestamp
+ * (lhs > rhs).
  */
 PRESENT_API bool
 Timestamp_greater_than(
-        const struct Timestamp * const,
-        const struct Timestamp * const);
+        const struct Timestamp * const lhs,
+        const struct Timestamp * const rhs);
 
 /**
  * Determine whether a Timestamp occurs later than or at the same time as
- * another Timestamp.
+ * another Timestamp (lhs >= rhs).
  */
 PRESENT_API bool
 Timestamp_greater_than_or_equal(
-        const struct Timestamp * const,
-        const struct Timestamp * const);
+        const struct Timestamp * const lhs,
+        const struct Timestamp * const rhs);
 
 #ifdef __cplusplus
 }

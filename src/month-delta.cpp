@@ -85,13 +85,13 @@ MonthDelta MonthDelta::operator--(int) {
     return copy;
 }
 
-MonthDelta & MonthDelta::operator*=(const int & scaleFactor) {
-    MonthDelta_multiply_by(this, scaleFactor);
+MonthDelta & MonthDelta::operator*=(const int & scale_factor) {
+    MonthDelta_multiply_by(this, scale_factor);
     return *this;
 }
 
-MonthDelta & MonthDelta::operator/=(const int & scaleFactor) {
-    MonthDelta_divide_by(this, scaleFactor);
+MonthDelta & MonthDelta::operator/=(const int & scale_factor) {
+    MonthDelta_divide_by(this, scale_factor);
     return *this;
 }
 
@@ -103,13 +103,13 @@ const MonthDelta operator/(const MonthDelta & lhs, const int & rhs) {
     return (MonthDelta(lhs) /= rhs);
 }
 
-MonthDelta & MonthDelta::operator+=(const MonthDelta & monthDeltaToAdd) {
-    MonthDelta_add_month_delta(this, &monthDeltaToAdd);
+MonthDelta & MonthDelta::operator+=(const MonthDelta & other) {
+    MonthDelta_add_month_delta(this, &other);
     return *this;
 }
 
-MonthDelta & MonthDelta::operator-=(const MonthDelta & monthDeltaToSubtract) {
-    MonthDelta_subtract_month_delta(this, &monthDeltaToSubtract);
+MonthDelta & MonthDelta::operator-=(const MonthDelta & other) {
+    MonthDelta_subtract_month_delta(this, &other);
     return *this;
 }
 
