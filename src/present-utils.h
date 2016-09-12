@@ -7,6 +7,11 @@
  * For details, see LICENSE.
  */
 
+/*
+ * REMEMBERANCE of the Variadic Macros that used to be here:
+ * https://github.com/jhartz/present/blob/d060bb32f2be43299249bad8c7c44f428ff4bcc3/src/present-utils.h
+ */
+
 #include <string.h>
 
 #ifndef _PRESENT_IMPL_UTILS_H_
