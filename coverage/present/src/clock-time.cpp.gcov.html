@@ -87,18 +87,18 @@
 <a name="16"><span class="lineNum">      16 </span>                :            : #include &quot;present/clock-time.h&quot;</a>
 <span class="lineNum">      17 </span>                :            : 
 <span class="lineNum">      18 </span>                :<span class="lineCov">          6 : ClockTime ClockTime::create(int_hour hour) {</span>
-<span class="lineNum">      19 </span>                :<span class="lineCov">          6 :     return ClockTime_create_from_hour(hour);</span>
+<span class="lineNum">      19 </span>                :<span class="lineCov">          6 :     return ClockTime_from_hour(hour);</span>
 <a name="20"><span class="lineNum">      20 </span>                :            : }</a>
 <span class="lineNum">      21 </span>                :            : 
 <span class="lineNum">      22 </span>                :<span class="lineCov">          5 : ClockTime ClockTime::create(int_hour hour, int_minute minute) {</span>
-<span class="lineNum">      23 </span>                :<span class="lineCov">          5 :     return ClockTime_create_from_hour_minute(hour, minute);</span>
+<span class="lineNum">      23 </span>                :<span class="lineCov">          5 :     return ClockTime_from_hour_minute(hour, minute);</span>
 <a name="24"><span class="lineNum">      24 </span>                :            : }</a>
 <span class="lineNum">      25 </span>                :            : 
 <span class="lineNum">      26 </span>                :<span class="lineCov">          7 : ClockTime ClockTime::create(</span>
 <span class="lineNum">      27 </span>                :            :         int_hour hour,
 <span class="lineNum">      28 </span>                :            :         int_minute minute,
 <span class="lineNum">      29 </span>                :            :         int_second second) {
-<span class="lineNum">      30 </span>                :<span class="lineCov">          7 :     return ClockTime_create_from_hour_minute_second(hour, minute, second);</span>
+<span class="lineNum">      30 </span>                :<span class="lineCov">          7 :     return ClockTime_from_hour_minute_second(hour, minute, second);</span>
 <a name="31"><span class="lineNum">      31 </span>                :            : }</a>
 <span class="lineNum">      32 </span>                :            : 
 <span class="lineNum">      33 </span>                :<span class="lineCov">         20 : ClockTime ClockTime::create(</span>
@@ -106,7 +106,7 @@
 <span class="lineNum">      35 </span>                :            :         int_minute minute,
 <span class="lineNum">      36 </span>                :            :         int_second second,
 <span class="lineNum">      37 </span>                :            :         int_nanosecond nanosecond) {
-<span class="lineNum">      38 </span>                :            :     return ClockTime_create_from_hour_minute_second_nanosecond(
+<span class="lineNum">      38 </span>                :            :     return ClockTime_from_hour_minute_second_nanosecond(
 <span class="lineNum">      39 </span>                :            :         hour,
 <span class="lineNum">      40 </span>                :            :         minute,
 <span class="lineNum">      41 </span>                :            :         second,

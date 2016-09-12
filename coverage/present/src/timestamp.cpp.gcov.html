@@ -89,21 +89,21 @@
 <a name="18"><span class="lineNum">      18 </span>                :            : #include &quot;present/timestamp.h&quot;</a>
 <span class="lineNum">      19 </span>                :            : 
 <span class="lineNum">      20 </span>                :<span class="lineNoCov">          0 : Timestamp Timestamp::create(const time_t timestamp) {</span>
-<span class="lineNum">      21 </span>                :<span class="lineNoCov">          0 :     return Timestamp_create_from_time_t(timestamp);</span>
+<span class="lineNum">      21 </span>                :<span class="lineNoCov">          0 :     return Timestamp_from_time_t(timestamp);</span>
 <a name="22"><span class="lineNum">      22 </span>                :            : }</a>
 <span class="lineNum">      23 </span>                :            : 
 <span class="lineNum">      24 </span>                :<span class="lineNoCov">          0 : Timestamp Timestamp::create(</span>
 <span class="lineNum">      25 </span>                :            :         const struct tm &amp; tm,
 <span class="lineNum">      26 </span>                :            :         const TimeDelta &amp; timeZoneOffset) {
-<span class="lineNum">      27 </span>                :<span class="lineNoCov">          0 :     return Timestamp_create_from_struct_tm(tm, &amp;timeZoneOffset);</span>
+<span class="lineNum">      27 </span>                :<span class="lineNoCov">          0 :     return Timestamp_from_struct_tm(tm, &amp;timeZoneOffset);</span>
 <a name="28"><span class="lineNum">      28 </span>                :            : }</a>
 <span class="lineNum">      29 </span>                :            : 
 <span class="lineNum">      30 </span>                :<span class="lineNoCov">          0 : Timestamp Timestamp::create_utc(const struct tm &amp; tm) {</span>
-<span class="lineNum">      31 </span>                :<span class="lineNoCov">          0 :     return Timestamp_create_from_struct_tm_utc(tm);</span>
+<span class="lineNum">      31 </span>                :<span class="lineNoCov">          0 :     return Timestamp_from_struct_tm_utc(tm);</span>
 <a name="32"><span class="lineNum">      32 </span>                :            : }</a>
 <span class="lineNum">      33 </span>                :            : 
 <span class="lineNum">      34 </span>                :<span class="lineNoCov">          0 : Timestamp Timestamp::create_local(const struct tm &amp; tm) {</span>
-<span class="lineNum">      35 </span>                :<span class="lineNoCov">          0 :     return Timestamp_create_from_struct_tm_local(tm);</span>
+<span class="lineNum">      35 </span>                :<span class="lineNoCov">          0 :     return Timestamp_from_struct_tm_local(tm);</span>
 <a name="36"><span class="lineNum">      36 </span>                :            : }</a>
 <span class="lineNum">      37 </span>                :            : 
 <span class="lineNum">      38 </span>                :<span class="lineNoCov">          0 : Timestamp Timestamp::create(</span>

@@ -9,5 +9,7 @@ var searchData=
   ['from_5fnanoseconds',['from_nanoseconds',['../structTimeDelta.html#abc1b517c2156b2d9627fd07d42aecb2f',1,'TimeDelta']]],
   ['from_5fseconds',['from_seconds',['../structTimeDelta.html#aad4311d8580ade36d8c567576630c967',1,'TimeDelta']]],
   ['from_5fweeks',['from_weeks',['../structDayDelta.html#a871bbf34275016d74c7ef8c8777c3258',1,'DayDelta::from_weeks()'],['../structTimeDelta.html#ae0f0a41d899e62b9d17bc4542c443ec6',1,'TimeDelta::from_weeks()']]],
+  ['from_5fyear_5fday',['from_year_day',['../structDate.html#af3a7ed97e385d134e39c42092d082405',1,'Date']]],
+  ['from_5fyear_5fweek_5fday',['from_year_week_day',['../structDate.html#a88c032d0e05efa136df450f1d3564760',1,'Date']]],
   ['from_5fyears',['from_years',['../structMonthDelta.html#a02632b6ef33850d9329bd04a686ce1ed',1,'MonthDelta']]]
 ];

@@ -156,17 +156,17 @@
 <span class="lineNum">      85 </span>                :<span class="lineCov">          8 : }</span>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <span class="lineNum">      87 </span>                :            : struct ClockTime
-<span class="lineNum">      88 </span>                :<span class="lineCov">          7 : ClockTime_create_from_hour(int_hour hour) {</span>
+<span class="lineNum">      88 </span>                :<span class="lineCov">          7 : ClockTime_from_hour(int_hour hour) {</span>
 <span class="lineNum">      89 </span>                :<span class="lineCov">          7 :     return new_clock_time(hour, 0, 0, 0);</span>
 <span class="lineNum">      90 </span>                :            : }
 <a name="91"><span class="lineNum">      91 </span>                :            : </a>
 <span class="lineNum">      92 </span>                :            : struct ClockTime
-<span class="lineNum">      93 </span>                :<span class="lineCov">          6 : ClockTime_create_from_hour_minute(int_hour hour, int_minute minute) {</span>
+<span class="lineNum">      93 </span>                :<span class="lineCov">          6 : ClockTime_from_hour_minute(int_hour hour, int_minute minute) {</span>
 <span class="lineNum">      94 </span>                :<span class="lineCov">          6 :     return new_clock_time(hour, minute, 0, 0);</span>
 <span class="lineNum">      95 </span>                :            : }
 <a name="96"><span class="lineNum">      96 </span>                :            : </a>
 <span class="lineNum">      97 </span>                :            : struct ClockTime
-<span class="lineNum">      98 </span>                :<span class="lineCov">          8 : ClockTime_create_from_hour_minute_second(</span>
+<span class="lineNum">      98 </span>                :<span class="lineCov">          8 : ClockTime_from_hour_minute_second(</span>
 <span class="lineNum">      99 </span>                :            :         int_hour hour,
 <span class="lineNum">     100 </span>                :            :         int_minute minute,
 <span class="lineNum">     101 </span>                :            :         int_second second) {
@@ -174,7 +174,7 @@
 <span class="lineNum">     103 </span>                :            : }
 <a name="104"><span class="lineNum">     104 </span>                :            : </a>
 <span class="lineNum">     105 </span>                :            : struct ClockTime
-<span class="lineNum">     106 </span>                :<span class="lineCov">         21 : ClockTime_create_from_hour_minute_second_nanosecond(</span>
+<span class="lineNum">     106 </span>                :<span class="lineCov">         21 : ClockTime_from_hour_minute_second_nanosecond(</span>
 <span class="lineNum">     107 </span>                :            :         int_hour hour,
 <span class="lineNum">     108 </span>                :            :         int_minute minute,
 <span class="lineNum">     109 </span>                :            :         int_second second,

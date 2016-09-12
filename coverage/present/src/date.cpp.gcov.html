@@ -87,26 +87,26 @@
 <a name="16"><span class="lineNum">      16 </span>                :            : #include &quot;present/date.h&quot;</a>
 <span class="lineNum">      17 </span>                :            : 
 <span class="lineNum">      18 </span>                :<span class="lineCov">          6 : Date Date::create(int_year year) {</span>
-<span class="lineNum">      19 </span>                :<span class="lineCov">          6 :     return Date_create_from_year(year);</span>
+<span class="lineNum">      19 </span>                :<span class="lineCov">          6 :     return Date_from_year(year);</span>
 <a name="20"><span class="lineNum">      20 </span>                :            : }</a>
 <span class="lineNum">      21 </span>                :            : 
 <span class="lineNum">      22 </span>                :<span class="lineCov">          5 : Date Date::create(int_year year, int_month month) {</span>
-<span class="lineNum">      23 </span>                :<span class="lineCov">          5 :     return Date_create_from_year_month(year, month);</span>
+<span class="lineNum">      23 </span>                :<span class="lineCov">          5 :     return Date_from_year_month(year, month);</span>
 <a name="24"><span class="lineNum">      24 </span>                :            : }</a>
 <span class="lineNum">      25 </span>                :            : 
 <span class="lineNum">      26 </span>                :<span class="lineCov">         27 : Date Date::create(int_year year, int_month month, int_day day) {</span>
-<span class="lineNum">      27 </span>                :<span class="lineCov">         27 :     return Date_create_from_year_month_day(year, month, day);</span>
+<span class="lineNum">      27 </span>                :<span class="lineCov">         27 :     return Date_from_year_month_day(year, month, day);</span>
 <a name="28"><span class="lineNum">      28 </span>                :            : }</a>
 <span class="lineNum">      29 </span>                :            : 
-<span class="lineNum">      30 </span>                :<span class="lineCov">          7 : Date Date::create_from_year_day(int_year year, int_day_of_year day_of_year) {</span>
-<span class="lineNum">      31 </span>                :<span class="lineCov">          7 :     return Date_create_from_year_day(year, day_of_year);</span>
+<span class="lineNum">      30 </span>                :<span class="lineCov">          7 : Date Date::from_year_day(int_year year, int_day_of_year day_of_year) {</span>
+<span class="lineNum">      31 </span>                :<span class="lineCov">          7 :     return Date_from_year_day(year, day_of_year);</span>
 <a name="32"><span class="lineNum">      32 </span>                :            : }</a>
 <span class="lineNum">      33 </span>                :            : 
-<span class="lineNum">      34 </span>                :<span class="lineCov">         16 : Date Date::create_from_year_week_day(</span>
+<span class="lineNum">      34 </span>                :<span class="lineCov">         16 : Date Date::from_year_week_day(</span>
 <span class="lineNum">      35 </span>                :            :         int_year year,
 <span class="lineNum">      36 </span>                :            :         int_week_of_year week_of_year,
 <span class="lineNum">      37 </span>                :            :         int_day_of_week day_of_week) {
-<span class="lineNum">      38 </span>                :<span class="lineCov">         16 :     return Date_create_from_year_week_day(year, week_of_year, day_of_week);</span>
+<span class="lineNum">      38 </span>                :<span class="lineCov">         16 :     return Date_from_year_week_day(year, week_of_year, day_of_week);</span>
 <a name="39"><span class="lineNum">      39 </span>                :            : }</a>
 <span class="lineNum">      40 </span>                :            : 
 <span class="lineNum">      41 </span>                :<span class="lineCov">          5 : int_year Date::get_year() const {</span>

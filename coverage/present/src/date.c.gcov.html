@@ -208,27 +208,27 @@
 <span class="lineNum">     135 </span>                :            : }
 <a name="136"><span class="lineNum">     136 </span>                :            : </a>
 <span class="lineNum">     137 </span>                :            : struct Date
-<span class="lineNum">     138 </span>                :<span class="lineCov">          6 : Date_create_from_year(int_year year) {</span>
+<span class="lineNum">     138 </span>                :<span class="lineCov">          6 : Date_from_year(int_year year) {</span>
 <span class="lineNum">     139 </span>                :<span class="lineCov">          6 :     return new_date(year, 1, 1);</span>
 <span class="lineNum">     140 </span>                :            : }
 <a name="141"><span class="lineNum">     141 </span>                :            : </a>
 <span class="lineNum">     142 </span>                :            : struct Date
-<span class="lineNum">     143 </span>                :<span class="lineCov">          5 : Date_create_from_year_month(int_year year, int_month month) {</span>
+<span class="lineNum">     143 </span>                :<span class="lineCov">          5 : Date_from_year_month(int_year year, int_month month) {</span>
 <span class="lineNum">     144 </span>                :<span class="lineCov">          5 :     return new_date(year, month, 1);</span>
 <span class="lineNum">     145 </span>                :            : }
 <a name="146"><span class="lineNum">     146 </span>                :            : </a>
 <span class="lineNum">     147 </span>                :            : struct Date
-<span class="lineNum">     148 </span>                :<span class="lineCov">         27 : Date_create_from_year_month_day(int_year year, int_month month, int_day day) {</span>
+<span class="lineNum">     148 </span>                :<span class="lineCov">         27 : Date_from_year_month_day(int_year year, int_month month, int_day day) {</span>
 <span class="lineNum">     149 </span>                :<span class="lineCov">         27 :     return new_date(year, month, day);</span>
 <span class="lineNum">     150 </span>                :            : }
 <a name="151"><span class="lineNum">     151 </span>                :            : </a>
 <span class="lineNum">     152 </span>                :            : struct Date
-<span class="lineNum">     153 </span>                :<span class="lineCov">         16 : Date_create_from_year_day(int_year year, int_day_of_year day_of_year) {</span>
+<span class="lineNum">     153 </span>                :<span class="lineCov">         16 : Date_from_year_day(int_year year, int_day_of_year day_of_year) {</span>
 <span class="lineNum">     154 </span>                :<span class="lineCov">         16 :     return new_date_no_bounds_check(year, 1, (int_day)(day_of_year));</span>
 <span class="lineNum">     155 </span>                :            : }
 <a name="156"><span class="lineNum">     156 </span>                :            : </a>
 <span class="lineNum">     157 </span>                :            : struct Date
-<span class="lineNum">     158 </span>                :<span class="lineCov">         16 : Date_create_from_year_week_day(</span>
+<span class="lineNum">     158 </span>                :<span class="lineCov">         16 : Date_from_year_week_day(</span>
 <span class="lineNum">     159 </span>                :            :         int_year year,
 <span class="lineNum">     160 </span>                :            :         int_week_of_year week_of_year,
 <span class="lineNum">     161 </span>                :            :         int_day_of_week day_of_week) {
@@ -278,7 +278,7 @@
 <span class="lineNum">     202 </span>                :<span class="lineCov">          4 :         year += 1;</span>
 <span class="lineNum">     203 </span>                :            :     }
 <span class="lineNum">     204 </span>                :            : 
-<span class="lineNum">     205 </span>                :<span class="lineCov">         16 :     return Date_create_from_year_day(year, ordinal_date);</span>
+<span class="lineNum">     205 </span>                :<span class="lineCov">         16 :     return Date_from_year_day(year, ordinal_date);</span>
 <span class="lineNum">     206 </span>                :            : }
 <a name="207"><span class="lineNum">     207 </span>                :            : </a>
 <span class="lineNum">     208 </span>                :            : int_year

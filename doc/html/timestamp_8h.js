@@ -1,10 +1,10 @@
 var timestamp_8h =
 [
     [ "PresentTimestampError", "timestamp_8h.html#a460efbc7c0b935c6b51d98b8295e8dc0", null ],
-    [ "Timestamp_create_from_time_t", "timestamp_8h.html#a7d372547899db25e3dcf0d24a881978c", null ],
-    [ "Timestamp_create_from_struct_tm", "timestamp_8h.html#a5436dfa8208ef35db6c8590582424367", null ],
-    [ "Timestamp_create_from_struct_tm_utc", "timestamp_8h.html#a81e8c556023803d2c5f21d86006316ad", null ],
-    [ "Timestamp_create_from_struct_tm_local", "timestamp_8h.html#a8e6f70545ff39b11c9fb088582946ab4", null ],
+    [ "Timestamp_from_time_t", "timestamp_8h.html#aaf014bbf9f8e2e877aa862226616de28", null ],
+    [ "Timestamp_from_struct_tm", "timestamp_8h.html#aa788d3cd2270d97ab3b93cf964691419", null ],
+    [ "Timestamp_from_struct_tm_utc", "timestamp_8h.html#ae745fc746ff12f533b5277d38e94939f", null ],
+    [ "Timestamp_from_struct_tm_local", "timestamp_8h.html#ac2e9297a2808c34e112565338141fda5", null ],
     [ "Timestamp_create", "timestamp_8h.html#a0978d294580f3099fca19c64da9649e6", null ],
     [ "Timestamp_create_utc", "timestamp_8h.html#a755ee07524c14032598d0e1f3d5ad4ac", null ],
     [ "Timestamp_create_local", "timestamp_8h.html#a0c2c7797eae227342d18e6c7d3488114", null ],

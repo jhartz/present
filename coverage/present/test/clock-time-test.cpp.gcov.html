@@ -106,10 +106,10 @@
 <span class="lineNum">      35 </span>                :            : 
 <span class="lineNum">      36 </span>                :            : /**
 <span class="lineNum">      37 </span>                :            :  * This test case tests all the overloads of the &quot;create&quot; method (which also
-<a name="38"><span class="lineNum">      38 </span>                :            :  * tests the C &quot;ClockTime_create_...&quot; methods).</a>
+<a name="38"><span class="lineNum">      38 </span>                :            :  * tests the C &quot;ClockTime_from_...&quot; methods).</a>
 <span class="lineNum">      39 </span>                :            :  */
 <span class="lineNum">      40 </span>        [<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 : TEST_CASE(&quot;ClockTime::create... methods&quot;, &quot;[clock-time]&quot;) {</span>
-<span class="lineNum">      41 </span>                :            :     // create_from_hour
+<span class="lineNum">      41 </span>                :            :     // from_hour
 <span class="lineNum">      42 </span>                :            : 
 <span class="lineNum">      43 </span>                :<span class="lineCov">          1 :     ClockTime c = ClockTime::create(0);</span>
 <span class="lineNum">      44 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS_HMS(0, 0, 0, 0);</span>
@@ -198,7 +198,7 @@
 <span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span>][<span class="branchNoExec" title="Branch 33 was not executed"> # </span><span class="branchNoExec" title="Branch 34 was not executed"> # </span>]
 <span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 36 was not executed"> # </span><span class="branchNoExec" title="Branch 37 was not executed"> # </span>]
 <span class="lineNum">      55 </span>                :            : 
-<span class="lineNum">      56 </span>                :            :     // create_from_hour_minute
+<span class="lineNum">      56 </span>                :            :     // from_hour_minute
 <span class="lineNum">      57 </span>                :            : 
 <span class="lineNum">      58 </span>                :<span class="lineCov">          1 :     c = ClockTime::create(0, 0);</span>
 <span class="lineNum">      59 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS_HMS(0, 0, 0, 0);</span>
@@ -269,7 +269,7 @@
 <span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span>][<span class="branchNoExec" title="Branch 33 was not executed"> # </span><span class="branchNoExec" title="Branch 34 was not executed"> # </span>]
 <span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 36 was not executed"> # </span><span class="branchNoExec" title="Branch 37 was not executed"> # </span>]
 <span class="lineNum">      68 </span>                :            : 
-<span class="lineNum">      69 </span>                :            :     // create_from_hour_minute_second
+<span class="lineNum">      69 </span>                :            :     // from_hour_minute_second
 <span class="lineNum">      70 </span>                :            : 
 <span class="lineNum">      71 </span>                :<span class="lineCov">          1 :     c = ClockTime::create(0, 0, 0);</span>
 <span class="lineNum">      72 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS_HMS(0, 0, 0, 0);</span>
@@ -358,7 +358,7 @@
 <span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span>][<span class="branchNoExec" title="Branch 33 was not executed"> # </span><span class="branchNoExec" title="Branch 34 was not executed"> # </span>]
 <span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 36 was not executed"> # </span><span class="branchNoExec" title="Branch 37 was not executed"> # </span>]
 <span class="lineNum">      83 </span>                :            : 
-<span class="lineNum">      84 </span>                :            :     // create_from_hour_minute_second_nanosecond
+<span class="lineNum">      84 </span>                :            :     // from_hour_minute_second_nanosecond
 <span class="lineNum">      85 </span>                :            : 
 <span class="lineNum">      86 </span>                :<span class="lineCov">          1 :     c = ClockTime::create(0, 0, 0, 0);</span>
 <span class="lineNum">      87 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS_HMS(0, 0, 0, 0);</span>
