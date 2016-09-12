@@ -35,6 +35,11 @@ option (PRESENT_USE_PTHREAD
     OFF
 )
 
+option (COMPILE_ANSI
+    "Compile with the -ansi flag"
+    OFF
+)
+
 ###############################################################################
 ## Setup
 
@@ -43,6 +48,10 @@ set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 
 # Set up C/C++ standard
+if (COMPILE_ANSI)
+    set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -ansi")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ansi")
+endif (COMPILE_ANSI)
 #set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -std=c99")
 #set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
