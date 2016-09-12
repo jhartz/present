@@ -11,7 +11,7 @@ C++.
 Its functionality is broken down into 6 types. Each has a struct definition
 that encapsulates its data. In C, these structs are passed around helper
 methods that access and manipulate them, but, in C++, each struct is a
-full-blown class.
+full-blown class with methods.
 
 ## Basic Date/Time Types
 
@@ -135,14 +135,13 @@ not needed. It can be compiled by either a C or a C++ compiler.
 
 ## Requirements
 
-Present uses some newer language features that are only available since C99,
-including variadic macros and standard integer and boolean types. Therefore,
-it is recommended that Present is compiled with a C99 (or C++11) compliant
-compiler.
+Present should support any compiler compatible with ANSI C (C89) or any C++
+compiler. However, it is recommended to use a version that supports stdint.h
+(required since C99). Also, C99 variadic macros are used for shortcut macros
+for creating some of the types.
 
 Present is meant to work across platforms. If there is an issue compiling it
-with a C compiler supporting C99 or a C++ compiler supporting C++11, please
-file an issue report.
+on a certain platform, please file an issue report.
 
 ## Building
 
