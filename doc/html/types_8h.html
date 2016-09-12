@@ -94,7 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a1d926768706a126775ad9338bf0c11d3">_PRESENT_TYPES_H_</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a6a1f7e8928dd0db1bd29f274a3202675">DAY_OF_WEEK_SUNDAY_COMPAT</a>&#160;&#160;&#160;(0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a19ddb5ae95d6c89fddf41d101d32a8fc">DAY_OF_WEEK_MONDAY</a>&#160;&#160;&#160;(1)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a75076bcc9c123ba7b50d851fbe3695d3">DAY_OF_WEEK_TUESDAY</a>&#160;&#160;&#160;(2)</td></tr>
@@ -105,35 +104,23 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a226e76ed9a9e4427cb2a625cf0ffc18d">DAY_OF_WEEK_SUNDAY</a>&#160;&#160;&#160;(7)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a5832406ea257c172eb711ae2e27b4501">int_timestamp</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef uint_fast8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef uint_fast8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef uint_fast8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6">int_nanosecond</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#ae68f4f515f242b927830881ea4cffae2">int_month</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a5269b564286b0eecff0b944afb81d4e2">int_day</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#aaaf288114a6279e071420e8e20324b13">int_day_of_year</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a8f4ececac5f6a2cb2ec9ba25de8e996b">int_week_of_year</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef uint_fast8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a8132950de7fc3f98373a4d384d8b6eca">int_day_of_week</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#afc803698820c39aa1ed3694de502a591">int_month_delta</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef int_fast16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a6a5c8fde0b5ed80727db4db4bdd2173d">int_year_delta</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a1c24e2cdd988b886e889080ded176ae0">present_bool</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a3731f0dbf889f3bca519c9fa1aceae21">int_timestamp</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a62ed583cd6a13da9650111e3b4b4eedc">int_hour</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a3e55debfc84cabacf28bddf2d04984c9">int_minute</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#abd3494f4b69b446ec1fc0477a8b769c9">int_second</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a153ef9bf3a8448179ab1d606f5593b4c">int_nanosecond</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a6e77e4e37237551e3c2f808f02764cec">int_month</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a2ee09cac57b5b71a2cf76051e877f320">int_day</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#ae73cc4736210d3120e1073d94bbac092">int_day_of_year</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#af13e483c5f00ae8ea8ada4c7f5fad337">int_week_of_year</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a8a67cf99971c5cfeeaa2380ba84a4c92">int_delta</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef present_int16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8h.html#a39556f27d189e3da1fcb3db910239761">int_year_delta</a></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
-<a class="anchor" id="a1d926768706a126775ad9338bf0c11d3"></a><!-- doxytag: member="types.h::_PRESENT_TYPES_H_" ref="a1d926768706a126775ad9338bf0c11d3" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="types_8h.html#a1d926768706a126775ad9338bf0c11d3">_PRESENT_TYPES_H_</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a6a1f7e8928dd0db1bd29f274a3202675"></a><!-- doxytag: member="types.h::DAY_OF_WEEK_SUNDAY_COMPAT" ref="a6a1f7e8928dd0db1bd29f274a3202675" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -239,12 +226,12 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="a5832406ea257c172eb711ae2e27b4501"></a><!-- doxytag: member="types.h::int_timestamp" ref="a5832406ea257c172eb711ae2e27b4501" args="" -->
+<a class="anchor" id="a1c24e2cdd988b886e889080ded176ae0"></a><!-- doxytag: member="types.h::present_bool" ref="a1c24e2cdd988b886e889080ded176ae0" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast64_t <a class="el" href="types_8h.html#a5832406ea257c172eb711ae2e27b4501">int_timestamp</a></td>
+          <td class="memname">typedef bool <a class="el" href="types_8h.html#a1c24e2cdd988b886e889080ded176ae0">present_bool</a></td>
         </tr>
       </table>
 </div>
@@ -252,12 +239,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afc81a27a9c08f0790f17b34bdf95cdb7"></a><!-- doxytag: member="types.h::int_hour" ref="afc81a27a9c08f0790f17b34bdf95cdb7" args="" -->
+<a class="anchor" id="a3731f0dbf889f3bca519c9fa1aceae21"></a><!-- doxytag: member="types.h::int_timestamp" ref="a3731f0dbf889f3bca519c9fa1aceae21" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint_fast8_t <a class="el" href="types_8h.html#afc81a27a9c08f0790f17b34bdf95cdb7">int_hour</a></td>
+          <td class="memname">typedef present_int64 <a class="el" href="types_8h.html#a3731f0dbf889f3bca519c9fa1aceae21">int_timestamp</a></td>
         </tr>
       </table>
 </div>
@@ -265,12 +252,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae648329a919e6d860ef5ef2aac4ffb86"></a><!-- doxytag: member="types.h::int_minute" ref="ae648329a919e6d860ef5ef2aac4ffb86" args="" -->
+<a class="anchor" id="a62ed583cd6a13da9650111e3b4b4eedc"></a><!-- doxytag: member="types.h::int_hour" ref="a62ed583cd6a13da9650111e3b4b4eedc" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint_fast8_t <a class="el" href="types_8h.html#ae648329a919e6d860ef5ef2aac4ffb86">int_minute</a></td>
+          <td class="memname">typedef present_uint8 <a class="el" href="types_8h.html#a62ed583cd6a13da9650111e3b4b4eedc">int_hour</a></td>
         </tr>
       </table>
 </div>
@@ -278,12 +265,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="acdee90940aea1c6f3e71652fb525a987"></a><!-- doxytag: member="types.h::int_second" ref="acdee90940aea1c6f3e71652fb525a987" args="" -->
+<a class="anchor" id="a3e55debfc84cabacf28bddf2d04984c9"></a><!-- doxytag: member="types.h::int_minute" ref="a3e55debfc84cabacf28bddf2d04984c9" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint_fast8_t <a class="el" href="types_8h.html#acdee90940aea1c6f3e71652fb525a987">int_second</a></td>
+          <td class="memname">typedef present_uint8 <a class="el" href="types_8h.html#a3e55debfc84cabacf28bddf2d04984c9">int_minute</a></td>
         </tr>
       </table>
 </div>
@@ -291,12 +278,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2a3f766e7346eb6ae01022cd28128ea6"></a><!-- doxytag: member="types.h::int_nanosecond" ref="a2a3f766e7346eb6ae01022cd28128ea6" args="" -->
+<a class="anchor" id="abd3494f4b69b446ec1fc0477a8b769c9"></a><!-- doxytag: member="types.h::int_second" ref="abd3494f4b69b446ec1fc0477a8b769c9" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint_fast64_t <a class="el" href="types_8h.html#a2a3f766e7346eb6ae01022cd28128ea6">int_nanosecond</a></td>
+          <td class="memname">typedef present_uint8 <a class="el" href="types_8h.html#abd3494f4b69b446ec1fc0477a8b769c9">int_second</a></td>
         </tr>
       </table>
 </div>
@@ -304,12 +291,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5b021e50b656f4efcc69340c01a17997"></a><!-- doxytag: member="types.h::int_year" ref="a5b021e50b656f4efcc69340c01a17997" args="" -->
+<a class="anchor" id="a153ef9bf3a8448179ab1d606f5593b4c"></a><!-- doxytag: member="types.h::int_nanosecond" ref="a153ef9bf3a8448179ab1d606f5593b4c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast32_t <a class="el" href="types_8h.html#a5b021e50b656f4efcc69340c01a17997">int_year</a></td>
+          <td class="memname">typedef present_uint64 <a class="el" href="types_8h.html#a153ef9bf3a8448179ab1d606f5593b4c">int_nanosecond</a></td>
         </tr>
       </table>
 </div>
@@ -317,12 +304,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae68f4f515f242b927830881ea4cffae2"></a><!-- doxytag: member="types.h::int_month" ref="ae68f4f515f242b927830881ea4cffae2" args="" -->
+<a class="anchor" id="a7ff53e164374f5b24e06f3c04362e61d"></a><!-- doxytag: member="types.h::int_year" ref="a7ff53e164374f5b24e06f3c04362e61d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast16_t <a class="el" href="types_8h.html#ae68f4f515f242b927830881ea4cffae2">int_month</a></td>
+          <td class="memname">typedef present_int32 <a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a></td>
         </tr>
       </table>
 </div>
@@ -330,12 +317,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5269b564286b0eecff0b944afb81d4e2"></a><!-- doxytag: member="types.h::int_day" ref="a5269b564286b0eecff0b944afb81d4e2" args="" -->
+<a class="anchor" id="a6e77e4e37237551e3c2f808f02764cec"></a><!-- doxytag: member="types.h::int_month" ref="a6e77e4e37237551e3c2f808f02764cec" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast16_t <a class="el" href="types_8h.html#a5269b564286b0eecff0b944afb81d4e2">int_day</a></td>
+          <td class="memname">typedef present_int16 <a class="el" href="types_8h.html#a6e77e4e37237551e3c2f808f02764cec">int_month</a></td>
         </tr>
       </table>
 </div>
@@ -343,12 +330,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaaf288114a6279e071420e8e20324b13"></a><!-- doxytag: member="types.h::int_day_of_year" ref="aaaf288114a6279e071420e8e20324b13" args="" -->
+<a class="anchor" id="a2ee09cac57b5b71a2cf76051e877f320"></a><!-- doxytag: member="types.h::int_day" ref="a2ee09cac57b5b71a2cf76051e877f320" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast16_t <a class="el" href="types_8h.html#aaaf288114a6279e071420e8e20324b13">int_day_of_year</a></td>
+          <td class="memname">typedef present_int16 <a class="el" href="types_8h.html#a2ee09cac57b5b71a2cf76051e877f320">int_day</a></td>
         </tr>
       </table>
 </div>
@@ -356,12 +343,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8f4ececac5f6a2cb2ec9ba25de8e996b"></a><!-- doxytag: member="types.h::int_week_of_year" ref="a8f4ececac5f6a2cb2ec9ba25de8e996b" args="" -->
+<a class="anchor" id="ae73cc4736210d3120e1073d94bbac092"></a><!-- doxytag: member="types.h::int_day_of_year" ref="ae73cc4736210d3120e1073d94bbac092" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast8_t <a class="el" href="types_8h.html#a8f4ececac5f6a2cb2ec9ba25de8e996b">int_week_of_year</a></td>
+          <td class="memname">typedef present_int16 <a class="el" href="types_8h.html#ae73cc4736210d3120e1073d94bbac092">int_day_of_year</a></td>
         </tr>
       </table>
 </div>
@@ -369,12 +356,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8132950de7fc3f98373a4d384d8b6eca"></a><!-- doxytag: member="types.h::int_day_of_week" ref="a8132950de7fc3f98373a4d384d8b6eca" args="" -->
+<a class="anchor" id="af13e483c5f00ae8ea8ada4c7f5fad337"></a><!-- doxytag: member="types.h::int_week_of_year" ref="af13e483c5f00ae8ea8ada4c7f5fad337" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint_fast8_t <a class="el" href="types_8h.html#a8132950de7fc3f98373a4d384d8b6eca">int_day_of_week</a></td>
+          <td class="memname">typedef present_int8 <a class="el" href="types_8h.html#af13e483c5f00ae8ea8ada4c7f5fad337">int_week_of_year</a></td>
         </tr>
       </table>
 </div>
@@ -382,12 +369,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a10729255b1946fd4fb654b2fe814910b"></a><!-- doxytag: member="types.h::int_delta" ref="a10729255b1946fd4fb654b2fe814910b" args="" -->
+<a class="anchor" id="a78b244794c680f1753a6d92eed77aeda"></a><!-- doxytag: member="types.h::int_day_of_week" ref="a78b244794c680f1753a6d92eed77aeda" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast64_t <a class="el" href="types_8h.html#a10729255b1946fd4fb654b2fe814910b">int_delta</a></td>
+          <td class="memname">typedef present_uint8 <a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a></td>
         </tr>
       </table>
 </div>
@@ -395,12 +382,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afc803698820c39aa1ed3694de502a591"></a><!-- doxytag: member="types.h::int_month_delta" ref="afc803698820c39aa1ed3694de502a591" args="" -->
+<a class="anchor" id="a8a67cf99971c5cfeeaa2380ba84a4c92"></a><!-- doxytag: member="types.h::int_delta" ref="a8a67cf99971c5cfeeaa2380ba84a4c92" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast32_t <a class="el" href="types_8h.html#afc803698820c39aa1ed3694de502a591">int_month_delta</a></td>
+          <td class="memname">typedef present_int64 <a class="el" href="types_8h.html#a8a67cf99971c5cfeeaa2380ba84a4c92">int_delta</a></td>
         </tr>
       </table>
 </div>
@@ -408,12 +395,25 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6a5c8fde0b5ed80727db4db4bdd2173d"></a><!-- doxytag: member="types.h::int_year_delta" ref="a6a5c8fde0b5ed80727db4db4bdd2173d" args="" -->
+<a class="anchor" id="adc711c00c117528b40875ad0119c687f"></a><!-- doxytag: member="types.h::int_month_delta" ref="adc711c00c117528b40875ad0119c687f" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int_fast16_t <a class="el" href="types_8h.html#a6a5c8fde0b5ed80727db4db4bdd2173d">int_year_delta</a></td>
+          <td class="memname">typedef present_int32 <a class="el" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a39556f27d189e3da1fcb3db910239761"></a><!-- doxytag: member="types.h::int_year_delta" ref="a39556f27d189e3da1fcb3db910239761" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef present_int16 <a class="el" href="types_8h.html#a39556f27d189e3da1fcb3db910239761">int_year_delta</a></td>
         </tr>
       </table>
 </div>

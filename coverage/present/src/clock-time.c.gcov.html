@@ -31,17 +31,17 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">92</td>
-            <td class="headerCovTableEntry">92</td>
+            <td class="headerCovTableEntry">99</td>
+            <td class="headerCovTableEntry">99</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-09-06</td>
+            <td class="headerValue">2016-09-12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">22</td>
-            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntry">23</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -50,8 +50,8 @@
             <td></td>
             <td class="headerItem">Branches:</td>
             <td class="headerCovTableEntry">68</td>
-            <td class="headerCovTableEntry">108</td>
-            <td class="headerCovTableEntryLo">63.0 %</td>
+            <td class="headerCovTableEntry">112</td>
+            <td class="headerCovTableEntryLo">60.7 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -286,22 +286,34 @@
 <span class="lineNum">     215 </span>                :<span class="lineCov">          4 :     self-&gt;data_.nanoseconds -= delta-&gt;data_.delta_nanoseconds;</span>
 <span class="lineNum">     216 </span>                :            : 
 <span class="lineNum">     217 </span>                :<span class="lineCov">          4 :     check_clock_time(self);</span>
-<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">          4 : }</span></a>
-<span class="lineNum">     219 </span>                :            : 
-<span class="lineNum">     220 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 3 was not taken"> - </span><span class="branchCov" title="Branch 4 was taken 5 times"> + </span>]:<span class="lineCov">         20 : STRUCT_COMPARISON_OPERATORS(ClockTime, seconds, nanoseconds)</span>
+<span class="lineNum">     218 </span>                :<span class="lineCov">          4 : }</span>
+<a name="219"><span class="lineNum">     219 </span>                :            : </a>
+<span class="lineNum">     220 </span>                :            : int
+<span class="lineNum">     221 </span>                :<span class="lineCov">         20 : ClockTime_compare(</span>
+<span class="lineNum">     222 </span>                :            :         const struct ClockTime * const lhs,
+<span class="lineNum">     223 </span>                :            :         const struct ClockTime * const rhs) {
+<span class="lineNum">     224 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :     assert(lhs != NULL);</span>
+<span class="lineNum">     225 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :     assert(lhs-&gt;error == 0);</span>
+<span class="lineNum">     226 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :     assert(rhs != NULL);</span>
+<span class="lineNum">     227 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :     assert(rhs-&gt;error == 0);</span>
+<span class="lineNum">     228 </span>                :            : 
+<span class="lineNum">     229 </span>                :<span class="lineCov">         20 :     return</span>
+<span class="lineNum">     230 </span>[<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span>]:<span class="lineCov">         20 :         STRUCT_COMPARE(seconds,</span>
+<span class="lineNum">         </span>        [<span class="branchCov" title="Branch 4 was taken 7 times"> + </span><span class="branchCov" title="Branch 5 was taken 3 times"> + </span>]
+<span class="lineNum">     231 </span>                :            :             STRUCT_COMPARE(nanoseconds, 0));
+<a name="232"><span class="lineNum">     232 </span>                :            : }</a>
+<span class="lineNum">     233 </span>                :            : 
+<span class="lineNum">     234 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 3 was not taken"> - </span><span class="branchCov" title="Branch 4 was taken 5 times"> + </span>]:<span class="lineCov">         20 : STRUCT_COMPARISON_OPERATORS(ClockTime)</span>
 <span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 5 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 12 was taken 3 times"> + </span><span class="branchCov" title="Branch 13 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchCov" title="Branch 15 was taken 3 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 3 times"> + </span>][<span class="branchNoCov" title="Branch 20 was not taken"> - </span><span class="branchCov" title="Branch 21 was taken 3 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 23 was not taken"> - </span><span class="branchCov" title="Branch 24 was taken 3 times"> + </span>][<span class="branchCov" title="Branch 26 was taken 1 time"> + </span><span class="branchCov" title="Branch 27 was taken 2 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 28 was not taken"> - </span><span class="branchCov" title="Branch 29 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 31 was not taken"> - </span><span class="branchCov" title="Branch 32 was taken 5 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 34 was not taken"> - </span><span class="branchCov" title="Branch 35 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 37 was not taken"> - </span><span class="branchCov" title="Branch 38 was taken 5 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 40 was taken 3 times"> + </span><span class="branchCov" title="Branch 41 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 42 was not taken"> - </span><span class="branchCov" title="Branch 43 was taken 3 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 13 was not taken"> - </span><span class="branchCov" title="Branch 14 was taken 3 times"> + </span>][<span class="branchNoCov" title="Branch 16 was not taken"> - </span><span class="branchCov" title="Branch 17 was taken 3 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 3 times"> + </span>][<span class="branchNoCov" title="Branch 22 was not taken"> - </span><span class="branchCov" title="Branch 23 was taken 3 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 26 was not taken"> - </span><span class="branchCov" title="Branch 27 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchCov" title="Branch 30 was taken 5 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 32 was not taken"> - </span><span class="branchCov" title="Branch 33 was taken 5 times"> + </span>][<span class="branchNoCov" title="Branch 35 was not taken"> - </span><span class="branchCov" title="Branch 36 was taken 5 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 39 was not taken"> - </span><span class="branchCov" title="Branch 40 was taken 3 times"> + </span>][<span class="branchNoCov" title="Branch 42 was not taken"> - </span><span class="branchCov" title="Branch 43 was taken 3 times"> + </span>]
 <span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 45 was not taken"> - </span><span class="branchCov" title="Branch 46 was taken 3 times"> + </span>][<span class="branchNoCov" title="Branch 48 was not taken"> - </span><span class="branchCov" title="Branch 49 was taken 3 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 51 was not taken"> - </span><span class="branchCov" title="Branch 52 was taken 3 times"> + </span>][<span class="branchCov" title="Branch 54 was taken 1 time"> + </span><span class="branchCov" title="Branch 55 was taken 2 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 56 was not taken"> - </span><span class="branchCov" title="Branch 57 was taken 4 times"> + </span>][<span class="branchNoCov" title="Branch 59 was not taken"> - </span><span class="branchCov" title="Branch 60 was taken 4 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 62 was not taken"> - </span><span class="branchCov" title="Branch 63 was taken 4 times"> + </span>][<span class="branchNoCov" title="Branch 65 was not taken"> - </span><span class="branchCov" title="Branch 66 was taken 4 times"> + </span>]
-<span class="lineNum">         </span>        [<span class="branchCov" title="Branch 68 was taken 2 times"> + </span><span class="branchCov" title="Branch 69 was taken 2 times"> + </span>]
-<span class="lineNum">     221 </span>                :            : 
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 52 was not taken"> - </span><span class="branchCov" title="Branch 53 was taken 4 times"> + </span>][<span class="branchNoCov" title="Branch 55 was not taken"> - </span><span class="branchCov" title="Branch 56 was taken 4 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 58 was not taken"> - </span><span class="branchCov" title="Branch 59 was taken 4 times"> + </span>][<span class="branchNoCov" title="Branch 61 was not taken"> - </span><span class="branchCov" title="Branch 62 was taken 4 times"> + </span>]
+<span class="lineNum">     235 </span>                :            : 
 </pre>
       </td>
     </tr>

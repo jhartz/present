@@ -28,7 +28,7 @@ var time-delta_8h =
     [ "TimeDelta_get_day_delta_truncated", "time-delta_8h.html#a22e42b82fef74a330b892197c3fe4586", null ],
     [ "TimeDelta_get_day_delta_rounded", "time-delta_8h.html#aae6864e3044344d9f27dab1bf22cb33c", null ],
     [ "TimeDelta_get_day_delta_abs_ceil", "time-delta_8h.html#ad86ae02779b9fde0613cba364522ec99", null ],
-    [ "TimeDelta_is_negative", "time-delta_8h.html#a8b0be83d6cd6ab623f05ea0eb5d560c7", null ],
+    [ "TimeDelta_is_negative", "time-delta_8h.html#a4fc42a10abf8771117d2f9ced4f11bf2", null ],
     [ "TimeDelta_negate", "time-delta_8h.html#a906aa66074e2d9ef675ea2d2a1d25084", null ],
     [ "TimeDelta_multiply_by", "time-delta_8h.html#a772db85da3c67f149da8877ac8d04fad", null ],
     [ "TimeDelta_multiply_by_decimal", "time-delta_8h.html#a561fba60f8ba4648928fec8e18069ebb", null ],
@@ -37,9 +37,9 @@ var time-delta_8h =
     [ "TimeDelta_add_time_delta", "time-delta_8h.html#a33057bdcfab84bd7d6b2e54f2e244bc4", null ],
     [ "TimeDelta_subtract_time_delta", "time-delta_8h.html#a330935197046fb801abc7912aa909508", null ],
     [ "TimeDelta_compare", "time-delta_8h.html#a1864d69bcd1b4cf445555bc72c21a653", null ],
-    [ "TimeDelta_equal", "time-delta_8h.html#a7db38b37aac9487c278a42220c114e1f", null ],
-    [ "TimeDelta_less_than", "time-delta_8h.html#af24c777c13189265da630889ece952e6", null ],
-    [ "TimeDelta_less_than_or_equal", "time-delta_8h.html#ad7360904634ace2d35968776c5222d7a", null ],
-    [ "TimeDelta_greater_than", "time-delta_8h.html#a80a01f3646dde93f81bad4b2c23fdadb", null ],
-    [ "TimeDelta_greater_than_or_equal", "time-delta_8h.html#acaed23a2a6076ecfcd0540c4865f3bc5", null ]
+    [ "TimeDelta_equal", "time-delta_8h.html#a99614ad03a84af18cd60d8b25d5c4cee", null ],
+    [ "TimeDelta_less_than", "time-delta_8h.html#a17c72c9312884c0aabbfbcc6c195fa5e", null ],
+    [ "TimeDelta_less_than_or_equal", "time-delta_8h.html#a719a2e8e64a3f680cff26b4d871a61d3", null ],
+    [ "TimeDelta_greater_than", "time-delta_8h.html#aaf70b7980933d5b2eb4261197da08d20", null ],
+    [ "TimeDelta_greater_than_or_equal", "time-delta_8h.html#afc8207e3bd84d8037f99ad99a0c76b04", null ]
 ];

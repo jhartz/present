@@ -32,17 +32,17 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">48</td>
-            <td class="headerCovTableEntry">48</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">50</td>
+            <td class="headerCovTableEntryHi">96.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-09-06</td>
+            <td class="headerValue">2016-09-12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntryHi">95.8 %</td>
           </tr>
           <tr>
             <td></td>
@@ -170,30 +170,34 @@
 <span class="lineNum">      99 </span>                :<span class="lineCov">          1 :     return (ClockTime(lhs) -= rhs);</span>
 <a name="100"><span class="lineNum">     100 </span>                :            : }</a>
 <span class="lineNum">     101 </span>                :            : 
-<span class="lineNum">     102 </span>                :<span class="lineCov">          4 : bool operator==(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
-<span class="lineNum">     103 </span>                :<span class="lineCov">          4 :     return ClockTime_equal(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     102 </span>                :<span class="lineNoCov">          0 : int ClockTime::compare(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
+<span class="lineNum">     103 </span>                :<span class="lineNoCov">          0 :     return ClockTime_compare(&amp;lhs, &amp;rhs);</span>
 <a name="104"><span class="lineNum">     104 </span>                :            : }</a>
 <span class="lineNum">     105 </span>                :            : 
-<span class="lineNum">     106 </span>                :<span class="lineCov">          2 : bool operator!=(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
-<span class="lineNum">     107 </span>                :<span class="lineCov">          2 :     return !(lhs == rhs);</span>
+<span class="lineNum">     106 </span>                :<span class="lineCov">          4 : bool operator==(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
+<span class="lineNum">     107 </span>                :<span class="lineCov">          4 :     return ClockTime_equal(&amp;lhs, &amp;rhs);</span>
 <a name="108"><span class="lineNum">     108 </span>                :            : }</a>
 <span class="lineNum">     109 </span>                :            : 
-<span class="lineNum">     110 </span>                :<span class="lineCov">          3 : bool operator&lt;(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
-<span class="lineNum">     111 </span>                :<span class="lineCov">          3 :     return ClockTime_less_than(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     110 </span>                :<span class="lineCov">          2 : bool operator!=(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
+<span class="lineNum">     111 </span>                :<span class="lineCov">          2 :     return !(lhs == rhs);</span>
 <a name="112"><span class="lineNum">     112 </span>                :            : }</a>
 <span class="lineNum">     113 </span>                :            : 
-<span class="lineNum">     114 </span>                :<span class="lineCov">          5 : bool operator&lt;=(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
-<span class="lineNum">     115 </span>                :<span class="lineCov">          5 :     return ClockTime_less_than_or_equal(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     114 </span>                :<span class="lineCov">          3 : bool operator&lt;(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
+<span class="lineNum">     115 </span>                :<span class="lineCov">          3 :     return ClockTime_less_than(&amp;lhs, &amp;rhs);</span>
 <a name="116"><span class="lineNum">     116 </span>                :            : }</a>
 <span class="lineNum">     117 </span>                :            : 
-<span class="lineNum">     118 </span>                :<span class="lineCov">          3 : bool operator&gt;(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
-<span class="lineNum">     119 </span>                :<span class="lineCov">          3 :     return ClockTime_greater_than(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     118 </span>                :<span class="lineCov">          5 : bool operator&lt;=(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
+<span class="lineNum">     119 </span>                :<span class="lineCov">          5 :     return ClockTime_less_than_or_equal(&amp;lhs, &amp;rhs);</span>
 <a name="120"><span class="lineNum">     120 </span>                :            : }</a>
 <span class="lineNum">     121 </span>                :            : 
-<span class="lineNum">     122 </span>                :<span class="lineCov">          5 : bool operator&gt;=(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
-<span class="lineNum">     123 </span>                :<span class="lineCov">          5 :     return ClockTime_greater_than_or_equal(&amp;lhs, &amp;rhs);</span>
-<span class="lineNum">     124 </span>                :            : }
+<span class="lineNum">     122 </span>                :<span class="lineCov">          3 : bool operator&gt;(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
+<span class="lineNum">     123 </span>                :<span class="lineCov">          3 :     return ClockTime_greater_than(&amp;lhs, &amp;rhs);</span>
+<a name="124"><span class="lineNum">     124 </span>                :            : }</a>
 <span class="lineNum">     125 </span>                :            : 
+<span class="lineNum">     126 </span>                :<span class="lineCov">          5 : bool operator&gt;=(const ClockTime &amp; lhs, const ClockTime &amp; rhs) {</span>
+<span class="lineNum">     127 </span>                :<span class="lineCov">          5 :     return ClockTime_greater_than_or_equal(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     128 </span>                :            : }
+<span class="lineNum">     129 </span>                :            : 
 </pre>
       </td>
     </tr>
