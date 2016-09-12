@@ -14,9 +14,9 @@
 #define _PRESENT_TIMESTAMP_DATA_H_
 
 struct PresentTimestampData {
-    // UNIX timestamp (seconds since 01/01/1970 00:00 UTC)
+    /* UNIX timestamp (seconds since 01/01/1970 00:00 UTC) */
     int_timestamp timestamp_seconds;
-    // Supplement to timestamp
+    /* Supplement to timestamp */
     int_timestamp additional_nanoseconds;
 };
 

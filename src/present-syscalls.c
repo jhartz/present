@@ -8,6 +8,7 @@
  * For details, see LICENSE.
  */
 
+#include <math.h>
 #include <stddef.h>
 #include <string.h>
 #include <time.h>
@@ -52,6 +53,23 @@ int is_initialized = 0;
 static int present_is_test_time_set = 0;
 static struct present_now_struct present_test_time;
 
+double present_round(double x) {
+    double t;
+    if (x >= 0.0) {
+        t = floor(x);
+        if (x - t >= 0.5) {
+            t += 1.0;
+        }
+        return t;
+    } else {
+        t = floor(-x);
+        if ((-x) - t >= 0.5) {
+            t += 1.0;
+        }
+        return -t;
+    }
+}
+
 void present_gmtime(const time_t * timep, struct tm * result) {
     struct tm * value;
 
@@ -81,7 +99,7 @@ time_t present_mktime(struct tm * tm) {
 
 struct present_now_struct present_now() {
     struct present_now_struct value;
-#ifdef _POSIX_TIMERS
+#if defined(_POSIX_TIMERS) && !defined(__STRICT_ANSI__)
     struct timespec tp;
 #endif
 
@@ -89,7 +107,7 @@ struct present_now_struct present_now() {
     if (present_is_test_time_set) {
         value = present_test_time;
     } else {
-#ifdef _POSIX_TIMERS
+#if defined(_POSIX_TIMERS) && !defined(__STRICT_ANSI__)
         clock_gettime(CLOCK_REALTIME, &tp);
         value.sec = tp.tv_sec;
         value.nsec = tp.tv_nsec;

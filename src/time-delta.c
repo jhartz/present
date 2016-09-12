@@ -8,7 +8,6 @@
  */
 
 #include <assert.h>
-#include <math.h>
 #include <stddef.h>
 
 #include "present/utils/types.h"
@@ -239,7 +238,7 @@ TimeDelta_get_day_delta_rounded(const struct TimeDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
-    return DayDelta_from_days((int_delta)round(
+    return DayDelta_from_days((int_delta)present_round(
                 ((double)self->data_.delta_seconds) /
                 (double)SECONDS_IN_DAY));
 }

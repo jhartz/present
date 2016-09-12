@@ -23,6 +23,12 @@ struct present_now_struct {
 };
 
 /**
+ * Reimplementation of round to support older versions of the math library
+ * that don't have round.
+ */
+double present_round(double x);
+
+/**
  * Wrapper around gmtime.
  *
  * Converts UNIX timestamp @p timep to a "struct tm" (in UTC) and stores the
