@@ -175,7 +175,7 @@ exposes more options and features. Basic CMake usage on UNIX-like systems:
 // Create a ClockTime
 ClockTime myClockTime(ClockTime::create(12, 59, 59));
 // Add a TimeDelta of 1 second to make it 13:00:00
-myClockTime += TimeDelta::fromSeconds(1);
+myClockTime += TimeDelta::from_seconds(1);
 
 // Create a MonthDelta from months and a MonthDelta from years
 MonthDelta myMonthDelta(MonthDelta::from_months(4));

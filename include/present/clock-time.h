@@ -50,19 +50,19 @@ struct PRESENT_API ClockTime {
     struct PresentClockTimeData data_;
 
 #ifdef __cplusplus
-    /** @copydoc ClockTime_create_from_hour */
+    /** @copydoc ClockTime_from_hour */
     static ClockTime create(int_hour hour);
 
-    /** @copydoc ClockTime_create_from_hour_minute */
+    /** @copydoc ClockTime_from_hour_minute */
     static ClockTime create(int_hour hour, int_minute minute);
 
-    /** @copydoc ClockTime_create_from_hour_minute_second */
+    /** @copydoc ClockTime_from_hour_minute_second */
     static ClockTime create(
         int_hour hour,
         int_minute minute,
         int_second second);
 
-    /** @copydoc ClockTime_create_from_hour_minute_second_nanosecond */
+    /** @copydoc ClockTime_from_hour_minute_second_nanosecond */
     static ClockTime create(
         int_hour hour,
         int_minute minute,
@@ -148,7 +148,7 @@ extern "C" {
  * @param hour The hour of the day (0 to 23, inclusive).
  */
 PRESENT_API struct ClockTime
-ClockTime_create_from_hour(int_hour hour);
+ClockTime_from_hour(int_hour hour);
 
 /**
  * Create a new ClockTime based on an hour and a minute.
@@ -160,7 +160,7 @@ ClockTime_create_from_hour(int_hour hour);
  * @param minute The minute of the hour (0 to 59, inclusive).
  */
 PRESENT_API struct ClockTime
-ClockTime_create_from_hour_minute(int_hour hour, int_minute minute);
+ClockTime_from_hour_minute(int_hour hour, int_minute minute);
 
 /**
  * Create a new ClockTime based on an hour, a minute, and a second.
@@ -174,7 +174,7 @@ ClockTime_create_from_hour_minute(int_hour hour, int_minute minute);
  * in the case of a leap second).
  */
 PRESENT_API struct ClockTime
-ClockTime_create_from_hour_minute_second(
+ClockTime_from_hour_minute_second(
         int_hour hour,
         int_minute minute,
         int_second second);
@@ -191,7 +191,7 @@ ClockTime_create_from_hour_minute_second(
  * than the number of nanoseconds in a second).
  */
 PRESENT_API struct ClockTime
-ClockTime_create_from_hour_minute_second_nanosecond(
+ClockTime_from_hour_minute_second_nanosecond(
         int_hour hour,
         int_minute minute,
         int_second second,
@@ -202,17 +202,17 @@ ClockTime_create_from_hour_minute_second_nanosecond(
  * minute (2 arguments), an hour/minute/second (3 arguments), or an
  * hour/minute/second/nanosecond (4 arguments).
  *
- * @see ClockTime_create_from_hour
- * @see ClockTime_create_from_hour_minute
- * @see ClockTime_create_from_hour_minute_second
- * @see ClockTime_create_from_hour_minute_second_nanosecond
+ * @see ClockTime_from_hour
+ * @see ClockTime_from_hour_minute
+ * @see ClockTime_from_hour_minute_second
+ * @see ClockTime_from_hour_minute_second_nanosecond
  */
 #define ClockTime_create(...)    \
-    PRESENT_OVERLOAD_MAX_4(__VA_ARGS__,                         \
-        ClockTime_create_from_hour_minute_second_nanosecond,    \
-        ClockTime_create_from_hour_minute_second,               \
-        ClockTime_create_from_hour_minute,                      \
-        ClockTime_create_from_hour,                             \
+    PRESENT_OVERLOAD_MAX_4(__VA_ARGS__,                 \
+        ClockTime_from_hour_minute_second_nanosecond,   \
+        ClockTime_from_hour_minute_second,              \
+        ClockTime_from_hour_minute,                     \
+        ClockTime_from_hour,                            \
         dummy)(__VA_ARGS__)
 
 /**

@@ -49,16 +49,16 @@ struct PRESENT_API Timestamp {
     struct PresentTimestampData data_;
 
 #ifdef __cplusplus
-    /** @copydoc Timestamp_create_from_time_t */
+    /** @copydoc Timestamp_from_time_t */
     static Timestamp create(const time_t timestamp);
 
-    /** @copydoc Timestamp_create_from_struct_tm */
+    /** @copydoc Timestamp_from_struct_tm */
     static Timestamp create(
         const struct tm & tm,
         const TimeDelta & timeZoneOffset);
-    /** @copydoc Timestamp_create_from_struct_tm_utc */
+    /** @copydoc Timestamp_from_struct_tm_utc */
     static Timestamp create_utc(const struct tm & tm);
-    /** @copydoc Timestamp_create_from_struct_tm_local */
+    /** @copydoc Timestamp_from_struct_tm_local */
     static Timestamp create_local(const struct tm & tm);
 
     /** @copydoc Timestamp_create */
@@ -178,7 +178,7 @@ extern "C" {
  * @param timestamp The "time_t" value representing the timestamp.
  */
 PRESENT_API struct Timestamp
-Timestamp_create_from_time_t(const time_t timestamp);
+Timestamp_from_time_t(const time_t timestamp);
 
 
 /**
@@ -190,7 +190,7 @@ Timestamp_create_from_time_t(const time_t timestamp);
  * @p tm.
  */
 PRESENT_API struct Timestamp
-Timestamp_create_from_struct_tm(
+Timestamp_from_struct_tm(
         const struct tm tm,
         const struct TimeDelta * const timeZoneOffset);
 
@@ -201,7 +201,7 @@ Timestamp_create_from_struct_tm(
  * @param tm The "struct tm" value representing the date and time.
  */
 PRESENT_API struct Timestamp
-Timestamp_create_from_struct_tm_utc(const struct tm tm);
+Timestamp_from_struct_tm_utc(const struct tm tm);
 
 /**
  * Create a new Timestamp based on a "struct tm" value (from C's time library)
@@ -210,7 +210,7 @@ Timestamp_create_from_struct_tm_utc(const struct tm tm);
  * @param tm The "struct tm" value representing the date and time.
  */
 PRESENT_API struct Timestamp
-Timestamp_create_from_struct_tm_local(const struct tm tm);
+Timestamp_from_struct_tm_local(const struct tm tm);
 
 
 /**

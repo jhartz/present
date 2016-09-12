@@ -85,17 +85,17 @@ void check_clock_time(struct ClockTime * const self) {
 }
 
 struct ClockTime
-ClockTime_create_from_hour(int_hour hour) {
+ClockTime_from_hour(int_hour hour) {
     return new_clock_time(hour, 0, 0, 0);
 }
 
 struct ClockTime
-ClockTime_create_from_hour_minute(int_hour hour, int_minute minute) {
+ClockTime_from_hour_minute(int_hour hour, int_minute minute) {
     return new_clock_time(hour, minute, 0, 0);
 }
 
 struct ClockTime
-ClockTime_create_from_hour_minute_second(
+ClockTime_from_hour_minute_second(
         int_hour hour,
         int_minute minute,
         int_second second) {
@@ -103,7 +103,7 @@ ClockTime_create_from_hour_minute_second(
 }
 
 struct ClockTime
-ClockTime_create_from_hour_minute_second_nanosecond(
+ClockTime_from_hour_minute_second_nanosecond(
         int_hour hour,
         int_minute minute,
         int_second second,

@@ -18,21 +18,21 @@
 #include "present/timestamp.h"
 
 Timestamp Timestamp::create(const time_t timestamp) {
-    return Timestamp_create_from_time_t(timestamp);
+    return Timestamp_from_time_t(timestamp);
 }
 
 Timestamp Timestamp::create(
         const struct tm & tm,
         const TimeDelta & timeZoneOffset) {
-    return Timestamp_create_from_struct_tm(tm, &timeZoneOffset);
+    return Timestamp_from_struct_tm(tm, &timeZoneOffset);
 }
 
 Timestamp Timestamp::create_utc(const struct tm & tm) {
-    return Timestamp_create_from_struct_tm_utc(tm);
+    return Timestamp_from_struct_tm_utc(tm);
 }
 
 Timestamp Timestamp::create_local(const struct tm & tm) {
-    return Timestamp_create_from_struct_tm_local(tm);
+    return Timestamp_from_struct_tm_local(tm);
 }
 
 Timestamp Timestamp::create(

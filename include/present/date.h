@@ -66,22 +66,22 @@ struct PRESENT_API Date {
     struct PresentDateData data_;
 
 #ifdef __cplusplus
-    /** @copydoc Date_create_from_year */
+    /** @copydoc Date_from_year */
     static Date create(int_year year);
 
-    /** @copydoc Date_create_from_year_month */
+    /** @copydoc Date_from_year_month */
     static Date create(int_year year, int_month month);
 
-    /** @copydoc Date_create_from_year_month_day */
+    /** @copydoc Date_from_year_month_day */
     static Date create(int_year year, int_month month, int_day day);
 
-    /** @copydoc Date_create_from_year_day */
-    static Date create_from_year_day(
+    /** @copydoc Date_from_year_day */
+    static Date from_year_day(
         int_year year,
         int_day_of_year day_of_year);
 
-    /** @copydoc Date_create_from_year_week_day */
-    static Date create_from_year_week_day(
+    /** @copydoc Date_from_year_week_day */
+    static Date from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week);
@@ -160,7 +160,7 @@ extern "C" {
  * @param year The year.
  */
 PRESENT_API struct Date
-Date_create_from_year(int_year year);
+Date_from_year(int_year year);
 
 /**
  * Create a new Date based on a year and a month. The day will be set to the
@@ -172,7 +172,7 @@ Date_create_from_year(int_year year);
  * @param month The month of the year (1 to 12, inclusive).
  */
 PRESENT_API struct Date
-Date_create_from_year_month(int_year year, int_month month);
+Date_from_year_month(int_year year, int_month month);
 
 /**
  * Create a new Date based on a year, a month, and a day.
@@ -186,21 +186,21 @@ Date_create_from_year_month(int_year year, int_month month);
  * depending on the month).
  */
 PRESENT_API struct Date
-Date_create_from_year_month_day(int_year year, int_month month, int_day day);
+Date_from_year_month_day(int_year year, int_month month, int_day day);
 
 /**
  * Create a new Date from either a year (1 argument), a year and a month (2
  * arguments), or a year/month/day (3 arguments).
  *
- * @see Date_create_from_year
- * @see Date_create_from_year_month
- * @see Date_create_from_year_month_day
+ * @see Date_from_year
+ * @see Date_from_year_month
+ * @see Date_from_year_month_day
  */
 #define Date_create(...)    \
-    PRESENT_OVERLOAD_MAX_3(__VA_ARGS__,     \
-        Date_create_from_year_month_day,    \
-        Date_create_from_year_month,        \
-        Date_create_from_year,              \
+    PRESENT_OVERLOAD_MAX_3(__VA_ARGS__, \
+        Date_from_year_month_day,       \
+        Date_from_year_month,           \
+        Date_from_year,                 \
         dummy)(__VA_ARGS__)
 
 /**
@@ -210,7 +210,7 @@ Date_create_from_year_month_day(int_year year, int_month month, int_day day);
  * @param day_of_year The day of the year.
  */
 PRESENT_API struct Date
-Date_create_from_year_day(int_year year, int_day_of_year day_of_year);
+Date_from_year_day(int_year year, int_day_of_year day_of_year);
 
 /**
  * Create a new Date based on a year, a week of that year, and a day of the
@@ -228,7 +228,7 @@ Date_create_from_year_day(int_year year, int_day_of_year day_of_year);
  * present/utils/types.h for constants for each day of the week.
  */
 PRESENT_API struct Date
-Date_create_from_year_week_day(
+Date_from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week);

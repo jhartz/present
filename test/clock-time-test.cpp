@@ -35,10 +35,10 @@
 
 /**
  * This test case tests all the overloads of the "create" method (which also
- * tests the C "ClockTime_create_..." methods).
+ * tests the C "ClockTime_from_..." methods).
  */
 TEST_CASE("ClockTime::create... methods", "[clock-time]") {
-    // create_from_hour
+    // from_hour
 
     ClockTime c = ClockTime::create(0);
     IS_HMS(0, 0, 0, 0);
@@ -53,7 +53,7 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create(-1);
     CHECK(c.error == ClockTime_ERROR_HOUR_OUT_OF_RANGE);
 
-    // create_from_hour_minute
+    // from_hour_minute
 
     c = ClockTime::create(0, 0);
     IS_HMS(0, 0, 0, 0);
@@ -66,7 +66,7 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create(0, -1);
     CHECK(c.error == ClockTime_ERROR_MINUTE_OUT_OF_RANGE);
 
-    // create_from_hour_minute_second
+    // from_hour_minute_second
 
     c = ClockTime::create(0, 0, 0);
     IS_HMS(0, 0, 0, 0);
@@ -81,7 +81,7 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     c = ClockTime::create(0, 0, -1);
     CHECK(c.error == ClockTime_ERROR_SECOND_OUT_OF_RANGE);
 
-    // create_from_hour_minute_second_nanosecond
+    // from_hour_minute_second_nanosecond
 
     c = ClockTime::create(0, 0, 0, 0);
     IS_HMS(0, 0, 0, 0);

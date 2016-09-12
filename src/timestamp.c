@@ -33,7 +33,7 @@ struct_tm_to_date(const struct tm tm) {
     /* Throw it through mktime to fix any weirdness */
     assert(present_mktime(&tmCopy) != -1);
 
-    return Date_create_from_year_month_day(
+    return Date_from_year_month_day(
             tmCopy.tm_year + STRUCT_TM_YEAR_OFFSET,
             tmCopy.tm_mon + STRUCT_TM_MONTH_OFFSET,
             tmCopy.tm_mday);
@@ -46,7 +46,7 @@ struct_tm_to_clock_time(const struct tm tm) {
     /* Throw it through mktime to fix any weirdness */
     assert(present_mktime(&tmCopy) != -1);
 
-    return ClockTime_create_from_hour_minute_second(
+    return ClockTime_from_hour_minute_second(
             tmCopy.tm_hour,
             tmCopy.tm_min,
             tmCopy.tm_sec);
@@ -128,12 +128,12 @@ invalid_date() {
 }
 
 struct Timestamp
-Timestamp_create_from_time_t(const time_t timestamp) {
+Timestamp_from_time_t(const time_t timestamp) {
     return new_timestamp(time_t_to_timestamp(timestamp), 0);
 }
 
 struct Timestamp
-Timestamp_create_from_struct_tm(
+Timestamp_from_struct_tm(
         const struct tm tm,
         const struct TimeDelta * const timeZoneOffset) {
     struct Date date = struct_tm_to_date(tm);
@@ -142,14 +142,14 @@ Timestamp_create_from_struct_tm(
 }
 
 struct Timestamp
-Timestamp_create_from_struct_tm_utc(const struct tm tm) {
+Timestamp_from_struct_tm_utc(const struct tm tm) {
     struct Date date = struct_tm_to_date(tm);
     struct ClockTime clockTime = struct_tm_to_clock_time(tm);
     return Timestamp_create_utc(&date, &clockTime);
 }
 
 struct Timestamp
-Timestamp_create_from_struct_tm_local(const struct tm tm) {
+Timestamp_from_struct_tm_local(const struct tm tm) {
     struct tm tmCopy = tm;
     /* Throw it right through mktime */
     time_t timestamp = present_mktime(&tmCopy);
@@ -252,7 +252,7 @@ Timestamp_create_local(
         return invalid_clock_time();
     }
 
-    return Timestamp_create_from_struct_tm_local(
+    return Timestamp_from_struct_tm_local(
             convert_to_struct_tm(date, clockTime));
 }
 

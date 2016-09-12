@@ -135,27 +135,27 @@ new_date_no_bounds_check(int_year year, int_month month, int_day day) {
 }
 
 struct Date
-Date_create_from_year(int_year year) {
+Date_from_year(int_year year) {
     return new_date(year, 1, 1);
 }
 
 struct Date
-Date_create_from_year_month(int_year year, int_month month) {
+Date_from_year_month(int_year year, int_month month) {
     return new_date(year, month, 1);
 }
 
 struct Date
-Date_create_from_year_month_day(int_year year, int_month month, int_day day) {
+Date_from_year_month_day(int_year year, int_month month, int_day day) {
     return new_date(year, month, day);
 }
 
 struct Date
-Date_create_from_year_day(int_year year, int_day_of_year day_of_year) {
+Date_from_year_day(int_year year, int_day_of_year day_of_year) {
     return new_date_no_bounds_check(year, 1, (int_day)(day_of_year));
 }
 
 struct Date
-Date_create_from_year_week_day(
+Date_from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week) {
@@ -202,7 +202,7 @@ Date_create_from_year_week_day(
         year += 1;
     }
 
-    return Date_create_from_year_day(year, ordinal_date);
+    return Date_from_year_day(year, ordinal_date);
 }
 
 int_year

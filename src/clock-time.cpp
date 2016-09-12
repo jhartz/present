@@ -16,18 +16,18 @@
 #include "present/clock-time.h"
 
 ClockTime ClockTime::create(int_hour hour) {
-    return ClockTime_create_from_hour(hour);
+    return ClockTime_from_hour(hour);
 }
 
 ClockTime ClockTime::create(int_hour hour, int_minute minute) {
-    return ClockTime_create_from_hour_minute(hour, minute);
+    return ClockTime_from_hour_minute(hour, minute);
 }
 
 ClockTime ClockTime::create(
         int_hour hour,
         int_minute minute,
         int_second second) {
-    return ClockTime_create_from_hour_minute_second(hour, minute, second);
+    return ClockTime_from_hour_minute_second(hour, minute, second);
 }
 
 ClockTime ClockTime::create(
@@ -35,7 +35,7 @@ ClockTime ClockTime::create(
         int_minute minute,
         int_second second,
         int_nanosecond nanosecond) {
-    return ClockTime_create_from_hour_minute_second_nanosecond(
+    return ClockTime_from_hour_minute_second_nanosecond(
         hour,
         minute,
         second,
