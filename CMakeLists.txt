@@ -70,7 +70,7 @@ check_include_file (stdbool.h PRESENT_USE_STDBOOL)
 
 # Configure a header file to pass some of the CMake settings to the source code
 configure_file (
-    "${PROJECT_SOURCE_DIR}/src/present-config.h.in"
+    "${PROJECT_SOURCE_DIR}/include/present-config.h.in"
     "${PROJECT_BINARY_DIR}/include/present-config.h"
 )
 

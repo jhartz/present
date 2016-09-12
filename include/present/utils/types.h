@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include "present-config.h"
+
 #ifndef _PRESENT_TYPES_H_
 #define _PRESENT_TYPES_H_
 
@@ -32,9 +34,9 @@ typedef unsigned char   present_bool;
  */
 
 #ifdef PRESENT_USE_STDINT
-# include "typedefs-stdint.h"
+# include "present/utils/typedefs-stdint.h"
 #else
-# include "typedefs-nostdint.h"
+# include "present/utils/typedefs-nostdint.h"
 #endif
 
 /*
