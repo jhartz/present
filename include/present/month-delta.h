@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <time.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-month-delta-data.h"
@@ -175,7 +177,7 @@ MonthDelta_get_years_decimal(const struct MonthDelta * const self);
 /**
  * Determine whether a MonthDelta is negative.
  */
-PRESENT_API bool
+PRESENT_API present_bool
 MonthDelta_is_negative(const struct MonthDelta * const self);
 
 /**
@@ -228,7 +230,7 @@ MonthDelta_compare(
 /**
  * Determine whether two MonthDelta instances are equal (lhs == rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 MonthDelta_equal(
         const struct MonthDelta * const lhs,
         const struct MonthDelta * const rhs);
@@ -236,7 +238,7 @@ MonthDelta_equal(
 /**
  * Determine whether a MonthDelta is less than another MonthDelta (lhs < rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 MonthDelta_less_than(
         const struct MonthDelta * const lhs,
         const struct MonthDelta * const rhs);
@@ -245,7 +247,7 @@ MonthDelta_less_than(
  * Determine whether a MonthDelta is less than or equal to another MonthDelta
  * (lhs <= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 MonthDelta_less_than_or_equal(
         const struct MonthDelta * const lhs,
         const struct MonthDelta * const rhs);
@@ -254,7 +256,7 @@ MonthDelta_less_than_or_equal(
  * Determine whether a MonthDelta is greater than another MonthDelta
  * (lhs > rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 MonthDelta_greater_than(
         const struct MonthDelta * const lhs,
         const struct MonthDelta * const rhs);
@@ -263,7 +265,7 @@ MonthDelta_greater_than(
  * Determine whether a MonthDelta is greater than or equal to another
  * MonthDelta (lhs >= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 MonthDelta_greater_than_or_equal(
         const struct MonthDelta * const lhs,
         const struct MonthDelta * const rhs);

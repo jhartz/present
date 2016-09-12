@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <time.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-day-delta-data.h"
@@ -184,7 +186,7 @@ DayDelta_get_time_delta(const struct DayDelta * const self);
 /**
  * Determine whether a DayDelta is negative.
  */
-PRESENT_API bool
+PRESENT_API present_bool
 DayDelta_is_negative(const struct DayDelta * const self);
 
 /**
@@ -237,7 +239,7 @@ DayDelta_compare(
 /**
  * Determine whether two DayDelta instances are equal (lhs == rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 DayDelta_equal(
         const struct DayDelta * const lhs,
         const struct DayDelta * const rhs);
@@ -245,7 +247,7 @@ DayDelta_equal(
 /**
  * Determine whether a DayDelta is less than another DayDelta (lhs < rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 DayDelta_less_than(
         const struct DayDelta * const lhs,
         const struct DayDelta * const rhs);
@@ -254,7 +256,7 @@ DayDelta_less_than(
  * Determine whether a DayDelta is less than or equal to another DayDelta
  * (lhs <= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 DayDelta_less_than_or_equal(
         const struct DayDelta * const lhs,
         const struct DayDelta * const rhs);
@@ -262,7 +264,7 @@ DayDelta_less_than_or_equal(
 /**
  * Determine whether a DayDelta is greater than another DayDelta (lhs > rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 DayDelta_greater_than(
         const struct DayDelta * const lhs,
         const struct DayDelta * const rhs);
@@ -271,7 +273,7 @@ DayDelta_greater_than(
  * Determine whether a DayDelta is greater than or equal to another DayDelta
  * (lhs >= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 DayDelta_greater_than_or_equal(
         const struct DayDelta * const lhs,
         const struct DayDelta * const rhs);

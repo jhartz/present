@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <time.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-clock-time-data.h"
@@ -313,7 +315,7 @@ ClockTime_compare(
 /**
  * Determine whether two ClockTime instances are equal (lhs == rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 ClockTime_equal(
         const struct ClockTime * const lhs,
         const struct ClockTime * const rhs);
@@ -321,7 +323,7 @@ ClockTime_equal(
 /**
  * Determine whether a ClockTime is earlier than another ClockTime (lhs < rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 ClockTime_less_than(
         const struct ClockTime * const lhs,
         const struct ClockTime * const rhs);
@@ -330,7 +332,7 @@ ClockTime_less_than(
  * Determine whether a ClockTime is earlier than or or the same as another
  * ClockTime (lhs <= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 ClockTime_less_than_or_equal(
         const struct ClockTime * const lhs,
         const struct ClockTime * const rhs);
@@ -338,7 +340,7 @@ ClockTime_less_than_or_equal(
 /**
  * Determine whether a ClockTime is later than another ClockTime (lhs > rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 ClockTime_greater_than(
         const struct ClockTime * const lhs,
         const struct ClockTime * const rhs);
@@ -347,7 +349,7 @@ ClockTime_greater_than(
  * Determine whether a ClockTime is later than or the same as another
  * ClockTime (lhs >= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 ClockTime_greater_than_or_equal(
         const struct ClockTime * const lhs,
         const struct ClockTime * const rhs);

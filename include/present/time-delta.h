@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <time.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-time-delta-data.h"
@@ -385,7 +387,7 @@ TimeDelta_get_day_delta_abs_ceil(const struct TimeDelta * const self);
 /**
  * Determine whether a TimeDelta is negative.
  */
-PRESENT_API bool
+PRESENT_API present_bool
 TimeDelta_is_negative(const struct TimeDelta * const self);
 
 /**
@@ -454,7 +456,7 @@ TimeDelta_compare(
 /**
  * Determine whether two TimeDelta instances are equal (lhs == rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 TimeDelta_equal(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
@@ -462,7 +464,7 @@ TimeDelta_equal(
 /**
  * Determine whether a TimeDelta is less than another TimeDelta (lhs < rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 TimeDelta_less_than(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
@@ -471,7 +473,7 @@ TimeDelta_less_than(
  * Determine whether a TimeDelta is less than or equal to another TimeDelta
  * (lhs <= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 TimeDelta_less_than_or_equal(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
@@ -479,7 +481,7 @@ TimeDelta_less_than_or_equal(
 /**
  * Determine whether a TimeDelta is greater than another TimeDelta (lhs > rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 TimeDelta_greater_than(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
@@ -488,7 +490,7 @@ TimeDelta_greater_than(
  * Determine whether a TimeDelta is greater than or equal to another TimeDelta
  * (lhs >= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 TimeDelta_greater_than_or_equal(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);

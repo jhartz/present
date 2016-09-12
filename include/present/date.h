@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <time.h>
+
 #include "present/utils/types.h"
 #include "present/utils/utils.h"
 #include "present/impl/present-date-data.h"
@@ -334,20 +336,20 @@ Date_compare(
 /**
  * Determine whether two Date instances are equal (lhs == rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 Date_equal(const struct Date * const lhs, const struct Date * const rhs);
 
 /**
  * Determine whether a Date is earlier than another Date (lhs < rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 Date_less_than(const struct Date * const lhs, const struct Date * const rhs);
 
 /**
  * Determine whether a Date is earlier than or the same as another Date
  * (lhs <= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 Date_less_than_or_equal(
         const struct Date * const lhs,
         const struct Date * const rhs);
@@ -355,7 +357,7 @@ Date_less_than_or_equal(
 /**
  * Determine whether a Date is later than another Date (lhs > rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 Date_greater_than(
         const struct Date * const lhs,
         const struct Date * const rhs);
@@ -364,7 +366,7 @@ Date_greater_than(
  * Determine whether a Date is later than or the same as another Date
  * (lhs >= rhs).
  */
-PRESENT_API bool
+PRESENT_API present_bool
 Date_greater_than_or_equal(
         const struct Date * const lhs,
         const struct Date * const rhs);

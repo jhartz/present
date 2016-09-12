@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.0)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/bilke-cmake-modules")
 project (Present)
 
@@ -32,7 +32,7 @@ option (COMPILE_WITH_CXX_AS_CC
 
 option (PRESENT_USE_PTHREAD
     "Use the pthread library to ensure thread safety"
-    ON
+    OFF
 )
 
 ###############################################################################
@@ -62,6 +62,11 @@ if (COMPILE_WITH_COVERAGE)
     include(CodeCoverage)
     setup_target_for_coverage(present_coverage present-test coverage)
 endif (COMPILE_WITH_COVERAGE)
+
+# Check if newer include files exist
+include(CheckIncludeFile)
+check_include_file (stdint.h PRESENT_USE_STDINT)
+check_include_file (stdbool.h PRESENT_USE_STDBOOL)
 
 # Configure a header file to pass some of the CMake settings to the source code
 configure_file (

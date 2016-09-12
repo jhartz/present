@@ -7,14 +7,35 @@
  * For details, see LICENSE.
  */
 
-#ifndef __cplusplus
-#include <stdbool.h>
-#endif
-#include <stdint.h>
-#include <time.h>
-
 #ifndef _PRESENT_TYPES_H_
 #define _PRESENT_TYPES_H_
+
+/*
+ * Typedefs for Present boolean type (present_bool)
+ */
+
+#ifdef __cplusplus
+/* This is C++; we have nice things like "bool" */
+typedef bool            present_bool;
+#else
+# ifdef PRESENT_USE_STDBOOL
+/* At least C99 (so we have _Bool) */
+typedef _Bool           present_bool;
+# else
+/* We ain't got nothing */
+typedef unsigned char   present_bool;
+# endif
+#endif
+
+/*
+ * Include typedefs for Present int types
+ */
+
+#ifdef PRESENT_USE_STDINT
+# include "typedefs-stdint.h"
+#else
+# include "typedefs-nostdint.h"
+#endif
 
 /*
  * Typedefs for common components of dates and times
@@ -22,26 +43,26 @@
 
 /* Timestamp */
 
-typedef int_fast64_t    int_timestamp;
+typedef present_int64   int_timestamp;
 
 /* Time (only used to describe parameters, not used for internal storage) */
 
-typedef uint_fast8_t    int_hour;
-typedef uint_fast8_t    int_minute;
-typedef uint_fast8_t    int_second;
-typedef uint_fast64_t   int_nanosecond;
+typedef present_uint8   int_hour;
+typedef present_uint8   int_minute;
+typedef present_uint8   int_second;
+typedef present_uint64  int_nanosecond;
 
 /* Date */
 
-typedef int_fast32_t    int_year;
+typedef present_int32   int_year;
 /* These values are at least 16-bit, and signed, to make calculations
    (when adding/subtracting deltas) easier */
-typedef int_fast16_t    int_month;
-typedef int_fast16_t    int_day;
-typedef int_fast16_t    int_day_of_year;
-typedef int_fast8_t     int_week_of_year;
+typedef present_int16   int_month;
+typedef present_int16   int_day;
+typedef present_int16   int_day_of_year;
+typedef present_int8    int_week_of_year;
 
-typedef uint_fast8_t    int_day_of_week;
+typedef present_uint8   int_day_of_week;
 
 /* NOTE: 0 is also a valid identifier for Sunday to be compatible with the
    `struct tm` definition, but the ISO8601 definition (using 7 for Sunday)
@@ -57,13 +78,12 @@ typedef uint_fast8_t    int_day_of_week;
 
 /* Time/Day Delta */
 
-typedef int_fast64_t    int_delta;
+typedef present_int64   int_delta;
 
 /* Month Delta */
 
-typedef int_fast32_t    int_month_delta;
-typedef int_fast16_t    int_year_delta;
-
+typedef present_int32   int_month_delta;
+typedef present_int16   int_year_delta;
 
 #endif /* _PRESENT_TYPES_H_ */
 
