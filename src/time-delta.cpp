@@ -195,6 +195,10 @@ const TimeDelta operator-(const TimeDelta & lhs, const TimeDelta & rhs) {
     return (TimeDelta(lhs) -= rhs);
 }
 
+int TimeDelta::compare(const TimeDelta & lhs, const TimeDelta & rhs) {
+    return TimeDelta_compare(&lhs, &rhs);
+}
+
 bool operator==(const TimeDelta & lhs, const TimeDelta & rhs) {
     return TimeDelta_equal(&lhs, &rhs);
 }

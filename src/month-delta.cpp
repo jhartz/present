@@ -121,6 +121,10 @@ const MonthDelta operator-(const MonthDelta & lhs, const MonthDelta & rhs) {
     return (MonthDelta(lhs) -= rhs);
 }
 
+int MonthDelta::compare(const MonthDelta & lhs, const MonthDelta & rhs) {
+    return MonthDelta_compare(&lhs, &rhs);
+}
+
 bool operator==(const MonthDelta & lhs, const MonthDelta & rhs) {
     return MonthDelta_equal(&lhs, &rhs);
 }

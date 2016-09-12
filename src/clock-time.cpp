@@ -99,6 +99,10 @@ const ClockTime operator-(const ClockTime & lhs, const TimeDelta & rhs) {
     return (ClockTime(lhs) -= rhs);
 }
 
+int ClockTime::compare(const ClockTime & lhs, const ClockTime & rhs) {
+    return ClockTime_compare(&lhs, &rhs);
+}
+
 bool operator==(const ClockTime & lhs, const ClockTime & rhs) {
     return ClockTime_equal(&lhs, &rhs);
 }

@@ -32,10 +32,10 @@
  */
 static int_week_of_year
 last_week_of_year(int_year year) {
-    // https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year
+    /* https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year */
     int_week_of_year week = 52;
 
-    // Get some information on Jan. 1 of this year
+    /* Get some information on Jan. 1 of this year */
     struct tm tm;
     memset((void *)&tm, 0, sizeof(struct tm));
     tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
@@ -49,13 +49,13 @@ last_week_of_year(int_year year) {
         day_of_week = DAY_OF_WEEK_SUNDAY;
     }
 
-    // If the year starts on a Thursday, it has 53 weeks
+    /* If the year starts on a Thursday, it has 53 weeks */
     if (day_of_week == DAY_OF_WEEK_THURSDAY) {
         week = 53;
     }
 
-    // If this year is a leap year, and it starts on a Wednesday,
-    // it has 53 weeks
+    /* If this year is a leap year, and it starts on a Wednesday,
+       it has 53 weeks */
     if (IS_LEAP_YEAR(year) && day_of_week == DAY_OF_WEEK_WEDNESDAY) {
         week = 53;
     }
@@ -172,13 +172,13 @@ Date_create_from_year_week_day(
         CONSTRUCTOR_ERROR_RETURN(Date, DAY_OF_WEEK_OUT_OF_RANGE);
     }
 
-    // Get the weekday of Jan. 4 of this year
+    /* Get the weekday of Jan. 4 of this year */
     struct tm tm;
     memset((void *)&tm, 0, sizeof(struct tm));
     tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
-    tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; // January
-    tm.tm_mday = 4; // 4th day of the month
-    // tm_wday will be filled in
+    tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; /* January */
+    tm.tm_mday = 4; /* 4th day of the month */
+    /* tm_wday will be filled in */
     tm.tm_isdst = -1;
     assert(present_mktime(&tm) != -1);
 
@@ -188,8 +188,9 @@ Date_create_from_year_week_day(
     }
     assert(jan_4_day_of_week >= 1 && jan_4_day_of_week <= 7);
 
-    // Calculate the date using voodoo magic
-    // https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+    /* Calculate the date using voodoo magic
+       https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+       */
     int_day_of_year ordinal_date = week_of_year * 7 + day_of_week -
         (jan_4_day_of_week + 3);
     if (ordinal_date < 1) {
@@ -241,19 +242,20 @@ Date_get_week_of_year(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
-    // Caculate the week number using pure voodoo magic
-    // https://en.wikipedia.org/wiki/ISO_week_date#Calculating_the_week_number_of_a_given_date
+    /* Caculate the week number using pure voodoo magic
+       https://en.wikipedia.org/wiki/ISO_week_date#Calculating_the_week_number_of_a_given_date
+       */
     int_year year = self->data_.year;
     int_week_of_year week = (self->data_.day_of_year -
             self->data_.day_of_week + 10) / 7;
 
     if (week == 0) {
-        // It's the last week of the previous year
+        /* It's the last week of the previous year */
         year -= 1;
         week = last_week_of_year(year);
     }
     if (week > last_week_of_year(year)) {
-        // It's the first week of the next year
+        /* It's the first week of the next year */
         year += 1;
         week = 1;
     }
@@ -355,5 +357,20 @@ Date_subtract_month_delta(
     check_date_data(&self->data_);
 }
 
-STRUCT_COMPARISON_OPERATORS(Date, year, month, day)
+int
+Date_compare(
+        const struct Date * const lhs,
+        const struct Date * const rhs) {
+    assert(lhs != NULL);
+    assert(lhs->error == 0);
+    assert(rhs != NULL);
+    assert(rhs->error == 0);
+
+    return
+        STRUCT_COMPARE(year,
+            STRUCT_COMPARE(month,
+                STRUCT_COMPARE(day, 0)));
+}
+
+STRUCT_COMPARISON_OPERATORS(Date)
 

@@ -13,6 +13,8 @@
 #include <time.h>
 #include <unistd.h>
 
+#include "present-config.h"
+
 #ifdef PRESENT_USE_PTHREAD
 # include <pthread.h>
 #endif

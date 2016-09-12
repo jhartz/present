@@ -106,6 +106,10 @@ const Date operator-(const Date & lhs, const MonthDelta & rhs) {
     return (Date(lhs) -= rhs);
 }
 
+int Date::compare(const Date & lhs, const Date & rhs) {
+    return Date_compare(&lhs, &rhs);
+}
+
 bool operator==(const Date & lhs, const Date & rhs) {
     return Date_equal(&lhs, &rhs);
 }

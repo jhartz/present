@@ -264,7 +264,7 @@ TimeDelta_get_day_delta_abs_ceil(const struct TimeDelta * const self) {
     }
 }
 
-bool
+present_bool
 TimeDelta_is_negative(const struct TimeDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
@@ -376,5 +376,19 @@ TimeDelta_subtract_time_delta(
     CHECK_DATA(self->data_);
 }
 
-STRUCT_COMPARISON_OPERATORS(TimeDelta, delta_seconds, delta_nanoseconds)
+int
+TimeDelta_compare(
+        const struct TimeDelta * const lhs,
+        const struct TimeDelta * const rhs) {
+    assert(lhs != NULL);
+    assert(lhs->error == 0);
+    assert(rhs != NULL);
+    assert(rhs->error == 0);
+
+    return
+        STRUCT_COMPARE(delta_seconds,
+            STRUCT_COMPARE(delta_nanoseconds, 0));
+}
+
+STRUCT_COMPARISON_OPERATORS(TimeDelta)
 

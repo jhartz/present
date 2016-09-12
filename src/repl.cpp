@@ -13,5 +13,10 @@
 
 int main(int argc, char **argv) {
     std::cout << "Hello, world!" << std::endl;
+#ifdef PRESENT_USE_PTHREAD
+    std::cout << "Using pthread" << std::endl;
+#else
+    std::cout << "No pthread" << std::endl;
+#endif
 }
 

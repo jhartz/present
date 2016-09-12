@@ -127,6 +127,10 @@ const DayDelta operator-(const DayDelta & lhs, const DayDelta & rhs) {
     return (DayDelta(lhs) -= rhs);
 }
 
+int DayDelta::compare(const DayDelta & lhs, const DayDelta & rhs) {
+    return DayDelta_compare(&lhs, &rhs);
+}
+
 bool operator==(const DayDelta & lhs, const DayDelta & rhs) {
     return DayDelta_equal(&lhs, &rhs);
 }

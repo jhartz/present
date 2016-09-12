@@ -81,7 +81,7 @@ DayDelta_get_time_delta(const struct DayDelta * const self) {
     return TimeDelta_from_days(self->data_.delta_days);
 }
 
-bool
+present_bool
 DayDelta_is_negative(const struct DayDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
@@ -137,5 +137,17 @@ DayDelta_subtract_day_delta(
     self->data_.delta_days -= dayDeltaToSubtract->data_.delta_days;
 }
 
-STRUCT_COMPARISON_OPERATORS(DayDelta, delta_days)
+int
+DayDelta_compare(
+        const struct DayDelta * const lhs,
+        const struct DayDelta * const rhs) {
+    assert(lhs != NULL);
+    assert(lhs->error == 0);
+    assert(rhs != NULL);
+    assert(rhs->error == 0);
+
+    return STRUCT_COMPARE(delta_days, 0);
+}
+
+STRUCT_COMPARISON_OPERATORS(DayDelta)
 

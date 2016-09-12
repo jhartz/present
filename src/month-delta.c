@@ -71,7 +71,7 @@ MonthDelta_get_years_decimal(const struct MonthDelta * const self) {
     return ((double)self->data_.delta_months) / (double)MONTHS_IN_YEAR;
 }
 
-bool
+present_bool
 MonthDelta_is_negative(const struct MonthDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
@@ -127,5 +127,17 @@ MonthDelta_subtract_month_delta(
     self->data_.delta_months -= monthDeltaToSubtract->data_.delta_months;
 }
 
-STRUCT_COMPARISON_OPERATORS(MonthDelta, delta_months)
+int
+MonthDelta_compare(
+        const struct MonthDelta * const lhs,
+        const struct MonthDelta * const rhs) {
+    assert(lhs != NULL);
+    assert(lhs->error == 0);
+    assert(rhs != NULL);
+    assert(rhs->error == 0);
+
+    return STRUCT_COMPARE(delta_months, 0);
+}
+
+STRUCT_COMPARISON_OPERATORS(MonthDelta)
 

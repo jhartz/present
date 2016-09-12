@@ -217,5 +217,19 @@ ClockTime_subtract_time_delta(
     check_clock_time(self);
 }
 
-STRUCT_COMPARISON_OPERATORS(ClockTime, seconds, nanoseconds)
+int
+ClockTime_compare(
+        const struct ClockTime * const lhs,
+        const struct ClockTime * const rhs) {
+    assert(lhs != NULL);
+    assert(lhs->error == 0);
+    assert(rhs != NULL);
+    assert(rhs->error == 0);
+
+    return
+        STRUCT_COMPARE(seconds,
+            STRUCT_COMPARE(nanoseconds, 0));
+}
+
+STRUCT_COMPARISON_OPERATORS(ClockTime)
 

@@ -30,7 +30,7 @@
 static struct Date
 struct_tm_to_date(const struct tm tm) {
     struct tm tmCopy = tm;
-    // Throw it through mktime to fix any weirdness
+    /* Throw it through mktime to fix any weirdness */
     assert(present_mktime(&tmCopy) != -1);
 
     return Date_create_from_year_month_day(
@@ -43,7 +43,7 @@ struct_tm_to_date(const struct tm tm) {
 static struct ClockTime
 struct_tm_to_clock_time(const struct tm tm) {
     struct tm tmCopy = tm;
-    // Throw it through mktime to fix any weirdness
+    /* Throw it through mktime to fix any weirdness */
     assert(present_mktime(&tmCopy) != -1);
 
     return ClockTime_create_from_hour_minute_second(
@@ -75,14 +75,14 @@ convert_to_struct_tm(
 /** Convert a time_t to a UNIX timestamp. */
 int_timestamp
 time_t_to_timestamp(const time_t timestamp) {
-    // TODO: We're just assuming that time_t is already a UNIX timestamp
+    /* TODO: We're just assuming that time_t is already a UNIX timestamp */
     return (int_timestamp) timestamp;
 }
 
 /** Convert a UNIX timestamp to a time_t. */
 time_t
 timestamp_to_time_t(const int_timestamp timestamp_seconds) {
-    // TODO: We're just assuming that time_t is a UNIX timestamp
+    /* TODO: We're just assuming that time_t is a UNIX timestamp */
     return (time_t) timestamp_seconds;
 }
 
@@ -151,7 +151,7 @@ Timestamp_create_from_struct_tm_utc(const struct tm tm) {
 struct Timestamp
 Timestamp_create_from_struct_tm_local(const struct tm tm) {
     struct tm tmCopy = tm;
-    // Throw it right through mktime
+    /* Throw it right through mktime */
     time_t timestamp = present_mktime(&tmCopy);
     assert(timestamp != -1);
     return new_timestamp(time_t_to_timestamp(timestamp), 0);
@@ -167,7 +167,7 @@ Timestamp_create(
     assert(clockTime != NULL);
     assert(clockTime->error == 0);
 
-    // Make sure the Date and ClockTime aren't erroneous
+    /* Make sure the Date and ClockTime aren't erroneous */
     if (date->error) {
         return invalid_date();
     }
@@ -175,10 +175,11 @@ Timestamp_create(
         return invalid_clock_time();
     }
 
-    // First, pretend it's just UTC
+    /* First, pretend it's just UTC */
     struct Timestamp t = Timestamp_create_utc(date, clockTime);
-    // Now, subtract the UTC offset (since we're technically converting TO UTC)
-    // TODO: Is subtracting correct?
+    /* Now, subtract the UTC offset (since we're technically converting
+       TO UTC) */
+    /* TODO: Is subtracting correct? */
     Timestamp_subtract_time_delta(&t, timeZoneOffset);
     return t;
 }
@@ -197,7 +198,7 @@ Timestamp_create_utc(
         0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
     };
 
-    // Make sure the Date and ClockTime aren't erroneous
+    /* Make sure the Date and ClockTime aren't erroneous */
     if (date->error) {
         return invalid_date();
     }
@@ -205,26 +206,26 @@ Timestamp_create_utc(
         return invalid_clock_time();
     }
 
-    // First, the hard part... determining the number of days since
-    // the UNIX epoch, taking leap years into account
+    /* First, the hard part... determining the number of days since the UNIX
+       epoch, taking leap years into account */
     int_timestamp year = Date_get_year(date),
                   month = Date_get_month(date),
                   daysSinceEpoch = Date_get_day(date);
     daysSinceEpoch += DAY_OF_START_OF_MONTH[month];
     daysSinceEpoch += 365 * (year - 1970);
-    // Every 4 years is a leap year
+    /* Every 4 years is a leap year */
     daysSinceEpoch += (year - 1968) / 4;
-    // Except the turn of the century
+    /* Except the turn of the century */
     daysSinceEpoch -= (year - 1900) / 100;
-    // Except every 4th century
+    /* Except every 4th century */
     daysSinceEpoch += (year - 1600) / 400;
-    // If it's still January or February of this year, though, we don't need to
-    // include the extra for this year yet
+    /* If it's still January or February of this year, though, we don't need to
+       include the extra for this year yet */
     if (IS_LEAP_YEAR(year) && month <= 2) {
         daysSinceEpoch--;
     }
 
-    // This is a more useful form of the clock time
+    /* This is a more useful form of the clock time */
     struct TimeDelta timeSinceMidnight =
         ClockTime_time_since_midnight(clockTime);
 
@@ -243,7 +244,7 @@ Timestamp_create_local(
     assert(clockTime != NULL);
     assert(clockTime->error == 0);
 
-    // Make sure the Date and ClockTime aren't erroneous
+    /* Make sure the Date and ClockTime aren't erroneous */
     if (date->error) {
         return invalid_date();
     }
@@ -284,7 +285,7 @@ Timestamp_get_struct_tm(
     assert(timeZoneOffset->error == 0);
 
     struct Timestamp copy = *self;
-    // TODO: should we be adding or subtracting?
+    /* TODO: should we be adding or subtracting? */
     Timestamp_add_time_delta(&copy, timeZoneOffset);
     return Timestamp_get_struct_tm_utc(&copy);
 }
@@ -486,5 +487,19 @@ Timestamp_subtract_month_delta(
     assert(self->data_.timestamp_seconds != -1);
 }
 
-STRUCT_COMPARISON_OPERATORS(Timestamp, timestamp_seconds, additional_nanoseconds)
+int
+Timestamp_compare(
+        const struct Timestamp * const lhs,
+        const struct Timestamp * const rhs) {
+    assert(lhs != NULL);
+    assert(lhs->error == 0);
+    assert(rhs != NULL);
+    assert(rhs->error == 0);
+
+    return
+        STRUCT_COMPARE(timestamp_seconds,
+            STRUCT_COMPARE(additional_nanoseconds, 0));
+}
+
+STRUCT_COMPARISON_OPERATORS(Timestamp)
 
