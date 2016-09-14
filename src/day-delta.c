@@ -50,7 +50,7 @@ DayDelta_zero() {
 }
 
 int_delta
-DayDelta_get_days(const struct DayDelta * const self) {
+DayDelta_days(const struct DayDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -58,7 +58,7 @@ DayDelta_get_days(const struct DayDelta * const self) {
 }
 
 int_delta
-DayDelta_get_weeks(const struct DayDelta * const self) {
+DayDelta_weeks(const struct DayDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -66,7 +66,7 @@ DayDelta_get_weeks(const struct DayDelta * const self) {
 }
 
 double
-DayDelta_get_weeks_decimal(const struct DayDelta * const self) {
+DayDelta_weeks_decimal(const struct DayDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -74,7 +74,7 @@ DayDelta_get_weeks_decimal(const struct DayDelta * const self) {
 }
 
 struct TimeDelta
-DayDelta_get_time_delta(const struct DayDelta * const self) {
+DayDelta_to_time_delta(const struct DayDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 

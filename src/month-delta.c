@@ -48,7 +48,7 @@ MonthDelta_zero() {
 }
 
 int_month_delta
-MonthDelta_get_months(const struct MonthDelta * const self) {
+MonthDelta_months(const struct MonthDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -56,7 +56,7 @@ MonthDelta_get_months(const struct MonthDelta * const self) {
 }
 
 int_year_delta
-MonthDelta_get_years(const struct MonthDelta * const self) {
+MonthDelta_years(const struct MonthDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -64,7 +64,7 @@ MonthDelta_get_years(const struct MonthDelta * const self) {
 }
 
 double
-MonthDelta_get_years_decimal(const struct MonthDelta * const self) {
+MonthDelta_years_decimal(const struct MonthDelta * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 

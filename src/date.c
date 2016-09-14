@@ -206,7 +206,7 @@ Date_from_year_week_day(
 }
 
 int_year
-Date_get_year(const struct Date * const self) {
+Date_year(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -214,7 +214,7 @@ Date_get_year(const struct Date * const self) {
 }
 
 int_month
-Date_get_month(const struct Date * const self) {
+Date_month(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -222,7 +222,7 @@ Date_get_month(const struct Date * const self) {
 }
 
 int_day
-Date_get_day(const struct Date * const self) {
+Date_day(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -230,7 +230,7 @@ Date_get_day(const struct Date * const self) {
 }
 
 int_day_of_year
-Date_get_day_of_year(const struct Date * const self) {
+Date_day_of_year(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -238,7 +238,7 @@ Date_get_day_of_year(const struct Date * const self) {
 }
 
 struct PresentWeekYear
-Date_get_week_of_year(const struct Date * const self) {
+Date_week_of_year(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -265,7 +265,7 @@ Date_get_week_of_year(const struct Date * const self) {
 }
 
 int_day_of_week
-Date_get_day_of_week(const struct Date * const self) {
+Date_day_of_week(const struct Date * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -273,7 +273,7 @@ Date_get_day_of_week(const struct Date * const self) {
 }
 
 struct DayDelta
-Date_get_difference(
+Date_difference(
         const struct Date * const self,
         const struct Date * const other) {
     assert(self != NULL);
@@ -284,13 +284,13 @@ Date_get_difference(
     struct ClockTime noon = ClockTime_noon();
     struct Timestamp selfTimestamp = Timestamp_create_utc(self, &noon);
     struct Timestamp otherTimestamp = Timestamp_create_utc(other, &noon);
-    struct TimeDelta timeDelta = Timestamp_get_difference(
+    struct TimeDelta timeDelta = Timestamp_difference(
             &selfTimestamp, &otherTimestamp);
-    return TimeDelta_get_day_delta_truncated(&timeDelta);
+    return TimeDelta_to_day_delta_truncated(&timeDelta);
 }
 
 struct DayDelta
-Date_get_absolute_difference(
+Date_absolute_difference(
         const struct Date * const self,
         const struct Date * const other) {
     assert(self != NULL);
@@ -298,7 +298,7 @@ Date_get_absolute_difference(
     assert(other != NULL);
     assert(other->error == 0);
 
-    struct DayDelta delta = Date_get_difference(self, other);
+    struct DayDelta delta = Date_difference(self, other);
     if (DayDelta_is_negative(&delta)) {
         DayDelta_negate(&delta);
     }

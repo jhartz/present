@@ -37,7 +37,7 @@
  * This test case tests all the overloads of the "create" method (which also
  * tests the C "ClockTime_from_..." methods).
  */
-TEST_CASE("ClockTime::create... methods", "[clock-time]") {
+TEST_CASE("ClockTime creators", "[clock-time]") {
     // from_hour
 
     ClockTime c = ClockTime::create(0);
@@ -128,24 +128,24 @@ TEST_CASE("ClockTime::create... methods", "[clock-time]") {
     IS_HMS(12, 0, 0, 0);
 }
 
-TEST_CASE("ClockTime::get... functions", "[clock-time]") {
+TEST_CASE("ClockTime accessors", "[clock-time]") {
     ClockTime c1 = ClockTime::create(0, 0, 0, 0);
     ClockTime c2 = ClockTime::create(3, 5, 8, 400);
 
-    CHECK(c1.get_hour() == 0);
-    CHECK(c2.get_hour() == 3);
+    CHECK(c1.hour() == 0);
+    CHECK(c2.hour() == 3);
 
-    CHECK(c1.get_minute() == 0);
-    CHECK(c2.get_minute() == 5);
+    CHECK(c1.minute() == 0);
+    CHECK(c2.minute() == 5);
 
-    CHECK(c1.get_second() == 0);
-    CHECK(c2.get_second() == 8);
+    CHECK(c1.second() == 0);
+    CHECK(c2.second() == 8);
 
-    CHECK(c1.get_nanosecond() == 0);
-    CHECK(c2.get_nanosecond() == 400);
+    CHECK(c1.nanosecond() == 0);
+    CHECK(c2.nanosecond() == 400);
 
-    CHECK(c1.get_second_decimal() == 0.0);
-    CHECK(c2.get_second_decimal() == 8.0000004);
+    CHECK(c1.second_decimal() == 0.0);
+    CHECK(c2.second_decimal() == 8.0000004);
 }
 
 TEST_CASE("ClockTime::time_since_midnight function", "[clock-time]") {

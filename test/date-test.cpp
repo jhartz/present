@@ -27,7 +27,7 @@
  * This test case tests all the overloads of the "create" method (which also
  * tests the C "Date_from_..." functions).
  */
-TEST_CASE("Date 'create' functions", "[date]") {
+TEST_CASE("Date creators", "[date]") {
     // from_year
 
     Date d = Date::create(0);
@@ -104,8 +104,8 @@ TEST_CASE("Date 'create' functions", "[date]") {
     IS(2000, 12, 31);
 
     // from_year_week_day
-    // Each of these has a matching test for get_week_of_year and
-    // get_day_of_week down in the "get_week_of_year and get_day_of_week
+    // Each of these has a matching test for week_of_year and
+    // day_of_week down in the "week_of_year and day_of_week
     // edge cases" test case.
 
     d = Date::from_year_week_day(2016, 31, DAY_OF_WEEK_WEDNESDAY);
@@ -169,116 +169,116 @@ TEST_CASE("Date 'create' functions", "[date]") {
     CHECK(d.error == Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE);
 }
 
-TEST_CASE("Date 'get' functions", "[date]") {
+TEST_CASE("Date accessors", "[date]") {
     Date d1 = Date::create(1857, 1, 1);
     Date d2 = Date::create(2011, 4, 19);
     Date d3 = Date::create(2000, 2, 29);
     Date d4 = Date::create(2000, 3, 1);
     Date d5 = Date::create(1995, 1, 1);
 
-    // Check get_year
-    CHECK(d1.get_year() == 1857);
-    CHECK(d2.get_year() == 2011);
-    CHECK(d3.get_year() == 2000);
-    CHECK(d4.get_year() == 2000);
-    CHECK(d5.get_year() == 1995);
+    // Check year
+    CHECK(d1.year() == 1857);
+    CHECK(d2.year() == 2011);
+    CHECK(d3.year() == 2000);
+    CHECK(d4.year() == 2000);
+    CHECK(d5.year() == 1995);
 
-    // Check get_month
-    CHECK(d1.get_month() == 1);
-    CHECK(d2.get_month() == 4);
-    CHECK(d3.get_month() == 2);
-    CHECK(d4.get_month() == 3);
-    CHECK(d5.get_month() == 1);
+    // Check month
+    CHECK(d1.month() == 1);
+    CHECK(d2.month() == 4);
+    CHECK(d3.month() == 2);
+    CHECK(d4.month() == 3);
+    CHECK(d5.month() == 1);
 
-    // Check get_day
-    CHECK(d1.get_day() == 1);
-    CHECK(d2.get_day() == 19);
-    CHECK(d3.get_day() == 29);
-    CHECK(d4.get_day() == 1);
-    CHECK(d5.get_day() == 1);
+    // Check day
+    CHECK(d1.day() == 1);
+    CHECK(d2.day() == 19);
+    CHECK(d3.day() == 29);
+    CHECK(d4.day() == 1);
+    CHECK(d5.day() == 1);
 
-    // Check get_day_of_year
-    CHECK(d1.get_day_of_year() == 1);
-    CHECK(d2.get_day_of_year() == 109);
-    CHECK(d3.get_day_of_year() == 60);
-    CHECK(d4.get_day_of_year() == 61);
-    CHECK(d5.get_day_of_year() == 1);
+    // Check day_of_year
+    CHECK(d1.day_of_year() == 1);
+    CHECK(d2.day_of_year() == 109);
+    CHECK(d3.day_of_year() == 60);
+    CHECK(d4.day_of_year() == 61);
+    CHECK(d5.day_of_year() == 1);
 
-    // Check get_week_of_year
+    // Check week_of_year
     PresentWeekYear weekyear;
 
-    weekyear = d1.get_week_of_year();
+    weekyear = d1.week_of_year();
     CHECK(weekyear.week == 1);
     CHECK(weekyear.year == 1857);
 
-    weekyear = d2.get_week_of_year();
+    weekyear = d2.week_of_year();
     CHECK(weekyear.week == 16);
     CHECK(weekyear.year == 2011);
 
-    weekyear = d3.get_week_of_year();
+    weekyear = d3.week_of_year();
     CHECK(weekyear.week == 9);
     CHECK(weekyear.year == 2000);
 
-    weekyear = d4.get_week_of_year();
+    weekyear = d4.week_of_year();
     CHECK(weekyear.week == 9);
     CHECK(weekyear.year == 2000);
 
-    weekyear = d5.get_week_of_year();
+    weekyear = d5.week_of_year();
     CHECK(weekyear.week == 52);
     CHECK(weekyear.year == 1994);
 
-    // Check get_day_of_week
-    CHECK(d1.get_day_of_week() == DAY_OF_WEEK_THURSDAY);
-    CHECK(d2.get_day_of_week() == DAY_OF_WEEK_TUESDAY);
-    CHECK(d3.get_day_of_week() == DAY_OF_WEEK_TUESDAY);
-    CHECK(d4.get_day_of_week() == DAY_OF_WEEK_WEDNESDAY);
-    CHECK(d5.get_day_of_week() == DAY_OF_WEEK_SUNDAY);
+    // Check day_of_week
+    CHECK(d1.day_of_week() == DAY_OF_WEEK_THURSDAY);
+    CHECK(d2.day_of_week() == DAY_OF_WEEK_TUESDAY);
+    CHECK(d3.day_of_week() == DAY_OF_WEEK_TUESDAY);
+    CHECK(d4.day_of_week() == DAY_OF_WEEK_WEDNESDAY);
+    CHECK(d5.day_of_week() == DAY_OF_WEEK_SUNDAY);
 }
 
-TEST_CASE("Date 'get_week_of_year' and 'get_day_of_week' edge cases",
+TEST_CASE("Date 'week_of_year' and 'day_of_week' edge cases",
           "[date]") {
-    // More tests for get_week_of_year and get_day_of_week
+    // More tests for week_of_year and day_of_week
     // (all of these match the tests for from_year_week_day; see that section
     // for explanations of each)
     Date d = Date::create(2016, 8, 3);
-    CHECK(d.get_week_of_year().week == 31);
-    CHECK(d.get_week_of_year().year == 2016);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_WEDNESDAY);
+    CHECK(d.week_of_year().week == 31);
+    CHECK(d.week_of_year().year == 2016);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_WEDNESDAY);
 
     d = Date::create(2003, 12, 29);
-    CHECK(d.get_week_of_year().week == 1);
-    CHECK(d.get_week_of_year().year == 2004);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_MONDAY);
+    CHECK(d.week_of_year().week == 1);
+    CHECK(d.week_of_year().year == 2004);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_MONDAY);
 
     d = Date::create(2007, 1, 1);
-    CHECK(d.get_week_of_year().week == 1);
-    CHECK(d.get_week_of_year().year == 2007);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_MONDAY);
+    CHECK(d.week_of_year().week == 1);
+    CHECK(d.week_of_year().year == 2007);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_MONDAY);
 
     d = Date::create(2005, 12, 26);
-    CHECK(d.get_week_of_year().week == 52);
-    CHECK(d.get_week_of_year().year == 2005);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_MONDAY);
+    CHECK(d.week_of_year().week == 52);
+    CHECK(d.week_of_year().year == 2005);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_MONDAY);
 
     d = Date::create(2006, 1, 1);
-    CHECK(d.get_week_of_year().week == 52);
-    CHECK(d.get_week_of_year().year == 2005);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_SUNDAY);
+    CHECK(d.week_of_year().week == 52);
+    CHECK(d.week_of_year().year == 2005);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_SUNDAY);
 
     d = Date::create(2009, 12, 28);
-    CHECK(d.get_week_of_year().week == 53);
-    CHECK(d.get_week_of_year().year == 2009);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_MONDAY);
+    CHECK(d.week_of_year().week == 53);
+    CHECK(d.week_of_year().year == 2009);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_MONDAY);
 
     d = Date::create(2010, 1, 1);
-    CHECK(d.get_week_of_year().week == 53);
-    CHECK(d.get_week_of_year().year == 2009);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_FRIDAY);
+    CHECK(d.week_of_year().week == 53);
+    CHECK(d.week_of_year().year == 2009);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_FRIDAY);
 
     d = Date::create(1993, 1, 3);
-    CHECK(d.get_week_of_year().week == 53);
-    CHECK(d.get_week_of_year().year == 1992);
-    CHECK(d.get_day_of_week() == DAY_OF_WEEK_SUNDAY);
+    CHECK(d.week_of_year().week == 53);
+    CHECK(d.week_of_year().year == 1992);
+    CHECK(d.day_of_week() == DAY_OF_WEEK_SUNDAY);
 }
 
 TEST_CASE("Date 'difference' functions", "[date]") {
@@ -286,8 +286,8 @@ TEST_CASE("Date 'difference' functions", "[date]") {
     Date d2 = Date::create(2010, 1, 2);
 
     DayDelta exp_diff = DayDelta::from_days(1);
-    CHECK(d1.get_difference(d2) == -exp_diff);
-    CHECK(d2.get_difference(d1) == exp_diff);
-    CHECK(d1.get_absolute_difference(d2) == exp_diff);
-    CHECK(d2.get_absolute_difference(d1) == exp_diff);
+    CHECK(d1.difference(d2) == -exp_diff);
+    CHECK(d2.difference(d1) == exp_diff);
+    CHECK(d1.absolute_difference(d2) == exp_diff);
+    CHECK(d2.absolute_difference(d1) == exp_diff);
 }

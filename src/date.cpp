@@ -38,36 +38,36 @@ Date Date::from_year_week_day(
     return Date_from_year_week_day(year, week_of_year, day_of_week);
 }
 
-int_year Date::get_year() const {
-    return Date_get_year(this);
+int_year Date::year() const {
+    return Date_year(this);
 }
 
-int_month Date::get_month() const {
-    return Date_get_month(this);
+int_month Date::month() const {
+    return Date_month(this);
 }
 
-int_day Date::get_day() const {
-    return Date_get_day(this);
+int_day Date::day() const {
+    return Date_day(this);
 }
 
-int_day_of_year Date::get_day_of_year() const {
-    return Date_get_day_of_year(this);
+int_day_of_year Date::day_of_year() const {
+    return Date_day_of_year(this);
 }
 
-struct PresentWeekYear Date::get_week_of_year() const {
-    return Date_get_week_of_year(this);
+struct PresentWeekYear Date::week_of_year() const {
+    return Date_week_of_year(this);
 }
 
-int_day_of_week Date::get_day_of_week() const {
-    return Date_get_day_of_week(this);
+int_day_of_week Date::day_of_week() const {
+    return Date_day_of_week(this);
 }
 
-DayDelta Date::get_difference(const Date & other) const {
-    return Date_get_difference(this, &other);
+DayDelta Date::difference(const Date & other) const {
+    return Date_difference(this, &other);
 }
 
-DayDelta Date::get_absolute_difference(const Date & other) const {
-    return Date_get_absolute_difference(this, &other);
+DayDelta Date::absolute_difference(const Date & other) const {
+    return Date_absolute_difference(this, &other);
 }
 
 Date & Date::operator+=(const DayDelta & delta) {

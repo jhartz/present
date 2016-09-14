@@ -60,12 +60,12 @@ convert_to_struct_tm(
     struct tm tm;
     memset((void *) &tm, 0, sizeof(struct tm));
 
-    tm.tm_sec = (int) ClockTime_get_second(clockTime);
-    tm.tm_min = (int) ClockTime_get_minute(clockTime);
-    tm.tm_hour = (int) ClockTime_get_hour(clockTime);
-    tm.tm_mday = (int) Date_get_day(date);
-    tm.tm_mon = (int) Date_get_month(date) - STRUCT_TM_MONTH_OFFSET;
-    tm.tm_year = (int) Date_get_year(date) - STRUCT_TM_YEAR_OFFSET;
+    tm.tm_sec = (int) ClockTime_second(clockTime);
+    tm.tm_min = (int) ClockTime_minute(clockTime);
+    tm.tm_hour = (int) ClockTime_hour(clockTime);
+    tm.tm_mday = (int) Date_day(date);
+    tm.tm_mon = (int) Date_month(date) - STRUCT_TM_MONTH_OFFSET;
+    tm.tm_year = (int) Date_year(date) - STRUCT_TM_YEAR_OFFSET;
     tm.tm_isdst = -1;
     assert(present_mktime(&tm) != -1);
 
@@ -208,9 +208,9 @@ Timestamp_create_utc(
 
     /* First, the hard part... determining the number of days since the UNIX
        epoch, taking leap years into account */
-    int_timestamp year = Date_get_year(date),
-                  month = Date_get_month(date),
-                  daysSinceEpoch = Date_get_day(date);
+    int_timestamp year = Date_year(date),
+                  month = Date_month(date),
+                  daysSinceEpoch = Date_day(date);
     daysSinceEpoch += DAY_OF_START_OF_MONTH[month];
     daysSinceEpoch += 365 * (year - 1970);
     /* Every 4 years is a leap year */
@@ -231,8 +231,8 @@ Timestamp_create_utc(
 
     return new_timestamp(
             daysSinceEpoch * SECONDS_IN_DAY +
-            TimeDelta_get_seconds(&timeSinceMidnight),
-            TimeDelta_get_nanoseconds(&timeSinceMidnight));
+            TimeDelta_seconds(&timeSinceMidnight),
+            TimeDelta_nanoseconds(&timeSinceMidnight));
 }
 
 struct Timestamp
@@ -368,7 +368,7 @@ Timestamp_get_clock_time_local(const struct Timestamp * const self) {
 }
 
 struct TimeDelta
-Timestamp_get_difference(
+Timestamp_difference(
         const struct Timestamp * const self,
         const struct Timestamp * const other) {
     assert(self != NULL);
@@ -386,7 +386,7 @@ Timestamp_get_difference(
 }
 
 struct TimeDelta
-Timestamp_get_absolute_difference(
+Timestamp_absolute_difference(
         const struct Timestamp * const self,
         const struct Timestamp * const other) {
     assert(self != NULL);
@@ -394,7 +394,7 @@ Timestamp_get_absolute_difference(
     assert(other != NULL);
     assert(other->error == 0);
 
-    struct TimeDelta delta = Timestamp_get_difference(self, other);
+    struct TimeDelta delta = Timestamp_difference(self, other);
     if (TimeDelta_is_negative(&delta)) {
         TimeDelta_negate(&delta);
     }

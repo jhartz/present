@@ -52,17 +52,17 @@ struct PRESENT_API DayDelta {
     /** @copydoc DayDelta_zero */
     static DayDelta zero();
 
-    /** @copydoc DayDelta_get_days */
-    int_delta get_days() const;
+    /** @copydoc DayDelta_days */
+    int_delta days() const;
 
-    /** @copydoc DayDelta_get_weeks */
-    int_delta get_weeks() const;
+    /** @copydoc DayDelta_weeks */
+    int_delta weeks() const;
 
-    /** @copydoc DayDelta_get_weeks_decimal */
-    double get_weeks_decimal() const;
+    /** @copydoc DayDelta_weeks_decimal */
+    double weeks_decimal() const;
 
-    /** @copydoc DayDelta_get_time_delta */
-    TimeDelta get_time_delta() const;
+    /** @copydoc DayDelta_to_time_delta */
+    TimeDelta to_time_delta() const;
 
     /** @copydoc DayDelta_is_negative */
     bool is_negative() const;
@@ -161,27 +161,27 @@ DayDelta_zero();
  * Get the number of days represented by a DayDelta.
  */
 PRESENT_API int_delta
-DayDelta_get_days(const struct DayDelta * const self);
+DayDelta_days(const struct DayDelta * const self);
 
 /**
  * Get the number of weeks represented by a DayDelta. If the DayDelta does not
  * represent an exact number of weeks, the number of weeks will be truncated.
  */
 PRESENT_API int_delta
-DayDelta_get_weeks(const struct DayDelta * const self);
+DayDelta_weeks(const struct DayDelta * const self);
 
 /**
  * Get the number of weeks represented by a DayDelta, with a fractional part if
  * necessary.
  */
 PRESENT_API double
-DayDelta_get_weeks_decimal(const struct DayDelta * const self);
+DayDelta_weeks_decimal(const struct DayDelta * const self);
 
 /**
  * Convert a DayDelta into an equivalent @ref TimeDelta.
  */
 PRESENT_API struct TimeDelta
-DayDelta_get_time_delta(const struct DayDelta * const self);
+DayDelta_to_time_delta(const struct DayDelta * const self);
 
 /**
  * Determine whether a DayDelta is negative.

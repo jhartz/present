@@ -133,7 +133,7 @@ ClockTime_noon() {
 }
 
 int_hour
-ClockTime_get_hour(const struct ClockTime * const self) {
+ClockTime_hour(const struct ClockTime * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -141,7 +141,7 @@ ClockTime_get_hour(const struct ClockTime * const self) {
 }
 
 int_minute
-ClockTime_get_minute(const struct ClockTime * const self) {
+ClockTime_minute(const struct ClockTime * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -149,7 +149,7 @@ ClockTime_get_minute(const struct ClockTime * const self) {
 }
 
 int_second
-ClockTime_get_second(const struct ClockTime * const self) {
+ClockTime_second(const struct ClockTime * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -157,7 +157,7 @@ ClockTime_get_second(const struct ClockTime * const self) {
 }
 
 int_nanosecond
-ClockTime_get_nanosecond(const struct ClockTime * const self) {
+ClockTime_nanosecond(const struct ClockTime * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -165,7 +165,7 @@ ClockTime_get_nanosecond(const struct ClockTime * const self) {
 }
 
 double
-ClockTime_get_second_decimal(const struct ClockTime * const self) {
+ClockTime_second_decimal(const struct ClockTime * const self) {
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -180,9 +180,9 @@ ClockTime_time_since_midnight(const struct ClockTime * const self) {
 
     struct TimeDelta delta = TimeDelta_from_seconds(
             self->data_.seconds);
-    struct TimeDelta nsDelta = TimeDelta_from_nanoseconds(
+    struct TimeDelta ns_delta = TimeDelta_from_nanoseconds(
             self->data_.nanoseconds);
-    TimeDelta_add_time_delta(&delta, &nsDelta);
+    TimeDelta_add_time_delta(&delta, &ns_delta);
     return delta;
 }
 

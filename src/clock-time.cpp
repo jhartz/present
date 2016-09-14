@@ -57,24 +57,24 @@ ClockTime ClockTime::noon() {
     return ClockTime_noon();
 }
 
-int_hour ClockTime::get_hour() const {
-    return ClockTime_get_hour(this);
+int_hour ClockTime::hour() const {
+    return ClockTime_hour(this);
 }
 
-int_minute ClockTime::get_minute() const {
-    return ClockTime_get_minute(this);
+int_minute ClockTime::minute() const {
+    return ClockTime_minute(this);
 }
 
-int_second ClockTime::get_second() const {
-    return ClockTime_get_second(this);
+int_second ClockTime::second() const {
+    return ClockTime_second(this);
 }
 
-int_nanosecond ClockTime::get_nanosecond() const {
-    return ClockTime_get_nanosecond(this);
+int_nanosecond ClockTime::nanosecond() const {
+    return ClockTime_nanosecond(this);
 }
 
-double ClockTime::get_second_decimal() const {
-    return ClockTime_get_second_decimal(this);
+double ClockTime::second_decimal() const {
+    return ClockTime_second_decimal(this);
 }
 
 TimeDelta ClockTime::time_since_midnight() const {

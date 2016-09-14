@@ -70,52 +70,52 @@ struct PRESENT_API TimeDelta {
     /** @copydoc TimeDelta_zero */
     static TimeDelta zero();
 
-    /** @copydoc TimeDelta_get_nanoseconds */
-    int_delta get_nanoseconds() const;
+    /** @copydoc TimeDelta_nanoseconds */
+    int_delta nanoseconds() const;
 
-    /** @copydoc TimeDelta_get_microseconds */
-    int_delta get_microseconds() const;
-    /** @copydoc TimeDelta_get_microseconds_decimal */
-    double get_microseconds_decimal() const;
+    /** @copydoc TimeDelta_microseconds */
+    int_delta microseconds() const;
+    /** @copydoc TimeDelta_microseconds_decimal */
+    double microseconds_decimal() const;
 
-    /** @copydoc TimeDelta_get_milliseconds */
-    int_delta get_milliseconds() const;
-    /** @copydoc TimeDelta_get_milliseconds_decimal */
-    double get_milliseconds_decimal() const;
+    /** @copydoc TimeDelta_milliseconds */
+    int_delta milliseconds() const;
+    /** @copydoc TimeDelta_milliseconds_decimal */
+    double milliseconds_decimal() const;
 
-    /** @copydoc TimeDelta_get_seconds */
-    int_delta get_seconds() const;
-    /** @copydoc TimeDelta_get_seconds_decimal */
-    double get_seconds_decimal() const;
+    /** @copydoc TimeDelta_seconds */
+    int_delta seconds() const;
+    /** @copydoc TimeDelta_seconds_decimal */
+    double seconds_decimal() const;
 
-    /** @copydoc TimeDelta_get_minutes */
-    int_delta get_minutes() const;
-    /** @copydoc TimeDelta_get_minutes_decimal */
-    double get_minutes_decimal() const;
+    /** @copydoc TimeDelta_minutes */
+    int_delta minutes() const;
+    /** @copydoc TimeDelta_minutes_decimal */
+    double minutes_decimal() const;
 
-    /** @copydoc TimeDelta_get_hours */
-    int_delta get_hours() const;
-    /** @copydoc TimeDelta_get_hours_decimal */
-    double get_hours_decimal() const;
+    /** @copydoc TimeDelta_hours */
+    int_delta hours() const;
+    /** @copydoc TimeDelta_hours_decimal */
+    double hours_decimal() const;
 
-    /** @copydoc TimeDelta_get_days */
-    int_delta get_days() const;
-    /** @copydoc TimeDelta_get_days_decimal */
-    double get_days_decimal() const;
+    /** @copydoc TimeDelta_days */
+    int_delta days() const;
+    /** @copydoc TimeDelta_days_decimal */
+    double days_decimal() const;
 
-    /** @copydoc TimeDelta_get_weeks */
-    int_delta get_weeks() const;
-    /** @copydoc TimeDelta_get_weeks_decimal */
-    double get_weeks_decimal() const;
+    /** @copydoc TimeDelta_weeks */
+    int_delta weeks() const;
+    /** @copydoc TimeDelta_weeks_decimal */
+    double weeks_decimal() const;
 
-    /** @copydoc TimeDelta_get_day_delta_truncated */
-    DayDelta get_day_delta_truncated() const;
+    /** @copydoc TimeDelta_to_day_delta_truncated */
+    DayDelta to_day_delta_truncated() const;
 
-    /** @copydoc TimeDelta_get_day_delta_rounded */
-    DayDelta get_day_delta_rounded() const;
+    /** @copydoc TimeDelta_to_day_delta_rounded */
+    DayDelta to_day_delta_rounded() const;
 
-    /** @copydoc TimeDelta_get_day_delta_abs_ceil */
-    DayDelta get_day_delta_abs_ceil() const;
+    /** @copydoc TimeDelta_to_day_delta_abs_ceil */
+    DayDelta to_day_delta_abs_ceil() const;
 
     /** @copydoc TimeDelta_is_negative */
     bool is_negative() const;
@@ -256,7 +256,7 @@ TimeDelta_zero();
  * Get the number of nanoseconds represented by a TimeDelta.
  */
 PRESENT_API int_delta
-TimeDelta_get_nanoseconds(const struct TimeDelta * const self);
+TimeDelta_nanoseconds(const struct TimeDelta * const self);
 
 /**
  * Get the number of microseconds represented by a TimeDelta. If the TimeDelta
@@ -264,14 +264,14 @@ TimeDelta_get_nanoseconds(const struct TimeDelta * const self);
  * be truncated.
  */
 PRESENT_API int_delta
-TimeDelta_get_microseconds(const struct TimeDelta * const self);
+TimeDelta_microseconds(const struct TimeDelta * const self);
 
 /**
  * Get the number of microseconds represented by a TimeDelta, with a
  * fractional part if necessary.
  */
 PRESENT_API double
-TimeDelta_get_microseconds_decimal(const struct TimeDelta * const self);
+TimeDelta_microseconds_decimal(const struct TimeDelta * const self);
 
 /**
  * Get the number of milliseconds represented by a TimeDelta. If the TimeDelta
@@ -279,14 +279,14 @@ TimeDelta_get_microseconds_decimal(const struct TimeDelta * const self);
  * be truncated.
  */
 PRESENT_API int_delta
-TimeDelta_get_milliseconds(const struct TimeDelta * const self);
+TimeDelta_milliseconds(const struct TimeDelta * const self);
 
 /**
  * Get the number of milliseconds represented by a TimeDelta, with a
  * fractional part if necessary.
  */
 PRESENT_API double
-TimeDelta_get_milliseconds_decimal(const struct TimeDelta * const self);
+TimeDelta_milliseconds_decimal(const struct TimeDelta * const self);
 
 /**
  * Get the number of seconds represented by a TimeDelta. If the TimeDelta does
@@ -294,14 +294,14 @@ TimeDelta_get_milliseconds_decimal(const struct TimeDelta * const self);
  * truncated.
  */
 PRESENT_API int_delta
-TimeDelta_get_seconds(const struct TimeDelta * const self);
+TimeDelta_seconds(const struct TimeDelta * const self);
 
 /**
  * Get the number of seconds represented by a TimeDelta, with a fractional part
  * if necessary.
  */
 PRESENT_API double
-TimeDelta_get_seconds_decimal(const struct TimeDelta * const self);
+TimeDelta_seconds_decimal(const struct TimeDelta * const self);
 
 /**
  * Get the number of minutes represented by a TimeDelta. If the TimeDelta does
@@ -309,14 +309,14 @@ TimeDelta_get_seconds_decimal(const struct TimeDelta * const self);
  * truncated.
  */
 PRESENT_API int_delta
-TimeDelta_get_minutes(const struct TimeDelta * const self);
+TimeDelta_minutes(const struct TimeDelta * const self);
 
 /**
  * Get the number of minutes represented by a TimeDelta, with a fractional part
  * if necessary.
  */
 PRESENT_API double
-TimeDelta_get_minutes_decimal(const struct TimeDelta * const self);
+TimeDelta_minutes_decimal(const struct TimeDelta * const self);
 
 /**
  * Get the number of hours represented by a TimeDelta. If the TimeDelta does
@@ -324,14 +324,14 @@ TimeDelta_get_minutes_decimal(const struct TimeDelta * const self);
  * truncated.
  */
 PRESENT_API int_delta
-TimeDelta_get_hours(const struct TimeDelta * const self);
+TimeDelta_hours(const struct TimeDelta * const self);
 
 /**
  * Get the number of hours represented by a TimeDelta, with a fractional part
  * if necessary.
  */
 PRESENT_API double
-TimeDelta_get_hours_decimal(const struct TimeDelta * const self);
+TimeDelta_hours_decimal(const struct TimeDelta * const self);
 
 /**
  * Get the number of days represented by a TimeDelta. If the TimeDelta does
@@ -339,14 +339,14 @@ TimeDelta_get_hours_decimal(const struct TimeDelta * const self);
  * truncated.
  */
 PRESENT_API int_delta
-TimeDelta_get_days(const struct TimeDelta * const self);
+TimeDelta_days(const struct TimeDelta * const self);
 
 /**
  * Get the number of days represented by a TimeDelta, with a fractional part
  * if necessary.
  */
 PRESENT_API double
-TimeDelta_get_days_decimal(const struct TimeDelta * const self);
+TimeDelta_days_decimal(const struct TimeDelta * const self);
 
 /**
  * Get the number of weeks represented by a TimeDelta. If the TimeDelta does
@@ -354,35 +354,35 @@ TimeDelta_get_days_decimal(const struct TimeDelta * const self);
  * truncated.
  */
 PRESENT_API int_delta
-TimeDelta_get_weeks(const struct TimeDelta * const self);
+TimeDelta_weeks(const struct TimeDelta * const self);
 
 /**
  * Get the number of weeks represented by a TimeDelta, with a fractional part
  * if necessary.
  */
 PRESENT_API double
-TimeDelta_get_weeks_decimal(const struct TimeDelta * const self);
+TimeDelta_weeks_decimal(const struct TimeDelta * const self);
 
 /**
  * Convert a TimeDelta into a @ref DayDelta, rounding towards zero if the
  * TimeDelta does not represent an exact number of days.
  */
 PRESENT_API struct DayDelta
-TimeDelta_get_day_delta_truncated(const struct TimeDelta * const self);
+TimeDelta_to_day_delta_truncated(const struct TimeDelta * const self);
 
 /**
  * Convert a TimeDelta into a @ref DayDelta, rounding to the nearest day if
  * the TimeDelta does not represent an exact number of days.
  */
 PRESENT_API struct DayDelta
-TimeDelta_get_day_delta_rounded(const struct TimeDelta * const self);
+TimeDelta_to_day_delta_rounded(const struct TimeDelta * const self);
 
 /**
  * Convert a TimeDelta into a @ref DayDelta, rounding away from zero if the
  * TimeDelta does not represent an exact number of days.
  */
 PRESENT_API struct DayDelta
-TimeDelta_get_day_delta_abs_ceil(const struct TimeDelta * const self);
+TimeDelta_to_day_delta_abs_ceil(const struct TimeDelta * const self);
 
 /**
  * Determine whether a TimeDelta is negative.

@@ -51,14 +51,14 @@ struct PRESENT_API MonthDelta {
     /** @copydoc MonthDelta_zero */
     static MonthDelta zero();
 
-    /** @copydoc MonthDelta_get_months */
-    int_month_delta get_months() const;
+    /** @copydoc MonthDelta_months */
+    int_month_delta months() const;
 
-    /** @copydoc MonthDelta_get_years */
-    int_year_delta get_years() const;
+    /** @copydoc MonthDelta_years */
+    int_year_delta years() const;
 
-    /** @copydoc MonthDelta_get_years_decimal */
-    double get_years_decimal() const;
+    /** @copydoc MonthDelta_years_decimal */
+    double years_decimal() const;
 
     /** @copydoc MonthDelta_is_negative */
     bool is_negative() const;
@@ -157,7 +157,7 @@ MonthDelta_zero();
  * Get the number of months represented by a MonthDelta.
  */
 PRESENT_API int_month_delta
-MonthDelta_get_months(const struct MonthDelta * const self);
+MonthDelta_months(const struct MonthDelta * const self);
 
 /**
  * Get the number of years represented by a MonthDelta. If the MonthDelta does
@@ -165,14 +165,14 @@ MonthDelta_get_months(const struct MonthDelta * const self);
  * truncated.
  */
 PRESENT_API int_year_delta
-MonthDelta_get_years(const struct MonthDelta * const self);
+MonthDelta_years(const struct MonthDelta * const self);
 
 /**
  * Get the number of years represented by a MonthDelta, with a fractional part
  * if necessary.
  */
 PRESENT_API double
-MonthDelta_get_years_decimal(const struct MonthDelta * const self);
+MonthDelta_years_decimal(const struct MonthDelta * const self);
 
 /**
  * Determine whether a MonthDelta is negative.

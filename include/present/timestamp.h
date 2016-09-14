@@ -103,10 +103,10 @@ struct PRESENT_API Timestamp {
     /** @copydoc Timestamp_get_clock_time_local */
     ClockTime get_clock_time_local() const;
 
-    /** @copydoc Timestamp_get_difference */
-    TimeDelta get_difference(const Timestamp & other) const;
-    /** @copydoc Timestamp_get_absolute_difference */
-    TimeDelta get_absolute_difference(const Timestamp & other) const;
+    /** @copydoc Timestamp_difference */
+    TimeDelta difference(const Timestamp & other) const;
+    /** @copydoc Timestamp_absolute_difference */
+    TimeDelta absolute_difference(const Timestamp & other) const;
 
     /** @copydoc Timestamp_add_time_delta */
     Timestamp & operator+=(const TimeDelta & delta);
@@ -353,7 +353,7 @@ Timestamp_get_clock_time_local(const struct Timestamp * const self);
  * Get the difference between two Timestamp instances as a @ref TimeDelta.
  */
 PRESENT_API struct TimeDelta
-Timestamp_get_difference(
+Timestamp_difference(
         const struct Timestamp * const self,
         const struct Timestamp * const other);
 
@@ -362,7 +362,7 @@ Timestamp_get_difference(
  * @ref TimeDelta.
  */
 PRESENT_API struct TimeDelta
-Timestamp_get_absolute_difference(
+Timestamp_absolute_difference(
         const struct Timestamp * const self,
         const struct Timestamp * const other);
 

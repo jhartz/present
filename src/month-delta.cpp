@@ -27,16 +27,16 @@ MonthDelta MonthDelta::zero() {
     return MonthDelta_zero();
 }
 
-int_month_delta MonthDelta::get_months() const {
-    return MonthDelta_get_months(this);
+int_month_delta MonthDelta::months() const {
+    return MonthDelta_months(this);
 }
 
-int_year_delta MonthDelta::get_years() const {
-    return MonthDelta_get_years(this);
+int_year_delta MonthDelta::years() const {
+    return MonthDelta_years(this);
 }
 
-double MonthDelta::get_years_decimal() const {
-    return MonthDelta_get_years_decimal(this);
+double MonthDelta::years_decimal() const {
+    return MonthDelta_years_decimal(this);
 }
 
 bool MonthDelta::is_negative() const {

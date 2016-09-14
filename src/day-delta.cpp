@@ -29,20 +29,20 @@ DayDelta DayDelta::zero() {
     return DayDelta_zero();
 }
 
-int_delta DayDelta::get_days() const {
-    return DayDelta_get_days(this);
+int_delta DayDelta::days() const {
+    return DayDelta_days(this);
 }
 
-int_delta DayDelta::get_weeks() const {
-    return DayDelta_get_weeks(this);
+int_delta DayDelta::weeks() const {
+    return DayDelta_weeks(this);
 }
 
-double DayDelta::get_weeks_decimal() const {
-    return DayDelta_get_weeks_decimal(this);
+double DayDelta::weeks_decimal() const {
+    return DayDelta_weeks_decimal(this);
 }
 
-TimeDelta DayDelta::get_time_delta() const {
-    return DayDelta_get_time_delta(this);
+TimeDelta DayDelta::to_time_delta() const {
+    return DayDelta_to_time_delta(this);
 }
 
 bool DayDelta::is_negative() const {

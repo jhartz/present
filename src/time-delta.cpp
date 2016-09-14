@@ -53,76 +53,76 @@ TimeDelta TimeDelta::zero() {
     return TimeDelta_zero();
 }
 
-int_delta TimeDelta::get_nanoseconds() const {
-    return TimeDelta_get_nanoseconds(this);
+int_delta TimeDelta::nanoseconds() const {
+    return TimeDelta_nanoseconds(this);
 }
 
-int_delta TimeDelta::get_microseconds() const {
-    return TimeDelta_get_microseconds(this);
+int_delta TimeDelta::microseconds() const {
+    return TimeDelta_microseconds(this);
 }
 
-double TimeDelta::get_microseconds_decimal() const {
-    return TimeDelta_get_microseconds_decimal(this);
+double TimeDelta::microseconds_decimal() const {
+    return TimeDelta_microseconds_decimal(this);
 }
 
-int_delta TimeDelta::get_milliseconds() const {
-    return TimeDelta_get_milliseconds(this);
+int_delta TimeDelta::milliseconds() const {
+    return TimeDelta_milliseconds(this);
 }
 
-double TimeDelta::get_milliseconds_decimal() const {
-    return TimeDelta_get_milliseconds_decimal(this);
+double TimeDelta::milliseconds_decimal() const {
+    return TimeDelta_milliseconds_decimal(this);
 }
 
-int_delta TimeDelta::get_seconds() const {
-    return TimeDelta_get_seconds(this);
+int_delta TimeDelta::seconds() const {
+    return TimeDelta_seconds(this);
 }
 
-double TimeDelta::get_seconds_decimal() const {
-    return TimeDelta_get_seconds_decimal(this);
+double TimeDelta::seconds_decimal() const {
+    return TimeDelta_seconds_decimal(this);
 }
 
-int_delta TimeDelta::get_minutes() const {
-    return TimeDelta_get_minutes(this);
+int_delta TimeDelta::minutes() const {
+    return TimeDelta_minutes(this);
 }
 
-double TimeDelta::get_minutes_decimal() const {
-    return TimeDelta_get_minutes_decimal(this);
+double TimeDelta::minutes_decimal() const {
+    return TimeDelta_minutes_decimal(this);
 }
 
-int_delta TimeDelta::get_hours() const {
-    return TimeDelta_get_hours(this);
+int_delta TimeDelta::hours() const {
+    return TimeDelta_hours(this);
 }
 
-double TimeDelta::get_hours_decimal() const {
-    return TimeDelta_get_hours_decimal(this);
+double TimeDelta::hours_decimal() const {
+    return TimeDelta_hours_decimal(this);
 }
 
-int_delta TimeDelta::get_days() const {
-    return TimeDelta_get_days(this);
+int_delta TimeDelta::days() const {
+    return TimeDelta_days(this);
 }
 
-double TimeDelta::get_days_decimal() const {
-    return TimeDelta_get_days_decimal(this);
+double TimeDelta::days_decimal() const {
+    return TimeDelta_days_decimal(this);
 }
 
-int_delta TimeDelta::get_weeks() const {
-    return TimeDelta_get_weeks(this);
+int_delta TimeDelta::weeks() const {
+    return TimeDelta_weeks(this);
 }
 
-double TimeDelta::get_weeks_decimal() const {
-    return TimeDelta_get_weeks_decimal(this);
+double TimeDelta::weeks_decimal() const {
+    return TimeDelta_weeks_decimal(this);
 }
 
-DayDelta TimeDelta::get_day_delta_truncated() const {
-    return TimeDelta_get_day_delta_truncated(this);
+DayDelta TimeDelta::to_day_delta_truncated() const {
+    return TimeDelta_to_day_delta_truncated(this);
 }
 
-DayDelta TimeDelta::get_day_delta_rounded() const {
-    return TimeDelta_get_day_delta_rounded(this);
+DayDelta TimeDelta::to_day_delta_rounded() const {
+    return TimeDelta_to_day_delta_rounded(this);
 }
 
-DayDelta TimeDelta::get_day_delta_abs_ceil() const {
-    return TimeDelta_get_day_delta_abs_ceil(this);
+DayDelta TimeDelta::to_day_delta_abs_ceil() const {
+    return TimeDelta_to_day_delta_abs_ceil(this);
 }
 
 bool TimeDelta::is_negative() const {

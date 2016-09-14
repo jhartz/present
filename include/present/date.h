@@ -86,28 +86,28 @@ struct PRESENT_API Date {
         int_week_of_year week_of_year,
         int_day_of_week day_of_week);
 
-    /** @copydoc Date_get_year */
-    int_year get_year() const;
+    /** @copydoc Date_year */
+    int_year year() const;
 
-    /** @copydoc Date_get_month */
-    int_month get_month() const;
+    /** @copydoc Date_month */
+    int_month month() const;
 
-    /** @copydoc Date_get_day */
-    int_day get_day() const;
+    /** @copydoc Date_day */
+    int_day day() const;
 
-    /** @copydoc Date_get_day_of_year */
-    int_day_of_year get_day_of_year() const;
+    /** @copydoc Date_day_of_year */
+    int_day_of_year day_of_year() const;
 
-    /** @copydoc Date_get_week_of_year */
-    PresentWeekYear get_week_of_year() const;
+    /** @copydoc Date_week_of_year */
+    PresentWeekYear week_of_year() const;
 
-    /** @copydoc Date_get_day_of_week */
-    int_day_of_week get_day_of_week() const;
+    /** @copydoc Date_day_of_week */
+    int_day_of_week day_of_week() const;
 
-    /** @copydoc Date_get_difference */
-    DayDelta get_difference(const Date & other) const;
-    /** @copydoc Date_get_absolute_difference */
-    DayDelta get_absolute_difference(const Date & other) const;
+    /** @copydoc Date_difference */
+    DayDelta difference(const Date & other) const;
+    /** @copydoc Date_absolute_difference */
+    DayDelta absolute_difference(const Date & other) const;
 
     /** @copydoc Date_add_day_delta */
     Date & operator+=(const DayDelta & delta);
@@ -237,25 +237,25 @@ Date_from_year_week_day(
  * Get the year of a Date.
  */
 PRESENT_API int_year
-Date_get_year(const struct Date * const self);
+Date_year(const struct Date * const self);
 
 /**
  * Get the month of a Date (1 to 12, inclusive).
  */
 PRESENT_API int_month
-Date_get_month(const struct Date * const self);
+Date_month(const struct Date * const self);
 
 /**
  * Get the day of month of a Date (1 to 31, inclusive).
  */
 PRESENT_API int_day
-Date_get_day(const struct Date * const self);
+Date_day(const struct Date * const self);
 
 /**
  * Get the day of the year of a Date (1 to 366, inclusive).
  */
 PRESENT_API int_day_of_year
-Date_get_day_of_year(const struct Date * const self);
+Date_day_of_year(const struct Date * const self);
 
 /**
  * Get the week of the year of a Date (1 to 53, inclusive), and the year
@@ -264,20 +264,20 @@ Date_get_day_of_year(const struct Date * const self);
  * @see PresentWeekYear
  */
 PRESENT_API struct PresentWeekYear
-Date_get_week_of_year(const struct Date * const self);
+Date_week_of_year(const struct Date * const self);
 
 /**
  * Get the day of the week of a Date (1 to 7, inclusive, with 1 being Monday,
  * 2 being Tuesday, ..., 6 being Saturday, and 7 being Sunday).
  */
 PRESENT_API int_day_of_week
-Date_get_day_of_week(const struct Date * const self);
+Date_day_of_week(const struct Date * const self);
 
 /**
  * Get the difference between two Date instances.
  */
 PRESENT_API struct DayDelta
-Date_get_difference(
+Date_difference(
         const struct Date * const self,
         const struct Date * const other);
 
@@ -285,7 +285,7 @@ Date_get_difference(
  * Get the absolute difference between two Date instances.
  */
 PRESENT_API struct DayDelta
-Date_get_absolute_difference(
+Date_absolute_difference(
         const struct Date * const self,
         const struct Date * const other);
 

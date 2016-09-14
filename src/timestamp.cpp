@@ -102,12 +102,12 @@ ClockTime Timestamp::get_clock_time_local() const {
     return Timestamp_get_clock_time_local(this);
 }
 
-TimeDelta Timestamp::get_difference(const Timestamp & other) const {
-    return Timestamp_get_difference(this, &other);
+TimeDelta Timestamp::difference(const Timestamp & other) const {
+    return Timestamp_difference(this, &other);
 }
 
-TimeDelta Timestamp::get_absolute_difference(const Timestamp & other) const {
-    return Timestamp_get_absolute_difference(this, &other);
+TimeDelta Timestamp::absolute_difference(const Timestamp & other) const {
+    return Timestamp_absolute_difference(this, &other);
 }
 
 Timestamp & Timestamp::operator+=(const TimeDelta & delta) {

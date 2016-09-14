@@ -81,20 +81,20 @@ struct PRESENT_API ClockTime {
     /** @copydoc ClockTime_noon */
     static ClockTime noon();
 
-    /** @copydoc ClockTime_get_hour */
-    int_hour get_hour() const;
+    /** @copydoc ClockTime_hour */
+    int_hour hour() const;
 
-    /** @copydoc ClockTime_get_minute */
-    int_minute get_minute() const;
+    /** @copydoc ClockTime_minute */
+    int_minute minute() const;
 
-    /** @copydoc ClockTime_get_second */
-    int_second get_second() const;
+    /** @copydoc ClockTime_second */
+    int_second second() const;
 
-    /** @copydoc ClockTime_get_nanosecond */
-    int_nanosecond get_nanosecond() const;
+    /** @copydoc ClockTime_nanosecond */
+    int_nanosecond nanosecond() const;
 
-    /** @copydoc ClockTime_get_second_decimal */
-    double get_second_decimal() const;
+    /** @copydoc ClockTime_second_decimal */
+    double second_decimal() const;
 
     /** @copydoc ClockTime_time_since_midnight */
     TimeDelta time_since_midnight() const;
@@ -244,33 +244,33 @@ ClockTime_noon();
  * Get the hour component of a ClockTime (0 to 23, inclusive).
  */
 PRESENT_API int_hour
-ClockTime_get_hour(const struct ClockTime * const self);
+ClockTime_hour(const struct ClockTime * const self);
 
 /**
  * Get the minute component of a ClockTime (0 to 59, inclusive).
  */
 PRESENT_API int_minute
-ClockTime_get_minute(const struct ClockTime * const self);
+ClockTime_minute(const struct ClockTime * const self);
 
 /**
  * Get the second component of a ClockTime (0 to 59, inclusive).
  */
 PRESENT_API int_second
-ClockTime_get_second(const struct ClockTime * const self);
+ClockTime_second(const struct ClockTime * const self);
 
 /**
  * Get the nanosecond component of a ClockTime (less than 10^9, the number of
  * nanoseconds in a second).
  */
 PRESENT_API int_nanosecond
-ClockTime_get_nanosecond(const struct ClockTime * const self);
+ClockTime_nanosecond(const struct ClockTime * const self);
 
 /**
  * Get the second component of a ClockTime as a decimal, based on both the
  * second and nanosecond components.
  */
 PRESENT_API double
-ClockTime_get_second_decimal(const struct ClockTime * const self);
+ClockTime_second_decimal(const struct ClockTime * const self);
 
 /**
  * Get a @ref TimeDelta with the time since midnight of a ClockTime.
