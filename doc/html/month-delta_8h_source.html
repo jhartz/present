@@ -133,11 +133,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050 
 <a name="l00052"></a>00052     <span class="keyword">static</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> zero();
 <a name="l00053"></a>00053 
-<a name="l00055"></a>00055     <a class="code" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a> get_months() <span class="keyword">const</span>;
+<a name="l00055"></a>00055     <a class="code" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a> months() <span class="keyword">const</span>;
 <a name="l00056"></a>00056 
-<a name="l00058"></a>00058     <a class="code" href="types_8h.html#a39556f27d189e3da1fcb3db910239761">int_year_delta</a> get_years() <span class="keyword">const</span>;
+<a name="l00058"></a>00058     <a class="code" href="types_8h.html#a39556f27d189e3da1fcb3db910239761">int_year_delta</a> years() <span class="keyword">const</span>;
 <a name="l00059"></a>00059 
-<a name="l00061"></a>00061     <span class="keywordtype">double</span> get_years_decimal() <span class="keyword">const</span>;
+<a name="l00061"></a>00061     <span class="keywordtype">double</span> years_decimal() <span class="keyword">const</span>;
 <a name="l00062"></a>00062 
 <a name="l00064"></a>00064     <span class="keywordtype">bool</span> is_negative() <span class="keyword">const</span>;
 <a name="l00065"></a>00065 
@@ -200,13 +200,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00154"></a>00154 <a class="code" href="month-delta_8h.html#aca81ef97d8ec1cd052ab391636f16bf7" title="Create a new MonthDelta initialized to zero months.">MonthDelta_zero</a>();
 <a name="l00155"></a>00155 
 <a name="l00159"></a>00159 PRESENT_API <a class="code" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a>
-<a name="l00160"></a>00160 <a class="code" href="month-delta_8h.html#aa01811194746354457e2b5e7a70dd59d" title="Get the number of months represented by a MonthDelta.">MonthDelta_get_months</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00160"></a>00160 <a class="code" href="month-delta_8h.html#aa35507c658c9d6f3a038b44d1cdb6452" title="Get the number of months represented by a MonthDelta.">MonthDelta_months</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00161"></a>00161 
 <a name="l00167"></a>00167 PRESENT_API <a class="code" href="types_8h.html#a39556f27d189e3da1fcb3db910239761">int_year_delta</a>
-<a name="l00168"></a>00168 <a class="code" href="month-delta_8h.html#a37279655ebb7be159cdf2fcfbf460348" title="Get the number of years represented by a MonthDelta.">MonthDelta_get_years</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00168"></a>00168 <a class="code" href="month-delta_8h.html#aaccb951f5a7295ce0cc3d9b6b77f2d21" title="Get the number of years represented by a MonthDelta.">MonthDelta_years</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00169"></a>00169 
 <a name="l00174"></a>00174 PRESENT_API <span class="keywordtype">double</span>
-<a name="l00175"></a>00175 <a class="code" href="month-delta_8h.html#afa5436ebc73fc5ce02c99f86a05d377c" title="Get the number of years represented by a MonthDelta, with a fractional part if necessary.">MonthDelta_get_years_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
+<a name="l00175"></a>00175 <a class="code" href="month-delta_8h.html#a9215cb412f007649e357ba8cd9e171b9" title="Get the number of years represented by a MonthDelta, with a fractional part if necessary.">MonthDelta_years_decimal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);
 <a name="l00176"></a>00176 
 <a name="l00180"></a>00180 PRESENT_API <a class="code" href="types_8h.html#a1c24e2cdd988b886e889080ded176ae0">present_bool</a>
 <a name="l00181"></a>00181 <a class="code" href="month-delta_8h.html#ada77ded958313a9162d1a7337b0374c7" title="Determine whether a MonthDelta is negative.">MonthDelta_is_negative</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> * <span class="keyword">const</span> <span class="keyword">self</span>);

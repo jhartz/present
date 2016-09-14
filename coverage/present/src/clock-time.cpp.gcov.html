@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-09-12</td>
+            <td class="headerValue">2016-09-14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -128,24 +128,24 @@
 <span class="lineNum">      57 </span>                :<span class="lineCov">          1 :     return ClockTime_noon();</span>
 <a name="58"><span class="lineNum">      58 </span>                :            : }</a>
 <span class="lineNum">      59 </span>                :            : 
-<span class="lineNum">      60 </span>                :<span class="lineCov">          2 : int_hour ClockTime::get_hour() const {</span>
-<span class="lineNum">      61 </span>                :<span class="lineCov">          2 :     return ClockTime_get_hour(this);</span>
+<span class="lineNum">      60 </span>                :<span class="lineCov">          2 : int_hour ClockTime::hour() const {</span>
+<span class="lineNum">      61 </span>                :<span class="lineCov">          2 :     return ClockTime_hour(this);</span>
 <a name="62"><span class="lineNum">      62 </span>                :            : }</a>
 <span class="lineNum">      63 </span>                :            : 
-<span class="lineNum">      64 </span>                :<span class="lineCov">          2 : int_minute ClockTime::get_minute() const {</span>
-<span class="lineNum">      65 </span>                :<span class="lineCov">          2 :     return ClockTime_get_minute(this);</span>
+<span class="lineNum">      64 </span>                :<span class="lineCov">          2 : int_minute ClockTime::minute() const {</span>
+<span class="lineNum">      65 </span>                :<span class="lineCov">          2 :     return ClockTime_minute(this);</span>
 <a name="66"><span class="lineNum">      66 </span>                :            : }</a>
 <span class="lineNum">      67 </span>                :            : 
-<span class="lineNum">      68 </span>                :<span class="lineCov">          2 : int_second ClockTime::get_second() const {</span>
-<span class="lineNum">      69 </span>                :<span class="lineCov">          2 :     return ClockTime_get_second(this);</span>
+<span class="lineNum">      68 </span>                :<span class="lineCov">          2 : int_second ClockTime::second() const {</span>
+<span class="lineNum">      69 </span>                :<span class="lineCov">          2 :     return ClockTime_second(this);</span>
 <a name="70"><span class="lineNum">      70 </span>                :            : }</a>
 <span class="lineNum">      71 </span>                :            : 
-<span class="lineNum">      72 </span>                :<span class="lineCov">          2 : int_nanosecond ClockTime::get_nanosecond() const {</span>
-<span class="lineNum">      73 </span>                :<span class="lineCov">          2 :     return ClockTime_get_nanosecond(this);</span>
+<span class="lineNum">      72 </span>                :<span class="lineCov">          2 : int_nanosecond ClockTime::nanosecond() const {</span>
+<span class="lineNum">      73 </span>                :<span class="lineCov">          2 :     return ClockTime_nanosecond(this);</span>
 <a name="74"><span class="lineNum">      74 </span>                :            : }</a>
 <span class="lineNum">      75 </span>                :            : 
-<span class="lineNum">      76 </span>                :<span class="lineCov">          2 : double ClockTime::get_second_decimal() const {</span>
-<span class="lineNum">      77 </span>                :<span class="lineCov">          2 :     return ClockTime_get_second_decimal(this);</span>
+<span class="lineNum">      76 </span>                :<span class="lineCov">          2 : double ClockTime::second_decimal() const {</span>
+<span class="lineNum">      77 </span>                :<span class="lineCov">          2 :     return ClockTime_second_decimal(this);</span>
 <a name="78"><span class="lineNum">      78 </span>                :            : }</a>
 <span class="lineNum">      79 </span>                :            : 
 <span class="lineNum">      80 </span>                :<span class="lineCov">          3 : TimeDelta ClockTime::time_since_midnight() const {</span>

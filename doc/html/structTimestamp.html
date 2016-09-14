@@ -109,8 +109,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a8e4b0ee005f58cb645d945eaccd1bc9e">get_clock_time</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;timeZoneOffset) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a0767fd3f69eaa11bb094eb330d9c88ef">get_clock_time_utc</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a773a47fcdd02afef5d307bcc65561f8c">get_clock_time_local</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a7d78f2151082c1c080364e2676b88d35">get_difference</a> (const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;other) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#abfe068b22473f173011e7907a0fd8a9c">get_absolute_difference</a> (const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;other) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#af2520c21fa08751cfa7b195768e77171">difference</a> (const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;other) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a576febd2b61318c8f04a01eb75e78776">absolute_difference</a> (const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;other) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimestamp.html">Timestamp</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a27c4a772939626101a580656769f705e">operator+=</a> (const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;delta)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimestamp.html">Timestamp</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a00a08e84b92522e73ec940402e776345">operator+=</a> (const <a class="el" href="structDayDelta.html">DayDelta</a> &amp;delta)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTimestamp.html">Timestamp</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a755999dea1918c7fbb3dbea5be60d9b5">operator+=</a> (const <a class="el" href="structMonthDelta.html">MonthDelta</a> &amp;delta)</td></tr>
@@ -580,12 +580,12 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="a7d78f2151082c1c080364e2676b88d35"></a><!-- doxytag: member="Timestamp::get_difference" ref="a7d78f2151082c1c080364e2676b88d35" args="(const Timestamp &amp;other) const " -->
+<a class="anchor" id="af2520c21fa08751cfa7b195768e77171"></a><!-- doxytag: member="Timestamp::difference" ref="af2520c21fa08751cfa7b195768e77171" args="(const Timestamp &amp;other) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="structTimestamp.html#a7d78f2151082c1c080364e2676b88d35">Timestamp::get_difference</a> </td>
+          <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="structTimestamp.html#af2520c21fa08751cfa7b195768e77171">Timestamp::difference</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
@@ -598,12 +598,12 @@ Friends</h2></td></tr>
  
 </div>
 </div>
-<a class="anchor" id="abfe068b22473f173011e7907a0fd8a9c"></a><!-- doxytag: member="Timestamp::get_absolute_difference" ref="abfe068b22473f173011e7907a0fd8a9c" args="(const Timestamp &amp;other) const " -->
+<a class="anchor" id="a576febd2b61318c8f04a01eb75e78776"></a><!-- doxytag: member="Timestamp::absolute_difference" ref="a576febd2b61318c8f04a01eb75e78776" args="(const Timestamp &amp;other) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="structTimestamp.html#abfe068b22473f173011e7907a0fd8a9c">Timestamp::get_absolute_difference</a> </td>
+          <td class="memname"><a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="structTimestamp.html#a576febd2b61318c8f04a01eb75e78776">Timestamp::absolute_difference</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>

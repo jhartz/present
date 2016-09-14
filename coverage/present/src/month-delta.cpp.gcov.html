@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-09-12</td>
+            <td class="headerValue">2016-09-14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -98,16 +98,16 @@
 <span class="lineNum">      27 </span>                :<span class="lineNoCov">          0 :     return MonthDelta_zero();</span>
 <a name="28"><span class="lineNum">      28 </span>                :            : }</a>
 <span class="lineNum">      29 </span>                :            : 
-<span class="lineNum">      30 </span>                :<span class="lineNoCov">          0 : int_month_delta MonthDelta::get_months() const {</span>
-<span class="lineNum">      31 </span>                :<span class="lineNoCov">          0 :     return MonthDelta_get_months(this);</span>
+<span class="lineNum">      30 </span>                :<span class="lineNoCov">          0 : int_month_delta MonthDelta::months() const {</span>
+<span class="lineNum">      31 </span>                :<span class="lineNoCov">          0 :     return MonthDelta_months(this);</span>
 <a name="32"><span class="lineNum">      32 </span>                :            : }</a>
 <span class="lineNum">      33 </span>                :            : 
-<span class="lineNum">      34 </span>                :<span class="lineNoCov">          0 : int_year_delta MonthDelta::get_years() const {</span>
-<span class="lineNum">      35 </span>                :<span class="lineNoCov">          0 :     return MonthDelta_get_years(this);</span>
+<span class="lineNum">      34 </span>                :<span class="lineNoCov">          0 : int_year_delta MonthDelta::years() const {</span>
+<span class="lineNum">      35 </span>                :<span class="lineNoCov">          0 :     return MonthDelta_years(this);</span>
 <a name="36"><span class="lineNum">      36 </span>                :            : }</a>
 <span class="lineNum">      37 </span>                :            : 
-<span class="lineNum">      38 </span>                :<span class="lineNoCov">          0 : double MonthDelta::get_years_decimal() const {</span>
-<span class="lineNum">      39 </span>                :<span class="lineNoCov">          0 :     return MonthDelta_get_years_decimal(this);</span>
+<span class="lineNum">      38 </span>                :<span class="lineNoCov">          0 : double MonthDelta::years_decimal() const {</span>
+<span class="lineNum">      39 </span>                :<span class="lineNoCov">          0 :     return MonthDelta_years_decimal(this);</span>
 <a name="40"><span class="lineNum">      40 </span>                :            : }</a>
 <span class="lineNum">      41 </span>                :            : 
 <span class="lineNum">      42 </span>                :<span class="lineNoCov">          0 : bool MonthDelta::is_negative() const {</span>

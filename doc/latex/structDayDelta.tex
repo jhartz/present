@@ -9,13 +9,13 @@
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structDayDelta_a59159b1d56a28b5f2a693979e4b280a1}{get\-\_\-days} () const 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structDayDelta_af7d15328d1c97bbd3316f014c69a6e3b}{days} () const 
 \item 
-\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structDayDelta_a2f4510044f51ebb61ffef942ee173de2}{get\-\_\-weeks} () const 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structDayDelta_a48287489831fa9ec472451487908e663}{weeks} () const 
 \item 
-double \hyperlink{structDayDelta_a2e3251e65463940ef87d447d51948e05}{get\-\_\-weeks\-\_\-decimal} () const 
+double \hyperlink{structDayDelta_adf33ed4a012b6326d2d172d1f7420ab1}{weeks\-\_\-decimal} () const 
 \item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structDayDelta_ab10777d5c043236aa613081d56317642}{get\-\_\-time\-\_\-delta} () const 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structDayDelta_a01d09cc2a8f296357043bd7c7d20f41f}{to\-\_\-time\-\_\-delta} () const 
 \item 
 bool \hyperlink{structDayDelta_a10d6b9eac43322a957f7c3dfbedc2862}{is\-\_\-negative} () const 
 \item 
@@ -42,9 +42,9 @@ void \hyperlink{structDayDelta_a23b9453556a255f5413aee21b12938a6}{negate} ()
 \subsection*{\-Static \-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structDayDelta_a7421a2d8448dd7d5329d72d0d6a04cbd}{from\-\_\-days} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} days)
+static \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structDayDelta_a7421a2d8448dd7d5329d72d0d6a04cbd}{from\-\_\-days} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structDayDelta_af7d15328d1c97bbd3316f014c69a6e3b}{days})
 \item 
-static \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structDayDelta_a871bbf34275016d74c7ef8c8777c3258}{from\-\_\-weeks} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} weeks)
+static \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structDayDelta_a871bbf34275016d74c7ef8c8777c3258}{from\-\_\-weeks} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structDayDelta_a48287489831fa9ec472451487908e663}{weeks})
 \item 
 static \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structDayDelta_acfcc09473305041a930a1ea6a3c20409}{zero} ()
 \item 
@@ -107,36 +107,36 @@ bool \hyperlink{structDayDelta_a78c4c340fdd0331b761215aeb08f56e6}{operator$>$=} 
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structDayDelta_acfcc09473305041a930a1ea6a3c20409}
-\-Create a new \hyperlink{structDayDelta}{\-Day\-Delta} initialized to zero days.  \hypertarget{structDayDelta_a59159b1d56a28b5f2a693979e4b280a1}{\index{\-Day\-Delta@{\-Day\-Delta}!get\-\_\-days@{get\-\_\-days}}
-\index{get\-\_\-days@{get\-\_\-days}!DayDelta@{\-Day\-Delta}}
-\subsubsection[{get\-\_\-days}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} {\bf \-Day\-Delta\-::get\-\_\-days} (
+\-Create a new \hyperlink{structDayDelta}{\-Day\-Delta} initialized to zero days.  \hypertarget{structDayDelta_af7d15328d1c97bbd3316f014c69a6e3b}{\index{\-Day\-Delta@{\-Day\-Delta}!days@{days}}
+\index{days@{days}!DayDelta@{\-Day\-Delta}}
+\subsubsection[{days}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} {\bf \-Day\-Delta\-::days} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{structDayDelta_a59159b1d56a28b5f2a693979e4b280a1}
-\-Get the number of days represented by a \hyperlink{structDayDelta}{\-Day\-Delta}.  \hypertarget{structDayDelta_a2f4510044f51ebb61ffef942ee173de2}{\index{\-Day\-Delta@{\-Day\-Delta}!get\-\_\-weeks@{get\-\_\-weeks}}
-\index{get\-\_\-weeks@{get\-\_\-weeks}!DayDelta@{\-Day\-Delta}}
-\subsubsection[{get\-\_\-weeks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} {\bf \-Day\-Delta\-::get\-\_\-weeks} (
+) const}}\label{structDayDelta_af7d15328d1c97bbd3316f014c69a6e3b}
+\-Get the number of days represented by a \hyperlink{structDayDelta}{\-Day\-Delta}.  \hypertarget{structDayDelta_a48287489831fa9ec472451487908e663}{\index{\-Day\-Delta@{\-Day\-Delta}!weeks@{weeks}}
+\index{weeks@{weeks}!DayDelta@{\-Day\-Delta}}
+\subsubsection[{weeks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} {\bf \-Day\-Delta\-::weeks} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{structDayDelta_a2f4510044f51ebb61ffef942ee173de2}
+) const}}\label{structDayDelta_a48287489831fa9ec472451487908e663}
 \-Get the number of weeks represented by a \hyperlink{structDayDelta}{\-Day\-Delta}. 
 
-\-If the \hyperlink{structDayDelta}{\-Day\-Delta} does not represent an exact number of weeks, the number of weeks will be truncated.  \hypertarget{structDayDelta_a2e3251e65463940ef87d447d51948e05}{\index{\-Day\-Delta@{\-Day\-Delta}!get\-\_\-weeks\-\_\-decimal@{get\-\_\-weeks\-\_\-decimal}}
-\index{get\-\_\-weeks\-\_\-decimal@{get\-\_\-weeks\-\_\-decimal}!DayDelta@{\-Day\-Delta}}
-\subsubsection[{get\-\_\-weeks\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Day\-Delta\-::get\-\_\-weeks\-\_\-decimal} (
+\-If the \hyperlink{structDayDelta}{\-Day\-Delta} does not represent an exact number of weeks, the number of weeks will be truncated.  \hypertarget{structDayDelta_adf33ed4a012b6326d2d172d1f7420ab1}{\index{\-Day\-Delta@{\-Day\-Delta}!weeks\-\_\-decimal@{weeks\-\_\-decimal}}
+\index{weeks\-\_\-decimal@{weeks\-\_\-decimal}!DayDelta@{\-Day\-Delta}}
+\subsubsection[{weeks\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Day\-Delta\-::weeks\-\_\-decimal} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{structDayDelta_a2e3251e65463940ef87d447d51948e05}
-\-Get the number of weeks represented by a \hyperlink{structDayDelta}{\-Day\-Delta}, with a fractional part if necessary.  \hypertarget{structDayDelta_ab10777d5c043236aa613081d56317642}{\index{\-Day\-Delta@{\-Day\-Delta}!get\-\_\-time\-\_\-delta@{get\-\_\-time\-\_\-delta}}
-\index{get\-\_\-time\-\_\-delta@{get\-\_\-time\-\_\-delta}!DayDelta@{\-Day\-Delta}}
-\subsubsection[{get\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Day\-Delta\-::get\-\_\-time\-\_\-delta} (
+) const}}\label{structDayDelta_adf33ed4a012b6326d2d172d1f7420ab1}
+\-Get the number of weeks represented by a \hyperlink{structDayDelta}{\-Day\-Delta}, with a fractional part if necessary.  \hypertarget{structDayDelta_a01d09cc2a8f296357043bd7c7d20f41f}{\index{\-Day\-Delta@{\-Day\-Delta}!to\-\_\-time\-\_\-delta@{to\-\_\-time\-\_\-delta}}
+\index{to\-\_\-time\-\_\-delta@{to\-\_\-time\-\_\-delta}!DayDelta@{\-Day\-Delta}}
+\subsubsection[{to\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Day\-Delta\-::to\-\_\-time\-\_\-delta} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{structDayDelta_ab10777d5c043236aa613081d56317642}
+) const}}\label{structDayDelta_a01d09cc2a8f296357043bd7c7d20f41f}
 \-Convert a \hyperlink{structDayDelta}{\-Day\-Delta} into an equivalent \hyperlink{structTimeDelta}{\-Time\-Delta}.  \hypertarget{structDayDelta_a10d6b9eac43322a957f7c3dfbedc2862}{\index{\-Day\-Delta@{\-Day\-Delta}!is\-\_\-negative@{is\-\_\-negative}}
 \index{is\-\_\-negative@{is\-\_\-negative}!DayDelta@{\-Day\-Delta}}
 \subsubsection[{is\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Day\-Delta\-::is\-\_\-negative} (

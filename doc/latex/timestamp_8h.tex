@@ -58,9 +58,9 @@ struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{timestamp_8h_aa6843
 \begin{DoxyCompactList}\small\item\em \-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. \end{DoxyCompactList}\item 
 struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{timestamp_8h_a361bdde37e188e9501ecaea7db86ee34}{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. \end{DoxyCompactList}\item 
-struct \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{timestamp_8h_ac84dca2c53b78a0dab7d265f51c33f69}{\-Timestamp\-\_\-get\-\_\-difference} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const self, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const other)
+struct \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{timestamp_8h_a6c72b9719a6c92308fd69bd65be11b13}{\-Timestamp\-\_\-difference} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const self, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const other)
 \begin{DoxyCompactList}\small\item\em \-Get the difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
-struct \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{timestamp_8h_a7cfa689d47dec9a256c7cb6901fe07e9}{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const self, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const other)
+struct \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{timestamp_8h_a10c9e1de8652c4ab5260a02afa6b2fbf}{\-Timestamp\-\_\-absolute\-\_\-difference} (const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const self, const struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const other)
 \begin{DoxyCompactList}\small\item\em \-Get the absolute difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
 void \hyperlink{timestamp_8h_acdba02838b0ba9ecefffe7c23a629c3e}{\-Timestamp\-\_\-add\-\_\-time\-\_\-delta} (struct \hyperlink{structTimestamp}{\-Timestamp} $\ast$const self, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em \-Add a \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structTimestamp}{\-Timestamp}. \end{DoxyCompactList}\item 
@@ -369,26 +369,26 @@ int \hyperlink{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}{\-Timestamp\-\_\-
 
 \-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
 
-\hypertarget{timestamp_8h_ac84dca2c53b78a0dab7d265f51c33f69}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-difference}}
-\index{\-Timestamp\-\_\-get\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-difference}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-get\-\_\-difference} (
+\hypertarget{timestamp_8h_a6c72b9719a6c92308fd69bd65be11b13}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-difference@{\-Timestamp\-\_\-difference}}
+\index{\-Timestamp\-\_\-difference@{\-Timestamp\-\_\-difference}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-difference} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
 \item[{const struct {\bf \-Timestamp} $\ast$const}]{other}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_ac84dca2c53b78a0dab7d265f51c33f69}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a6c72b9719a6c92308fd69bd65be11b13}
 
 
 \-Get the difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\hypertarget{timestamp_8h_a7cfa689d47dec9a256c7cb6901fe07e9}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}}
-\index{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{\-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-get\-\_\-absolute\-\_\-difference} (
+\hypertarget{timestamp_8h_a10c9e1de8652c4ab5260a02afa6b2fbf}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-absolute\-\_\-difference}}
+\index{\-Timestamp\-\_\-absolute\-\_\-difference@{\-Timestamp\-\_\-absolute\-\_\-difference}!timestamp.h@{timestamp.\-h}}
+\subsubsection[{\-Timestamp\-\_\-absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-absolute\-\_\-difference} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Timestamp} $\ast$const}]{self, }
 \item[{const struct {\bf \-Timestamp} $\ast$const}]{other}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a7cfa689d47dec9a256c7cb6901fe07e9}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{timestamp_8h_a10c9e1de8652c4ab5260a02afa6b2fbf}
 
 
 \-Get the absolute difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}. 

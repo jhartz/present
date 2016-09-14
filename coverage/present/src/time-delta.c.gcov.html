@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-09-12</td>
+            <td class="headerValue">2016-09-14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -187,7 +187,7 @@
 <span class="lineNum">     112 </span>                :            : }
 <a name="113"><span class="lineNum">     113 </span>                :            : </a>
 <span class="lineNum">     114 </span>                :            : int_delta
-<span class="lineNum">     115 </span>                :<span class="lineCov">          8 : TimeDelta_get_nanoseconds(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     115 </span>                :<span class="lineCov">          8 : TimeDelta_nanoseconds(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     116 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(self != NULL);</span>
 <span class="lineNum">     117 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     118 </span>                :            : 
@@ -196,7 +196,7 @@
 <span class="lineNum">     121 </span>                :            : }
 <a name="122"><span class="lineNum">     122 </span>                :            : </a>
 <span class="lineNum">     123 </span>                :            : int_delta
-<span class="lineNum">     124 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_microseconds(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     124 </span>                :<span class="lineNoCov">          0 : TimeDelta_microseconds(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     125 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     126 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     127 </span>                :            : 
@@ -205,7 +205,7 @@
 <span class="lineNum">     130 </span>                :            : }
 <a name="131"><span class="lineNum">     131 </span>                :            : </a>
 <span class="lineNum">     132 </span>                :            : double
-<span class="lineNum">     133 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_microseconds_decimal(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     133 </span>                :<span class="lineNoCov">          0 : TimeDelta_microseconds_decimal(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     134 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     135 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     136 </span>                :            : 
@@ -215,7 +215,7 @@
 <span class="lineNum">     140 </span>                :            : }
 <a name="141"><span class="lineNum">     141 </span>                :            : </a>
 <span class="lineNum">     142 </span>                :            : int_delta
-<span class="lineNum">     143 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_milliseconds(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     143 </span>                :<span class="lineNoCov">          0 : TimeDelta_milliseconds(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     144 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     145 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     146 </span>                :            : 
@@ -224,7 +224,7 @@
 <span class="lineNum">     149 </span>                :            : }
 <a name="150"><span class="lineNum">     150 </span>                :            : </a>
 <span class="lineNum">     151 </span>                :            : double
-<span class="lineNum">     152 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_milliseconds_decimal(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     152 </span>                :<span class="lineNoCov">          0 : TimeDelta_milliseconds_decimal(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     153 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     154 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     155 </span>                :            : 
@@ -234,7 +234,7 @@
 <span class="lineNum">     159 </span>                :            : }
 <a name="160"><span class="lineNum">     160 </span>                :            : </a>
 <span class="lineNum">     161 </span>                :            : int_delta
-<span class="lineNum">     162 </span>                :<span class="lineCov">          8 : TimeDelta_get_seconds(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     162 </span>                :<span class="lineCov">          8 : TimeDelta_seconds(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     163 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(self != NULL);</span>
 <span class="lineNum">     164 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     165 </span>                :            : 
@@ -242,7 +242,7 @@
 <span class="lineNum">     167 </span>                :            : }
 <a name="168"><span class="lineNum">     168 </span>                :            : </a>
 <span class="lineNum">     169 </span>                :            : double
-<span class="lineNum">     170 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_seconds_decimal(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     170 </span>                :<span class="lineNoCov">          0 : TimeDelta_seconds_decimal(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     171 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     172 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     173 </span>                :            : 
@@ -252,47 +252,47 @@
 <span class="lineNum">     177 </span>                :            : }
 <a name="178"><span class="lineNum">     178 </span>                :            : </a>
 <span class="lineNum">     179 </span>                :            : int_delta
-<span class="lineNum">     180 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_minutes(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     181 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds(self) / SECONDS_IN_MINUTE;</span>
+<span class="lineNum">     180 </span>                :<span class="lineNoCov">          0 : TimeDelta_minutes(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     181 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds(self) / SECONDS_IN_MINUTE;</span>
 <span class="lineNum">     182 </span>                :            : }
 <a name="183"><span class="lineNum">     183 </span>                :            : </a>
 <span class="lineNum">     184 </span>                :            : double
-<span class="lineNum">     185 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_minutes_decimal(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     186 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds_decimal(self) / (double)SECONDS_IN_MINUTE;</span>
+<span class="lineNum">     185 </span>                :<span class="lineNoCov">          0 : TimeDelta_minutes_decimal(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     186 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds_decimal(self) / (double)SECONDS_IN_MINUTE;</span>
 <span class="lineNum">     187 </span>                :            : }
 <a name="188"><span class="lineNum">     188 </span>                :            : </a>
 <span class="lineNum">     189 </span>                :            : int_delta
-<span class="lineNum">     190 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_hours(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     191 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds(self) / SECONDS_IN_HOUR;</span>
+<span class="lineNum">     190 </span>                :<span class="lineNoCov">          0 : TimeDelta_hours(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     191 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds(self) / SECONDS_IN_HOUR;</span>
 <span class="lineNum">     192 </span>                :            : }
 <a name="193"><span class="lineNum">     193 </span>                :            : </a>
 <span class="lineNum">     194 </span>                :            : double
-<span class="lineNum">     195 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_hours_decimal(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     196 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds_decimal(self) / (double)SECONDS_IN_HOUR;</span>
+<span class="lineNum">     195 </span>                :<span class="lineNoCov">          0 : TimeDelta_hours_decimal(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     196 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds_decimal(self) / (double)SECONDS_IN_HOUR;</span>
 <span class="lineNum">     197 </span>                :            : }
 <a name="198"><span class="lineNum">     198 </span>                :            : </a>
 <span class="lineNum">     199 </span>                :            : int_delta
-<span class="lineNum">     200 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_days(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     201 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds(self) / SECONDS_IN_DAY;</span>
+<span class="lineNum">     200 </span>                :<span class="lineNoCov">          0 : TimeDelta_days(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     201 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds(self) / SECONDS_IN_DAY;</span>
 <span class="lineNum">     202 </span>                :            : }
 <a name="203"><span class="lineNum">     203 </span>                :            : </a>
 <span class="lineNum">     204 </span>                :            : double
-<span class="lineNum">     205 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_days_decimal(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     206 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds_decimal(self) / (double)SECONDS_IN_DAY;</span>
+<span class="lineNum">     205 </span>                :<span class="lineNoCov">          0 : TimeDelta_days_decimal(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     206 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds_decimal(self) / (double)SECONDS_IN_DAY;</span>
 <span class="lineNum">     207 </span>                :            : }
 <a name="208"><span class="lineNum">     208 </span>                :            : </a>
 <span class="lineNum">     209 </span>                :            : int_delta
-<span class="lineNum">     210 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_weeks(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     211 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds(self) / SECONDS_IN_WEEK;</span>
+<span class="lineNum">     210 </span>                :<span class="lineNoCov">          0 : TimeDelta_weeks(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     211 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds(self) / SECONDS_IN_WEEK;</span>
 <span class="lineNum">     212 </span>                :            : }
 <a name="213"><span class="lineNum">     213 </span>                :            : </a>
 <span class="lineNum">     214 </span>                :            : double
-<span class="lineNum">     215 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_weeks_decimal(const struct TimeDelta * const self) {</span>
-<span class="lineNum">     216 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_get_seconds_decimal(self) / (double)SECONDS_IN_WEEK;</span>
+<span class="lineNum">     215 </span>                :<span class="lineNoCov">          0 : TimeDelta_weeks_decimal(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     216 </span>                :<span class="lineNoCov">          0 :     return TimeDelta_seconds_decimal(self) / (double)SECONDS_IN_WEEK;</span>
 <span class="lineNum">     217 </span>                :            : }
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
 <span class="lineNum">     219 </span>                :            : struct DayDelta
-<span class="lineNum">     220 </span>                :<span class="lineCov">          4 : TimeDelta_get_day_delta_truncated(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     220 </span>                :<span class="lineCov">          4 : TimeDelta_to_day_delta_truncated(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     221 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(self != NULL);</span>
 <span class="lineNum">     222 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     223 </span>                :            : 
@@ -309,7 +309,7 @@
 <span class="lineNum">     234 </span>                :            : }
 <a name="235"><span class="lineNum">     235 </span>                :            : </a>
 <span class="lineNum">     236 </span>                :            : struct DayDelta
-<span class="lineNum">     237 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_day_delta_rounded(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     237 </span>                :<span class="lineNoCov">          0 : TimeDelta_to_day_delta_rounded(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     238 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     239 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     240 </span>                :            : 
@@ -319,7 +319,7 @@
 <span class="lineNum">     244 </span>                :            : }
 <a name="245"><span class="lineNum">     245 </span>                :            : </a>
 <span class="lineNum">     246 </span>                :            : struct DayDelta
-<span class="lineNum">     247 </span>                :<span class="lineNoCov">          0 : TimeDelta_get_day_delta_abs_ceil(const struct TimeDelta * const self) {</span>
+<span class="lineNum">     247 </span>                :<span class="lineNoCov">          0 : TimeDelta_to_day_delta_abs_ceil(const struct TimeDelta * const self) {</span>
 <span class="lineNum">     248 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     249 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     250 </span>                :            : 

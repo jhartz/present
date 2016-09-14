@@ -147,10 +147,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="structClockTime.html">ClockTime</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in Coordinated Universal Time.  <a href="#aa684345ce22c80cb130af19188ca5afe"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#a361bdde37e188e9501ecaea7db86ee34">Timestamp_get_clock_time_local</a> (const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const self)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="structClockTime.html">ClockTime</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in the system's current local time zone.  <a href="#a361bdde37e188e9501ecaea7db86ee34"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#ac84dca2c53b78a0dab7d265f51c33f69">Timestamp_get_difference</a> (const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const self, const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the difference between two <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> instances as a <a class="el" href="structTimeDelta.html">TimeDelta</a>.  <a href="#ac84dca2c53b78a0dab7d265f51c33f69"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#a7cfa689d47dec9a256c7cb6901fe07e9">Timestamp_get_absolute_difference</a> (const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const self, const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the absolute difference between two <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> instances as a <a class="el" href="structTimeDelta.html">TimeDelta</a>.  <a href="#a7cfa689d47dec9a256c7cb6901fe07e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#a6c72b9719a6c92308fd69bd65be11b13">Timestamp_difference</a> (const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const self, const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the difference between two <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> instances as a <a class="el" href="structTimeDelta.html">TimeDelta</a>.  <a href="#a6c72b9719a6c92308fd69bd65be11b13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#a10c9e1de8652c4ab5260a02afa6b2fbf">Timestamp_absolute_difference</a> (const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const self, const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the absolute difference between two <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> instances as a <a class="el" href="structTimeDelta.html">TimeDelta</a>.  <a href="#a10c9e1de8652c4ab5260a02afa6b2fbf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#acdba02838b0ba9ecefffe7c23a629c3e">Timestamp_add_time_delta</a> (struct <a class="el" href="structTimestamp.html">Timestamp</a> *const self, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const delta)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="structTimeDelta.html">TimeDelta</a> to a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>.  <a href="#acdba02838b0ba9ecefffe7c23a629c3e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#a9650714b7c9f08f361d770092889f2c1">Timestamp_add_day_delta</a> (struct <a class="el" href="structTimestamp.html">Timestamp</a> *const self, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const delta)</td></tr>
@@ -685,12 +685,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac84dca2c53b78a0dab7d265f51c33f69"></a><!-- doxytag: member="timestamp.h::Timestamp_get_difference" ref="ac84dca2c53b78a0dab7d265f51c33f69" args="(const struct Timestamp *const self, const struct Timestamp *const other)" -->
+<a class="anchor" id="a6c72b9719a6c92308fd69bd65be11b13"></a><!-- doxytag: member="timestamp.h::Timestamp_difference" ref="a6c72b9719a6c92308fd69bd65be11b13" args="(const struct Timestamp *const self, const struct Timestamp *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="timestamp_8h.html#ac84dca2c53b78a0dab7d265f51c33f69">Timestamp_get_difference</a> </td>
+          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="timestamp_8h.html#a6c72b9719a6c92308fd69bd65be11b13">Timestamp_difference</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -714,12 +714,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7cfa689d47dec9a256c7cb6901fe07e9"></a><!-- doxytag: member="timestamp.h::Timestamp_get_absolute_difference" ref="a7cfa689d47dec9a256c7cb6901fe07e9" args="(const struct Timestamp *const self, const struct Timestamp *const other)" -->
+<a class="anchor" id="a10c9e1de8652c4ab5260a02afa6b2fbf"></a><!-- doxytag: member="timestamp.h::Timestamp_absolute_difference" ref="a10c9e1de8652c4ab5260a02afa6b2fbf" args="(const struct Timestamp *const self, const struct Timestamp *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="timestamp_8h.html#a7cfa689d47dec9a256c7cb6901fe07e9">Timestamp_get_absolute_difference</a> </td>
+          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="timestamp_8h.html#a10c9e1de8652c4ab5260a02afa6b2fbf">Timestamp_absolute_difference</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structTimestamp.html">Timestamp</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>

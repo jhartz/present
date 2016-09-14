@@ -130,22 +130,22 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year and the day of that year.  <a href="#a9af8000ac4eeac39f1744ac10cd216c4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a72132abf91a2d96dca497b62e28d569e">Date_from_year_week_day</a> (<a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a> year, <a class="el" href="types_8h.html#af13e483c5f00ae8ea8ada4c7f5fad337">int_week_of_year</a> week_of_year, <a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a> day_of_week)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> based on a year, a week of that year, and a day of the week.  <a href="#a72132abf91a2d96dca497b62e28d569e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#ad26cbac6bc416b358941b580dba7fe3c">Date_get_year</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#ad26cbac6bc416b358941b580dba7fe3c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a6e77e4e37237551e3c2f808f02764cec">int_month</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a4159afd50df428b740f4485925e7c5b6">Date_get_month</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the month of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 12, inclusive).  <a href="#a4159afd50df428b740f4485925e7c5b6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2ee09cac57b5b71a2cf76051e877f320">int_day</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a9a89250ddc944586f86223ea8727a328">Date_get_day</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of month of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 31, inclusive).  <a href="#a9a89250ddc944586f86223ea8727a328"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#ae73cc4736210d3120e1073d94bbac092">int_day_of_year</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a4f71610e1041fbb7e3b530d118d65151">Date_get_day_of_year</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 366, inclusive).  <a href="#a4f71610e1041fbb7e3b530d118d65151"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structPresentWeekYear.html">PresentWeekYear</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a1ea792798541f63ea48a80c871314429">Date_get_week_of_year</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the week of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 53, inclusive), and the year corresponding to that week.  <a href="#a1ea792798541f63ea48a80c871314429"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a99bd609ba0bacc5d415693f90a7113af">Date_get_day_of_week</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of the week of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 7, inclusive, with 1 being Monday, 2 being Tuesday, ..., 6 being Saturday, and 7 being Sunday).  <a href="#a99bd609ba0bacc5d415693f90a7113af"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03">Date_get_difference</a> (const struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structDate.html">Date</a> *const other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the difference between two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances.  <a href="#a2d32fb808c31d8592f3641ef2f2a6b03"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a8639bedc8fc415809cbad76b72fb388b">Date_get_absolute_difference</a> (const struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structDate.html">Date</a> *const other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the absolute difference between two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances.  <a href="#a8639bedc8fc415809cbad76b72fb388b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a306e9f25302b72fe4669898bc4687ce7">Date_year</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#a306e9f25302b72fe4669898bc4687ce7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a6e77e4e37237551e3c2f808f02764cec">int_month</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#aec14245e9c25b7d6336f7a4bd623edf2">Date_month</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the month of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 12, inclusive).  <a href="#aec14245e9c25b7d6336f7a4bd623edf2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2ee09cac57b5b71a2cf76051e877f320">int_day</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#ae8301a47620e3e4af0902ae84885b039">Date_day</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of month of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 31, inclusive).  <a href="#ae8301a47620e3e4af0902ae84885b039"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#ae73cc4736210d3120e1073d94bbac092">int_day_of_year</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a613924a06ec3258012770702d48378d7">Date_day_of_year</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 366, inclusive).  <a href="#a613924a06ec3258012770702d48378d7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structPresentWeekYear.html">PresentWeekYear</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a44d0eff6895fd8609203bb14e4f4e86f">Date_week_of_year</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the week of the year of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 53, inclusive), and the year corresponding to that week.  <a href="#a44d0eff6895fd8609203bb14e4f4e86f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a45a8dfd5aba57f3ae6a79278348e9be6">Date_day_of_week</a> (const struct <a class="el" href="structDate.html">Date</a> *const self)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of the week of a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> (1 to 7, inclusive, with 1 being Monday, 2 being Tuesday, ..., 6 being Saturday, and 7 being Sunday).  <a href="#a45a8dfd5aba57f3ae6a79278348e9be6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#af11209d2a30b9b49b4f9e8fef77fad84">Date_difference</a> (const struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structDate.html">Date</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the difference between two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances.  <a href="#af11209d2a30b9b49b4f9e8fef77fad84"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structDayDelta.html">DayDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a8d2a02c17d285f3ea6f38446c4a184a3">Date_absolute_difference</a> (const struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structDate.html">Date</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the absolute difference between two <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a> instances.  <a href="#a8d2a02c17d285f3ea6f38446c4a184a3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a4c6d6ed2a1d7979412a79e84d54aeac4">Date_add_day_delta</a> (struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const delta)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="structDayDelta.html">DayDelta</a> to a <a class="el" href="structDate.html" title="Class or struct representing a calendar date.">Date</a>.  <a href="#a4c6d6ed2a1d7979412a79e84d54aeac4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a57ea0878d7e184ce8caae809f80c4274">Date_add_month_delta</a> (struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const delta)</td></tr>
@@ -415,12 +415,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad26cbac6bc416b358941b580dba7fe3c"></a><!-- doxytag: member="date.h::Date_get_year" ref="ad26cbac6bc416b358941b580dba7fe3c" args="(const struct Date *const self)" -->
+<a class="anchor" id="a306e9f25302b72fe4669898bc4687ce7"></a><!-- doxytag: member="date.h::Date_year" ref="a306e9f25302b72fe4669898bc4687ce7" args="(const struct Date *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a> <a class="el" href="date_8h.html#ad26cbac6bc416b358941b580dba7fe3c">Date_get_year</a> </td>
+          <td class="memname"><a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a> <a class="el" href="date_8h.html#a306e9f25302b72fe4669898bc4687ce7">Date_year</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -434,12 +434,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4159afd50df428b740f4485925e7c5b6"></a><!-- doxytag: member="date.h::Date_get_month" ref="a4159afd50df428b740f4485925e7c5b6" args="(const struct Date *const self)" -->
+<a class="anchor" id="aec14245e9c25b7d6336f7a4bd623edf2"></a><!-- doxytag: member="date.h::Date_month" ref="aec14245e9c25b7d6336f7a4bd623edf2" args="(const struct Date *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a6e77e4e37237551e3c2f808f02764cec">int_month</a> <a class="el" href="date_8h.html#a4159afd50df428b740f4485925e7c5b6">Date_get_month</a> </td>
+          <td class="memname"><a class="el" href="types_8h.html#a6e77e4e37237551e3c2f808f02764cec">int_month</a> <a class="el" href="date_8h.html#aec14245e9c25b7d6336f7a4bd623edf2">Date_month</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -453,12 +453,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9a89250ddc944586f86223ea8727a328"></a><!-- doxytag: member="date.h::Date_get_day" ref="a9a89250ddc944586f86223ea8727a328" args="(const struct Date *const self)" -->
+<a class="anchor" id="ae8301a47620e3e4af0902ae84885b039"></a><!-- doxytag: member="date.h::Date_day" ref="ae8301a47620e3e4af0902ae84885b039" args="(const struct Date *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a2ee09cac57b5b71a2cf76051e877f320">int_day</a> <a class="el" href="date_8h.html#a9a89250ddc944586f86223ea8727a328">Date_get_day</a> </td>
+          <td class="memname"><a class="el" href="types_8h.html#a2ee09cac57b5b71a2cf76051e877f320">int_day</a> <a class="el" href="date_8h.html#ae8301a47620e3e4af0902ae84885b039">Date_day</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -472,12 +472,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4f71610e1041fbb7e3b530d118d65151"></a><!-- doxytag: member="date.h::Date_get_day_of_year" ref="a4f71610e1041fbb7e3b530d118d65151" args="(const struct Date *const self)" -->
+<a class="anchor" id="a613924a06ec3258012770702d48378d7"></a><!-- doxytag: member="date.h::Date_day_of_year" ref="a613924a06ec3258012770702d48378d7" args="(const struct Date *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#ae73cc4736210d3120e1073d94bbac092">int_day_of_year</a> <a class="el" href="date_8h.html#a4f71610e1041fbb7e3b530d118d65151">Date_get_day_of_year</a> </td>
+          <td class="memname"><a class="el" href="types_8h.html#ae73cc4736210d3120e1073d94bbac092">int_day_of_year</a> <a class="el" href="date_8h.html#a613924a06ec3258012770702d48378d7">Date_day_of_year</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -491,12 +491,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1ea792798541f63ea48a80c871314429"></a><!-- doxytag: member="date.h::Date_get_week_of_year" ref="a1ea792798541f63ea48a80c871314429" args="(const struct Date *const self)" -->
+<a class="anchor" id="a44d0eff6895fd8609203bb14e4f4e86f"></a><!-- doxytag: member="date.h::Date_week_of_year" ref="a44d0eff6895fd8609203bb14e4f4e86f" args="(const struct Date *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structPresentWeekYear.html">PresentWeekYear</a> <a class="el" href="date_8h.html#a1ea792798541f63ea48a80c871314429">Date_get_week_of_year</a> </td>
+          <td class="memname">struct <a class="el" href="structPresentWeekYear.html">PresentWeekYear</a> <a class="el" href="date_8h.html#a44d0eff6895fd8609203bb14e4f4e86f">Date_week_of_year</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -511,12 +511,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a99bd609ba0bacc5d415693f90a7113af"></a><!-- doxytag: member="date.h::Date_get_day_of_week" ref="a99bd609ba0bacc5d415693f90a7113af" args="(const struct Date *const self)" -->
+<a class="anchor" id="a45a8dfd5aba57f3ae6a79278348e9be6"></a><!-- doxytag: member="date.h::Date_day_of_week" ref="a45a8dfd5aba57f3ae6a79278348e9be6" args="(const struct Date *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a> <a class="el" href="date_8h.html#a99bd609ba0bacc5d415693f90a7113af">Date_get_day_of_week</a> </td>
+          <td class="memname"><a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a> <a class="el" href="date_8h.html#a45a8dfd5aba57f3ae6a79278348e9be6">Date_day_of_week</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -530,12 +530,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2d32fb808c31d8592f3641ef2f2a6b03"></a><!-- doxytag: member="date.h::Date_get_difference" ref="a2d32fb808c31d8592f3641ef2f2a6b03" args="(const struct Date *const self, const struct Date *const other)" -->
+<a class="anchor" id="af11209d2a30b9b49b4f9e8fef77fad84"></a><!-- doxytag: member="date.h::Date_difference" ref="af11209d2a30b9b49b4f9e8fef77fad84" args="(const struct Date *const self, const struct Date *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structDayDelta.html">DayDelta</a> <a class="el" href="date_8h.html#a2d32fb808c31d8592f3641ef2f2a6b03">Date_get_difference</a> </td>
+          <td class="memname">struct <a class="el" href="structDayDelta.html">DayDelta</a> <a class="el" href="date_8h.html#af11209d2a30b9b49b4f9e8fef77fad84">Date_difference</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -559,12 +559,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8639bedc8fc415809cbad76b72fb388b"></a><!-- doxytag: member="date.h::Date_get_absolute_difference" ref="a8639bedc8fc415809cbad76b72fb388b" args="(const struct Date *const self, const struct Date *const other)" -->
+<a class="anchor" id="a8d2a02c17d285f3ea6f38446c4a184a3"></a><!-- doxytag: member="date.h::Date_absolute_difference" ref="a8d2a02c17d285f3ea6f38446c4a184a3" args="(const struct Date *const self, const struct Date *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structDayDelta.html">DayDelta</a> <a class="el" href="date_8h.html#a8639bedc8fc415809cbad76b72fb388b">Date_get_absolute_difference</a> </td>
+          <td class="memname">struct <a class="el" href="structDayDelta.html">DayDelta</a> <a class="el" href="date_8h.html#a8d2a02c17d285f3ea6f38446c4a184a3">Date_absolute_difference</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>

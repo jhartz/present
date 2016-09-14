@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-09-12</td>
+            <td class="headerValue">2016-09-14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -173,12 +173,12 @@
 <span class="lineNum">     102 </span>                :<span class="lineNoCov">          0 :     return Timestamp_get_clock_time_local(this);</span>
 <a name="103"><span class="lineNum">     103 </span>                :            : }</a>
 <span class="lineNum">     104 </span>                :            : 
-<span class="lineNum">     105 </span>                :<span class="lineNoCov">          0 : TimeDelta Timestamp::get_difference(const Timestamp &amp; other) const {</span>
-<span class="lineNum">     106 </span>                :<span class="lineNoCov">          0 :     return Timestamp_get_difference(this, &amp;other);</span>
+<span class="lineNum">     105 </span>                :<span class="lineNoCov">          0 : TimeDelta Timestamp::difference(const Timestamp &amp; other) const {</span>
+<span class="lineNum">     106 </span>                :<span class="lineNoCov">          0 :     return Timestamp_difference(this, &amp;other);</span>
 <a name="107"><span class="lineNum">     107 </span>                :            : }</a>
 <span class="lineNum">     108 </span>                :            : 
-<span class="lineNum">     109 </span>                :<span class="lineNoCov">          0 : TimeDelta Timestamp::get_absolute_difference(const Timestamp &amp; other) const {</span>
-<span class="lineNum">     110 </span>                :<span class="lineNoCov">          0 :     return Timestamp_get_absolute_difference(this, &amp;other);</span>
+<span class="lineNum">     109 </span>                :<span class="lineNoCov">          0 : TimeDelta Timestamp::absolute_difference(const Timestamp &amp; other) const {</span>
+<span class="lineNum">     110 </span>                :<span class="lineNoCov">          0 :     return Timestamp_absolute_difference(this, &amp;other);</span>
 <a name="111"><span class="lineNum">     111 </span>                :            : }</a>
 <span class="lineNum">     112 </span>                :            : 
 <span class="lineNum">     113 </span>                :<span class="lineNoCov">          0 : Timestamp &amp; Timestamp::operator+=(const TimeDelta &amp; delta) {</span>

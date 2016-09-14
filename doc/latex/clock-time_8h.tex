@@ -43,15 +43,15 @@ struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_ae320
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} initialized to midnight (00\-:00). \end{DoxyCompactList}\item 
 struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}{\-Clock\-Time\-\_\-noon} ()
 \begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} initialized to noon (12\-:00). \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a62ed583cd6a13da9650111e3b4b4eedc}{int\-\_\-hour} \hyperlink{clock-time_8h_a1688a98fb161dc7a743085b09cb3c1de}{\-Clock\-Time\-\_\-get\-\_\-hour} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
+\hyperlink{types_8h_a62ed583cd6a13da9650111e3b4b4eedc}{int\-\_\-hour} \hyperlink{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}{\-Clock\-Time\-\_\-hour} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the hour component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 23, inclusive). \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a3e55debfc84cabacf28bddf2d04984c9}{int\-\_\-minute} \hyperlink{clock-time_8h_a3ea78f71041658c2f9530c3603b7b9ec}{\-Clock\-Time\-\_\-get\-\_\-minute} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
+\hyperlink{types_8h_a3e55debfc84cabacf28bddf2d04984c9}{int\-\_\-minute} \hyperlink{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}{\-Clock\-Time\-\_\-minute} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the minute component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). \end{DoxyCompactList}\item 
-\hyperlink{types_8h_abd3494f4b69b446ec1fc0477a8b769c9}{int\-\_\-second} \hyperlink{clock-time_8h_a77c448c2991009dbcb662696a7ceedca}{\-Clock\-Time\-\_\-get\-\_\-second} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
+\hyperlink{types_8h_abd3494f4b69b446ec1fc0477a8b769c9}{int\-\_\-second} \hyperlink{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}{\-Clock\-Time\-\_\-second} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a153ef9bf3a8448179ab1d606f5593b4c}{int\-\_\-nanosecond} \hyperlink{clock-time_8h_ad74a9b1b36f0fd4b4a739b69fb65869e}{\-Clock\-Time\-\_\-get\-\_\-nanosecond} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
+\hyperlink{types_8h_a153ef9bf3a8448179ab1d606f5593b4c}{int\-\_\-nanosecond} \hyperlink{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}{\-Clock\-Time\-\_\-nanosecond} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the nanosecond component of a \hyperlink{structClockTime}{\-Clock\-Time} (less than 10$^\wedge$9, the number of nanoseconds in a second). \end{DoxyCompactList}\item 
-double \hyperlink{clock-time_8h_a7cf42452da58eb906b00e92fe3efb159}{\-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
+double \hyperlink{clock-time_8h_a182c395d606d26c144cdb75096a0125d}{\-Clock\-Time\-\_\-second\-\_\-decimal} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} as a decimal, based on both the second and nanosecond components. \end{DoxyCompactList}\item 
 struct \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}{\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get a \hyperlink{structTimeDelta}{\-Time\-Delta} with the time since midnight of a \hyperlink{structClockTime}{\-Clock\-Time}. \end{DoxyCompactList}\item 
@@ -260,57 +260,57 @@ PRESENT_OVERLOAD_MAX_4(__VA_ARGS__,                 \
 
 \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} initialized to noon (12\-:00). 
 
-\hypertarget{clock-time_8h_a1688a98fb161dc7a743085b09cb3c1de}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-get\-\_\-hour@{\-Clock\-Time\-\_\-get\-\_\-hour}}
-\index{\-Clock\-Time\-\_\-get\-\_\-hour@{\-Clock\-Time\-\_\-get\-\_\-hour}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-get\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-hour} {\bf \-Clock\-Time\-\_\-get\-\_\-hour} (
+\hypertarget{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-hour@{\-Clock\-Time\-\_\-hour}}
+\index{\-Clock\-Time\-\_\-hour@{\-Clock\-Time\-\_\-hour}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{\-Clock\-Time\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-hour} {\bf \-Clock\-Time\-\_\-hour} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)}}\label{clock-time_8h_a1688a98fb161dc7a743085b09cb3c1de}
+)}}\label{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}
 
 
 \-Get the hour component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 23, inclusive). 
 
-\hypertarget{clock-time_8h_a3ea78f71041658c2f9530c3603b7b9ec}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-get\-\_\-minute@{\-Clock\-Time\-\_\-get\-\_\-minute}}
-\index{\-Clock\-Time\-\_\-get\-\_\-minute@{\-Clock\-Time\-\_\-get\-\_\-minute}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-get\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-minute} {\bf \-Clock\-Time\-\_\-get\-\_\-minute} (
+\hypertarget{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-minute@{\-Clock\-Time\-\_\-minute}}
+\index{\-Clock\-Time\-\_\-minute@{\-Clock\-Time\-\_\-minute}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{\-Clock\-Time\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-minute} {\bf \-Clock\-Time\-\_\-minute} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)}}\label{clock-time_8h_a3ea78f71041658c2f9530c3603b7b9ec}
+)}}\label{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}
 
 
 \-Get the minute component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). 
 
-\hypertarget{clock-time_8h_a77c448c2991009dbcb662696a7ceedca}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-get\-\_\-second@{\-Clock\-Time\-\_\-get\-\_\-second}}
-\index{\-Clock\-Time\-\_\-get\-\_\-second@{\-Clock\-Time\-\_\-get\-\_\-second}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-get\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-second} {\bf \-Clock\-Time\-\_\-get\-\_\-second} (
+\hypertarget{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-second@{\-Clock\-Time\-\_\-second}}
+\index{\-Clock\-Time\-\_\-second@{\-Clock\-Time\-\_\-second}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{\-Clock\-Time\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-second} {\bf \-Clock\-Time\-\_\-second} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)}}\label{clock-time_8h_a77c448c2991009dbcb662696a7ceedca}
+)}}\label{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}
 
 
 \-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). 
 
-\hypertarget{clock-time_8h_ad74a9b1b36f0fd4b4a739b69fb65869e}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-get\-\_\-nanosecond@{\-Clock\-Time\-\_\-get\-\_\-nanosecond}}
-\index{\-Clock\-Time\-\_\-get\-\_\-nanosecond@{\-Clock\-Time\-\_\-get\-\_\-nanosecond}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-get\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-nanosecond} {\bf \-Clock\-Time\-\_\-get\-\_\-nanosecond} (
+\hypertarget{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-nanosecond@{\-Clock\-Time\-\_\-nanosecond}}
+\index{\-Clock\-Time\-\_\-nanosecond@{\-Clock\-Time\-\_\-nanosecond}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{\-Clock\-Time\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-nanosecond} {\bf \-Clock\-Time\-\_\-nanosecond} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)}}\label{clock-time_8h_ad74a9b1b36f0fd4b4a739b69fb65869e}
+)}}\label{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}
 
 
 \-Get the nanosecond component of a \hyperlink{structClockTime}{\-Clock\-Time} (less than 10$^\wedge$9, the number of nanoseconds in a second). 
 
-\hypertarget{clock-time_8h_a7cf42452da58eb906b00e92fe3efb159}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal@{\-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal}}
-\index{\-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal@{\-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Clock\-Time\-\_\-get\-\_\-second\-\_\-decimal} (
+\hypertarget{clock-time_8h_a182c395d606d26c144cdb75096a0125d}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-second\-\_\-decimal@{\-Clock\-Time\-\_\-second\-\_\-decimal}}
+\index{\-Clock\-Time\-\_\-second\-\_\-decimal@{\-Clock\-Time\-\_\-second\-\_\-decimal}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{\-Clock\-Time\-\_\-second\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Clock\-Time\-\_\-second\-\_\-decimal} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)}}\label{clock-time_8h_a7cf42452da58eb906b00e92fe3efb159}
+)}}\label{clock-time_8h_a182c395d606d26c144cdb75096a0125d}
 
 
 \-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} as a decimal, based on both the second and nanosecond components. 

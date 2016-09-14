@@ -29,9 +29,9 @@ struct tm \hyperlink{structTimestamp_abc2107430b61e373e5ff84d16c1a097a}{get\-\_\
 \item 
 \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{structTimestamp_a773a47fcdd02afef5d307bcc65561f8c}{get\-\_\-clock\-\_\-time\-\_\-local} () const 
 \item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimestamp_a7d78f2151082c1c080364e2676b88d35}{get\-\_\-difference} (const \hyperlink{structTimestamp}{\-Timestamp} \&other) const 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimestamp_af2520c21fa08751cfa7b195768e77171}{difference} (const \hyperlink{structTimestamp}{\-Timestamp} \&other) const 
 \item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimestamp_abfe068b22473f173011e7907a0fd8a9c}{get\-\_\-absolute\-\_\-difference} (const \hyperlink{structTimestamp}{\-Timestamp} \&other) const 
+\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimestamp_a576febd2b61318c8f04a01eb75e78776}{absolute\-\_\-difference} (const \hyperlink{structTimestamp}{\-Timestamp} \&other) const 
 \item 
 \hyperlink{structTimestamp}{\-Timestamp} \& \hyperlink{structTimestamp_a27c4a772939626101a580656769f705e}{operator+=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&delta)
 \item 
@@ -311,20 +311,20 @@ bool \hyperlink{structTimestamp_af5e67a38f1e4968c30a4c57c34fd51e6}{operator$>$=}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimestamp_a773a47fcdd02afef5d307bcc65561f8c}
-\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone.  \hypertarget{structTimestamp_a7d78f2151082c1c080364e2676b88d35}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-difference@{get\-\_\-difference}}
-\index{get\-\_\-difference@{get\-\_\-difference}!Timestamp@{\-Timestamp}}
-\subsubsection[{get\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Timestamp\-::get\-\_\-difference} (
+\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone.  \hypertarget{structTimestamp_af2520c21fa08751cfa7b195768e77171}{\index{\-Timestamp@{\-Timestamp}!difference@{difference}}
+\index{difference@{difference}!Timestamp@{\-Timestamp}}
+\subsubsection[{difference}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Timestamp\-::difference} (
 \begin{DoxyParamCaption}
 \item[{const {\bf \-Timestamp} \&}]{other}
 \end{DoxyParamCaption}
-) const}}\label{structTimestamp_a7d78f2151082c1c080364e2676b88d35}
-\-Get the difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}.  \hypertarget{structTimestamp_abfe068b22473f173011e7907a0fd8a9c}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-absolute\-\_\-difference@{get\-\_\-absolute\-\_\-difference}}
-\index{get\-\_\-absolute\-\_\-difference@{get\-\_\-absolute\-\_\-difference}!Timestamp@{\-Timestamp}}
-\subsubsection[{get\-\_\-absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Timestamp\-::get\-\_\-absolute\-\_\-difference} (
+) const}}\label{structTimestamp_af2520c21fa08751cfa7b195768e77171}
+\-Get the difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}.  \hypertarget{structTimestamp_a576febd2b61318c8f04a01eb75e78776}{\index{\-Timestamp@{\-Timestamp}!absolute\-\_\-difference@{absolute\-\_\-difference}}
+\index{absolute\-\_\-difference@{absolute\-\_\-difference}!Timestamp@{\-Timestamp}}
+\subsubsection[{absolute\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Timestamp\-::absolute\-\_\-difference} (
 \begin{DoxyParamCaption}
 \item[{const {\bf \-Timestamp} \&}]{other}
 \end{DoxyParamCaption}
-) const}}\label{structTimestamp_abfe068b22473f173011e7907a0fd8a9c}
+) const}}\label{structTimestamp_a576febd2b61318c8f04a01eb75e78776}
 \-Get the absolute difference between two \hyperlink{structTimestamp}{\-Timestamp} instances as a \hyperlink{structTimeDelta}{\-Time\-Delta}.  \hypertarget{structTimestamp_a27c4a772939626101a580656769f705e}{\index{\-Timestamp@{\-Timestamp}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!Timestamp@{\-Timestamp}}
 \subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Timestamp}\& \-Timestamp\-::operator+= (
