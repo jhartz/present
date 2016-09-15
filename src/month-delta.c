@@ -114,7 +114,7 @@ MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor)
 }
 
 void
-MonthDelta_add_month_delta(
+MonthDelta_add(
         struct MonthDelta * const self,
         const struct MonthDelta * const monthDeltaToAdd)
 {
@@ -127,7 +127,7 @@ MonthDelta_add_month_delta(
 }
 
 void
-MonthDelta_subtract_month_delta(
+MonthDelta_subtract(
         struct MonthDelta * const self,
         const struct MonthDelta * const monthDeltaToSubtract)
 {

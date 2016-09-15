@@ -99,15 +99,20 @@ struct PRESENT_API ClockTime {
     /** @copydoc ClockTime_time_since_midnight */
     TimeDelta time_since_midnight() const;
 
-    /** @copydoc ClockTime_add_time_delta */
+    /** @copydoc ClockTime_add_TimeDelta */
     ClockTime & operator+=(const TimeDelta & delta);
-    /** @copydoc ClockTime_subtract_time_delta */
+    /** @copydoc ClockTime_subtract_TimeDelta */
     ClockTime & operator-=(const TimeDelta & delta);
 
     /** @see ClockTime::operator+=(const TimeDelta & delta) */
     friend const ClockTime operator+(
             const ClockTime & lhs,
             const TimeDelta & rhs);
+    /** @see ClockTime::operator+=(const TimeDelta & delta) */
+    friend const ClockTime operator+(
+            const TimeDelta & lhs,
+            const ClockTime & rhs);
+
     /** @see ClockTime::operator-=(const TimeDelta & delta) */
     friend const ClockTime operator-(
             const ClockTime & lhs,
@@ -285,7 +290,7 @@ ClockTime_time_since_midnight(const struct ClockTime * const self);
  * wrap around.
  */
 PRESENT_API void
-ClockTime_add_time_delta(
+ClockTime_add_TimeDelta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta);
 
@@ -296,7 +301,7 @@ ClockTime_add_time_delta(
  * wrap around.
  */
 PRESENT_API void
-ClockTime_subtract_time_delta(
+ClockTime_subtract_TimeDelta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta);
 

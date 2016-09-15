@@ -199,12 +199,12 @@ ClockTime_time_since_midnight(const struct ClockTime * const self)
 
     delta = TimeDelta_from_seconds(self->data_.seconds);
     ns_delta = TimeDelta_from_nanoseconds(self->data_.nanoseconds);
-    TimeDelta_add_time_delta(&delta, &ns_delta);
+    TimeDelta_add(&delta, &ns_delta);
     return delta;
 }
 
 void
-ClockTime_add_time_delta(
+ClockTime_add_TimeDelta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta)
 {
@@ -220,7 +220,7 @@ ClockTime_add_time_delta(
 }
 
 void
-ClockTime_subtract_time_delta(
+ClockTime_subtract_TimeDelta(
         struct ClockTime * const self,
         const struct TimeDelta * const delta)
 {

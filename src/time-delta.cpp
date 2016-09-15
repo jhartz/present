@@ -113,16 +113,16 @@ double TimeDelta::weeks_decimal() const {
     return TimeDelta_weeks_decimal(this);
 }
 
-DayDelta TimeDelta::to_day_delta_truncated() const {
-    return TimeDelta_to_day_delta_truncated(this);
+DayDelta TimeDelta::to_DayDelta_truncated() const {
+    return TimeDelta_to_DayDelta_truncated(this);
 }
 
-DayDelta TimeDelta::to_day_delta_rounded() const {
-    return TimeDelta_to_day_delta_rounded(this);
+DayDelta TimeDelta::to_DayDelta_rounded() const {
+    return TimeDelta_to_DayDelta_rounded(this);
 }
 
-DayDelta TimeDelta::to_day_delta_abs_ceil() const {
-    return TimeDelta_to_day_delta_abs_ceil(this);
+DayDelta TimeDelta::to_DayDelta_abs_ceil() const {
+    return TimeDelta_to_DayDelta_abs_ceil(this);
 }
 
 bool TimeDelta::is_negative() const {
@@ -178,12 +178,22 @@ const TimeDelta operator/(const TimeDelta & lhs, const double & rhs) {
 }
 
 TimeDelta & TimeDelta::operator+=(const TimeDelta & other) {
-    TimeDelta_add_time_delta(this, &other);
+    TimeDelta_add(this, &other);
+    return *this;
+}
+
+TimeDelta & TimeDelta::operator+=(const DayDelta & other) {
+    TimeDelta_add_DayDelta(this, &other);
     return *this;
 }
 
 TimeDelta & TimeDelta::operator-=(const TimeDelta & other) {
-    TimeDelta_subtract_time_delta(this, &other);
+    TimeDelta_subtract(this, &other);
+    return *this;
+}
+
+TimeDelta & TimeDelta::operator-=(const DayDelta & other) {
+    TimeDelta_subtract_DayDelta(this, &other);
     return *this;
 }
 
@@ -191,8 +201,26 @@ const TimeDelta operator+(const TimeDelta & lhs, const TimeDelta & rhs) {
     return (TimeDelta(lhs) += rhs);
 }
 
+const TimeDelta operator+(const TimeDelta & lhs, const DayDelta & rhs) {
+    return (TimeDelta(lhs) += rhs);
+}
+
+const TimeDelta operator+(const DayDelta & lhs, const TimeDelta & rhs) {
+    TimeDelta lhs_time_delta = lhs.to_TimeDelta();
+    return (lhs_time_delta += rhs);
+}
+
 const TimeDelta operator-(const TimeDelta & lhs, const TimeDelta & rhs) {
     return (TimeDelta(lhs) -= rhs);
+}
+
+const TimeDelta operator-(const TimeDelta & lhs, const DayDelta & rhs) {
+    return (TimeDelta(lhs) -= rhs);
+}
+
+const TimeDelta operator-(const DayDelta & lhs, const TimeDelta & rhs) {
+    TimeDelta lhs_time_delta = lhs.to_TimeDelta();
+    return (lhs_time_delta -= rhs);
 }
 
 int TimeDelta::compare(const TimeDelta & lhs, const TimeDelta & rhs) {

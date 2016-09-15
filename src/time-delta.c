@@ -242,7 +242,7 @@ TimeDelta_weeks_decimal(const struct TimeDelta * const self)
 }
 
 struct DayDelta
-TimeDelta_to_day_delta_truncated(const struct TimeDelta * const self)
+TimeDelta_to_DayDelta_truncated(const struct TimeDelta * const self)
 {
     struct DayDelta day_delta;
 
@@ -262,7 +262,7 @@ TimeDelta_to_day_delta_truncated(const struct TimeDelta * const self)
 }
 
 struct DayDelta
-TimeDelta_to_day_delta_rounded(const struct TimeDelta * const self)
+TimeDelta_to_DayDelta_rounded(const struct TimeDelta * const self)
 {
     assert(self != NULL);
     assert(self->error == 0);
@@ -273,7 +273,7 @@ TimeDelta_to_day_delta_rounded(const struct TimeDelta * const self)
 }
 
 struct DayDelta
-TimeDelta_to_day_delta_abs_ceil(const struct TimeDelta * const self)
+TimeDelta_to_DayDelta_abs_ceil(const struct TimeDelta * const self)
 {
     struct DayDelta day_delta;
 
@@ -388,7 +388,7 @@ TimeDelta_divide_by_decimal(
 }
 
 void
-TimeDelta_add_time_delta(
+TimeDelta_add(
         struct TimeDelta * const self,
         const struct TimeDelta * const timeDeltaToAdd)
 {
@@ -404,7 +404,22 @@ TimeDelta_add_time_delta(
 }
 
 void
-TimeDelta_subtract_time_delta(
+TimeDelta_add_DayDelta(
+        struct TimeDelta * const self,
+        const struct DayDelta * const other)
+{
+    assert(self != NULL);
+    assert(self->error == 0);
+    assert(other != NULL);
+    assert(other->error == 0);
+
+    self->data_.delta_seconds += other->data_.delta_days * SECONDS_IN_DAY;
+
+    CHECK_DATA(self->data_);
+}
+
+void
+TimeDelta_subtract(
         struct TimeDelta * const self,
         const struct TimeDelta * const timeDeltaToSubtract)
 {
@@ -415,6 +430,21 @@ TimeDelta_subtract_time_delta(
 
     self->data_.delta_seconds -= timeDeltaToSubtract->data_.delta_seconds;
     self->data_.delta_nanoseconds -= timeDeltaToSubtract->data_.delta_nanoseconds;
+
+    CHECK_DATA(self->data_);
+}
+
+void
+TimeDelta_subtract_DayDelta(
+        struct TimeDelta * const self,
+        const struct DayDelta * const other)
+{
+    assert(self != NULL);
+    assert(self->error == 0);
+    assert(other != NULL);
+    assert(other->error == 0);
+
+    self->data_.delta_seconds -= other->data_.delta_days * SECONDS_IN_DAY;
 
     CHECK_DATA(self->data_);
 }

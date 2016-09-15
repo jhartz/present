@@ -216,7 +216,7 @@ Timestamp_create(
     /* Now, subtract the UTC offset (since we're technically converting
        TO UTC) */
     /* TODO: Is subtracting correct? */
-    Timestamp_subtract_time_delta(&t, timeZoneOffset);
+    Timestamp_subtract_TimeDelta(&t, timeZoneOffset);
     return t;
 }
 
@@ -334,7 +334,7 @@ Timestamp_get_struct_tm(
 
     copy = *self;
     /* TODO: should we be adding or subtracting? */
-    Timestamp_add_time_delta(&copy, timeZoneOffset);
+    Timestamp_add_TimeDelta(&copy, timeZoneOffset);
     return Timestamp_get_struct_tm_utc(&copy);
 }
 
@@ -444,7 +444,7 @@ Timestamp_difference(
     ns_delta = TimeDelta_from_nanoseconds(
             self->data_.additional_nanoseconds -
             other->data_.additional_nanoseconds);
-    TimeDelta_add_time_delta(&delta, &ns_delta);
+    TimeDelta_add(&delta, &ns_delta);
     return delta;
 }
 
@@ -468,7 +468,7 @@ Timestamp_absolute_difference(
 }
 
 void
-Timestamp_add_time_delta(
+Timestamp_add_TimeDelta(
         struct Timestamp * const self,
         const struct TimeDelta * const delta)
 {
@@ -483,7 +483,7 @@ Timestamp_add_time_delta(
 }
 
 void
-Timestamp_add_day_delta(
+Timestamp_add_DayDelta(
         struct Timestamp * const self,
         const struct DayDelta * const delta)
 {
@@ -496,7 +496,7 @@ Timestamp_add_day_delta(
 }
 
 void
-Timestamp_add_month_delta(
+Timestamp_add_MonthDelta(
         struct Timestamp * const self,
         const struct MonthDelta * const delta)
 {
@@ -516,7 +516,7 @@ Timestamp_add_month_delta(
 }
 
 void
-Timestamp_subtract_time_delta(
+Timestamp_subtract_TimeDelta(
         struct Timestamp * const self,
         const struct TimeDelta * const delta)
 {
@@ -531,7 +531,7 @@ Timestamp_subtract_time_delta(
 }
 
 void
-Timestamp_subtract_day_delta(
+Timestamp_subtract_DayDelta(
         struct Timestamp * const self,
         const struct DayDelta * const delta)
 {
@@ -544,7 +544,7 @@ Timestamp_subtract_day_delta(
 }
 
 void
-Timestamp_subtract_month_delta(
+Timestamp_subtract_MonthDelta(
         struct Timestamp * const self,
         const struct MonthDelta * const delta)
 {

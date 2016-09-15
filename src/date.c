@@ -323,7 +323,7 @@ Date_difference(
     self_timestamp = Timestamp_create_utc(self, &noon);
     other_timestamp = Timestamp_create_utc(other, &noon);
     time_delta = Timestamp_difference(&self_timestamp, &other_timestamp);
-    return TimeDelta_to_day_delta_truncated(&time_delta);
+    return TimeDelta_to_DayDelta_truncated(&time_delta);
 }
 
 struct DayDelta
@@ -346,7 +346,7 @@ Date_absolute_difference(
 }
 
 void
-Date_add_day_delta(
+Date_add_DayDelta(
         struct Date * const self,
         const struct DayDelta * const delta)
 {
@@ -360,7 +360,7 @@ Date_add_day_delta(
 }
 
 void
-Date_add_month_delta(
+Date_add_MonthDelta(
         struct Date * const self,
         const struct MonthDelta * const delta)
 {
@@ -374,7 +374,7 @@ Date_add_month_delta(
 }
 
 void
-Date_subtract_day_delta(
+Date_subtract_DayDelta(
         struct Date * const self,
         const struct DayDelta * const delta)
 {
@@ -388,7 +388,7 @@ Date_subtract_day_delta(
 }
 
 void
-Date_subtract_month_delta(
+Date_subtract_MonthDelta(
         struct Date * const self,
         const struct MonthDelta * const delta)
 {

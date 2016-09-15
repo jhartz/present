@@ -111,45 +111,54 @@ TimeDelta Timestamp::absolute_difference(const Timestamp & other) const {
 }
 
 Timestamp & Timestamp::operator+=(const TimeDelta & delta) {
-    Timestamp_add_time_delta(this, &delta);
+    Timestamp_add_TimeDelta(this, &delta);
     return *this;
 }
 
 Timestamp & Timestamp::operator+=(const DayDelta & delta) {
-    Timestamp_add_day_delta(this, &delta);
+    Timestamp_add_DayDelta(this, &delta);
     return *this;
 }
 
 Timestamp & Timestamp::operator+=(const MonthDelta & delta) {
-    Timestamp_add_month_delta(this, &delta);
+    Timestamp_add_MonthDelta(this, &delta);
     return *this;
 }
 
 Timestamp & Timestamp::operator-=(const TimeDelta & delta) {
-    Timestamp_subtract_time_delta(this, &delta);
+    Timestamp_subtract_TimeDelta(this, &delta);
     return *this;
 }
 
 Timestamp & Timestamp::operator-=(const DayDelta & delta) {
-    Timestamp_subtract_day_delta(this, &delta);
+    Timestamp_subtract_DayDelta(this, &delta);
     return *this;
 }
 
 Timestamp & Timestamp::operator-=(const MonthDelta & delta) {
-    Timestamp_subtract_month_delta(this, &delta);
+    Timestamp_subtract_MonthDelta(this, &delta);
     return *this;
 }
 
 const Timestamp operator+(const Timestamp & lhs, const TimeDelta & rhs) {
     return (Timestamp(lhs) += rhs);
 }
+const Timestamp operator+(const TimeDelta & lhs, const Timestamp & rhs) {
+    return (Timestamp(rhs) += lhs);
+}
 
 const Timestamp operator+(const Timestamp & lhs, const DayDelta & rhs) {
     return (Timestamp(lhs) += rhs);
 }
+const Timestamp operator+(const DayDelta & lhs, const Timestamp & rhs) {
+    return (Timestamp(rhs) += lhs);
+}
 
 const Timestamp operator+(const Timestamp & lhs, const MonthDelta & rhs) {
     return (Timestamp(lhs) += rhs);
+}
+const Timestamp operator+(const MonthDelta & lhs, const Timestamp & rhs) {
+    return (Timestamp(rhs) += lhs);
 }
 
 const Timestamp operator-(const Timestamp & lhs, const TimeDelta & rhs) {

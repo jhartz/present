@@ -95,9 +95,9 @@ struct PRESENT_API MonthDelta {
             const MonthDelta & delta,
             const int & scale_factor);
 
-    /** @copydoc MonthDelta_add_month_delta */
+    /** @copydoc MonthDelta_add */
     MonthDelta & operator+=(const MonthDelta & other);
-    /** @copydoc MonthDelta_subtract_month_delta */
+    /** @copydoc MonthDelta_subtract */
     MonthDelta & operator-=(const MonthDelta & other);
 
     /** @see MonthDelta::operator+=(const MonthDelta & other) */
@@ -201,17 +201,19 @@ MonthDelta_divide_by(struct MonthDelta * const self, int scale_factor);
 
 /**
  * Add another MonthDelta to a MonthDelta.
+ * The second MonthDelta parameter is added to the first.
  */
 PRESENT_API void
-MonthDelta_add_month_delta(
+MonthDelta_add(
         struct MonthDelta * const self,
         const struct MonthDelta * const other);
 
 /**
  * Subtract another MonthDelta from a MonthDelta.
+ * The second MonthDelta parameter is subtracted from the first.
  */
 PRESENT_API void
-MonthDelta_subtract_month_delta(
+MonthDelta_subtract(
         struct MonthDelta * const self,
         const struct MonthDelta * const other);
 

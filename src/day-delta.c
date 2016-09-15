@@ -80,7 +80,7 @@ DayDelta_weeks_decimal(const struct DayDelta * const self)
 }
 
 struct TimeDelta
-DayDelta_to_time_delta(const struct DayDelta * const self)
+DayDelta_to_TimeDelta(const struct DayDelta * const self)
 {
     assert(self != NULL);
     assert(self->error == 0);
@@ -125,7 +125,7 @@ DayDelta_divide_by(struct DayDelta * const self, int scaleFactor)
 }
 
 void
-DayDelta_add_day_delta(
+DayDelta_add(
         struct DayDelta * const self,
         const struct DayDelta * const dayDeltaToAdd)
 {
@@ -138,7 +138,7 @@ DayDelta_add_day_delta(
 }
 
 void
-DayDelta_subtract_day_delta(
+DayDelta_subtract(
         struct DayDelta * const self,
         const struct DayDelta * const dayDeltaToSubtract)
 {

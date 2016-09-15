@@ -109,21 +109,28 @@ struct PRESENT_API Date {
     /** @copydoc Date_absolute_difference */
     DayDelta absolute_difference(const Date & other) const;
 
-    /** @copydoc Date_add_day_delta */
+    /** @copydoc Date_add_DayDelta */
     Date & operator+=(const DayDelta & delta);
-    /** @copydoc Date_add_month_delta */
+    /** @copydoc Date_add_MonthDelta */
     Date & operator+=(const MonthDelta & delta);
-    /** @copydoc Date_subtract_day_delta */
+    /** @copydoc Date_subtract_DayDelta */
     Date & operator-=(const DayDelta & delta);
-    /** @copydoc Date_subtract_month_delta */
+    /** @copydoc Date_subtract_MonthDelta */
     Date & operator-=(const MonthDelta & delta);
 
     /** @see Date::operator+=(const DayDelta & delta) */
     friend const Date operator+(const Date & lhs, const DayDelta & rhs);
+    /** @see Date::operator+=(const DayDelta & delta) */
+    friend const Date operator+(const DayDelta & lhs, const Date & rhs);
+
     /** @see Date::operator+=(const MonthDelta & delta) */
     friend const Date operator+(const Date & lhs, const MonthDelta & rhs);
+    /** @see Date::operator+=(const MonthDelta & delta) */
+    friend const Date operator+(const MonthDelta & lhs, const Date & rhs);
+
     /** @see Date::operator-=(const DayDelta & delta) */
     friend const Date operator-(const Date & lhs, const DayDelta & rhs);
+
     /** @see Date::operator-=(const MonthDelta & delta) */
     friend const Date operator-(const Date & lhs, const MonthDelta & rhs);
 
@@ -293,7 +300,7 @@ Date_absolute_difference(
  * Add a @ref DayDelta to a Date.
  */
 PRESENT_API void
-Date_add_day_delta(
+Date_add_DayDelta(
         struct Date * const self,
         const struct DayDelta * const delta);
 
@@ -301,7 +308,7 @@ Date_add_day_delta(
  * Add a @ref MonthDelta to a Date.
  */
 PRESENT_API void
-Date_add_month_delta(
+Date_add_MonthDelta(
         struct Date * const self,
         const struct MonthDelta * const delta);
 
@@ -309,7 +316,7 @@ Date_add_month_delta(
  * Subtract a @ref DayDelta from a Date.
  */
 PRESENT_API void
-Date_subtract_day_delta(
+Date_subtract_DayDelta(
         struct Date * const self,
         const struct DayDelta * const delta);
 
@@ -317,7 +324,7 @@ Date_subtract_day_delta(
  * Subtract a @ref MonthDelta from a Date.
  */
 PRESENT_API void
-Date_subtract_month_delta(
+Date_subtract_MonthDelta(
         struct Date * const self,
         const struct MonthDelta * const delta);
 

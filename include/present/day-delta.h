@@ -61,8 +61,8 @@ struct PRESENT_API DayDelta {
     /** @copydoc DayDelta_weeks_decimal */
     double weeks_decimal() const;
 
-    /** @copydoc DayDelta_to_time_delta */
-    TimeDelta to_time_delta() const;
+    /** @copydoc DayDelta_to_TimeDelta */
+    TimeDelta to_TimeDelta() const;
 
     /** @copydoc DayDelta_is_negative */
     bool is_negative() const;
@@ -99,9 +99,9 @@ struct PRESENT_API DayDelta {
             const DayDelta & delta,
             const int & scale_factor);
 
-    /** @copydoc DayDelta_add_day_delta */
+    /** @copydoc DayDelta_add */
     DayDelta & operator+=(const DayDelta & other);
-    /** @copydoc DayDelta_subtract_day_delta */
+    /** @copydoc DayDelta_subtract */
     DayDelta & operator-=(const DayDelta & other);
 
     /** @see DayDelta::operator+=(const DayDelta & other) */
@@ -181,7 +181,7 @@ DayDelta_weeks_decimal(const struct DayDelta * const self);
  * Convert a DayDelta into an equivalent @ref TimeDelta.
  */
 PRESENT_API struct TimeDelta
-DayDelta_to_time_delta(const struct DayDelta * const self);
+DayDelta_to_TimeDelta(const struct DayDelta * const self);
 
 /**
  * Determine whether a DayDelta is negative.
@@ -210,17 +210,19 @@ DayDelta_divide_by(struct DayDelta * const self, int scale_factor);
 
 /**
  * Add another DayDelta to a DayDelta.
+ * The second DayDelta parameter is added to the first.
  */
 PRESENT_API void
-DayDelta_add_day_delta(
+DayDelta_add(
         struct DayDelta * const self,
         const struct DayDelta * const other);
 
 /**
  * Subtract another DayDelta from a DayDelta.
+ * The second DayDelta parameter is added to the first.
  */
 PRESENT_API void
-DayDelta_subtract_day_delta(
+DayDelta_subtract(
         struct DayDelta * const self,
         const struct DayDelta * const other);
 

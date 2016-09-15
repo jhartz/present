@@ -71,31 +71,37 @@ DayDelta Date::absolute_difference(const Date & other) const {
 }
 
 Date & Date::operator+=(const DayDelta & delta) {
-    Date_add_day_delta(this, &delta);
+    Date_add_DayDelta(this, &delta);
     return *this;
 }
 
 Date & Date::operator+=(const MonthDelta & delta) {
-    Date_add_month_delta(this, &delta);
+    Date_add_MonthDelta(this, &delta);
     return *this;
 }
 
 Date & Date::operator-=(const DayDelta & delta) {
-    Date_subtract_day_delta(this, &delta);
+    Date_subtract_DayDelta(this, &delta);
     return *this;
 }
 
 Date & Date::operator-=(const MonthDelta & delta) {
-    Date_subtract_month_delta(this, &delta);
+    Date_subtract_MonthDelta(this, &delta);
     return *this;
 }
 
 const Date operator+(const Date & lhs, const DayDelta & rhs) {
     return (Date(lhs) += rhs);
 }
+const Date operator+(const DayDelta & lhs, const Date & rhs) {
+    return (Date(rhs) += lhs);
+}
 
 const Date operator+(const Date & lhs, const MonthDelta & rhs) {
     return (Date(lhs) += rhs);
+}
+const Date operator+(const MonthDelta & lhs, const Date & rhs) {
+    return (Date(rhs) += lhs);
 }
 
 const Date operator-(const Date & lhs, const DayDelta & rhs) {

@@ -104,12 +104,12 @@ const MonthDelta operator/(const MonthDelta & lhs, const int & rhs) {
 }
 
 MonthDelta & MonthDelta::operator+=(const MonthDelta & other) {
-    MonthDelta_add_month_delta(this, &other);
+    MonthDelta_add(this, &other);
     return *this;
 }
 
 MonthDelta & MonthDelta::operator-=(const MonthDelta & other) {
-    MonthDelta_subtract_month_delta(this, &other);
+    MonthDelta_subtract(this, &other);
     return *this;
 }
 

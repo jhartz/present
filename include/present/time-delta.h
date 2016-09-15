@@ -108,14 +108,14 @@ struct PRESENT_API TimeDelta {
     /** @copydoc TimeDelta_weeks_decimal */
     double weeks_decimal() const;
 
-    /** @copydoc TimeDelta_to_day_delta_truncated */
-    DayDelta to_day_delta_truncated() const;
+    /** @copydoc TimeDelta_to_DayDelta_truncated */
+    DayDelta to_DayDelta_truncated() const;
 
-    /** @copydoc TimeDelta_to_day_delta_rounded */
-    DayDelta to_day_delta_rounded() const;
+    /** @copydoc TimeDelta_to_DayDelta_rounded */
+    DayDelta to_DayDelta_rounded() const;
 
-    /** @copydoc TimeDelta_to_day_delta_abs_ceil */
-    DayDelta to_day_delta_abs_ceil() const;
+    /** @copydoc TimeDelta_to_DayDelta_abs_ceil */
+    DayDelta to_DayDelta_abs_ceil() const;
 
     /** @copydoc TimeDelta_is_negative */
     bool is_negative() const;
@@ -155,18 +155,38 @@ struct PRESENT_API TimeDelta {
             const TimeDelta & delta,
             const double & scale_factor);
 
-    /** @copydoc TimeDelta_add_time_delta */
+    /** @copydoc TimeDelta_add */
     TimeDelta & operator+=(const TimeDelta & other);
-    /** @copydoc TimeDelta_subtract_time_delta */
+    /** @copydoc TimeDelta_add_DayDelta */
+    TimeDelta & operator+=(const DayDelta & other);
+    /** @copydoc TimeDelta_subtract */
     TimeDelta & operator-=(const TimeDelta & other);
+    /** @copydoc TimeDelta_subtract_DayDelta */
+    TimeDelta & operator-=(const DayDelta & other);
 
     /** @see TimeDelta::operator+=(const TimeDelta & other) */
     friend const TimeDelta operator+(
             const TimeDelta & lhs,
             const TimeDelta & rhs);
+    /** @see TimeDelta::operator+=(const DayDelta & other) */
+    friend const TimeDelta operator+(
+            const TimeDelta & lhs,
+            const DayDelta & rhs);
+    /** @see TimeDelta::operator+=(const DayDelta & other) */
+    friend const TimeDelta operator+(
+            const DayDelta & lhs,
+            const TimeDelta & rhs);
     /** @see TimeDelta::operator-=(const TimeDelta & other) */
     friend const TimeDelta operator-(
             const TimeDelta & lhs,
+            const TimeDelta & rhs);
+    /** @see TimeDelta::operator-=(const DayDelta & other) */
+    friend const TimeDelta operator-(
+            const TimeDelta & lhs,
+            const DayDelta & rhs);
+    /** @see TimeDelta::operator-=(const DayDelta & other) */
+    friend const TimeDelta operator-(
+            const DayDelta & lhs,
             const TimeDelta & rhs);
 
     /** @copydoc TimeDelta_compare */
@@ -368,21 +388,21 @@ TimeDelta_weeks_decimal(const struct TimeDelta * const self);
  * TimeDelta does not represent an exact number of days.
  */
 PRESENT_API struct DayDelta
-TimeDelta_to_day_delta_truncated(const struct TimeDelta * const self);
+TimeDelta_to_DayDelta_truncated(const struct TimeDelta * const self);
 
 /**
  * Convert a TimeDelta into a @ref DayDelta, rounding to the nearest day if
  * the TimeDelta does not represent an exact number of days.
  */
 PRESENT_API struct DayDelta
-TimeDelta_to_day_delta_rounded(const struct TimeDelta * const self);
+TimeDelta_to_DayDelta_rounded(const struct TimeDelta * const self);
 
 /**
  * Convert a TimeDelta into a @ref DayDelta, rounding away from zero if the
  * TimeDelta does not represent an exact number of days.
  */
 PRESENT_API struct DayDelta
-TimeDelta_to_day_delta_abs_ceil(const struct TimeDelta * const self);
+TimeDelta_to_DayDelta_abs_ceil(const struct TimeDelta * const self);
 
 /**
  * Determine whether a TimeDelta is negative.
@@ -427,19 +447,39 @@ TimeDelta_divide_by_decimal(
 
 /**
  * Add another TimeDelta to a TimeDelta.
+ * The second TimeDelta parameter is added to the first.
  */
 PRESENT_API void
-TimeDelta_add_time_delta(
+TimeDelta_add(
         struct TimeDelta * const self,
         const struct TimeDelta * const other);
 
 /**
- * Subtract another TimeDelta from a TimeDelta.
+ * Add a DayDelta to a TimeDelta.
+ * The DayDelta parameter is added to the TimeDelta.
  */
 PRESENT_API void
-TimeDelta_subtract_time_delta(
+TimeDelta_add_DayDelta(
+        struct TimeDelta * const self,
+        const struct DayDelta * const other);
+
+/**
+ * Subtract another TimeDelta from a TimeDelta.
+ * The second TimeDelta parameter is subtracted from the first.
+ */
+PRESENT_API void
+TimeDelta_subtract(
         struct TimeDelta * const self,
         const struct TimeDelta * const other);
+
+/**
+ * Subtract a DayDelta from a TimeDelta.
+ * The DayDelta parameter is subtracted from the TimeDelta.
+ */
+PRESENT_API void
+TimeDelta_subtract_DayDelta(
+        struct TimeDelta * const self,
+        const struct DayDelta * const other);
 
 /**
  * Compare two TimeDelta instances.

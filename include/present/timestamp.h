@@ -108,39 +108,56 @@ struct PRESENT_API Timestamp {
     /** @copydoc Timestamp_absolute_difference */
     TimeDelta absolute_difference(const Timestamp & other) const;
 
-    /** @copydoc Timestamp_add_time_delta */
+    /** @copydoc Timestamp_add_TimeDelta */
     Timestamp & operator+=(const TimeDelta & delta);
-    /** @copydoc Timestamp_add_day_delta */
+    /** @copydoc Timestamp_add_DayDelta */
     Timestamp & operator+=(const DayDelta & delta);
-    /** @copydoc Timestamp_add_month_delta */
+    /** @copydoc Timestamp_add_MonthDelta */
     Timestamp & operator+=(const MonthDelta & delta);
-    /** @copydoc Timestamp_subtract_time_delta */
+    /** @copydoc Timestamp_subtract_TimeDelta */
     Timestamp & operator-=(const TimeDelta & delta);
-    /** @copydoc Timestamp_subtract_day_delta */
+    /** @copydoc Timestamp_subtract_DayDelta */
     Timestamp & operator-=(const DayDelta & delta);
-    /** @copydoc Timestamp_subtract_month_delta */
+    /** @copydoc Timestamp_subtract_MonthDelta */
     Timestamp & operator-=(const MonthDelta & delta);
 
     /** @see Timestamp::operator+=(const TimeDelta & delta) */
     friend const Timestamp operator+(
             const Timestamp & lhs,
             const TimeDelta & rhs);
+    /** @see Timestamp::operator+=(const TimeDelta & delta) */
+    friend const Timestamp operator+(
+            const TimeDelta & lhs,
+            const Timestamp & rhs);
+
     /** @see Timestamp::operator+=(const DayDelta & delta) */
     friend const Timestamp operator+(
             const Timestamp & lhs,
             const DayDelta & rhs);
+    /** @see Timestamp::operator+=(const DayDelta & delta) */
+    friend const Timestamp operator+(
+            const DayDelta & lhs,
+            const Timestamp & rhs);
+
     /** @see Timestamp::operator+=(const MonthDelta & delta) */
     friend const Timestamp operator+(
             const Timestamp & lhs,
             const MonthDelta & rhs);
+    /** @see Timestamp::operator+=(const MonthDelta & delta) */
+    friend const Timestamp operator+(
+            const MonthDelta & lhs,
+            const Timestamp & rhs);
+
     /** @see Timestamp::operator-=(const TimeDelta & delta) */
     friend const Timestamp operator-(
             const Timestamp & lhs,
             const TimeDelta & rhs);
+
     /** @see Timestamp::operator-=(const DayDelta & delta) */
     friend const Timestamp operator-(
             const Timestamp & lhs,
             const DayDelta & rhs);
+
     /** @see Timestamp::operator-=(const MonthDelta & delta) */
     friend const Timestamp operator-(
             const Timestamp & lhs,
@@ -371,7 +388,7 @@ Timestamp_absolute_difference(
  * Add a @ref TimeDelta to a Timestamp.
  */
 PRESENT_API void
-Timestamp_add_time_delta(
+Timestamp_add_TimeDelta(
         struct Timestamp * const self,
         const struct TimeDelta * const delta);
 
@@ -379,7 +396,7 @@ Timestamp_add_time_delta(
  * Add a @ref DayDelta to a Timestamp.
  */
 PRESENT_API void
-Timestamp_add_day_delta(
+Timestamp_add_DayDelta(
         struct Timestamp * const self,
         const struct DayDelta * const delta);
 
@@ -387,7 +404,7 @@ Timestamp_add_day_delta(
  * Add a @ref MonthDelta to a Timestamp.
  */
 PRESENT_API void
-Timestamp_add_month_delta(
+Timestamp_add_MonthDelta(
         struct Timestamp * const self,
         const struct MonthDelta * const delta);
 
@@ -395,7 +412,7 @@ Timestamp_add_month_delta(
  * Subtract a @ref TimeDelta from a Timestamp.
  */
 PRESENT_API void
-Timestamp_subtract_time_delta(
+Timestamp_subtract_TimeDelta(
         struct Timestamp * const self,
         const struct TimeDelta * const delta);
 
@@ -403,7 +420,7 @@ Timestamp_subtract_time_delta(
  * Subtract a @ref DayDelta from a Timestamp.
  */
 PRESENT_API void
-Timestamp_subtract_day_delta(
+Timestamp_subtract_DayDelta(
         struct Timestamp * const self,
         const struct DayDelta * const delta);
 
@@ -411,7 +428,7 @@ Timestamp_subtract_day_delta(
  * Subtract a @ref MonthDelta from a Timestamp.
  */
 PRESENT_API void
-Timestamp_subtract_month_delta(
+Timestamp_subtract_MonthDelta(
         struct Timestamp * const self,
         const struct MonthDelta * const delta);
 

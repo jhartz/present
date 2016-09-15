@@ -173,9 +173,12 @@ TEST_CASE("ClockTime arithmetic operators", "[clock-time]") {
 
     c = ClockTime::create(10, 10, 10, 0);
     ClockTime c1 = c + d;
+    ClockTime c1_reverse = d + c;
     ClockTime c2 = c - d;
     IS_HMS(10, 10, 10, 0);
     c = c1;
+    IS_HMS(12, 14, 16, 0);
+    c = c1_reverse;
     IS_HMS(12, 14, 16, 0);
     c = c2;
     IS_HMS(8, 6, 4, 0);

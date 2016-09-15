@@ -82,17 +82,20 @@ TimeDelta ClockTime::time_since_midnight() const {
 }
 
 ClockTime & ClockTime::operator+=(const TimeDelta & delta) {
-    ClockTime_add_time_delta(this, &delta);
+    ClockTime_add_TimeDelta(this, &delta);
     return *this;
 }
 
 ClockTime & ClockTime::operator-=(const TimeDelta & delta) {
-    ClockTime_subtract_time_delta(this, &delta);
+    ClockTime_subtract_TimeDelta(this, &delta);
     return *this;
 }
 
 const ClockTime operator+(const ClockTime & lhs, const TimeDelta & rhs) {
     return (ClockTime(lhs) += rhs);
+}
+const ClockTime operator+(const TimeDelta & lhs, const ClockTime & rhs) {
+    return (ClockTime(rhs) += lhs);
 }
 
 const ClockTime operator-(const ClockTime & lhs, const TimeDelta & rhs) {

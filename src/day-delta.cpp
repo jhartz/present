@@ -41,8 +41,8 @@ double DayDelta::weeks_decimal() const {
     return DayDelta_weeks_decimal(this);
 }
 
-TimeDelta DayDelta::to_time_delta() const {
-    return DayDelta_to_time_delta(this);
+TimeDelta DayDelta::to_TimeDelta() const {
+    return DayDelta_to_TimeDelta(this);
 }
 
 bool DayDelta::is_negative() const {
@@ -110,12 +110,12 @@ const DayDelta operator/(const DayDelta & lhs, const int & rhs) {
 }
 
 DayDelta & DayDelta::operator+=(const DayDelta & other) {
-    DayDelta_add_day_delta(this, &other);
+    DayDelta_add(this, &other);
     return *this;
 }
 
 DayDelta & DayDelta::operator-=(const DayDelta & other) {
-    DayDelta_subtract_day_delta(this, &other);
+    DayDelta_subtract(this, &other);
     return *this;
 }
 
