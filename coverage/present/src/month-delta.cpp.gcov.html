@@ -175,12 +175,12 @@
 <a name="104"><span class="lineNum">     104 </span>                :            : }</a>
 <span class="lineNum">     105 </span>                :            : 
 <span class="lineNum">     106 </span>                :<span class="lineNoCov">          0 : MonthDelta &amp; MonthDelta::operator+=(const MonthDelta &amp; other) {</span>
-<span class="lineNum">     107 </span>                :<span class="lineNoCov">          0 :     MonthDelta_add_month_delta(this, &amp;other);</span>
+<span class="lineNum">     107 </span>                :<span class="lineNoCov">          0 :     MonthDelta_add(this, &amp;other);</span>
 <span class="lineNum">     108 </span>                :<span class="lineNoCov">          0 :     return *this;</span>
 <a name="109"><span class="lineNum">     109 </span>                :            : }</a>
 <span class="lineNum">     110 </span>                :            : 
 <span class="lineNum">     111 </span>                :<span class="lineNoCov">          0 : MonthDelta &amp; MonthDelta::operator-=(const MonthDelta &amp; other) {</span>
-<span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 :     MonthDelta_subtract_month_delta(this, &amp;other);</span>
+<span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 :     MonthDelta_subtract(this, &amp;other);</span>
 <span class="lineNum">     113 </span>                :<span class="lineNoCov">          0 :     return *this;</span>
 <a name="114"><span class="lineNum">     114 </span>                :            : }</a>
 <span class="lineNum">     115 </span>                :            : 

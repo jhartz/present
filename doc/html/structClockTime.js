@@ -17,6 +17,7 @@ var structClockTime =
     [ "operator-=", "structClockTime.html#a50a16387217243bc8986735c7cebd012", null ],
     [ "compare", "structClockTime.html#a4c185648dcfc28f46ac3fc700b3415c2", null ],
     [ "operator+", "structClockTime.html#afceb2935d4b931a097145e4967ac71b6", null ],
+    [ "operator+", "structClockTime.html#a5b2a233507a3e162854b69240c9c1091", null ],
     [ "operator-", "structClockTime.html#a21ba0831914be0b997460299bf287cf3", null ],
     [ "operator==", "structClockTime.html#a69e5484eac6807a928f087cfa84637df", null ],
     [ "operator!=", "structClockTime.html#a9a90069d85b56c30d69ab78e949c3911", null ],

@@ -399,7 +399,7 @@
 <span class="lineNum">     323 </span>                :<span class="lineCov">          4 :     self_timestamp = Timestamp_create_utc(self, &amp;noon);</span>
 <span class="lineNum">     324 </span>                :<span class="lineCov">          4 :     other_timestamp = Timestamp_create_utc(other, &amp;noon);</span>
 <span class="lineNum">     325 </span>                :<span class="lineCov">          4 :     time_delta = Timestamp_difference(&amp;self_timestamp, &amp;other_timestamp);</span>
-<span class="lineNum">     326 </span>                :<span class="lineCov">          4 :     return TimeDelta_to_day_delta_truncated(&amp;time_delta);</span>
+<span class="lineNum">     326 </span>                :<span class="lineCov">          4 :     return TimeDelta_to_DayDelta_truncated(&amp;time_delta);</span>
 <span class="lineNum">     327 </span>                :            : }
 <a name="328"><span class="lineNum">     328 </span>                :            : </a>
 <span class="lineNum">     329 </span>                :            : struct DayDelta
@@ -422,7 +422,7 @@
 <span class="lineNum">     346 </span>                :            : }
 <a name="347"><span class="lineNum">     347 </span>                :            : </a>
 <span class="lineNum">     348 </span>                :            : void
-<span class="lineNum">     349 </span>                :<span class="lineNoCov">          0 : Date_add_day_delta(</span>
+<span class="lineNum">     349 </span>                :<span class="lineNoCov">          0 : Date_add_DayDelta(</span>
 <span class="lineNum">     350 </span>                :            :         struct Date * const self,
 <span class="lineNum">     351 </span>                :            :         const struct DayDelta * const delta)
 <span class="lineNum">     352 </span>                :            : {
@@ -436,7 +436,7 @@
 <span class="lineNum">     360 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="361"><span class="lineNum">     361 </span>                :            : </a>
 <span class="lineNum">     362 </span>                :            : void
-<span class="lineNum">     363 </span>                :<span class="lineNoCov">          0 : Date_add_month_delta(</span>
+<span class="lineNum">     363 </span>                :<span class="lineNoCov">          0 : Date_add_MonthDelta(</span>
 <span class="lineNum">     364 </span>                :            :         struct Date * const self,
 <span class="lineNum">     365 </span>                :            :         const struct MonthDelta * const delta)
 <span class="lineNum">     366 </span>                :            : {
@@ -450,7 +450,7 @@
 <span class="lineNum">     374 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="375"><span class="lineNum">     375 </span>                :            : </a>
 <span class="lineNum">     376 </span>                :            : void
-<span class="lineNum">     377 </span>                :<span class="lineNoCov">          0 : Date_subtract_day_delta(</span>
+<span class="lineNum">     377 </span>                :<span class="lineNoCov">          0 : Date_subtract_DayDelta(</span>
 <span class="lineNum">     378 </span>                :            :         struct Date * const self,
 <span class="lineNum">     379 </span>                :            :         const struct DayDelta * const delta)
 <span class="lineNum">     380 </span>                :            : {
@@ -464,7 +464,7 @@
 <span class="lineNum">     388 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="389"><span class="lineNum">     389 </span>                :            : </a>
 <span class="lineNum">     390 </span>                :            : void
-<span class="lineNum">     391 </span>                :<span class="lineNoCov">          0 : Date_subtract_month_delta(</span>
+<span class="lineNum">     391 </span>                :<span class="lineNoCov">          0 : Date_subtract_MonthDelta(</span>
 <span class="lineNum">     392 </span>                :            :         struct Date * const self,
 <span class="lineNum">     393 </span>                :            :         const struct MonthDelta * const delta)
 <span class="lineNum">     394 </span>                :            : {

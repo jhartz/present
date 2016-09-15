@@ -287,7 +287,7 @@
 <span class="lineNum">     216 </span>                :            :     /* Now, subtract the UTC offset (since we're technically converting
 <span class="lineNum">     217 </span>                :            :        TO UTC) */
 <span class="lineNum">     218 </span>                :            :     /* TODO: Is subtracting correct? */
-<span class="lineNum">     219 </span>                :<span class="lineNoCov">          0 :     Timestamp_subtract_time_delta(&amp;t, timeZoneOffset);</span>
+<span class="lineNum">     219 </span>                :<span class="lineNoCov">          0 :     Timestamp_subtract_TimeDelta(&amp;t, timeZoneOffset);</span>
 <span class="lineNum">     220 </span>                :<span class="lineNoCov">          0 :     return t;</span>
 <span class="lineNum">     221 </span>                :            : }
 <a name="222"><span class="lineNum">     222 </span>                :            : </a>
@@ -406,7 +406,7 @@
 <span class="lineNum">     334 </span>                :            : 
 <span class="lineNum">     335 </span>                :<span class="lineNoCov">          0 :     copy = *self;</span>
 <span class="lineNum">     336 </span>                :            :     /* TODO: should we be adding or subtracting? */
-<span class="lineNum">     337 </span>                :<span class="lineNoCov">          0 :     Timestamp_add_time_delta(&amp;copy, timeZoneOffset);</span>
+<span class="lineNum">     337 </span>                :<span class="lineNoCov">          0 :     Timestamp_add_TimeDelta(&amp;copy, timeZoneOffset);</span>
 <span class="lineNum">     338 </span>                :<span class="lineNoCov">          0 :     return Timestamp_get_struct_tm_utc(&amp;copy);</span>
 <span class="lineNum">     339 </span>                :            : }
 <a name="340"><span class="lineNum">     340 </span>                :            : </a>
@@ -516,7 +516,7 @@
 <span class="lineNum">     444 </span>                :<span class="lineCov">          4 :     ns_delta = TimeDelta_from_nanoseconds(</span>
 <span class="lineNum">     445 </span>                :<span class="lineCov">          4 :             self-&gt;data_.additional_nanoseconds -</span>
 <span class="lineNum">     446 </span>                :<span class="lineCov">          4 :             other-&gt;data_.additional_nanoseconds);</span>
-<span class="lineNum">     447 </span>                :<span class="lineCov">          4 :     TimeDelta_add_time_delta(&amp;delta, &amp;ns_delta);</span>
+<span class="lineNum">     447 </span>                :<span class="lineCov">          4 :     TimeDelta_add(&amp;delta, &amp;ns_delta);</span>
 <span class="lineNum">     448 </span>                :<span class="lineCov">          4 :     return delta;</span>
 <span class="lineNum">     449 </span>                :            : }
 <a name="450"><span class="lineNum">     450 </span>                :            : </a>
@@ -540,7 +540,7 @@
 <span class="lineNum">     468 </span>                :            : }
 <a name="469"><span class="lineNum">     469 </span>                :            : </a>
 <span class="lineNum">     470 </span>                :            : void
-<span class="lineNum">     471 </span>                :<span class="lineNoCov">          0 : Timestamp_add_time_delta(</span>
+<span class="lineNum">     471 </span>                :<span class="lineNoCov">          0 : Timestamp_add_TimeDelta(</span>
 <span class="lineNum">     472 </span>                :            :         struct Timestamp * const self,
 <span class="lineNum">     473 </span>                :            :         const struct TimeDelta * const delta)
 <span class="lineNum">     474 </span>                :            : {
@@ -555,7 +555,7 @@
 <span class="lineNum">     483 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="484"><span class="lineNum">     484 </span>                :            : </a>
 <span class="lineNum">     485 </span>                :            : void
-<span class="lineNum">     486 </span>                :<span class="lineNoCov">          0 : Timestamp_add_day_delta(</span>
+<span class="lineNum">     486 </span>                :<span class="lineNoCov">          0 : Timestamp_add_DayDelta(</span>
 <span class="lineNum">     487 </span>                :            :         struct Timestamp * const self,
 <span class="lineNum">     488 </span>                :            :         const struct DayDelta * const delta)
 <span class="lineNum">     489 </span>                :            : {
@@ -568,7 +568,7 @@
 <span class="lineNum">     496 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="497"><span class="lineNum">     497 </span>                :            : </a>
 <span class="lineNum">     498 </span>                :            : void
-<span class="lineNum">     499 </span>                :<span class="lineNoCov">          0 : Timestamp_add_month_delta(</span>
+<span class="lineNum">     499 </span>                :<span class="lineNoCov">          0 : Timestamp_add_MonthDelta(</span>
 <span class="lineNum">     500 </span>                :            :         struct Timestamp * const self,
 <span class="lineNum">     501 </span>                :            :         const struct MonthDelta * const delta)
 <span class="lineNum">     502 </span>                :            : {
@@ -588,7 +588,7 @@
 <span class="lineNum">     516 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="517"><span class="lineNum">     517 </span>                :            : </a>
 <span class="lineNum">     518 </span>                :            : void
-<span class="lineNum">     519 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_time_delta(</span>
+<span class="lineNum">     519 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_TimeDelta(</span>
 <span class="lineNum">     520 </span>                :            :         struct Timestamp * const self,
 <span class="lineNum">     521 </span>                :            :         const struct TimeDelta * const delta)
 <span class="lineNum">     522 </span>                :            : {
@@ -603,7 +603,7 @@
 <span class="lineNum">     531 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="532"><span class="lineNum">     532 </span>                :            : </a>
 <span class="lineNum">     533 </span>                :            : void
-<span class="lineNum">     534 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_day_delta(</span>
+<span class="lineNum">     534 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_DayDelta(</span>
 <span class="lineNum">     535 </span>                :            :         struct Timestamp * const self,
 <span class="lineNum">     536 </span>                :            :         const struct DayDelta * const delta)
 <span class="lineNum">     537 </span>                :            : {
@@ -616,7 +616,7 @@
 <span class="lineNum">     544 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="545"><span class="lineNum">     545 </span>                :            : </a>
 <span class="lineNum">     546 </span>                :            : void
-<span class="lineNum">     547 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_month_delta(</span>
+<span class="lineNum">     547 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_MonthDelta(</span>
 <span class="lineNum">     548 </span>                :            :         struct Timestamp * const self,
 <span class="lineNum">     549 </span>                :            :         const struct MonthDelta * const delta)
 <span class="lineNum">     550 </span>                :            : {

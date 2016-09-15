@@ -2,7 +2,7 @@ var searchData=
 [
   ['clock_2dtime_2eh',['clock-time.h',['../clock-time_8h.html',1,'']]],
   ['clocktime',['ClockTime',['../structClockTime.html',1,'']]],
-  ['clocktime_5fadd_5ftime_5fdelta',['ClockTime_add_time_delta',['../clock-time_8h.html#adc2c863dfec0b56604b3153b226139fb',1,'clock-time.h']]],
+  ['clocktime_5fadd_5ftimedelta',['ClockTime_add_TimeDelta',['../clock-time_8h.html#a265e7bf3c63b2986d13dcdc8f43883d4',1,'clock-time.h']]],
   ['clocktime_5fcompare',['ClockTime_compare',['../clock-time_8h.html#a769989ae3695814b6f64b17ff059d76a',1,'clock-time.h']]],
   ['clocktime_5fcreate',['ClockTime_create',['../clock-time_8h.html#a58ff623c2c94ef13508ea9d85cbdfad7',1,'clock-time.h']]],
   ['clocktime_5fcreate_5fwith_5fdecimal_5fseconds',['ClockTime_create_with_decimal_seconds',['../clock-time_8h.html#a519b7c6074cf1addc815f7495048c30b',1,'clock-time.h']]],
@@ -27,7 +27,7 @@ var searchData=
   ['clocktime_5fnoon',['ClockTime_noon',['../clock-time_8h.html#a183049a7386a7b7377ba3059d15485c4',1,'clock-time.h']]],
   ['clocktime_5fsecond',['ClockTime_second',['../clock-time_8h.html#abd89cc75c460c6b9b906c2b433e0f29c',1,'clock-time.h']]],
   ['clocktime_5fsecond_5fdecimal',['ClockTime_second_decimal',['../clock-time_8h.html#a182c395d606d26c144cdb75096a0125d',1,'clock-time.h']]],
-  ['clocktime_5fsubtract_5ftime_5fdelta',['ClockTime_subtract_time_delta',['../clock-time_8h.html#a5305df919aa0992ba4703f9b9f292a67',1,'clock-time.h']]],
+  ['clocktime_5fsubtract_5ftimedelta',['ClockTime_subtract_TimeDelta',['../clock-time_8h.html#a9594699dbdbcd56c79928da5e969ba42',1,'clock-time.h']]],
   ['clocktime_5ftime_5fsince_5fmidnight',['ClockTime_time_since_midnight',['../clock-time_8h.html#ace4db26641fe01b2edd311b09589ebbb',1,'clock-time.h']]],
   ['compare',['compare',['../structClockTime.html#a4c185648dcfc28f46ac3fc700b3415c2',1,'ClockTime::compare()'],['../structDate.html#afc234509ba1c8b1717e52181e7ad256d',1,'Date::compare()'],['../structDayDelta.html#a1059465fe1c1bfb8d7136ad887b00d30',1,'DayDelta::compare()'],['../structMonthDelta.html#afb632f08f6278bcf7dfd5aef0cb12322',1,'MonthDelta::compare()'],['../structTimeDelta.html#a1bee789870de5a374ee472ffa4bff172',1,'TimeDelta::compare()'],['../structTimestamp.html#a64216c9061a4449c8d3fb9d1fecbb4a0',1,'Timestamp::compare()']]],
   ['create',['create',['../structClockTime.html#a72284f0c4f53d026688e55cea607f219',1,'ClockTime::create(int_hour hour)'],['../structClockTime.html#aa4429a92963b67343bc6eab885938a5a',1,'ClockTime::create(int_hour hour, int_minute minute)'],['../structClockTime.html#a3a34039699358c31a6f68d545f228728',1,'ClockTime::create(int_hour hour, int_minute minute, int_second second)'],['../structClockTime.html#afdf4e7a0b63e536f24a5eb85a3eb1ae8',1,'ClockTime::create(int_hour hour, int_minute minute, int_second second, int_nanosecond nanosecond)'],['../structDate.html#af6a6aa2e75464311dc7eee91e25aee47',1,'Date::create(int_year year)'],['../structDate.html#a0b1280e69ec6310ec8cdfb730e8dd7f6',1,'Date::create(int_year year, int_month month)'],['../structDate.html#ae0bcc2332237bf0f5b57ed646a00e6ac',1,'Date::create(int_year year, int_month month, int_day day)'],['../structTimestamp.html#a050609c408bf55dafa24a080757a471b',1,'Timestamp::create(const time_t timestamp)'],['../structTimestamp.html#aa5ab499f6e8a649ba6a160593dce9600',1,'Timestamp::create(const struct tm &amp;tm, const TimeDelta &amp;timeZoneOffset)'],['../structTimestamp.html#a0585a5f7928f6bad9dda69eb5adf99ee',1,'Timestamp::create(const Date &amp;date, const ClockTime &amp;clockTime, const TimeDelta &amp;timeZoneOffset)']]],

@@ -115,8 +115,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of weeks represented by a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#ae0cf870931630123311dc3f532916813"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#af6698416f241e2d9a6f54459fd0282ef">DayDelta_weeks_decimal</a> (const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of weeks represented by a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>, with a fractional part if necessary.  <a href="#af6698416f241e2d9a6f54459fd0282ef"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#a4a0892235c656a20f00707d9e0074665">DayDelta_to_time_delta</a> (const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> into an equivalent <a class="el" href="structTimeDelta.html">TimeDelta</a>.  <a href="#a4a0892235c656a20f00707d9e0074665"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#afaef350c558f8db4d84585c9bf64d871">DayDelta_to_TimeDelta</a> (const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> into an equivalent <a class="el" href="structTimeDelta.html">TimeDelta</a>.  <a href="#afaef350c558f8db4d84585c9bf64d871"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a1c24e2cdd988b886e889080ded176ae0">present_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#ab4347a4d40f2e9577ce86f3fb5fb004d">DayDelta_is_negative</a> (const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> is negative.  <a href="#ab4347a4d40f2e9577ce86f3fb5fb004d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#a9deb74bc8d748a21449a16e658f16432">DayDelta_negate</a> (struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self)</td></tr>
@@ -125,10 +125,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> by multiplying it by a scale factor.  <a href="#af8c4a730c36c38da48ba2d6df982c167"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#a03f5153b765a355870053d9cf1ce5c78">DayDelta_divide_by</a> (struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self, int scale_factor)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> by dividing it by a scale factor.  <a href="#a03f5153b765a355870053d9cf1ce5c78"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#aeb9c43b6e4ea6121ede2cdba92131176">DayDelta_add_day_delta</a> (struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> to a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#aeb9c43b6e4ea6121ede2cdba92131176"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#aac914e0e1099253836fdeeae0015a2a7">DayDelta_subtract_day_delta</a> (struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> from a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#aac914e0e1099253836fdeeae0015a2a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#a1d879b02971a0c302622e56b577ceb23">DayDelta_add</a> (struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> to a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#a1d879b02971a0c302622e56b577ceb23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#a6fd32ca3c633ebe279df2a468fd1d91e">DayDelta_subtract</a> (struct <a class="el" href="structDayDelta.html">DayDelta</a> *const self, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> from a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>.  <a href="#a6fd32ca3c633ebe279df2a468fd1d91e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#a9c2839c462e80f6419bb9e55f1744eab">DayDelta_compare</a> (const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const lhs, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const rhs)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> instances.  <a href="#a9c2839c462e80f6419bb9e55f1744eab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a1c24e2cdd988b886e889080ded176ae0">present_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="day-delta_8h.html#aec7bbfd9ee83f64b94117028c4d856f5">DayDelta_equal</a> (const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const lhs, const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const rhs)</td></tr>
@@ -277,12 +277,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4a0892235c656a20f00707d9e0074665"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_to_time_delta" ref="a4a0892235c656a20f00707d9e0074665" args="(const struct DayDelta *const self)" -->
+<a class="anchor" id="afaef350c558f8db4d84585c9bf64d871"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_to_TimeDelta" ref="afaef350c558f8db4d84585c9bf64d871" args="(const struct DayDelta *const self)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="day-delta_8h.html#a4a0892235c656a20f00707d9e0074665">DayDelta_to_time_delta</a> </td>
+          <td class="memname">struct <a class="el" href="structTimeDelta.html">TimeDelta</a> <a class="el" href="day-delta_8h.html#afaef350c558f8db4d84585c9bf64d871">DayDelta_to_TimeDelta</a> </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -392,12 +392,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aeb9c43b6e4ea6121ede2cdba92131176"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_add_day_delta" ref="aeb9c43b6e4ea6121ede2cdba92131176" args="(struct DayDelta *const self, const struct DayDelta *const other)" -->
+<a class="anchor" id="a1d879b02971a0c302622e56b577ceb23"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_add" ref="a1d879b02971a0c302622e56b577ceb23" args="(struct DayDelta *const self, const struct DayDelta *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="day-delta_8h.html#aeb9c43b6e4ea6121ede2cdba92131176">DayDelta_add_day_delta</a> </td>
+          <td class="memname">void <a class="el" href="day-delta_8h.html#a1d879b02971a0c302622e56b577ceb23">DayDelta_add</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -418,15 +418,16 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Add another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> to a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<p>The second <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> parameter is added to the first. </p>
 
 </div>
 </div>
-<a class="anchor" id="aac914e0e1099253836fdeeae0015a2a7"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_subtract_day_delta" ref="aac914e0e1099253836fdeeae0015a2a7" args="(struct DayDelta *const self, const struct DayDelta *const other)" -->
+<a class="anchor" id="a6fd32ca3c633ebe279df2a468fd1d91e"></a><!-- doxytag: member="day&#45;delta.h::DayDelta_subtract" ref="a6fd32ca3c633ebe279df2a468fd1d91e" args="(struct DayDelta *const self, const struct DayDelta *const other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="day-delta_8h.html#aac914e0e1099253836fdeeae0015a2a7">DayDelta_subtract_day_delta</a> </td>
+          <td class="memname">void <a class="el" href="day-delta_8h.html#a6fd32ca3c633ebe279df2a468fd1d91e">DayDelta_subtract</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structDayDelta.html">DayDelta</a> *const&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -447,6 +448,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Subtract another <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> from a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a>. </p>
+<p>The second <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks.">DayDelta</a> parameter is added to the first. </p>
 
 </div>
 </div>

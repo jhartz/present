@@ -57,13 +57,13 @@ struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{date_8h_af11209d2a30b
 \begin{DoxyCompactList}\small\item\em \-Get the difference between two \hyperlink{structDate}{\-Date} instances. \end{DoxyCompactList}\item 
 struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{date_8h_a8d2a02c17d285f3ea6f38446c4a184a3}{\-Date\-\_\-absolute\-\_\-difference} (const struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structDate}{\-Date} $\ast$const other)
 \begin{DoxyCompactList}\small\item\em \-Get the absolute difference between two \hyperlink{structDate}{\-Date} instances. \end{DoxyCompactList}\item 
-void \hyperlink{date_8h_a4c6d6ed2a1d7979412a79e84d54aeac4}{\-Date\-\_\-add\-\_\-day\-\_\-delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structDayDelta}{\-Day\-Delta} $\ast$const delta)
+void \hyperlink{date_8h_a7570506793f7c31c24b91a52ec1c3ef3}{\-Date\-\_\-add\-\_\-\-Day\-Delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structDayDelta}{\-Day\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em \-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
-void \hyperlink{date_8h_a57ea0878d7e184ce8caae809f80c4274}{\-Date\-\_\-add\-\_\-month\-\_\-delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const delta)
+void \hyperlink{date_8h_a02ae36b3b6e78d46dbcb74d685a22519}{\-Date\-\_\-add\-\_\-\-Month\-Delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em \-Add a \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
-void \hyperlink{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}{\-Date\-\_\-subtract\-\_\-day\-\_\-delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structDayDelta}{\-Day\-Delta} $\ast$const delta)
+void \hyperlink{date_8h_a716bf0637b696d9b315da68732f05703}{\-Date\-\_\-subtract\-\_\-\-Day\-Delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structDayDelta}{\-Day\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
-void \hyperlink{date_8h_a1df0a3764eef73161f411d0f67e52014}{\-Date\-\_\-subtract\-\_\-month\-\_\-delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const delta)
+void \hyperlink{date_8h_a0a78857ea2f6fd1d0fc4867729c7df77}{\-Date\-\_\-subtract\-\_\-\-Month\-Delta} (struct \hyperlink{structDate}{\-Date} $\ast$const self, const struct \hyperlink{structMonthDelta}{\-Month\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}. \end{DoxyCompactList}\item 
 int \hyperlink{date_8h_a3d60efd11d46f93eda8a02d7103c4fab}{\-Date\-\_\-compare} (const struct \hyperlink{structDate}{\-Date} $\ast$const lhs, const struct \hyperlink{structDate}{\-Date} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em \-Compare two \hyperlink{structDate}{\-Date} instances. \end{DoxyCompactList}\item 
@@ -334,50 +334,50 @@ PRESENT_OVERLOAD_MAX_3(__VA_ARGS__, \
 
 \-Get the absolute difference between two \hyperlink{structDate}{\-Date} instances. 
 
-\hypertarget{date_8h_a4c6d6ed2a1d7979412a79e84d54aeac4}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-day\-\_\-delta@{\-Date\-\_\-add\-\_\-day\-\_\-delta}}
-\index{\-Date\-\_\-add\-\_\-day\-\_\-delta@{\-Date\-\_\-add\-\_\-day\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-add\-\_\-day\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-day\-\_\-delta} (
+\hypertarget{date_8h_a7570506793f7c31c24b91a52ec1c3ef3}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-\-Day\-Delta@{\-Date\-\_\-add\-\_\-\-Day\-Delta}}
+\index{\-Date\-\_\-add\-\_\-\-Day\-Delta@{\-Date\-\_\-add\-\_\-\-Day\-Delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-add\-\_\-\-Day\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-\-Day\-Delta} (
 \begin{DoxyParamCaption}
 \item[{struct {\bf \-Date} $\ast$const}]{self, }
 \item[{const struct {\bf \-Day\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a4c6d6ed2a1d7979412a79e84d54aeac4}
+)}}\label{date_8h_a7570506793f7c31c24b91a52ec1c3ef3}
 
 
 \-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_a57ea0878d7e184ce8caae809f80c4274}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-month\-\_\-delta@{\-Date\-\_\-add\-\_\-month\-\_\-delta}}
-\index{\-Date\-\_\-add\-\_\-month\-\_\-delta@{\-Date\-\_\-add\-\_\-month\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-add\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-month\-\_\-delta} (
+\hypertarget{date_8h_a02ae36b3b6e78d46dbcb74d685a22519}{\index{date.\-h@{date.\-h}!\-Date\-\_\-add\-\_\-\-Month\-Delta@{\-Date\-\_\-add\-\_\-\-Month\-Delta}}
+\index{\-Date\-\_\-add\-\_\-\-Month\-Delta@{\-Date\-\_\-add\-\_\-\-Month\-Delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-add\-\_\-\-Month\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-add\-\_\-\-Month\-Delta} (
 \begin{DoxyParamCaption}
 \item[{struct {\bf \-Date} $\ast$const}]{self, }
 \item[{const struct {\bf \-Month\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a57ea0878d7e184ce8caae809f80c4274}
+)}}\label{date_8h_a02ae36b3b6e78d46dbcb74d685a22519}
 
 
 \-Add a \hyperlink{structMonthDelta}{\-Month\-Delta} to a \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-day\-\_\-delta@{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}}
-\index{\-Date\-\_\-subtract\-\_\-day\-\_\-delta@{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-subtract\-\_\-day\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-day\-\_\-delta} (
+\hypertarget{date_8h_a716bf0637b696d9b315da68732f05703}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-\-Day\-Delta@{\-Date\-\_\-subtract\-\_\-\-Day\-Delta}}
+\index{\-Date\-\_\-subtract\-\_\-\-Day\-Delta@{\-Date\-\_\-subtract\-\_\-\-Day\-Delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-subtract\-\_\-\-Day\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-\-Day\-Delta} (
 \begin{DoxyParamCaption}
 \item[{struct {\bf \-Date} $\ast$const}]{self, }
 \item[{const struct {\bf \-Day\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
-)}}\label{date_8h_aff3dde3e7758ebafc0a04c16ab8099b7}
+)}}\label{date_8h_a716bf0637b696d9b315da68732f05703}
 
 
 \-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structDate}{\-Date}. 
 
-\hypertarget{date_8h_a1df0a3764eef73161f411d0f67e52014}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-month\-\_\-delta@{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}}
-\index{\-Date\-\_\-subtract\-\_\-month\-\_\-delta@{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}!date.h@{date.\-h}}
-\subsubsection[{\-Date\-\_\-subtract\-\_\-month\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-month\-\_\-delta} (
+\hypertarget{date_8h_a0a78857ea2f6fd1d0fc4867729c7df77}{\index{date.\-h@{date.\-h}!\-Date\-\_\-subtract\-\_\-\-Month\-Delta@{\-Date\-\_\-subtract\-\_\-\-Month\-Delta}}
+\index{\-Date\-\_\-subtract\-\_\-\-Month\-Delta@{\-Date\-\_\-subtract\-\_\-\-Month\-Delta}!date.h@{date.\-h}}
+\subsubsection[{\-Date\-\_\-subtract\-\_\-\-Month\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Date\-\_\-subtract\-\_\-\-Month\-Delta} (
 \begin{DoxyParamCaption}
 \item[{struct {\bf \-Date} $\ast$const}]{self, }
 \item[{const struct {\bf \-Month\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a1df0a3764eef73161f411d0f67e52014}
+)}}\label{date_8h_a0a78857ea2f6fd1d0fc4867729c7df77}
 
 
 \-Subtract a \hyperlink{structMonthDelta}{\-Month\-Delta} from a \hyperlink{structDate}{\-Date}. 

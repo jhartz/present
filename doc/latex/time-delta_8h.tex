@@ -63,11 +63,11 @@ double \hyperlink{time-delta_8h_a5b79dc42f8fca1ea501e016a24440464}{\-Time\-Delta
 \begin{DoxyCompactList}\small\item\em \-Get the number of weeks represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{time-delta_8h_a1cf0e7d811b1fd0dd4c50c26d110f30a}{\-Time\-Delta\-\_\-weeks\-\_\-decimal} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Get the number of weeks represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
-struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{time-delta_8h_ad8631970bee4d5cdb597f6090058bba9}{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-truncated} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
+struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{time-delta_8h_abd089246702cb29504de0fe4e3057ad2}{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-truncated} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding towards zero if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days. \end{DoxyCompactList}\item 
-struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{time-delta_8h_a3741578c037acfe10cd3f3f0392aa4d0}{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-rounded} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
+struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{time-delta_8h_a7bbf766c60002c0835d0a81dfdfa7918}{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-rounded} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding to the nearest day if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days. \end{DoxyCompactList}\item 
-struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{time-delta_8h_a43ea8504d2154590aa9125e8c64cfaf5}{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
+struct \hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{time-delta_8h_ae1a3f58fc84a366415dc6cde308b27ee}{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding away from zero if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{time-delta_8h_a4fc42a10abf8771117d2f9ced4f11bf2}{\-Time\-Delta\-\_\-is\-\_\-negative} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self)
 \begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structTimeDelta}{\-Time\-Delta} is negative. \end{DoxyCompactList}\item 
@@ -81,10 +81,14 @@ void \hyperlink{time-delta_8h_abab39f5630f78511f708765da0be8632}{\-Time\-Delta\-
 \begin{DoxyCompactList}\small\item\em \-Scale a \hyperlink{structTimeDelta}{\-Time\-Delta} by dividing it by an integer scale factor. \end{DoxyCompactList}\item 
 void \hyperlink{time-delta_8h_acca21ee20d4addbd3925461259f4f12a}{\-Time\-Delta\-\_\-divide\-\_\-by\-\_\-decimal} (struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self, const double scale\-\_\-factor)
 \begin{DoxyCompactList}\small\item\em \-Scale a \hyperlink{structTimeDelta}{\-Time\-Delta} by dividing it by a floating point scale factor. \end{DoxyCompactList}\item 
-void \hyperlink{time-delta_8h_a33057bdcfab84bd7d6b2e54f2e244bc4}{\-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta} (struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const other)
+void \hyperlink{time-delta_8h_a388c9982a85d4f02741d4905fc8c3a1b}{\-Time\-Delta\-\_\-add} (struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const other)
 \begin{DoxyCompactList}\small\item\em \-Add another \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
-void \hyperlink{time-delta_8h_a330935197046fb801abc7912aa909508}{\-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta} (struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const other)
+void \hyperlink{time-delta_8h_a80aa67e85468bf70b53e1eecd3f3e4cd}{\-Time\-Delta\-\_\-add\-\_\-\-Day\-Delta} (struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self, const struct \hyperlink{structDayDelta}{\-Day\-Delta} $\ast$const other)
+\begin{DoxyCompactList}\small\item\em \-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
+void \hyperlink{time-delta_8h_aabc9864d36d4b617bccd6af5baba8fa2}{\-Time\-Delta\-\_\-subtract} (struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const other)
 \begin{DoxyCompactList}\small\item\em \-Subtract another \hyperlink{structTimeDelta}{\-Time\-Delta} from a \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
+void \hyperlink{time-delta_8h_a4c1cce3fe60da8412454e06e9b4a8a1d}{\-Time\-Delta\-\_\-subtract\-\_\-\-Day\-Delta} (struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const self, const struct \hyperlink{structDayDelta}{\-Day\-Delta} $\ast$const other)
+\begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
 int \hyperlink{time-delta_8h_a1864d69bcd1b4cf445555bc72c21a653}{\-Time\-Delta\-\_\-compare} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const lhs, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em \-Compare two \hyperlink{structTimeDelta}{\-Time\-Delta} instances. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{time-delta_8h_a99614ad03a84af18cd60d8b25d5c4cee}{\-Time\-Delta\-\_\-equal} (const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const lhs, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const rhs)
@@ -378,35 +382,35 @@ int \hyperlink{time-delta_8h_a1864d69bcd1b4cf445555bc72c21a653}{\-Time\-Delta\-\
 
 \-Get the number of weeks represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary. 
 
-\hypertarget{time-delta_8h_ad8631970bee4d5cdb597f6090058bba9}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-truncated@{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-truncated}}
-\index{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-truncated@{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-truncated}!time-delta.h@{time-\/delta.\-h}}
-\subsubsection[{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-truncated}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-truncated} (
+\hypertarget{time-delta_8h_abd089246702cb29504de0fe4e3057ad2}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-truncated@{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-truncated}}
+\index{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-truncated@{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-truncated}!time-delta.h@{time-\/delta.\-h}}
+\subsubsection[{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-truncated}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-truncated} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Time\-Delta} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{time-delta_8h_ad8631970bee4d5cdb597f6090058bba9}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{time-delta_8h_abd089246702cb29504de0fe4e3057ad2}
 
 
 \-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding towards zero if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days. 
 
-\hypertarget{time-delta_8h_a3741578c037acfe10cd3f3f0392aa4d0}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-rounded@{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-rounded}}
-\index{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-rounded@{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-rounded}!time-delta.h@{time-\/delta.\-h}}
-\subsubsection[{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-rounded}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-rounded} (
+\hypertarget{time-delta_8h_a7bbf766c60002c0835d0a81dfdfa7918}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-rounded@{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-rounded}}
+\index{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-rounded@{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-rounded}!time-delta.h@{time-\/delta.\-h}}
+\subsubsection[{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-rounded}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-rounded} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Time\-Delta} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{time-delta_8h_a3741578c037acfe10cd3f3f0392aa4d0}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{time-delta_8h_a7bbf766c60002c0835d0a81dfdfa7918}
 
 
 \-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding to the nearest day if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days. 
 
-\hypertarget{time-delta_8h_a43ea8504d2154590aa9125e8c64cfaf5}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil@{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil}}
-\index{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil@{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil}!time-delta.h@{time-\/delta.\-h}}
-\subsubsection[{\-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Time\-Delta\-\_\-to\-\_\-day\-\_\-delta\-\_\-abs\-\_\-ceil} (
+\hypertarget{time-delta_8h_ae1a3f58fc84a366415dc6cde308b27ee}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil@{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}}
+\index{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil@{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}!time-delta.h@{time-\/delta.\-h}}
+\subsubsection[{\-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Day\-Delta} {\bf \-Time\-Delta\-\_\-to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil} (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf \-Time\-Delta} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{time-delta_8h_a43ea8504d2154590aa9125e8c64cfaf5}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{time-delta_8h_ae1a3f58fc84a366415dc6cde308b27ee}
 
 
 \-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding away from zero if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days. 
@@ -481,31 +485,55 @@ int \hyperlink{time-delta_8h_a1864d69bcd1b4cf445555bc72c21a653}{\-Time\-Delta\-\
 
 \-Scale a \hyperlink{structTimeDelta}{\-Time\-Delta} by dividing it by a floating point scale factor. 
 
-\hypertarget{time-delta_8h_a33057bdcfab84bd7d6b2e54f2e244bc4}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta@{\-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta}}
-\index{\-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta@{\-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta}!time-delta.h@{time-\/delta.\-h}}
-\subsubsection[{\-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-\_\-add\-\_\-time\-\_\-delta} (
+\hypertarget{time-delta_8h_a388c9982a85d4f02741d4905fc8c3a1b}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-add@{\-Time\-Delta\-\_\-add}}
+\index{\-Time\-Delta\-\_\-add@{\-Time\-Delta\-\_\-add}!time-delta.h@{time-\/delta.\-h}}
+\subsubsection[{\-Time\-Delta\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-\_\-add} (
 \begin{DoxyParamCaption}
 \item[{struct {\bf \-Time\-Delta} $\ast$const}]{self, }
 \item[{const struct {\bf \-Time\-Delta} $\ast$const}]{other}
 \end{DoxyParamCaption}
-)}}\label{time-delta_8h_a33057bdcfab84bd7d6b2e54f2e244bc4}
+)}}\label{time-delta_8h_a388c9982a85d4f02741d4905fc8c3a1b}
 
 
 \-Add another \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\hypertarget{time-delta_8h_a330935197046fb801abc7912aa909508}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta@{\-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta}}
-\index{\-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta@{\-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta}!time-delta.h@{time-\/delta.\-h}}
-\subsubsection[{\-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-\_\-subtract\-\_\-time\-\_\-delta} (
+\-The second \hyperlink{structTimeDelta}{\-Time\-Delta} parameter is added to the first. \hypertarget{time-delta_8h_a80aa67e85468bf70b53e1eecd3f3e4cd}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-add\-\_\-\-Day\-Delta@{\-Time\-Delta\-\_\-add\-\_\-\-Day\-Delta}}
+\index{\-Time\-Delta\-\_\-add\-\_\-\-Day\-Delta@{\-Time\-Delta\-\_\-add\-\_\-\-Day\-Delta}!time-delta.h@{time-\/delta.\-h}}
+\subsubsection[{\-Time\-Delta\-\_\-add\-\_\-\-Day\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-\_\-add\-\_\-\-Day\-Delta} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Time\-Delta} $\ast$const}]{self, }
+\item[{const struct {\bf \-Day\-Delta} $\ast$const}]{other}
+\end{DoxyParamCaption}
+)}}\label{time-delta_8h_a80aa67e85468bf70b53e1eecd3f3e4cd}
+
+
+\-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
+
+\-The \hyperlink{structDayDelta}{\-Day\-Delta} parameter is added to the \hyperlink{structTimeDelta}{\-Time\-Delta}. \hypertarget{time-delta_8h_aabc9864d36d4b617bccd6af5baba8fa2}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-subtract@{\-Time\-Delta\-\_\-subtract}}
+\index{\-Time\-Delta\-\_\-subtract@{\-Time\-Delta\-\_\-subtract}!time-delta.h@{time-\/delta.\-h}}
+\subsubsection[{\-Time\-Delta\-\_\-subtract}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-\_\-subtract} (
 \begin{DoxyParamCaption}
 \item[{struct {\bf \-Time\-Delta} $\ast$const}]{self, }
 \item[{const struct {\bf \-Time\-Delta} $\ast$const}]{other}
 \end{DoxyParamCaption}
-)}}\label{time-delta_8h_a330935197046fb801abc7912aa909508}
+)}}\label{time-delta_8h_aabc9864d36d4b617bccd6af5baba8fa2}
 
 
 \-Subtract another \hyperlink{structTimeDelta}{\-Time\-Delta} from a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\hypertarget{time-delta_8h_a1864d69bcd1b4cf445555bc72c21a653}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-compare@{\-Time\-Delta\-\_\-compare}}
+\-The second \hyperlink{structTimeDelta}{\-Time\-Delta} parameter is subtracted from the first. \hypertarget{time-delta_8h_a4c1cce3fe60da8412454e06e9b4a8a1d}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-subtract\-\_\-\-Day\-Delta@{\-Time\-Delta\-\_\-subtract\-\_\-\-Day\-Delta}}
+\index{\-Time\-Delta\-\_\-subtract\-\_\-\-Day\-Delta@{\-Time\-Delta\-\_\-subtract\-\_\-\-Day\-Delta}!time-delta.h@{time-\/delta.\-h}}
+\subsubsection[{\-Time\-Delta\-\_\-subtract\-\_\-\-Day\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-\_\-subtract\-\_\-\-Day\-Delta} (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-Time\-Delta} $\ast$const}]{self, }
+\item[{const struct {\bf \-Day\-Delta} $\ast$const}]{other}
+\end{DoxyParamCaption}
+)}}\label{time-delta_8h_a4c1cce3fe60da8412454e06e9b4a8a1d}
+
+
+\-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
+
+\-The \hyperlink{structDayDelta}{\-Day\-Delta} parameter is subtracted from the \hyperlink{structTimeDelta}{\-Time\-Delta}. \hypertarget{time-delta_8h_a1864d69bcd1b4cf445555bc72c21a653}{\index{time-\/delta.\-h@{time-\/delta.\-h}!\-Time\-Delta\-\_\-compare@{\-Time\-Delta\-\_\-compare}}
 \index{\-Time\-Delta\-\_\-compare@{\-Time\-Delta\-\_\-compare}!time-delta.h@{time-\/delta.\-h}}
 \subsubsection[{\-Time\-Delta\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Time\-Delta\-\_\-compare} (
 \begin{DoxyParamCaption}

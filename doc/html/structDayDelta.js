@@ -6,7 +6,7 @@ var structDayDelta =
     [ "days", "structDayDelta.html#af7d15328d1c97bbd3316f014c69a6e3b", null ],
     [ "weeks", "structDayDelta.html#a48287489831fa9ec472451487908e663", null ],
     [ "weeks_decimal", "structDayDelta.html#adf33ed4a012b6326d2d172d1f7420ab1", null ],
-    [ "to_time_delta", "structDayDelta.html#a01d09cc2a8f296357043bd7c7d20f41f", null ],
+    [ "to_TimeDelta", "structDayDelta.html#a4e95505d0c45e5cc01d74259df3e4868", null ],
     [ "is_negative", "structDayDelta.html#a10d6b9eac43322a957f7c3dfbedc2862", null ],
     [ "negate", "structDayDelta.html#a23b9453556a255f5413aee21b12938a6", null ],
     [ "operator-", "structDayDelta.html#ab147a13f61362001a4acdaa1b782d1cf", null ],
