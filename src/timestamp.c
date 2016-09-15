@@ -300,7 +300,7 @@ Timestamp_create_local(
 struct Timestamp
 Timestamp_now()
 {
-    struct present_now_struct now;
+    struct PresentNowStruct now;
     now = present_now();
     return new_timestamp(time_t_to_timestamp(now.sec), now.nsec);
 }

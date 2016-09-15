@@ -17,7 +17,7 @@
  * Return value for present_now. Identical to "struct timespec" on systems
  * that support it.
  */
-struct present_now_struct {
+struct PresentNowStruct {
     time_t  sec;    /* seconds since the epoch */
     long    nsec;   /* nanoseconds after sec */
 };
@@ -57,12 +57,12 @@ time_t present_mktime(struct tm * tm);
  * If a test time is set, this will return that. Otherwise, it is a wrapper
  * around clock_gettime (if supported) or time.
  */
-struct present_now_struct present_now();
+struct PresentNowStruct present_now();
 
 /**
  * Set a test time that will be returned by calls to present_now.
  */
-void present_set_test_time(struct present_now_struct value);
+void present_set_test_time(struct PresentNowStruct value);
 
 /**
  * Reset a test time set previously by present_set_test_time.

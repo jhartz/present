@@ -51,7 +51,7 @@ int is_initialized = 0;
 #endif
 
 static int present_is_test_time_set = 0;
-static struct present_now_struct present_test_time;
+static struct PresentNowStruct present_test_time;
 
 double
 present_round(double x)
@@ -106,10 +106,10 @@ present_mktime(struct tm * tm)
     return value;
 }
 
-struct present_now_struct
+struct PresentNowStruct
 present_now()
 {
-    struct present_now_struct value;
+    struct PresentNowStruct value;
 #if defined(_POSIX_TIMERS) && !defined(__STRICT_ANSI__)
     struct timespec tp;
 #endif
@@ -132,7 +132,7 @@ present_now()
 }
 
 void
-present_set_test_time(struct present_now_struct value)
+present_set_test_time(struct PresentNowStruct value)
 {
     INITIALIZE;
     present_is_test_time_set = 1;
