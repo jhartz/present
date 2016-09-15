@@ -372,7 +372,7 @@
 <span class="lineNum">     300 </span>                :            : struct Timestamp
 <span class="lineNum">     301 </span>                :<span class="lineNoCov">          0 : Timestamp_now()</span>
 <span class="lineNum">     302 </span>                :            : {
-<span class="lineNum">     303 </span>                :            :     struct present_now_struct now;
+<span class="lineNum">     303 </span>                :            :     struct PresentNowStruct now;
 <span class="lineNum">     304 </span>                :<span class="lineNoCov">          0 :     now = present_now();</span>
 <span class="lineNum">     305 </span>                :<span class="lineNoCov">          0 :     return new_timestamp(time_t_to_timestamp(now.sec), now.nsec);</span>
 <span class="lineNum">     306 </span>                :            : }

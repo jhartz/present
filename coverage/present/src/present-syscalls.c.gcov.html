@@ -122,7 +122,7 @@
 <span class="lineNum">      51 </span>                :            : #endif
 <span class="lineNum">      52 </span>                :            : 
 <span class="lineNum">      53 </span>                :            : static int present_is_test_time_set = 0;
-<span class="lineNum">      54 </span>                :            : static struct present_now_struct present_test_time;
+<span class="lineNum">      54 </span>                :            : static struct PresentNowStruct present_test_time;
 <a name="55"><span class="lineNum">      55 </span>                :            : </a>
 <span class="lineNum">      56 </span>                :            : double
 <span class="lineNum">      57 </span>                :<span class="lineCov">          6 : present_round(double x)</span>
@@ -177,10 +177,10 @@
 <span class="lineNum">     106 </span>                :<span class="lineCov">         98 :     return value;</span>
 <span class="lineNum">     107 </span>                :            : }
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
-<span class="lineNum">     109 </span>                :            : struct present_now_struct
+<span class="lineNum">     109 </span>                :            : struct PresentNowStruct
 <span class="lineNum">     110 </span>                :<span class="lineNoCov">          0 : present_now()</span>
 <span class="lineNum">     111 </span>                :            : {
-<span class="lineNum">     112 </span>                :            :     struct present_now_struct value;
+<span class="lineNum">     112 </span>                :            :     struct PresentNowStruct value;
 <span class="lineNum">     113 </span>                :            : #if defined(_POSIX_TIMERS) &amp;&amp; !defined(__STRICT_ANSI__)
 <span class="lineNum">     114 </span>                :            :     struct timespec tp;
 <span class="lineNum">     115 </span>                :            : #endif
@@ -203,7 +203,7 @@
 <span class="lineNum">     132 </span>                :            : }
 <a name="133"><span class="lineNum">     133 </span>                :            : </a>
 <span class="lineNum">     134 </span>                :            : void
-<span class="lineNum">     135 </span>                :<span class="lineNoCov">          0 : present_set_test_time(struct present_now_struct value)</span>
+<span class="lineNum">     135 </span>                :<span class="lineNoCov">          0 : present_set_test_time(struct PresentNowStruct value)</span>
 <span class="lineNum">     136 </span>                :            : {
 <span class="lineNum">     137 </span>                :            :     INITIALIZE;
 <span class="lineNum">     138 </span>                :<span class="lineNoCov">          0 :     present_is_test_time_set = 1;</span>
