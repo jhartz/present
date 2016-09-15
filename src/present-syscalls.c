@@ -53,8 +53,11 @@ int is_initialized = 0;
 static int present_is_test_time_set = 0;
 static struct present_now_struct present_test_time;
 
-double present_round(double x) {
+double
+present_round(double x)
+{
     double t;
+
     if (x >= 0.0) {
         t = floor(x);
         if (x - t >= 0.5) {
@@ -70,7 +73,9 @@ double present_round(double x) {
     }
 }
 
-void present_gmtime(const time_t * timep, struct tm * result) {
+void
+present_gmtime(const time_t * timep, struct tm * result)
+{
     struct tm * value;
 
     INITIALIZE;
@@ -79,7 +84,9 @@ void present_gmtime(const time_t * timep, struct tm * result) {
     DONE;
 }
 
-void present_localtime(const time_t * timep, struct tm * result) {
+void
+present_localtime(const time_t * timep, struct tm * result)
+{
     struct tm * value;
 
     INITIALIZE;
@@ -88,7 +95,9 @@ void present_localtime(const time_t * timep, struct tm * result) {
     DONE;
 }
 
-time_t present_mktime(struct tm * tm) {
+time_t
+present_mktime(struct tm * tm)
+{
     time_t value;
 
     INITIALIZE;
@@ -97,7 +106,9 @@ time_t present_mktime(struct tm * tm) {
     return value;
 }
 
-struct present_now_struct present_now() {
+struct present_now_struct
+present_now()
+{
     struct present_now_struct value;
 #if defined(_POSIX_TIMERS) && !defined(__STRICT_ANSI__)
     struct timespec tp;
@@ -120,14 +131,18 @@ struct present_now_struct present_now() {
     return value;
 }
 
-void present_set_test_time(struct present_now_struct value) {
+void
+present_set_test_time(struct present_now_struct value)
+{
     INITIALIZE;
     present_is_test_time_set = 1;
     present_test_time = value;
     DONE;
 }
 
-void present_reset_test_time() {
+void
+present_reset_test_time()
+{
     INITIALIZE;
     present_is_test_time_set = 0;
     DONE;

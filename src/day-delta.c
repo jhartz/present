@@ -23,34 +23,38 @@
 #include "present/day-delta.h"
 
 struct DayDelta
-DayDelta_from_days(int_delta days) {
+DayDelta_from_days(int_delta days)
+{
+    struct PresentDayDeltaData data;
     CONSTRUCTOR_HEAD(DayDelta);
 
-    struct PresentDayDeltaData data;
     data.delta_days = days;
     CONSTRUCTOR_RETURN(DayDelta, data);
 }
 
 struct DayDelta
-DayDelta_from_weeks(int_delta weeks) {
+DayDelta_from_weeks(int_delta weeks)
+{
+    struct PresentDayDeltaData data;
     CONSTRUCTOR_HEAD(DayDelta);
 
-    struct PresentDayDeltaData data;
     data.delta_days = weeks * DAYS_IN_WEEK;
     CONSTRUCTOR_RETURN(DayDelta, data);
 }
 
 struct DayDelta
-DayDelta_zero() {
+DayDelta_zero()
+{
+    struct PresentDayDeltaData data;
     CONSTRUCTOR_HEAD(DayDelta);
 
-    struct PresentDayDeltaData data;
     data.delta_days = 0;
     CONSTRUCTOR_RETURN(DayDelta, data);
 }
 
 int_delta
-DayDelta_days(const struct DayDelta * const self) {
+DayDelta_days(const struct DayDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -58,7 +62,8 @@ DayDelta_days(const struct DayDelta * const self) {
 }
 
 int_delta
-DayDelta_weeks(const struct DayDelta * const self) {
+DayDelta_weeks(const struct DayDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -66,7 +71,8 @@ DayDelta_weeks(const struct DayDelta * const self) {
 }
 
 double
-DayDelta_weeks_decimal(const struct DayDelta * const self) {
+DayDelta_weeks_decimal(const struct DayDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -74,7 +80,8 @@ DayDelta_weeks_decimal(const struct DayDelta * const self) {
 }
 
 struct TimeDelta
-DayDelta_to_time_delta(const struct DayDelta * const self) {
+DayDelta_to_time_delta(const struct DayDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -82,7 +89,8 @@ DayDelta_to_time_delta(const struct DayDelta * const self) {
 }
 
 present_bool
-DayDelta_is_negative(const struct DayDelta * const self) {
+DayDelta_is_negative(const struct DayDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -90,7 +98,8 @@ DayDelta_is_negative(const struct DayDelta * const self) {
 }
 
 void
-DayDelta_negate(struct DayDelta * const self) {
+DayDelta_negate(struct DayDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -98,7 +107,8 @@ DayDelta_negate(struct DayDelta * const self) {
 }
 
 void
-DayDelta_multiply_by(struct DayDelta * const self, int scaleFactor) {
+DayDelta_multiply_by(struct DayDelta * const self, int scaleFactor)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -106,7 +116,8 @@ DayDelta_multiply_by(struct DayDelta * const self, int scaleFactor) {
 }
 
 void
-DayDelta_divide_by(struct DayDelta * const self, int scaleFactor) {
+DayDelta_divide_by(struct DayDelta * const self, int scaleFactor)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -116,7 +127,8 @@ DayDelta_divide_by(struct DayDelta * const self, int scaleFactor) {
 void
 DayDelta_add_day_delta(
         struct DayDelta * const self,
-        const struct DayDelta * const dayDeltaToAdd) {
+        const struct DayDelta * const dayDeltaToAdd)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(dayDeltaToAdd != NULL);
@@ -128,7 +140,8 @@ DayDelta_add_day_delta(
 void
 DayDelta_subtract_day_delta(
         struct DayDelta * const self,
-        const struct DayDelta * const dayDeltaToSubtract) {
+        const struct DayDelta * const dayDeltaToSubtract)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(dayDeltaToSubtract != NULL);
@@ -140,7 +153,8 @@ DayDelta_subtract_day_delta(
 int
 DayDelta_compare(
         const struct DayDelta * const lhs,
-        const struct DayDelta * const rhs) {
+        const struct DayDelta * const rhs)
+{
     assert(lhs != NULL);
     assert(lhs->error == 0);
     assert(rhs != NULL);

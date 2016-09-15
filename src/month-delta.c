@@ -21,34 +21,38 @@
 #include "present/month-delta.h"
 
 struct MonthDelta
-MonthDelta_from_months(int_month_delta month_delta) {
+MonthDelta_from_months(int_month_delta month_delta)
+{
+    struct PresentMonthDeltaData data;
     CONSTRUCTOR_HEAD(MonthDelta);
 
-    struct PresentMonthDeltaData data;
     data.delta_months = month_delta;
     CONSTRUCTOR_RETURN(MonthDelta, data);
 }
 
 struct MonthDelta
-MonthDelta_from_years(int_year_delta year_delta) {
+MonthDelta_from_years(int_year_delta year_delta)
+{
+    struct PresentMonthDeltaData data;
     CONSTRUCTOR_HEAD(MonthDelta);
 
-    struct PresentMonthDeltaData data;
     data.delta_months = year_delta * MONTHS_IN_YEAR;
     CONSTRUCTOR_RETURN(MonthDelta, data);
 }
 
 struct MonthDelta
-MonthDelta_zero() {
+MonthDelta_zero()
+{
+    struct PresentMonthDeltaData data;
     CONSTRUCTOR_HEAD(MonthDelta);
 
-    struct PresentMonthDeltaData data;
     data.delta_months = 0;
     CONSTRUCTOR_RETURN(MonthDelta, data);
 }
 
 int_month_delta
-MonthDelta_months(const struct MonthDelta * const self) {
+MonthDelta_months(const struct MonthDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -56,7 +60,8 @@ MonthDelta_months(const struct MonthDelta * const self) {
 }
 
 int_year_delta
-MonthDelta_years(const struct MonthDelta * const self) {
+MonthDelta_years(const struct MonthDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -64,7 +69,8 @@ MonthDelta_years(const struct MonthDelta * const self) {
 }
 
 double
-MonthDelta_years_decimal(const struct MonthDelta * const self) {
+MonthDelta_years_decimal(const struct MonthDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -72,7 +78,8 @@ MonthDelta_years_decimal(const struct MonthDelta * const self) {
 }
 
 present_bool
-MonthDelta_is_negative(const struct MonthDelta * const self) {
+MonthDelta_is_negative(const struct MonthDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -80,7 +87,8 @@ MonthDelta_is_negative(const struct MonthDelta * const self) {
 }
 
 void
-MonthDelta_negate(struct MonthDelta * const self) {
+MonthDelta_negate(struct MonthDelta * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -88,7 +96,8 @@ MonthDelta_negate(struct MonthDelta * const self) {
 }
 
 void
-MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor) {
+MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -96,7 +105,8 @@ MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor) {
 }
 
 void
-MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor) {
+MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -106,7 +116,8 @@ MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor) {
 void
 MonthDelta_add_month_delta(
         struct MonthDelta * const self,
-        const struct MonthDelta * const monthDeltaToAdd) {
+        const struct MonthDelta * const monthDeltaToAdd)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(monthDeltaToAdd != NULL);
@@ -118,7 +129,8 @@ MonthDelta_add_month_delta(
 void
 MonthDelta_subtract_month_delta(
         struct MonthDelta * const self,
-        const struct MonthDelta * const monthDeltaToSubtract) {
+        const struct MonthDelta * const monthDeltaToSubtract)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(monthDeltaToSubtract != NULL);
@@ -130,7 +142,8 @@ MonthDelta_subtract_month_delta(
 int
 MonthDelta_compare(
         const struct MonthDelta * const lhs,
-        const struct MonthDelta * const rhs) {
+        const struct MonthDelta * const rhs)
+{
     assert(lhs != NULL);
     assert(lhs->error == 0);
     assert(rhs != NULL);

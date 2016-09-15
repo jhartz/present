@@ -28,38 +28,50 @@
 
 /** Convert a struct tm to a Date. */
 static struct Date
-struct_tm_to_date(const struct tm tm) {
-    struct tm tmCopy = tm;
+struct_tm_to_date(const struct tm tm)
+{
+    struct tm tm_copy;
+    time_t mktime_returned;
+
+    tm_copy = tm;
     /* Throw it through mktime to fix any weirdness */
-    assert(present_mktime(&tmCopy) != -1);
+    mktime_returned = present_mktime(&tm_copy);
+    assert(mktime_returned != -1);
 
     return Date_from_year_month_day(
-            tmCopy.tm_year + STRUCT_TM_YEAR_OFFSET,
-            tmCopy.tm_mon + STRUCT_TM_MONTH_OFFSET,
-            tmCopy.tm_mday);
+            tm_copy.tm_year + STRUCT_TM_YEAR_OFFSET,
+            tm_copy.tm_mon + STRUCT_TM_MONTH_OFFSET,
+            tm_copy.tm_mday);
 }
 
 /** Convert a struct tm to a ClockTime. */
 static struct ClockTime
-struct_tm_to_clock_time(const struct tm tm) {
-    struct tm tmCopy = tm;
+struct_tm_to_clock_time(const struct tm tm)
+{
+    struct tm tm_copy;
+    time_t mktime_returned;
+
+    tm_copy = tm;
     /* Throw it through mktime to fix any weirdness */
-    assert(present_mktime(&tmCopy) != -1);
+    mktime_returned = present_mktime(&tm_copy);
+    assert(mktime_returned != -1);
 
     return ClockTime_from_hour_minute_second(
-            tmCopy.tm_hour,
-            tmCopy.tm_min,
-            tmCopy.tm_sec);
+            tm_copy.tm_hour,
+            tm_copy.tm_min,
+            tm_copy.tm_sec);
 }
 
 /** Convert a Date and ClockTime to a struct tm. */
 static struct tm
 convert_to_struct_tm(
         const struct Date * const date,
-        const struct ClockTime * const clockTime) {
+        const struct ClockTime * const clockTime)
+{
     struct tm tm;
-    memset((void *) &tm, 0, sizeof(struct tm));
+    time_t mktime_returned;
 
+    memset((void *) &tm, 0, sizeof(struct tm));
     tm.tm_sec = (int) ClockTime_second(clockTime);
     tm.tm_min = (int) ClockTime_minute(clockTime);
     tm.tm_hour = (int) ClockTime_hour(clockTime);
@@ -67,21 +79,25 @@ convert_to_struct_tm(
     tm.tm_mon = (int) Date_month(date) - STRUCT_TM_MONTH_OFFSET;
     tm.tm_year = (int) Date_year(date) - STRUCT_TM_YEAR_OFFSET;
     tm.tm_isdst = -1;
-    assert(present_mktime(&tm) != -1);
+
+    mktime_returned = present_mktime(&tm);
+    assert(mktime_returned != -1);
 
     return tm;
 }
 
 /** Convert a time_t to a UNIX timestamp. */
 int_timestamp
-time_t_to_timestamp(const time_t timestamp) {
+time_t_to_timestamp(const time_t timestamp)
+{
     /* TODO: We're just assuming that time_t is already a UNIX timestamp */
     return (int_timestamp) timestamp;
 }
 
 /** Convert a UNIX timestamp to a time_t. */
 time_t
-timestamp_to_time_t(const int_timestamp timestamp_seconds) {
+timestamp_to_time_t(const int_timestamp timestamp_seconds)
+{
     /* TODO: We're just assuming that time_t is a UNIX timestamp */
     return (time_t) timestamp_seconds;
 }
@@ -105,9 +121,11 @@ timestamp_to_time_t(const int_timestamp timestamp_seconds) {
 static struct Timestamp
 new_timestamp(
         int_timestamp timestamp_seconds,
-        int_timestamp additional_nanoseconds) {
-    CONSTRUCTOR_HEAD(Timestamp);
+        int_timestamp additional_nanoseconds)
+{
     struct PresentTimestampData data;
+    CONSTRUCTOR_HEAD(Timestamp);
+
     data.timestamp_seconds = timestamp_seconds;
     data.additional_nanoseconds = additional_nanoseconds;
     CONSTRUCTOR_RETURN(Timestamp, data);
@@ -115,44 +133,59 @@ new_timestamp(
 
 /** Create a Timestamp with an "invalid ClockTime" error. */
 static struct Timestamp
-invalid_clock_time() {
+invalid_clock_time()
+{
     CONSTRUCTOR_HEAD(Timestamp);
     CONSTRUCTOR_ERROR_RETURN(Timestamp, INVALID_CLOCK_TIME);
 }
 
 /** Create a Timestamp with an "invalid Date" error. */
 static struct Timestamp
-invalid_date() {
+invalid_date()
+{
     CONSTRUCTOR_HEAD(Timestamp);
     CONSTRUCTOR_ERROR_RETURN(Timestamp, INVALID_DATE);
 }
 
 struct Timestamp
-Timestamp_from_time_t(const time_t timestamp) {
+Timestamp_from_time_t(const time_t timestamp)
+{
     return new_timestamp(time_t_to_timestamp(timestamp), 0);
 }
 
 struct Timestamp
 Timestamp_from_struct_tm(
         const struct tm tm,
-        const struct TimeDelta * const timeZoneOffset) {
-    struct Date date = struct_tm_to_date(tm);
-    struct ClockTime clockTime = struct_tm_to_clock_time(tm);
-    return Timestamp_create(&date, &clockTime, timeZoneOffset);
+        const struct TimeDelta * const timeZoneOffset)
+{
+    struct Date date;
+    struct ClockTime clock_time;
+
+    date = struct_tm_to_date(tm);
+    clock_time = struct_tm_to_clock_time(tm);
+    return Timestamp_create(&date, &clock_time, timeZoneOffset);
 }
 
 struct Timestamp
-Timestamp_from_struct_tm_utc(const struct tm tm) {
-    struct Date date = struct_tm_to_date(tm);
-    struct ClockTime clockTime = struct_tm_to_clock_time(tm);
-    return Timestamp_create_utc(&date, &clockTime);
+Timestamp_from_struct_tm_utc(const struct tm tm)
+{
+    struct Date date;
+    struct ClockTime clock_time;
+
+    date = struct_tm_to_date(tm);
+    clock_time = struct_tm_to_clock_time(tm);
+    return Timestamp_create_utc(&date, &clock_time);
 }
 
 struct Timestamp
-Timestamp_from_struct_tm_local(const struct tm tm) {
-    struct tm tmCopy = tm;
+Timestamp_from_struct_tm_local(const struct tm tm)
+{
+    struct tm tm_copy;
+    time_t timestamp;
+
+    tm_copy = tm;
     /* Throw it right through mktime */
-    time_t timestamp = present_mktime(&tmCopy);
+    timestamp = present_mktime(&tm_copy);
     assert(timestamp != -1);
     return new_timestamp(time_t_to_timestamp(timestamp), 0);
 }
@@ -161,7 +194,10 @@ struct Timestamp
 Timestamp_create(
         const struct Date * const date,
         const struct ClockTime * const clockTime,
-        const struct TimeDelta * const timeZoneOffset) {
+        const struct TimeDelta * const timeZoneOffset)
+{
+    struct Timestamp t;
+
     assert(date != NULL);
     assert(date->error == 0);
     assert(clockTime != NULL);
@@ -176,7 +212,7 @@ Timestamp_create(
     }
 
     /* First, pretend it's just UTC */
-    struct Timestamp t = Timestamp_create_utc(date, clockTime);
+    t = Timestamp_create_utc(date, clockTime);
     /* Now, subtract the UTC offset (since we're technically converting
        TO UTC) */
     /* TODO: Is subtracting correct? */
@@ -187,16 +223,20 @@ Timestamp_create(
 struct Timestamp
 Timestamp_create_utc(
         const struct Date * const date,
-        const struct ClockTime * const clockTime) {
-    assert(date != NULL);
-    assert(date->error == 0);
-    assert(clockTime != NULL);
-    assert(clockTime->error == 0);
-
+        const struct ClockTime * const clockTime)
+{
     /** Day of the year that each month starts on (in non-leap years). */
     static const int_day_of_year DAY_OF_START_OF_MONTH[13] = {
         0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
     };
+
+    int_timestamp year, month, days_since_epoch;
+    struct TimeDelta time_since_midnight;
+
+    assert(date != NULL);
+    assert(date->error == 0);
+    assert(clockTime != NULL);
+    assert(clockTime->error == 0);
 
     /* Make sure the Date and ClockTime aren't erroneous */
     if (date->error) {
@@ -208,37 +248,38 @@ Timestamp_create_utc(
 
     /* First, the hard part... determining the number of days since the UNIX
        epoch, taking leap years into account */
-    int_timestamp year = Date_year(date),
-                  month = Date_month(date),
-                  daysSinceEpoch = Date_day(date);
-    daysSinceEpoch += DAY_OF_START_OF_MONTH[month];
-    daysSinceEpoch += 365 * (year - 1970);
+    year = Date_year(date);
+    month = Date_month(date);
+    days_since_epoch = Date_day(date);
+
+    days_since_epoch += DAY_OF_START_OF_MONTH[month];
+    days_since_epoch += 365 * (year - 1970);
     /* Every 4 years is a leap year */
-    daysSinceEpoch += (year - 1968) / 4;
+    days_since_epoch += (year - 1968) / 4;
     /* Except the turn of the century */
-    daysSinceEpoch -= (year - 1900) / 100;
+    days_since_epoch -= (year - 1900) / 100;
     /* Except every 4th century */
-    daysSinceEpoch += (year - 1600) / 400;
+    days_since_epoch += (year - 1600) / 400;
     /* If it's still January or February of this year, though, we don't need to
        include the extra for this year yet */
     if (IS_LEAP_YEAR(year) && month <= 2) {
-        daysSinceEpoch--;
+        days_since_epoch--;
     }
 
     /* This is a more useful form of the clock time */
-    struct TimeDelta timeSinceMidnight =
-        ClockTime_time_since_midnight(clockTime);
+    time_since_midnight = ClockTime_time_since_midnight(clockTime);
 
     return new_timestamp(
-            daysSinceEpoch * SECONDS_IN_DAY +
-            TimeDelta_seconds(&timeSinceMidnight),
-            TimeDelta_nanoseconds(&timeSinceMidnight));
+            days_since_epoch * SECONDS_IN_DAY +
+            TimeDelta_seconds(&time_since_midnight),
+            TimeDelta_nanoseconds(&time_since_midnight));
 }
 
 struct Timestamp
 Timestamp_create_local(
         const struct Date * const date,
-        const struct ClockTime * const clockTime) {
+        const struct ClockTime * const clockTime)
+{
     assert(date != NULL);
     assert(date->error == 0);
     assert(clockTime != NULL);
@@ -257,18 +298,22 @@ Timestamp_create_local(
 }
 
 struct Timestamp
-Timestamp_now() {
-    struct present_now_struct now = present_now();
+Timestamp_now()
+{
+    struct present_now_struct now;
+    now = present_now();
     return new_timestamp(time_t_to_timestamp(now.sec), now.nsec);
 }
 
 struct Timestamp
-Timestamp_epoch() {
+Timestamp_epoch()
+{
     return new_timestamp(0, 0);
 }
 
 time_t
-Timestamp_get_time_t(const struct Timestamp * const self) {
+Timestamp_get_time_t(const struct Timestamp * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -278,36 +323,45 @@ Timestamp_get_time_t(const struct Timestamp * const self) {
 struct tm
 Timestamp_get_struct_tm(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset) {
+        const struct TimeDelta * const timeZoneOffset)
+{
+    struct Timestamp copy;
+
     assert(self != NULL);
     assert(self->error == 0);
     assert(timeZoneOffset != NULL);
     assert(timeZoneOffset->error == 0);
 
-    struct Timestamp copy = *self;
+    copy = *self;
     /* TODO: should we be adding or subtracting? */
     Timestamp_add_time_delta(&copy, timeZoneOffset);
     return Timestamp_get_struct_tm_utc(&copy);
 }
 
 struct tm
-Timestamp_get_struct_tm_utc(const struct Timestamp * const self) {
+Timestamp_get_struct_tm_utc(const struct Timestamp * const self)
+{
+    time_t timestamp;
+    struct tm result;
+
     assert(self != NULL);
     assert(self->error == 0);
 
-    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    struct tm result;
+    timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
     present_gmtime(&timestamp, &result);
     return result;
 }
 
 struct tm
-Timestamp_get_struct_tm_local(const struct Timestamp * const self) {
+Timestamp_get_struct_tm_local(const struct Timestamp * const self)
+{
+    time_t timestamp;
+    struct tm result;
+
     assert(self != NULL);
     assert(self->error == 0);
 
-    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    struct tm result;
+    timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
     present_localtime(&timestamp, &result);
     return result;
 }
@@ -315,7 +369,8 @@ Timestamp_get_struct_tm_local(const struct Timestamp * const self) {
 struct Date
 Timestamp_get_date(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset) {
+        const struct TimeDelta * const timeZoneOffset)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(timeZoneOffset != NULL);
@@ -325,7 +380,8 @@ Timestamp_get_date(
 }
 
 struct Date
-Timestamp_get_date_utc(const struct Timestamp * const self) {
+Timestamp_get_date_utc(const struct Timestamp * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -333,7 +389,8 @@ Timestamp_get_date_utc(const struct Timestamp * const self) {
 }
 
 struct Date
-Timestamp_get_date_local(const struct Timestamp * const self) {
+Timestamp_get_date_local(const struct Timestamp * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -343,7 +400,8 @@ Timestamp_get_date_local(const struct Timestamp * const self) {
 struct ClockTime
 Timestamp_get_clock_time(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset) {
+        const struct TimeDelta * const timeZoneOffset)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -352,7 +410,8 @@ Timestamp_get_clock_time(
 }
 
 struct ClockTime
-Timestamp_get_clock_time_utc(const struct Timestamp * const self) {
+Timestamp_get_clock_time_utc(const struct Timestamp * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -360,7 +419,8 @@ Timestamp_get_clock_time_utc(const struct Timestamp * const self) {
 }
 
 struct ClockTime
-Timestamp_get_clock_time_local(const struct Timestamp * const self) {
+Timestamp_get_clock_time_local(const struct Timestamp * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -370,31 +430,37 @@ Timestamp_get_clock_time_local(const struct Timestamp * const self) {
 struct TimeDelta
 Timestamp_difference(
         const struct Timestamp * const self,
-        const struct Timestamp * const other) {
+        const struct Timestamp * const other)
+{
+    struct TimeDelta delta, ns_delta;
+
     assert(self != NULL);
     assert(self->error == 0);
     assert(other != NULL);
     assert(other->error == 0);
 
-    struct TimeDelta delta = TimeDelta_from_seconds(
+    delta = TimeDelta_from_seconds(
             self->data_.timestamp_seconds - other->data_.timestamp_seconds);
-    struct TimeDelta nsDelta = TimeDelta_from_nanoseconds(
+    ns_delta = TimeDelta_from_nanoseconds(
             self->data_.additional_nanoseconds -
             other->data_.additional_nanoseconds);
-    TimeDelta_add_time_delta(&delta, &nsDelta);
+    TimeDelta_add_time_delta(&delta, &ns_delta);
     return delta;
 }
 
 struct TimeDelta
 Timestamp_absolute_difference(
         const struct Timestamp * const self,
-        const struct Timestamp * const other) {
+        const struct Timestamp * const other)
+{
+    struct TimeDelta delta;
+
     assert(self != NULL);
     assert(self->error == 0);
     assert(other != NULL);
     assert(other->error == 0);
 
-    struct TimeDelta delta = Timestamp_difference(self, other);
+    delta = Timestamp_difference(self, other);
     if (TimeDelta_is_negative(&delta)) {
         TimeDelta_negate(&delta);
     }
@@ -404,7 +470,8 @@ Timestamp_absolute_difference(
 void
 Timestamp_add_time_delta(
         struct Timestamp * const self,
-        const struct TimeDelta * const delta) {
+        const struct TimeDelta * const delta)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
@@ -418,7 +485,8 @@ Timestamp_add_time_delta(
 void
 Timestamp_add_day_delta(
         struct Timestamp * const self,
-        const struct DayDelta * const delta) {
+        const struct DayDelta * const delta)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
@@ -430,14 +498,17 @@ Timestamp_add_day_delta(
 void
 Timestamp_add_month_delta(
         struct Timestamp * const self,
-        const struct MonthDelta * const delta) {
+        const struct MonthDelta * const delta)
+{
+    time_t timestamp;
+    struct tm tm;
+
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
     assert(delta->error == 0);
 
-    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    struct tm tm;
+    timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
     present_localtime(&timestamp, &tm);
     tm.tm_mon += delta->data_.delta_months;
     self->data_.timestamp_seconds = present_mktime(&tm);
@@ -447,7 +518,8 @@ Timestamp_add_month_delta(
 void
 Timestamp_subtract_time_delta(
         struct Timestamp * const self,
-        const struct TimeDelta * const delta) {
+        const struct TimeDelta * const delta)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
@@ -461,7 +533,8 @@ Timestamp_subtract_time_delta(
 void
 Timestamp_subtract_day_delta(
         struct Timestamp * const self,
-        const struct DayDelta * const delta) {
+        const struct DayDelta * const delta)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
@@ -473,14 +546,17 @@ Timestamp_subtract_day_delta(
 void
 Timestamp_subtract_month_delta(
         struct Timestamp * const self,
-        const struct MonthDelta * const delta) {
+        const struct MonthDelta * const delta)
+{
+    time_t timestamp;
+    struct tm tm;
+
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
     assert(delta->error == 0);
 
-    time_t timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
-    struct tm tm;
+    timestamp = timestamp_to_time_t(self->data_.timestamp_seconds);
     present_localtime(&timestamp, &tm);
     tm.tm_mon -= delta->data_.delta_months;
     self->data_.timestamp_seconds = present_mktime(&tm);
@@ -490,7 +566,8 @@ Timestamp_subtract_month_delta(
 int
 Timestamp_compare(
         const struct Timestamp * const lhs,
-        const struct Timestamp * const rhs) {
+        const struct Timestamp * const rhs)
+{
     assert(lhs != NULL);
     assert(lhs->error == 0);
     assert(rhs != NULL);

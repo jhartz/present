@@ -30,8 +30,9 @@ new_clock_time(
         int_hour hour,
         int_minute minute,
         int_second second,
-        int_nanosecond nanosecond) {
-
+        int_nanosecond nanosecond)
+{
+    struct PresentClockTimeData data;
     CONSTRUCTOR_HEAD(ClockTime);
 
     if (hour == 24) hour = 0;
@@ -52,7 +53,6 @@ new_clock_time(
         CONSTRUCTOR_ERROR_RETURN(ClockTime, NANOSECOND_OUT_OF_RANGE);
     }
 
-    struct PresentClockTimeData data;
     data.seconds = second +
         minute * SECONDS_IN_MINUTE +
         hour * SECONDS_IN_HOUR;
@@ -64,7 +64,9 @@ new_clock_time(
  * Check the bounds on data.{nanosecond,second} and modify or wrap around if
  * necessary.
  */
-void check_clock_time(struct ClockTime * const self) {
+void
+check_clock_time(struct ClockTime * const self)
+{
 #define d self->data_
     if (d.nanoseconds >= NANOSECONDS_IN_SECOND) {
         d.seconds += d.nanoseconds / NANOSECONDS_IN_SECOND;
@@ -85,12 +87,14 @@ void check_clock_time(struct ClockTime * const self) {
 }
 
 struct ClockTime
-ClockTime_from_hour(int_hour hour) {
+ClockTime_from_hour(int_hour hour)
+{
     return new_clock_time(hour, 0, 0, 0);
 }
 
 struct ClockTime
-ClockTime_from_hour_minute(int_hour hour, int_minute minute) {
+ClockTime_from_hour_minute(int_hour hour, int_minute minute)
+{
     return new_clock_time(hour, minute, 0, 0);
 }
 
@@ -98,7 +102,8 @@ struct ClockTime
 ClockTime_from_hour_minute_second(
         int_hour hour,
         int_minute minute,
-        int_second second) {
+        int_second second)
+{
     return new_clock_time(hour, minute, second, 0);
 }
 
@@ -107,7 +112,8 @@ ClockTime_from_hour_minute_second_nanosecond(
         int_hour hour,
         int_minute minute,
         int_second second,
-        int_nanosecond nanosecond) {
+        int_nanosecond nanosecond)
+{
     return new_clock_time(hour, minute, second, nanosecond);
 }
 
@@ -115,25 +121,31 @@ struct ClockTime
 ClockTime_create_with_decimal_seconds(
         int_hour hour,
         int_minute minute,
-        double second) {
-    int_second secondInt = (int_second) second;
-    second = (second - secondInt) * (double) NANOSECONDS_IN_SECOND;
-    return new_clock_time(hour, minute, secondInt,
+        double second)
+{
+    int_second second_int;
+
+    second_int = (int_second) second;
+    second = (second - second_int) * (double) NANOSECONDS_IN_SECOND;
+    return new_clock_time(hour, minute, second_int,
             (int_nanosecond) present_round(second));
 }
 
 struct ClockTime
-ClockTime_midnight() {
+ClockTime_midnight()
+{
     return new_clock_time(0, 0, 0, 0);
 }
 
 struct ClockTime
-ClockTime_noon() {
+ClockTime_noon()
+{
     return new_clock_time(12, 0, 0, 0);
 }
 
 int_hour
-ClockTime_hour(const struct ClockTime * const self) {
+ClockTime_hour(const struct ClockTime * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -141,7 +153,8 @@ ClockTime_hour(const struct ClockTime * const self) {
 }
 
 int_minute
-ClockTime_minute(const struct ClockTime * const self) {
+ClockTime_minute(const struct ClockTime * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -149,7 +162,8 @@ ClockTime_minute(const struct ClockTime * const self) {
 }
 
 int_second
-ClockTime_second(const struct ClockTime * const self) {
+ClockTime_second(const struct ClockTime * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -157,7 +171,8 @@ ClockTime_second(const struct ClockTime * const self) {
 }
 
 int_nanosecond
-ClockTime_nanosecond(const struct ClockTime * const self) {
+ClockTime_nanosecond(const struct ClockTime * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -165,7 +180,8 @@ ClockTime_nanosecond(const struct ClockTime * const self) {
 }
 
 double
-ClockTime_second_decimal(const struct ClockTime * const self) {
+ClockTime_second_decimal(const struct ClockTime * const self)
+{
     assert(self != NULL);
     assert(self->error == 0);
 
@@ -174,14 +190,15 @@ ClockTime_second_decimal(const struct ClockTime * const self) {
 }
 
 struct TimeDelta
-ClockTime_time_since_midnight(const struct ClockTime * const self) {
+ClockTime_time_since_midnight(const struct ClockTime * const self)
+{
+    struct TimeDelta delta, ns_delta;
+
     assert(self != NULL);
     assert(self->error == 0);
 
-    struct TimeDelta delta = TimeDelta_from_seconds(
-            self->data_.seconds);
-    struct TimeDelta ns_delta = TimeDelta_from_nanoseconds(
-            self->data_.nanoseconds);
+    delta = TimeDelta_from_seconds(self->data_.seconds);
+    ns_delta = TimeDelta_from_nanoseconds(self->data_.nanoseconds);
     TimeDelta_add_time_delta(&delta, &ns_delta);
     return delta;
 }
@@ -189,7 +206,8 @@ ClockTime_time_since_midnight(const struct ClockTime * const self) {
 void
 ClockTime_add_time_delta(
         struct ClockTime * const self,
-        const struct TimeDelta * const delta) {
+        const struct TimeDelta * const delta)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
@@ -204,7 +222,8 @@ ClockTime_add_time_delta(
 void
 ClockTime_subtract_time_delta(
         struct ClockTime * const self,
-        const struct TimeDelta * const delta) {
+        const struct TimeDelta * const delta)
+{
     assert(self != NULL);
     assert(self->error == 0);
     assert(delta != NULL);
@@ -219,7 +238,8 @@ ClockTime_subtract_time_delta(
 int
 ClockTime_compare(
         const struct ClockTime * const lhs,
-        const struct ClockTime * const rhs) {
+        const struct ClockTime * const rhs)
+{
     assert(lhs != NULL);
     assert(lhs->error == 0);
     assert(rhs != NULL);
