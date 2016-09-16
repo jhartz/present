@@ -158,6 +158,11 @@ exposes more options and features. Basic CMake usage on UNIX-like systems:
     cmake ..
     make
 
+If, for some reason, you need to use the traditional Makefile, first you will
+have to copy "include/present-config.h.in" to "include/present-config.h",
+filling in the version numbers and changing all the `#cmakedefine _____`
+statements to `#define _____` to enable any of those features.
+
 ## C++ Examples
 
 ```C++

@@ -9,15 +9,6 @@ FLAGS = -I./include -I./src $(WARNING_FLAGS)
 # Add debug flags if necessaey
 ifdef DEBUG
 	FLAGS += -g
-else
-	ifdef COVERAGE
-		flags += -g
-	endif
-endif
-
-# Add coverage flags if necessary
-ifdef COVERAGE
-	FLAGS += -O0 --coverage
 endif
 
 # C-specific flags
@@ -32,8 +23,14 @@ C_OBJECTS = $(MODULES:%=build/%.c.o) build/present-syscalls.c.o
 CXX_OBJECTS = $(MODULES:%=build/%.cpp.o)
 TEST_SRC = $(MODULES:%=test/%-test.cpp)
 
-UTIL_HEADERS = include/present/utils/types.h include/present/utils/utils.h \
-			   src/impl-constants.h src/impl-utils.h
+UTIL_HEADERS = include/present/utils/header-utils.h         \
+               include/present/utils/typedefs-nostdint.h    \
+               include/present/utils/typedefs-stdint.h      \
+               include/present/utils/types.h                \
+               include/present-config.h                     \
+               include/present-constants.h                  \
+               include/present-syscalls.h                   \
+               include/present-utils.h
 
 LIBRARY_OBJECT_FLAGS = -fpic
 LIBRARY_FLAGS = -shared
@@ -86,7 +83,10 @@ build/%.cpp.o: src/%.cpp include/present/%.h include/present/impl/present-%-data
 build/%.c.o: src/%.c include/present/%.h include/present/impl/present-%-data.h $(UTIL_HEADERS)
 	$(libpresentc_COMPILER) $(libpresentc_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
 
-clean: clean-o clean-so clean-bin clean-gcov clean-gcov-build clean-gcov-html
+build/present-syscalls.c.o: src/present-syscalls.c $(UTIL_HEADERS)
+	$(libpresentc_COMPILER) $(libpresentc_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
+
+clean: clean-o clean-so clean-bin
 
 clean-o:
 	rm -f build/*.o
@@ -97,14 +97,5 @@ clean-so:
 clean-bin:
 	rm -f build/present-repl build/present-test
 
-clean-gcov:
-	rm -f *.gcno *.gcda
-
-clean-gcov-build:
-	rm -f build/*.gcno build/*.gcda
-
-clean-gcov-html:
-	rm -f build/*.html
-
-.PHONY: clean clean-o clean-so clean-bin clean-gcov clean-gcov-build clean-gcov-html
+.PHONY: clean clean-o clean-so clean-bin
 
