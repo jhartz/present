@@ -50,13 +50,13 @@
         CHECK(t.get_clock_time_utc().minute() == min);          \
         CHECK(t.get_clock_time_utc().second() == sec);          \
         CHECK(t.get_clock_time_utc().nanosecond() == 0);        \
-    } while (0)
-
-/*
                                                                 \
         t = Timestamp::create(Date::create(yr, mon, mday),      \
                 ClockTime::create(hr, min, sec),                \
                 TimeDelta::from_hours(tz_offset));              \
+    } while (0)
+
+/*
         IS(expected_unix_timestamp, 0);                         \
         CHECK(t.get_clock_time_utc().minute() == min);          \
         CHECK(t.get_clock_time_utc().second() == sec);          \
