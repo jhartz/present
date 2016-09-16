@@ -87,7 +87,6 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
             0, 0, 0,        // time
             0,              // time zone offset
             0);             // expected UNIX timestamp
-    /*
     TEST_CREATE(
             1969, 12, 31,
             0, 0, 0,
@@ -118,7 +117,6 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
             0, 59, 59,
             3,
             197589599);
-    */
 
     // now()
     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
