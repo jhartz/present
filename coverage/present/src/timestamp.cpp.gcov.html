@@ -91,10 +91,10 @@
 <span class="lineNum">      20 </span>                :<span class="lineCov">          2 :     return Timestamp_from_time_t(timestamp);</span>
 <a name="21"><span class="lineNum">      21 </span>                :            : }</a>
 <span class="lineNum">      22 </span>                :            : 
-<span class="lineNum">      23 </span>                :<span class="lineCov">          1 : Timestamp Timestamp::create(</span>
+<span class="lineNum">      23 </span>                :<span class="lineCov">          6 : Timestamp Timestamp::create(</span>
 <span class="lineNum">      24 </span>                :            :         const struct tm &amp; tm,
 <span class="lineNum">      25 </span>                :            :         const TimeDelta &amp; timeZoneOffset) {
-<span class="lineNum">      26 </span>                :<span class="lineCov">          1 :     return Timestamp_from_struct_tm(tm, &amp;timeZoneOffset);</span>
+<span class="lineNum">      26 </span>                :<span class="lineCov">          6 :     return Timestamp_from_struct_tm(tm, &amp;timeZoneOffset);</span>
 <a name="27"><span class="lineNum">      27 </span>                :            : }</a>
 <span class="lineNum">      28 </span>                :            : 
 <span class="lineNum">      29 </span>                :<span class="lineNoCov">          0 : Timestamp Timestamp::create_utc(const struct tm &amp; tm) {</span>
