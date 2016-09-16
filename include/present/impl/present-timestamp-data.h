@@ -8,7 +8,6 @@
  */
 
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 
 #ifndef _PRESENT_TIMESTAMP_DATA_H_
 #define _PRESENT_TIMESTAMP_DATA_H_

@@ -202,7 +202,7 @@ if (COMPILE_PRESENTCPP)
             #test/day-delta-test.cpp
             #test/month-delta-test.cpp
             #test/time-delta-test.cpp
-            #test/timestamp-test.cpp
+            test/timestamp-test.cpp
         )
         target_link_libraries (present-test
             present

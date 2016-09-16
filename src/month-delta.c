@@ -11,7 +11,6 @@
 #include <stddef.h>
 
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 #include "present/impl/present-month-delta-data.h"
 
 #include "present-constants.h"

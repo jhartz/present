@@ -8,7 +8,6 @@
  */
 
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 #include "present/impl/present-timestamp-data.h"
 
 #include "present/clock-time.h"

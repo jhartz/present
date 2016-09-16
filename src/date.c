@@ -12,7 +12,6 @@
 #include <string.h>
 
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 #include "present/impl/present-date-data.h"
 
 #include "present-constants.h"

@@ -9,8 +9,8 @@
 
 #include <time.h>
 
+#include "present/utils/header-utils.h"
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 #include "present/impl/present-date-data.h"
 
 #ifndef _PRESENT_DATE_H_

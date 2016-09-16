@@ -38,9 +38,11 @@
  * tests the C "ClockTime_from_..." methods).
  */
 TEST_CASE("ClockTime creators", "[clock-time]") {
+    ClockTime c;
+
     // from_hour
 
-    ClockTime c = ClockTime::create(0);
+    c = ClockTime::create(0);
     IS_HMS(0, 0, 0, 0);
     c = ClockTime::create(1);
     IS_HMS(1, 0, 0, 0);
@@ -149,7 +151,9 @@ TEST_CASE("ClockTime accessors", "[clock-time]") {
 }
 
 TEST_CASE("ClockTime::time_since_midnight function", "[clock-time]") {
-    ClockTime c = ClockTime::create(0, 0, 0, 0);
+    ClockTime c;
+
+    c = ClockTime::create(0, 0, 0, 0);
     CHECK(c.time_since_midnight() == TimeDelta::zero());
 
     c = ClockTime::create(1, 15, 30);
@@ -162,8 +166,9 @@ TEST_CASE("ClockTime::time_since_midnight function", "[clock-time]") {
 TEST_CASE("ClockTime arithmetic operators", "[clock-time]") {
     TimeDelta d = TimeDelta::from_hours(2) + TimeDelta::from_minutes(4) +
         TimeDelta::from_seconds(6);
+    ClockTime c;
 
-    ClockTime c = ClockTime::create(1, 3, 5, 0);
+    c = ClockTime::create(1, 3, 5, 0);
     c += d;
     IS_HMS(3, 7, 11, 0);
 
@@ -211,6 +216,12 @@ TEST_CASE("ClockTime comparison operators", "[clock-time]") {
               c3 = ClockTime::create(12, 13, 14, 15),
               c4 = ClockTime::create(12, 13, 14, 15);
 
+    CHECK(ClockTime::compare(c1, c1) == 0);
+    CHECK(ClockTime::compare(c3, c4) == 0);
+    CHECK(ClockTime::compare(c1, c2) < 0);
+    CHECK(ClockTime::compare(c3, c2) > 0);
+
+    CHECK(c1 == c1);
     CHECK(c3 == c4);
     CHECK(!(c1 == c3));
     CHECK(c1 != c3);
@@ -219,21 +230,28 @@ TEST_CASE("ClockTime comparison operators", "[clock-time]") {
     CHECK(c1 < c2);
     CHECK(c1 < c3);
     CHECK(c2 < c3);
+    CHECK(!(c3 < c4));
+    CHECK(!(c3 < c2));
 
+    CHECK(c1 <= c2);
     CHECK(c1 <= c2);
     CHECK(c1 <= c3);
     CHECK(c2 <= c3);
     CHECK(c3 <= c4);
     CHECK(c4 <= c3);
+    CHECK(!(c2 <= c1));
 
     CHECK(c2 > c1);
     CHECK(c3 > c1);
     CHECK(c3 > c2);
+    CHECK(!(c3 > c4));
+    CHECK(!(c2 > c3));
 
     CHECK(c2 >= c1);
     CHECK(c3 >= c1);
     CHECK(c3 >= c2);
     CHECK(c4 >= c3);
     CHECK(c3 >= c4);
+    CHECK(!(c1 >= c2));
 }
 

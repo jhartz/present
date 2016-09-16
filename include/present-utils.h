@@ -14,8 +14,8 @@
 
 #include <string.h>
 
-#ifndef _PRESENT_IMPL_UTILS_H_
-#define _PRESENT_IMPL_UTILS_H_
+#ifndef _PRESENT_UTILS_H_
+#define _PRESENT_UTILS_H_
 
 /** Determine whether a given year is a leap year. */
 #define IS_LEAP_YEAR(year)                      \
@@ -97,5 +97,5 @@
             greater_than_or_equal, >= 0)
 
 
-#endif /* _PRESENT_IMPL_UTILS_H_ */
+#endif /* _PRESENT_UTILS_H_ */
 

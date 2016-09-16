@@ -13,6 +13,10 @@
 #ifndef _PRESENT_SYSCALLS_H_
 #define _PRESENT_SYSCALLS_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * Return value for present_now. Identical to "struct timespec" on systems
  * that support it.
@@ -71,6 +75,10 @@ void present_set_test_time(struct PresentNowStruct value);
  * time.
  */
 void present_reset_test_time();
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* _PRESENT_SYSCALLS_H_ */
 

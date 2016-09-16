@@ -10,6 +10,7 @@
 #include "catch.hpp"
 
 #include "present/day-delta.h"
+#include "present/month-delta.h"
 
 #include "present/date.h"
 
@@ -28,9 +29,11 @@
  * tests the C "Date_from_..." functions).
  */
 TEST_CASE("Date creators", "[date]") {
+    Date d;
+
     // from_year
 
-    Date d = Date::create(0);
+    d = Date::create(0);
     IS(0, 1, 1);
     d = Date::create(1);
     IS(1, 1, 1);
@@ -237,10 +240,12 @@ TEST_CASE("Date accessors", "[date]") {
 
 TEST_CASE("Date 'week_of_year' and 'day_of_week' edge cases",
           "[date]") {
+    Date d;
+
     // More tests for week_of_year and day_of_week
     // (all of these match the tests for from_year_week_day; see that section
     // for explanations of each)
-    Date d = Date::create(2016, 8, 3);
+    d = Date::create(2016, 8, 3);
     CHECK(d.week_of_year().week == 31);
     CHECK(d.week_of_year().year == 2016);
     CHECK(d.day_of_week() == DAY_OF_WEEK_WEDNESDAY);
@@ -291,3 +296,107 @@ TEST_CASE("Date 'difference' functions", "[date]") {
     CHECK(d1.absolute_difference(d2) == exp_diff);
     CHECK(d2.absolute_difference(d1) == exp_diff);
 }
+
+TEST_CASE("Date arithmetic operators", "[date]") {
+    DayDelta days4 = DayDelta::from_days(4);
+    MonthDelta months3 = MonthDelta::from_months(3);
+    Date d;
+
+    d = Date::create(2005, 12, 27);
+    d += days4;
+    IS(2005, 12, 31);
+
+    d = Date::create(2005, 12, 28);
+    d += days4;
+    IS(2006, 1, 1);
+
+    d = Date::create(2028, 1, 6);
+    d -= days4;
+    IS(2028, 1, 2);
+    d -= days4;
+    IS(2027, 12, 29);
+
+    d = Date::create(1994, 9, 6);
+    d += months3;
+    IS(1994, 12, 6);
+    d += months3;
+    IS(1995, 3, 6);
+
+    d = Date::create(1989, 4, 19);
+    d -= months3;
+    IS(1989, 1, 19);
+    d -= months3;
+    IS(1988, 10, 19);
+
+    d = Date::create(2000, 1, 1) + DayDelta::from_weeks(1);
+    IS(2000, 1, 8);
+    d = DayDelta::from_weeks(2) + Date::create(2000, 2, 1);
+    IS(2000, 2, 15);
+
+    d = Date::create(2019, 5, 6) - DayDelta::from_days(6);
+    IS(2019, 4, 30);
+
+    d = Date::create(2000, 1, 1) + MonthDelta::from_years(13) +
+        MonthDelta::from_months(4);
+    IS(2013, 5, 1);
+    d = MonthDelta::from_months(7) + Date::create(2013, 3, 3);
+    IS(2013, 10, 3);
+
+    d = Date::create(2018, 9, 4) - MonthDelta::from_months(3);
+    IS(2018, 6, 4);
+}
+
+TEST_CASE("Date comparison operators", "[date]") {
+    Date d1 = Date::create(1900, 1, 1),
+         d2 = Date::create(1900, 1, 27),
+         d3 = Date::create(1900, 3, 1),
+         d4 = Date::create(1901, 1, 1),
+         d5 = Date::create(1901, 1, 1);
+
+    CHECK(Date::compare(d1, d1) == 0);
+    CHECK(Date::compare(d5, d5) == 0);
+    CHECK(Date::compare(d1, d2) < 0);
+    CHECK(Date::compare(d3, d2) > 0);
+
+    CHECK(d1 == d1);
+    CHECK(d4 == d5);
+    CHECK(!(d1 == d2));
+    CHECK(d3 != d4);
+    CHECK(d3 != d5);
+
+    CHECK(d1 < d2);
+    CHECK(d1 < d3);
+    CHECK(d1 < d4);
+    CHECK(d2 < d3);
+    CHECK(d2 < d4);
+    CHECK(d3 < d4);
+    CHECK(!(d4 < d5));
+    CHECK(!(d2 < d1));
+
+    CHECK(d1 <= d1);
+    CHECK(d1 <= d2);
+    CHECK(d1 <= d3);
+    CHECK(d3 <= d5);
+    CHECK(d4 <= d5);
+    CHECK(d5 <= d4);
+    CHECK(!(d2 <= d1));
+
+    CHECK(d2 > d1);
+    CHECK(d3 > d1);
+    CHECK(d4 > d1);
+    CHECK(d3 > d2);
+    CHECK(d4 > d2);
+    CHECK(!(d4 > d5));
+    CHECK(!(d1 > d2));
+
+    CHECK(d1 >= d1);
+    CHECK(d2 >= d1);
+    CHECK(d3 >= d1);
+    CHECK(d4 >= d1);
+    CHECK(d3 >= d2);
+    CHECK(d4 >= d2);
+    CHECK(d4 >= d3);
+    CHECK(d4 >= d5);
+    CHECK(!(d1 >= d2));
+}
+

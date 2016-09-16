@@ -2,7 +2,7 @@
  * Present - Date/Time Library
  *
  * Header file that includes all structures and methods for:
- * ClockTime, Date, MonthDelta, TimeDelta, Timestamp
+ * ClockTime, Date, DayDelta, MonthDelta, TimeDelta, Timestamp
  *
  * Licensed under the MIT License.
  * For details, see LICENSE.

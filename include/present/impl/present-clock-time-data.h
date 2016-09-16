@@ -8,7 +8,6 @@
  */
 
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 
 #include "present/time-delta.h"
 

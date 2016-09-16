@@ -9,8 +9,8 @@
 
 #include <time.h>
 
+#include "present/utils/header-utils.h"
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 #include "present/impl/present-month-delta-data.h"
 
 #ifndef _PRESENT_MONTH_DELTA_H_

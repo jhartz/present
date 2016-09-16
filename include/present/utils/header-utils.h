@@ -1,14 +1,14 @@
 /*
  * Present - Date/Time Library
  *
- * Utilities and macros
+ * Utilities and macros for Present header files
  *
  * Licensed under the MIT License.
  * For details, see LICENSE.
  */
 
-#ifndef _PRESENT_UTILS_H_
-#define _PRESENT_UTILS_H_
+#ifndef _PRESENT_HEADER_UTILS_H_
+#define _PRESENT_HEADER_UTILS_H_
 
 /*
  * Define class header macro if we're compiling on Windows
@@ -30,5 +30,5 @@
 #define PRESENT_OVERLOAD_MAX_4(_1, _2, _3, _4, NAME, ...) NAME
 #define PRESENT_OVERLOAD_MAX_6(_1, _2, _3, _4, _5, _6, NAME, ...) NAME
 
-#endif /* _PRESENT_UTILS_H_ */
+#endif /* _PRESENT_HEADER_UTILS_H_ */
 

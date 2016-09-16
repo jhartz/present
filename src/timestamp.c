@@ -11,7 +11,6 @@
 #include <stddef.h>
 
 #include "present/utils/types.h"
-#include "present/utils/utils.h"
 #include "present/impl/present-timestamp-data.h"
 
 #include "present-constants.h"
@@ -107,11 +106,11 @@ timestamp_to_time_t(const int_timestamp timestamp_seconds)
  * than NANOSECONDS_IN_SECOND.
  */
 #define CHECK_DATA(data)                                        \
-    if (data.additional_nanoseconds < 0) {                      \
+    while (data.additional_nanoseconds < 0) {                      \
         data.timestamp_seconds -= 1;                            \
         data.additional_nanoseconds += NANOSECONDS_IN_SECOND;   \
     }                                                           \
-    if (data.additional_nanoseconds >= NANOSECONDS_IN_SECOND) { \
+    while (data.additional_nanoseconds >= NANOSECONDS_IN_SECOND) { \
         data.timestamp_seconds += 1;                            \
         data.additional_nanoseconds -= NANOSECONDS_IN_SECOND;   \
     }
@@ -215,7 +214,6 @@ Timestamp_create(
     t = Timestamp_create_utc(date, clockTime);
     /* Now, subtract the UTC offset (since we're technically converting
        TO UTC) */
-    /* TODO: Is subtracting correct? */
     Timestamp_subtract_TimeDelta(&t, timeZoneOffset);
     return t;
 }
@@ -250,7 +248,7 @@ Timestamp_create_utc(
        epoch, taking leap years into account */
     year = Date_year(date);
     month = Date_month(date);
-    days_since_epoch = Date_day(date);
+    days_since_epoch = Date_day(date) - 1;
 
     days_since_epoch += DAY_OF_START_OF_MONTH[month];
     days_since_epoch += 365 * (year - 1970);
@@ -271,8 +269,8 @@ Timestamp_create_utc(
 
     return new_timestamp(
             days_since_epoch * SECONDS_IN_DAY +
-            TimeDelta_seconds(&time_since_midnight),
-            TimeDelta_nanoseconds(&time_since_midnight));
+            time_since_midnight.data_.delta_seconds,
+            time_since_midnight.data_.delta_nanoseconds);
 }
 
 struct Timestamp
@@ -333,7 +331,6 @@ Timestamp_get_struct_tm(
     assert(timeZoneOffset->error == 0);
 
     copy = *self;
-    /* TODO: should we be adding or subtracting? */
     Timestamp_add_TimeDelta(&copy, timeZoneOffset);
     return Timestamp_get_struct_tm_utc(&copy);
 }
