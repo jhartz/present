@@ -50,7 +50,12 @@
         CHECK(t.get_clock_time_utc().minute() == min);          \
         CHECK(t.get_clock_time_utc().second() == sec);          \
         CHECK(t.get_clock_time_utc().nanosecond() == 0);        \
-    } while (0);                                                \
+        TEST_CREATE_2(yr, mon, mday, hr, min, sec, tz_offset,   \
+                expected_unix_timestamp);                       \
+    } while (0)
+
+#define TEST_CREATE_2(yr, mon, mday, hr, min, sec, tz_offset,   \
+        expected_unix_timestamp)                                \
     do {                                                        \
         Timestamp t = Timestamp::create(                        \
                 Date::create(yr, mon, mday),                    \
