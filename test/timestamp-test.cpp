@@ -65,7 +65,6 @@
  * tests the C "Timestamp_create_..." functions).
  */
 TEST_CASE("Timestamp creators", "[timestamp]") {
-    /*
     Timestamp t;
 
     // create(time_t)
@@ -78,6 +77,7 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     // create(struct tm, TimeDelta)
     // create(Date, ClockTime, TimeDelta)
 
+    /*
     TEST_CREATE(
             1970, 1, 1,     // date
             0, 0, 0,        // time
@@ -113,6 +113,7 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
             0, 59, 59,
             3,
             197589599);
+    */
 
     // now()
     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
@@ -130,6 +131,5 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     // epoch()
     t = Timestamp::epoch();
     IS(0, 0);
-    */
 }
 
