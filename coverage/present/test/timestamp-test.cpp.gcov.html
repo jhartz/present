@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info.cleaned - present/test/timestamp-test.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">present/test</a> - timestamp-test.cpp<span style="font-size: 80%;"> (source / <a href="timestamp-test.cpp.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2016-09-16</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : /*</a>
+<span class="lineNum">       2 </span>                :            :  * Present - Date/Time Library
+<span class="lineNum">       3 </span>                :            :  *
+<span class="lineNum">       4 </span>                :            :  * Tests for the Timestamp C++ class and C-compatible methods
+<span class="lineNum">       5 </span>                :            :  *
+<span class="lineNum">       6 </span>                :            :  * Licensed under the MIT License.
+<span class="lineNum">       7 </span>                :            :  * For details, see LICENSE.
+<span class="lineNum">       8 </span>                :            :  */
+<span class="lineNum">       9 </span>                :            : 
+<span class="lineNum">      10 </span>                :            : #include &quot;catch.hpp&quot;
+<span class="lineNum">      11 </span>                :            : 
+<span class="lineNum">      12 </span>                :            : #include &quot;present/clock-time.h&quot;
+<span class="lineNum">      13 </span>                :            : #include &quot;present/date.h&quot;
+<span class="lineNum">      14 </span>                :            : #include &quot;present/day-delta.h&quot;
+<span class="lineNum">      15 </span>                :            : #include &quot;present/month-delta.h&quot;
+<span class="lineNum">      16 </span>                :            : #include &quot;present/time-delta.h&quot;
+<span class="lineNum">      17 </span>                :            : #include &quot;present-syscalls.h&quot;
+<span class="lineNum">      18 </span>                :            : 
+<span class="lineNum">      19 </span>                :            : #include &quot;present/timestamp.h&quot;
+<span class="lineNum">      20 </span>                :            : 
+<span class="lineNum">      21 </span>                :            : /**
+<span class="lineNum">      22 </span>                :            :  * Shortcut macro to compare timestamp_seconds and additional_nanoseconds all
+<span class="lineNum">      23 </span>                :            :  * in one.
+<span class="lineNum">      24 </span>                :            :  * Expects that the Timestamp is &quot;t&quot;.
+<span class="lineNum">      25 </span>                :            :  */
+<span class="lineNum">      26 </span>                :            : #define IS(test_timestamp_seconds, test_additional_nanoseconds) \
+<span class="lineNum">      27 </span>                :            :     REQUIRE(t.error == Timestamp_ERROR_NONE);                   \
+<span class="lineNum">      28 </span>                :            :     CHECK(t.data_.timestamp_seconds == test_timestamp_seconds); \
+<span class="lineNum">      29 </span>                :            :     CHECK(t.data_.additional_nanoseconds == test_additional_nanoseconds);
+<span class="lineNum">      30 </span>                :            : 
+<span class="lineNum">      31 </span>                :            : /**
+<span class="lineNum">      32 </span>                :            :  * Creates a Timestamp using 2 methods (struct tm, and Date/ClockTime), and
+<span class="lineNum">      33 </span>                :            :  * makes sure both are working well.
+<span class="lineNum">      34 </span>                :            :  */
+<span class="lineNum">      35 </span>                :            : #define TEST_CREATE(yr, mon, mday, hr, min, sec, tz_offset,     \
+<span class="lineNum">      36 </span>                :            :         expected_unix_timestamp)                                \
+<span class="lineNum">      37 </span>                :            :     do {                                                        \
+<span class="lineNum">      38 </span>                :            :         struct tm tm = {};                                      \
+<span class="lineNum">      39 </span>                :            :         tm.tm_year = yr - 1900;                                 \
+<span class="lineNum">      40 </span>                :            :         tm.tm_mon = mon - 1;                                    \
+<span class="lineNum">      41 </span>                :            :         tm.tm_mday = mday;                                      \
+<span class="lineNum">      42 </span>                :            :         tm.tm_hour = hr;                                        \
+<span class="lineNum">      43 </span>                :            :         tm.tm_min = min;                                        \
+<span class="lineNum">      44 </span>                :            :         tm.tm_sec = sec;                                        \
+<span class="lineNum">      45 </span>                :            :         tm.tm_isdst = 0;                                        \
+<span class="lineNum">      46 </span>                :            :         REQUIRE(mktime(&amp;tm) != -1);                             \
+<span class="lineNum">      47 </span>                :            :         Timestamp t = Timestamp::create(tm,                     \
+<span class="lineNum">      48 </span>                :            :                 TimeDelta::from_hours(tz_offset));              \
+<span class="lineNum">      49 </span>                :            :         IS(expected_unix_timestamp, 0);                         \
+<span class="lineNum">      50 </span>                :            :         CHECK(t.get_clock_time_utc().minute() == min);          \
+<span class="lineNum">      51 </span>                :            :         CHECK(t.get_clock_time_utc().second() == sec);          \
+<span class="lineNum">      52 </span>                :            :         CHECK(t.get_clock_time_utc().nanosecond() == 0);        \
+<span class="lineNum">      53 </span>                :            :                                                                 \
+<span class="lineNum">      54 </span>                :            :         t = Timestamp::create(Date::create(yr, mon, mday),      \
+<span class="lineNum">      55 </span>                :            :                 ClockTime::create(hr, min, sec),                \
+<span class="lineNum">      56 </span>                :            :                 TimeDelta::from_hours(tz_offset));              \
+<span class="lineNum">      57 </span>                :            :         IS(expected_unix_timestamp, 0);                         \
+<span class="lineNum">      58 </span>                :            :         CHECK(t.get_clock_time_utc().minute() == min);          \
+<span class="lineNum">      59 </span>                :            :         CHECK(t.get_clock_time_utc().second() == sec);          \
+<span class="lineNum">      60 </span>                :            :         CHECK(t.get_clock_time_utc().nanosecond() == 0);        \
+<span class="lineNum">      61 </span>                :            :     } while (0)
+<span class="lineNum">      62 </span>                :            : 
+<span class="lineNum">      63 </span>                :            : /**
+<span class="lineNum">      64 </span>                :            :  * This test case tests all the overloads of the &quot;create&quot; method (which also
+<a name="65"><span class="lineNum">      65 </span>                :            :  * tests the C &quot;Timestamp_create_...&quot; functions).</a>
+<span class="lineNum">      66 </span>                :            :  */
+<span class="lineNum">      67 </span>        [<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 : TEST_CASE(&quot;Timestamp creators&quot;, &quot;[timestamp]&quot;) {</span>
+<span class="lineNum">      68 </span>                :            :     /*
+<span class="lineNum">      69 </span>                :            :     Timestamp t;
+<span class="lineNum">      70 </span>                :            : 
+<span class="lineNum">      71 </span>                :            :     // create(time_t)
+<span class="lineNum">      72 </span>                :            : 
+<span class="lineNum">      73 </span>                :            :     t = Timestamp::create((time_t) 0);
+<span class="lineNum">      74 </span>                :            :     IS(0, 0);
+<span class="lineNum">      75 </span>                :            :     t = Timestamp::create((time_t) 1325376000);
+<span class="lineNum">      76 </span>                :            :     IS(1325376000, 0);
+<span class="lineNum">      77 </span>                :            : 
+<span class="lineNum">      78 </span>                :            :     // create(struct tm, TimeDelta)
+<span class="lineNum">      79 </span>                :            :     // create(Date, ClockTime, TimeDelta)
+<span class="lineNum">      80 </span>                :            : 
+<span class="lineNum">      81 </span>                :            :     TEST_CREATE(
+<span class="lineNum">      82 </span>                :            :             1970, 1, 1,     // date
+<span class="lineNum">      83 </span>                :            :             0, 0, 0,        // time
+<span class="lineNum">      84 </span>                :            :             0,              // time zone offset
+<span class="lineNum">      85 </span>                :            :             0);             // expected UNIX timestamp
+<span class="lineNum">      86 </span>                :            :     TEST_CREATE(
+<span class="lineNum">      87 </span>                :            :             1969, 12, 31,
+<span class="lineNum">      88 </span>                :            :             0, 0, 0,
+<span class="lineNum">      89 </span>                :            :             0,
+<span class="lineNum">      90 </span>                :            :             -86400);
+<span class="lineNum">      91 </span>                :            :     TEST_CREATE(
+<span class="lineNum">      92 </span>                :            :             1970, 1, 2,
+<span class="lineNum">      93 </span>                :            :             0, 0, 0,
+<span class="lineNum">      94 </span>                :            :             0,
+<span class="lineNum">      95 </span>                :            :             86400);
+<span class="lineNum">      96 </span>                :            : 
+<span class="lineNum">      97 </span>                :            :     // All the same timestamp (197589599):
+<span class="lineNum">      98 </span>                :            :     // Apr. 5, 1976 21:59:59 UTC
+<span class="lineNum">      99 </span>                :            :     // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
+<span class="lineNum">     100 </span>                :            :     // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
+<span class="lineNum">     101 </span>                :            :     TEST_CREATE(
+<span class="lineNum">     102 </span>                :            :             1976, 4, 5,
+<span class="lineNum">     103 </span>                :            :             21, 59, 59,
+<span class="lineNum">     104 </span>                :            :             0,
+<span class="lineNum">     105 </span>                :            :             197589599);
+<span class="lineNum">     106 </span>                :            :     TEST_CREATE(
+<span class="lineNum">     107 </span>                :            :             1976, 4, 5,
+<span class="lineNum">     108 </span>                :            :             16, 59, 59,
+<span class="lineNum">     109 </span>                :            :             -5,
+<span class="lineNum">     110 </span>                :            :             197589599);
+<span class="lineNum">     111 </span>                :            :     TEST_CREATE(
+<span class="lineNum">     112 </span>                :            :             1976, 4, 6,
+<span class="lineNum">     113 </span>                :            :             0, 59, 59,
+<span class="lineNum">     114 </span>                :            :             3,
+<span class="lineNum">     115 </span>                :            :             197589599);
+<span class="lineNum">     116 </span>                :            : 
+<span class="lineNum">     117 </span>                :            :     // now()
+<span class="lineNum">     118 </span>                :            :     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
+<span class="lineNum">     119 </span>                :            :     struct PresentNowStruct test_now = {
+<span class="lineNum">     120 </span>                :            :         (time_t) 920180081,
+<span class="lineNum">     121 </span>                :            :         (long)   986000000
+<span class="lineNum">     122 </span>                :            :     };
+<span class="lineNum">     123 </span>                :            :     present_set_test_time(test_now);
+<span class="lineNum">     124 </span>                :            : 
+<span class="lineNum">     125 </span>                :            :     t = Timestamp::now();
+<span class="lineNum">     126 </span>                :            :     IS(920180081, 986000000);
+<span class="lineNum">     127 </span>                :            : 
+<span class="lineNum">     128 </span>                :            :     present_reset_test_time();
+<span class="lineNum">     129 </span>                :            : 
+<span class="lineNum">     130 </span>                :            :     // epoch()
+<span class="lineNum">     131 </span>                :            :     t = Timestamp::epoch();
+<a name="132"><span class="lineNum">     132 </span>                :            :     IS(0, 0);</a>
+<span class="lineNum">     133 </span>                :            :     */
+<span class="lineNum">     134 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 3 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span>]:<span class="lineCov">          4 : }</span>
+<span class="lineNum">     135 </span>                :            : 
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.9</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
