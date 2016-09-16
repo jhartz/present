@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntry">27</td>
             <td class="headerCovTableEntry">35</td>
-            <td class="headerCovTableEntryLo">65.7 %</td>
+            <td class="headerCovTableEntryMed">77.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
             <td class="headerValue">2016-09-16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">6</td>
             <td class="headerCovTableEntry">7</td>
-            <td class="headerCovTableEntryLo">71.4 %</td>
+            <td class="headerCovTableEntryMed">85.7 %</td>
           </tr>
           <tr>
             <td></td>
@@ -145,15 +145,15 @@
 <span class="lineNum">      74 </span>                :            : }
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
 <span class="lineNum">      76 </span>                :            : void
-<span class="lineNum">      77 </span>                :<span class="lineNoCov">          0 : present_gmtime(const time_t * timep, struct tm * result)</span>
+<span class="lineNum">      77 </span>                :<span class="lineCov">          6 : present_gmtime(const time_t * timep, struct tm * result)</span>
 <span class="lineNum">      78 </span>                :            : {
 <span class="lineNum">      79 </span>                :            :     struct tm * value;
 <span class="lineNum">      80 </span>                :            : 
 <span class="lineNum">      81 </span>                :            :     INITIALIZE;
-<span class="lineNum">      82 </span>                :<span class="lineNoCov">          0 :     value = gmtime(timep);</span>
-<span class="lineNum">      83 </span>                :<span class="lineNoCov">          0 :     memcpy(result, value, sizeof(struct tm));</span>
+<span class="lineNum">      82 </span>                :<span class="lineCov">          6 :     value = gmtime(timep);</span>
+<span class="lineNum">      83 </span>                :<span class="lineCov">          6 :     memcpy(result, value, sizeof(struct tm));</span>
 <span class="lineNum">      84 </span>                :            :     DONE;
-<span class="lineNum">      85 </span>                :<span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      85 </span>                :<span class="lineCov">          6 : }</span>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <span class="lineNum">      87 </span>                :            : void
 <span class="lineNum">      88 </span>                :<span class="lineNoCov">          0 : present_localtime(const time_t * timep, struct tm * result)</span>
@@ -167,14 +167,14 @@
 <span class="lineNum">      96 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <span class="lineNum">      98 </span>                :            : time_t
-<span class="lineNum">      99 </span>                :<span class="lineCov">        129 : present_mktime(struct tm * tm)</span>
+<span class="lineNum">      99 </span>                :<span class="lineCov">        139 : present_mktime(struct tm * tm)</span>
 <span class="lineNum">     100 </span>                :            : {
 <span class="lineNum">     101 </span>                :            :     time_t value;
 <span class="lineNum">     102 </span>                :            : 
 <span class="lineNum">     103 </span>                :            :     INITIALIZE;
-<span class="lineNum">     104 </span>                :<span class="lineCov">        129 :     value = mktime(tm);</span>
+<span class="lineNum">     104 </span>                :<span class="lineCov">        139 :     value = mktime(tm);</span>
 <span class="lineNum">     105 </span>                :            :     DONE;
-<span class="lineNum">     106 </span>                :<span class="lineCov">        129 :     return value;</span>
+<span class="lineNum">     106 </span>                :<span class="lineCov">        139 :     return value;</span>
 <span class="lineNum">     107 </span>                :            : }
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
 <span class="lineNum">     109 </span>                :            : struct PresentNowStruct

@@ -31,27 +31,27 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">46</td>
+            <td class="headerCovTableEntry">97</td>
             <td class="headerCovTableEntry">241</td>
-            <td class="headerCovTableEntryLo">19.1 %</td>
+            <td class="headerCovTableEntryLo">40.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
             <td class="headerValue">2016-09-16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">15</td>
             <td class="headerCovTableEntry">41</td>
-            <td class="headerCovTableEntryLo">17.1 %</td>
+            <td class="headerCovTableEntryLo">36.6 %</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">30</td>
             <td class="headerCovTableEntry">232</td>
-            <td class="headerCovTableEntryLo">5.2 %</td>
+            <td class="headerCovTableEntryLo">12.9 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -98,38 +98,38 @@
 <span class="lineNum">      27 </span>                :            : 
 <a name="28"><span class="lineNum">      28 </span>                :            : /** Convert a struct tm to a Date. */</a>
 <span class="lineNum">      29 </span>                :            : static struct Date
-<span class="lineNum">      30 </span>                :<span class="lineNoCov">          0 : struct_tm_to_date(const struct tm tm)</span>
+<span class="lineNum">      30 </span>                :<span class="lineCov">          1 : struct_tm_to_date(const struct tm tm)</span>
 <span class="lineNum">      31 </span>                :            : {
 <span class="lineNum">      32 </span>                :            :     struct tm tm_copy;
 <span class="lineNum">      33 </span>                :            :     time_t mktime_returned;
 <span class="lineNum">      34 </span>                :            : 
-<span class="lineNum">      35 </span>                :<span class="lineNoCov">          0 :     tm_copy = tm;</span>
+<span class="lineNum">      35 </span>                :<span class="lineCov">          1 :     tm_copy = tm;</span>
 <span class="lineNum">      36 </span>                :            :     /* Throw it through mktime to fix any weirdness */
-<span class="lineNum">      37 </span>                :<span class="lineNoCov">          0 :     mktime_returned = present_mktime(&amp;tm_copy);</span>
-<span class="lineNum">      38 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(mktime_returned != -1);</span>
+<span class="lineNum">      37 </span>                :<span class="lineCov">          1 :     mktime_returned = present_mktime(&amp;tm_copy);</span>
+<span class="lineNum">      38 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :     assert(mktime_returned != -1);</span>
 <span class="lineNum">      39 </span>                :            : 
-<span class="lineNum">      40 </span>                :<span class="lineNoCov">          0 :     return Date_from_year_month_day(</span>
-<span class="lineNum">      41 </span>                :<span class="lineNoCov">          0 :             tm_copy.tm_year + STRUCT_TM_YEAR_OFFSET,</span>
-<span class="lineNum">      42 </span>                :<span class="lineNoCov">          0 :             tm_copy.tm_mon + STRUCT_TM_MONTH_OFFSET,</span>
-<span class="lineNum">      43 </span>                :<span class="lineNoCov">          0 :             tm_copy.tm_mday);</span>
+<span class="lineNum">      40 </span>                :<span class="lineCov">          1 :     return Date_from_year_month_day(</span>
+<span class="lineNum">      41 </span>                :<span class="lineCov">          1 :             tm_copy.tm_year + STRUCT_TM_YEAR_OFFSET,</span>
+<span class="lineNum">      42 </span>                :<span class="lineCov">          1 :             tm_copy.tm_mon + STRUCT_TM_MONTH_OFFSET,</span>
+<span class="lineNum">      43 </span>                :<span class="lineCov">          1 :             tm_copy.tm_mday);</span>
 <span class="lineNum">      44 </span>                :            : }
 <span class="lineNum">      45 </span>                :            : 
 <a name="46"><span class="lineNum">      46 </span>                :            : /** Convert a struct tm to a ClockTime. */</a>
 <span class="lineNum">      47 </span>                :            : static struct ClockTime
-<span class="lineNum">      48 </span>                :<span class="lineNoCov">          0 : struct_tm_to_clock_time(const struct tm tm)</span>
+<span class="lineNum">      48 </span>                :<span class="lineCov">          7 : struct_tm_to_clock_time(const struct tm tm)</span>
 <span class="lineNum">      49 </span>                :            : {
 <span class="lineNum">      50 </span>                :            :     struct tm tm_copy;
 <span class="lineNum">      51 </span>                :            :     time_t mktime_returned;
 <span class="lineNum">      52 </span>                :            : 
-<span class="lineNum">      53 </span>                :<span class="lineNoCov">          0 :     tm_copy = tm;</span>
+<span class="lineNum">      53 </span>                :<span class="lineCov">          7 :     tm_copy = tm;</span>
 <span class="lineNum">      54 </span>                :            :     /* Throw it through mktime to fix any weirdness */
-<span class="lineNum">      55 </span>                :<span class="lineNoCov">          0 :     mktime_returned = present_mktime(&amp;tm_copy);</span>
-<span class="lineNum">      56 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(mktime_returned != -1);</span>
+<span class="lineNum">      55 </span>                :<span class="lineCov">          7 :     mktime_returned = present_mktime(&amp;tm_copy);</span>
+<span class="lineNum">      56 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          7 :     assert(mktime_returned != -1);</span>
 <span class="lineNum">      57 </span>                :            : 
-<span class="lineNum">      58 </span>                :<span class="lineNoCov">          0 :     return ClockTime_from_hour_minute_second(</span>
-<span class="lineNum">      59 </span>                :<span class="lineNoCov">          0 :             tm_copy.tm_hour,</span>
-<span class="lineNum">      60 </span>                :<span class="lineNoCov">          0 :             tm_copy.tm_min,</span>
-<span class="lineNum">      61 </span>                :<span class="lineNoCov">          0 :             tm_copy.tm_sec);</span>
+<span class="lineNum">      58 </span>                :<span class="lineCov">          7 :     return ClockTime_from_hour_minute_second(</span>
+<span class="lineNum">      59 </span>                :<span class="lineCov">          7 :             tm_copy.tm_hour,</span>
+<span class="lineNum">      60 </span>                :<span class="lineCov">          7 :             tm_copy.tm_min,</span>
+<span class="lineNum">      61 </span>                :<span class="lineCov">          7 :             tm_copy.tm_sec);</span>
 <span class="lineNum">      62 </span>                :            : }
 <span class="lineNum">      63 </span>                :            : 
 <a name="64"><span class="lineNum">      64 </span>                :            : /** Convert a Date and ClockTime to a struct tm. */</a>
@@ -166,10 +166,10 @@
 <span class="lineNum">      95 </span>                :            : 
 <a name="96"><span class="lineNum">      96 </span>                :            : /** Convert a UNIX timestamp to a time_t. */</a>
 <span class="lineNum">      97 </span>                :            : time_t
-<span class="lineNum">      98 </span>                :<span class="lineNoCov">          0 : timestamp_to_time_t(const int_timestamp timestamp_seconds)</span>
+<span class="lineNum">      98 </span>                :<span class="lineCov">          6 : timestamp_to_time_t(const int_timestamp timestamp_seconds)</span>
 <span class="lineNum">      99 </span>                :            : {
 <span class="lineNum">     100 </span>                :            :     /* TODO: We're just assuming that time_t is a UNIX timestamp */
-<span class="lineNum">     101 </span>                :<span class="lineNoCov">          0 :     return (time_t) timestamp_seconds;</span>
+<span class="lineNum">     101 </span>                :<span class="lineCov">          6 :     return (time_t) timestamp_seconds;</span>
 <span class="lineNum">     102 </span>                :            : }
 <span class="lineNum">     103 </span>                :            : 
 <span class="lineNum">     104 </span>                :            : /**
@@ -189,16 +189,16 @@
 <span class="lineNum">     118 </span>                :            : 
 <a name="119"><span class="lineNum">     119 </span>                :            : /** Create a new Timestamp instance based on its data parameters. */</a>
 <span class="lineNum">     120 </span>                :            : static struct Timestamp
-<span class="lineNum">     121 </span>                :<span class="lineCov">         12 : new_timestamp(</span>
+<span class="lineNum">     121 </span>                :<span class="lineCov">         14 : new_timestamp(</span>
 <span class="lineNum">     122 </span>                :            :         int_timestamp timestamp_seconds,
 <span class="lineNum">     123 </span>                :            :         int_timestamp additional_nanoseconds)
 <span class="lineNum">     124 </span>                :            : {
 <span class="lineNum">     125 </span>                :            :     struct PresentTimestampData data;
-<span class="lineNum">     126 </span>                :<span class="lineCov">         12 :     CONSTRUCTOR_HEAD(Timestamp);</span>
+<span class="lineNum">     126 </span>                :<span class="lineCov">         14 :     CONSTRUCTOR_HEAD(Timestamp);</span>
 <span class="lineNum">     127 </span>                :            : 
-<span class="lineNum">     128 </span>                :<span class="lineCov">         12 :     data.timestamp_seconds = timestamp_seconds;</span>
-<span class="lineNum">     129 </span>                :<span class="lineCov">         12 :     data.additional_nanoseconds = additional_nanoseconds;</span>
-<span class="lineNum">     130 </span>                :<span class="lineCov">         12 :     CONSTRUCTOR_RETURN(Timestamp, data);</span>
+<span class="lineNum">     128 </span>                :<span class="lineCov">         14 :     data.timestamp_seconds = timestamp_seconds;</span>
+<span class="lineNum">     129 </span>                :<span class="lineCov">         14 :     data.additional_nanoseconds = additional_nanoseconds;</span>
+<span class="lineNum">     130 </span>                :<span class="lineCov">         14 :     CONSTRUCTOR_RETURN(Timestamp, data);</span>
 <span class="lineNum">     131 </span>                :            : }
 <span class="lineNum">     132 </span>                :            : 
 <a name="133"><span class="lineNum">     133 </span>                :            : /** Create a Timestamp with an &quot;invalid ClockTime&quot; error. */</a>
@@ -224,16 +224,16 @@
 <span class="lineNum">     153 </span>                :            : }
 <a name="154"><span class="lineNum">     154 </span>                :            : </a>
 <span class="lineNum">     155 </span>                :            : struct Timestamp
-<span class="lineNum">     156 </span>                :<span class="lineNoCov">          0 : Timestamp_from_struct_tm(</span>
+<span class="lineNum">     156 </span>                :<span class="lineCov">          1 : Timestamp_from_struct_tm(</span>
 <span class="lineNum">     157 </span>                :            :         const struct tm tm,
 <span class="lineNum">     158 </span>                :            :         const struct TimeDelta * const timeZoneOffset)
 <span class="lineNum">     159 </span>                :            : {
 <span class="lineNum">     160 </span>                :            :     struct Date date;
 <span class="lineNum">     161 </span>                :            :     struct ClockTime clock_time;
 <span class="lineNum">     162 </span>                :            : 
-<span class="lineNum">     163 </span>                :<span class="lineNoCov">          0 :     date = struct_tm_to_date(tm);</span>
-<span class="lineNum">     164 </span>                :<span class="lineNoCov">          0 :     clock_time = struct_tm_to_clock_time(tm);</span>
-<span class="lineNum">     165 </span>                :<span class="lineNoCov">          0 :     return Timestamp_create(&amp;date, &amp;clock_time, timeZoneOffset);</span>
+<span class="lineNum">     163 </span>                :<span class="lineCov">          1 :     date = struct_tm_to_date(tm);</span>
+<span class="lineNum">     164 </span>                :<span class="lineCov">          1 :     clock_time = struct_tm_to_clock_time(tm);</span>
+<span class="lineNum">     165 </span>                :<span class="lineCov">          1 :     return Timestamp_create(&amp;date, &amp;clock_time, timeZoneOffset);</span>
 <span class="lineNum">     166 </span>                :            : }
 <a name="167"><span class="lineNum">     167 </span>                :            : </a>
 <span class="lineNum">     168 </span>                :            : struct Timestamp
@@ -261,36 +261,36 @@
 <span class="lineNum">     190 </span>                :            : }
 <a name="191"><span class="lineNum">     191 </span>                :            : </a>
 <span class="lineNum">     192 </span>                :            : struct Timestamp
-<span class="lineNum">     193 </span>                :<span class="lineNoCov">          0 : Timestamp_create(</span>
+<span class="lineNum">     193 </span>                :<span class="lineCov">          2 : Timestamp_create(</span>
 <span class="lineNum">     194 </span>                :            :         const struct Date * const date,
 <span class="lineNum">     195 </span>                :            :         const struct ClockTime * const clockTime,
 <span class="lineNum">     196 </span>                :            :         const struct TimeDelta * const timeZoneOffset)
 <span class="lineNum">     197 </span>                :            : {
 <span class="lineNum">     198 </span>                :            :     struct Timestamp t;
 <span class="lineNum">     199 </span>                :            : 
-<span class="lineNum">     200 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(date != NULL);</span>
-<span class="lineNum">     201 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(date-&gt;error == 0);</span>
-<span class="lineNum">     202 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(clockTime != NULL);</span>
-<span class="lineNum">     203 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(clockTime-&gt;error == 0);</span>
+<span class="lineNum">     200 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(date != NULL);</span>
+<span class="lineNum">     201 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(date-&gt;error == 0);</span>
+<span class="lineNum">     202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(clockTime != NULL);</span>
+<span class="lineNum">     203 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(clockTime-&gt;error == 0);</span>
 <span class="lineNum">     204 </span>                :            : 
 <span class="lineNum">     205 </span>                :            :     /* Make sure the Date and ClockTime aren't erroneous */
-<span class="lineNum">     206 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (date-&gt;error) {</span>
+<span class="lineNum">     206 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     if (date-&gt;error) {</span>
 <span class="lineNum">     207 </span>                :<span class="lineNoCov">          0 :         return invalid_date();</span>
 <span class="lineNum">     208 </span>                :            :     }
-<span class="lineNum">     209 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (clockTime-&gt;error) {</span>
+<span class="lineNum">     209 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     if (clockTime-&gt;error) {</span>
 <span class="lineNum">     210 </span>                :<span class="lineNoCov">          0 :         return invalid_clock_time();</span>
 <span class="lineNum">     211 </span>                :            :     }
 <span class="lineNum">     212 </span>                :            : 
 <span class="lineNum">     213 </span>                :            :     /* First, pretend it's just UTC */
-<span class="lineNum">     214 </span>                :<span class="lineNoCov">          0 :     t = Timestamp_create_utc(date, clockTime);</span>
+<span class="lineNum">     214 </span>                :<span class="lineCov">          2 :     t = Timestamp_create_utc(date, clockTime);</span>
 <span class="lineNum">     215 </span>                :            :     /* Now, subtract the UTC offset (since we're technically converting
 <span class="lineNum">     216 </span>                :            :        TO UTC) */
-<span class="lineNum">     217 </span>                :<span class="lineNoCov">          0 :     Timestamp_subtract_TimeDelta(&amp;t, timeZoneOffset);</span>
-<span class="lineNum">     218 </span>                :<span class="lineNoCov">          0 :     return t;</span>
+<span class="lineNum">     217 </span>                :<span class="lineCov">          2 :     Timestamp_subtract_TimeDelta(&amp;t, timeZoneOffset);</span>
+<span class="lineNum">     218 </span>                :<span class="lineCov">          2 :     return t;</span>
 <span class="lineNum">     219 </span>                :            : }
 <a name="220"><span class="lineNum">     220 </span>                :            : </a>
 <span class="lineNum">     221 </span>                :            : struct Timestamp
-<span class="lineNum">     222 </span>                :<span class="lineCov">          8 : Timestamp_create_utc(</span>
+<span class="lineNum">     222 </span>                :<span class="lineCov">         10 : Timestamp_create_utc(</span>
 <span class="lineNum">     223 </span>                :            :         const struct Date * const date,
 <span class="lineNum">     224 </span>                :            :         const struct ClockTime * const clockTime)
 <span class="lineNum">     225 </span>                :            : {
@@ -302,46 +302,46 @@
 <span class="lineNum">     231 </span>                :            :     int_timestamp year, month, days_since_epoch;
 <span class="lineNum">     232 </span>                :            :     struct TimeDelta time_since_midnight;
 <span class="lineNum">     233 </span>                :            : 
-<span class="lineNum">     234 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(date != NULL);</span>
-<span class="lineNum">     235 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(date-&gt;error == 0);</span>
-<span class="lineNum">     236 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(clockTime != NULL);</span>
-<span class="lineNum">     237 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     assert(clockTime-&gt;error == 0);</span>
+<span class="lineNum">     234 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :     assert(date != NULL);</span>
+<span class="lineNum">     235 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :     assert(date-&gt;error == 0);</span>
+<span class="lineNum">     236 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :     assert(clockTime != NULL);</span>
+<span class="lineNum">     237 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :     assert(clockTime-&gt;error == 0);</span>
 <span class="lineNum">     238 </span>                :            : 
 <span class="lineNum">     239 </span>                :            :     /* Make sure the Date and ClockTime aren't erroneous */
-<span class="lineNum">     240 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     if (date-&gt;error) {</span>
+<span class="lineNum">     240 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :     if (date-&gt;error) {</span>
 <span class="lineNum">     241 </span>                :<span class="lineNoCov">          0 :         return invalid_date();</span>
 <span class="lineNum">     242 </span>                :            :     }
-<span class="lineNum">     243 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :     if (clockTime-&gt;error) {</span>
+<span class="lineNum">     243 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :     if (clockTime-&gt;error) {</span>
 <span class="lineNum">     244 </span>                :<span class="lineNoCov">          0 :         return invalid_clock_time();</span>
 <span class="lineNum">     245 </span>                :            :     }
 <span class="lineNum">     246 </span>                :            : 
 <span class="lineNum">     247 </span>                :            :     /* First, the hard part... determining the number of days since the UNIX
 <span class="lineNum">     248 </span>                :            :        epoch, taking leap years into account */
-<span class="lineNum">     249 </span>                :<span class="lineCov">          8 :     year = Date_year(date);</span>
-<span class="lineNum">     250 </span>                :<span class="lineCov">          8 :     month = Date_month(date);</span>
-<span class="lineNum">     251 </span>                :<span class="lineCov">          8 :     days_since_epoch = Date_day(date) - 1;</span>
+<span class="lineNum">     249 </span>                :<span class="lineCov">         10 :     year = Date_year(date);</span>
+<span class="lineNum">     250 </span>                :<span class="lineCov">         10 :     month = Date_month(date);</span>
+<span class="lineNum">     251 </span>                :<span class="lineCov">         10 :     days_since_epoch = Date_day(date) - 1;</span>
 <span class="lineNum">     252 </span>                :            : 
-<span class="lineNum">     253 </span>                :<span class="lineCov">          8 :     days_since_epoch += DAY_OF_START_OF_MONTH[month];</span>
-<span class="lineNum">     254 </span>                :<span class="lineCov">          8 :     days_since_epoch += 365 * (year - 1970);</span>
+<span class="lineNum">     253 </span>                :<span class="lineCov">         10 :     days_since_epoch += DAY_OF_START_OF_MONTH[month];</span>
+<span class="lineNum">     254 </span>                :<span class="lineCov">         10 :     days_since_epoch += 365 * (year - 1970);</span>
 <span class="lineNum">     255 </span>                :            :     /* Every 4 years is a leap year */
-<span class="lineNum">     256 </span>                :<span class="lineCov">          8 :     days_since_epoch += (year - 1968) / 4;</span>
+<span class="lineNum">     256 </span>                :<span class="lineCov">         10 :     days_since_epoch += (year - 1968) / 4;</span>
 <span class="lineNum">     257 </span>                :            :     /* Except the turn of the century */
-<span class="lineNum">     258 </span>                :<span class="lineCov">          8 :     days_since_epoch -= (year - 1900) / 100;</span>
+<span class="lineNum">     258 </span>                :<span class="lineCov">         10 :     days_since_epoch -= (year - 1900) / 100;</span>
 <span class="lineNum">     259 </span>                :            :     /* Except every 4th century */
-<span class="lineNum">     260 </span>                :<span class="lineCov">          8 :     days_since_epoch += (year - 1600) / 400;</span>
+<span class="lineNum">     260 </span>                :<span class="lineCov">         10 :     days_since_epoch += (year - 1600) / 400;</span>
 <span class="lineNum">     261 </span>                :            :     /* If it's still January or February of this year, though, we don't need to
 <span class="lineNum">     262 </span>                :            :        include the extra for this year yet */
-<span class="lineNum">     263 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>][<span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">          8 :     if (IS_LEAP_YEAR(year) &amp;&amp; month &lt;= 2) {</span>
-<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 8 times"> + </span>][<span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
+<span class="lineNum">     263 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>][<span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">         10 :     if (IS_LEAP_YEAR(year) &amp;&amp; month &lt;= 2) {</span>
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 10 times"> + </span>][<span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
 <span class="lineNum">     264 </span>                :<span class="lineNoCov">          0 :         days_since_epoch--;</span>
 <span class="lineNum">     265 </span>                :            :     }
 <span class="lineNum">     266 </span>                :            : 
 <span class="lineNum">     267 </span>                :            :     /* This is a more useful form of the clock time */
-<span class="lineNum">     268 </span>                :<span class="lineCov">          8 :     time_since_midnight = ClockTime_time_since_midnight(clockTime);</span>
+<span class="lineNum">     268 </span>                :<span class="lineCov">         10 :     time_since_midnight = ClockTime_time_since_midnight(clockTime);</span>
 <span class="lineNum">     269 </span>                :            : 
-<span class="lineNum">     270 </span>                :<span class="lineCov">          8 :     return new_timestamp(</span>
-<span class="lineNum">     271 </span>                :<span class="lineCov">          8 :             days_since_epoch * SECONDS_IN_DAY +</span>
-<span class="lineNum">     272 </span>                :<span class="lineCov">          8 :             time_since_midnight.data_.delta_seconds,</span>
+<span class="lineNum">     270 </span>                :<span class="lineCov">         10 :     return new_timestamp(</span>
+<span class="lineNum">     271 </span>                :<span class="lineCov">         10 :             days_since_epoch * SECONDS_IN_DAY +</span>
+<span class="lineNum">     272 </span>                :<span class="lineCov">         10 :             time_since_midnight.data_.delta_seconds,</span>
 <span class="lineNum">     273 </span>                :            :             time_since_midnight.data_.delta_nanoseconds);
 <span class="lineNum">     274 </span>                :            : }
 <a name="275"><span class="lineNum">     275 </span>                :            : </a>
@@ -408,17 +408,17 @@
 <span class="lineNum">     336 </span>                :            : }
 <a name="337"><span class="lineNum">     337 </span>                :            : </a>
 <span class="lineNum">     338 </span>                :            : struct tm
-<span class="lineNum">     339 </span>                :<span class="lineNoCov">          0 : Timestamp_get_struct_tm_utc(const struct Timestamp * const self)</span>
+<span class="lineNum">     339 </span>                :<span class="lineCov">          6 : Timestamp_get_struct_tm_utc(const struct Timestamp * const self)</span>
 <span class="lineNum">     340 </span>                :            : {
 <span class="lineNum">     341 </span>                :            :     time_t timestamp;
 <span class="lineNum">     342 </span>                :            :     struct tm result;
 <span class="lineNum">     343 </span>                :            : 
-<span class="lineNum">     344 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
-<span class="lineNum">     345 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     344 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">          6 :     assert(self != NULL);</span>
+<span class="lineNum">     345 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">          6 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     346 </span>                :            : 
-<span class="lineNum">     347 </span>                :<span class="lineNoCov">          0 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
-<span class="lineNum">     348 </span>                :<span class="lineNoCov">          0 :     present_gmtime(&amp;timestamp, &amp;result);</span>
-<span class="lineNum">     349 </span>                :<span class="lineNoCov">          0 :     return result;</span>
+<span class="lineNum">     347 </span>                :<span class="lineCov">          6 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
+<span class="lineNum">     348 </span>                :<span class="lineCov">          6 :     present_gmtime(&amp;timestamp, &amp;result);</span>
+<span class="lineNum">     349 </span>                :<span class="lineCov">          6 :     return result;</span>
 <span class="lineNum">     350 </span>                :            : }
 <a name="351"><span class="lineNum">     351 </span>                :            : </a>
 <span class="lineNum">     352 </span>                :            : struct tm
@@ -479,12 +479,12 @@
 <span class="lineNum">     407 </span>                :            : }
 <a name="408"><span class="lineNum">     408 </span>                :            : </a>
 <span class="lineNum">     409 </span>                :            : struct ClockTime
-<span class="lineNum">     410 </span>                :<span class="lineNoCov">          0 : Timestamp_get_clock_time_utc(const struct Timestamp * const self)</span>
+<span class="lineNum">     410 </span>                :<span class="lineCov">          6 : Timestamp_get_clock_time_utc(const struct Timestamp * const self)</span>
 <span class="lineNum">     411 </span>                :            : {
-<span class="lineNum">     412 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
-<span class="lineNum">     413 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     412 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">          6 :     assert(self != NULL);</span>
+<span class="lineNum">     413 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">          6 :     assert(self-&gt;error == 0);</span>
 <span class="lineNum">     414 </span>                :            : 
-<span class="lineNum">     415 </span>                :<span class="lineNoCov">          0 :     return struct_tm_to_clock_time(Timestamp_get_struct_tm_utc(self));</span>
+<span class="lineNum">     415 </span>                :<span class="lineCov">          6 :     return struct_tm_to_clock_time(Timestamp_get_struct_tm_utc(self));</span>
 <span class="lineNum">     416 </span>                :            : }
 <a name="417"><span class="lineNum">     417 </span>                :            : </a>
 <span class="lineNum">     418 </span>                :            : struct ClockTime
@@ -585,19 +585,19 @@
 <span class="lineNum">     513 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="514"><span class="lineNum">     514 </span>                :            : </a>
 <span class="lineNum">     515 </span>                :            : void
-<span class="lineNum">     516 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_TimeDelta(</span>
+<span class="lineNum">     516 </span>                :<span class="lineCov">          2 : Timestamp_subtract_TimeDelta(</span>
 <span class="lineNum">     517 </span>                :            :         struct Timestamp * const self,
 <span class="lineNum">     518 </span>                :            :         const struct TimeDelta * const delta)
 <span class="lineNum">     519 </span>                :            : {
-<span class="lineNum">     520 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self != NULL);</span>
-<span class="lineNum">     521 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(self-&gt;error == 0);</span>
-<span class="lineNum">     522 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(delta != NULL);</span>
-<span class="lineNum">     523 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     assert(delta-&gt;error == 0);</span>
+<span class="lineNum">     520 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     521 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     522 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(delta != NULL);</span>
+<span class="lineNum">     523 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     assert(delta-&gt;error == 0);</span>
 <span class="lineNum">     524 </span>                :            : 
-<span class="lineNum">     525 </span>                :<span class="lineNoCov">          0 :     self-&gt;data_.timestamp_seconds -= delta-&gt;data_.delta_seconds;</span>
-<span class="lineNum">     526 </span>                :<span class="lineNoCov">          0 :     self-&gt;data_.additional_nanoseconds -= delta-&gt;data_.delta_nanoseconds;</span>
-<span class="lineNum">     527 </span>[<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>][<span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     CHECK_DATA(self-&gt;data_)</span>
-<span class="lineNum">     528 </span>                :<span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     525 </span>                :<span class="lineCov">          2 :     self-&gt;data_.timestamp_seconds -= delta-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     526 </span>                :<span class="lineCov">          2 :     self-&gt;data_.additional_nanoseconds -= delta-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     527 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     CHECK_DATA(self-&gt;data_)</span>
+<span class="lineNum">     528 </span>                :<span class="lineCov">          2 : }</span>
 <a name="529"><span class="lineNum">     529 </span>                :            : </a>
 <span class="lineNum">     530 </span>                :            : void
 <span class="lineNum">     531 </span>                :<span class="lineNoCov">          0 : Timestamp_subtract_DayDelta(</span>
