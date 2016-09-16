@@ -1,22 +1,8 @@
 #!/bin/bash
 
 set -e
-
-status() {
-    echo ""
-    echo "***"
-    for arg; do
-        echo "*** $arg"
-    done
-    echo "***"
-    echo ""
-}
-
-# Only publish documentation/coverage if it's master (and not a pull request)
-PUBLISH_DOC=
-if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
-    PUBLISH_DOC=yup
-fi
+DIR="$(dirname "${BASH_SOURCE[0]}")"
+. "$DIR/travis-util.sh"
 
 # Make the build directory
 mkdir -v build
@@ -39,32 +25,5 @@ make
 # Compile and run the tests
 status "Running tests..."
 make test
-
-# Update online API documentation and code coverage report, if necessary
-if [ "$PUBLISH_DOC" = "yup" ]; then
-    status "Updating doc and coverage..."
-    if [ -z "$GITHUB_API_KEY" ]; then
-        echo "ERROR: Missing GitHub API key"
-        exit 2
-    else
-        make present_coverage
-        make doc
-        mkdir -v web_push
-        cd web_push
-        git clone --depth 1 https://github.com/jhartz/present.git -b gh-pages
-        cd present
-        rm -rf coverage doc
-        cp -R ../../coverage ../../doc .
-        cp doc-index.html doc/index.html
-        git add -A coverage doc
-        git -c user.name=travis -c user.email=travis commit -m "Travis doc commit"
-
-        status "Sending to gh-pages branch..."
-        # Make sure to make the output quiet, or else the API token will leak!
-        #git push -q https://jhartz:$GITHUB_API_KEY@github.com/jhartz/present gh-pages &2>/dev/null
-        git push https://jhartz:$GITHUB_API_KEY@github.com/jhartz/present gh-pages 2>&1 | sed s/$GITHUB_API_KEY/[censored]/g
-        cd ..
-    fi
-fi
 
 cd ..

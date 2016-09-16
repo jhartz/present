@@ -10,6 +10,9 @@ before_install:
 script:
 - "./scripts/travis-build.sh"
 
+after_success:
+- "./scripts/travis-deploy.sh"
+
 env:
   global:
     # GitHub API key
