@@ -31,8 +31,8 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">13</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -49,9 +49,9 @@
             <td></td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntry">111</td>
+            <td class="headerCovTableEntry">270</td>
+            <td class="headerCovTableEntryLo">41.1 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -136,19 +136,51 @@
 <a name="65"><span class="lineNum">      65 </span>                :            :  * tests the C &quot;Timestamp_create_...&quot; functions).</a>
 <span class="lineNum">      66 </span>                :            :  */
 <span class="lineNum">      67 </span>        [<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 : TEST_CASE(&quot;Timestamp creators&quot;, &quot;[timestamp]&quot;) {</span>
-<span class="lineNum">      68 </span>                :            :     /*
-<span class="lineNum">      69 </span>                :            :     Timestamp t;
-<span class="lineNum">      70 </span>                :            : 
-<span class="lineNum">      71 </span>                :            :     // create(time_t)
-<span class="lineNum">      72 </span>                :            : 
-<span class="lineNum">      73 </span>                :            :     t = Timestamp::create((time_t) 0);
-<span class="lineNum">      74 </span>                :            :     IS(0, 0);
-<span class="lineNum">      75 </span>                :            :     t = Timestamp::create((time_t) 1325376000);
-<span class="lineNum">      76 </span>                :            :     IS(1325376000, 0);
-<span class="lineNum">      77 </span>                :            : 
-<span class="lineNum">      78 </span>                :            :     // create(struct tm, TimeDelta)
-<span class="lineNum">      79 </span>                :            :     // create(Date, ClockTime, TimeDelta)
-<span class="lineNum">      80 </span>                :            : 
+<span class="lineNum">      68 </span>                :            :     Timestamp t;
+<span class="lineNum">      69 </span>                :            : 
+<span class="lineNum">      70 </span>                :            :     // create(time_t)
+<span class="lineNum">      71 </span>                :            : 
+<span class="lineNum">      72 </span>                :<span class="lineCov">          1 :     t = Timestamp::create((time_t) 0);</span>
+<span class="lineNum">      73 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS(0, 0);</span>
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 7 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span>][<span class="branchCov" title="Branch 10 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 13 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span>][<span class="branchCov" title="Branch 16 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 22 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 30 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 33 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 34 was not taken"> - </span>][<span class="branchCov" title="Branch 36 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 37 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 39 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 40 was not taken"> - </span>][<span class="branchCov" title="Branch 42 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 43 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 45 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 46 was not taken"> - </span>][<span class="branchNoCov" title="Branch 48 was not taken"> - </span><span class="branchCov" title="Branch 49 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 51 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 52 was not taken"> - </span>][<span class="branchNoCov" title="Branch 56 was not taken"> - </span><span class="branchCov" title="Branch 57 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 59 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 60 was not taken"> - </span>][<span class="branchCov" title="Branch 62 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 63 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 65 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 66 was not taken"> - </span>][<span class="branchCov" title="Branch 68 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 69 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 71 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 72 was not taken"> - </span>][<span class="branchCov" title="Branch 74 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 75 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 77 was not taken"> - </span><span class="branchCov" title="Branch 78 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 80 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 81 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 85 was not taken"> - </span><span class="branchCov" title="Branch 86 was taken 1 time"> + </span>][<span class="branchNoExec" title="Branch 91 was not executed"> # </span><span class="branchNoExec" title="Branch 92 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 94 was not executed"> # </span><span class="branchNoExec" title="Branch 95 was not executed"> # </span>][<span class="branchNoExec" title="Branch 103 was not executed"> # </span><span class="branchNoExec" title="Branch 104 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 106 was not executed"> # </span><span class="branchNoExec" title="Branch 107 was not executed"> # </span>][<span class="branchNoExec" title="Branch 115 was not executed"> # </span><span class="branchNoExec" title="Branch 116 was not executed"> # </span>]
+<span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 118 was not executed"> # </span><span class="branchNoExec" title="Branch 119 was not executed"> # </span>]
+<span class="lineNum">      74 </span>                :<span class="lineCov">          1 :     t = Timestamp::create((time_t) 1325376000);</span>
+<span class="lineNum">      75 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS(1325376000, 0);</span>
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 7 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span>][<span class="branchCov" title="Branch 10 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 13 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span>][<span class="branchCov" title="Branch 16 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 22 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 30 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 33 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 34 was not taken"> - </span>][<span class="branchCov" title="Branch 36 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 37 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 39 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 40 was not taken"> - </span>][<span class="branchCov" title="Branch 42 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 43 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 45 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 46 was not taken"> - </span>][<span class="branchNoCov" title="Branch 48 was not taken"> - </span><span class="branchCov" title="Branch 49 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 51 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 52 was not taken"> - </span>][<span class="branchNoCov" title="Branch 56 was not taken"> - </span><span class="branchCov" title="Branch 57 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 59 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 60 was not taken"> - </span>][<span class="branchCov" title="Branch 62 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 63 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 65 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 66 was not taken"> - </span>][<span class="branchCov" title="Branch 68 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 69 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 71 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 72 was not taken"> - </span>][<span class="branchCov" title="Branch 74 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 75 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 77 was not taken"> - </span><span class="branchCov" title="Branch 78 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 80 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 81 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 85 was not taken"> - </span><span class="branchCov" title="Branch 86 was taken 1 time"> + </span>][<span class="branchNoExec" title="Branch 91 was not executed"> # </span><span class="branchNoExec" title="Branch 92 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 94 was not executed"> # </span><span class="branchNoExec" title="Branch 95 was not executed"> # </span>][<span class="branchNoExec" title="Branch 103 was not executed"> # </span><span class="branchNoExec" title="Branch 104 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 106 was not executed"> # </span><span class="branchNoExec" title="Branch 107 was not executed"> # </span>][<span class="branchNoExec" title="Branch 115 was not executed"> # </span><span class="branchNoExec" title="Branch 116 was not executed"> # </span>]
+<span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 118 was not executed"> # </span><span class="branchNoExec" title="Branch 119 was not executed"> # </span>]
+<span class="lineNum">      76 </span>                :            : 
+<span class="lineNum">      77 </span>                :            :     // create(struct tm, TimeDelta)
+<span class="lineNum">      78 </span>                :            :     // create(Date, ClockTime, TimeDelta)
+<span class="lineNum">      79 </span>                :            : 
+<span class="lineNum">      80 </span>                :            :     /*
 <span class="lineNum">      81 </span>                :            :     TEST_CREATE(
 <span class="lineNum">      82 </span>                :            :             1970, 1, 1,     // date
 <span class="lineNum">      83 </span>                :            :             0, 0, 0,        // time
@@ -184,24 +216,56 @@
 <span class="lineNum">     113 </span>                :            :             0, 59, 59,
 <span class="lineNum">     114 </span>                :            :             3,
 <span class="lineNum">     115 </span>                :            :             197589599);
-<span class="lineNum">     116 </span>                :            : 
-<span class="lineNum">     117 </span>                :            :     // now()
-<span class="lineNum">     118 </span>                :            :     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
-<span class="lineNum">     119 </span>                :            :     struct PresentNowStruct test_now = {
-<span class="lineNum">     120 </span>                :            :         (time_t) 920180081,
-<span class="lineNum">     121 </span>                :            :         (long)   986000000
-<span class="lineNum">     122 </span>                :            :     };
-<span class="lineNum">     123 </span>                :            :     present_set_test_time(test_now);
-<span class="lineNum">     124 </span>                :            : 
-<span class="lineNum">     125 </span>                :            :     t = Timestamp::now();
-<span class="lineNum">     126 </span>                :            :     IS(920180081, 986000000);
-<span class="lineNum">     127 </span>                :            : 
-<span class="lineNum">     128 </span>                :            :     present_reset_test_time();
-<span class="lineNum">     129 </span>                :            : 
-<span class="lineNum">     130 </span>                :            :     // epoch()
-<span class="lineNum">     131 </span>                :            :     t = Timestamp::epoch();
-<a name="132"><span class="lineNum">     132 </span>                :            :     IS(0, 0);</a>
-<span class="lineNum">     133 </span>                :            :     */
+<span class="lineNum">     116 </span>                :            :     */
+<span class="lineNum">     117 </span>                :            : 
+<span class="lineNum">     118 </span>                :            :     // now()
+<span class="lineNum">     119 </span>                :            :     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
+<span class="lineNum">     120 </span>                :            :     struct PresentNowStruct test_now = {
+<span class="lineNum">     121 </span>                :            :         (time_t) 920180081,
+<span class="lineNum">     122 </span>                :            :         (long)   986000000
+<span class="lineNum">     123 </span>                :<span class="lineCov">          1 :     };</span>
+<span class="lineNum">     124 </span>                :<span class="lineCov">          1 :     present_set_test_time(test_now);</span>
+<span class="lineNum">     125 </span>                :            : 
+<span class="lineNum">     126 </span>                :<span class="lineCov">          1 :     t = Timestamp::now();</span>
+<span class="lineNum">     127 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS(920180081, 986000000);</span>
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 7 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span>][<span class="branchCov" title="Branch 10 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 13 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span>][<span class="branchCov" title="Branch 16 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 22 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 30 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 33 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 34 was not taken"> - </span>][<span class="branchCov" title="Branch 36 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 37 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 39 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 40 was not taken"> - </span>][<span class="branchCov" title="Branch 42 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 43 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 45 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 46 was not taken"> - </span>][<span class="branchNoCov" title="Branch 48 was not taken"> - </span><span class="branchCov" title="Branch 49 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 51 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 52 was not taken"> - </span>][<span class="branchNoCov" title="Branch 56 was not taken"> - </span><span class="branchCov" title="Branch 57 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 59 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 60 was not taken"> - </span>][<span class="branchCov" title="Branch 62 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 63 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 65 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 66 was not taken"> - </span>][<span class="branchCov" title="Branch 68 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 69 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 71 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 72 was not taken"> - </span>][<span class="branchCov" title="Branch 74 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 75 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 77 was not taken"> - </span><span class="branchCov" title="Branch 78 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 80 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 81 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 85 was not taken"> - </span><span class="branchCov" title="Branch 86 was taken 1 time"> + </span>][<span class="branchNoExec" title="Branch 91 was not executed"> # </span><span class="branchNoExec" title="Branch 92 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 94 was not executed"> # </span><span class="branchNoExec" title="Branch 95 was not executed"> # </span>][<span class="branchNoExec" title="Branch 103 was not executed"> # </span><span class="branchNoExec" title="Branch 104 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 106 was not executed"> # </span><span class="branchNoExec" title="Branch 107 was not executed"> # </span>][<span class="branchNoExec" title="Branch 115 was not executed"> # </span><span class="branchNoExec" title="Branch 116 was not executed"> # </span>]
+<span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 118 was not executed"> # </span><span class="branchNoExec" title="Branch 119 was not executed"> # </span>]
+<span class="lineNum">     128 </span>                :            : 
+<span class="lineNum">     129 </span>                :<span class="lineCov">          1 :     present_reset_test_time();</span>
+<span class="lineNum">     130 </span>                :            : 
+<span class="lineNum">     131 </span>                :            :     // epoch()
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">          1 :     t = Timestamp::epoch();</span></a>
+<span class="lineNum">     133 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]:<span class="lineCov">          1 :     IS(0, 0);</span>
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 7 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span>][<span class="branchCov" title="Branch 10 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 13 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span>][<span class="branchCov" title="Branch 16 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 22 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 30 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 33 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 34 was not taken"> - </span>][<span class="branchCov" title="Branch 36 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 37 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 39 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 40 was not taken"> - </span>][<span class="branchCov" title="Branch 42 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 43 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 45 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 46 was not taken"> - </span>][<span class="branchNoCov" title="Branch 48 was not taken"> - </span><span class="branchCov" title="Branch 49 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 51 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 52 was not taken"> - </span>][<span class="branchNoCov" title="Branch 56 was not taken"> - </span><span class="branchCov" title="Branch 57 was taken 1 time"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 59 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 60 was not taken"> - </span>][<span class="branchCov" title="Branch 62 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 63 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 65 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 66 was not taken"> - </span>][<span class="branchCov" title="Branch 68 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 69 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 71 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 72 was not taken"> - </span>][<span class="branchCov" title="Branch 74 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 75 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 77 was not taken"> - </span><span class="branchCov" title="Branch 78 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 80 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 81 was not taken"> - </span>]
+<span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 85 was not taken"> - </span><span class="branchCov" title="Branch 86 was taken 1 time"> + </span>][<span class="branchNoExec" title="Branch 91 was not executed"> # </span><span class="branchNoExec" title="Branch 92 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 94 was not executed"> # </span><span class="branchNoExec" title="Branch 95 was not executed"> # </span>][<span class="branchNoExec" title="Branch 103 was not executed"> # </span><span class="branchNoExec" title="Branch 104 was not executed"> # </span>]
+<span class="lineNum">         </span>[<span class="branchNoExec" title="Branch 106 was not executed"> # </span><span class="branchNoExec" title="Branch 107 was not executed"> # </span>][<span class="branchNoExec" title="Branch 115 was not executed"> # </span><span class="branchNoExec" title="Branch 116 was not executed"> # </span>]
+<span class="lineNum">         </span>        [<span class="branchNoExec" title="Branch 118 was not executed"> # </span><span class="branchNoExec" title="Branch 119 was not executed"> # </span>]
 <span class="lineNum">     134 </span>[<span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>][<span class="branchCov" title="Branch 3 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span>]:<span class="lineCov">          4 : }</span>
 <span class="lineNum">     135 </span>                :            : 
 </pre>
