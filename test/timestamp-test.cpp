@@ -29,8 +29,7 @@
     CHECK(t.data_.additional_nanoseconds == test_additional_nanoseconds);
 
 /**
- * Creates a Timestamp using 2 methods (struct tm, and Date/ClockTime), and
- * makes sure both are working well.
+ * Check that creating a Timestamp from a struct tm works correctly.
  */
 #define TEST_CREATE_FROM_STRUCT_TM(yr, mon, mday, hr, min, sec, \
         tz_offset, expected_unix_timestamp)                     \
@@ -52,6 +51,10 @@
         CHECK(t.get_clock_time_utc().nanosecond() == 0);        \
     } while (0)
 
+/**
+ * Check that creating a Timestamp from a Date and a ClockTime works
+ * correctly.
+ */
 #define TEST_CREATE_FROM_DATE_TIME(yr, mon, mday, hr, min, sec, \
         tz_offset, expected_unix_timestamp)                     \
     do {                                                        \
@@ -87,35 +90,26 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
             0, 0, 0,        // time
             0,              // time zone offset
             0);             // expected UNIX timestamp
-    TEST_CREATE_FROM_DATE_TIME(1970, 1, 1, 0, 0, 0, 0, 0);
+    TEST_CREATE_FROM_DATE_TIME(1970, 1, 1, 0, 0, 0,     0, 0);
 
-    TEST_CREATE_FROM_STRUCT_TM(1969, 12, 31, 0, 0, 0, 0, -86400);
-    TEST_CREATE_FROM_DATE_TIME(1969, 12, 31, 0, 0, 0, 0, -86400);
+    TEST_CREATE_FROM_STRUCT_TM(1969, 12, 31, 0, 0, 0,   0, -86400);
+    TEST_CREATE_FROM_DATE_TIME(1969, 12, 31, 0, 0, 0,   0, -86400);
 
-    TEST_CREATE_FROM_STRUCT_TM(1970, 1, 2, 0, 0, 0, 0, 86400);
-    TEST_CREATE_FROM_DATE_TIME(1970, 1, 2, 0, 0, 0, 0, 86400);
+    TEST_CREATE_FROM_STRUCT_TM(1970, 1, 2, 0, 0, 0,     0, 86400);
+    TEST_CREATE_FROM_DATE_TIME(1970, 1, 2, 0, 0, 0,     0, 86400);
 
     // All the same timestamp (197589599):
     // Apr. 5, 1976 21:59:59 UTC
     // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
     // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
-    /*
-    TEST_CREATE(
-            1976, 4, 5,
-            21, 59, 59,
-            0,
-            197589599);
-    TEST_CREATE(
-            1976, 4, 5,
-            16, 59, 59,
-            -5,
-            197589599);
-    TEST_CREATE(
-            1976, 4, 6,
-            0, 59, 59,
-            3,
-            197589599);
-    */
+    TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 21, 59, 59,  0,  197589599);
+    TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 21, 59, 59,  0,  197589599);
+
+    TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 16, 59, 59,  -5, 197589599);
+    TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 16, 59, 59,  -5, 197589599);
+
+    TEST_CREATE_FROM_STRUCT_TM(1976, 4, 6, 0, 59, 59,   +3, 197589599);
+    TEST_CREATE_FROM_DATE_TIME(1976, 4, 6, 0, 59, 59,   +3, 197589599);
 
     // now()
     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
