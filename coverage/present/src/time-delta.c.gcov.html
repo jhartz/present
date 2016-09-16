@@ -124,27 +124,27 @@
 <span class="lineNum">      53 </span>                :            : 
 <a name="54"><span class="lineNum">      54 </span>                :            : /** Create a new TimeDelta based on seconds and nanoseconds. */</a>
 <span class="lineNum">      55 </span>                :            : struct TimeDelta
-<span class="lineNum">      56 </span>                :<span class="lineCov">         57 : new_time_delta(int_delta seconds, int_delta nanoseconds)</span>
+<span class="lineNum">      56 </span>                :<span class="lineCov">         75 : new_time_delta(int_delta seconds, int_delta nanoseconds)</span>
 <span class="lineNum">      57 </span>                :            : {
 <span class="lineNum">      58 </span>                :            :     struct PresentTimeDeltaData data;
-<span class="lineNum">      59 </span>                :<span class="lineCov">         57 :     CONSTRUCTOR_HEAD(TimeDelta);</span>
+<span class="lineNum">      59 </span>                :<span class="lineCov">         75 :     CONSTRUCTOR_HEAD(TimeDelta);</span>
 <span class="lineNum">      60 </span>                :            : 
-<span class="lineNum">      61 </span>                :<span class="lineCov">         57 :     data.delta_seconds = seconds;</span>
-<span class="lineNum">      62 </span>                :<span class="lineCov">         57 :     data.delta_nanoseconds = nanoseconds;</span>
-<span class="lineNum">      63 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 54 times"> + </span>]:<span class="lineCov">         57 :     if (nanoseconds) {</span>
+<span class="lineNum">      61 </span>                :<span class="lineCov">         75 :     data.delta_seconds = seconds;</span>
+<span class="lineNum">      62 </span>                :<span class="lineCov">         75 :     data.delta_nanoseconds = nanoseconds;</span>
+<span class="lineNum">      63 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 72 times"> + </span>]:<span class="lineCov">         75 :     if (nanoseconds) {</span>
 <span class="lineNum">      64 </span>[<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">          3 :         CHECK_DATA(data);</span>
 <span class="lineNum">         </span>[<span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchCov" title="Branch 5 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 1 time"> + </span>]
 <span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 8 was not taken"> - </span><span class="branchCov" title="Branch 9 was taken 3 times"> + </span>][<span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span>]
 <span class="lineNum">         </span>[<span class="branchCov" title="Branch 12 was taken 1 time"> + </span><span class="branchCov" title="Branch 13 was taken 2 times"> + </span>][<span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchCov" title="Branch 15 was taken 1 time"> + </span>]
 <span class="lineNum">         </span>[<span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 3 times"> + </span>][<span class="branchNoExec" title="Branch 19 was not executed"> # </span><span class="branchNoExec" title="Branch 20 was not executed"> # </span>]
 <span class="lineNum">      65 </span>                :            :     }
-<span class="lineNum">      66 </span>                :<span class="lineCov">         57 :     CONSTRUCTOR_RETURN(TimeDelta, data);</span>
+<span class="lineNum">      66 </span>                :<span class="lineCov">         75 :     CONSTRUCTOR_RETURN(TimeDelta, data);</span>
 <span class="lineNum">      67 </span>                :            : }
 <a name="68"><span class="lineNum">      68 </span>                :            : </a>
 <span class="lineNum">      69 </span>                :            : struct TimeDelta
-<span class="lineNum">      70 </span>                :<span class="lineCov">         23 : TimeDelta_from_nanoseconds(int_delta nanoseconds)</span>
+<span class="lineNum">      70 </span>                :<span class="lineCov">         29 : TimeDelta_from_nanoseconds(int_delta nanoseconds)</span>
 <span class="lineNum">      71 </span>                :            : {
-<span class="lineNum">      72 </span>                :<span class="lineCov">         23 :     return new_time_delta(0, nanoseconds);</span>
+<span class="lineNum">      72 </span>                :<span class="lineCov">         29 :     return new_time_delta(0, nanoseconds);</span>
 <span class="lineNum">      73 </span>                :            : }
 <a name="74"><span class="lineNum">      74 </span>                :            : </a>
 <span class="lineNum">      75 </span>                :            : struct TimeDelta
@@ -160,9 +160,9 @@
 <span class="lineNum">      85 </span>                :            : }
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <span class="lineNum">      87 </span>                :            : struct TimeDelta
-<span class="lineNum">      88 </span>                :<span class="lineCov">         23 : TimeDelta_from_seconds(int_delta seconds)</span>
+<span class="lineNum">      88 </span>                :<span class="lineCov">         29 : TimeDelta_from_seconds(int_delta seconds)</span>
 <span class="lineNum">      89 </span>                :            : {
-<span class="lineNum">      90 </span>                :<span class="lineCov">         23 :     return new_time_delta(seconds, 0);</span>
+<span class="lineNum">      90 </span>                :<span class="lineCov">         29 :     return new_time_delta(seconds, 0);</span>
 <span class="lineNum">      91 </span>                :            : }
 <a name="92"><span class="lineNum">      92 </span>                :            : </a>
 <span class="lineNum">      93 </span>                :            : struct TimeDelta
@@ -172,9 +172,9 @@
 <span class="lineNum">      97 </span>                :            : }
 <a name="98"><span class="lineNum">      98 </span>                :            : </a>
 <span class="lineNum">      99 </span>                :            : struct TimeDelta
-<span class="lineNum">     100 </span>                :<span class="lineCov">          9 : TimeDelta_from_hours(int_delta hours)</span>
+<span class="lineNum">     100 </span>                :<span class="lineCov">         15 : TimeDelta_from_hours(int_delta hours)</span>
 <span class="lineNum">     101 </span>                :            : {
-<span class="lineNum">     102 </span>                :<span class="lineCov">          9 :     return new_time_delta(hours * SECONDS_IN_HOUR, 0);</span>
+<span class="lineNum">     102 </span>                :<span class="lineCov">         15 :     return new_time_delta(hours * SECONDS_IN_HOUR, 0);</span>
 <span class="lineNum">     103 </span>                :            : }
 <a name="104"><span class="lineNum">     104 </span>                :            : </a>
 <span class="lineNum">     105 </span>                :            : struct TimeDelta
@@ -474,24 +474,24 @@
 <span class="lineNum">     387 </span>                :<span class="lineNoCov">          0 : }</span>
 <a name="388"><span class="lineNum">     388 </span>                :            : </a>
 <span class="lineNum">     389 </span>                :            : void
-<span class="lineNum">     390 </span>                :<span class="lineCov">         23 : TimeDelta_add(</span>
+<span class="lineNum">     390 </span>                :<span class="lineCov">         29 : TimeDelta_add(</span>
 <span class="lineNum">     391 </span>                :            :         struct TimeDelta * const self,
 <span class="lineNum">     392 </span>                :            :         const struct TimeDelta * const timeDeltaToAdd)
 <span class="lineNum">     393 </span>                :            : {
-<span class="lineNum">     394 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>]:<span class="lineCov">         23 :     assert(self != NULL);</span>
-<span class="lineNum">     395 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>]:<span class="lineCov">         23 :     assert(self-&gt;error == 0);</span>
-<span class="lineNum">     396 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>]:<span class="lineCov">         23 :     assert(timeDeltaToAdd != NULL);</span>
-<span class="lineNum">     397 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>]:<span class="lineCov">         23 :     assert(timeDeltaToAdd-&gt;error == 0);</span>
+<span class="lineNum">     394 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         29 :     assert(self != NULL);</span>
+<span class="lineNum">     395 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         29 :     assert(self-&gt;error == 0);</span>
+<span class="lineNum">     396 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         29 :     assert(timeDeltaToAdd != NULL);</span>
+<span class="lineNum">     397 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         29 :     assert(timeDeltaToAdd-&gt;error == 0);</span>
 <span class="lineNum">     398 </span>                :            : 
-<span class="lineNum">     399 </span>                :<span class="lineCov">         23 :     self-&gt;data_.delta_seconds += timeDeltaToAdd-&gt;data_.delta_seconds;</span>
-<span class="lineNum">     400 </span>                :<span class="lineCov">         23 :     self-&gt;data_.delta_nanoseconds += timeDeltaToAdd-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     399 </span>                :<span class="lineCov">         29 :     self-&gt;data_.delta_seconds += timeDeltaToAdd-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     400 </span>                :<span class="lineCov">         29 :     self-&gt;data_.delta_nanoseconds += timeDeltaToAdd-&gt;data_.delta_nanoseconds;</span>
 <span class="lineNum">     401 </span>                :            : 
-<span class="lineNum">     402 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>][<span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 23 times"> + </span>]:<span class="lineCov">         23 :     CHECK_DATA(self-&gt;data_);</span>
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 4 was taken 17 times"> + </span><span class="branchCov" title="Branch 5 was taken 6 times"> + </span>][<span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 17 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 8 was taken 2 times"> + </span><span class="branchCov" title="Branch 9 was taken 21 times"> + </span>][<span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchCov" title="Branch 11 was taken 2 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 12 was taken 17 times"> + </span><span class="branchCov" title="Branch 13 was taken 6 times"> + </span>][<span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchCov" title="Branch 15 was taken 17 times"> + </span>]
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 17 was taken 2 times"> + </span><span class="branchCov" title="Branch 18 was taken 21 times"> + </span>][<span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 2 times"> + </span>]
-<span class="lineNum">     403 </span>                :<span class="lineCov">         23 : }</span>
+<span class="lineNum">     402 </span>[<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>][<span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 29 times"> + </span>]:<span class="lineCov">         29 :     CHECK_DATA(self-&gt;data_);</span>
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 4 was taken 20 times"> + </span><span class="branchCov" title="Branch 5 was taken 9 times"> + </span>][<span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 20 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 8 was taken 2 times"> + </span><span class="branchCov" title="Branch 9 was taken 27 times"> + </span>][<span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchCov" title="Branch 11 was taken 2 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 12 was taken 20 times"> + </span><span class="branchCov" title="Branch 13 was taken 9 times"> + </span>][<span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchCov" title="Branch 15 was taken 20 times"> + </span>]
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 17 was taken 2 times"> + </span><span class="branchCov" title="Branch 18 was taken 27 times"> + </span>][<span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 2 times"> + </span>]
+<span class="lineNum">     403 </span>                :<span class="lineCov">         29 : }</span>
 <a name="404"><span class="lineNum">     404 </span>                :            : </a>
 <span class="lineNum">     405 </span>                :            : void
 <span class="lineNum">     406 </span>                :<span class="lineNoCov">          0 : TimeDelta_add_DayDelta(</span>
