@@ -65,6 +65,7 @@
  * tests the C "Timestamp_create_..." functions).
  */
 TEST_CASE("Timestamp creators", "[timestamp]") {
+    /*
     Timestamp t;
 
     // create(time_t)
@@ -115,7 +116,6 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
 
     // now()
     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
-    /*
     struct PresentNowStruct test_now = {
         (time_t) 920180081,
         (long)   986000000
