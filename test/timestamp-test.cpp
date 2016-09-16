@@ -77,12 +77,12 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     // create(struct tm, TimeDelta)
     // create(Date, ClockTime, TimeDelta)
 
-    /*
     TEST_CREATE(
             1970, 1, 1,     // date
             0, 0, 0,        // time
             0,              // time zone offset
             0);             // expected UNIX timestamp
+    /*
     TEST_CREATE(
             1969, 12, 31,
             0, 0, 0,
