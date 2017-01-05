@@ -8,7 +8,7 @@
  */
 
 /*
- * REMEMBERANCE of the Variadic Macros that used to be here:
+ * IN REMEMBERANCE of the Variadic Macros that used to be here:
  * https://github.com/jhartz/present/blob/d060bb32f2be43299249bad8c7c44f428ff4bcc3/src/present-utils.h
  */
 
@@ -55,7 +55,7 @@
 /**
  * Compare 2 structs by the value of a data member.
  * _Else is returned if the 2 values are equal. If this is the last data
- * member being compares, _Else should be 0.
+ * member being compared, _Else should be 0.
  */
 #define STRUCT_COMPARE(_DataMember, _Else)                              \
     ((lhs->data_._DataMember < rhs->data_._DataMember) ? -1 :           \
