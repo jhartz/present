@@ -2,6 +2,7 @@ Present Style Guide
 ===================
 
 - 80 character line limit
+- Indentation is 4 spaces (no tabs)
 - Struct and class names are CamelCase
 - Variable names and functions are underscore_separated (except when including
   the name of a struct or class)
