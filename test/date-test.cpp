@@ -1,7 +1,7 @@
 /*
  * Present - Date/Time Library
  *
- * Tests for the ClockTime C++ class and C-compatible methods
+ * Tests for the Date C++ class and C-compatible methods
  *
  * Licensed under the MIT License.
  * For details, see LICENSE.
