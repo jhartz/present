@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/jhartz/present.svg?branch=master)](https://travis-ci.org/jhartz/present)
 [Code Coverage](https://jhartz.github.io/present/coverage/present/src/index.html) (work in progress)
 
-**A date/time library for C and C++**
+**A small but sane date/time library for C and C++**
 
 Present makes working with dates, times, and durations simple in both C and
 C++.
@@ -11,7 +11,8 @@ C++.
 Its functionality is broken down into 6 types. Each has a struct definition
 that encapsulates its data. In C, these structs are passed around helper
 methods that access and manipulate them, but, in C++, each struct is a
-full-blown class with methods.
+full-blown class with methods (although they remain "Plain Old Data", and thus
+can be copied easily and shared with C programs).
 
 ## Basic Date/Time Types
 
@@ -138,10 +139,14 @@ not needed. It can be compiled by either a C or a C++ compiler.
 Present should support any compiler compatible with ANSI C (C89) or any C++
 compiler. However, it is recommended to use a version that supports stdint.h
 (required since C99). Also, C99 variadic macros are used for shortcut macros
-for creating some of the types.
+that make it easier to create and initialize some of the types.
 
 Present is meant to work across platforms. If there is an issue compiling it
 on a certain platform, please file an issue report.
+
+No part of the Present implementation uses dynamic memory access, so it can be
+used on systems that don't support `malloc` and friends, and you don't have to
+worry about doing any special cleanup for Present types.
 
 ## Building
 
