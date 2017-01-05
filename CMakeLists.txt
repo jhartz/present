@@ -31,7 +31,8 @@ option (COMPILE_WITH_CXX_AS_CC
 )
 
 option (PRESENT_USE_PTHREAD
-    "Use the pthread library to ensure thread safety"
+    "Use the pthread library to ensure thread safety when calling time functions from the standard library"
+    # (assuming only Present code is calling the standard library functions directly)
     OFF
 )
 
