@@ -86,7 +86,7 @@ convert_to_struct_tm(
 }
 
 /** Convert a time_t to a UNIX timestamp. */
-int_timestamp
+static int_timestamp
 time_t_to_timestamp(const time_t timestamp)
 {
     /* TODO: We're just assuming that time_t is already a UNIX timestamp */
@@ -94,7 +94,7 @@ time_t_to_timestamp(const time_t timestamp)
 }
 
 /** Convert a UNIX timestamp to a time_t. */
-time_t
+static time_t
 timestamp_to_time_t(const int_timestamp timestamp_seconds)
 {
     /* TODO: We're just assuming that time_t is a UNIX timestamp */
@@ -198,9 +198,7 @@ Timestamp_create(
     struct Timestamp t;
 
     assert(date != NULL);
-    assert(date->error == 0);
     assert(clockTime != NULL);
-    assert(clockTime->error == 0);
 
     /* Make sure the Date and ClockTime aren't erroneous */
     if (date->error) {
@@ -232,9 +230,7 @@ Timestamp_create_utc(
     struct TimeDelta time_since_midnight;
 
     assert(date != NULL);
-    assert(date->error == 0);
     assert(clockTime != NULL);
-    assert(clockTime->error == 0);
 
     /* Make sure the Date and ClockTime aren't erroneous */
     if (date->error) {
@@ -279,9 +275,7 @@ Timestamp_create_local(
         const struct ClockTime * const clockTime)
 {
     assert(date != NULL);
-    assert(date->error == 0);
     assert(clockTime != NULL);
-    assert(clockTime->error == 0);
 
     /* Make sure the Date and ClockTime aren't erroneous */
     if (date->error) {
