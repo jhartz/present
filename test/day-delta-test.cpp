@@ -216,7 +216,6 @@ TEST_CASE("DayDelta arithmetic operators", "[day-delta]") {
     IS(-13);
 }
 
-
 TEST_CASE("DayDelta comparison operators", "[day-delta]") {
     DayDelta d1 = DayDelta::from_days(19),
              d2 = DayDelta::from_days(21),
@@ -261,5 +260,4 @@ TEST_CASE("DayDelta comparison operators", "[day-delta]") {
     CHECK(d3 >= d4);
     CHECK(!(d5 >= d2));
 }
-
 
