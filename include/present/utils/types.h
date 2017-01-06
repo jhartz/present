@@ -85,7 +85,7 @@ typedef present_int64   int_delta;
 /* Month Delta */
 
 typedef present_int32   int_month_delta;
-typedef present_int16   int_year_delta;
+typedef present_int32   int_year_delta;
 
 #endif /* _PRESENT_TYPES_H_ */
 
