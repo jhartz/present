@@ -200,8 +200,8 @@ if (COMPILE_PRESENTCPP)
 
             test/clock-time-test.cpp
             test/date-test.cpp
-            #test/day-delta-test.cpp
-            #test/month-delta-test.cpp
+            test/day-delta-test.cpp
+            test/month-delta-test.cpp
             #test/time-delta-test.cpp
             test/timestamp-test.cpp
         )
