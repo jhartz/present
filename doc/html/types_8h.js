@@ -22,5 +22,5 @@ var types_8h =
     [ "int_day_of_week", "types_8h.html#a78b244794c680f1753a6d92eed77aeda", null ],
     [ "int_delta", "types_8h.html#a8a67cf99971c5cfeeaa2380ba84a4c92", null ],
     [ "int_month_delta", "types_8h.html#adc711c00c117528b40875ad0119c687f", null ],
-    [ "int_year_delta", "types_8h.html#a39556f27d189e3da1fcb3db910239761", null ]
+    [ "int_year_delta", "types_8h.html#ad2a6eecbd190f1ae0327acdeaf596623", null ]
 ];
