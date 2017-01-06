@@ -134,7 +134,7 @@ TEST_CASE("DayDelta arithmetic operators", "[day-delta]") {
     DayDelta d;
 
     d = -d1;
-    IS(8);
+    IS(-8);
     d = -d2;
     IS(21);
     d = -d3;
