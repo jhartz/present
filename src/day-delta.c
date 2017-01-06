@@ -144,7 +144,7 @@ DayDelta_subtract(
     assert(self != NULL);
     assert(self->error == 0);
     assert(dayDeltaToSubtract != NULL);
-    assert(dayDeltaToSubtract == 0);
+    assert(dayDeltaToSubtract->error == 0);
 
     self->data_.delta_days -= dayDeltaToSubtract->data_.delta_days;
 }

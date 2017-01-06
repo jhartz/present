@@ -24,7 +24,7 @@
 
 #ifdef PRESENT_USE_PTHREAD
 static pthread_mutex_t syscall_access;
-int is_initialized = 0;
+static int is_initialized = 0;
 
 #define INITIALIZE                          \
     do {                                    \

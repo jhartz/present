@@ -52,7 +52,7 @@
     } while (0)
 
 /** Create a new TimeDelta based on seconds and nanoseconds. */
-struct TimeDelta
+static struct TimeDelta
 new_time_delta(int_delta seconds, int_delta nanoseconds)
 {
     struct PresentTimeDeltaData data;

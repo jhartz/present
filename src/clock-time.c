@@ -63,7 +63,7 @@ new_clock_time(
  * Check the bounds on data.{nanosecond,second} and modify or wrap around if
  * necessary.
  */
-void
+static void
 check_clock_time(struct ClockTime * const self)
 {
 #define d self->data_
