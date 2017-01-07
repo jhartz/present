@@ -107,6 +107,31 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     TEST_CREATE_FROM_STRUCT_TM(1976, 4, 6, 0, 59, 59,   +3, 197589599);
     TEST_CREATE_FROM_DATE_TIME(1976, 4, 6, 0, 59, 59,   +3, 197589599);
 
+    // create(Date, ClockTime) with bad Date / ClockTime
+    Date bad_d = Date::create(0, 0, 0);
+    REQUIRE(bad_d.error != Date_ERROR_NONE);
+    Date good_d = Date::create(2000, 1, 1);
+    REQUIRE(good_d.error == Date_ERROR_NONE);
+
+    ClockTime bad_ct = ClockTime::create(99, 99, 99);
+    REQUIRE(bad_ct.error != ClockTime_ERROR_NONE);
+    ClockTime good_ct = ClockTime::noon();
+    REQUIRE(good_ct.error == ClockTime_ERROR_NONE);
+
+    t = Timestamp::create(bad_d, good_ct, TimeDelta::zero());
+    CHECK(t.error == Timestamp_ERROR_INVALID_DATE);
+    t = Timestamp::create_utc(bad_d, good_ct);
+    CHECK(t.error == Timestamp_ERROR_INVALID_DATE);
+    t = Timestamp::create_local(bad_d, good_ct);
+    CHECK(t.error == Timestamp_ERROR_INVALID_DATE);
+
+    t = Timestamp::create(good_d, bad_ct, TimeDelta::zero());
+    CHECK(t.error == Timestamp_ERROR_INVALID_CLOCK_TIME);
+    t = Timestamp::create_utc(good_d, bad_ct);
+    CHECK(t.error == Timestamp_ERROR_INVALID_CLOCK_TIME);
+    t = Timestamp::create_local(good_d, bad_ct);
+    CHECK(t.error == Timestamp_ERROR_INVALID_CLOCK_TIME);
+
     // now()
     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
     struct PresentNowStruct test_now = {
