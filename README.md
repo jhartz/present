@@ -1,7 +1,7 @@
 # Present
 
 [![Build Status](https://travis-ci.org/jhartz/present.svg?branch=master)](https://travis-ci.org/jhartz/present)
-[Code Coverage](https://jhartz.github.io/present/coverage/present/src/index.html) (work in progress)
+[Code Coverage](https://jhartz.github.io/present/coverage/src/index.html) (work in progress)
 
 **A small but sane date/time library for C and C++**
 
