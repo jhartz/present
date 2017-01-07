@@ -170,28 +170,40 @@ statements to `#define _____` to enable any of those features.
 
 ```C++
 #include "present.h"
+```
 
+```C++
 // Create a ClockTime
 ClockTime myClockTime(ClockTime::create(12, 59, 59));
+
 // Add a TimeDelta of 1 second to make it 13:00:00
 myClockTime += TimeDelta::from_seconds(1);
+```
 
+```C++
 // Create a MonthDelta from months and a MonthDelta from years
 MonthDelta myMonthDelta(MonthDelta::from_months(4));
 MonthDelta myYearDelta(MonthDelta::from_years(2));
+
 // Some arithmetic modifications and comparisons supported by deltas
 myMonthDelta < myYearDelta      // true
 myMonthDelta * 6 == myYearDelta // true
 myMonthDelta - myYearDelta == -MonthDelta::from_months(20)  // true
+```
 
+```C++
 // Create some Dates
 Date myDate1(Date::create(1969, 4, 19));
 Date myDate2(myDate1 + myMonthDelta);
+
 // Dates can be compared too
 myDate2 > myDate1       // true
+```
 
+```C++
 // Create a Timestamp based on the Date and ClockTime above, in UTC
 Timestamp myTimestamp(Timestamp::create_utc(myDate, myClockTime));
+
 // Now, get the ClockTime in Eastern Daylight Time (UTC-4:00)
 myTimestamp.get_clock_time(TimeDelta::from_hours(-4))   // 09:00:00
 ```
@@ -202,31 +214,43 @@ All of the functionality above can be utilized from pure C as well.
 
 ```C
 #include "present.h"
+```
 
+```C
 // Create a ClockTime
 struct ClockTime myClockTime = ClockTime_create(12, 59, 59);
+
 // Add a TimeDelta of 1 second to make it 13:00:00
 const struct TimeDelta tempTimeDelta = TimeDelta_from_seconds(1);
 ClockTime_add_time_delta(&myClockTime, &myTimeDelta);
+```
 
+```C
 // Create a MonthDelta from months and a MonthDelta from years
 struct MonthDelta myMonthDelta = MonthDelta_from_months(4);
 struct MonthDelta myYearDelta = MonthDelta_from_years(2);
+
 // Some arithmetic modifications and comparisons supported by deltas
 MonthDelta_less_than(&myMonthDelta, &myYearDelta)   // true
 struct MonthDelta tempMonthDelta = myMonthDelta;
 MonthDelta_multiply_by(&tempMonthDelta, 6);
 MonthDelta_equal(&tempMonthDelta, &myYearDelta)     // true
+```
 
+```C
 // Create some Dates
 struct Date myDate1 = Date_create(1969, 4, 19);
 struct Date myDate2 = myDate1;
 Date_add_month_delta(&myDate2, &myMonthDelta);
+
 // Dates can be compared too
 Date_greater_than(&myDate2, &myDate1)       // true
+```
 
+```C
 // Create a Timestamp based on the Date and ClockTime above, in UTC
 struct Timestamp myTimestamp = Timestamp_create_utc(&myDate, &myClockTime);
+
 // Now, get the ClockTime in Eastern Daylight Time (UTC-4:00)
 const struct TimeDelta tempTimeDelta = TimeDelta_from_hours(-4);
 Timestamp_get_clock_time(&myTimestamp, &tempTimeDelta)  // 09:00:00
