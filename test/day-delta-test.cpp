@@ -9,9 +9,7 @@
 
 #include "catch.hpp"
 
-#include "present/time-delta.h"
-
-#include "present/day-delta.h"
+#include "present.h"
 
 /**
  * Shortcut macro to compare the number of days.

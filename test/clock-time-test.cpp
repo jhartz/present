@@ -9,9 +9,7 @@
 
 #include "catch.hpp"
 
-#include "present/time-delta.h"
-
-#include "present/clock-time.h"
+#include "present.h"
 
 /**
  * Shortcut macro to compare seconds and nanoseconds all in one.

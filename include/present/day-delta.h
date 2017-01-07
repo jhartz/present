@@ -1,7 +1,12 @@
 /*
  * Present - Date/Time Library
  *
- * Definition of the DayDelta structure and related methods
+ * Definition of the DayDelta structure and declarations of the corresponding
+ * functions
+ *
+ * This file may be included individually ONLY if being used by a C compiler.
+ * However, it is recommended (and required for C++ projects) to include
+ * "present.h" rather than these individual header files.
  *
  * Licensed under the MIT License.
  * For details, see LICENSE.
@@ -9,9 +14,11 @@
 
 #include <time.h>
 
-#include "present/utils/header-utils.h"
-#include "present/utils/types.h"
-#include "present/impl/present-day-delta-data.h"
+#include "present/internal/cpp-guard.h"
+#include "present/internal/header-utils.h"
+#include "present/internal/types.h"
+
+#include "present/internal/present-day-delta-data.h"
 
 #ifndef _PRESENT_DAY_DELTA_H_
 #define _PRESENT_DAY_DELTA_H_
@@ -132,7 +139,7 @@ struct PRESENT_API DayDelta {
 };
 
 /*
- * C Method Definitions
+ * C Method Declarations
  */
 
 #ifdef __cplusplus

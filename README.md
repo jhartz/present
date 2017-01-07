@@ -101,8 +101,27 @@ Examples of interactions:
 - Adding any type of delta to a `Timestamp`
 - Using a `TimeDelta` as a time zone offset when creating a `Timestamp`
 
-Additionally, the C++ classes support operator overloading, so all the code
-involving these actions looks and feels intuitive.
+Additionally, in C++, these types support operator overloading, so interacting
+with them looks and feels intuitive.
+
+## Usage
+
+To use Present in your code, just add `#include "present.h"` to your C or C++
+source and link with `libpresent` (which can be compiled as either a shared or
+a static library).
+
+- `libpresent` contains implementations of the C functions.
+- `present.h` contains the struct definitions for the 6 Present types, and
+  includes inline implementations of all the C++ methods (which are just
+  wrappers around the C functions).
+
+Note that the library itself (`libpresent`) does not contain the definitions
+of the C++ methods; all the methods are declared `inline` in the header files
+(since each one is just a wrapper around the corresponding C function).
+
+This also means that you only need a C compiler (not a C++ compiler) to compile
+`libpresent`. The compiled library can then be used with both C and C++ code.
+(`libpresent` can also be compiled with a C++ compiler without issue.)
 
 ## API Documentation
 
@@ -112,34 +131,13 @@ is always up to date with the code in `master`.
 - [C++ Documentation](https://jhartz.github.io/present/doc/html/annotated.html)
 - [C Documentation](https://jhartz.github.io/present/doc/html/files.html)
 
-## Present Libraries
-
-Present consists of the following libraries:
-
-- `libpresent`: includes the Present C++ classes and C methods
-- `libpresentc`: includes only the Present C methods
-
-The C++ classes are, for the most part, wrappers around the C methods. This
-way, all the functionality is implemented at the lowest level (`C`) and thus
-can be used in both C and C++ projects.
-
-`libpresent` consists of all the source files in `src/`, including both the
-`.c` and `.cpp` files (the `.c` files can be compiled with either a C or a C++
-compiler without issue). The C++ classes in `libpresent` can be linked to from
-C++ programs, and the C methods in `libpresent` can be linked to from both C
-and C++ programs.
-
-`libpresentc` consists of only the C source files in `src/`, and thus only
-includes the C methods, not the C++ classes. This library can be used instead
-of `libpresent` when a C++ compiler is not available or the C++ features are
-not needed. It can be compiled by either a C or a C++ compiler.
-
 ## Requirements
 
 Present should support any compiler compatible with ANSI C (C89) or any C++
 compiler. However, it is recommended to use a version that supports stdint.h
 (required since C99). Also, C99 variadic macros are used for shortcut macros
-that make it easier to create and initialize some of the types.
+that make it easier to create and initialize some of the types in C (the
+`ClockTime_create(...)` and `Date_create(...)` macros).
 
 Present is meant to work across platforms. If there is an issue compiling it
 on a certain platform, please file an issue report.
@@ -171,15 +169,6 @@ statements to `#define _____` to enable any of those features.
 ## C++ Examples
 
 ```C++
-// Either only include the types you need
-#include "present/clock-time.h"
-#include "present/date.h"
-#include "present/day-delta.h"
-#include "present/month-delta.h"
-#include "present/time-delta.h"
-#include "present/timestamp.h"
-
-// Or include them all with this shortcut
 #include "present.h"
 
 // Create a ClockTime
@@ -212,6 +201,8 @@ myTimestamp.get_clock_time(TimeDelta::from_hours(-4))   // 09:00:00
 All of the functionality above can be utilized from pure C as well.
 
 ```C
+#include "present.h"
+
 // Create a ClockTime
 struct ClockTime myClockTime = ClockTime_create(12, 59, 59);
 // Add a TimeDelta of 1 second to make it 13:00:00

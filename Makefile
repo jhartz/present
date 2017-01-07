@@ -20,17 +20,13 @@ CXXFLAGS += $(FLAGS) -std=c++11
 
 MODULES = clock-time date day-delta month-delta time-delta timestamp
 C_OBJECTS = $(MODULES:%=build/%.c.o) build/utils/time-calls.c.o
-CXX_OBJECTS = $(MODULES:%=build/%.cpp.o)
 TEST_SRC = $(MODULES:%=test/%-test.cpp)
 
 LIBRARY_OBJECT_FLAGS = -fpic
 LIBRARY_FLAGS = -shared
 
-libpresentc_COMPILER = $(CC)
-libpresentc_FLAGS = $(CFLAGS)
-
-libpresent_COMPILER = $(CXX)
-libpresent_FLAGS = $(CXXFLAGS)
+libpresent_COMPILER = $(CC)
+libpresent_FLAGS = $(CFLAGS)
 
 
 default: build_dir shared build/present-repl
@@ -47,7 +43,7 @@ build_dir:
 
 # REPL
 
-build/present-repl: $(C_OBJECTS) $(CXX_OBJECTS) build/repl.o
+build/present-repl: $(C_OBJECTS) build/repl.o
 	$(CXX) $(CXXFLAGS) -L./build -o $@ $^
 
 build/repl.o: src/repl.cpp
@@ -55,50 +51,41 @@ build/repl.o: src/repl.cpp
 
 # Tests
 
-build/present-test: $(C_OBJECTS) $(CXX_OBJECTS) $(TEST_SRC) test/test.cpp
+build/present-test: $(C_OBJECTS) $(TEST_SRC) test/test.cpp
 	$(CXX) $(CXXFLAGS) -L./build -o $@ $^
 
 # Shared libraries
 
-shared: build_dir build/libpresent.so build/libpresentc.so
+shared: build_dir build/libpresent.so
 
-build/libpresent.so: $(C_OBJECTS) $(CXX_OBJECTS)
+build/libpresent.so: $(C_OBJECTS)
 	$(libpresent_COMPILER) $(libpresent_FLAGS) $(LIBRARY_FLAGS) -o $@ $^
-
-build/libpresentc.so: $(C_OBJECTS)
-	$(libpresentc_COMPILER) $(libpresentc_FLAGS) $(LIBRARY_FLAGS) -o $@ $^
 
 .PHONY: shared
 
 # Static libraries
 
-static: build_dir build/libpresent.a build/libpresentc.a
+static: build_dir build/libpresent.a
 
-build/libpresent.a: $(C_OBJECTS) $(CXX_OBJECTS)
-	ar rcs $@ $^
-
-build/libpresentc.a: $(C_OBJECTS)
+build/libpresent.a: $(C_OBJECTS)
 	ar rcs $@ $^
 
 .PHONY: static
 
 # Individual object files
 
-build/%.cpp.o: src/%.cpp
+build/%.c.o: src/%.c
 	$(libpresent_COMPILER) $(libpresent_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
 
-build/%.c.o: src/%.c
-	$(libpresentc_COMPILER) $(libpresentc_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
-
 build/utils/%.c.o: src/utils/%.c
-	$(libpresentc_COMPILER) $(libpresentc_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
+	$(libpresent_COMPILER) $(libpresent_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
 
 # Cleanup
 
 clean: clean-o clean-so clean-a clean-bin
 
 clean-o:
-	rm -f build/*.o
+	rm -f build/*.o build/utils/*.o
 
 clean-so:
 	rm -f build/*.so

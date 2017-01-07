@@ -9,10 +9,7 @@
 
 #include "catch.hpp"
 
-#include "present/day-delta.h"
-#include "present/month-delta.h"
-
-#include "present/date.h"
+#include "present.h"
 
 /**
  * Shortcut macro to compare year, month, and day all in one.

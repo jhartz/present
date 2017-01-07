@@ -1,7 +1,12 @@
 /*
  * Present - Date/Time Library
  *
- * Definition of the Date structure and related methods
+ * Definition of the Date structure and declarations of the corresponding
+ * functions
+ *
+ * This file may be included individually ONLY if being used by a C compiler.
+ * However, it is recommended (and required for C++ projects) to include
+ * "present.h" rather than these individual header files.
  *
  * Licensed under the MIT License.
  * For details, see LICENSE.
@@ -9,9 +14,11 @@
 
 #include <time.h>
 
-#include "present/utils/header-utils.h"
-#include "present/utils/types.h"
-#include "present/impl/present-date-data.h"
+#include "present/internal/cpp-guard.h"
+#include "present/internal/header-utils.h"
+#include "present/internal/types.h"
+
+#include "present/internal/present-date-data.h"
 
 #ifndef _PRESENT_DATE_H_
 #define _PRESENT_DATE_H_
@@ -153,7 +160,7 @@ struct PRESENT_API Date {
 };
 
 /*
- * C Method Definitions
+ * C Method Declarations
  */
 
 #ifdef __cplusplus
@@ -232,7 +239,7 @@ Date_from_year_day(int_year year, int_day_of_year day_of_year);
  * @param week_of_year The week of the year (1 to 52 or 53, inclusive,
  * depending on the year).
  * @param day_of_week The day of the week (1 to 7, inclusive). See
- * present/utils/types.h for constants for each day of the week.
+ * present/internal/types.h for constants for each day of the week.
  */
 PRESENT_API struct Date
 Date_from_year_week_day(

@@ -10,16 +10,11 @@
 #include <assert.h>
 #include <stddef.h>
 
-#include "present/utils/types.h"
-#include "present/impl/present-day-delta-data.h"
+#include "present.h"
 
 #include "utils/constants.h"
 #include "utils/impl-utils.h"
 #include "utils/time-calls.h"
-
-#include "present/time-delta.h"
-
-#include "present/day-delta.h"
 
 struct DayDelta
 DayDelta_from_days(int_delta days)

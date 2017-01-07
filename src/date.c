@@ -11,20 +11,11 @@
 #include <stddef.h>
 #include <string.h>
 
-#include "present/utils/types.h"
-#include "present/impl/present-date-data.h"
+#include "present.h"
 
 #include "utils/constants.h"
 #include "utils/impl-utils.h"
 #include "utils/time-calls.h"
-
-#include "present/clock-time.h"
-#include "present/day-delta.h"
-#include "present/month-delta.h"
-#include "present/time-delta.h"
-#include "present/timestamp.h"
-
-#include "present/date.h"
 
 /**
  * Get the week number of the last week of a given year (either 52 or 53).

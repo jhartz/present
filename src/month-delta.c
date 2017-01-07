@@ -10,14 +10,11 @@
 #include <assert.h>
 #include <stddef.h>
 
-#include "present/utils/types.h"
-#include "present/impl/present-month-delta-data.h"
+#include "present.h"
 
 #include "utils/constants.h"
 #include "utils/impl-utils.h"
 #include "utils/time-calls.h"
-
-#include "present/month-delta.h"
 
 struct MonthDelta
 MonthDelta_from_months(int_month_delta month_delta)

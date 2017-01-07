@@ -10,16 +10,11 @@
 #include <assert.h>
 #include <stddef.h>
 
-#include "present/utils/types.h"
-#include "present/impl/present-clock-time-data.h"
+#include "present.h"
 
 #include "utils/constants.h"
 #include "utils/impl-utils.h"
 #include "utils/time-calls.h"
-
-#include "present/time-delta.h"
-
-#include "present/clock-time.h"
 
 /**
  * Create a new ClockTime instance based on its data parameters.

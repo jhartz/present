@@ -34,9 +34,9 @@ typedef unsigned char   present_bool;
  */
 
 #ifdef PRESENT_USE_STDINT
-# include "present/utils/typedefs-stdint.h"
+# include "present/internal/typedefs-stdint.h"
 #else
-# include "present/utils/typedefs-nostdint.h"
+# include "present/internal/typedefs-nostdint.h"
 #endif
 
 /*

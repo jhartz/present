@@ -10,20 +10,11 @@
 #include <assert.h>
 #include <stddef.h>
 
-#include "present/utils/types.h"
-#include "present/impl/present-timestamp-data.h"
+#include "present.h"
 
 #include "utils/constants.h"
 #include "utils/impl-utils.h"
 #include "utils/time-calls.h"
-
-#include "present/clock-time.h"
-#include "present/date.h"
-#include "present/day-delta.h"
-#include "present/month-delta.h"
-#include "present/time-delta.h"
-
-#include "present/timestamp.h"
 
 /** Convert a struct tm to a Date. */
 static struct Date

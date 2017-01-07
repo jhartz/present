@@ -10,7 +10,7 @@
  * For details, see LICENSE.
  */
 
-#include "present/utils/types.h"
+#include "present/internal/types.h"
 
 #ifndef _PRESENT_DAY_DELTA_DATA_H_
 #define _PRESENT_DAY_DELTA_DATA_H_

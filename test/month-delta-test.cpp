@@ -9,7 +9,7 @@
 
 #include "catch.hpp"
 
-#include "present/month-delta.h"
+#include "present.h"
 
 /**
  * Shortcut macro to compare the number of months.

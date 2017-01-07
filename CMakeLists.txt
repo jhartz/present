@@ -5,13 +5,8 @@ project (Present)
 set (Present_VERSION_MAJOR 0)
 set (Present_VERSION_MINOR 9)
 
-option (COMPILE_PRESENTCPP
-    "Compile the C++ Present library (libpresent) in addition to the C library (libpresentc) - required to use Present C++ classes, to compile the REPL, or to compile the unit tests"
-    ON
-)
-
 option (COMPILE_REPL
-    "Compile the Present REPL (requires libpresentcpp)"
+    "Compile the Present REPL"
     ON
 )
 
@@ -32,7 +27,7 @@ option (COMPILE_WITH_CXX_AS_CC
 
 option (PRESENT_USE_PTHREAD
     "Use the pthread library to ensure thread safety when calling time functions from the standard library"
-    # (assuming only Present code is calling the standard library functions directly)
+    # (only works if Present is the only one calling the standard library functions directly)
     OFF
 )
 
@@ -85,7 +80,7 @@ configure_file (
 )
 
 # Add the binary tree to the search path for include files so that we will find
-# PresentConfig.h
+# present-config.h
 include_directories ("${PROJECT_BINARY_DIR}/include")
 
 # Add the header include files
@@ -106,7 +101,7 @@ install (
 )
 
 ###############################################################################
-## libpresentc (Present C library)
+## libpresent (Present C library)
 
 # If we're compiling C with a C++ compiler, set that
 if (COMPILE_WITH_CXX_AS_CC)
@@ -124,7 +119,7 @@ if (COMPILE_WITH_CXX_AS_CC)
 endif (COMPILE_WITH_CXX_AS_CC)
 
 # Compile the C library
-add_library (presentc SHARED
+add_library (present SHARED
     src/utils/time-calls.c
     src/clock-time.c
     src/date.c
@@ -137,83 +132,62 @@ add_library (presentc SHARED
 # Link librt if necessary
 find_library (LIBRT_PATH rt)
 if (LIBRT_PATH)
-    target_link_libraries (presentc
+    target_link_libraries (present
         rt
     )
 endif (LIBRT_PATH)
 
 # Link pthread if necessary
 if (PRESENT_USE_PTHREAD)
-    target_link_libraries (presentc
+    target_link_libraries (present
         pthread
     )
 endif (PRESENT_USE_PTHREAD)
 
 # Install the C library
 install (
-    TARGETS presentc
+    TARGETS present
     DESTINATION lib
 )
 
 ###############################################################################
-## libpresent (Present C++ library), REPL, unit tests
+## REPL and unit tests
 
-if (COMPILE_PRESENTCPP)
-    # Compile the C++ library
-    add_library (present SHARED
-        src/clock-time.cpp
-        src/date.cpp
-        src/day-delta.cpp
-        src/month-delta.cpp
-        src/time-delta.cpp
-        src/timestamp.cpp
+if (COMPILE_REPL)
+    # Compile the REPL executable
+    add_executable (present-repl
+        src/repl.cpp
     )
-    target_link_libraries (present
-        presentc
+    target_link_libraries (present-repl
+        present
     )
 
-    # Install the C++ library
+    # Install the Present REPL
     install (
-        TARGETS present
-        DESTINATION lib
+        TARGETS present-repl
+        DESTINATION bin
+    )
+endif (COMPILE_REPL)
+
+if (COMPILE_TESTS)
+    # Compile the unit tests
+    add_executable (present-test
+        test/test.cpp
+
+        test/clock-time-test.cpp
+        test/date-test.cpp
+        test/day-delta-test.cpp
+        test/month-delta-test.cpp
+        test/time-delta-test.cpp
+        test/timestamp-test.cpp
+    )
+    target_link_libraries (present-test
+        present
     )
 
-    if (COMPILE_REPL)
-        # Compile the REPL executable
-        add_executable (present-repl
-            src/repl.cpp
-        )
-        target_link_libraries (present-repl
-            present
-        )
-
-        # Install the Present REPL
-        install (
-            TARGETS present-repl
-            DESTINATION bin
-        )
-    endif (COMPILE_REPL)
-
-    if (COMPILE_TESTS)
-        # Compile the unit tests
-        add_executable (present-test
-            test/test.cpp
-
-            test/clock-time-test.cpp
-            test/date-test.cpp
-            test/day-delta-test.cpp
-            test/month-delta-test.cpp
-            #test/time-delta-test.cpp
-            test/timestamp-test.cpp
-        )
-        target_link_libraries (present-test
-            present
-        )
-
-        enable_testing()
-        add_test(NAME present-test COMMAND present-test)
-    endif (COMPILE_TESTS)
-endif (COMPILE_PRESENTCPP)
+    enable_testing()
+    add_test(NAME present-test COMMAND present-test)
+endif (COMPILE_TESTS)
 
 ###############################################################################
 ## Documentation generation (Doxygen)
