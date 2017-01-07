@@ -3,6 +3,9 @@
  *
  * Internal data structure for storing dates
  *
+ * NOTE: This structure is not meant to be accessed directly, and may change
+ * at any time.
+ *
  * Licensed under the MIT License.
  * For details, see LICENSE.
  */
