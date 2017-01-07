@@ -20,7 +20,7 @@
 # include <pthread.h>
 #endif
 
-#include "present-syscalls.h"
+#include "utils/time-calls.h"
 
 #ifdef PRESENT_USE_PTHREAD
 static pthread_mutex_t syscall_access;

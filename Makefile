@@ -19,7 +19,7 @@ CXXFLAGS += $(FLAGS) -std=c++11
 
 
 MODULES = clock-time date day-delta month-delta time-delta timestamp
-C_OBJECTS = $(MODULES:%=build/%.c.o) build/present-syscalls.c.o
+C_OBJECTS = $(MODULES:%=build/%.c.o) build/utils/time-calls.c.o
 CXX_OBJECTS = $(MODULES:%=build/%.cpp.o)
 TEST_SRC = $(MODULES:%=test/%-test.cpp)
 
@@ -41,7 +41,7 @@ test: build_dir build/present-test
 	./build/present-test
 
 build_dir:
-	mkdir -p build/
+	mkdir -p build/utils/
 
 .PHONY: default all test build_dir
 
@@ -88,6 +88,9 @@ build/%.cpp.o: src/%.cpp
 	$(libpresent_COMPILER) $(libpresent_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
 
 build/%.c.o: src/%.c
+	$(libpresentc_COMPILER) $(libpresentc_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
+
+build/utils/%.c.o: src/utils/%.c
 	$(libpresentc_COMPILER) $(libpresentc_FLAGS) $(LIBRARY_OBJECT_FLAGS) -c $< -o $@
 
 # Cleanup

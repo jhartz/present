@@ -90,6 +90,7 @@ include_directories ("${PROJECT_BINARY_DIR}/include")
 
 # Add the header include files
 include_directories ("${PROJECT_SOURCE_DIR}/include")
+include_directories ("${PROJECT_SOURCE_DIR}/src")
 
 # Install the header files (shared by both the C and C++ libraries)
 install (
@@ -110,7 +111,7 @@ install (
 # If we're compiling C with a C++ compiler, set that
 if (COMPILE_WITH_CXX_AS_CC)
     set_source_files_properties(
-        src/present-syscalls.c
+        src/utils/time-calls.c
         src/clock-time.c
         src/date.c
         src/day-delta.c
@@ -124,7 +125,7 @@ endif (COMPILE_WITH_CXX_AS_CC)
 
 # Compile the C library
 add_library (presentc SHARED
-    src/present-syscalls.c
+    src/utils/time-calls.c
     src/clock-time.c
     src/date.c
     src/day-delta.c

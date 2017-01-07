@@ -14,9 +14,9 @@
 #include "present/utils/types.h"
 #include "present/impl/present-date-data.h"
 
-#include "present-constants.h"
-#include "present-syscalls.h"
-#include "present-utils.h"
+#include "utils/constants.h"
+#include "utils/impl-utils.h"
+#include "utils/time-calls.h"
 
 #include "present/clock-time.h"
 #include "present/day-delta.h"

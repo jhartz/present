@@ -10,8 +10,8 @@
 
 #include <time.h>
 
-#ifndef _PRESENT_SYSCALLS_H_
-#define _PRESENT_SYSCALLS_H_
+#ifndef _PRESENT_TIME_CALLS_H_
+#define _PRESENT_TIME_CALLS_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -80,5 +80,5 @@ void present_reset_test_time();
 }
 #endif
 
-#endif /* _PRESENT_SYSCALLS_H_ */
+#endif /* _PRESENT_TIME_CALLS_H_ */
 
