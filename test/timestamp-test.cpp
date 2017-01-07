@@ -150,3 +150,107 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     IS(0, 0);
 }
 
+TEST_CASE("Timestamp accessors", "[timestamp]") {
+    // All the same timestamp (197589599):
+    // Apr. 5, 1976 21:59:59 UTC
+    // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
+    // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
+
+    Timestamp t = Timestamp::create((time_t) 197589599);
+
+    // get_time_t
+    CHECK(t.get_time_t() == 197589599);
+
+    // get_struct_tm family
+    struct tm tm_utc = t.get_struct_tm_utc();
+    CHECK(tm_utc.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
+    CHECK(tm_utc.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
+    CHECK(tm_utc.tm_mday == 5);
+    CHECK(tm_utc.tm_hour == 21);
+    CHECK(tm_utc.tm_min == 59);
+    CHECK(tm_utc.tm_sec == 59);
+
+    struct tm tm_est = t.get_struct_tm(TimeDelta::from_hours(-5));
+    CHECK(tm_est.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
+    CHECK(tm_est.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
+    CHECK(tm_est.tm_mday == 5);
+    CHECK(tm_est.tm_hour == 16);
+    CHECK(tm_est.tm_min == 59);
+    CHECK(tm_est.tm_sec == 59);
+
+    struct tm tm_msk = t.get_struct_tm(TimeDelta::from_hours(3));
+    CHECK(tm_msk.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
+    CHECK(tm_msk.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
+    CHECK(tm_msk.tm_mday == 6);
+    CHECK(tm_msk.tm_hour == 0);
+    CHECK(tm_msk.tm_min == 59);
+    CHECK(tm_msk.tm_sec == 59);
+
+    // get_date family
+    CHECK(t.get_date_utc() == Date::create(1976, 4, 5));
+    CHECK(t.get_date(TimeDelta::zero()) == Date::create(1976, 4, 5));
+    CHECK(t.get_date(TimeDelta::from_hours(-5)) == Date::create(1976, 4, 5));
+    CHECK(t.get_date(TimeDelta::from_hours(3)) == Date::create(1976, 4, 6));
+
+    // get_clock_time family
+    CHECK(t.get_clock_time_utc() == ClockTime::create(21, 59, 59));
+    CHECK(t.get_clock_time(TimeDelta::zero()) ==
+            ClockTime::create(21, 59, 59));
+    CHECK(t.get_clock_time(TimeDelta::from_hours(-5)) ==
+            ClockTime::create(16, 59, 59));
+    CHECK(t.get_clock_time(TimeDelta::from_hours(3)) ==
+            ClockTime::create(0, 59, 59));
+
+    // The best we can do for the "local" methods is try throwing something at
+    // it and seeing that we get the same thing back
+    t = Timestamp::create_local(Date::create(1959, 5, 17),
+            ClockTime::create(14, 39, 45));
+
+    struct tm tm_local = t.get_struct_tm_local();
+    CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);
+    CHECK(tm_local.tm_mon == 5 - STRUCT_TM_MONTH_OFFSET);
+    CHECK(tm_local.tm_mday == 17);
+    CHECK(tm_local.tm_hour == 14);
+    CHECK(tm_local.tm_min == 39);
+    CHECK(tm_local.tm_sec == 45);
+
+    CHECK(t.get_date_local() == Date::create(1959, 5, 17));
+    CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));
+}
+
+TEST_CASE("Timestamp 'difference' functions", "[timestamp]") {
+    const time_t base = 197589599;
+    Timestamp t1 = Timestamp::create(base),
+              t2 = Timestamp::create(base + 86400 + 3600);  // + 1 day, 1 hour
+
+    TimeDelta exp_diff = TimeDelta::from_seconds(86400 + 3600);
+    CHECK(t1.difference(t2) == -exp_diff);
+    CHECK(t2.difference(t1) == exp_diff);
+    CHECK(t1.absolute_difference(t2) == exp_diff);
+    CHECK(t2.absolute_difference(t1) == exp_diff);
+}
+
+TEST_CASE("Timestamp arithmetic operators", "[timestamp]") {
+    TimeDelta seconds_plus4 = TimeDelta::from_seconds(4),
+              hours_minus4 = TimeDelta::from_hours(-4);
+
+    Timestamp orig_t = Timestamp::create((time_t) 197589599),
+              t;
+
+    t = orig_t;
+    t += seconds_plus4;
+    CHECK(t.get_time_t() == 197589599 + 4);
+
+    t = orig_t;
+    t -= seconds_plus4;
+    CHECK(t.get_time_t() == 197589599 - 4);
+
+    t = orig_t;
+    t += hours_minus4;
+    CHECK(t.get_time_t() == 197589599 + (3600 * -4));
+
+    t = orig_t;
+    t -= hours_minus4;
+    CHECK(t.get_time_t() == 197589599 - (3600 * -4));
+}
+
