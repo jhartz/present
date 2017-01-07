@@ -31,8 +31,8 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">27</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -40,8 +40,8 @@
             <td class="headerValue">2017-01-07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">11</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -49,9 +49,9 @@
             <td></td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -102,9 +102,9 @@
 <span class="lineNum">      31 </span>                :            : }
 <a name="32"><span class="lineNum">      32 </span>                :            : </a>
 <span class="lineNum">      33 </span>                :            : inline TimeDelta
-<span class="lineNum">      34 </span>                :<span class="lineCov">          2 : TimeDelta::from_seconds(int_delta seconds)</span>
+<span class="lineNum">      34 </span>                :<span class="lineCov">          4 : TimeDelta::from_seconds(int_delta seconds)</span>
 <span class="lineNum">      35 </span>                :            : {
-<span class="lineNum">      36 </span>                :<span class="lineCov">          2 :     return TimeDelta_from_seconds(seconds);</span>
+<span class="lineNum">      36 </span>                :<span class="lineCov">          4 :     return TimeDelta_from_seconds(seconds);</span>
 <span class="lineNum">      37 </span>                :            : }
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
 <span class="lineNum">      39 </span>                :            : inline TimeDelta
@@ -114,9 +114,9 @@
 <span class="lineNum">      43 </span>                :            : }
 <a name="44"><span class="lineNum">      44 </span>                :            : </a>
 <span class="lineNum">      45 </span>                :            : inline TimeDelta
-<span class="lineNum">      46 </span>                :<span class="lineCov">         15 : TimeDelta::from_hours(int_delta hours)</span>
+<span class="lineNum">      46 </span>                :<span class="lineCov">         22 : TimeDelta::from_hours(int_delta hours)</span>
 <span class="lineNum">      47 </span>                :            : {
-<span class="lineNum">      48 </span>                :<span class="lineCov">         15 :     return TimeDelta_from_hours(hours);</span>
+<span class="lineNum">      48 </span>                :<span class="lineCov">         22 :     return TimeDelta_from_hours(hours);</span>
 <span class="lineNum">      49 </span>                :            : }
 <a name="50"><span class="lineNum">      50 </span>                :            : </a>
 <span class="lineNum">      51 </span>                :            : inline TimeDelta
@@ -132,9 +132,9 @@
 <span class="lineNum">      61 </span>                :            : }
 <a name="62"><span class="lineNum">      62 </span>                :            : </a>
 <span class="lineNum">      63 </span>                :            : inline TimeDelta
-<span class="lineNum">      64 </span>                :<span class="lineCov">          3 : TimeDelta::zero()</span>
+<span class="lineNum">      64 </span>                :<span class="lineCov">          5 : TimeDelta::zero()</span>
 <span class="lineNum">      65 </span>                :            : {
-<span class="lineNum">      66 </span>                :<span class="lineCov">          3 :     return TimeDelta_zero();</span>
+<span class="lineNum">      66 </span>                :<span class="lineCov">          5 :     return TimeDelta_zero();</span>
 <span class="lineNum">      67 </span>                :            : }
 <span class="lineNum">      68 </span>                :            : 
 <span class="lineNum">      69 </span>                :            : inline int_delta
@@ -250,21 +250,21 @@
 <span class="lineNum">     179 </span>                :            : {
 <span class="lineNum">     180 </span>                :            :     return TimeDelta_is_negative(this);
 <span class="lineNum">     181 </span>                :            : }
-<span class="lineNum">     182 </span>                :            : 
+<a name="182"><span class="lineNum">     182 </span>                :            : </a>
 <span class="lineNum">     183 </span>                :            : inline void
-<span class="lineNum">     184 </span>                :            : TimeDelta::negate()
+<span class="lineNum">     184 </span>                :<span class="lineCov">          1 : TimeDelta::negate()</span>
 <span class="lineNum">     185 </span>                :            : {
-<span class="lineNum">     186 </span>                :            :     TimeDelta_negate(this);
-<span class="lineNum">     187 </span>                :            : }
-<span class="lineNum">     188 </span>                :            : 
+<span class="lineNum">     186 </span>                :<span class="lineCov">          1 :     TimeDelta_negate(this);</span>
+<span class="lineNum">     187 </span>                :<span class="lineCov">          1 : }</span>
+<a name="188"><span class="lineNum">     188 </span>                :            : </a>
 <span class="lineNum">     189 </span>                :            : inline TimeDelta
-<span class="lineNum">     190 </span>                :            : TimeDelta::operator-() const
+<span class="lineNum">     190 </span>                :<span class="lineCov">          1 : TimeDelta::operator-() const</span>
 <span class="lineNum">     191 </span>                :            : {
-<span class="lineNum">     192 </span>                :            :     assert(this-&gt;error == 0);
+<span class="lineNum">     192 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :     assert(this-&gt;error == 0);</span>
 <span class="lineNum">     193 </span>                :            : 
-<span class="lineNum">     194 </span>                :            :     TimeDelta copy(*this);
-<span class="lineNum">     195 </span>                :            :     copy.negate();
-<span class="lineNum">     196 </span>                :            :     return copy;
+<span class="lineNum">     194 </span>                :<span class="lineCov">          1 :     TimeDelta copy(*this);</span>
+<span class="lineNum">     195 </span>                :<span class="lineCov">          1 :     copy.negate();</span>
+<span class="lineNum">     196 </span>                :<span class="lineCov">          1 :     return copy;</span>
 <span class="lineNum">     197 </span>                :            : }
 <span class="lineNum">     198 </span>                :            : 
 <span class="lineNum">     199 </span>                :            : inline TimeDelta &amp;
@@ -392,9 +392,9 @@
 <span class="lineNum">     321 </span>                :            : }
 <a name="322"><span class="lineNum">     322 </span>                :            : </a>
 <span class="lineNum">     323 </span>                :            : inline bool
-<span class="lineNum">     324 </span>                :<span class="lineCov">          8 : operator==(const TimeDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
+<span class="lineNum">     324 </span>                :<span class="lineCov">         12 : operator==(const TimeDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     325 </span>                :            : {
-<span class="lineNum">     326 </span>                :<span class="lineCov">          8 :     return TimeDelta_equal(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     326 </span>                :<span class="lineCov">         12 :     return TimeDelta_equal(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     327 </span>                :            : }
 <span class="lineNum">     328 </span>                :            : 
 <span class="lineNum">     329 </span>                :            : inline bool

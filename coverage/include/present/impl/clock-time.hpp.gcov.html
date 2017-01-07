@@ -94,9 +94,9 @@
 <span class="lineNum">      23 </span>                :            : }
 <a name="24"><span class="lineNum">      24 </span>                :            : </a>
 <span class="lineNum">      25 </span>                :            : inline ClockTime
-<span class="lineNum">      26 </span>                :<span class="lineCov">         14 : ClockTime::create(int_hour hour, int_minute minute, int_second second)</span>
+<span class="lineNum">      26 </span>                :<span class="lineCov">         20 : ClockTime::create(int_hour hour, int_minute minute, int_second second)</span>
 <span class="lineNum">      27 </span>                :            : {
-<span class="lineNum">      28 </span>                :<span class="lineCov">         14 :     return ClockTime_from_hour_minute_second(hour, minute, second);</span>
+<span class="lineNum">      28 </span>                :<span class="lineCov">         20 :     return ClockTime_from_hour_minute_second(hour, minute, second);</span>
 <span class="lineNum">      29 </span>                :            : }
 <a name="30"><span class="lineNum">      30 </span>                :            : </a>
 <span class="lineNum">      31 </span>                :            : inline ClockTime
@@ -208,9 +208,9 @@
 <span class="lineNum">     137 </span>                :            : }
 <a name="138"><span class="lineNum">     138 </span>                :            : </a>
 <span class="lineNum">     139 </span>                :            : inline bool
-<span class="lineNum">     140 </span>                :<span class="lineCov">          5 : operator==(const ClockTime &amp; lhs, const ClockTime &amp; rhs)</span>
+<span class="lineNum">     140 </span>                :<span class="lineCov">         10 : operator==(const ClockTime &amp; lhs, const ClockTime &amp; rhs)</span>
 <span class="lineNum">     141 </span>                :            : {
-<span class="lineNum">     142 </span>                :<span class="lineCov">          5 :     return ClockTime_equal(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     142 </span>                :<span class="lineCov">         10 :     return ClockTime_equal(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     143 </span>                :            : }
 <a name="144"><span class="lineNum">     144 </span>                :            : </a>
 <span class="lineNum">     145 </span>                :            : inline bool
