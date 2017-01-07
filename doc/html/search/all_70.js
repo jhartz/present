@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['present_5fbool',['present_bool',['../types_8h.html#a1c24e2cdd988b886e889080ded176ae0',1,'types.h']]],
   ['presentclocktimeerror',['PresentClockTimeError',['../clock-time_8h.html#a40f97cceae12156ea6da9bd1c170d455',1,'clock-time.h']]],
   ['presentdateerror',['PresentDateError',['../date_8h.html#a42798e6b91456e88f492437d3e826c0b',1,'date.h']]],
   ['presentdaydeltaerror',['PresentDayDeltaError',['../day-delta_8h.html#a1fc28c3187bc8bcf286a214ee7168f8f',1,'day-delta.h']]],

@@ -99,8 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#a47f7592328f434f4091a5b044d83976a">months</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#ad2a6eecbd190f1ae0327acdeaf596623">int_year_delta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#abd1a36332a0347d39a9a7b7befceb6f5">years</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int_month_delta&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#a47f7592328f434f4091a5b044d83976a">months</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int_year_delta&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#abd1a36332a0347d39a9a7b7befceb6f5">years</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#ae7ac38d813d15ea4b9db82a43ed1be89">years_decimal</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#a4f0b4051d92cd180ac5f9f7466a36f57">is_negative</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#a88f17c6793e3e48ac00a70e12b9045d3">negate</a> ()</td></tr>
@@ -120,8 +120,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMonthDelta.html">MonthDelta</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#ad62de2e3686f5b93088eb371e9ff4c87">operator-=</a> (const <a class="el" href="structMonthDelta.html">MonthDelta</a> &amp;other)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structMonthDelta.html">MonthDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#afc96dd6ca914abc1ddd067f8f3755a89">from_months</a> (<a class="el" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a> month_delta)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structMonthDelta.html">MonthDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#a02632b6ef33850d9329bd04a686ce1ed">from_years</a> (<a class="el" href="types_8h.html#ad2a6eecbd190f1ae0327acdeaf596623">int_year_delta</a> year_delta)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structMonthDelta.html">MonthDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#afc96dd6ca914abc1ddd067f8f3755a89">from_months</a> (int_month_delta month_delta)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structMonthDelta.html">MonthDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#a02632b6ef33850d9329bd04a686ce1ed">from_years</a> (int_year_delta year_delta)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structMonthDelta.html">MonthDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#a847cb9c956c133957dbaffb32fb9bd15">zero</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthDelta.html#afb632f08f6278bcf7dfd5aef0cb12322">compare</a> (const <a class="el" href="structMonthDelta.html">MonthDelta</a> &amp;lhs, const <a class="el" href="structMonthDelta.html">MonthDelta</a> &amp;rhs)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
@@ -151,7 +151,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="structMonthDelta.html">MonthDelta</a> <a class="el" href="structMonthDelta.html#afc96dd6ca914abc1ddd067f8f3755a89">MonthDelta::from_months</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a>&#160;</td>
+          <td class="paramtype">int_month_delta&#160;</td>
           <td class="paramname"><em>month_delta</em></td><td>)</td>
           <td><code> [static]</code></td>
         </tr>
@@ -169,7 +169,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="structMonthDelta.html">MonthDelta</a> <a class="el" href="structMonthDelta.html#a02632b6ef33850d9329bd04a686ce1ed">MonthDelta::from_years</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="types_8h.html#ad2a6eecbd190f1ae0327acdeaf596623">int_year_delta</a>&#160;</td>
+          <td class="paramtype">int_year_delta&#160;</td>
           <td class="paramname"><em>year_delta</em></td><td>)</td>
           <td><code> [static]</code></td>
         </tr>
@@ -202,7 +202,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#adc711c00c117528b40875ad0119c687f">int_month_delta</a> <a class="el" href="structMonthDelta.html#a47f7592328f434f4091a5b044d83976a">MonthDelta::months</a> </td>
+          <td class="memname">int_month_delta <a class="el" href="structMonthDelta.html#a47f7592328f434f4091a5b044d83976a">MonthDelta::months</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -219,7 +219,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#ad2a6eecbd190f1ae0327acdeaf596623">int_year_delta</a> <a class="el" href="structMonthDelta.html#abd1a36332a0347d39a9a7b7befceb6f5">MonthDelta::years</a> </td>
+          <td class="memname">int_year_delta <a class="el" href="structMonthDelta.html#abd1a36332a0347d39a9a7b7befceb6f5">MonthDelta::years</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -796,7 +796,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

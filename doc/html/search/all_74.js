@@ -88,6 +88,5 @@ var searchData=
   ['to_5fdaydelta_5fabs_5fceil',['to_DayDelta_abs_ceil',['../structTimeDelta.html#a7febe32ac5264cc90c672bd65e316187',1,'TimeDelta']]],
   ['to_5fdaydelta_5frounded',['to_DayDelta_rounded',['../structTimeDelta.html#ad4f0f7a7eb10b5c59e54faff404453e4',1,'TimeDelta']]],
   ['to_5fdaydelta_5ftruncated',['to_DayDelta_truncated',['../structTimeDelta.html#a9ec83cf81fc5e809bfdad62b084c9456',1,'TimeDelta']]],
-  ['to_5ftimedelta',['to_TimeDelta',['../structDayDelta.html#a4e95505d0c45e5cc01d74259df3e4868',1,'DayDelta']]],
-  ['types_2eh',['types.h',['../types_8h.html',1,'']]]
+  ['to_5ftimedelta',['to_TimeDelta',['../structDayDelta.html#a4e95505d0c45e5cc01d74259df3e4868',1,'DayDelta']]]
 ];
