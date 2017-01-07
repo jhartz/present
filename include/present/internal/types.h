@@ -41,6 +41,11 @@ typedef unsigned char   present_bool;
 
 /*
  * Typedefs for common components of dates and times
+ *
+ * NOTE: Integer types are at least 16-bit, and signed, to make calculations
+ * (when adding/subtracting deltas) easier. Also, if we use 8-bit integers,
+ * it's usually a typedef of "char", and thus they are treated as characters
+ * in certain places where they should be treated as integers.
  */
 
 /* Timestamp */
@@ -49,16 +54,14 @@ typedef present_int64   int_timestamp;
 
 /* Time (only used to describe parameters, not used for internal storage) */
 
-typedef present_uint8   int_hour;
-typedef present_uint8   int_minute;
-typedef present_uint8   int_second;
-typedef present_uint64  int_nanosecond;
+typedef present_int16   int_hour;
+typedef present_int16   int_minute;
+typedef present_int16   int_second;
+typedef present_int64   int_nanosecond;
 
 /* Date */
 
 typedef present_int32   int_year;
-/* These values are at least 16-bit, and signed, to make calculations
-   (when adding/subtracting deltas) easier */
 typedef present_int16   int_month;
 typedef present_int16   int_day;
 typedef present_int16   int_day_of_year;
