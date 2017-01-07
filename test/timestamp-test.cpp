@@ -9,12 +9,14 @@
 
 #include "catch.hpp"
 
+#include "utils/constants.h"
+#include "utils/time-calls.h"
+
 #include "present/clock-time.h"
 #include "present/date.h"
 #include "present/day-delta.h"
 #include "present/month-delta.h"
 #include "present/time-delta.h"
-#include "present-syscalls.h"
 
 #include "present/timestamp.h"
 
@@ -35,8 +37,8 @@
         tz_offset, expected_unix_timestamp)                     \
     do {                                                        \
         struct tm tm = {};                                      \
-        tm.tm_year = yr - 1900;                                 \
-        tm.tm_mon = mon - 1;                                    \
+        tm.tm_year = yr - STRUCT_TM_YEAR_OFFSET;                \
+        tm.tm_mon = mon - STRUCT_TM_MONTH_OFFSET;               \
         tm.tm_mday = mday;                                      \
         tm.tm_hour = hr;                                        \
         tm.tm_min = min;                                        \
