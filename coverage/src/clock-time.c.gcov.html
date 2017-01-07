@@ -91,38 +91,38 @@
 <span class="lineNum">      20 </span>                :            :  * Create a new ClockTime instance based on its data parameters.
 <a name="21"><span class="lineNum">      21 </span>                :            :  */</a>
 <span class="lineNum">      22 </span>                :            : static struct ClockTime
-<span class="lineNum">      23 </span>                :<span class="lineCov">        102 : new_clock_time(</span>
+<span class="lineNum">      23 </span>                :<span class="lineCov">        104 : new_clock_time(</span>
 <span class="lineNum">      24 </span>                :            :         int_hour hour,
 <span class="lineNum">      25 </span>                :            :         int_minute minute,
 <span class="lineNum">      26 </span>                :            :         int_second second,
 <span class="lineNum">      27 </span>                :            :         int_nanosecond nanosecond)
 <span class="lineNum">      28 </span>                :            : {
 <span class="lineNum">      29 </span>                :            :     struct PresentClockTimeData data;
-<span class="lineNum">      30 </span>                :<span class="lineCov">        102 :     CONSTRUCTOR_HEAD(ClockTime);</span>
+<span class="lineNum">      30 </span>                :<span class="lineCov">        104 :     CONSTRUCTOR_HEAD(ClockTime);</span>
 <span class="lineNum">      31 </span>                :            : 
-<span class="lineNum">      32 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 101 times"> + </span>]:<span class="lineCov">        102 :     if (hour == 24) hour = 0;</span>
-<span class="lineNum">      33 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 100 times"> + </span>]:<span class="lineCov">        102 :     if (hour &lt; 0 || hour &gt; 24) {</span>
-<span class="lineNum">      34 </span>                :<span class="lineCov">          2 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, HOUR_OUT_OF_RANGE);</span>
+<span class="lineNum">      32 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 103 times"> + </span>]:<span class="lineCov">        104 :     if (hour == 24) hour = 0;</span>
+<span class="lineNum">      33 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 101 times"> + </span>]:<span class="lineCov">        104 :     if (hour &lt; 0 || hour &gt; 24) {</span>
+<span class="lineNum">      34 </span>                :<span class="lineCov">          3 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, HOUR_OUT_OF_RANGE);</span>
 <span class="lineNum">      35 </span>                :            :     }
 <span class="lineNum">      36 </span>                :            : 
-<span class="lineNum">      37 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 98 times"> + </span>]:<span class="lineCov">        100 :     if (minute &lt; 0 || minute &gt;= 60) {</span>
+<span class="lineNum">      37 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 99 times"> + </span>]:<span class="lineCov">        101 :     if (minute &lt; 0 || minute &gt;= 60) {</span>
 <span class="lineNum">      38 </span>                :<span class="lineCov">          2 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, MINUTE_OUT_OF_RANGE);</span>
 <span class="lineNum">      39 </span>                :            :     }
 <span class="lineNum">      40 </span>                :            : 
 <span class="lineNum">      41 </span>                :            :     /* 61 because of leap seconds :( */
-<span class="lineNum">      42 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 94 times"> + </span>]:<span class="lineCov">         98 :     if (second &lt; 0 || second &gt;= 61) {</span>
+<span class="lineNum">      42 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 95 times"> + </span>]:<span class="lineCov">         99 :     if (second &lt; 0 || second &gt;= 61) {</span>
 <span class="lineNum">      43 </span>                :<span class="lineCov">          4 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, SECOND_OUT_OF_RANGE);</span>
 <span class="lineNum">      44 </span>                :            :     }
 <span class="lineNum">      45 </span>                :            : 
-<span class="lineNum">      46 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 92 times"> + </span>]:<span class="lineCov">         94 :     if (nanosecond &lt; 0 || nanosecond &gt;= NANOSECONDS_IN_SECOND) {</span>
+<span class="lineNum">      46 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 93 times"> + </span>]:<span class="lineCov">         95 :     if (nanosecond &lt; 0 || nanosecond &gt;= NANOSECONDS_IN_SECOND) {</span>
 <span class="lineNum">      47 </span>                :<span class="lineCov">          2 :         CONSTRUCTOR_ERROR_RETURN(ClockTime, NANOSECOND_OUT_OF_RANGE);</span>
 <span class="lineNum">      48 </span>                :            :     }
 <span class="lineNum">      49 </span>                :            : 
-<span class="lineNum">      50 </span>                :<span class="lineCov">         92 :     data.seconds = second +</span>
-<span class="lineNum">      51 </span>                :<span class="lineCov">        184 :         minute * SECONDS_IN_MINUTE +</span>
-<span class="lineNum">      52 </span>                :<span class="lineCov">         92 :         hour * SECONDS_IN_HOUR;</span>
-<span class="lineNum">      53 </span>                :<span class="lineCov">         92 :     data.nanoseconds = nanosecond;</span>
-<span class="lineNum">      54 </span>                :<span class="lineCov">        102 :     CONSTRUCTOR_RETURN(ClockTime, data);</span>
+<span class="lineNum">      50 </span>                :<span class="lineCov">         93 :     data.seconds = second +</span>
+<span class="lineNum">      51 </span>                :<span class="lineCov">        186 :         minute * SECONDS_IN_MINUTE +</span>
+<span class="lineNum">      52 </span>                :<span class="lineCov">         93 :         hour * SECONDS_IN_HOUR;</span>
+<span class="lineNum">      53 </span>                :<span class="lineCov">         93 :     data.nanoseconds = nanosecond;</span>
+<span class="lineNum">      54 </span>                :<span class="lineCov">        104 :     CONSTRUCTOR_RETURN(ClockTime, data);</span>
 <span class="lineNum">      55 </span>                :            : }
 <span class="lineNum">      56 </span>                :            : 
 <span class="lineNum">      57 </span>                :            : /**
@@ -164,12 +164,12 @@
 <span class="lineNum">      93 </span>                :            : }
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
 <span class="lineNum">      95 </span>                :            : struct ClockTime
-<span class="lineNum">      96 </span>                :<span class="lineCov">         56 : ClockTime_from_hour_minute_second(</span>
+<span class="lineNum">      96 </span>                :<span class="lineCov">         57 : ClockTime_from_hour_minute_second(</span>
 <span class="lineNum">      97 </span>                :            :         int_hour hour,
 <span class="lineNum">      98 </span>                :            :         int_minute minute,
 <span class="lineNum">      99 </span>                :            :         int_second second)
 <span class="lineNum">     100 </span>                :            : {
-<span class="lineNum">     101 </span>                :<span class="lineCov">         56 :     return new_clock_time(hour, minute, second, 0);</span>
+<span class="lineNum">     101 </span>                :<span class="lineCov">         57 :     return new_clock_time(hour, minute, second, 0);</span>
 <span class="lineNum">     102 </span>                :            : }
 <a name="103"><span class="lineNum">     103 </span>                :            : </a>
 <span class="lineNum">     104 </span>                :            : struct ClockTime
@@ -203,9 +203,9 @@
 <span class="lineNum">     132 </span>                :            : }
 <a name="133"><span class="lineNum">     133 </span>                :            : </a>
 <span class="lineNum">     134 </span>                :            : struct ClockTime
-<span class="lineNum">     135 </span>                :<span class="lineCov">          5 : ClockTime_noon()</span>
+<span class="lineNum">     135 </span>                :<span class="lineCov">          6 : ClockTime_noon()</span>
 <span class="lineNum">     136 </span>                :            : {
-<span class="lineNum">     137 </span>                :<span class="lineCov">          5 :     return new_clock_time(12, 0, 0, 0);</span>
+<span class="lineNum">     137 </span>                :<span class="lineCov">          6 :     return new_clock_time(12, 0, 0, 0);</span>
 <span class="lineNum">     138 </span>                :            : }
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
 <span class="lineNum">     140 </span>                :            : int_hour
