@@ -187,6 +187,8 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in a certain time zone. 
 
+\-Future modifications to the original \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} do \-N\-O\-T affect the new \hyperlink{structTimestamp}{\-Timestamp}.
+
 
 \begin{DoxyParams}{\-Parameters}
 {\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
@@ -208,6 +210,8 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in \-Coordinated \-Universal \-Time. 
 
+\-Future modifications to the original \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} do \-N\-O\-T affect the new \hyperlink{structTimestamp}{\-Timestamp}.
+
 
 \begin{DoxyParams}{\-Parameters}
 {\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
@@ -226,6 +230,8 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 
 \-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in the system's current local time zone. 
+
+\-Future modifications to the original \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} do \-N\-O\-T affect the new \hyperlink{structTimestamp}{\-Timestamp}.
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -313,7 +319,7 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
 
-\hypertarget{timestamp_8h_addc273dcb8e7f91aeb2139b43815763f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}}
+\-Modifications to the returned \hyperlink{structDate}{\-Date} do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}. \hypertarget{timestamp_8h_addc273dcb8e7f91aeb2139b43815763f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}}
 \index{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-get\-\_\-date\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date\-\_\-utc} (
 \begin{DoxyParamCaption}
@@ -324,7 +330,7 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
 
-\hypertarget{timestamp_8h_ad10794935d04f9bb8cc143daa9d5aa3f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-local@{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}}
+\-Modifications to the returned \hyperlink{structDate}{\-Date} do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}. \hypertarget{timestamp_8h_ad10794935d04f9bb8cc143daa9d5aa3f}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-date\-\_\-local@{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}}
 \index{\-Timestamp\-\_\-get\-\_\-date\-\_\-local@{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-get\-\_\-date\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Date} {\bf \-Timestamp\-\_\-get\-\_\-date\-\_\-local} (
 \begin{DoxyParamCaption}
@@ -335,7 +341,7 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
 
-\hypertarget{timestamp_8h_a18be2e5546df7e884fc8a318383f550a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}}
+\-Modifications to the returned \hyperlink{structDate}{\-Date} do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}. \hypertarget{timestamp_8h_a18be2e5546df7e884fc8a318383f550a}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}}
 \index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time} (
 \begin{DoxyParamCaption}
@@ -347,7 +353,7 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
 
-\hypertarget{timestamp_8h_aa684345ce22c80cb130af19188ca5afe}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}}
+\-Modifications to the returned  do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}. \hypertarget{timestamp_8h_aa684345ce22c80cb130af19188ca5afe}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}}
 \index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-utc} (
 \begin{DoxyParamCaption}
@@ -358,7 +364,7 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
 
-\hypertarget{timestamp_8h_a361bdde37e188e9501ecaea7db86ee34}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}}
+\-Modifications to the returned  do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}. \hypertarget{timestamp_8h_a361bdde37e188e9501ecaea7db86ee34}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}}
 \index{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local@{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Timestamp\-\_\-get\-\_\-clock\-\_\-time\-\_\-local} (
 \begin{DoxyParamCaption}
@@ -369,7 +375,7 @@ present\-\_\-bool \hyperlink{timestamp_8h_ac63553d8670ddbfa7a531581e4b51047}{\-T
 
 \-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
 
-\hypertarget{timestamp_8h_a6c72b9719a6c92308fd69bd65be11b13}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-difference@{\-Timestamp\-\_\-difference}}
+\-Modifications to the returned  do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}. \hypertarget{timestamp_8h_a6c72b9719a6c92308fd69bd65be11b13}{\index{timestamp.\-h@{timestamp.\-h}!\-Timestamp\-\_\-difference@{\-Timestamp\-\_\-difference}}
 \index{\-Timestamp\-\_\-difference@{\-Timestamp\-\_\-difference}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{\-Timestamp\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Timestamp\-\_\-difference} (
 \begin{DoxyParamCaption}

@@ -344,6 +344,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> based on a <a class="el" href="structDate.html">Date</a> and <a class="el" href="structClockTime.html">ClockTime</a> in a certain time zone. </p>
+<p>Future modifications to the original <a class="el" href="structDate.html">Date</a> and <a class="el" href="structClockTime.html">ClockTime</a> do NOT affect the new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">date</td><td>The <a class="el" href="structDate.html">Date</a> component of the <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </td></tr>
@@ -381,6 +382,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> based on a <a class="el" href="structDate.html">Date</a> and <a class="el" href="structClockTime.html">ClockTime</a> in Coordinated Universal Time. </p>
+<p>Future modifications to the original <a class="el" href="structDate.html">Date</a> and <a class="el" href="structClockTime.html">ClockTime</a> do NOT affect the new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">date</td><td>The <a class="el" href="structDate.html">Date</a> component of the <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </td></tr>
@@ -417,6 +419,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> based on a <a class="el" href="structDate.html">Date</a> and <a class="el" href="structClockTime.html">ClockTime</a> in the system's current local time zone. </p>
+<p>Future modifications to the original <a class="el" href="structDate.html">Date</a> and <a class="el" href="structClockTime.html">ClockTime</a> do NOT affect the new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">date</td><td>The <a class="el" href="structDate.html">Date</a> component of the <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </td></tr>
@@ -577,6 +580,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the <a class="el" href="structDate.html">Date</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in a certain time zone (represented by an offset from UTC). </p>
+<p>Modifications to the returned <a class="el" href="structDate.html">Date</a> do NOT affect the existing <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </p>
 
 </div>
 </div>
@@ -596,6 +600,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the <a class="el" href="structDate.html">Date</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in Coordinated Universal Time. </p>
+<p>Modifications to the returned <a class="el" href="structDate.html">Date</a> do NOT affect the existing <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </p>
 
 </div>
 </div>
@@ -615,6 +620,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the <a class="el" href="structDate.html">Date</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in the system's current local time zone. </p>
+<p>Modifications to the returned <a class="el" href="structDate.html">Date</a> do NOT affect the existing <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </p>
 
 </div>
 </div>
@@ -644,6 +650,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the <a class="el" href="structClockTime.html">ClockTime</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in a certain time zone (represented by an offset from UTC). </p>
+<p>Modifications to the returned  do NOT affect the existing <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </p>
 
 </div>
 </div>
@@ -663,6 +670,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the <a class="el" href="structClockTime.html">ClockTime</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in Coordinated Universal Time. </p>
+<p>Modifications to the returned  do NOT affect the existing <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </p>
 
 </div>
 </div>
@@ -682,6 +690,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the <a class="el" href="structClockTime.html">ClockTime</a> component of a <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a> in the system's current local time zone. </p>
+<p>Modifications to the returned  do NOT affect the existing <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time.">Timestamp</a>. </p>
 
 </div>
 </div>

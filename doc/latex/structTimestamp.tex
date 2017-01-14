@@ -186,6 +186,8 @@ bool \hyperlink{structTimestamp_af5e67a38f1e4968c30a4c57c34fd51e6}{operator$>$=}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimestamp_a0585a5f7928f6bad9dda69eb5adf99ee}
 \-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in a certain time zone. 
 
+\-Future modifications to the original \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} do \-N\-O\-T affect the new \hyperlink{structTimestamp}{\-Timestamp}.
+
 
 \begin{DoxyParams}{\-Parameters}
 {\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
@@ -205,6 +207,8 @@ bool \hyperlink{structTimestamp_af5e67a38f1e4968c30a4c57c34fd51e6}{operator$>$=}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimestamp_af18efc9b0db5803b00019e6e3f01895a}
 \-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in \-Coordinated \-Universal \-Time. 
 
+\-Future modifications to the original \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} do \-N\-O\-T affect the new \hyperlink{structTimestamp}{\-Timestamp}.
+
 
 \begin{DoxyParams}{\-Parameters}
 {\em date} & \-The \hyperlink{structDate}{\-Date} component of the \hyperlink{structTimestamp}{\-Timestamp}. \\
@@ -221,6 +225,8 @@ bool \hyperlink{structTimestamp_af5e67a38f1e4968c30a4c57c34fd51e6}{operator$>$=}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimestamp_acaa4f082d3a38dc42c8d815925add8a5}
 \-Create a new \hyperlink{structTimestamp}{\-Timestamp} based on a \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} in the system's current local time zone. 
+
+\-Future modifications to the original \hyperlink{structDate}{\-Date} and \hyperlink{structClockTime}{\-Clock\-Time} do \-N\-O\-T affect the new \hyperlink{structTimestamp}{\-Timestamp}.
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -282,42 +288,54 @@ bool \hyperlink{structTimestamp_af5e67a38f1e4968c30a4c57c34fd51e6}{operator$>$=}
 \item[{const {\bf \-Time\-Delta} \&}]{time\-Zone\-Offset}
 \end{DoxyParamCaption}
 ) const}}\label{structTimestamp_a07b4b2e5d95a2b23fe48c9682435c727}
-\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C).  \hypertarget{structTimestamp_a4dd9ee5c1ceaad6d4f497487a3e666f5}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-date\-\_\-utc@{get\-\_\-date\-\_\-utc}}
+\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
+
+\-Modifications to the returned \hyperlink{structDate}{\-Date} do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}.  \hypertarget{structTimestamp_a4dd9ee5c1ceaad6d4f497487a3e666f5}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-date\-\_\-utc@{get\-\_\-date\-\_\-utc}}
 \index{get\-\_\-date\-\_\-utc@{get\-\_\-date\-\_\-utc}!Timestamp@{\-Timestamp}}
 \subsubsection[{get\-\_\-date\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Date} {\bf \-Timestamp\-::get\-\_\-date\-\_\-utc} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimestamp_a4dd9ee5c1ceaad6d4f497487a3e666f5}
-\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time.  \hypertarget{structTimestamp_a77a1ae0ca0b09af2adc5f7f49b6c6618}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-date\-\_\-local@{get\-\_\-date\-\_\-local}}
+\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
+
+\-Modifications to the returned \hyperlink{structDate}{\-Date} do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}.  \hypertarget{structTimestamp_a77a1ae0ca0b09af2adc5f7f49b6c6618}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-date\-\_\-local@{get\-\_\-date\-\_\-local}}
 \index{get\-\_\-date\-\_\-local@{get\-\_\-date\-\_\-local}!Timestamp@{\-Timestamp}}
 \subsubsection[{get\-\_\-date\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Date} {\bf \-Timestamp\-::get\-\_\-date\-\_\-local} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimestamp_a77a1ae0ca0b09af2adc5f7f49b6c6618}
-\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone.  \hypertarget{structTimestamp_a8e4b0ee005f58cb645d945eaccd1bc9e}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-clock\-\_\-time@{get\-\_\-clock\-\_\-time}}
+\-Get the \hyperlink{structDate}{\-Date} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
+
+\-Modifications to the returned \hyperlink{structDate}{\-Date} do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}.  \hypertarget{structTimestamp_a8e4b0ee005f58cb645d945eaccd1bc9e}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-clock\-\_\-time@{get\-\_\-clock\-\_\-time}}
 \index{get\-\_\-clock\-\_\-time@{get\-\_\-clock\-\_\-time}!Timestamp@{\-Timestamp}}
 \subsubsection[{get\-\_\-clock\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Clock\-Time} {\bf \-Timestamp\-::get\-\_\-clock\-\_\-time} (
 \begin{DoxyParamCaption}
 \item[{const {\bf \-Time\-Delta} \&}]{time\-Zone\-Offset}
 \end{DoxyParamCaption}
 ) const}}\label{structTimestamp_a8e4b0ee005f58cb645d945eaccd1bc9e}
-\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C).  \hypertarget{structTimestamp_a0767fd3f69eaa11bb094eb330d9c88ef}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-clock\-\_\-time\-\_\-utc@{get\-\_\-clock\-\_\-time\-\_\-utc}}
+\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in a certain time zone (represented by an offset from \-U\-T\-C). 
+
+\-Modifications to the returned  do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}.  \hypertarget{structTimestamp_a0767fd3f69eaa11bb094eb330d9c88ef}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-clock\-\_\-time\-\_\-utc@{get\-\_\-clock\-\_\-time\-\_\-utc}}
 \index{get\-\_\-clock\-\_\-time\-\_\-utc@{get\-\_\-clock\-\_\-time\-\_\-utc}!Timestamp@{\-Timestamp}}
 \subsubsection[{get\-\_\-clock\-\_\-time\-\_\-utc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Clock\-Time} {\bf \-Timestamp\-::get\-\_\-clock\-\_\-time\-\_\-utc} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimestamp_a0767fd3f69eaa11bb094eb330d9c88ef}
-\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time.  \hypertarget{structTimestamp_a773a47fcdd02afef5d307bcc65561f8c}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-clock\-\_\-time\-\_\-local@{get\-\_\-clock\-\_\-time\-\_\-local}}
+\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in \-Coordinated \-Universal \-Time. 
+
+\-Modifications to the returned  do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}.  \hypertarget{structTimestamp_a773a47fcdd02afef5d307bcc65561f8c}{\index{\-Timestamp@{\-Timestamp}!get\-\_\-clock\-\_\-time\-\_\-local@{get\-\_\-clock\-\_\-time\-\_\-local}}
 \index{get\-\_\-clock\-\_\-time\-\_\-local@{get\-\_\-clock\-\_\-time\-\_\-local}!Timestamp@{\-Timestamp}}
 \subsubsection[{get\-\_\-clock\-\_\-time\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Clock\-Time} {\bf \-Timestamp\-::get\-\_\-clock\-\_\-time\-\_\-local} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimestamp_a773a47fcdd02afef5d307bcc65561f8c}
-\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone.  \hypertarget{structTimestamp_af2520c21fa08751cfa7b195768e77171}{\index{\-Timestamp@{\-Timestamp}!difference@{difference}}
+\-Get the \hyperlink{structClockTime}{\-Clock\-Time} component of a \hyperlink{structTimestamp}{\-Timestamp} in the system's current local time zone. 
+
+\-Modifications to the returned  do \-N\-O\-T affect the existing \hyperlink{structTimestamp}{\-Timestamp}.  \hypertarget{structTimestamp_af2520c21fa08751cfa7b195768e77171}{\index{\-Timestamp@{\-Timestamp}!difference@{difference}}
 \index{difference@{difference}!Timestamp@{\-Timestamp}}
 \subsubsection[{difference}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} {\bf \-Timestamp\-::difference} (
 \begin{DoxyParamCaption}
