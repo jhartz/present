@@ -241,6 +241,9 @@ Timestamp_from_struct_tm_local(const struct tm tm);
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in a certain
  * time zone.
  *
+ * Future modifications to the original @ref Date and @ref ClockTime do NOT
+ * affect the new Timestamp.
+ *
  * @param date The @ref Date component of the Timestamp.
  * @param clockTime The @ref ClockTime component of the Timestamp.
  * @param timeZoneOffset The time zone offset (from UTC) used to interpret
@@ -256,6 +259,9 @@ Timestamp_create(
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in
  * Coordinated Universal Time.
  *
+ * Future modifications to the original @ref Date and @ref ClockTime do NOT
+ * affect the new Timestamp.
+ *
  * @param date The @ref Date component of the Timestamp.
  * @param clockTime The @ref ClockTime component of the Timestamp.
  */
@@ -267,6 +273,9 @@ Timestamp_create_utc(
 /**
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in the
  * system's current local time zone.
+ *
+ * Future modifications to the original @ref Date and @ref ClockTime do NOT
+ * affect the new Timestamp.
  *
  * @param date The @ref Date component of the Timestamp.
  * @param clockTime The @ref ClockTime component of the Timestamp.
@@ -329,6 +338,9 @@ Timestamp_get_struct_tm_local(const struct Timestamp * const self);
 /**
  * Get the @ref Date component of a Timestamp in a certain time zone
  * (represented by an offset from UTC).
+ *
+ * Modifications to the returned @ref Date do NOT affect the existing
+ * Timestamp.
  */
 PRESENT_API struct Date
 Timestamp_get_date(
@@ -337,6 +349,9 @@ Timestamp_get_date(
 
 /**
  * Get the @ref Date component of a Timestamp in Coordinated Universal Time.
+ *
+ * Modifications to the returned @ref Date do NOT affect the existing
+ * Timestamp.
  */
 PRESENT_API struct Date
 Timestamp_get_date_utc(const struct Timestamp * const self);
@@ -344,6 +359,9 @@ Timestamp_get_date_utc(const struct Timestamp * const self);
 /**
  * Get the @ref Date component of a Timestamp in the system's current local
  * time zone.
+ *
+ * Modifications to the returned @ref Date do NOT affect the existing
+ * Timestamp.
  */
 PRESENT_API struct Date
 Timestamp_get_date_local(const struct Timestamp * const self);
@@ -352,6 +370,9 @@ Timestamp_get_date_local(const struct Timestamp * const self);
 /**
  * Get the @ref ClockTime component of a Timestamp in a certain time zone
  * (represented by an offset from UTC).
+ *
+ * Modifications to the returned @ClockTime do NOT affect the existing
+ * Timestamp.
  */
 PRESENT_API struct ClockTime
 Timestamp_get_clock_time(
@@ -361,6 +382,9 @@ Timestamp_get_clock_time(
 /**
  * Get the @ref ClockTime component of a Timestamp in Coordinated Universal
  * Time.
+ *
+ * Modifications to the returned @ClockTime do NOT affect the existing
+ * Timestamp.
  */
 PRESENT_API struct ClockTime
 Timestamp_get_clock_time_utc(const struct Timestamp * const self);
@@ -368,6 +392,9 @@ Timestamp_get_clock_time_utc(const struct Timestamp * const self);
 /**
  * Get the @ref ClockTime component of a Timestamp in the system's current
  * local time zone.
+ *
+ * Modifications to the returned @ClockTime do NOT affect the existing
+ * Timestamp.
  */
 PRESENT_API struct ClockTime
 Timestamp_get_clock_time_local(const struct Timestamp * const self);
