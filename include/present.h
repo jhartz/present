@@ -26,6 +26,14 @@
  * Declarations of the C functions
  */
 
+/*
+ * NOTE: The order here isn't arbitrary; it's meant to make the least compiler
+ * error warnings possible when compiling using the clang C++ compiler (which
+ * loves to complain about "extern C" functions returning one of our types with
+ * only a forward declaration to go on -- so we try to get as many full
+ * definitions as possible before their use in other functions).
+ */
+
 #include "present/day-delta.h"
 #include "present/month-delta.h"
 #include "present/time-delta.h"
