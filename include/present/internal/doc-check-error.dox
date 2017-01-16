@@ -1,0 +1,53 @@
+/**
+ * @page has_error_epilogue "has_error" field epilogue
+ *
+ * For more details about the errors that occurred, see @p errors.
+ *
+ * This field should be treated as read-only; DO NOT modify its contents!
+ */
+
+/**
+ * @page errors_epilogue "errors" field epilogue
+ *
+ * To quickly check if any error occurred, see @p has_error.
+ *
+ * These fields should be treated as read-only; DO NOT modify their contents!
+ */
+
+/**
+ * @page check_for_error Error checking warning
+ *
+ * @attention Make sure to check for any errors by checking if the @p has_error
+ * field on the returned struct is true.
+ *
+ * If @p has_error is true, then at least one of the fields in the @p errors
+ * struct will also be true.
+ */
+
+/**
+ * @page check_for_error_clocktime ClockTime error checking warning
+ *
+ * @copydoc check_for_error
+ *
+ * @see ClockTime::has_error
+ * @see ClockTime::errors
+ */
+
+/**
+ * @page check_for_error_date Date error checking warning
+ *
+ * @copydoc check_for_error
+ *
+ * @see Date::has_error
+ * @see Date::errors
+ */
+
+/**
+ * @page check_for_error_timestamp Timestamp error checking warning
+ *
+ * @copydoc check_for_error
+ *
+ * @see Timestamp::has_error
+ * @see Timestamp::errors
+ */
+
