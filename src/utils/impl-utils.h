@@ -27,6 +27,11 @@
     (IS_LEAP_YEAR(year) ? 366 : 365)
 
 
+/** Clear (zero out) a pointer to a struct */
+#define CLEAR(ptr)                              \
+    memset((void *) (ptr), 0, sizeof(*(ptr)))
+
+
 /**
  * Macros to create an instance of a struct, populated with either a
  * corresponding data object or an error, and return it.
@@ -76,10 +81,6 @@
     present_bool _StructName ## _ ## _Operator(                         \
             const struct _StructName * const lhs,                       \
             const struct _StructName * const rhs) {                     \
-        assert(lhs != NULL);                                            \
-        assert(lhs->error == 0);                                        \
-        assert(rhs != NULL);                                            \
-        assert(rhs->error == 0);                                        \
         return _StructName ## _compare(lhs, rhs) _Condition;            \
     }
 

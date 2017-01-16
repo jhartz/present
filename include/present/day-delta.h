@@ -30,14 +30,6 @@
 struct TimeDelta;
 
 /*
- * Enum Definitions
- */
-
-enum PresentDayDeltaError {
-    DayDelta_ERROR_NONE = 0
-};
-
-/*
  * C++ Class / C Struct Definition
  */
 
@@ -46,7 +38,7 @@ enum PresentDayDeltaError {
  * days or weeks.
  */
 struct PRESENT_API DayDelta {
-    enum PresentDayDeltaError error;
+    /* Internal data representation */
     struct PresentDayDeltaData data_;
 
 #ifdef __cplusplus

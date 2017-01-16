@@ -189,8 +189,6 @@ TimeDelta::negate()
 inline TimeDelta
 TimeDelta::operator-() const
 {
-    assert(this->error == 0);
-
     TimeDelta copy(*this);
     copy.negate();
     return copy;

@@ -16,10 +16,19 @@
  * Expects that the Date is "d".
  */
 #define IS(test_year, test_month, test_day) \
-    REQUIRE(d.error == Date_ERROR_NONE);    \
+    REQUIRE_FALSE(d.has_error);             \
     CHECK(d.data_.year == test_year);       \
     CHECK(d.data_.month == test_month);     \
     CHECK(d.data_.day == test_day);
+
+/**
+ * Shortcut macro to check if there's a certain error.
+ * Expects that the Date is "d".
+ */
+#define IS_ERROR(eRR_tYPE)      \
+    CHECK(d.has_error);         \
+    CHECK(d.errors.eRR_tYPE);
+
 
 /**
  * This test case tests all the overloads of the "create" method (which also
@@ -43,6 +52,12 @@ TEST_CASE("Date creators", "[date]") {
     d = Date::create(9999);
     IS(9999, 1, 1);
 
+    d = Date_from_year(1995);
+    IS(1995, 1, 1);
+
+    Date_ptr_from_year(&d, 1960);
+    IS(1960, 1, 1);
+
     // from_year_month
 
     d = Date::create(1999, 1);
@@ -52,9 +67,19 @@ TEST_CASE("Date creators", "[date]") {
     d = Date::create(1999, 12);
     IS(1999, 12, 1);
     d = Date::create(1999, 13);
-    CHECK(d.error == Date_ERROR_MONTH_OUT_OF_RANGE);
+    IS_ERROR(month_out_of_range);
     d = Date::create(1999, 0);
-    CHECK(d.error == Date_ERROR_MONTH_OUT_OF_RANGE);
+    IS_ERROR(month_out_of_range);
+
+    d = Date_from_year_month(1995, 4);
+    IS(1995, 4, 1);
+    d = Date_from_year_month(1969, -3);
+    IS_ERROR(month_out_of_range);
+
+    Date_ptr_from_year_month(&d, 1960, 7);
+    IS(1960, 7, 1);
+    Date_ptr_from_year_month(&d, 1900, -1);
+    IS_ERROR(month_out_of_range);
 
     // from_year_month_day
 
@@ -63,28 +88,38 @@ TEST_CASE("Date creators", "[date]") {
     d = Date::create(1999, 1, 2);
     IS(1999, 1, 2);
     d = Date::create(1999, 1, 0);
-    CHECK(d.error == Date_ERROR_DAY_OUT_OF_RANGE);
+    IS_ERROR(day_out_of_range);
     // Jan.
     d = Date::create(1999, 1, 31);
     IS(1999, 1, 31);
     d = Date::create(1999, 1, 32);
-    CHECK(d.error == Date_ERROR_DAY_OUT_OF_RANGE);
+    IS_ERROR(day_out_of_range);
     // Feb. (without and with leap years)
     d = Date::create(1999, 2, 28);
     IS(1999, 2, 28);
     d = Date::create(1999, 2, 29);
-    CHECK(d.error == Date_ERROR_DAY_OUT_OF_RANGE);
+    IS_ERROR(day_out_of_range);
     d = Date::create(2000, 2, 28);
     IS(2000, 2, 28);
     d = Date::create(2000, 2, 29);
     IS(2000, 2, 29);
     d = Date::create(2000, 2, 30);
-    CHECK(d.error == Date_ERROR_DAY_OUT_OF_RANGE);
+    IS_ERROR(day_out_of_range);
     // Apr.
     d = Date::create(1999, 4, 30);
     IS(1999, 4, 30);
     d = Date::create(1999, 4, 31);
-    CHECK(d.error == Date_ERROR_DAY_OUT_OF_RANGE);
+    IS_ERROR(day_out_of_range);
+
+    d = Date_from_year_month_day(2006, 11, 13);
+    IS(2006, 11, 13);
+    d = Date_from_year_month_day(1990, 1, -1);
+    IS_ERROR(day_out_of_range);
+
+    Date_ptr_from_year_month_day(&d, 1991, 3, 4);
+    IS(1991, 3, 4);
+    Date_ptr_from_year_month_day(&d, 1990, 1, -2);
+    IS_ERROR(day_out_of_range);
 
     // from_year_day
 
@@ -102,6 +137,12 @@ TEST_CASE("Date creators", "[date]") {
     IS(2000, 12, 30);
     d = Date::from_year_day(2000, 366);
     IS(2000, 12, 31);
+
+    d = Date_from_year_day(1990, 1);
+    IS(1990, 1, 1);
+
+    Date_ptr_from_year_day(&d, 1969, 4);
+    IS(1969, 1, 4);
 
     // from_year_week_day
     // Each of these has a matching test for week_of_year and
@@ -133,7 +174,7 @@ TEST_CASE("Date creators", "[date]") {
 
     // 2005 didn't have a week 53
     d = Date::from_year_week_day(2005, 53, DAY_OF_WEEK_MONDAY);
-    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+    IS_ERROR(week_of_year_out_of_range);
 
     // 2009 did, though
     d = Date::from_year_week_day(2009, 53, DAY_OF_WEEK_MONDAY);
@@ -145,7 +186,7 @@ TEST_CASE("Date creators", "[date]") {
 
     // But 2009 didn't have a week 54
     d = Date::from_year_week_day(2009, 54, DAY_OF_WEEK_MONDAY);
-    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+    IS_ERROR(week_of_year_out_of_range);
 
     // 1992 has a week 53, and it was a leap year starting on Wed.
     // It also spilled over into 1993
@@ -154,19 +195,35 @@ TEST_CASE("Date creators", "[date]") {
 
     // 1995 started on a Sunday, and does not have 53 weeks
     d = Date::from_year_week_day(1995, 53, DAY_OF_WEEK_MONDAY);
-    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+    IS_ERROR(week_of_year_out_of_range);
 
     // And nobody should have weeks less than 1
     d = Date::from_year_week_day(1999, 0, DAY_OF_WEEK_MONDAY);
-    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+    IS_ERROR(week_of_year_out_of_range);
     d = Date::from_year_week_day(1999, -1, DAY_OF_WEEK_MONDAY);
-    CHECK(d.error == Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE);
+    IS_ERROR(week_of_year_out_of_range);
 
     // Nor days of the week outside 0 to 7
     d = Date::from_year_week_day(2007, 1, 8);
-    CHECK(d.error == Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE);
+    IS_ERROR(day_of_week_out_of_range);
     d = Date::from_year_week_day(2007, 1, -1);
-    CHECK(d.error == Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE);
+    IS_ERROR(day_of_week_out_of_range);
+
+    // Test the C methods too
+
+    d = Date_from_year_week_day(2016, 31, DAY_OF_WEEK_WEDNESDAY);
+    IS(2016, 8, 3);
+    d = Date_from_year_week_day(1999, 0, DAY_OF_WEEK_MONDAY);
+    IS_ERROR(week_of_year_out_of_range);
+    d = Date_from_year_week_day(1990, 1, -1);
+    IS_ERROR(day_of_week_out_of_range);
+
+    Date_ptr_from_year_week_day(&d, 2016, 31, DAY_OF_WEEK_WEDNESDAY);
+    IS(2016, 8, 3);
+    Date_ptr_from_year_week_day(&d, 1996, -1, DAY_OF_WEEK_THURSDAY);
+    IS_ERROR(week_of_year_out_of_range);
+    Date_ptr_from_year_week_day(&d, 1968, 2, -3);
+    IS_ERROR(day_of_week_out_of_range);
 }
 
 TEST_CASE("Date accessors", "[date]") {

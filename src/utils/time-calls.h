@@ -18,8 +18,8 @@ extern "C" {
 #endif
 
 /**
- * Return value for present_now. Identical to "struct timespec" on systems
- * that support it.
+ * Struct used for present_now. Identical to "struct timespec" on systems that
+ * support it.
  */
 struct PresentNowStruct {
     time_t  sec;    /* seconds since the epoch */
@@ -61,7 +61,7 @@ time_t present_mktime(struct tm * tm);
  * If a test time is set, this will return that. Otherwise, it is a wrapper
  * around clock_gettime (if supported) or time.
  */
-struct PresentNowStruct present_now();
+void present_now(struct PresentNowStruct * result);
 
 /**
  * Set a test time that will be returned by calls to present_now.

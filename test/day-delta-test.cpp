@@ -16,7 +16,6 @@
  * Expects that the delta is called "d".
  */
 #define IS(test_delta_days)                         \
-    REQUIRE(d.error == DayDelta_ERROR_NONE);        \
     CHECK(d.data_.delta_days == test_delta_days);
 
 

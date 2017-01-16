@@ -27,15 +27,6 @@
  * Forward Declarations
  */
 
-
-/*
- * Enum Definitions
- */
-
-enum PresentMonthDeltaError {
-    MonthDelta_ERROR_NONE = 0
-};
-
 /*
  * C++ Class / C Struct Definition
  */
@@ -45,7 +36,7 @@ enum PresentMonthDeltaError {
  * months or years.
  */
 struct PRESENT_API MonthDelta {
-    enum PresentMonthDeltaError error;
+    /* Internal data representation */
     struct PresentMonthDeltaData data_;
 
 #ifdef __cplusplus

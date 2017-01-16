@@ -30,18 +30,6 @@
 struct TimeDelta;
 
 /*
- * Enum Definitions
- */
-
-enum PresentClockTimeError {
-    ClockTime_ERROR_NONE = 0
-    , ClockTime_ERROR_HOUR_OUT_OF_RANGE
-    , ClockTime_ERROR_MINUTE_OUT_OF_RANGE
-    , ClockTime_ERROR_SECOND_OUT_OF_RANGE
-    , ClockTime_ERROR_NANOSECOND_OUT_OF_RANGE
-};
-
-/*
  * C++ Class / C Struct Definition
  */
 
@@ -53,7 +41,27 @@ enum PresentClockTimeError {
  * ClockTime instance is NOT tied to a specific time zone).
  */
 struct PRESENT_API ClockTime {
-    enum PresentClockTimeError error;
+    /**
+     * This will be true if there were any errors when creating this ClockTime.
+     *
+     * @copydoc has_error_epilogue
+     */
+    present_bool has_error;
+
+    /**
+     * If there were any errors when creating this ClockTime, then one or more
+     * of these fields will be set.
+     *
+     * @copydoc errors_epilogue
+     */
+    struct {
+        unsigned int hour_out_of_range          : 1,
+                     minute_out_of_range        : 1,
+                     second_out_of_range        : 1,
+                     nanosecond_out_of_range    : 1;
+    } errors;
+
+    /* Internal data representation */
     struct PresentClockTimeData data_;
 
 #ifdef __cplusplus
@@ -65,16 +73,16 @@ struct PRESENT_API ClockTime {
 
     /** @copydoc ClockTime_from_hour_minute_second */
     static ClockTime create(
-        int_hour hour,
-        int_minute minute,
-        int_second second);
+            int_hour hour,
+            int_minute minute,
+            int_second second);
 
     /** @copydoc ClockTime_from_hour_minute_second_nanosecond */
     static ClockTime create(
-        int_hour hour,
-        int_minute minute,
-        int_second second,
-        int_nanosecond nanosecond);
+            int_hour hour,
+            int_minute minute,
+            int_second second,
+            int_nanosecond nanosecond);
 
     /** @copydoc ClockTime_create_with_decimal_seconds */
     static ClockTime create_with_decimal_seconds(
@@ -154,8 +162,10 @@ extern "C" {
 /**
  * Create a new ClockTime based on an hour of the day.
  *
- * If any parameter is out of range, a ClockTime will be returned with "error"
- * set.
+ * If the hour is out of range, the ClockTime will have @p has_error and
+ * @p errors set.
+ *
+ * @copydoc check_for_error_clocktime
  *
  * @param hour The hour of the day (0 to 23, inclusive).
  */
@@ -163,10 +173,19 @@ PRESENT_API struct ClockTime
 ClockTime_from_hour(int_hour hour);
 
 /**
+ * @copydoc ClockTime_from_hour
+ * @param[out] result A pointer to a struct ClockTime for the result.
+ */
+PRESENT_API void
+ClockTime_ptr_from_hour(struct ClockTime * const result, int_hour hour);
+
+/**
  * Create a new ClockTime based on an hour and a minute.
  *
- * If any parameter is out of range, a ClockTime will be returned with "error"
- * set.
+ * If the hour or the minute is out of range, the ClockTime will have
+ * @p has_error and @p errors set.
+ *
+ * @copydoc check_for_error_clocktime
  *
  * @param hour The hour of the day (0 to 23, inclusive).
  * @param minute The minute of the hour (0 to 59, inclusive).
@@ -175,10 +194,22 @@ PRESENT_API struct ClockTime
 ClockTime_from_hour_minute(int_hour hour, int_minute minute);
 
 /**
+ * @copydoc ClockTime_from_hour_minute
+ * @param[out] result A pointer to a struct ClockTime for the result.
+ */
+PRESENT_API void
+ClockTime_ptr_from_hour_minute(
+        struct ClockTime * const result,
+        int_hour hour,
+        int_minute minute);
+
+/**
  * Create a new ClockTime based on an hour, a minute, and a second.
  *
- * If any parameter is out of range, a ClockTime will be returned with "error"
- * set.
+ * If the hour, the minute, or the second is out of range, the ClockTime will
+ * have @p has_error and @p errors set.
+ *
+ * @copydoc check_for_error_clocktime
  *
  * @param hour The hour of the day (0 to 23, inclusive).
  * @param minute The minute of the hour (0 to 59, inclusive).
@@ -192,8 +223,24 @@ ClockTime_from_hour_minute_second(
         int_second second);
 
 /**
+ * @copydoc ClockTime_from_hour_minute_second
+ * @param[out] result A pointer to a struct ClockTime for the result.
+ */
+PRESENT_API void
+ClockTime_ptr_from_hour_minute_second(
+        struct ClockTime * const result,
+        int_hour hour,
+        int_minute minute,
+        int_second second);
+
+/**
  * Create a new ClockTime based on an hour, a minute, a second, and a
  * nanosecond.
+ *
+ * If the hour, minute, second, or nanosecond is out of range, the ClockTime
+ * will have @p has_error and @p errors set.
+ *
+ * @copydoc check_for_error_clocktime
  *
  * @param hour The hour of the day (0 to 23, inclusive).
  * @param minute The minute of the hour (0 to 59, inclusive).
@@ -210,9 +257,23 @@ ClockTime_from_hour_minute_second_nanosecond(
         int_nanosecond nanosecond);
 
 /**
+ * @copydoc ClockTime_from_hour_minute_second_nanosecond
+ * @param[out] result A pointer to a struct ClockTime for the result.
+ */
+PRESENT_API void
+ClockTime_ptr_from_hour_minute_second_nanosecond(
+        struct ClockTime * const result,
+        int_hour hour,
+        int_minute minute,
+        int_second second,
+        int_nanosecond nanosecond);
+
+/**
  * Create a new ClockTime from either an hour (1 argument), an hour and a
  * minute (2 arguments), an hour/minute/second (3 arguments), or an
  * hour/minute/second/nanosecond (4 arguments).
+ *
+ * @copydoc check_for_error_clocktime
  *
  * @see ClockTime_from_hour
  * @see ClockTime_from_hour_minute
@@ -228,7 +289,30 @@ ClockTime_from_hour_minute_second_nanosecond(
         dummy)(__VA_ARGS__)
 
 /**
+ * Create a new ClockTime from either an hour (2 arguments), an hour and a
+ * minute (3 arguments), an hour/minute/second (4 arguments), or an
+ * hour/minute/second/nanosecond (5 arguments). The first argument is a
+ * pointer to a struct ClockTime for the result.
+ *
+ * @copydoc check_for_error_clocktime
+ *
+ * @see ClockTime_ptr_from_hour
+ * @see ClockTime_ptr_from_hour_minute
+ * @see ClockTime_ptr_from_hour_minute_second
+ * @see ClockTime_ptr_from_hour_minute_second_nanosecond
+ */
+#define ClockTime_ptr_create(result, ...)   \
+    PRESENT_OVERLOAD_MAX_4(__VA_ARGS__,                     \
+        ClockTime_ptr_from_hour_minute_second_nanosecond,   \
+        ClockTime_ptr_from_hour_minute_second,              \
+        ClockTime_ptr_from_hour_minute,                     \
+        ClockTime_ptr_from_hour,                            \
+        dummy)(result, __VA_ARGS__)
+
+/**
  * Create a new ClockTime based on an hour, a minute, and a decimal second.
+ *
+ * @copydoc check_for_error_clocktime
  *
  * @param hour The hour of the day (0 to 23, inclusive).
  * @param minute The minute of the hour (0 to 59, inclusive).
@@ -241,16 +325,41 @@ ClockTime_create_with_decimal_seconds(
         double second);
 
 /**
+ * @copydoc ClockTime_create_with_decimal_seconds
+ * @param[out] result A pointer to a struct ClockTime for the result.
+ */
+PRESENT_API void
+ClockTime_ptr_create_with_decimal_seconds(
+        struct ClockTime * const result,
+        int_hour hour,
+        int_minute minute,
+        double second);
+
+/**
  * Create a new ClockTime initialized to midnight (00:00).
  */
 PRESENT_API struct ClockTime
 ClockTime_midnight();
 
 /**
+ * @copydoc ClockTime_midnight
+ * @param[out] result A pointer to a struct ClockTime for the result.
+ */
+PRESENT_API void
+ClockTime_ptr_midnight(struct ClockTime * const result);
+
+/**
  * Create a new ClockTime initialized to noon (12:00).
  */
 PRESENT_API struct ClockTime
 ClockTime_noon();
+
+/**
+ * @copydoc ClockTime_noon
+ * @param[out] result A pointer to a struct ClockTime for the result.
+ */
+PRESENT_API void
+ClockTime_ptr_noon(struct ClockTime * const result);
 
 /**
  * Get the hour component of a ClockTime (0 to 23, inclusive).

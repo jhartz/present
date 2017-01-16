@@ -91,79 +91,141 @@ check_date_data(struct PresentDateData * const data)
 }
 
 /**
- * Create a new Date instance based on its data parameters.
+ * Initialize a new Date instance based on its data parameters.
  */
-static struct Date
-new_date(int_year year, int_month month, int_day day)
+static void
+init_date(struct Date * const self, int_year year, int_month month, int_day day)
 {
     static const int_day DAYS_PER_MONTH[13] = {
         0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
     };
 
     int_day days_in_month;
-    struct PresentDateData data;
-    CONSTRUCTOR_HEAD(Date);
+
+    assert(self != NULL);
+
+    CLEAR(self);
 
     if (month < 1 || month > 12) {
-        CONSTRUCTOR_ERROR_RETURN(Date, MONTH_OUT_OF_RANGE);
+        self->has_error = 1;
+        self->errors.month_out_of_range = 1;
     }
 
     days_in_month = (IS_LEAP_YEAR(year) && month == 2) ? 29 :
         DAYS_PER_MONTH[month];
     if (day < 1 || day > days_in_month) {
-        CONSTRUCTOR_ERROR_RETURN(Date, DAY_OUT_OF_RANGE);
+        self->has_error = 1;
+        self->errors.day_out_of_range = 1;
     }
 
-    data.year = year;
-    data.month = month;
-    data.day = day;
-    check_date_data(&data);
-    CONSTRUCTOR_RETURN(Date, data);
+    if (!self->has_error) {
+        self->data_.year = year;
+        self->data_.month = month;
+        self->data_.day = day;
+        check_date_data(&self->data_);
+    }
 }
 
 /**
- * Create a new Date instance based on its data parameters, without checking
- * any bounds.
+ * Initialize a new Date instance based on its data parameters, without
+ * checking any bounds.
  */
-static struct Date
-new_date_no_bounds_check(int_year year, int_month month, int_day day)
+static void
+init_date_no_bounds_check(
+        struct Date * const self,
+        int_year year,
+        int_month month,
+        int_day day)
 {
-    struct PresentDateData data;
-    CONSTRUCTOR_HEAD(Date);
+    assert(self != NULL);
 
-    data.year = year;
-    data.month = month;
-    data.day = day;
-    check_date_data(&data);
-    CONSTRUCTOR_RETURN(Date, data);
+    CLEAR(self);
+
+    self->data_.year = year;
+    self->data_.month = month;
+    self->data_.day = day;
+    check_date_data(&self->data_);
 }
 
 struct Date
 Date_from_year(int_year year)
 {
-    return new_date(year, 1, 1);
+    struct Date result;
+    init_date(&result, year, 1, 1);
+    return result;
+}
+
+void
+Date_ptr_from_year(struct Date * const result, int_year year)
+{
+    init_date(result, year, 1, 1);
 }
 
 struct Date
 Date_from_year_month(int_year year, int_month month)
 {
-    return new_date(year, month, 1);
+    struct Date result;
+    init_date(&result, year, month, 1);
+    return result;
+}
+
+void
+Date_ptr_from_year_month(
+        struct Date * const result,
+        int_year year,
+        int_month month)
+{
+    init_date(result, year, month, 1);
 }
 
 struct Date
 Date_from_year_month_day(int_year year, int_month month, int_day day)
 {
-    return new_date(year, month, day);
+    struct Date result;
+    init_date(&result, year, month, day);
+    return result;
+}
+
+void
+Date_ptr_from_year_month_day(
+        struct Date * const result,
+        int_year year,
+        int_month month,
+        int_day day)
+{
+    init_date(result, year, month, day);
 }
 
 struct Date
 Date_from_year_day(int_year year, int_day_of_year day_of_year)
 {
-    return new_date_no_bounds_check(year, 1, (int_day)(day_of_year));
+    struct Date result;
+    init_date_no_bounds_check(&result, year, 1, (int_day)(day_of_year));
+    return result;
+}
+
+void
+Date_ptr_from_year_day(
+        struct Date * const result,
+        int_year year,
+        int_day_of_year day_of_year)
+{
+    init_date_no_bounds_check(result, year, 1, (int_day)(day_of_year));
 }
 
 struct Date
 Date_from_year_week_day(
+        int_year year,
+        int_week_of_year week_of_year,
+        int_day_of_week day_of_week) {
+    struct Date result;
+    Date_ptr_from_year_week_day(&result, year, week_of_year, day_of_week);
+    return result;
+}
+
+void
+Date_ptr_from_year_week_day(
+        struct Date * const result,
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week)
@@ -172,57 +234,64 @@ Date_from_year_week_day(
     time_t mktime_returned;
     int_day_of_week jan_4_day_of_week;
     int_day_of_year ordinal_date;
-    CONSTRUCTOR_HEAD(Date);
+
+    assert(result != NULL);
+
+    CLEAR(result);
 
     if (week_of_year < 1 || week_of_year > last_week_of_year(year)) {
-        CONSTRUCTOR_ERROR_RETURN(Date, WEEK_OF_YEAR_OUT_OF_RANGE);
+        result->has_error = 1;
+        result->errors.week_of_year_out_of_range = 1;
     }
 
     if (day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
         day_of_week = DAY_OF_WEEK_SUNDAY;
     }
     if (day_of_week < 1 || day_of_week > 7) {
-        CONSTRUCTOR_ERROR_RETURN(Date, DAY_OF_WEEK_OUT_OF_RANGE);
+        result->has_error = 1;
+        result->errors.day_of_week_out_of_range = 1;
     }
 
-    /* Get the weekday of Jan. 4 of this year */
-    memset((void *)&tm, 0, sizeof(struct tm));
-    tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
-    tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; /* January */
-    tm.tm_mday = 4; /* 4th day of the month */
-    /* tm_wday will be filled in */
-    tm.tm_isdst = -1;
+    if (!result->has_error) {
+        /* Get the weekday of Jan. 4 of this year */
+        memset((void *)&tm, 0, sizeof(struct tm));
+        tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
+        tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; /* January */
+        tm.tm_mday = 4; /* 4th day of the month */
+        /* tm_wday will be filled in */
+        tm.tm_isdst = -1;
 
-    mktime_returned = present_mktime(&tm);
-    assert(mktime_returned != -1);
+        mktime_returned = present_mktime(&tm);
+        assert(mktime_returned != -1);
 
-    jan_4_day_of_week = tm.tm_wday;
-    if (jan_4_day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
-        jan_4_day_of_week = DAY_OF_WEEK_SUNDAY;
+        jan_4_day_of_week = tm.tm_wday;
+        if (jan_4_day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
+            jan_4_day_of_week = DAY_OF_WEEK_SUNDAY;
+        }
+        assert(jan_4_day_of_week >= 1 && jan_4_day_of_week <= 7);
+
+        /* Calculate the date using voodoo magic
+           https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+         */
+        ordinal_date = week_of_year * 7 + day_of_week - (jan_4_day_of_week + 3);
+        if (ordinal_date < 1) {
+            year -= 1;
+            ordinal_date += DAYS_IN_YEAR(year);
+        }
+        if (ordinal_date > DAYS_IN_YEAR(year)) {
+            ordinal_date -= DAYS_IN_YEAR(year);
+            year += 1;
+        }
+
+        Date_ptr_from_year_day(result, year, ordinal_date);
     }
-    assert(jan_4_day_of_week >= 1 && jan_4_day_of_week <= 7);
-
-    /* Calculate the date using voodoo magic
-       https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
-       */
-    ordinal_date = week_of_year * 7 + day_of_week - (jan_4_day_of_week + 3);
-    if (ordinal_date < 1) {
-        year -= 1;
-        ordinal_date += DAYS_IN_YEAR(year);
-    }
-    if (ordinal_date > DAYS_IN_YEAR(year)) {
-        ordinal_date -= DAYS_IN_YEAR(year);
-        year += 1;
-    }
-
-    return Date_from_year_day(year, ordinal_date);
 }
 
 int_year
 Date_year(const struct Date * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
 
     return self->data_.year;
 }
@@ -231,7 +300,7 @@ int_month
 Date_month(const struct Date * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
 
     return self->data_.month;
 }
@@ -240,7 +309,7 @@ int_day
 Date_day(const struct Date * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
 
     return self->data_.day;
 }
@@ -249,7 +318,7 @@ int_day_of_year
 Date_day_of_year(const struct Date * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
 
     return self->data_.day_of_year;
 }
@@ -262,7 +331,7 @@ Date_week_of_year(const struct Date * const self)
     struct PresentWeekYear p;
 
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
 
     /* Caculate the week number using pure voodoo magic
        https://en.wikipedia.org/wiki/ISO_week_date#Calculating_the_week_number_of_a_given_date
@@ -290,7 +359,7 @@ int_day_of_week
 Date_day_of_week(const struct Date * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
 
     return self->data_.day_of_week;
 }
@@ -305,9 +374,9 @@ Date_difference(
     struct TimeDelta time_delta;
 
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
     assert(other != NULL);
-    assert(other->error == 0);
+    assert(other->has_error == 0);
 
     noon = ClockTime_noon();
     self_timestamp = Timestamp_create_utc(self, &noon);
@@ -324,9 +393,9 @@ Date_absolute_difference(
     struct DayDelta delta;
 
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
     assert(other != NULL);
-    assert(other->error == 0);
+    assert(other->has_error == 0);
 
     delta = Date_difference(self, other);
     if (DayDelta_is_negative(&delta)) {
@@ -341,9 +410,8 @@ Date_add_DayDelta(
         const struct DayDelta * const delta)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
     assert(delta != NULL);
-    assert(delta->error == 0);
 
     self->data_.day += delta->data_.delta_days;
     check_date_data(&self->data_);
@@ -355,9 +423,8 @@ Date_add_MonthDelta(
         const struct MonthDelta * const delta)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
     assert(delta != NULL);
-    assert(delta->error == 0);
 
     self->data_.month += delta->data_.delta_months;
     check_date_data(&self->data_);
@@ -369,9 +436,8 @@ Date_subtract_DayDelta(
         const struct DayDelta * const delta)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
     assert(delta != NULL);
-    assert(delta->error == 0);
 
     self->data_.day -= delta->data_.delta_days;
     check_date_data(&self->data_);
@@ -383,9 +449,8 @@ Date_subtract_MonthDelta(
         const struct MonthDelta * const delta)
 {
     assert(self != NULL);
-    assert(self->error == 0);
+    assert(self->has_error == 0);
     assert(delta != NULL);
-    assert(delta->error == 0);
 
     self->data_.month -= delta->data_.delta_months;
     check_date_data(&self->data_);
@@ -397,9 +462,9 @@ Date_compare(
         const struct Date * const rhs)
 {
     assert(lhs != NULL);
-    assert(lhs->error == 0);
+    assert(lhs->has_error == 0);
     assert(rhs != NULL);
-    assert(rhs->error == 0);
+    assert(rhs->has_error == 0);
 
     return
         STRUCT_COMPARE(year,

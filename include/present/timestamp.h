@@ -33,16 +33,6 @@ struct MonthDelta;
 struct TimeDelta;
 
 /*
- * Enum Definitions
- */
-
-enum PresentTimestampError {
-    Timestamp_ERROR_NONE = 0
-    , Timestamp_ERROR_INVALID_CLOCK_TIME
-    , Timestamp_ERROR_INVALID_DATE
-};
-
-/*
  * C++ Class / C Struct Definition
  */
 
@@ -52,7 +42,25 @@ enum PresentTimestampError {
  * This includes a full date and time, and is sensitive to time zones.
  */
 struct PRESENT_API Timestamp {
-    enum PresentTimestampError error;
+    /**
+     * This will be true if there were any errors when creating this Timestamp.
+     *
+     * @copydoc has_error_epilogue
+     */
+    present_bool has_error;
+
+    /**
+     * If there were any errors when creating this Timestamp, then one or more
+     * of these fields will be set.
+     *
+     * @copydoc errors_epilogue
+     */
+    struct {
+        unsigned int invalid_clock_time : 1,
+                     invalid_date       : 1;
+    } errors;
+
+    /* Internal data representation */
     struct PresentTimestampData data_;
 
 #ifdef __cplusplus
@@ -204,6 +212,15 @@ extern "C" {
 PRESENT_API struct Timestamp
 Timestamp_from_time_t(const time_t timestamp);
 
+/**
+ * @copydoc Timestamp_from_time_t
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_from_time_t(
+        struct Timestamp * const result,
+        const time_t timestamp);
+
 
 /**
  * Create a new Timestamp based on a "struct tm" value (from C's time library)
@@ -219,6 +236,16 @@ Timestamp_from_struct_tm(
         const struct TimeDelta * const timeZoneOffset);
 
 /**
+ * @copydoc Timestamp_from_struct_tm
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_from_struct_tm(
+        struct Timestamp * const result,
+        const struct tm tm,
+        const struct TimeDelta * const timeZoneOffset);
+
+/**
  * Create a new Timestamp based on a "struct tm" value (from C's time library)
  * in Coordinated Universal Time.
  *
@@ -226,6 +253,15 @@ Timestamp_from_struct_tm(
  */
 PRESENT_API struct Timestamp
 Timestamp_from_struct_tm_utc(const struct tm tm);
+
+/**
+ * @copydoc Timestamp_from_struct_tm_utc
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_from_struct_tm_utc(
+        struct Timestamp * const result,
+        const struct tm tm);
 
 /**
  * Create a new Timestamp based on a "struct tm" value (from C's time library)
@@ -236,6 +272,15 @@ Timestamp_from_struct_tm_utc(const struct tm tm);
 PRESENT_API struct Timestamp
 Timestamp_from_struct_tm_local(const struct tm tm);
 
+/**
+ * @copydoc Timestamp_from_struct_tm_local
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_from_struct_tm_local(
+        struct Timestamp * const result,
+        const struct tm tm);
+
 
 /**
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in a certain
@@ -243,6 +288,11 @@ Timestamp_from_struct_tm_local(const struct tm tm);
  *
  * Future modifications to the original @ref Date and @ref ClockTime do NOT
  * affect the new Timestamp.
+ *
+ * If the @ref Date or @ref ClockTime is invalid, the Timestamp will have
+ * @p has_error and @p errors set.
+ *
+ * @copydoc check_for_error_timestamp
  *
  * @param date The @ref Date component of the Timestamp.
  * @param clockTime The @ref ClockTime component of the Timestamp.
@@ -256,11 +306,27 @@ Timestamp_create(
         const struct TimeDelta * const timeZoneOffset);
 
 /**
+ * @copydoc Timestamp_create
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_create(
+        struct Timestamp * const result,
+        const struct Date * const date,
+        const struct ClockTime * const clockTime,
+        const struct TimeDelta * const timeZoneOffset);
+
+/**
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in
  * Coordinated Universal Time.
  *
  * Future modifications to the original @ref Date and @ref ClockTime do NOT
  * affect the new Timestamp.
+ *
+ * If the @ref Date or @ref ClockTime is invalid, the Timestamp will have
+ * @p has_error and @p errors set.
+ *
+ * @copydoc check_for_error_timestamp
  *
  * @param date The @ref Date component of the Timestamp.
  * @param clockTime The @ref ClockTime component of the Timestamp.
@@ -271,17 +337,42 @@ Timestamp_create_utc(
         const struct ClockTime * const clockTime);
 
 /**
+ * @copydoc Timestamp_create_utc
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_create_utc(
+        struct Timestamp * const result,
+        const struct Date * const date,
+        const struct ClockTime * const clockTime);
+
+/**
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in the
  * system's current local time zone.
  *
  * Future modifications to the original @ref Date and @ref ClockTime do NOT
  * affect the new Timestamp.
  *
+ * If the @ref Date or @ref ClockTime is invalid, the Timestamp will have
+ * @p has_error and @p errors set.
+ *
+ * @copydoc check_for_error_timestamp
+ *
  * @param date The @ref Date component of the Timestamp.
  * @param clockTime The @ref ClockTime component of the Timestamp.
  */
 PRESENT_API struct Timestamp
 Timestamp_create_local(
+        const struct Date * const date,
+        const struct ClockTime * const clockTime);
+
+/**
+ * @copydoc Timestamp_create_local
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_create_local(
+        struct Timestamp * const result,
         const struct Date * const date,
         const struct ClockTime * const clockTime);
 
@@ -297,11 +388,25 @@ PRESENT_API struct Timestamp
 Timestamp_now();
 
 /**
+ * @copydoc Timestamp_now
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_now(struct Timestamp * const result);
+
+/**
  * Create a new Timestamp representing the UNIX epoch
  * (Jan. 1, 1970 00:00:00 UTC).
  */
 PRESENT_API struct Timestamp
 Timestamp_epoch();
+
+/**
+ * @copydoc Timestamp_epoch
+ * @param[out] result A pointer to a struct Timestamp for the result.
+ */
+PRESENT_API void
+Timestamp_ptr_epoch(struct Timestamp * const result);
 
 
 /**
@@ -371,7 +476,7 @@ Timestamp_get_date_local(const struct Timestamp * const self);
  * Get the @ref ClockTime component of a Timestamp in a certain time zone
  * (represented by an offset from UTC).
  *
- * Modifications to the returned @ClockTime do NOT affect the existing
+ * Modifications to the returned @ref ClockTime do NOT affect the existing
  * Timestamp.
  */
 PRESENT_API struct ClockTime
@@ -383,7 +488,7 @@ Timestamp_get_clock_time(
  * Get the @ref ClockTime component of a Timestamp in Coordinated Universal
  * Time.
  *
- * Modifications to the returned @ClockTime do NOT affect the existing
+ * Modifications to the returned @ref ClockTime do NOT affect the existing
  * Timestamp.
  */
 PRESENT_API struct ClockTime
@@ -393,7 +498,7 @@ Timestamp_get_clock_time_utc(const struct Timestamp * const self);
  * Get the @ref ClockTime component of a Timestamp in the system's current
  * local time zone.
  *
- * Modifications to the returned @ClockTime do NOT affect the existing
+ * Modifications to the returned @ref ClockTime do NOT affect the existing
  * Timestamp.
  */
 PRESENT_API struct ClockTime

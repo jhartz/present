@@ -63,8 +63,6 @@ MonthDelta::negate()
 inline MonthDelta
 MonthDelta::operator-() const
 {
-    assert(this->error == 0);
-
     MonthDelta copy(*this);
     copy.negate();
     return copy;
@@ -73,8 +71,6 @@ MonthDelta::operator-() const
 inline MonthDelta &
 MonthDelta::operator++()
 {
-    assert(this->error == 0);
-
     this->data_.delta_months += 1;
     return *this;
 }
@@ -82,8 +78,6 @@ MonthDelta::operator++()
 inline MonthDelta
 MonthDelta::operator++(int)
 {
-    assert(this->error == 0);
-
     MonthDelta copy(*this);
     operator++();
     return copy;
@@ -92,8 +86,6 @@ MonthDelta::operator++(int)
 inline MonthDelta &
 MonthDelta::operator--()
 {
-    assert(this->error == 0);
-
     this->data_.delta_months -= 1;
     return *this;
 }
@@ -101,8 +93,6 @@ MonthDelta::operator--()
 inline MonthDelta
 MonthDelta::operator--(int)
 {
-    assert(this->error == 0);
-
     MonthDelta copy(*this);
     operator--();
     return copy;

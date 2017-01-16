@@ -119,7 +119,6 @@ int_delta
 TimeDelta_nanoseconds(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return (self->data_.delta_seconds * NANOSECONDS_IN_SECOND +
             self->data_.delta_nanoseconds);
@@ -129,7 +128,6 @@ int_delta
 TimeDelta_microseconds(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return (self->data_.delta_seconds * MICROSECONDS_IN_SECOND +
             self->data_.delta_nanoseconds / NANOSECONDS_IN_MICROSECOND);
@@ -139,7 +137,6 @@ double
 TimeDelta_microseconds_decimal(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return (self->data_.delta_seconds * MICROSECONDS_IN_SECOND +
             (double)(self->data_.delta_nanoseconds) /
@@ -150,7 +147,6 @@ int_delta
 TimeDelta_milliseconds(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return (self->data_.delta_seconds * MILLISECONDS_IN_SECOND +
             self->data_.delta_nanoseconds / NANOSECONDS_IN_MILLISECOND);
@@ -160,7 +156,6 @@ double
 TimeDelta_milliseconds_decimal(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return (self->data_.delta_seconds * MILLISECONDS_IN_SECOND +
             (double)(self->data_.delta_nanoseconds) /
@@ -171,7 +166,6 @@ int_delta
 TimeDelta_seconds(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return self->data_.delta_seconds;
 }
@@ -180,7 +174,6 @@ double
 TimeDelta_seconds_decimal(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return (self->data_.delta_seconds +
             (double)(self->data_.delta_nanoseconds) /
@@ -241,7 +234,6 @@ TimeDelta_to_DayDelta_truncated(const struct TimeDelta * const self)
     struct DayDelta day_delta;
 
     assert(self != NULL);
-    assert(self->error == 0);
 
     if (self->data_.delta_seconds >= 0) {
         return DayDelta_from_days(self->data_.delta_seconds / SECONDS_IN_DAY);
@@ -259,7 +251,6 @@ struct DayDelta
 TimeDelta_to_DayDelta_rounded(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return DayDelta_from_days((int_delta)present_round(
                 ((double)self->data_.delta_seconds) /
@@ -272,7 +263,6 @@ TimeDelta_to_DayDelta_abs_ceil(const struct TimeDelta * const self)
     struct DayDelta day_delta;
 
     assert(self != NULL);
-    assert(self->error == 0);
 
     if (self->data_.delta_seconds % SECONDS_IN_DAY == 0) {
         return DayDelta_from_days(self->data_.delta_seconds / SECONDS_IN_DAY);
@@ -293,7 +283,6 @@ present_bool
 TimeDelta_is_negative(const struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     return self->data_.delta_seconds < 0 || self->data_.delta_nanoseconds < 0;
 }
@@ -302,7 +291,6 @@ void
 TimeDelta_negate(struct TimeDelta * const self)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     self->data_.delta_seconds = -self->data_.delta_seconds;
     self->data_.delta_nanoseconds = -self->data_.delta_nanoseconds;
@@ -312,7 +300,6 @@ void
 TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor)
 {
     assert(self != NULL);
-    assert(self->error == 0);
 
     self->data_.delta_seconds *= scaleFactor;
     self->data_.delta_nanoseconds *= scaleFactor;
@@ -328,7 +315,6 @@ TimeDelta_multiply_by_decimal(
     double seconds;
 
     assert(self != NULL);
-    assert(self->error == 0);
 
     seconds = (double)self->data_.delta_seconds * scaleFactor;
     self->data_.delta_seconds = (int_delta)seconds;
@@ -349,7 +335,6 @@ TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor)
     int_delta orig_seconds;
 
     assert(self != NULL);
-    assert(self->error == 0);
     assert(scaleFactor != 0);
 
     /* Start by scaling just the seconds portion */
@@ -374,7 +359,6 @@ TimeDelta_divide_by_decimal(
         const double scaleFactor)
 {
     assert(self != NULL);
-    assert(self->error == 0);
     assert(scaleFactor != 0.0);
 
     /* Simplify our lives by reusing the float multiplication implementation */
@@ -387,9 +371,7 @@ TimeDelta_add(
         const struct TimeDelta * const timeDeltaToAdd)
 {
     assert(self != NULL);
-    assert(self->error == 0);
     assert(timeDeltaToAdd != NULL);
-    assert(timeDeltaToAdd->error == 0);
 
     self->data_.delta_seconds += timeDeltaToAdd->data_.delta_seconds;
     self->data_.delta_nanoseconds += timeDeltaToAdd->data_.delta_nanoseconds;
@@ -403,9 +385,7 @@ TimeDelta_add_DayDelta(
         const struct DayDelta * const other)
 {
     assert(self != NULL);
-    assert(self->error == 0);
     assert(other != NULL);
-    assert(other->error == 0);
 
     self->data_.delta_seconds += other->data_.delta_days * SECONDS_IN_DAY;
 
@@ -418,9 +398,7 @@ TimeDelta_subtract(
         const struct TimeDelta * const timeDeltaToSubtract)
 {
     assert(self != NULL);
-    assert(self->error == 0);
     assert(timeDeltaToSubtract != NULL);
-    assert(timeDeltaToSubtract->error == 0);
 
     self->data_.delta_seconds -= timeDeltaToSubtract->data_.delta_seconds;
     self->data_.delta_nanoseconds -= timeDeltaToSubtract->data_.delta_nanoseconds;
@@ -434,9 +412,7 @@ TimeDelta_subtract_DayDelta(
         const struct DayDelta * const other)
 {
     assert(self != NULL);
-    assert(self->error == 0);
     assert(other != NULL);
-    assert(other->error == 0);
 
     self->data_.delta_seconds -= other->data_.delta_days * SECONDS_IN_DAY;
 
@@ -449,9 +425,7 @@ TimeDelta_compare(
         const struct TimeDelta * const rhs)
 {
     assert(lhs != NULL);
-    assert(lhs->error == 0);
     assert(rhs != NULL);
-    assert(rhs->error == 0);
 
     return
         STRUCT_COMPARE(delta_seconds,

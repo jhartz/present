@@ -8,6 +8,7 @@
  * For details, see LICENSE.
  */
 
+#include <assert.h>
 #include <math.h>
 #include <stddef.h>
 #include <string.h>
@@ -106,29 +107,28 @@ present_mktime(struct tm * tm)
     return value;
 }
 
-struct PresentNowStruct
-present_now()
+void
+present_now(struct PresentNowStruct * result)
 {
-    struct PresentNowStruct value;
+    assert(result != NULL);
 #if defined(_POSIX_TIMERS) && !defined(__STRICT_ANSI__)
     struct timespec tp;
 #endif
 
     INITIALIZE;
     if (present_is_test_time_set) {
-        value = present_test_time;
+        *result = present_test_time;
     } else {
 #if defined(_POSIX_TIMERS) && !defined(__STRICT_ANSI__)
         clock_gettime(CLOCK_REALTIME, &tp);
-        value.sec = tp.tv_sec;
-        value.nsec = tp.tv_nsec;
+        result->sec = tp.tv_sec;
+        result->nsec = tp.tv_nsec;
 #else
-        value.sec = time(NULL);
-        value.nsec = 0;
+        result->sec = time(NULL);
+        result->nsec = 0;
 #endif
     }
     DONE;
-    return value;
 }
 
 void

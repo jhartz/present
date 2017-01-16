@@ -69,8 +69,6 @@ DayDelta::negate()
 inline DayDelta
 DayDelta::operator-() const
 {
-    assert(this->error == 0);
-
     DayDelta copy(*this);
     copy.negate();
     return copy;
@@ -79,8 +77,6 @@ DayDelta::operator-() const
 inline DayDelta &
 DayDelta::operator++()
 {
-    assert(this->error == 0);
-
     this->data_.delta_days += 1;
     return *this;
 }
@@ -88,8 +84,6 @@ DayDelta::operator++()
 inline DayDelta
 DayDelta::operator++(int)
 {
-    assert(this->error == 0);
-
     DayDelta copy(*this);
     operator++();
     return copy;
@@ -98,8 +92,6 @@ DayDelta::operator++(int)
 inline DayDelta &
 DayDelta::operator--()
 {
-    assert(this->error == 0);
-
     this->data_.delta_days -= 1;
     return *this;
 }
@@ -107,8 +99,6 @@ DayDelta::operator--()
 inline DayDelta
 DayDelta::operator--(int)
 {
-    assert(this->error == 0);
-
     DayDelta copy(*this);
     operator--();
     return copy;

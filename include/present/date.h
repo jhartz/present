@@ -31,18 +31,6 @@ struct DayDelta;
 struct MonthDelta;
 
 /*
- * Enum Definitions
- */
-
-enum PresentDateError {
-    Date_ERROR_NONE = 0
-    , Date_ERROR_MONTH_OUT_OF_RANGE
-    , Date_ERROR_DAY_OUT_OF_RANGE
-    , Date_ERROR_WEEK_OF_YEAR_OUT_OF_RANGE
-    , Date_ERROR_DAY_OF_WEEK_OUT_OF_RANGE
-};
-
-/*
  * Helper Struct Definitions
  */
 
@@ -69,7 +57,27 @@ struct PresentWeekYear {
  * with the date, nor a time zone.
  */
 struct PRESENT_API Date {
-    enum PresentDateError error;
+    /**
+     * This will be true if there were any errors when creating this Date.
+     *
+     * @copydoc has_error_epilogue
+     */
+    present_bool has_error;
+
+    /**
+     * If there were any errors when creating this Date, then one or more
+     * of these fields will be set.
+     *
+     * @copydoc errors_epilogue
+     */
+    struct {
+        unsigned int month_out_of_range         : 1,
+                     day_out_of_range           : 1,
+                     week_of_year_out_of_range  : 1,
+                     day_of_week_out_of_range   : 1;
+    } errors;
+
+    /* Internal data representation */
     struct PresentDateData data_;
 
 #ifdef __cplusplus
@@ -177,10 +185,20 @@ PRESENT_API struct Date
 Date_from_year(int_year year);
 
 /**
+ * @copydoc Date_from_year
+ * @param[out] result A pointer to a struct Date for the result.
+ */
+PRESENT_API void
+Date_ptr_from_year(struct Date * const result, int_year year);
+
+/**
  * Create a new Date based on a year and a month. The day will be set to the
  * first of the month.
  *
- * If the month is out of range, a Date will be returned with "error" set.
+ * If the month is out of range, the Date will have @p has_error and @p errors
+ * set.
+ *
+ * @copydoc check_for_error_date
  *
  * @param year The year.
  * @param month The month of the year (1 to 12, inclusive).
@@ -189,10 +207,22 @@ PRESENT_API struct Date
 Date_from_year_month(int_year year, int_month month);
 
 /**
+ * @copydoc Date_from_year_month
+ * @param[out] result A pointer to a struct Date for the result.
+ */
+PRESENT_API void
+Date_ptr_from_year_month(
+        struct Date * const result,
+        int_year year,
+        int_month month);
+
+/**
  * Create a new Date based on a year, a month, and a day.
  *
- * If the month or the day is out of range, a Date will be returned with
- * "error" set.
+ * If the month or the day is out of range, the Date will have @p has_error and
+ * @p errors set.
+ *
+ * @copydoc check_for_error_date
  *
  * @param year The year.
  * @param month The month of the year (1 to 12, inclusive).
@@ -203,8 +233,21 @@ PRESENT_API struct Date
 Date_from_year_month_day(int_year year, int_month month, int_day day);
 
 /**
+ * @copydoc Date_from_year_month_day
+ * @param[out] result A pointer to a struct Date for the result.
+ */
+PRESENT_API void
+Date_ptr_from_year_month_day(
+        struct Date * const result,
+        int_year year,
+        int_month month,
+        int_day day);
+
+/**
  * Create a new Date from either a year (1 argument), a year and a month (2
  * arguments), or a year/month/day (3 arguments).
+ *
+ * @copydoc check_for_error_date
  *
  * @see Date_from_year
  * @see Date_from_year_month
@@ -218,6 +261,24 @@ Date_from_year_month_day(int_year year, int_month month, int_day day);
         dummy)(__VA_ARGS__)
 
 /**
+ * Create a new Date from either a year (2 arguments), a year and a month (3
+ * arguments), or a year/month/day (4 arguments). The first argumen is a pointer
+ * to a struct Date for the result.
+ *
+ * @copydoc check_for_error_date
+ *
+ * @see Date_ptr_from_year
+ * @see Date_ptr_from_year_month
+ * @see Date_ptr_from_year_month_day
+ */
+#define Date_ptr_create(result, ...)    \
+    PRESENT_OVERLOAD_MAX_3(__VA_ARGS__, \
+        Date_ptr_from_year_month_day,   \
+        Date_ptr_from_year_month,       \
+        Date_ptr_from_year,             \
+        dummy)(result, __VA_ARGS__)
+
+/**
  * Create a new Date based on a year and the day of that year.
  *
  * @param year The year.
@@ -227,13 +288,25 @@ PRESENT_API struct Date
 Date_from_year_day(int_year year, int_day_of_year day_of_year);
 
 /**
+ * @copydoc Date_from_year_day
+ * @param[out] result A pointer to a struct Date for the result.
+ */
+PRESENT_API void
+Date_ptr_from_year_day(
+        struct Date * const result,
+        int_year year,
+        int_day_of_year day_of_year);
+
+/**
  * Create a new Date based on a year, a week of that year, and a day of the
  * week. Weeks of the year are determined in the same way that the ISO8601
  * standard defines week numbers. For more info, see:
  * https://en.wikipedia.org/wiki/ISO_week_date
  *
- * If the week of the year or the day of the week is out of range, a Date will
- * be returned with "error" set.
+ * If the week of the year or the day of the week is out of range, the Date will
+ * have @p has_error and @p errors set.
+ *
+ * @copydoc check_for_error_date
  *
  * @param year The year.
  * @param week_of_year The week of the year (1 to 52 or 53, inclusive,
@@ -243,6 +316,17 @@ Date_from_year_day(int_year year, int_day_of_year day_of_year);
  */
 PRESENT_API struct Date
 Date_from_year_week_day(
+        int_year year,
+        int_week_of_year week_of_year,
+        int_day_of_week day_of_week);
+
+/**
+ * @copydoc Date_from_year_week_day
+ * @param[out] result A pointer to a struct Date for the result.
+ */
+PRESENT_API void
+Date_ptr_from_year_week_day(
+        struct Date * const result,
         int_year year,
         int_week_of_year week_of_year,
         int_day_of_week day_of_week);

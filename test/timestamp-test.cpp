@@ -14,15 +14,25 @@
 #include "utils/constants.h"
 #include "utils/time-calls.h"
 
+static const struct Timestamp EMPTY_TIMESTAMP = {};
+
 /**
  * Shortcut macro to compare timestamp_seconds and additional_nanoseconds all
  * in one.
  * Expects that the Timestamp is "t".
  */
 #define IS(test_timestamp_seconds, test_additional_nanoseconds) \
-    REQUIRE(t.error == Timestamp_ERROR_NONE);                   \
+    REQUIRE_FALSE(t.has_error);                                 \
     CHECK(t.data_.timestamp_seconds == test_timestamp_seconds); \
     CHECK(t.data_.additional_nanoseconds == test_additional_nanoseconds);
+
+/**
+ * Shortcut macro to check if there's a certain error.
+ * Expects that the Timestamp is "t".
+ */
+#define IS_ERROR(eRR_tYPE)      \
+    CHECK(t.has_error);         \
+    CHECK(t.errors.eRR_tYPE);
 
 /**
  * Check that creating a Timestamp from a struct tm works correctly.
@@ -39,29 +49,76 @@
         tm.tm_sec = sec;                                        \
         tm.tm_isdst = 0;                                        \
         REQUIRE(mktime(&tm) != -1);                             \
-        Timestamp t = Timestamp::create(tm,                     \
-                TimeDelta::from_hours(tz_offset));              \
-        IS(expected_unix_timestamp, 0);                         \
-        CHECK(t.get_clock_time_utc().minute() == min);          \
-        CHECK(t.get_clock_time_utc().second() == sec);          \
-        CHECK(t.get_clock_time_utc().nanosecond() == 0);        \
+        {                                                       \
+            Timestamp t = EMPTY_TIMESTAMP;                      \
+            t = Timestamp::create(tm,                           \
+                    TimeDelta::from_hours(tz_offset));          \
+            REQUIRE_FALSE(t.has_error);                         \
+            IS(expected_unix_timestamp, 0);                     \
+            CHECK(t.get_clock_time_utc().minute() == min);      \
+            CHECK(t.get_clock_time_utc().second() == sec);      \
+            CHECK(t.get_clock_time_utc().nanosecond() == 0);    \
+        }                                                       \
+        {                                                       \
+            Timestamp t = EMPTY_TIMESTAMP;                      \
+            TimeDelta delta = TimeDelta::from_hours(tz_offset); \
+            t = Timestamp_from_struct_tm(tm, &delta);           \
+            REQUIRE_FALSE(t.has_error);                         \
+            IS(expected_unix_timestamp, 0);                     \
+            CHECK(t.get_clock_time_utc().minute() == min);      \
+            CHECK(t.get_clock_time_utc().second() == sec);      \
+            CHECK(t.get_clock_time_utc().nanosecond() == 0);    \
+        }                                                       \
+        {                                                       \
+            Timestamp t = EMPTY_TIMESTAMP;                      \
+            TimeDelta delta = TimeDelta::from_hours(tz_offset); \
+            Timestamp_ptr_from_struct_tm(&t, tm, &delta);       \
+            REQUIRE_FALSE(t.has_error);                         \
+            IS(expected_unix_timestamp, 0);                     \
+            CHECK(t.get_clock_time_utc().minute() == min);      \
+            CHECK(t.get_clock_time_utc().second() == sec);      \
+            CHECK(t.get_clock_time_utc().nanosecond() == 0);    \
+        }                                                       \
     } while (0)
 
 /**
  * Check that creating a Timestamp from a Date and a ClockTime works
- * correctly.
+ * correctly. This tests the C++ @p Timestamp::create function and the C
+ * @p Timestamp_create and @p Timestamp_ptr_create functions.
  */
-#define TEST_CREATE_FROM_DATE_TIME(yr, mon, mday, hr, min, sec, \
-        tz_offset, expected_unix_timestamp)                     \
-    do {                                                        \
-        Timestamp t = Timestamp::create(                        \
-                Date::create(yr, mon, mday),                    \
-                ClockTime::create(hr, min, sec),                \
-                TimeDelta::from_hours(tz_offset));              \
-        IS(expected_unix_timestamp, 0);                         \
-        CHECK(t.get_clock_time_utc().minute() == min);          \
-        CHECK(t.get_clock_time_utc().second() == sec);          \
-        CHECK(t.get_clock_time_utc().nanosecond() == 0);        \
+#define TEST_CREATE_FROM_DATE_TIME(yr, mon, mday, hr, min, sec,         \
+        tz_offset, expected_unix_timestamp)                             \
+    do {                                                                \
+        const Date testDate = Date::create(yr, mon, mday);              \
+        const ClockTime testTime = ClockTime::create(hr, min, sec);     \
+        const TimeDelta testDelta = TimeDelta::from_hours(tz_offset);   \
+        {                                                               \
+            Timestamp t = EMPTY_TIMESTAMP;                              \
+            t = Timestamp::create(testDate, testTime, testDelta);       \
+            REQUIRE_FALSE(t.has_error);                                 \
+            IS(expected_unix_timestamp, 0);                             \
+            CHECK(t.get_clock_time_utc().minute() == min);              \
+            CHECK(t.get_clock_time_utc().second() == sec);              \
+            CHECK(t.get_clock_time_utc().nanosecond() == 0);            \
+        }                                                               \
+        {                                                               \
+            Timestamp t = EMPTY_TIMESTAMP;                              \
+            t = Timestamp_create(&testDate, &testTime, &testDelta);     \
+            REQUIRE_FALSE(t.has_error);                                 \
+            IS(expected_unix_timestamp, 0);                             \
+            CHECK(t.get_clock_time_utc().minute() == min);              \
+            CHECK(t.get_clock_time_utc().second() == sec);              \
+            CHECK(t.get_clock_time_utc().nanosecond() == 0);            \
+        }                                                               \
+        {                                                               \
+            Timestamp t = EMPTY_TIMESTAMP;                              \
+            Timestamp_ptr_create(&t, &testDate, &testTime, &testDelta); \
+            REQUIRE_FALSE(t.has_error);                                 \
+            IS(expected_unix_timestamp, 0);                             \
+            CHECK(t.get_clock_time_utc().minute() == min);              \
+            CHECK(t.get_clock_time_utc().second() == sec);              \
+            CHECK(t.get_clock_time_utc().nanosecond() == 0);            \
+        }                                                               \
     } while (0)
 
 /**
@@ -72,14 +129,26 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     Timestamp t;
 
     // create(time_t)
+    // from_time_t
 
     t = Timestamp::create((time_t) 0);
     IS(0, 0);
     t = Timestamp::create((time_t) 1325376000);
     IS(1325376000, 0);
 
+    t = Timestamp_from_time_t((time_t) 0);
+    IS(0, 0);
+    t = Timestamp_from_time_t((time_t) 918491000);
+    IS(918491000, 0);
+
+    Timestamp_ptr_from_time_t(&t, (time_t) 0);
+    IS(0, 0);
+    Timestamp_ptr_from_time_t(&t, (time_t) 1);
+    IS(1, 0);
+
     // create(struct tm, TimeDelta)
     // create(Date, ClockTime, TimeDelta)
+    // from_struct_tm
 
     TEST_CREATE_FROM_STRUCT_TM(
             1970, 1, 1,     // date
@@ -109,28 +178,28 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
 
     // create(Date, ClockTime) with bad Date / ClockTime
     Date bad_d = Date::create(0, 0, 0);
-    REQUIRE(bad_d.error != Date_ERROR_NONE);
+    REQUIRE(bad_d.has_error);
     Date good_d = Date::create(2000, 1, 1);
-    REQUIRE(good_d.error == Date_ERROR_NONE);
+    REQUIRE_FALSE(good_d.has_error);
 
     ClockTime bad_ct = ClockTime::create(99, 99, 99);
-    REQUIRE(bad_ct.error != ClockTime_ERROR_NONE);
+    REQUIRE(bad_ct.has_error);
     ClockTime good_ct = ClockTime::noon();
-    REQUIRE(good_ct.error == ClockTime_ERROR_NONE);
+    REQUIRE_FALSE(good_ct.has_error);
 
     t = Timestamp::create(bad_d, good_ct, TimeDelta::zero());
-    CHECK(t.error == Timestamp_ERROR_INVALID_DATE);
+    IS_ERROR(invalid_date);
     t = Timestamp::create_utc(bad_d, good_ct);
-    CHECK(t.error == Timestamp_ERROR_INVALID_DATE);
+    IS_ERROR(invalid_date);
     t = Timestamp::create_local(bad_d, good_ct);
-    CHECK(t.error == Timestamp_ERROR_INVALID_DATE);
+    IS_ERROR(invalid_date);
 
     t = Timestamp::create(good_d, bad_ct, TimeDelta::zero());
-    CHECK(t.error == Timestamp_ERROR_INVALID_CLOCK_TIME);
+    IS_ERROR(invalid_clock_time);
     t = Timestamp::create_utc(good_d, bad_ct);
-    CHECK(t.error == Timestamp_ERROR_INVALID_CLOCK_TIME);
+    IS_ERROR(invalid_clock_time);
     t = Timestamp::create_local(good_d, bad_ct);
-    CHECK(t.error == Timestamp_ERROR_INVALID_CLOCK_TIME);
+    IS_ERROR(invalid_clock_time);
 
     // now()
     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
@@ -140,13 +209,31 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     };
     present_set_test_time(test_now);
 
+    t = EMPTY_TIMESTAMP;
     t = Timestamp::now();
+    IS(920180081, 986000000);
+
+    t = EMPTY_TIMESTAMP;
+    t = Timestamp_now();
+    IS(920180081, 986000000);
+
+    t = EMPTY_TIMESTAMP;
+    Timestamp_ptr_now(&t);
     IS(920180081, 986000000);
 
     present_reset_test_time();
 
     // epoch()
+    t = EMPTY_TIMESTAMP;
     t = Timestamp::epoch();
+    IS(0, 0);
+
+    t = EMPTY_TIMESTAMP;
+    t = Timestamp_epoch();
+    IS(0, 0);
+
+    t = EMPTY_TIMESTAMP;
+    Timestamp_ptr_epoch(&t);
     IS(0, 0);
 }
 
@@ -157,6 +244,7 @@ TEST_CASE("Timestamp accessors", "[timestamp]") {
     // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
 
     Timestamp t = Timestamp::create((time_t) 197589599);
+    REQUIRE_FALSE(t.has_error);
 
     // get_time_t
     CHECK(t.get_time_t() == 197589599);
@@ -205,6 +293,7 @@ TEST_CASE("Timestamp accessors", "[timestamp]") {
     // it and seeing that we get the same thing back
     t = Timestamp::create_local(Date::create(1959, 5, 17),
             ClockTime::create(14, 39, 45));
+    REQUIRE_FALSE(t.has_error);
 
     struct tm tm_local = t.get_struct_tm_local();
     CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);
@@ -222,6 +311,8 @@ TEST_CASE("Timestamp 'difference' functions", "[timestamp]") {
     const time_t base = 197589599;
     Timestamp t1 = Timestamp::create(base),
               t2 = Timestamp::create(base + 86400 + 3600);  // + 1 day, 1 hour
+    REQUIRE_FALSE(t1.has_error);
+    REQUIRE_FALSE(t2.has_error);
 
     TimeDelta exp_diff = TimeDelta::from_seconds(86400 + 3600);
     CHECK(t1.difference(t2) == -exp_diff);
@@ -236,6 +327,7 @@ TEST_CASE("Timestamp arithmetic operators", "[timestamp]") {
 
     Timestamp orig_t = Timestamp::create((time_t) 197589599),
               t;
+    REQUIRE_FALSE(orig_t.has_error);
 
     t = orig_t;
     t += seconds_plus4;
