@@ -26,11 +26,11 @@
  * Declarations of the C functions
  */
 
-#include "present/clock-time.h"
-#include "present/date.h"
 #include "present/day-delta.h"
 #include "present/month-delta.h"
 #include "present/time-delta.h"
+#include "present/clock-time.h"
+#include "present/date.h"
 #include "present/timestamp.h"
 
 #ifdef __cplusplus
