@@ -223,6 +223,12 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
 
     present_reset_test_time();
 
+    // (make sure it returns something different now)
+    t = EMPTY_TIMESTAMP;
+    t = Timestamp::now();
+    REQUIRE_FALSE(t.has_error);
+    CHECK(t.data_.timestamp_seconds != 920180081);
+
     // epoch()
     t = EMPTY_TIMESTAMP;
     t = Timestamp::epoch();
