@@ -156,386 +156,389 @@
 <span class="lineNum">      94 </span>            :  * Initialize a new Date instance based on its data parameters.
 <a name="95"><span class="lineNum">      95 </span>            :  */</a>
 <span class="lineNum">      96 </span>            : static void
-<span class="lineNum">      97 </span><span class="lineCov">        101 : init_date(struct Date * const self, int_year year, int_month month, int_day day)</span>
-<span class="lineNum">      98 </span>            : {
-<span class="lineNum">      99 </span>            :     static const int_day DAYS_PER_MONTH[13] = {
-<span class="lineNum">     100 </span>            :         0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-<span class="lineNum">     101 </span>            :     };
-<span class="lineNum">     102 </span>            : 
-<span class="lineNum">     103 </span>            :     int_day days_in_month;
-<span class="lineNum">     104 </span>            : 
-<span class="lineNum">     105 </span><span class="lineCov">        101 :     assert(self != NULL);</span>
+<span class="lineNum">      97 </span><span class="lineCov">        101 : init_date(</span>
+<span class="lineNum">      98 </span>            :         struct Date * const result,
+<span class="lineNum">      99 </span>            :         int_year year,
+<span class="lineNum">     100 </span>            :         int_month month,
+<span class="lineNum">     101 </span>            :         int_day day)
+<span class="lineNum">     102 </span>            : {
+<span class="lineNum">     103 </span>            :     static const int_day DAYS_PER_MONTH[13] = {
+<span class="lineNum">     104 </span>            :         0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+<span class="lineNum">     105 </span>            :     };
 <span class="lineNum">     106 </span>            : 
-<span class="lineNum">     107 </span><span class="lineCov">        101 :     CLEAR(self);</span>
+<span class="lineNum">     107 </span>            :     int_day days_in_month;
 <span class="lineNum">     108 </span>            : 
-<span class="lineNum">     109 </span><span class="lineCov">        101 :     if (month &lt; 1 || month &gt; 12) {</span>
-<span class="lineNum">     110 </span><span class="lineCov">          5 :         self-&gt;has_error = 1;</span>
-<span class="lineNum">     111 </span><span class="lineCov">          5 :         self-&gt;errors.month_out_of_range = 1;</span>
-<span class="lineNum">     112 </span>            :     }
-<span class="lineNum">     113 </span>            : 
-<span class="lineNum">     114 </span><span class="lineCov">        101 :     days_in_month = (IS_LEAP_YEAR(year) &amp;&amp; month == 2) ? 29 :</span>
-<span class="lineNum">     115 </span>            :         DAYS_PER_MONTH[month];
-<span class="lineNum">     116 </span><span class="lineCov">        101 :     if (day &lt; 1 || day &gt; days_in_month) {</span>
-<span class="lineNum">     117 </span><span class="lineCov">         11 :         self-&gt;has_error = 1;</span>
-<span class="lineNum">     118 </span><span class="lineCov">         11 :         self-&gt;errors.day_out_of_range = 1;</span>
-<span class="lineNum">     119 </span>            :     }
-<span class="lineNum">     120 </span>            : 
-<span class="lineNum">     121 </span><span class="lineCov">        101 :     if (!self-&gt;has_error) {</span>
-<span class="lineNum">     122 </span><span class="lineCov">         89 :         self-&gt;data_.year = year;</span>
-<span class="lineNum">     123 </span><span class="lineCov">         89 :         self-&gt;data_.month = month;</span>
-<span class="lineNum">     124 </span><span class="lineCov">         89 :         self-&gt;data_.day = day;</span>
-<span class="lineNum">     125 </span><span class="lineCov">         89 :         check_date_data(&amp;self-&gt;data_);</span>
-<span class="lineNum">     126 </span>            :     }
-<span class="lineNum">     127 </span><span class="lineCov">        101 : }</span>
-<span class="lineNum">     128 </span>            : 
-<span class="lineNum">     129 </span>            : /**
-<span class="lineNum">     130 </span>            :  * Initialize a new Date instance based on its data parameters, without
-<span class="lineNum">     131 </span>            :  * checking any bounds.
-<a name="132"><span class="lineNum">     132 </span>            :  */</a>
-<span class="lineNum">     133 </span>            : static void
-<span class="lineNum">     134 </span><span class="lineCov">         20 : init_date_no_bounds_check(</span>
-<span class="lineNum">     135 </span>            :         struct Date * const self,
-<span class="lineNum">     136 </span>            :         int_year year,
-<span class="lineNum">     137 </span>            :         int_month month,
-<span class="lineNum">     138 </span>            :         int_day day)
-<span class="lineNum">     139 </span>            : {
-<span class="lineNum">     140 </span><span class="lineCov">         20 :     assert(self != NULL);</span>
-<span class="lineNum">     141 </span>            : 
-<span class="lineNum">     142 </span><span class="lineCov">         20 :     CLEAR(self);</span>
-<span class="lineNum">     143 </span>            : 
-<span class="lineNum">     144 </span><span class="lineCov">         20 :     self-&gt;data_.year = year;</span>
-<span class="lineNum">     145 </span><span class="lineCov">         20 :     self-&gt;data_.month = month;</span>
-<span class="lineNum">     146 </span><span class="lineCov">         20 :     self-&gt;data_.day = day;</span>
-<span class="lineNum">     147 </span><span class="lineCov">         20 :     check_date_data(&amp;self-&gt;data_);</span>
-<span class="lineNum">     148 </span><span class="lineCov">         20 : }</span>
-<a name="149"><span class="lineNum">     149 </span>            : </a>
-<span class="lineNum">     150 </span>            : struct Date
-<span class="lineNum">     151 </span><span class="lineCov">          7 : Date_from_year(int_year year)</span>
-<span class="lineNum">     152 </span>            : {
-<span class="lineNum">     153 </span>            :     struct Date result;
-<span class="lineNum">     154 </span><span class="lineCov">          7 :     init_date(&amp;result, year, 1, 1);</span>
-<span class="lineNum">     155 </span><span class="lineCov">          7 :     return result;</span>
-<span class="lineNum">     156 </span>            : }
-<a name="157"><span class="lineNum">     157 </span>            : </a>
-<span class="lineNum">     158 </span>            : void
-<span class="lineNum">     159 </span><span class="lineCov">          1 : Date_ptr_from_year(struct Date * const result, int_year year)</span>
-<span class="lineNum">     160 </span>            : {
-<span class="lineNum">     161 </span><span class="lineCov">          1 :     init_date(result, year, 1, 1);</span>
-<span class="lineNum">     162 </span><span class="lineCov">          1 : }</span>
-<a name="163"><span class="lineNum">     163 </span>            : </a>
-<span class="lineNum">     164 </span>            : struct Date
-<span class="lineNum">     165 </span><span class="lineCov">          7 : Date_from_year_month(int_year year, int_month month)</span>
-<span class="lineNum">     166 </span>            : {
-<span class="lineNum">     167 </span>            :     struct Date result;
-<span class="lineNum">     168 </span><span class="lineCov">          7 :     init_date(&amp;result, year, month, 1);</span>
-<span class="lineNum">     169 </span><span class="lineCov">          7 :     return result;</span>
-<span class="lineNum">     170 </span>            : }
-<a name="171"><span class="lineNum">     171 </span>            : </a>
-<span class="lineNum">     172 </span>            : void
-<span class="lineNum">     173 </span><span class="lineCov">          2 : Date_ptr_from_year_month(</span>
-<span class="lineNum">     174 </span>            :         struct Date * const result,
-<span class="lineNum">     175 </span>            :         int_year year,
-<span class="lineNum">     176 </span>            :         int_month month)
-<span class="lineNum">     177 </span>            : {
-<span class="lineNum">     178 </span><span class="lineCov">          2 :     init_date(result, year, month, 1);</span>
-<span class="lineNum">     179 </span><span class="lineCov">          2 : }</span>
-<a name="180"><span class="lineNum">     180 </span>            : </a>
-<span class="lineNum">     181 </span>            : struct Date
-<span class="lineNum">     182 </span><span class="lineCov">         82 : Date_from_year_month_day(int_year year, int_month month, int_day day)</span>
-<span class="lineNum">     183 </span>            : {
-<span class="lineNum">     184 </span>            :     struct Date result;
-<span class="lineNum">     185 </span><span class="lineCov">         82 :     init_date(&amp;result, year, month, day);</span>
-<span class="lineNum">     186 </span><span class="lineCov">         82 :     return result;</span>
-<span class="lineNum">     187 </span>            : }
-<a name="188"><span class="lineNum">     188 </span>            : </a>
-<span class="lineNum">     189 </span>            : void
-<span class="lineNum">     190 </span><span class="lineCov">          2 : Date_ptr_from_year_month_day(</span>
-<span class="lineNum">     191 </span>            :         struct Date * const result,
-<span class="lineNum">     192 </span>            :         int_year year,
-<span class="lineNum">     193 </span>            :         int_month month,
-<span class="lineNum">     194 </span>            :         int_day day)
-<span class="lineNum">     195 </span>            : {
-<span class="lineNum">     196 </span><span class="lineCov">          2 :     init_date(result, year, month, day);</span>
-<span class="lineNum">     197 </span><span class="lineCov">          2 : }</span>
-<a name="198"><span class="lineNum">     198 </span>            : </a>
-<span class="lineNum">     199 </span>            : struct Date
-<span class="lineNum">     200 </span><span class="lineCov">          8 : Date_from_year_day(int_year year, int_day_of_year day_of_year)</span>
-<span class="lineNum">     201 </span>            : {
-<span class="lineNum">     202 </span>            :     struct Date result;
-<span class="lineNum">     203 </span><span class="lineCov">          8 :     init_date_no_bounds_check(&amp;result, year, 1, (int_day)(day_of_year));</span>
-<span class="lineNum">     204 </span><span class="lineCov">          8 :     return result;</span>
-<span class="lineNum">     205 </span>            : }
-<a name="206"><span class="lineNum">     206 </span>            : </a>
-<span class="lineNum">     207 </span>            : void
-<span class="lineNum">     208 </span><span class="lineCov">         12 : Date_ptr_from_year_day(</span>
-<span class="lineNum">     209 </span>            :         struct Date * const result,
-<span class="lineNum">     210 </span>            :         int_year year,
-<span class="lineNum">     211 </span>            :         int_day_of_year day_of_year)
-<span class="lineNum">     212 </span>            : {
-<span class="lineNum">     213 </span><span class="lineCov">         12 :     init_date_no_bounds_check(result, year, 1, (int_day)(day_of_year));</span>
-<span class="lineNum">     214 </span><span class="lineCov">         12 : }</span>
-<a name="215"><span class="lineNum">     215 </span>            : </a>
-<span class="lineNum">     216 </span>            : struct Date
-<span class="lineNum">     217 </span><span class="lineCov">         19 : Date_from_year_week_day(</span>
-<span class="lineNum">     218 </span>            :         int_year year,
-<span class="lineNum">     219 </span>            :         int_week_of_year week_of_year,
-<span class="lineNum">     220 </span>            :         int_day_of_week day_of_week) {
-<span class="lineNum">     221 </span>            :     struct Date result;
-<span class="lineNum">     222 </span><span class="lineCov">         19 :     Date_ptr_from_year_week_day(&amp;result, year, week_of_year, day_of_week);</span>
-<span class="lineNum">     223 </span><span class="lineCov">         19 :     return result;</span>
-<span class="lineNum">     224 </span>            : }
-<a name="225"><span class="lineNum">     225 </span>            : </a>
-<span class="lineNum">     226 </span>            : void
-<span class="lineNum">     227 </span><span class="lineCov">         22 : Date_ptr_from_year_week_day(</span>
-<span class="lineNum">     228 </span>            :         struct Date * const result,
-<span class="lineNum">     229 </span>            :         int_year year,
-<span class="lineNum">     230 </span>            :         int_week_of_year week_of_year,
-<span class="lineNum">     231 </span>            :         int_day_of_week day_of_week)
-<span class="lineNum">     232 </span>            : {
-<span class="lineNum">     233 </span>            :     struct tm tm;
-<span class="lineNum">     234 </span>            :     time_t mktime_returned;
-<span class="lineNum">     235 </span>            :     int_day_of_week jan_4_day_of_week;
-<span class="lineNum">     236 </span>            :     int_day_of_year ordinal_date;
-<span class="lineNum">     237 </span>            : 
-<span class="lineNum">     238 </span><span class="lineCov">         22 :     assert(result != NULL);</span>
-<span class="lineNum">     239 </span>            : 
-<span class="lineNum">     240 </span><span class="lineCov">         22 :     CLEAR(result);</span>
+<span class="lineNum">     109 </span><span class="lineCov">        101 :     assert(result != NULL);</span>
+<span class="lineNum">     110 </span><span class="lineCov">        101 :     CLEAR(result);</span>
+<span class="lineNum">     111 </span>            : 
+<span class="lineNum">     112 </span><span class="lineCov">        101 :     if (month &lt; 1 || month &gt; 12) {</span>
+<span class="lineNum">     113 </span><span class="lineCov">          5 :         result-&gt;has_error = 1;</span>
+<span class="lineNum">     114 </span><span class="lineCov">          5 :         result-&gt;errors.month_out_of_range = 1;</span>
+<span class="lineNum">     115 </span>            :     }
+<span class="lineNum">     116 </span>            : 
+<span class="lineNum">     117 </span><span class="lineCov">        101 :     days_in_month = (IS_LEAP_YEAR(year) &amp;&amp; month == 2) ? 29 :</span>
+<span class="lineNum">     118 </span>            :         DAYS_PER_MONTH[month];
+<span class="lineNum">     119 </span><span class="lineCov">        101 :     if (day &lt; 1 || day &gt; days_in_month) {</span>
+<span class="lineNum">     120 </span><span class="lineCov">         11 :         result-&gt;has_error = 1;</span>
+<span class="lineNum">     121 </span><span class="lineCov">         11 :         result-&gt;errors.day_out_of_range = 1;</span>
+<span class="lineNum">     122 </span>            :     }
+<span class="lineNum">     123 </span>            : 
+<span class="lineNum">     124 </span><span class="lineCov">        101 :     if (!result-&gt;has_error) {</span>
+<span class="lineNum">     125 </span><span class="lineCov">         89 :         result-&gt;data_.year = year;</span>
+<span class="lineNum">     126 </span><span class="lineCov">         89 :         result-&gt;data_.month = month;</span>
+<span class="lineNum">     127 </span><span class="lineCov">         89 :         result-&gt;data_.day = day;</span>
+<span class="lineNum">     128 </span><span class="lineCov">         89 :         check_date_data(&amp;result-&gt;data_);</span>
+<span class="lineNum">     129 </span>            :     }
+<span class="lineNum">     130 </span><span class="lineCov">        101 : }</span>
+<span class="lineNum">     131 </span>            : 
+<span class="lineNum">     132 </span>            : /**
+<span class="lineNum">     133 </span>            :  * Initialize a new Date instance based on its data parameters, without
+<span class="lineNum">     134 </span>            :  * checking any bounds.
+<a name="135"><span class="lineNum">     135 </span>            :  */</a>
+<span class="lineNum">     136 </span>            : static void
+<span class="lineNum">     137 </span><span class="lineCov">         20 : init_date_no_bounds_check(</span>
+<span class="lineNum">     138 </span>            :         struct Date * const result,
+<span class="lineNum">     139 </span>            :         int_year year,
+<span class="lineNum">     140 </span>            :         int_month month,
+<span class="lineNum">     141 </span>            :         int_day day)
+<span class="lineNum">     142 </span>            : {
+<span class="lineNum">     143 </span><span class="lineCov">         20 :     assert(result != NULL);</span>
+<span class="lineNum">     144 </span><span class="lineCov">         20 :     CLEAR(result);</span>
+<span class="lineNum">     145 </span>            : 
+<span class="lineNum">     146 </span><span class="lineCov">         20 :     result-&gt;data_.year = year;</span>
+<span class="lineNum">     147 </span><span class="lineCov">         20 :     result-&gt;data_.month = month;</span>
+<span class="lineNum">     148 </span><span class="lineCov">         20 :     result-&gt;data_.day = day;</span>
+<span class="lineNum">     149 </span><span class="lineCov">         20 :     check_date_data(&amp;result-&gt;data_);</span>
+<span class="lineNum">     150 </span><span class="lineCov">         20 : }</span>
+<span class="lineNum">     151 </span>            : 
+<a name="152"><span class="lineNum">     152 </span>            : </a>
+<span class="lineNum">     153 </span>            : struct Date
+<span class="lineNum">     154 </span><span class="lineCov">          7 : Date_from_year(int_year year)</span>
+<span class="lineNum">     155 </span>            : {
+<span class="lineNum">     156 </span>            :     struct Date result;
+<span class="lineNum">     157 </span><span class="lineCov">          7 :     init_date(&amp;result, year, 1, 1);</span>
+<span class="lineNum">     158 </span><span class="lineCov">          7 :     return result;</span>
+<span class="lineNum">     159 </span>            : }
+<a name="160"><span class="lineNum">     160 </span>            : </a>
+<span class="lineNum">     161 </span>            : void
+<span class="lineNum">     162 </span><span class="lineCov">          1 : Date_ptr_from_year(struct Date * const result, int_year year)</span>
+<span class="lineNum">     163 </span>            : {
+<span class="lineNum">     164 </span><span class="lineCov">          1 :     init_date(result, year, 1, 1);</span>
+<span class="lineNum">     165 </span><span class="lineCov">          1 : }</span>
+<a name="166"><span class="lineNum">     166 </span>            : </a>
+<span class="lineNum">     167 </span>            : struct Date
+<span class="lineNum">     168 </span><span class="lineCov">          7 : Date_from_year_month(int_year year, int_month month)</span>
+<span class="lineNum">     169 </span>            : {
+<span class="lineNum">     170 </span>            :     struct Date result;
+<span class="lineNum">     171 </span><span class="lineCov">          7 :     init_date(&amp;result, year, month, 1);</span>
+<span class="lineNum">     172 </span><span class="lineCov">          7 :     return result;</span>
+<span class="lineNum">     173 </span>            : }
+<a name="174"><span class="lineNum">     174 </span>            : </a>
+<span class="lineNum">     175 </span>            : void
+<span class="lineNum">     176 </span><span class="lineCov">          2 : Date_ptr_from_year_month(</span>
+<span class="lineNum">     177 </span>            :         struct Date * const result,
+<span class="lineNum">     178 </span>            :         int_year year,
+<span class="lineNum">     179 </span>            :         int_month month)
+<span class="lineNum">     180 </span>            : {
+<span class="lineNum">     181 </span><span class="lineCov">          2 :     init_date(result, year, month, 1);</span>
+<span class="lineNum">     182 </span><span class="lineCov">          2 : }</span>
+<a name="183"><span class="lineNum">     183 </span>            : </a>
+<span class="lineNum">     184 </span>            : struct Date
+<span class="lineNum">     185 </span><span class="lineCov">         82 : Date_from_year_month_day(int_year year, int_month month, int_day day)</span>
+<span class="lineNum">     186 </span>            : {
+<span class="lineNum">     187 </span>            :     struct Date result;
+<span class="lineNum">     188 </span><span class="lineCov">         82 :     init_date(&amp;result, year, month, day);</span>
+<span class="lineNum">     189 </span><span class="lineCov">         82 :     return result;</span>
+<span class="lineNum">     190 </span>            : }
+<a name="191"><span class="lineNum">     191 </span>            : </a>
+<span class="lineNum">     192 </span>            : void
+<span class="lineNum">     193 </span><span class="lineCov">          2 : Date_ptr_from_year_month_day(</span>
+<span class="lineNum">     194 </span>            :         struct Date * const result,
+<span class="lineNum">     195 </span>            :         int_year year,
+<span class="lineNum">     196 </span>            :         int_month month,
+<span class="lineNum">     197 </span>            :         int_day day)
+<span class="lineNum">     198 </span>            : {
+<span class="lineNum">     199 </span><span class="lineCov">          2 :     init_date(result, year, month, day);</span>
+<span class="lineNum">     200 </span><span class="lineCov">          2 : }</span>
+<a name="201"><span class="lineNum">     201 </span>            : </a>
+<span class="lineNum">     202 </span>            : struct Date
+<span class="lineNum">     203 </span><span class="lineCov">          8 : Date_from_year_day(int_year year, int_day_of_year day_of_year)</span>
+<span class="lineNum">     204 </span>            : {
+<span class="lineNum">     205 </span>            :     struct Date result;
+<span class="lineNum">     206 </span><span class="lineCov">          8 :     init_date_no_bounds_check(&amp;result, year, 1, (int_day)(day_of_year));</span>
+<span class="lineNum">     207 </span><span class="lineCov">          8 :     return result;</span>
+<span class="lineNum">     208 </span>            : }
+<a name="209"><span class="lineNum">     209 </span>            : </a>
+<span class="lineNum">     210 </span>            : void
+<span class="lineNum">     211 </span><span class="lineCov">         12 : Date_ptr_from_year_day(</span>
+<span class="lineNum">     212 </span>            :         struct Date * const result,
+<span class="lineNum">     213 </span>            :         int_year year,
+<span class="lineNum">     214 </span>            :         int_day_of_year day_of_year)
+<span class="lineNum">     215 </span>            : {
+<span class="lineNum">     216 </span><span class="lineCov">         12 :     init_date_no_bounds_check(result, year, 1, (int_day)(day_of_year));</span>
+<span class="lineNum">     217 </span><span class="lineCov">         12 : }</span>
+<a name="218"><span class="lineNum">     218 </span>            : </a>
+<span class="lineNum">     219 </span>            : struct Date
+<span class="lineNum">     220 </span><span class="lineCov">         19 : Date_from_year_week_day(</span>
+<span class="lineNum">     221 </span>            :         int_year year,
+<span class="lineNum">     222 </span>            :         int_week_of_year week_of_year,
+<span class="lineNum">     223 </span>            :         int_day_of_week day_of_week)
+<span class="lineNum">     224 </span>            : {
+<span class="lineNum">     225 </span>            :     struct Date result;
+<span class="lineNum">     226 </span><span class="lineCov">         19 :     Date_ptr_from_year_week_day(&amp;result, year, week_of_year, day_of_week);</span>
+<span class="lineNum">     227 </span><span class="lineCov">         19 :     return result;</span>
+<span class="lineNum">     228 </span>            : }
+<a name="229"><span class="lineNum">     229 </span>            : </a>
+<span class="lineNum">     230 </span>            : void
+<span class="lineNum">     231 </span><span class="lineCov">         22 : Date_ptr_from_year_week_day(</span>
+<span class="lineNum">     232 </span>            :         struct Date * const result,
+<span class="lineNum">     233 </span>            :         int_year year,
+<span class="lineNum">     234 </span>            :         int_week_of_year week_of_year,
+<span class="lineNum">     235 </span>            :         int_day_of_week day_of_week)
+<span class="lineNum">     236 </span>            : {
+<span class="lineNum">     237 </span>            :     struct tm tm;
+<span class="lineNum">     238 </span>            :     time_t mktime_returned;
+<span class="lineNum">     239 </span>            :     int_day_of_week jan_4_day_of_week;
+<span class="lineNum">     240 </span>            :     int_day_of_year ordinal_date;
 <span class="lineNum">     241 </span>            : 
-<span class="lineNum">     242 </span><span class="lineCov">         22 :     if (week_of_year &lt; 1 || week_of_year &gt; last_week_of_year(year)) {</span>
-<span class="lineNum">     243 </span><span class="lineCov">          7 :         result-&gt;has_error = 1;</span>
-<span class="lineNum">     244 </span><span class="lineCov">          7 :         result-&gt;errors.week_of_year_out_of_range = 1;</span>
-<span class="lineNum">     245 </span>            :     }
-<span class="lineNum">     246 </span>            : 
-<span class="lineNum">     247 </span><span class="lineCov">         22 :     if (day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {</span>
-<span class="lineNum">     248 </span><span class="lineCov">          1 :         day_of_week = DAY_OF_WEEK_SUNDAY;</span>
-<span class="lineNum">     249 </span>            :     }
-<span class="lineNum">     250 </span><span class="lineCov">         22 :     if (day_of_week &lt; 1 || day_of_week &gt; 7) {</span>
-<span class="lineNum">     251 </span><span class="lineCov">          4 :         result-&gt;has_error = 1;</span>
-<span class="lineNum">     252 </span><span class="lineCov">          4 :         result-&gt;errors.day_of_week_out_of_range = 1;</span>
-<span class="lineNum">     253 </span>            :     }
-<span class="lineNum">     254 </span>            : 
-<span class="lineNum">     255 </span><span class="lineCov">         22 :     if (!result-&gt;has_error) {</span>
-<span class="lineNum">     256 </span>            :         /* Get the weekday of Jan. 4 of this year */
-<span class="lineNum">     257 </span><span class="lineCov">         11 :         memset((void *)&amp;tm, 0, sizeof(struct tm));</span>
-<span class="lineNum">     258 </span><span class="lineCov">         11 :         tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;</span>
-<span class="lineNum">     259 </span><span class="lineCov">         11 :         tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; /* January */</span>
-<span class="lineNum">     260 </span><span class="lineCov">         11 :         tm.tm_mday = 4; /* 4th day of the month */</span>
-<span class="lineNum">     261 </span>            :         /* tm_wday will be filled in */
-<span class="lineNum">     262 </span><span class="lineCov">         11 :         tm.tm_isdst = -1;</span>
-<span class="lineNum">     263 </span>            : 
-<span class="lineNum">     264 </span><span class="lineCov">         11 :         mktime_returned = present_mktime(&amp;tm);</span>
-<span class="lineNum">     265 </span><span class="lineCov">         11 :         assert(mktime_returned != -1);</span>
+<span class="lineNum">     242 </span><span class="lineCov">         22 :     assert(result != NULL);</span>
+<span class="lineNum">     243 </span><span class="lineCov">         22 :     CLEAR(result);</span>
+<span class="lineNum">     244 </span>            : 
+<span class="lineNum">     245 </span><span class="lineCov">         22 :     if (week_of_year &lt; 1 || week_of_year &gt; last_week_of_year(year)) {</span>
+<span class="lineNum">     246 </span><span class="lineCov">          7 :         result-&gt;has_error = 1;</span>
+<span class="lineNum">     247 </span><span class="lineCov">          7 :         result-&gt;errors.week_of_year_out_of_range = 1;</span>
+<span class="lineNum">     248 </span>            :     }
+<span class="lineNum">     249 </span>            : 
+<span class="lineNum">     250 </span><span class="lineCov">         22 :     if (day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {</span>
+<span class="lineNum">     251 </span><span class="lineCov">          1 :         day_of_week = DAY_OF_WEEK_SUNDAY;</span>
+<span class="lineNum">     252 </span>            :     }
+<span class="lineNum">     253 </span><span class="lineCov">         22 :     if (day_of_week &lt; 1 || day_of_week &gt; 7) {</span>
+<span class="lineNum">     254 </span><span class="lineCov">          4 :         result-&gt;has_error = 1;</span>
+<span class="lineNum">     255 </span><span class="lineCov">          4 :         result-&gt;errors.day_of_week_out_of_range = 1;</span>
+<span class="lineNum">     256 </span>            :     }
+<span class="lineNum">     257 </span>            : 
+<span class="lineNum">     258 </span><span class="lineCov">         22 :     if (!result-&gt;has_error) {</span>
+<span class="lineNum">     259 </span>            :         /* Get the weekday of Jan. 4 of this year */
+<span class="lineNum">     260 </span><span class="lineCov">         11 :         memset((void *)&amp;tm, 0, sizeof(struct tm));</span>
+<span class="lineNum">     261 </span><span class="lineCov">         11 :         tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;</span>
+<span class="lineNum">     262 </span><span class="lineCov">         11 :         tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; /* January */</span>
+<span class="lineNum">     263 </span><span class="lineCov">         11 :         tm.tm_mday = 4; /* 4th day of the month */</span>
+<span class="lineNum">     264 </span>            :         /* tm_wday will be filled in */
+<span class="lineNum">     265 </span><span class="lineCov">         11 :         tm.tm_isdst = -1;</span>
 <span class="lineNum">     266 </span>            : 
-<span class="lineNum">     267 </span><span class="lineCov">         11 :         jan_4_day_of_week = tm.tm_wday;</span>
-<span class="lineNum">     268 </span><span class="lineCov">         11 :         if (jan_4_day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {</span>
-<span class="lineNum">     269 </span><span class="lineCov">          3 :             jan_4_day_of_week = DAY_OF_WEEK_SUNDAY;</span>
-<span class="lineNum">     270 </span>            :         }
-<span class="lineNum">     271 </span><span class="lineCov">         11 :         assert(jan_4_day_of_week &gt;= 1 &amp;&amp; jan_4_day_of_week &lt;= 7);</span>
-<span class="lineNum">     272 </span>            : 
-<span class="lineNum">     273 </span>            :         /* Calculate the date using voodoo magic
-<span class="lineNum">     274 </span>            :            https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
-<span class="lineNum">     275 </span>            :          */
-<span class="lineNum">     276 </span><span class="lineCov">         11 :         ordinal_date = week_of_year * 7 + day_of_week - (jan_4_day_of_week + 3);</span>
-<span class="lineNum">     277 </span><span class="lineCov">         11 :         if (ordinal_date &lt; 1) {</span>
-<span class="lineNum">     278 </span><span class="lineCov">          1 :             year -= 1;</span>
-<span class="lineNum">     279 </span><span class="lineCov">          1 :             ordinal_date += DAYS_IN_YEAR(year);</span>
-<span class="lineNum">     280 </span>            :         }
-<span class="lineNum">     281 </span><span class="lineCov">         11 :         if (ordinal_date &gt; DAYS_IN_YEAR(year)) {</span>
-<span class="lineNum">     282 </span><span class="lineCov">          4 :             ordinal_date -= DAYS_IN_YEAR(year);</span>
-<span class="lineNum">     283 </span><span class="lineCov">          4 :             year += 1;</span>
-<span class="lineNum">     284 </span>            :         }
-<span class="lineNum">     285 </span>            : 
-<span class="lineNum">     286 </span><span class="lineCov">         11 :         Date_ptr_from_year_day(result, year, ordinal_date);</span>
-<span class="lineNum">     287 </span>            :     }
-<span class="lineNum">     288 </span><span class="lineCov">         22 : }</span>
-<a name="289"><span class="lineNum">     289 </span>            : </a>
-<span class="lineNum">     290 </span>            : int_year
-<span class="lineNum">     291 </span><span class="lineCov">         50 : Date_year(const struct Date * const self)</span>
-<span class="lineNum">     292 </span>            : {
-<span class="lineNum">     293 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
-<span class="lineNum">     294 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     295 </span>            : 
-<span class="lineNum">     296 </span><span class="lineCov">         50 :     return self-&gt;data_.year;</span>
-<span class="lineNum">     297 </span>            : }
-<a name="298"><span class="lineNum">     298 </span>            : </a>
-<span class="lineNum">     299 </span>            : int_month
-<span class="lineNum">     300 </span><span class="lineCov">         50 : Date_month(const struct Date * const self)</span>
-<span class="lineNum">     301 </span>            : {
-<span class="lineNum">     302 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
-<span class="lineNum">     303 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     304 </span>            : 
-<span class="lineNum">     305 </span><span class="lineCov">         50 :     return self-&gt;data_.month;</span>
-<span class="lineNum">     306 </span>            : }
-<a name="307"><span class="lineNum">     307 </span>            : </a>
-<span class="lineNum">     308 </span>            : int_day
-<span class="lineNum">     309 </span><span class="lineCov">         50 : Date_day(const struct Date * const self)</span>
-<span class="lineNum">     310 </span>            : {
-<span class="lineNum">     311 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
-<span class="lineNum">     312 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     313 </span>            : 
-<span class="lineNum">     314 </span><span class="lineCov">         50 :     return self-&gt;data_.day;</span>
-<span class="lineNum">     315 </span>            : }
-<a name="316"><span class="lineNum">     316 </span>            : </a>
-<span class="lineNum">     317 </span>            : int_day_of_year
-<span class="lineNum">     318 </span><span class="lineCov">          5 : Date_day_of_year(const struct Date * const self)</span>
-<span class="lineNum">     319 </span>            : {
-<span class="lineNum">     320 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
-<span class="lineNum">     321 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     322 </span>            : 
-<span class="lineNum">     323 </span><span class="lineCov">          5 :     return self-&gt;data_.day_of_year;</span>
-<span class="lineNum">     324 </span>            : }
-<a name="325"><span class="lineNum">     325 </span>            : </a>
-<span class="lineNum">     326 </span>            : struct PresentWeekYear
-<span class="lineNum">     327 </span><span class="lineCov">         21 : Date_week_of_year(const struct Date * const self)</span>
-<span class="lineNum">     328 </span>            : {
-<span class="lineNum">     329 </span>            :     int_year year;
-<span class="lineNum">     330 </span>            :     int_week_of_year week;
-<span class="lineNum">     331 </span>            :     struct PresentWeekYear p;
-<span class="lineNum">     332 </span>            : 
-<span class="lineNum">     333 </span><span class="lineCov">         21 :     assert(self != NULL);</span>
-<span class="lineNum">     334 </span><span class="lineCov">         21 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     267 </span><span class="lineCov">         11 :         mktime_returned = present_mktime(&amp;tm);</span>
+<span class="lineNum">     268 </span><span class="lineCov">         11 :         assert(mktime_returned != -1);</span>
+<span class="lineNum">     269 </span>            : 
+<span class="lineNum">     270 </span><span class="lineCov">         11 :         jan_4_day_of_week = tm.tm_wday;</span>
+<span class="lineNum">     271 </span><span class="lineCov">         11 :         if (jan_4_day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {</span>
+<span class="lineNum">     272 </span><span class="lineCov">          3 :             jan_4_day_of_week = DAY_OF_WEEK_SUNDAY;</span>
+<span class="lineNum">     273 </span>            :         }
+<span class="lineNum">     274 </span><span class="lineCov">         11 :         assert(jan_4_day_of_week &gt;= 1 &amp;&amp; jan_4_day_of_week &lt;= 7);</span>
+<span class="lineNum">     275 </span>            : 
+<span class="lineNum">     276 </span>            :         /* Calculate the date using voodoo magic
+<span class="lineNum">     277 </span>            :            https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+<span class="lineNum">     278 </span>            :          */
+<span class="lineNum">     279 </span><span class="lineCov">         11 :         ordinal_date = week_of_year * 7 + day_of_week - (jan_4_day_of_week + 3);</span>
+<span class="lineNum">     280 </span><span class="lineCov">         11 :         if (ordinal_date &lt; 1) {</span>
+<span class="lineNum">     281 </span><span class="lineCov">          1 :             year -= 1;</span>
+<span class="lineNum">     282 </span><span class="lineCov">          1 :             ordinal_date += DAYS_IN_YEAR(year);</span>
+<span class="lineNum">     283 </span>            :         }
+<span class="lineNum">     284 </span><span class="lineCov">         11 :         if (ordinal_date &gt; DAYS_IN_YEAR(year)) {</span>
+<span class="lineNum">     285 </span><span class="lineCov">          4 :             ordinal_date -= DAYS_IN_YEAR(year);</span>
+<span class="lineNum">     286 </span><span class="lineCov">          4 :             year += 1;</span>
+<span class="lineNum">     287 </span>            :         }
+<span class="lineNum">     288 </span>            : 
+<span class="lineNum">     289 </span><span class="lineCov">         11 :         Date_ptr_from_year_day(result, year, ordinal_date);</span>
+<span class="lineNum">     290 </span>            :     }
+<span class="lineNum">     291 </span><span class="lineCov">         22 : }</span>
+<a name="292"><span class="lineNum">     292 </span>            : </a>
+<span class="lineNum">     293 </span>            : int_year
+<span class="lineNum">     294 </span><span class="lineCov">         50 : Date_year(const struct Date * const self)</span>
+<span class="lineNum">     295 </span>            : {
+<span class="lineNum">     296 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
+<span class="lineNum">     297 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     298 </span>            : 
+<span class="lineNum">     299 </span><span class="lineCov">         50 :     return self-&gt;data_.year;</span>
+<span class="lineNum">     300 </span>            : }
+<a name="301"><span class="lineNum">     301 </span>            : </a>
+<span class="lineNum">     302 </span>            : int_month
+<span class="lineNum">     303 </span><span class="lineCov">         50 : Date_month(const struct Date * const self)</span>
+<span class="lineNum">     304 </span>            : {
+<span class="lineNum">     305 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
+<span class="lineNum">     306 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     307 </span>            : 
+<span class="lineNum">     308 </span><span class="lineCov">         50 :     return self-&gt;data_.month;</span>
+<span class="lineNum">     309 </span>            : }
+<a name="310"><span class="lineNum">     310 </span>            : </a>
+<span class="lineNum">     311 </span>            : int_day
+<span class="lineNum">     312 </span><span class="lineCov">         50 : Date_day(const struct Date * const self)</span>
+<span class="lineNum">     313 </span>            : {
+<span class="lineNum">     314 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
+<span class="lineNum">     315 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     316 </span>            : 
+<span class="lineNum">     317 </span><span class="lineCov">         50 :     return self-&gt;data_.day;</span>
+<span class="lineNum">     318 </span>            : }
+<a name="319"><span class="lineNum">     319 </span>            : </a>
+<span class="lineNum">     320 </span>            : int_day_of_year
+<span class="lineNum">     321 </span><span class="lineCov">          5 : Date_day_of_year(const struct Date * const self)</span>
+<span class="lineNum">     322 </span>            : {
+<span class="lineNum">     323 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
+<span class="lineNum">     324 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     325 </span>            : 
+<span class="lineNum">     326 </span><span class="lineCov">          5 :     return self-&gt;data_.day_of_year;</span>
+<span class="lineNum">     327 </span>            : }
+<a name="328"><span class="lineNum">     328 </span>            : </a>
+<span class="lineNum">     329 </span>            : struct PresentWeekYear
+<span class="lineNum">     330 </span><span class="lineCov">         21 : Date_week_of_year(const struct Date * const self)</span>
+<span class="lineNum">     331 </span>            : {
+<span class="lineNum">     332 </span>            :     int_year year;
+<span class="lineNum">     333 </span>            :     int_week_of_year week;
+<span class="lineNum">     334 </span>            :     struct PresentWeekYear p;
 <span class="lineNum">     335 </span>            : 
-<span class="lineNum">     336 </span>            :     /* Caculate the week number using pure voodoo magic
-<span class="lineNum">     337 </span>            :        https://en.wikipedia.org/wiki/ISO_week_date#Calculating_the_week_number_of_a_given_date
-<span class="lineNum">     338 </span>            :        */
-<span class="lineNum">     339 </span><span class="lineCov">         21 :     year = self-&gt;data_.year;</span>
-<span class="lineNum">     340 </span><span class="lineCov">         21 :     week = (self-&gt;data_.day_of_year - self-&gt;data_.day_of_week + 10) / 7;</span>
-<span class="lineNum">     341 </span>            : 
-<span class="lineNum">     342 </span><span class="lineCov">         21 :     if (week == 0) {</span>
-<span class="lineNum">     343 </span>            :         /* It's the last week of the previous year */
-<span class="lineNum">     344 </span><span class="lineCov">          7 :         year -= 1;</span>
-<span class="lineNum">     345 </span><span class="lineCov">          7 :         week = last_week_of_year(year);</span>
-<span class="lineNum">     346 </span>            :     }
-<span class="lineNum">     347 </span><span class="lineCov">         21 :     if (week &gt; last_week_of_year(year)) {</span>
-<span class="lineNum">     348 </span>            :         /* It's the first week of the next year */
-<span class="lineNum">     349 </span><span class="lineCov">          2 :         year += 1;</span>
-<span class="lineNum">     350 </span><span class="lineCov">          2 :         week = 1;</span>
-<span class="lineNum">     351 </span>            :     }
-<span class="lineNum">     352 </span>            : 
-<span class="lineNum">     353 </span><span class="lineCov">         21 :     p.week = week;</span>
-<span class="lineNum">     354 </span><span class="lineCov">         21 :     p.year = year;</span>
-<span class="lineNum">     355 </span><span class="lineCov">         21 :     return p;</span>
-<span class="lineNum">     356 </span>            : }
-<a name="357"><span class="lineNum">     357 </span>            : </a>
-<span class="lineNum">     358 </span>            : int_day_of_week
-<span class="lineNum">     359 </span><span class="lineCov">         13 : Date_day_of_week(const struct Date * const self)</span>
-<span class="lineNum">     360 </span>            : {
-<span class="lineNum">     361 </span><span class="lineCov">         13 :     assert(self != NULL);</span>
-<span class="lineNum">     362 </span><span class="lineCov">         13 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     363 </span>            : 
-<span class="lineNum">     364 </span><span class="lineCov">         13 :     return self-&gt;data_.day_of_week;</span>
-<span class="lineNum">     365 </span>            : }
-<a name="366"><span class="lineNum">     366 </span>            : </a>
-<span class="lineNum">     367 </span>            : struct DayDelta
-<span class="lineNum">     368 </span><span class="lineCov">          4 : Date_difference(</span>
-<span class="lineNum">     369 </span>            :         const struct Date * const self,
-<span class="lineNum">     370 </span>            :         const struct Date * const other)
-<span class="lineNum">     371 </span>            : {
-<span class="lineNum">     372 </span>            :     struct ClockTime noon;
-<span class="lineNum">     373 </span>            :     struct Timestamp self_timestamp, other_timestamp;
-<span class="lineNum">     374 </span>            :     struct TimeDelta time_delta;
-<span class="lineNum">     375 </span>            : 
-<span class="lineNum">     376 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
-<span class="lineNum">     377 </span><span class="lineCov">          4 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     378 </span><span class="lineCov">          4 :     assert(other != NULL);</span>
-<span class="lineNum">     379 </span><span class="lineCov">          4 :     assert(other-&gt;has_error == 0);</span>
-<span class="lineNum">     380 </span>            : 
-<span class="lineNum">     381 </span><span class="lineCov">          4 :     noon = ClockTime_noon();</span>
-<span class="lineNum">     382 </span><span class="lineCov">          4 :     self_timestamp = Timestamp_create_utc(self, &amp;noon);</span>
-<span class="lineNum">     383 </span><span class="lineCov">          4 :     other_timestamp = Timestamp_create_utc(other, &amp;noon);</span>
-<span class="lineNum">     384 </span><span class="lineCov">          4 :     time_delta = Timestamp_difference(&amp;self_timestamp, &amp;other_timestamp);</span>
-<span class="lineNum">     385 </span><span class="lineCov">          4 :     return TimeDelta_to_DayDelta_truncated(&amp;time_delta);</span>
-<span class="lineNum">     386 </span>            : }
-<a name="387"><span class="lineNum">     387 </span>            : </a>
-<span class="lineNum">     388 </span>            : struct DayDelta
-<span class="lineNum">     389 </span><span class="lineCov">          2 : Date_absolute_difference(</span>
-<span class="lineNum">     390 </span>            :         const struct Date * const self,
-<span class="lineNum">     391 </span>            :         const struct Date * const other)
-<span class="lineNum">     392 </span>            : {
-<span class="lineNum">     393 </span>            :     struct DayDelta delta;
-<span class="lineNum">     394 </span>            : 
-<span class="lineNum">     395 </span><span class="lineCov">          2 :     assert(self != NULL);</span>
-<span class="lineNum">     396 </span><span class="lineCov">          2 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     397 </span><span class="lineCov">          2 :     assert(other != NULL);</span>
-<span class="lineNum">     398 </span><span class="lineCov">          2 :     assert(other-&gt;has_error == 0);</span>
-<span class="lineNum">     399 </span>            : 
-<span class="lineNum">     400 </span><span class="lineCov">          2 :     delta = Date_difference(self, other);</span>
-<span class="lineNum">     401 </span><span class="lineCov">          2 :     if (DayDelta_is_negative(&amp;delta)) {</span>
-<span class="lineNum">     402 </span><span class="lineCov">          1 :         DayDelta_negate(&amp;delta);</span>
-<span class="lineNum">     403 </span>            :     }
-<span class="lineNum">     404 </span><span class="lineCov">          2 :     return delta;</span>
-<span class="lineNum">     405 </span>            : }
-<a name="406"><span class="lineNum">     406 </span>            : </a>
-<span class="lineNum">     407 </span>            : void
-<span class="lineNum">     408 </span><span class="lineCov">          4 : Date_add_DayDelta(</span>
-<span class="lineNum">     409 </span>            :         struct Date * const self,
-<span class="lineNum">     410 </span>            :         const struct DayDelta * const delta)
-<span class="lineNum">     411 </span>            : {
-<span class="lineNum">     412 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
-<span class="lineNum">     413 </span><span class="lineCov">          4 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     414 </span><span class="lineCov">          4 :     assert(delta != NULL);</span>
-<span class="lineNum">     415 </span>            : 
-<span class="lineNum">     416 </span><span class="lineCov">          4 :     self-&gt;data_.day += delta-&gt;data_.delta_days;</span>
-<span class="lineNum">     417 </span><span class="lineCov">          4 :     check_date_data(&amp;self-&gt;data_);</span>
-<span class="lineNum">     418 </span><span class="lineCov">          4 : }</span>
-<a name="419"><span class="lineNum">     419 </span>            : </a>
-<span class="lineNum">     420 </span>            : void
-<span class="lineNum">     421 </span><span class="lineCov">          5 : Date_add_MonthDelta(</span>
-<span class="lineNum">     422 </span>            :         struct Date * const self,
-<span class="lineNum">     423 </span>            :         const struct MonthDelta * const delta)
-<span class="lineNum">     424 </span>            : {
-<span class="lineNum">     425 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
-<span class="lineNum">     426 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     427 </span><span class="lineCov">          5 :     assert(delta != NULL);</span>
-<span class="lineNum">     428 </span>            : 
-<span class="lineNum">     429 </span><span class="lineCov">          5 :     self-&gt;data_.month += delta-&gt;data_.delta_months;</span>
-<span class="lineNum">     430 </span><span class="lineCov">          5 :     check_date_data(&amp;self-&gt;data_);</span>
-<span class="lineNum">     431 </span><span class="lineCov">          5 : }</span>
-<a name="432"><span class="lineNum">     432 </span>            : </a>
-<span class="lineNum">     433 </span>            : void
-<span class="lineNum">     434 </span><span class="lineCov">          3 : Date_subtract_DayDelta(</span>
-<span class="lineNum">     435 </span>            :         struct Date * const self,
-<span class="lineNum">     436 </span>            :         const struct DayDelta * const delta)
-<span class="lineNum">     437 </span>            : {
-<span class="lineNum">     438 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
-<span class="lineNum">     439 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     440 </span><span class="lineCov">          3 :     assert(delta != NULL);</span>
-<span class="lineNum">     441 </span>            : 
-<span class="lineNum">     442 </span><span class="lineCov">          3 :     self-&gt;data_.day -= delta-&gt;data_.delta_days;</span>
-<span class="lineNum">     443 </span><span class="lineCov">          3 :     check_date_data(&amp;self-&gt;data_);</span>
-<span class="lineNum">     444 </span><span class="lineCov">          3 : }</span>
-<a name="445"><span class="lineNum">     445 </span>            : </a>
-<span class="lineNum">     446 </span>            : void
-<span class="lineNum">     447 </span><span class="lineCov">          3 : Date_subtract_MonthDelta(</span>
-<span class="lineNum">     448 </span>            :         struct Date * const self,
-<span class="lineNum">     449 </span>            :         const struct MonthDelta * const delta)
-<span class="lineNum">     450 </span>            : {
-<span class="lineNum">     451 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
-<span class="lineNum">     452 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     453 </span><span class="lineCov">          3 :     assert(delta != NULL);</span>
-<span class="lineNum">     454 </span>            : 
-<span class="lineNum">     455 </span><span class="lineCov">          3 :     self-&gt;data_.month -= delta-&gt;data_.delta_months;</span>
-<span class="lineNum">     456 </span><span class="lineCov">          3 :     check_date_data(&amp;self-&gt;data_);</span>
-<span class="lineNum">     457 </span><span class="lineCov">          3 : }</span>
-<a name="458"><span class="lineNum">     458 </span>            : </a>
-<span class="lineNum">     459 </span>            : int
-<span class="lineNum">     460 </span><span class="lineCov">         45 : Date_compare(</span>
-<span class="lineNum">     461 </span>            :         const struct Date * const lhs,
-<span class="lineNum">     462 </span>            :         const struct Date * const rhs)
-<span class="lineNum">     463 </span>            : {
-<span class="lineNum">     464 </span><span class="lineCov">         45 :     assert(lhs != NULL);</span>
-<span class="lineNum">     465 </span><span class="lineCov">         45 :     assert(lhs-&gt;has_error == 0);</span>
-<span class="lineNum">     466 </span><span class="lineCov">         45 :     assert(rhs != NULL);</span>
-<span class="lineNum">     467 </span><span class="lineCov">         45 :     assert(rhs-&gt;has_error == 0);</span>
-<span class="lineNum">     468 </span>            : 
-<span class="lineNum">     469 </span><span class="lineCov">         45 :     return</span>
-<span class="lineNum">     470 </span><span class="lineCov">         45 :         STRUCT_COMPARE(year,</span>
-<span class="lineNum">     471 </span>            :             STRUCT_COMPARE(month,
-<span class="lineNum">     472 </span>            :                 STRUCT_COMPARE(day, 0)));
-<a name="473"><span class="lineNum">     473 </span>            : }</a>
-<span class="lineNum">     474 </span>            : 
-<span class="lineNum">     475 </span><span class="lineCov">         41 : STRUCT_COMPARISON_OPERATORS(Date)</span>
-<span class="lineNum">     476 </span>            : 
+<span class="lineNum">     336 </span><span class="lineCov">         21 :     assert(self != NULL);</span>
+<span class="lineNum">     337 </span><span class="lineCov">         21 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     338 </span>            : 
+<span class="lineNum">     339 </span>            :     /* Caculate the week number using pure voodoo magic
+<span class="lineNum">     340 </span>            :        https://en.wikipedia.org/wiki/ISO_week_date#Calculating_the_week_number_of_a_given_date
+<span class="lineNum">     341 </span>            :        */
+<span class="lineNum">     342 </span><span class="lineCov">         21 :     year = self-&gt;data_.year;</span>
+<span class="lineNum">     343 </span><span class="lineCov">         21 :     week = (self-&gt;data_.day_of_year - self-&gt;data_.day_of_week + 10) / 7;</span>
+<span class="lineNum">     344 </span>            : 
+<span class="lineNum">     345 </span><span class="lineCov">         21 :     if (week == 0) {</span>
+<span class="lineNum">     346 </span>            :         /* It's the last week of the previous year */
+<span class="lineNum">     347 </span><span class="lineCov">          7 :         year -= 1;</span>
+<span class="lineNum">     348 </span><span class="lineCov">          7 :         week = last_week_of_year(year);</span>
+<span class="lineNum">     349 </span>            :     }
+<span class="lineNum">     350 </span><span class="lineCov">         21 :     if (week &gt; last_week_of_year(year)) {</span>
+<span class="lineNum">     351 </span>            :         /* It's the first week of the next year */
+<span class="lineNum">     352 </span><span class="lineCov">          2 :         year += 1;</span>
+<span class="lineNum">     353 </span><span class="lineCov">          2 :         week = 1;</span>
+<span class="lineNum">     354 </span>            :     }
+<span class="lineNum">     355 </span>            : 
+<span class="lineNum">     356 </span><span class="lineCov">         21 :     p.week = week;</span>
+<span class="lineNum">     357 </span><span class="lineCov">         21 :     p.year = year;</span>
+<span class="lineNum">     358 </span><span class="lineCov">         21 :     return p;</span>
+<span class="lineNum">     359 </span>            : }
+<a name="360"><span class="lineNum">     360 </span>            : </a>
+<span class="lineNum">     361 </span>            : int_day_of_week
+<span class="lineNum">     362 </span><span class="lineCov">         13 : Date_day_of_week(const struct Date * const self)</span>
+<span class="lineNum">     363 </span>            : {
+<span class="lineNum">     364 </span><span class="lineCov">         13 :     assert(self != NULL);</span>
+<span class="lineNum">     365 </span><span class="lineCov">         13 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     366 </span>            : 
+<span class="lineNum">     367 </span><span class="lineCov">         13 :     return self-&gt;data_.day_of_week;</span>
+<span class="lineNum">     368 </span>            : }
+<a name="369"><span class="lineNum">     369 </span>            : </a>
+<span class="lineNum">     370 </span>            : struct DayDelta
+<span class="lineNum">     371 </span><span class="lineCov">          4 : Date_difference(</span>
+<span class="lineNum">     372 </span>            :         const struct Date * const self,
+<span class="lineNum">     373 </span>            :         const struct Date * const other)
+<span class="lineNum">     374 </span>            : {
+<span class="lineNum">     375 </span>            :     struct ClockTime noon;
+<span class="lineNum">     376 </span>            :     struct Timestamp self_timestamp, other_timestamp;
+<span class="lineNum">     377 </span>            :     struct TimeDelta time_delta;
+<span class="lineNum">     378 </span>            : 
+<span class="lineNum">     379 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
+<span class="lineNum">     380 </span><span class="lineCov">          4 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     381 </span><span class="lineCov">          4 :     assert(other != NULL);</span>
+<span class="lineNum">     382 </span><span class="lineCov">          4 :     assert(other-&gt;has_error == 0);</span>
+<span class="lineNum">     383 </span>            : 
+<span class="lineNum">     384 </span><span class="lineCov">          4 :     noon = ClockTime_noon();</span>
+<span class="lineNum">     385 </span><span class="lineCov">          4 :     self_timestamp = Timestamp_create_utc(self, &amp;noon);</span>
+<span class="lineNum">     386 </span><span class="lineCov">          4 :     other_timestamp = Timestamp_create_utc(other, &amp;noon);</span>
+<span class="lineNum">     387 </span><span class="lineCov">          4 :     time_delta = Timestamp_difference(&amp;self_timestamp, &amp;other_timestamp);</span>
+<span class="lineNum">     388 </span><span class="lineCov">          4 :     return TimeDelta_to_DayDelta_truncated(&amp;time_delta);</span>
+<span class="lineNum">     389 </span>            : }
+<a name="390"><span class="lineNum">     390 </span>            : </a>
+<span class="lineNum">     391 </span>            : struct DayDelta
+<span class="lineNum">     392 </span><span class="lineCov">          2 : Date_absolute_difference(</span>
+<span class="lineNum">     393 </span>            :         const struct Date * const self,
+<span class="lineNum">     394 </span>            :         const struct Date * const other)
+<span class="lineNum">     395 </span>            : {
+<span class="lineNum">     396 </span>            :     struct DayDelta delta;
+<span class="lineNum">     397 </span>            : 
+<span class="lineNum">     398 </span><span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     399 </span><span class="lineCov">          2 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     400 </span><span class="lineCov">          2 :     assert(other != NULL);</span>
+<span class="lineNum">     401 </span><span class="lineCov">          2 :     assert(other-&gt;has_error == 0);</span>
+<span class="lineNum">     402 </span>            : 
+<span class="lineNum">     403 </span><span class="lineCov">          2 :     delta = Date_difference(self, other);</span>
+<span class="lineNum">     404 </span><span class="lineCov">          2 :     if (DayDelta_is_negative(&amp;delta)) {</span>
+<span class="lineNum">     405 </span><span class="lineCov">          1 :         DayDelta_negate(&amp;delta);</span>
+<span class="lineNum">     406 </span>            :     }
+<span class="lineNum">     407 </span><span class="lineCov">          2 :     return delta;</span>
+<span class="lineNum">     408 </span>            : }
+<a name="409"><span class="lineNum">     409 </span>            : </a>
+<span class="lineNum">     410 </span>            : void
+<span class="lineNum">     411 </span><span class="lineCov">          4 : Date_add_DayDelta(</span>
+<span class="lineNum">     412 </span>            :         struct Date * const self,
+<span class="lineNum">     413 </span>            :         const struct DayDelta * const delta)
+<span class="lineNum">     414 </span>            : {
+<span class="lineNum">     415 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
+<span class="lineNum">     416 </span><span class="lineCov">          4 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     417 </span><span class="lineCov">          4 :     assert(delta != NULL);</span>
+<span class="lineNum">     418 </span>            : 
+<span class="lineNum">     419 </span><span class="lineCov">          4 :     self-&gt;data_.day += delta-&gt;data_.delta_days;</span>
+<span class="lineNum">     420 </span><span class="lineCov">          4 :     check_date_data(&amp;self-&gt;data_);</span>
+<span class="lineNum">     421 </span><span class="lineCov">          4 : }</span>
+<a name="422"><span class="lineNum">     422 </span>            : </a>
+<span class="lineNum">     423 </span>            : void
+<span class="lineNum">     424 </span><span class="lineCov">          5 : Date_add_MonthDelta(</span>
+<span class="lineNum">     425 </span>            :         struct Date * const self,
+<span class="lineNum">     426 </span>            :         const struct MonthDelta * const delta)
+<span class="lineNum">     427 </span>            : {
+<span class="lineNum">     428 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
+<span class="lineNum">     429 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     430 </span><span class="lineCov">          5 :     assert(delta != NULL);</span>
+<span class="lineNum">     431 </span>            : 
+<span class="lineNum">     432 </span><span class="lineCov">          5 :     self-&gt;data_.month += delta-&gt;data_.delta_months;</span>
+<span class="lineNum">     433 </span><span class="lineCov">          5 :     check_date_data(&amp;self-&gt;data_);</span>
+<span class="lineNum">     434 </span><span class="lineCov">          5 : }</span>
+<a name="435"><span class="lineNum">     435 </span>            : </a>
+<span class="lineNum">     436 </span>            : void
+<span class="lineNum">     437 </span><span class="lineCov">          3 : Date_subtract_DayDelta(</span>
+<span class="lineNum">     438 </span>            :         struct Date * const self,
+<span class="lineNum">     439 </span>            :         const struct DayDelta * const delta)
+<span class="lineNum">     440 </span>            : {
+<span class="lineNum">     441 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
+<span class="lineNum">     442 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     443 </span><span class="lineCov">          3 :     assert(delta != NULL);</span>
+<span class="lineNum">     444 </span>            : 
+<span class="lineNum">     445 </span><span class="lineCov">          3 :     self-&gt;data_.day -= delta-&gt;data_.delta_days;</span>
+<span class="lineNum">     446 </span><span class="lineCov">          3 :     check_date_data(&amp;self-&gt;data_);</span>
+<span class="lineNum">     447 </span><span class="lineCov">          3 : }</span>
+<a name="448"><span class="lineNum">     448 </span>            : </a>
+<span class="lineNum">     449 </span>            : void
+<span class="lineNum">     450 </span><span class="lineCov">          3 : Date_subtract_MonthDelta(</span>
+<span class="lineNum">     451 </span>            :         struct Date * const self,
+<span class="lineNum">     452 </span>            :         const struct MonthDelta * const delta)
+<span class="lineNum">     453 </span>            : {
+<span class="lineNum">     454 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
+<span class="lineNum">     455 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     456 </span><span class="lineCov">          3 :     assert(delta != NULL);</span>
+<span class="lineNum">     457 </span>            : 
+<span class="lineNum">     458 </span><span class="lineCov">          3 :     self-&gt;data_.month -= delta-&gt;data_.delta_months;</span>
+<span class="lineNum">     459 </span><span class="lineCov">          3 :     check_date_data(&amp;self-&gt;data_);</span>
+<span class="lineNum">     460 </span><span class="lineCov">          3 : }</span>
+<a name="461"><span class="lineNum">     461 </span>            : </a>
+<span class="lineNum">     462 </span>            : int
+<span class="lineNum">     463 </span><span class="lineCov">         45 : Date_compare(</span>
+<span class="lineNum">     464 </span>            :         const struct Date * const lhs,
+<span class="lineNum">     465 </span>            :         const struct Date * const rhs)
+<span class="lineNum">     466 </span>            : {
+<span class="lineNum">     467 </span><span class="lineCov">         45 :     assert(lhs != NULL);</span>
+<span class="lineNum">     468 </span><span class="lineCov">         45 :     assert(lhs-&gt;has_error == 0);</span>
+<span class="lineNum">     469 </span><span class="lineCov">         45 :     assert(rhs != NULL);</span>
+<span class="lineNum">     470 </span><span class="lineCov">         45 :     assert(rhs-&gt;has_error == 0);</span>
+<span class="lineNum">     471 </span>            : 
+<span class="lineNum">     472 </span><span class="lineCov">         45 :     return</span>
+<span class="lineNum">     473 </span><span class="lineCov">         45 :         STRUCT_COMPARE(year,</span>
+<span class="lineNum">     474 </span>            :             STRUCT_COMPARE(month,
+<span class="lineNum">     475 </span>            :                 STRUCT_COMPARE(day, 0)));
+<a name="476"><span class="lineNum">     476 </span>            : }</a>
+<span class="lineNum">     477 </span>            : 
+<span class="lineNum">     478 </span><span class="lineCov">         41 : STRUCT_COMPARISON_OPERATORS(Date)</span>
+<span class="lineNum">     479 </span>            : 
 </pre>
       </td>
     </tr>

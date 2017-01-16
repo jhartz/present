@@ -2,8 +2,11 @@ var month_delta_8h =
 [
     [ "MonthDelta", "structMonthDelta.html", "structMonthDelta" ],
     [ "MonthDelta_from_months", "month-delta_8h.html#ab2435ae92655bed23406d37b4b8f4750", null ],
+    [ "MonthDelta_ptr_from_months", "month-delta_8h.html#aceffd9f2084cfb19dd1d1ca97262d042", null ],
     [ "MonthDelta_from_years", "month-delta_8h.html#aec5607ad9e7e090c39b2f50a68974ef0", null ],
+    [ "MonthDelta_ptr_from_years", "month-delta_8h.html#aa24bad37840cbe1c55345246a58a635a", null ],
     [ "MonthDelta_zero", "month-delta_8h.html#aca81ef97d8ec1cd052ab391636f16bf7", null ],
+    [ "MonthDelta_ptr_zero", "month-delta_8h.html#aecc1d070d7db1982cd5f98224f738d35", null ],
     [ "MonthDelta_months", "month-delta_8h.html#aa35507c658c9d6f3a038b44d1cdb6452", null ],
     [ "MonthDelta_years", "month-delta_8h.html#aaccb951f5a7295ce0cc3d9b6b77f2d21", null ],
     [ "MonthDelta_years_decimal", "month-delta_8h.html#a9215cb412f007649e357ba8cd9e171b9", null ],
