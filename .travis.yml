@@ -1,7 +1,9 @@
 language: cpp
-
 compiler:
 - gcc
+
+dist: trusty
+sudo: required
 
 before_install:
 - sudo apt-get -qq update
