@@ -41,10 +41,10 @@ struct PRESENT_API MonthDelta {
 
 #ifdef __cplusplus
     /** @copydoc MonthDelta_from_months */
-    static MonthDelta from_months(int_month_delta month_delta);
+    static MonthDelta from_months(int_month_delta months);
 
     /** @copydoc MonthDelta_from_years */
-    static MonthDelta from_years(int_year_delta year_delta);
+    static MonthDelta from_years(int_year_delta years);
 
     /** @copydoc MonthDelta_zero */
     static MonthDelta zero();
@@ -137,7 +137,7 @@ extern "C" {
  * Create a new MonthDelta based on a positive or negative number of months.
  */
 PRESENT_API struct MonthDelta
-MonthDelta_from_months(int_month_delta month_delta);
+MonthDelta_from_months(int_month_delta months);
 
 /**
  * @copydoc MonthDelta_from_months
@@ -146,13 +146,13 @@ MonthDelta_from_months(int_month_delta month_delta);
 PRESENT_API void
 MonthDelta_ptr_from_months(
         struct MonthDelta * const result,
-        int_month_delta month_delta);
+        int_month_delta months);
 
 /**
  * Create a new MonthDelta based on a positive or negative number of years.
  */
 PRESENT_API struct MonthDelta
-MonthDelta_from_years(int_year_delta year_delta);
+MonthDelta_from_years(int_year_delta years);
 
 /**
  * @copydoc MonthDelta_from_years
@@ -161,7 +161,7 @@ MonthDelta_from_years(int_year_delta year_delta);
 PRESENT_API void
 MonthDelta_ptr_from_years(
         struct MonthDelta * const result,
-        int_year_delta year_delta);
+        int_year_delta years);
 
 /**
  * Create a new MonthDelta initialized to zero months.

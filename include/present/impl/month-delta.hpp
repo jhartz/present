@@ -13,15 +13,15 @@
 #include <assert.h>
 
 inline MonthDelta
-MonthDelta::from_months(int_month_delta month_delta)
+MonthDelta::from_months(int_month_delta months)
 {
-    return MonthDelta_from_months(month_delta);
+    return MonthDelta_from_months(months);
 }
 
 inline MonthDelta
-MonthDelta::from_years(int_year_delta year_delta)
+MonthDelta::from_years(int_year_delta years)
 {
-    return MonthDelta_from_years(year_delta);
+    return MonthDelta_from_years(years);
 }
 
 inline MonthDelta
