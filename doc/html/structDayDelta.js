@@ -1,8 +1,5 @@
 var structDayDelta =
 [
-    [ "from_days", "structDayDelta.html#a7421a2d8448dd7d5329d72d0d6a04cbd", null ],
-    [ "from_weeks", "structDayDelta.html#a871bbf34275016d74c7ef8c8777c3258", null ],
-    [ "zero", "structDayDelta.html#acfcc09473305041a930a1ea6a3c20409", null ],
     [ "days", "structDayDelta.html#af7d15328d1c97bbd3316f014c69a6e3b", null ],
     [ "weeks", "structDayDelta.html#a48287489831fa9ec472451487908e663", null ],
     [ "weeks_decimal", "structDayDelta.html#adf33ed4a012b6326d2d172d1f7420ab1", null ],
@@ -18,7 +15,6 @@ var structDayDelta =
     [ "operator/=", "structDayDelta.html#a892e28fb54b113684d1f5078d6f607c8", null ],
     [ "operator+=", "structDayDelta.html#a081325e9acba450f7446d1d59ed65518", null ],
     [ "operator-=", "structDayDelta.html#a886f81ff8427ad7712a246fcd3b139f7", null ],
-    [ "compare", "structDayDelta.html#a1059465fe1c1bfb8d7136ad887b00d30", null ],
     [ "operator*", "structDayDelta.html#af888d4911eda6f27731cbf92bb393c32", null ],
     [ "operator/", "structDayDelta.html#a9469df031e6aba7593890989a954ae35", null ],
     [ "operator+", "structDayDelta.html#a371e4babc2d194244a5b4cea3ea66d7e", null ],
@@ -29,6 +25,5 @@ var structDayDelta =
     [ "operator<=", "structDayDelta.html#abdcc1adeaad32dd0ae90569e52f514dd", null ],
     [ "operator>", "structDayDelta.html#aaf9360c064df44a15781807e4a26c296", null ],
     [ "operator>=", "structDayDelta.html#a78c4c340fdd0331b761215aeb08f56e6", null ],
-    [ "error", "structDayDelta.html#a240b38d4510157302ec42efc62ee498d", null ],
     [ "data_", "structDayDelta.html#af256f16b6700e43995186eea83db9ebc", null ]
 ];

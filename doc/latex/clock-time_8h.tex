@@ -1,424 +1,715 @@
-\hypertarget{clock-time_8h}{\section{present/clock-\/time.h \-File \-Reference}
+\hypertarget{clock-time_8h}{\section{present/clock-\/time.h File Reference}
 \label{clock-time_8h}\index{present/clock-\/time.\-h@{present/clock-\/time.\-h}}
 }
-\subsection*{\-Classes}
+\subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structClockTime}{\-Clock\-Time}
-\begin{DoxyCompactList}\small\item\em \-Class or struct representing a time as seen on a clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Defines}
+struct \hyperlink{structClockTime}{Clock\-Time}
+\begin{DoxyCompactList}\small\item\em Class or struct representing a time as seen on a clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{clock-time_8h_a58ff623c2c94ef13508ea9d85cbdfad7}{\-Clock\-Time\-\_\-create}(...)
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} from either an hour (1 argument), an hour and a minute (2 arguments), an hour/minute/second (3 arguments), or an hour/minute/second/nanosecond (4 arguments). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Enumerations}
+\#define \hyperlink{clock-time_8h_a58ff623c2c94ef13508ea9d85cbdfad7}{Clock\-Time\-\_\-create}(...)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} from either an hour (1 argument), an hour and a minute (2 arguments), an hour/minute/second (3 arguments), or an hour/minute/second/nanosecond (4 arguments). \end{DoxyCompactList}\item 
+\#define \hyperlink{clock-time_8h_a113da7d2057c3219a6b72e39ab9795ce}{Clock\-Time\-\_\-ptr\-\_\-create}(result,...)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} from either an hour (2 arguments), an hour and a minute (3 arguments), an hour/minute/second (4 arguments), or an hour/minute/second/nanosecond (5 arguments). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455}{\-Present\-Clock\-Time\-Error} \{ \*
-\hyperlink{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a1d641b8c2d8a813161b336d677d442ce}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E} =  0, 
-\*
-\hyperlink{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a06eb41881d9ecd5b58f9da51e669d882}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-H\-O\-U\-R\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}, 
-\*
-\hyperlink{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a97838040e41b51850fe9396a9510b2a9}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-M\-I\-N\-U\-T\-E\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}, 
-\*
-\hyperlink{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a6fea4dad5bdfc5694d2b9b10329b2338}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}, 
-\*
-\hyperlink{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a566b9c3744b31c19afef95634db50139}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-N\-O\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}
- \}
-\end{DoxyCompactItemize}
-\subsection*{\-Functions}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}{\-Clock\-Time\-\_\-from\-\_\-hour} (int\-\_\-hour hour)
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour of the day. \end{DoxyCompactList}\item 
-struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute} (int\-\_\-hour hour, int\-\_\-minute minute)
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour and a minute. \end{DoxyCompactList}\item 
-struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_a7881866a32c7c6027257208e456a5041}{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} (int\-\_\-hour hour, int\-\_\-minute minute, int\-\_\-second second)
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour, a minute, and a second. \end{DoxyCompactList}\item 
-struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} (int\-\_\-hour hour, int\-\_\-minute minute, int\-\_\-second second, int\-\_\-nanosecond nanosecond)
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour, a minute, a second, and a nanosecond. \end{DoxyCompactList}\item 
-struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}{\-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds} (int\-\_\-hour hour, int\-\_\-minute minute, double second)
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour, a minute, and a decimal second. \end{DoxyCompactList}\item 
-struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_ae320c2e30dedf0b33d5306b9e8841261}{\-Clock\-Time\-\_\-midnight} ()
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} initialized to midnight (00\-:00). \end{DoxyCompactList}\item 
-struct \hyperlink{structClockTime}{\-Clock\-Time} \hyperlink{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}{\-Clock\-Time\-\_\-noon} ()
-\begin{DoxyCompactList}\small\item\em \-Create a new \hyperlink{structClockTime}{\-Clock\-Time} initialized to noon (12\-:00). \end{DoxyCompactList}\item 
-int\-\_\-hour \hyperlink{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}{\-Clock\-Time\-\_\-hour} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get the hour component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 23, inclusive). \end{DoxyCompactList}\item 
-int\-\_\-minute \hyperlink{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}{\-Clock\-Time\-\_\-minute} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get the minute component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). \end{DoxyCompactList}\item 
-int\-\_\-second \hyperlink{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}{\-Clock\-Time\-\_\-second} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). \end{DoxyCompactList}\item 
-int\-\_\-nanosecond \hyperlink{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}{\-Clock\-Time\-\_\-nanosecond} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get the nanosecond component of a \hyperlink{structClockTime}{\-Clock\-Time} (less than 10$^\wedge$9, the number of nanoseconds in a second). \end{DoxyCompactList}\item 
-double \hyperlink{clock-time_8h_a182c395d606d26c144cdb75096a0125d}{\-Clock\-Time\-\_\-second\-\_\-decimal} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} as a decimal, based on both the second and nanosecond components. \end{DoxyCompactList}\item 
-struct \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}{\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self)
-\begin{DoxyCompactList}\small\item\em \-Get a \hyperlink{structTimeDelta}{\-Time\-Delta} with the time since midnight of a \hyperlink{structClockTime}{\-Clock\-Time}. \end{DoxyCompactList}\item 
-void \hyperlink{clock-time_8h_a265e7bf3c63b2986d13dcdc8f43883d4}{\-Clock\-Time\-\_\-add\-\_\-\-Time\-Delta} (struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const delta)
-\begin{DoxyCompactList}\small\item\em \-Add a \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structClockTime}{\-Clock\-Time}. \end{DoxyCompactList}\item 
-void \hyperlink{clock-time_8h_a9594699dbdbcd56c79928da5e969ba42}{\-Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta} (struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const self, const struct \hyperlink{structTimeDelta}{\-Time\-Delta} $\ast$const delta)
-\begin{DoxyCompactList}\small\item\em \-Subtract a \hyperlink{structTimeDelta}{\-Time\-Delta} from a \hyperlink{structClockTime}{\-Clock\-Time}. \end{DoxyCompactList}\item 
-int \hyperlink{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}{\-Clock\-Time\-\_\-compare} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const rhs)
-\begin{DoxyCompactList}\small\item\em \-Compare two \hyperlink{structClockTime}{\-Clock\-Time} instances. \end{DoxyCompactList}\item 
-present\-\_\-bool \hyperlink{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}{\-Clock\-Time\-\_\-equal} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const rhs)
-\begin{DoxyCompactList}\small\item\em \-Determine whether two \hyperlink{structClockTime}{\-Clock\-Time} instances are equal (lhs == rhs). \end{DoxyCompactList}\item 
-present\-\_\-bool \hyperlink{clock-time_8h_ad0b394066f11e1f695bd10c2aad04ea0}{\-Clock\-Time\-\_\-less\-\_\-than} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const rhs)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is earlier than another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $<$ rhs). \end{DoxyCompactList}\item 
-present\-\_\-bool \hyperlink{clock-time_8h_a8725113f40fe7aae309480cc0b666c16}{\-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const rhs)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is earlier than or or the same as another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $<$= rhs). \end{DoxyCompactList}\item 
-present\-\_\-bool \hyperlink{clock-time_8h_ae2c5d81af2ab38abf4248271cb45be33}{\-Clock\-Time\-\_\-greater\-\_\-than} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const rhs)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is later than another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $>$ rhs). \end{DoxyCompactList}\item 
-present\-\_\-bool \hyperlink{clock-time_8h_af8b0d5b33438ceddeae53b1d79f132b8}{\-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{\-Clock\-Time} $\ast$const rhs)
-\begin{DoxyCompactList}\small\item\em \-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is later than or the same as another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $>$= rhs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \hyperlink{structClockTime}{Clock\-Time} \hyperlink{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}{Clock\-Time\-\_\-from\-\_\-hour} (\hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour of the day. \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a1bf6417dca92b84860ae887aa913a4cb}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const result, \hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour of the day. \end{DoxyCompactList}\item 
+struct \hyperlink{structClockTime}{Clock\-Time} \hyperlink{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute} (\hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour and a minute. \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a32d23ad7e3ef709bdeed070cb67230bc}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const result, \hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour and a minute. \end{DoxyCompactList}\item 
+struct \hyperlink{structClockTime}{Clock\-Time} \hyperlink{clock-time_8h_a7881866a32c7c6027257208e456a5041}{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} (\hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute, \hyperlink{types_8h_a48e89dcdfecb9766dce0baf6254d089e}{int\-\_\-second} second)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a second. \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a1454b4a83c57bff16b493757579f1dd6}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const result, \hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute, \hyperlink{types_8h_a48e89dcdfecb9766dce0baf6254d089e}{int\-\_\-second} second)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a second. \end{DoxyCompactList}\item 
+struct \hyperlink{structClockTime}{Clock\-Time} \hyperlink{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} (\hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute, \hyperlink{types_8h_a48e89dcdfecb9766dce0baf6254d089e}{int\-\_\-second} second, \hyperlink{types_8h_a6bb2edd220168240795ae6d50d7bf140}{int\-\_\-nanosecond} nanosecond)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, a second, and a nanosecond. \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a9004b5ad97da41edd6a2be814bb9d393}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const result, \hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute, \hyperlink{types_8h_a48e89dcdfecb9766dce0baf6254d089e}{int\-\_\-second} second, \hyperlink{types_8h_a6bb2edd220168240795ae6d50d7bf140}{int\-\_\-nanosecond} nanosecond)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, a second, and a nanosecond. \end{DoxyCompactList}\item 
+struct \hyperlink{structClockTime}{Clock\-Time} \hyperlink{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}{Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds} (\hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute, double second)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a decimal second. \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a87e3a723bf677b7be296bc439a05b910}{Clock\-Time\-\_\-ptr\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const result, \hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} hour, \hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} minute, double second)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a decimal second. \end{DoxyCompactList}\item 
+struct \hyperlink{structClockTime}{Clock\-Time} \hyperlink{clock-time_8h_ae320c2e30dedf0b33d5306b9e8841261}{Clock\-Time\-\_\-midnight} ()
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to midnight (00\-:00). \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_ab9a04af6aea163ab7682efd2ac6d2e71}{Clock\-Time\-\_\-ptr\-\_\-midnight} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const result)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to midnight (00\-:00). \end{DoxyCompactList}\item 
+struct \hyperlink{structClockTime}{Clock\-Time} \hyperlink{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}{Clock\-Time\-\_\-noon} ()
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to noon (12\-:00). \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a0d675e833b96d51d7ba743f09f6a0ee8}{Clock\-Time\-\_\-ptr\-\_\-noon} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const result)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to noon (12\-:00). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_abc83767329d565949a30f9990b5b2323}{int\-\_\-hour} \hyperlink{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}{Clock\-Time\-\_\-hour} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em Get the hour component of a \hyperlink{structClockTime}{Clock\-Time} (0 to 23, inclusive). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_ac1c9417e7360815b48bbc1efa2b8240c}{int\-\_\-minute} \hyperlink{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}{Clock\-Time\-\_\-minute} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em Get the minute component of a \hyperlink{structClockTime}{Clock\-Time} (0 to 59, inclusive). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a48e89dcdfecb9766dce0baf6254d089e}{int\-\_\-second} \hyperlink{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}{Clock\-Time\-\_\-second} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em Get the second component of a \hyperlink{structClockTime}{Clock\-Time} (0 to 59, inclusive). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a6bb2edd220168240795ae6d50d7bf140}{int\-\_\-nanosecond} \hyperlink{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}{Clock\-Time\-\_\-nanosecond} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em Get the nanosecond component of a \hyperlink{structClockTime}{Clock\-Time} (less than 10$^\wedge$9, the number of nanoseconds in a second). \end{DoxyCompactList}\item 
+double \hyperlink{clock-time_8h_a182c395d606d26c144cdb75096a0125d}{Clock\-Time\-\_\-second\-\_\-decimal} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em Get the second component of a \hyperlink{structClockTime}{Clock\-Time} as a decimal, based on both the second and nanosecond components. \end{DoxyCompactList}\item 
+struct \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}{Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self)
+\begin{DoxyCompactList}\small\item\em Get a \hyperlink{structTimeDelta}{Time\-Delta} with the time since midnight of a \hyperlink{structClockTime}{Clock\-Time}. \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a265e7bf3c63b2986d13dcdc8f43883d4}{Clock\-Time\-\_\-add\-\_\-\-Time\-Delta} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self, const struct \hyperlink{structTimeDelta}{Time\-Delta} $\ast$const delta)
+\begin{DoxyCompactList}\small\item\em Add a \hyperlink{structTimeDelta}{Time\-Delta} to a \hyperlink{structClockTime}{Clock\-Time}. \end{DoxyCompactList}\item 
+void \hyperlink{clock-time_8h_a9594699dbdbcd56c79928da5e969ba42}{Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self, const struct \hyperlink{structTimeDelta}{Time\-Delta} $\ast$const delta)
+\begin{DoxyCompactList}\small\item\em Subtract a \hyperlink{structTimeDelta}{Time\-Delta} from a \hyperlink{structClockTime}{Clock\-Time}. \end{DoxyCompactList}\item 
+int \hyperlink{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}{Clock\-Time\-\_\-compare} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structClockTime}{Clock\-Time} instances. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}{Clock\-Time\-\_\-equal} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether two \hyperlink{structClockTime}{Clock\-Time} instances are equal (lhs == rhs). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{clock-time_8h_ad0b394066f11e1f695bd10c2aad04ea0}{Clock\-Time\-\_\-less\-\_\-than} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structClockTime}{Clock\-Time} is earlier than another \hyperlink{structClockTime}{Clock\-Time} (lhs $<$ rhs). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{clock-time_8h_a8725113f40fe7aae309480cc0b666c16}{Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structClockTime}{Clock\-Time} is earlier than or or the same as another \hyperlink{structClockTime}{Clock\-Time} (lhs $<$= rhs). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{clock-time_8h_ae2c5d81af2ab38abf4248271cb45be33}{Clock\-Time\-\_\-greater\-\_\-than} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structClockTime}{Clock\-Time} is later than another \hyperlink{structClockTime}{Clock\-Time} (lhs $>$ rhs). \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{clock-time_8h_af8b0d5b33438ceddeae53b1d79f132b8}{Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structClockTime}{Clock\-Time} is later than or the same as another \hyperlink{structClockTime}{Clock\-Time} (lhs $>$= rhs). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{\-Define \-Documentation}
-\hypertarget{clock-time_8h_a58ff623c2c94ef13508ea9d85cbdfad7}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-create@{\-Clock\-Time\-\_\-create}}
-\index{\-Clock\-Time\-\_\-create@{\-Clock\-Time\-\_\-create}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-Clock\-Time\-\_\-create}(
+\subsection{Macro Definition Documentation}
+\hypertarget{clock-time_8h_a58ff623c2c94ef13508ea9d85cbdfad7}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-create@{Clock\-Time\-\_\-create}}
+\index{Clock\-Time\-\_\-create@{Clock\-Time\-\_\-create}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}\#define Clock\-Time\-\_\-create(
 \begin{DoxyParamCaption}
 \item[{}]{...}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a58ff623c2c94ef13508ea9d85cbdfad7}
-{\bfseries \-Value\-:}
+{\bfseries Value\-:}
 \begin{DoxyCode}
-PRESENT_OVERLOAD_MAX_4(__VA_ARGS__,                 \
-        ClockTime_from_hour_minute_second_nanosecond,   \
-        ClockTime_from_hour_minute_second,              \
-        ClockTime_from_hour_minute,                     \
-        ClockTime_from_hour,                            \
-        dummy)(__VA_ARGS__)
+PRESENT\_OVERLOAD\_MAX\_4(\_\_VA\_ARGS\_\_,                 \(\backslash\)
+        \hyperlink{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{ClockTime\_from\_hour\_minute\_second\_nanosecond},   \(\backslash\)
+        \hyperlink{clock-time_8h_a7881866a32c7c6027257208e456a5041}{ClockTime\_from\_hour\_minute\_second},              \(\backslash\)
+        \hyperlink{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{ClockTime\_from\_hour\_minute},                     \(\backslash\)
+        \hyperlink{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}{ClockTime\_from\_hour},                            \(\backslash\)
+        dummy)(\_\_VA\_ARGS\_\_)
 \end{DoxyCode}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} from either an hour (1 argument), an hour and a minute (2 arguments), an hour/minute/second (3 arguments), or an hour/minute/second/nanosecond (4 arguments). 
+Create a new \hyperlink{structClockTime}{Clock\-Time} from either an hour (1 argument), an hour and a minute (2 arguments), an hour/minute/second (3 arguments), or an hour/minute/second/nanosecond (4 arguments). 
 
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}{\-Clock\-Time\-\_\-from\-\_\-hour} 
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
 
-\hyperlink{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute} 
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
 
-\hyperlink{clock-time_8h_a7881866a32c7c6027257208e456a5041}{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} 
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
 
-\hyperlink{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} 
+\hyperlink{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}{Clock\-Time\-\_\-from\-\_\-hour} 
+
+\hyperlink{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute} 
+
+\hyperlink{clock-time_8h_a7881866a32c7c6027257208e456a5041}{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} 
+
+\hyperlink{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} 
+\end{DoxySeeAlso}
+\hypertarget{clock-time_8h_a113da7d2057c3219a6b72e39ab9795ce}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-create@{Clock\-Time\-\_\-ptr\-\_\-create}}
+\index{Clock\-Time\-\_\-ptr\-\_\-create@{Clock\-Time\-\_\-ptr\-\_\-create}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}\#define Clock\-Time\-\_\-ptr\-\_\-create(
+\begin{DoxyParamCaption}
+\item[{}]{result, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_a113da7d2057c3219a6b72e39ab9795ce}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+PRESENT\_OVERLOAD\_MAX\_4(\_\_VA\_ARGS\_\_,                     \(\backslash\)
+        \hyperlink{clock-time_8h_a9004b5ad97da41edd6a2be814bb9d393}{ClockTime\_ptr\_from\_hour\_minute\_second\_nanosecond},  
+       \(\backslash\)
+        \hyperlink{clock-time_8h_a1454b4a83c57bff16b493757579f1dd6}{ClockTime\_ptr\_from\_hour\_minute\_second},              \(\backslash\)
+        \hyperlink{clock-time_8h_a32d23ad7e3ef709bdeed070cb67230bc}{ClockTime\_ptr\_from\_hour\_minute},                     \(\backslash\)
+        \hyperlink{clock-time_8h_a1bf6417dca92b84860ae887aa913a4cb}{ClockTime\_ptr\_from\_hour},                            \(\backslash\)
+        dummy)(result, \_\_VA\_ARGS\_\_)
+\end{DoxyCode}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} from either an hour (2 arguments), an hour and a minute (3 arguments), an hour/minute/second (4 arguments), or an hour/minute/second/nanosecond (5 arguments). 
+
+The first argument is a pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result.
+
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+
+\hyperlink{clock-time_8h_a1bf6417dca92b84860ae887aa913a4cb}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour} 
+
+\hyperlink{clock-time_8h_a32d23ad7e3ef709bdeed070cb67230bc}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute} 
+
+\hyperlink{clock-time_8h_a1454b4a83c57bff16b493757579f1dd6}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} 
+
+\hyperlink{clock-time_8h_a9004b5ad97da41edd6a2be814bb9d393}{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} 
 \end{DoxySeeAlso}
 
 
-\subsection{\-Enumeration \-Type \-Documentation}
-\hypertarget{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Present\-Clock\-Time\-Error@{\-Present\-Clock\-Time\-Error}}
-\index{\-Present\-Clock\-Time\-Error@{\-Present\-Clock\-Time\-Error}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Present\-Clock\-Time\-Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Present\-Clock\-Time\-Error}}}\label{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455}
-\begin{Desc}
-\item[\-Enumerator\-: ]\par
-\begin{description}
-\index{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E}!clock-\/time.\-h@{clock-\/time.\-h}}\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E}}\item[{\em 
-\hypertarget{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a1d641b8c2d8a813161b336d677d442ce}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-O\-N\-E}\label{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a1d641b8c2d8a813161b336d677d442ce}
-}]\index{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-H\-O\-U\-R\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-H\-O\-U\-R\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}!clock-\/time.\-h@{clock-\/time.\-h}}\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-H\-O\-U\-R\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-H\-O\-U\-R\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}}\item[{\em 
-\hypertarget{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a06eb41881d9ecd5b58f9da51e669d882}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-H\-O\-U\-R\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}\label{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a06eb41881d9ecd5b58f9da51e669d882}
-}]\index{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-M\-I\-N\-U\-T\-E\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-M\-I\-N\-U\-T\-E\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}!clock-\/time.\-h@{clock-\/time.\-h}}\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-M\-I\-N\-U\-T\-E\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-M\-I\-N\-U\-T\-E\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}}\item[{\em 
-\hypertarget{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a97838040e41b51850fe9396a9510b2a9}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-M\-I\-N\-U\-T\-E\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}\label{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a97838040e41b51850fe9396a9510b2a9}
-}]\index{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}!clock-\/time.\-h@{clock-\/time.\-h}}\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}}\item[{\em 
-\hypertarget{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a6fea4dad5bdfc5694d2b9b10329b2338}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}\label{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a6fea4dad5bdfc5694d2b9b10329b2338}
-}]\index{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-N\-O\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-N\-O\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}!clock-\/time.\-h@{clock-\/time.\-h}}\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-N\-O\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E@{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-N\-O\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}}\item[{\em 
-\hypertarget{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a566b9c3744b31c19afef95634db50139}{\-Clock\-Time\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-N\-O\-S\-E\-C\-O\-N\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E}\label{clock-time_8h_a40f97cceae12156ea6da9bd1c170d455a566b9c3744b31c19afef95634db50139}
-}]\end{description}
-\end{Desc}
-
-
-
-\subsection{\-Function \-Documentation}
-\hypertarget{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-from\-\_\-hour@{\-Clock\-Time\-\_\-from\-\_\-hour}}
-\index{\-Clock\-Time\-\_\-from\-\_\-hour@{\-Clock\-Time\-\_\-from\-\_\-hour}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-from\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Clock\-Time\-\_\-from\-\_\-hour} (
+\subsection{Function Documentation}
+\hypertarget{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-from\-\_\-hour@{Clock\-Time\-\_\-from\-\_\-hour}}
+\index{Clock\-Time\-\_\-from\-\_\-hour@{Clock\-Time\-\_\-from\-\_\-hour}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-from\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Clock\-Time} Clock\-Time\-\_\-from\-\_\-hour (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-hour}]{hour}
+\item[{{\bf int\-\_\-hour}}]{hour}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}
+)}}\label{clock-time_8h_ae5c4f2f2fc0532bb803b1701e2f1775c}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour of the day. 
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour of the day. 
 
-\-If any parameter is out of range, a \hyperlink{structClockTime}{\-Clock\-Time} will be returned with \char`\"{}error\char`\"{} set.
+If the hour is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
 
-\begin{DoxyParams}{\-Parameters}
-{\em hour} & \-The hour of the day (0 to 23, inclusive). \\
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
 \end{DoxyParams}
-\hypertarget{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute@{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute}}
-\index{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute@{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute} (
+\hypertarget{clock-time_8h_a1bf6417dca92b84860ae887aa913a4cb}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour}}
+\index{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-hour}]{hour, }
-\item[{int\-\_\-minute}]{minute}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{result, }
+\item[{{\bf int\-\_\-hour}}]{hour}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}
+)}}\label{clock-time_8h_a1bf6417dca92b84860ae887aa913a4cb}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour and a minute. 
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour of the day. 
 
-\-If any parameter is out of range, a \hyperlink{structClockTime}{\-Clock\-Time} will be returned with \char`\"{}error\char`\"{} set.
+If the hour is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
 
-\begin{DoxyParams}{\-Parameters}
-{\em hour} & \-The hour of the day (0 to 23, inclusive). \\
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
-{\em minute} & \-The minute of the hour (0 to 59, inclusive). \\
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
 \hline
 \end{DoxyParams}
-\hypertarget{clock-time_8h_a7881866a32c7c6027257208e456a5041}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second@{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}}
-\index{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second@{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second} (
+\hypertarget{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute}}
+\index{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Clock\-Time} Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-hour}]{hour, }
-\item[{int\-\_\-minute}]{minute, }
-\item[{int\-\_\-second}]{second}
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_a7881866a32c7c6027257208e456a5041}
+)}}\label{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour, a minute, and a second. 
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour and a minute. 
 
-\-If any parameter is out of range, a \hyperlink{structClockTime}{\-Clock\-Time} will be returned with \char`\"{}error\char`\"{} set.
+If the hour or the minute is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
 
-\begin{DoxyParams}{\-Parameters}
-{\em hour} & \-The hour of the day (0 to 23, inclusive). \\
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
-{\em minute} & \-The minute of the hour (0 to 59, inclusive). \\
-\hline
-{\em second} & \-The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
 \hline
 \end{DoxyParams}
-\hypertarget{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond@{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}}
-\index{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond@{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond} (
+\hypertarget{clock-time_8h_a32d23ad7e3ef709bdeed070cb67230bc}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute}}
+\index{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-hour}]{hour, }
-\item[{int\-\_\-minute}]{minute, }
-\item[{int\-\_\-second}]{second, }
-\item[{int\-\_\-nanosecond}]{nanosecond}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{result, }
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}
+)}}\label{clock-time_8h_a32d23ad7e3ef709bdeed070cb67230bc}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour, a minute, a second, and a nanosecond. 
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour and a minute. 
 
+If the hour or the minute is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
-\begin{DoxyParams}{\-Parameters}
-{\em hour} & \-The hour of the day (0 to 23, inclusive). \\
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
-{\em minute} & \-The minute of the hour (0 to 59, inclusive). \\
+ & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
 \hline
-{\em second} & \-The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
-\hline
-{\em nanosecond} & \-The nanosecond (0 to 10$^\wedge$9-\/1, inclusive, i.\-e. no bigger than the number of nanoseconds in a second). \\
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
 \hline
 \end{DoxyParams}
-\hypertarget{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds@{\-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}}
-\index{\-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds@{\-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds} (
+\hypertarget{clock-time_8h_a7881866a32c7c6027257208e456a5041}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}}
+\index{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Clock\-Time} Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-hour}]{hour, }
-\item[{int\-\_\-minute}]{minute, }
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute, }
+\item[{{\bf int\-\_\-second}}]{second}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_a7881866a32c7c6027257208e456a5041}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a second. 
+
+If the hour, the minute, or the second is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
+
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
+\hline
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
+\hline
+{\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
+\hline
+\end{DoxyParams}
+\hypertarget{clock-time_8h_a1454b4a83c57bff16b493757579f1dd6}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}}
+\index{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{result, }
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute, }
+\item[{{\bf int\-\_\-second}}]{second}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_a1454b4a83c57bff16b493757579f1dd6}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a second. 
+
+If the hour, the minute, or the second is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
+
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em hour} & The hour of the day (0 to 23, inclusive). \\
+\hline
+ & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
+\hline
+ & {\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
+\hline
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}}
+\index{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Clock\-Time} Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond (
+\begin{DoxyParamCaption}
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute, }
+\item[{{\bf int\-\_\-second}}]{second, }
+\item[{{\bf int\-\_\-nanosecond}}]{nanosecond}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, a second, and a nanosecond. 
+
+If the hour, minute, second, or nanosecond is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
+
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
+\hline
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
+\hline
+{\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
+\hline
+{\em nanosecond} & The nanosecond (0 to 10$^\wedge$9-\/1, inclusive, i.\-e. no bigger than the number of nanoseconds in a second). \\
+\hline
+\end{DoxyParams}
+\hypertarget{clock-time_8h_a9004b5ad97da41edd6a2be814bb9d393}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}}
+\index{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond@{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-ptr\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{result, }
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute, }
+\item[{{\bf int\-\_\-second}}]{second, }
+\item[{{\bf int\-\_\-nanosecond}}]{nanosecond}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_a9004b5ad97da41edd6a2be814bb9d393}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, a second, and a nanosecond. 
+
+If the hour, minute, second, or nanosecond is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
+
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em hour} & The hour of the day (0 to 23, inclusive). \\
+\hline
+ & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
+\hline
+ & {\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
+\hline
+ & {\em nanosecond} & The nanosecond (0 to 10$^\wedge$9-\/1, inclusive, i.\-e. no bigger than the number of nanoseconds in a second). \\
+\hline
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds@{Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}}
+\index{Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds@{Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Clock\-Time} Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds (
+\begin{DoxyParamCaption}
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute, }
 \item[{double}]{second}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}
+)}}\label{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} based on an hour, a minute, and a decimal second. 
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a decimal second. 
 
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
 
-\begin{DoxyParams}{\-Parameters}
-{\em hour} & \-The hour of the day (0 to 23, inclusive). \\
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
-{\em minute} & \-The minute of the hour (0 to 59, inclusive). \\
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
 \hline
-{\em second} & \-The second of the minute (0 up to, but not including, 60). \\
+{\em second} & The second of the minute (0 up to, but not including, 60). \\
 \hline
 \end{DoxyParams}
-\hypertarget{clock-time_8h_ae320c2e30dedf0b33d5306b9e8841261}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-midnight@{\-Clock\-Time\-\_\-midnight}}
-\index{\-Clock\-Time\-\_\-midnight@{\-Clock\-Time\-\_\-midnight}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-midnight}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Clock\-Time\-\_\-midnight} (
+\hypertarget{clock-time_8h_a87e3a723bf677b7be296bc439a05b910}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds@{Clock\-Time\-\_\-ptr\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}}
+\index{Clock\-Time\-\_\-ptr\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds@{Clock\-Time\-\_\-ptr\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-ptr\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{result, }
+\item[{{\bf int\-\_\-hour}}]{hour, }
+\item[{{\bf int\-\_\-minute}}]{minute, }
+\item[{double}]{second}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_a87e3a723bf677b7be296bc439a05b910}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a decimal second. 
+
+\begin{DoxyAttention}{Attention}
+Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
+\end{DoxyAttention}
+If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\ttfamily errors} struct will also be true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structClockTime_ab04bad96a5d91e8a29b61a1802e5faba}{Clock\-Time\-::has\-\_\-error} 
+
+\hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em hour} & The hour of the day (0 to 23, inclusive). \\
+\hline
+ & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
+\hline
+ & {\em second} & The second of the minute (0 up to, but not including, 60). \\
+\hline
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{clock-time_8h_ae320c2e30dedf0b33d5306b9e8841261}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-midnight@{Clock\-Time\-\_\-midnight}}
+\index{Clock\-Time\-\_\-midnight@{Clock\-Time\-\_\-midnight}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-midnight}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Clock\-Time} Clock\-Time\-\_\-midnight (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_ae320c2e30dedf0b33d5306b9e8841261}
+)}}\label{clock-time_8h_ae320c2e30dedf0b33d5306b9e8841261}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} initialized to midnight (00\-:00). 
+Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to midnight (00\-:00). 
 
-\hypertarget{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-noon@{\-Clock\-Time\-\_\-noon}}
-\index{\-Clock\-Time\-\_\-noon@{\-Clock\-Time\-\_\-noon}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-noon}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Clock\-Time} {\bf \-Clock\-Time\-\_\-noon} (
+\hypertarget{clock-time_8h_ab9a04af6aea163ab7682efd2ac6d2e71}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-midnight@{Clock\-Time\-\_\-ptr\-\_\-midnight}}
+\index{Clock\-Time\-\_\-ptr\-\_\-midnight@{Clock\-Time\-\_\-ptr\-\_\-midnight}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-midnight}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-ptr\-\_\-midnight (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{result}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_ab9a04af6aea163ab7682efd2ac6d2e71}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to midnight (00\-:00). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-noon@{Clock\-Time\-\_\-noon}}
+\index{Clock\-Time\-\_\-noon@{Clock\-Time\-\_\-noon}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-noon}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Clock\-Time} Clock\-Time\-\_\-noon (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}
+)}}\label{clock-time_8h_a183049a7386a7b7377ba3059d15485c4}
 
 
-\-Create a new \hyperlink{structClockTime}{\-Clock\-Time} initialized to noon (12\-:00). 
+Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to noon (12\-:00). 
 
-\hypertarget{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-hour@{\-Clock\-Time\-\_\-hour}}
-\index{\-Clock\-Time\-\_\-hour@{\-Clock\-Time\-\_\-hour}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-hour {\bf \-Clock\-Time\-\_\-hour} (
+\hypertarget{clock-time_8h_a0d675e833b96d51d7ba743f09f6a0ee8}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-ptr\-\_\-noon@{Clock\-Time\-\_\-ptr\-\_\-noon}}
+\index{Clock\-Time\-\_\-ptr\-\_\-noon@{Clock\-Time\-\_\-ptr\-\_\-noon}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-ptr\-\_\-noon}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-ptr\-\_\-noon (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{result}
+\end{DoxyParamCaption}
+)}}\label{clock-time_8h_a0d675e833b96d51d7ba743f09f6a0ee8}
+
+
+Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to noon (12\-:00). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-hour@{Clock\-Time\-\_\-hour}}
+\index{Clock\-Time\-\_\-hour@{Clock\-Time\-\_\-hour}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-hour}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-hour} Clock\-Time\-\_\-hour (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}
 
 
-\-Get the hour component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 23, inclusive). 
+Get the hour component of a \hyperlink{structClockTime}{Clock\-Time} (0 to 23, inclusive). 
 
-\hypertarget{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-minute@{\-Clock\-Time\-\_\-minute}}
-\index{\-Clock\-Time\-\_\-minute@{\-Clock\-Time\-\_\-minute}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-minute {\bf \-Clock\-Time\-\_\-minute} (
+\hypertarget{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-minute@{Clock\-Time\-\_\-minute}}
+\index{Clock\-Time\-\_\-minute@{Clock\-Time\-\_\-minute}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-minute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-minute} Clock\-Time\-\_\-minute (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a71ebda6c0d3f39c5ee3287170b081e62}
 
 
-\-Get the minute component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). 
+Get the minute component of a \hyperlink{structClockTime}{Clock\-Time} (0 to 59, inclusive). 
 
-\hypertarget{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-second@{\-Clock\-Time\-\_\-second}}
-\index{\-Clock\-Time\-\_\-second@{\-Clock\-Time\-\_\-second}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-second {\bf \-Clock\-Time\-\_\-second} (
+\hypertarget{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-second@{Clock\-Time\-\_\-second}}
+\index{Clock\-Time\-\_\-second@{Clock\-Time\-\_\-second}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-second} Clock\-Time\-\_\-second (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_abd89cc75c460c6b9b906c2b433e0f29c}
 
 
-\-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} (0 to 59, inclusive). 
+Get the second component of a \hyperlink{structClockTime}{Clock\-Time} (0 to 59, inclusive). 
 
-\hypertarget{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-nanosecond@{\-Clock\-Time\-\_\-nanosecond}}
-\index{\-Clock\-Time\-\_\-nanosecond@{\-Clock\-Time\-\_\-nanosecond}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-nanosecond {\bf \-Clock\-Time\-\_\-nanosecond} (
+\hypertarget{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-nanosecond@{Clock\-Time\-\_\-nanosecond}}
+\index{Clock\-Time\-\_\-nanosecond@{Clock\-Time\-\_\-nanosecond}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-nanosecond}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-nanosecond} Clock\-Time\-\_\-nanosecond (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a68bdc6e05da575968f51c2fcff6bcb8e}
 
 
-\-Get the nanosecond component of a \hyperlink{structClockTime}{\-Clock\-Time} (less than 10$^\wedge$9, the number of nanoseconds in a second). 
+Get the nanosecond component of a \hyperlink{structClockTime}{Clock\-Time} (less than 10$^\wedge$9, the number of nanoseconds in a second). 
 
-\hypertarget{clock-time_8h_a182c395d606d26c144cdb75096a0125d}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-second\-\_\-decimal@{\-Clock\-Time\-\_\-second\-\_\-decimal}}
-\index{\-Clock\-Time\-\_\-second\-\_\-decimal@{\-Clock\-Time\-\_\-second\-\_\-decimal}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-second\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Clock\-Time\-\_\-second\-\_\-decimal} (
+\hypertarget{clock-time_8h_a182c395d606d26c144cdb75096a0125d}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-second\-\_\-decimal@{Clock\-Time\-\_\-second\-\_\-decimal}}
+\index{Clock\-Time\-\_\-second\-\_\-decimal@{Clock\-Time\-\_\-second\-\_\-decimal}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-second\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Clock\-Time\-\_\-second\-\_\-decimal (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a182c395d606d26c144cdb75096a0125d}
 
 
-\-Get the second component of a \hyperlink{structClockTime}{\-Clock\-Time} as a decimal, based on both the second and nanosecond components. 
+Get the second component of a \hyperlink{structClockTime}{Clock\-Time} as a decimal, based on both the second and nanosecond components. 
 
-\hypertarget{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight@{\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight}}
-\index{\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight@{\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-Time\-Delta} {\bf \-Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight} (
+\hypertarget{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight@{Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight}}
+\index{Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight@{Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Time\-Delta} Clock\-Time\-\_\-time\-\_\-since\-\_\-midnight (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{self}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{self}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}
+)}}\label{clock-time_8h_ace4db26641fe01b2edd311b09589ebbb}
 
 
-\-Get a \hyperlink{structTimeDelta}{\-Time\-Delta} with the time since midnight of a \hyperlink{structClockTime}{\-Clock\-Time}. 
+Get a \hyperlink{structTimeDelta}{Time\-Delta} with the time since midnight of a \hyperlink{structClockTime}{Clock\-Time}. 
 
-\hypertarget{clock-time_8h_a265e7bf3c63b2986d13dcdc8f43883d4}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-add\-\_\-\-Time\-Delta@{\-Clock\-Time\-\_\-add\-\_\-\-Time\-Delta}}
-\index{\-Clock\-Time\-\_\-add\-\_\-\-Time\-Delta@{\-Clock\-Time\-\_\-add\-\_\-\-Time\-Delta}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-add\-\_\-\-Time\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Clock\-Time\-\_\-add\-\_\-\-Time\-Delta} (
+\hypertarget{clock-time_8h_a265e7bf3c63b2986d13dcdc8f43883d4}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-add\-\_\-\-Time\-Delta@{Clock\-Time\-\_\-add\-\_\-\-Time\-Delta}}
+\index{Clock\-Time\-\_\-add\-\_\-\-Time\-Delta@{Clock\-Time\-\_\-add\-\_\-\-Time\-Delta}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-add\-\_\-\-Time\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-add\-\_\-\-Time\-Delta (
 \begin{DoxyParamCaption}
-\item[{struct {\bf \-Clock\-Time} $\ast$const}]{self, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{delta}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{self, }
+\item[{const struct {\bf Time\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a265e7bf3c63b2986d13dcdc8f43883d4}
 
 
-\-Add a \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structClockTime}{\-Clock\-Time}. 
+Add a \hyperlink{structTimeDelta}{Time\-Delta} to a \hyperlink{structClockTime}{Clock\-Time}. 
 
-\-If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{\-Clock\-Time} will wrap around. \hypertarget{clock-time_8h_a9594699dbdbcd56c79928da5e969ba42}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta@{\-Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta}}
-\index{\-Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta@{\-Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta} (
+If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{Clock\-Time} will wrap around. \hypertarget{clock-time_8h_a9594699dbdbcd56c79928da5e969ba42}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta@{Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta}}
+\index{Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta@{Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta (
 \begin{DoxyParamCaption}
-\item[{struct {\bf \-Clock\-Time} $\ast$const}]{self, }
-\item[{const struct {\bf \-Time\-Delta} $\ast$const}]{delta}
+\item[{struct {\bf Clock\-Time} $\ast$const}]{self, }
+\item[{const struct {\bf Time\-Delta} $\ast$const}]{delta}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a9594699dbdbcd56c79928da5e969ba42}
 
 
-\-Subtract a \hyperlink{structTimeDelta}{\-Time\-Delta} from a \hyperlink{structClockTime}{\-Clock\-Time}. 
+Subtract a \hyperlink{structTimeDelta}{Time\-Delta} from a \hyperlink{structClockTime}{Clock\-Time}. 
 
-\-If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{\-Clock\-Time} will wrap around. \hypertarget{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-compare@{\-Clock\-Time\-\_\-compare}}
-\index{\-Clock\-Time\-\_\-compare@{\-Clock\-Time\-\_\-compare}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Clock\-Time\-\_\-compare} (
+If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{Clock\-Time} will wrap around. \hypertarget{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-compare@{Clock\-Time\-\_\-compare}}
+\index{Clock\-Time\-\_\-compare@{Clock\-Time\-\_\-compare}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int Clock\-Time\-\_\-compare (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{lhs, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{rhs}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{lhs, }
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}
 
 
-\-Compare two \hyperlink{structClockTime}{\-Clock\-Time} instances. 
+Compare two \hyperlink{structClockTime}{Clock\-Time} instances. 
 
-\-If lhs $<$ rhs, then a negative integer will be returned. \-If lhs == rhs, then 0 will be returned. \-If lhs $>$ rhs, then a positive integer will be returned. \hypertarget{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-equal@{\-Clock\-Time\-\_\-equal}}
-\index{\-Clock\-Time\-\_\-equal@{\-Clock\-Time\-\_\-equal}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}present\-\_\-bool {\bf \-Clock\-Time\-\_\-equal} (
+If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. \hypertarget{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-equal@{Clock\-Time\-\_\-equal}}
+\index{Clock\-Time\-\_\-equal@{Clock\-Time\-\_\-equal}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Clock\-Time\-\_\-equal (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{lhs, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{rhs}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{lhs, }
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}
 
 
-\-Determine whether two \hyperlink{structClockTime}{\-Clock\-Time} instances are equal (lhs == rhs). 
+Determine whether two \hyperlink{structClockTime}{Clock\-Time} instances are equal (lhs == rhs). 
 
-\hypertarget{clock-time_8h_ad0b394066f11e1f695bd10c2aad04ea0}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-less\-\_\-than@{\-Clock\-Time\-\_\-less\-\_\-than}}
-\index{\-Clock\-Time\-\_\-less\-\_\-than@{\-Clock\-Time\-\_\-less\-\_\-than}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-less\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}present\-\_\-bool {\bf \-Clock\-Time\-\_\-less\-\_\-than} (
+\hypertarget{clock-time_8h_ad0b394066f11e1f695bd10c2aad04ea0}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-less\-\_\-than@{Clock\-Time\-\_\-less\-\_\-than}}
+\index{Clock\-Time\-\_\-less\-\_\-than@{Clock\-Time\-\_\-less\-\_\-than}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-less\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Clock\-Time\-\_\-less\-\_\-than (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{lhs, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{rhs}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{lhs, }
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_ad0b394066f11e1f695bd10c2aad04ea0}
 
 
-\-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is earlier than another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $<$ rhs). 
+Determine whether a \hyperlink{structClockTime}{Clock\-Time} is earlier than another \hyperlink{structClockTime}{Clock\-Time} (lhs $<$ rhs). 
 
-\hypertarget{clock-time_8h_a8725113f40fe7aae309480cc0b666c16}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
-\index{\-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{\-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}present\-\_\-bool {\bf \-Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal} (
+\hypertarget{clock-time_8h_a8725113f40fe7aae309480cc0b666c16}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}}
+\index{Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal@{Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Clock\-Time\-\_\-less\-\_\-than\-\_\-or\-\_\-equal (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{lhs, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{rhs}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{lhs, }
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_a8725113f40fe7aae309480cc0b666c16}
 
 
-\-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is earlier than or or the same as another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $<$= rhs). 
+Determine whether a \hyperlink{structClockTime}{Clock\-Time} is earlier than or or the same as another \hyperlink{structClockTime}{Clock\-Time} (lhs $<$= rhs). 
 
-\hypertarget{clock-time_8h_ae2c5d81af2ab38abf4248271cb45be33}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-greater\-\_\-than@{\-Clock\-Time\-\_\-greater\-\_\-than}}
-\index{\-Clock\-Time\-\_\-greater\-\_\-than@{\-Clock\-Time\-\_\-greater\-\_\-than}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}present\-\_\-bool {\bf \-Clock\-Time\-\_\-greater\-\_\-than} (
+\hypertarget{clock-time_8h_ae2c5d81af2ab38abf4248271cb45be33}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-greater\-\_\-than@{Clock\-Time\-\_\-greater\-\_\-than}}
+\index{Clock\-Time\-\_\-greater\-\_\-than@{Clock\-Time\-\_\-greater\-\_\-than}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-greater\-\_\-than}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Clock\-Time\-\_\-greater\-\_\-than (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{lhs, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{rhs}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{lhs, }
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_ae2c5d81af2ab38abf4248271cb45be33}
 
 
-\-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is later than another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $>$ rhs). 
+Determine whether a \hyperlink{structClockTime}{Clock\-Time} is later than another \hyperlink{structClockTime}{Clock\-Time} (lhs $>$ rhs). 
 
-\hypertarget{clock-time_8h_af8b0d5b33438ceddeae53b1d79f132b8}{\index{clock-\/time.\-h@{clock-\/time.\-h}!\-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
-\index{\-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{\-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{\-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}present\-\_\-bool {\bf \-Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal} (
+\hypertarget{clock-time_8h_af8b0d5b33438ceddeae53b1d79f132b8}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}}
+\index{Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal@{Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}!clock-time.h@{clock-\/time.\-h}}
+\subsubsection[{Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Clock\-Time\-\_\-greater\-\_\-than\-\_\-or\-\_\-equal (
 \begin{DoxyParamCaption}
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{lhs, }
-\item[{const struct {\bf \-Clock\-Time} $\ast$const}]{rhs}
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{lhs, }
+\item[{const struct {\bf Clock\-Time} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{clock-time_8h_af8b0d5b33438ceddeae53b1d79f132b8}
 
 
-\-Determine whether a \hyperlink{structClockTime}{\-Clock\-Time} is later than or the same as another \hyperlink{structClockTime}{\-Clock\-Time} (lhs $>$= rhs). 
+Determine whether a \hyperlink{structClockTime}{Clock\-Time} is later than or the same as another \hyperlink{structClockTime}{Clock\-Time} (lhs $>$= rhs). 
 

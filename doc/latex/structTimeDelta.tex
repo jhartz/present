@@ -1,620 +1,763 @@
-\hypertarget{structTimeDelta}{\section{\-Time\-Delta \-Struct \-Reference}
-\label{structTimeDelta}\index{\-Time\-Delta@{\-Time\-Delta}}
+\hypertarget{structTimeDelta}{\section{Time\-Delta Struct Reference}
+\label{structTimeDelta}\index{Time\-Delta@{Time\-Delta}}
 }
 
 
-\-Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.  
+Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks.  
 
 
-\subsection*{\-Public \-Member \-Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int\-\_\-delta \hyperlink{structTimeDelta_a27608357ea9addd1d0da20918f91d500}{nanoseconds} () const 
-\item 
-int\-\_\-delta \hyperlink{structTimeDelta_aa23b22a3b2a0f3f559e9dc343588b546}{microseconds} () const 
-\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a27608357ea9addd1d0da20918f91d500}{nanoseconds} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of nanoseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_aa23b22a3b2a0f3f559e9dc343588b546}{microseconds} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of microseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{structTimeDelta_a44f7ddea28b3ca359d4cc3b1907fdf00}{microseconds\-\_\-decimal} () const 
-\item 
-int\-\_\-delta \hyperlink{structTimeDelta_a185b2278844ed43b2f5e1e8d16b11cb2}{milliseconds} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of microseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a185b2278844ed43b2f5e1e8d16b11cb2}{milliseconds} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of milliseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{structTimeDelta_a60a0277bc5fed5605850e4de83d4e50d}{milliseconds\-\_\-decimal} () const 
-\item 
-int\-\_\-delta \hyperlink{structTimeDelta_aa1fe6d8a690ab04b561400c09db673ef}{seconds} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of milliseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_aa1fe6d8a690ab04b561400c09db673ef}{seconds} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of seconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{structTimeDelta_a19679d7e3057197bc7844b27f0b20cfb}{seconds\-\_\-decimal} () const 
-\item 
-int\-\_\-delta \hyperlink{structTimeDelta_a2856a4e761fc83822cc6987655035e76}{minutes} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of seconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a2856a4e761fc83822cc6987655035e76}{minutes} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of minutes represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{structTimeDelta_adcf5fed9ca5f425246658f252082806f}{minutes\-\_\-decimal} () const 
-\item 
-int\-\_\-delta \hyperlink{structTimeDelta_a5135596cbf7f7ef40001e25c5aa880b3}{hours} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of minutes represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a5135596cbf7f7ef40001e25c5aa880b3}{hours} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of hours represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{structTimeDelta_aaae58342e9d06c7c78e9b5dea5cafe02}{hours\-\_\-decimal} () const 
-\item 
-int\-\_\-delta \hyperlink{structTimeDelta_abad8a94a6c022af1a1871e452eca47ea}{days} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of hours represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_abad8a94a6c022af1a1871e452eca47ea}{days} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of days represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{structTimeDelta_aa73d3724b83ed4badb44b714d86124a2}{days\-\_\-decimal} () const 
-\item 
-int\-\_\-delta \hyperlink{structTimeDelta_a4e583a79abea664691df4680f4fd467d}{weeks} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of days represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a4e583a79abea664691df4680f4fd467d}{weeks} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of weeks represented by a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
 double \hyperlink{structTimeDelta_a11ca76e0cb990c9011a0ed91cda9ff8e}{weeks\-\_\-decimal} () const 
-\item 
-\hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structTimeDelta_a9ec83cf81fc5e809bfdad62b084c9456}{to\-\_\-\-Day\-Delta\-\_\-truncated} () const 
-\item 
-\hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structTimeDelta_ad4f0f7a7eb10b5c59e54faff404453e4}{to\-\_\-\-Day\-Delta\-\_\-rounded} () const 
-\item 
-\hyperlink{structDayDelta}{\-Day\-Delta} \hyperlink{structTimeDelta_a7febe32ac5264cc90c672bd65e316187}{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of weeks represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. \end{DoxyCompactList}\item 
+\hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structTimeDelta_a9ec83cf81fc5e809bfdad62b084c9456}{to\-\_\-\-Day\-Delta\-\_\-truncated} () const 
+\begin{DoxyCompactList}\small\item\em Convert a \hyperlink{structTimeDelta}{Time\-Delta} into a \hyperlink{structDayDelta}{Day\-Delta}, rounding towards zero if the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of days. \end{DoxyCompactList}\item 
+\hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structTimeDelta_ad4f0f7a7eb10b5c59e54faff404453e4}{to\-\_\-\-Day\-Delta\-\_\-rounded} () const 
+\begin{DoxyCompactList}\small\item\em Convert a \hyperlink{structTimeDelta}{Time\-Delta} into a \hyperlink{structDayDelta}{Day\-Delta}, rounding to the nearest day if the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of days. \end{DoxyCompactList}\item 
+\hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structTimeDelta_a7febe32ac5264cc90c672bd65e316187}{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil} () const 
+\begin{DoxyCompactList}\small\item\em Convert a \hyperlink{structTimeDelta}{Time\-Delta} into a \hyperlink{structDayDelta}{Day\-Delta}, rounding away from zero if the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of days. \end{DoxyCompactList}\item 
 bool \hyperlink{structTimeDelta_acc2faf0e9a1563c84fb68cad42521c54}{is\-\_\-negative} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is negative. \end{DoxyCompactList}\item 
 void \hyperlink{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}{negate} ()
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}{operator-\/} () const 
-\begin{DoxyCompactList}\small\item\em \-Return the negated version of this \hyperlink{structTimeDelta}{\-Time\-Delta}. \end{DoxyCompactList}\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_aa1417029a51a1e2e7cf20445ad6cfa01}{operator$\ast$=} (const int \&scale\-\_\-factor)
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_a8301b98264ca9539a160a756e4014559}{operator$\ast$=} (const double \&scale\-\_\-factor)
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_ac3180211824572ea2f198ca1ad6887c9}{operator/=} (const int \&scale\-\_\-factor)
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_ae514c2f5fa4266b53bb0220b89e50e54}{operator/=} (const double \&scale\-\_\-factor)
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_ae8d415b1d359e1f6c6a68ee3c44ea21e}{operator+=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&other)
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{operator+=} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&other)
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_adcacf2fa162c98c9a8c7278f0e32ce56}{operator-\/=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&other)
-\item 
-\hyperlink{structTimeDelta}{\-Time\-Delta} \& \hyperlink{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{operator-\/=} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&other)
-\end{DoxyCompactItemize}
-\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactList}\small\item\em Negate a \hyperlink{structTimeDelta}{Time\-Delta}, making it negative if it was positive or positive if it was negative. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}{operator-\/} () const 
+\begin{DoxyCompactList}\small\item\em Return the negated version of this \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_aa1417029a51a1e2e7cf20445ad6cfa01}{operator$\ast$=} (const int \&scale\-\_\-factor)
+\begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structTimeDelta}{Time\-Delta} by multiplying it by an integer scale factor. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_a8301b98264ca9539a160a756e4014559}{operator$\ast$=} (const double \&scale\-\_\-factor)
+\begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structTimeDelta}{Time\-Delta} by multiplying it by a floating point scale factor. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_ac3180211824572ea2f198ca1ad6887c9}{operator/=} (const int \&scale\-\_\-factor)
+\begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structTimeDelta}{Time\-Delta} by dividing it by an integer scale factor. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_ae514c2f5fa4266b53bb0220b89e50e54}{operator/=} (const double \&scale\-\_\-factor)
+\begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structTimeDelta}{Time\-Delta} by dividing it by a floating point scale factor. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_ae8d415b1d359e1f6c6a68ee3c44ea21e}{operator+=} (const \hyperlink{structTimeDelta}{Time\-Delta} \&other)
+\begin{DoxyCompactList}\small\item\em Add another \hyperlink{structTimeDelta}{Time\-Delta} to a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{operator+=} (const \hyperlink{structDayDelta}{Day\-Delta} \&other)
+\begin{DoxyCompactList}\small\item\em Add a \hyperlink{structDayDelta}{Day\-Delta} to a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_adcacf2fa162c98c9a8c7278f0e32ce56}{operator-\/=} (const \hyperlink{structTimeDelta}{Time\-Delta} \&other)
+\begin{DoxyCompactList}\small\item\em Subtract another \hyperlink{structTimeDelta}{Time\-Delta} from a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
+\hyperlink{structTimeDelta}{Time\-Delta} \& \hyperlink{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{operator-\/=} (const \hyperlink{structDayDelta}{Day\-Delta} \&other)
+\begin{DoxyCompactList}\small\item\em Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}{from\-\_\-nanoseconds} (int\-\_\-delta \hyperlink{structTimeDelta_a27608357ea9addd1d0da20918f91d500}{nanoseconds})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}{from\-\_\-microseconds} (int\-\_\-delta \hyperlink{structTimeDelta_aa23b22a3b2a0f3f559e9dc343588b546}{microseconds})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a01e0919f444379030aa37559fa13542c}{from\-\_\-milliseconds} (int\-\_\-delta \hyperlink{structTimeDelta_a185b2278844ed43b2f5e1e8d16b11cb2}{milliseconds})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_aad4311d8580ade36d8c567576630c967}{from\-\_\-seconds} (int\-\_\-delta \hyperlink{structTimeDelta_aa1fe6d8a690ab04b561400c09db673ef}{seconds})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}{from\-\_\-minutes} (int\-\_\-delta \hyperlink{structTimeDelta_a2856a4e761fc83822cc6987655035e76}{minutes})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}{from\-\_\-hours} (int\-\_\-delta \hyperlink{structTimeDelta_a5135596cbf7f7ef40001e25c5aa880b3}{hours})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}{from\-\_\-days} (int\-\_\-delta \hyperlink{structTimeDelta_abad8a94a6c022af1a1871e452eca47ea}{days})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}{from\-\_\-weeks} (int\-\_\-delta \hyperlink{structTimeDelta_a4e583a79abea664691df4680f4fd467d}{weeks})
-\item 
-static \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}{zero} ()
-\item 
-static int \hyperlink{structTimeDelta_a1bee789870de5a374ee472ffa4bff172}{compare} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
-\end{DoxyCompactItemize}
-\subsection*{\-Public \-Attributes}
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}{from\-\_\-nanoseconds} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a27608357ea9addd1d0da20918f91d500}{nanoseconds})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of nanoseconds. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}{from\-\_\-microseconds} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_aa23b22a3b2a0f3f559e9dc343588b546}{microseconds})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of microseconds. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a01e0919f444379030aa37559fa13542c}{from\-\_\-milliseconds} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a185b2278844ed43b2f5e1e8d16b11cb2}{milliseconds})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of milliseconds. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_aad4311d8580ade36d8c567576630c967}{from\-\_\-seconds} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_aa1fe6d8a690ab04b561400c09db673ef}{seconds})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of seconds. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}{from\-\_\-minutes} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a2856a4e761fc83822cc6987655035e76}{minutes})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of minutes. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}{from\-\_\-hours} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a5135596cbf7f7ef40001e25c5aa880b3}{hours})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of hours. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}{from\-\_\-days} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_abad8a94a6c022af1a1871e452eca47ea}{days})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of days. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}{from\-\_\-weeks} (\hyperlink{types_8h_a8a67cf99971c5cfeeaa2380ba84a4c92}{int\-\_\-delta} \hyperlink{structTimeDelta_a4e583a79abea664691df4680f4fd467d}{weeks})
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of weeks. \end{DoxyCompactList}\item 
+static \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}{zero} ()
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimeDelta}{Time\-Delta} initialized to zero time. \end{DoxyCompactList}\item 
+static int \hyperlink{structTimeDelta_a1bee789870de5a374ee472ffa4bff172}{compare} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structTimeDelta}{Time\-Delta} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{time-delta_8h_a6090105e9137c36754994cda35937b59}{\-Present\-Time\-Delta\-Error} \hyperlink{structTimeDelta_a212d89d50dc636a4e12ceac5fd9f0bfd}{error}
-\item 
-struct \-Present\-Time\-Delta\-Data \hyperlink{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}{data\-\_\-}
+struct Present\-Time\-Delta\-Data \hyperlink{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}{data\-\_\-}
 \end{DoxyCompactItemize}
-\subsection*{\-Friends}
+\subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_ab7a91eba5b4f059a62b8514db14fc53b}{operator$\ast$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&delta, const int \&scale\-\_\-factor)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_ab7a91eba5b4f059a62b8514db14fc53b}{operator$\ast$} (const \hyperlink{structTimeDelta}{Time\-Delta} \&delta, const int \&scale\-\_\-factor)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_adab5720acc96114e1dc60fee9e515cb8}{operator$\ast$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&delta, const double \&scale\-\_\-factor)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_adab5720acc96114e1dc60fee9e515cb8}{operator$\ast$} (const \hyperlink{structTimeDelta}{Time\-Delta} \&delta, const double \&scale\-\_\-factor)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_ad9091904936708075238c1211784ac72}{operator/} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&delta, const int \&scale\-\_\-factor)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_ad9091904936708075238c1211784ac72}{operator/} (const \hyperlink{structTimeDelta}{Time\-Delta} \&delta, const int \&scale\-\_\-factor)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_aa3ef692470498914c3a3da20f5689333}{operator/} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&delta, const double \&scale\-\_\-factor)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_aa3ef692470498914c3a3da20f5689333}{operator/} (const \hyperlink{structTimeDelta}{Time\-Delta} \&delta, const double \&scale\-\_\-factor)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_ab9dcf443fb6dde4d15657f270e5f1111}{operator+} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_ab9dcf443fb6dde4d15657f270e5f1111}{operator+} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a8f6bef028089b857d7d4a1e14ab81d9a}{operator+} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structDayDelta}{\-Day\-Delta} \&rhs)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a8f6bef028089b857d7d4a1e14ab81d9a}{operator+} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_adfb48eb9c656f4705fa593c8b58bc80f}{operator+} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_adfb48eb9c656f4705fa593c8b58bc80f}{operator+} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_a0298dd60abe0bb412961af7325925999}{operator-\/} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_a0298dd60abe0bb412961af7325925999}{operator-\/} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_ab4c141e3692561a153127782bda9a9f8}{operator-\/} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structDayDelta}{\-Day\-Delta} \&rhs)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_ab4c141e3692561a153127782bda9a9f8}{operator-\/} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
 \item 
-const \hyperlink{structTimeDelta}{\-Time\-Delta} \hyperlink{structTimeDelta_afa45b09b5e63a55e656879efe36665d8}{operator-\/} (const \hyperlink{structDayDelta}{\-Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
+const \hyperlink{structTimeDelta}{Time\-Delta} \hyperlink{structTimeDelta_afa45b09b5e63a55e656879efe36665d8}{operator-\/} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
 \item 
-bool \hyperlink{structTimeDelta_a9a4d0c810cfb1ede0c5abd2058ffa880}{operator==} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
+bool \hyperlink{structTimeDelta_a9a4d0c810cfb1ede0c5abd2058ffa880}{operator==} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether two \hyperlink{structTimeDelta}{Time\-Delta} instances are equal (lhs == rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structTimeDelta_a34ecf194f14217e5a53721b47b55afea}{operator!=} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
 \item 
-bool \hyperlink{structTimeDelta_a34ecf194f14217e5a53721b47b55afea}{operator!=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
-\item 
-bool \hyperlink{structTimeDelta_a46cbd1394d5b9a671a2663d1ec292133}{operator$<$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
-\item 
-bool \hyperlink{structTimeDelta_af313f41f00c31292ebf02d238270f925}{operator$<$=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
-\item 
-bool \hyperlink{structTimeDelta_a321108cfb9e3902874cc743d899c4076}{operator$>$} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
-\item 
-bool \hyperlink{structTimeDelta_a044ffed3fee34cab3b4abaf4869c5c0c}{operator$>$=} (const \hyperlink{structTimeDelta}{\-Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{\-Time\-Delta} \&rhs)
-\end{DoxyCompactItemize}
+bool \hyperlink{structTimeDelta_a46cbd1394d5b9a671a2663d1ec292133}{operator$<$} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is less than another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structTimeDelta_af313f41f00c31292ebf02d238270f925}{operator$<$=} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is less than or equal to another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$= rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structTimeDelta_a321108cfb9e3902874cc743d899c4076}{operator$>$} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is greater than another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structTimeDelta_a044ffed3fee34cab3b4abaf4869c5c0c}{operator$>$=} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is greater than or equal to another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$= rhs). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{\-Detailed \-Description}
-\-Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. 
+\subsection{Detailed Description}
+Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. 
 
-\subsection{\-Member \-Function \-Documentation}
-\hypertarget{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-nanoseconds@{from\-\_\-nanoseconds}}
-\index{from\-\_\-nanoseconds@{from\-\_\-nanoseconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-nanoseconds} (
+\subsection{Member Function Documentation}
+\hypertarget{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-nanoseconds@{from\-\_\-nanoseconds}}
+\index{from\-\_\-nanoseconds@{from\-\_\-nanoseconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-nanoseconds (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{nanoseconds}
+\item[{{\bf int\-\_\-delta}}]{nanoseconds}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of nanoseconds.  \hypertarget{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-microseconds@{from\-\_\-microseconds}}
-\index{from\-\_\-microseconds@{from\-\_\-microseconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-microseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-microseconds} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_abc1b517c2156b2d9627fd07d42aecb2f}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of nanoseconds. 
+
+\hypertarget{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-microseconds@{from\-\_\-microseconds}}
+\index{from\-\_\-microseconds@{from\-\_\-microseconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-microseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-microseconds (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{microseconds}
+\item[{{\bf int\-\_\-delta}}]{microseconds}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of microseconds.  \hypertarget{structTimeDelta_a01e0919f444379030aa37559fa13542c}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-milliseconds@{from\-\_\-milliseconds}}
-\index{from\-\_\-milliseconds@{from\-\_\-milliseconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-milliseconds} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_a32f3fa21ba37d81507383d001f3b704b}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of microseconds. 
+
+\hypertarget{structTimeDelta_a01e0919f444379030aa37559fa13542c}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-milliseconds@{from\-\_\-milliseconds}}
+\index{from\-\_\-milliseconds@{from\-\_\-milliseconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-milliseconds (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{milliseconds}
+\item[{{\bf int\-\_\-delta}}]{milliseconds}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a01e0919f444379030aa37559fa13542c}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of milliseconds.  \hypertarget{structTimeDelta_aad4311d8580ade36d8c567576630c967}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-seconds@{from\-\_\-seconds}}
-\index{from\-\_\-seconds@{from\-\_\-seconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-seconds} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_a01e0919f444379030aa37559fa13542c}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of milliseconds. 
+
+\hypertarget{structTimeDelta_aad4311d8580ade36d8c567576630c967}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-seconds@{from\-\_\-seconds}}
+\index{from\-\_\-seconds@{from\-\_\-seconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-seconds (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{seconds}
+\item[{{\bf int\-\_\-delta}}]{seconds}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_aad4311d8580ade36d8c567576630c967}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of seconds.  \hypertarget{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-minutes@{from\-\_\-minutes}}
-\index{from\-\_\-minutes@{from\-\_\-minutes}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-minutes}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-minutes} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_aad4311d8580ade36d8c567576630c967}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of seconds. 
+
+\hypertarget{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-minutes@{from\-\_\-minutes}}
+\index{from\-\_\-minutes@{from\-\_\-minutes}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-minutes}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-minutes (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{minutes}
+\item[{{\bf int\-\_\-delta}}]{minutes}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of minutes.  \hypertarget{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-hours@{from\-\_\-hours}}
-\index{from\-\_\-hours@{from\-\_\-hours}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-hours}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-hours} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_a244bc3b143bfa760aa2b0cf350cf768c}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of minutes. 
+
+\hypertarget{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-hours@{from\-\_\-hours}}
+\index{from\-\_\-hours@{from\-\_\-hours}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-hours}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-hours (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{hours}
+\item[{{\bf int\-\_\-delta}}]{hours}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of hours.  \hypertarget{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-days@{from\-\_\-days}}
-\index{from\-\_\-days@{from\-\_\-days}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-days}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-days} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_a912f6ceafac4b9252a1a5d76033754ea}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of hours. 
+
+\hypertarget{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-days@{from\-\_\-days}}
+\index{from\-\_\-days@{from\-\_\-days}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-days}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-days (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{days}
+\item[{{\bf int\-\_\-delta}}]{days}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of days.  \hypertarget{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}{\index{\-Time\-Delta@{\-Time\-Delta}!from\-\_\-weeks@{from\-\_\-weeks}}
-\index{from\-\_\-weeks@{from\-\_\-weeks}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{from\-\_\-weeks}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::from\-\_\-weeks} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_a9bb1a85b6f27ad8488ae06e238d5808e}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of days. 
+
+\hypertarget{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}{\index{Time\-Delta@{Time\-Delta}!from\-\_\-weeks@{from\-\_\-weeks}}
+\index{from\-\_\-weeks@{from\-\_\-weeks}!TimeDelta@{Time\-Delta}}
+\subsubsection[{from\-\_\-weeks}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::from\-\_\-weeks (
 \begin{DoxyParamCaption}
-\item[{int\-\_\-delta}]{weeks}
+\item[{{\bf int\-\_\-delta}}]{weeks}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} based on a positive or negative number of weeks.  \hypertarget{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}{\index{\-Time\-Delta@{\-Time\-Delta}!zero@{zero}}
-\index{zero@{zero}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Time\-Delta} {\bf \-Time\-Delta\-::zero} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_ae0f0a41d899e62b9d17bc4542c443ec6}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} based on a positive or negative number of weeks. 
+
+\hypertarget{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}{\index{Time\-Delta@{Time\-Delta}!zero@{zero}}
+\index{zero@{zero}!TimeDelta@{Time\-Delta}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Time\-Delta} Time\-Delta\-::zero (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}
-\-Create a new \hyperlink{structTimeDelta}{\-Time\-Delta} initialized to zero time.  \hypertarget{structTimeDelta_a27608357ea9addd1d0da20918f91d500}{\index{\-Time\-Delta@{\-Time\-Delta}!nanoseconds@{nanoseconds}}
-\index{nanoseconds@{nanoseconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::nanoseconds} (
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_a2dec837a107c5e46e14b9c69557209fa}
+
+
+Create a new \hyperlink{structTimeDelta}{Time\-Delta} initialized to zero time. 
+
+\hypertarget{structTimeDelta_a27608357ea9addd1d0da20918f91d500}{\index{Time\-Delta@{Time\-Delta}!nanoseconds@{nanoseconds}}
+\index{nanoseconds@{nanoseconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::nanoseconds (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a27608357ea9addd1d0da20918f91d500}
-\-Get the number of nanoseconds represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}.  \hypertarget{structTimeDelta_aa23b22a3b2a0f3f559e9dc343588b546}{\index{\-Time\-Delta@{\-Time\-Delta}!microseconds@{microseconds}}
-\index{microseconds@{microseconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{microseconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::microseconds} (
+
+
+Get the number of nanoseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+\hypertarget{structTimeDelta_aa23b22a3b2a0f3f559e9dc343588b546}{\index{Time\-Delta@{Time\-Delta}!microseconds@{microseconds}}
+\index{microseconds@{microseconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{microseconds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::microseconds (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_aa23b22a3b2a0f3f559e9dc343588b546}
-\-Get the number of microseconds represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-If the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of microseconds, the return value will be truncated.  \hypertarget{structTimeDelta_a44f7ddea28b3ca359d4cc3b1907fdf00}{\index{\-Time\-Delta@{\-Time\-Delta}!microseconds\-\_\-decimal@{microseconds\-\_\-decimal}}
-\index{microseconds\-\_\-decimal@{microseconds\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{microseconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::microseconds\-\_\-decimal} (
+
+Get the number of microseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+If the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of microseconds, the return value will be truncated. \hypertarget{structTimeDelta_a44f7ddea28b3ca359d4cc3b1907fdf00}{\index{Time\-Delta@{Time\-Delta}!microseconds\-\_\-decimal@{microseconds\-\_\-decimal}}
+\index{microseconds\-\_\-decimal@{microseconds\-\_\-decimal}!TimeDelta@{Time\-Delta}}
+\subsubsection[{microseconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Time\-Delta\-::microseconds\-\_\-decimal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a44f7ddea28b3ca359d4cc3b1907fdf00}
-\-Get the number of microseconds represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary.  \hypertarget{structTimeDelta_a185b2278844ed43b2f5e1e8d16b11cb2}{\index{\-Time\-Delta@{\-Time\-Delta}!milliseconds@{milliseconds}}
-\index{milliseconds@{milliseconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::milliseconds} (
+
+
+Get the number of microseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{structTimeDelta_a185b2278844ed43b2f5e1e8d16b11cb2}{\index{Time\-Delta@{Time\-Delta}!milliseconds@{milliseconds}}
+\index{milliseconds@{milliseconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::milliseconds (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a185b2278844ed43b2f5e1e8d16b11cb2}
-\-Get the number of milliseconds represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-If the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of milliseconds, the return value will be truncated.  \hypertarget{structTimeDelta_a60a0277bc5fed5605850e4de83d4e50d}{\index{\-Time\-Delta@{\-Time\-Delta}!milliseconds\-\_\-decimal@{milliseconds\-\_\-decimal}}
-\index{milliseconds\-\_\-decimal@{milliseconds\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{milliseconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::milliseconds\-\_\-decimal} (
+
+Get the number of milliseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+If the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of milliseconds, the return value will be truncated. \hypertarget{structTimeDelta_a60a0277bc5fed5605850e4de83d4e50d}{\index{Time\-Delta@{Time\-Delta}!milliseconds\-\_\-decimal@{milliseconds\-\_\-decimal}}
+\index{milliseconds\-\_\-decimal@{milliseconds\-\_\-decimal}!TimeDelta@{Time\-Delta}}
+\subsubsection[{milliseconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Time\-Delta\-::milliseconds\-\_\-decimal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a60a0277bc5fed5605850e4de83d4e50d}
-\-Get the number of milliseconds represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary.  \hypertarget{structTimeDelta_aa1fe6d8a690ab04b561400c09db673ef}{\index{\-Time\-Delta@{\-Time\-Delta}!seconds@{seconds}}
-\index{seconds@{seconds}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{seconds}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::seconds} (
+
+
+Get the number of milliseconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{structTimeDelta_aa1fe6d8a690ab04b561400c09db673ef}{\index{Time\-Delta@{Time\-Delta}!seconds@{seconds}}
+\index{seconds@{seconds}!TimeDelta@{Time\-Delta}}
+\subsubsection[{seconds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::seconds (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_aa1fe6d8a690ab04b561400c09db673ef}
-\-Get the number of seconds represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-If the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of seconds, the returned value will be truncated.  \hypertarget{structTimeDelta_a19679d7e3057197bc7844b27f0b20cfb}{\index{\-Time\-Delta@{\-Time\-Delta}!seconds\-\_\-decimal@{seconds\-\_\-decimal}}
-\index{seconds\-\_\-decimal@{seconds\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{seconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::seconds\-\_\-decimal} (
+
+Get the number of seconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+If the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of seconds, the returned value will be truncated. \hypertarget{structTimeDelta_a19679d7e3057197bc7844b27f0b20cfb}{\index{Time\-Delta@{Time\-Delta}!seconds\-\_\-decimal@{seconds\-\_\-decimal}}
+\index{seconds\-\_\-decimal@{seconds\-\_\-decimal}!TimeDelta@{Time\-Delta}}
+\subsubsection[{seconds\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Time\-Delta\-::seconds\-\_\-decimal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a19679d7e3057197bc7844b27f0b20cfb}
-\-Get the number of seconds represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary.  \hypertarget{structTimeDelta_a2856a4e761fc83822cc6987655035e76}{\index{\-Time\-Delta@{\-Time\-Delta}!minutes@{minutes}}
-\index{minutes@{minutes}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{minutes}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::minutes} (
+
+
+Get the number of seconds represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{structTimeDelta_a2856a4e761fc83822cc6987655035e76}{\index{Time\-Delta@{Time\-Delta}!minutes@{minutes}}
+\index{minutes@{minutes}!TimeDelta@{Time\-Delta}}
+\subsubsection[{minutes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::minutes (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a2856a4e761fc83822cc6987655035e76}
-\-Get the number of minutes represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-If the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of minutes, the returned value will be truncated.  \hypertarget{structTimeDelta_adcf5fed9ca5f425246658f252082806f}{\index{\-Time\-Delta@{\-Time\-Delta}!minutes\-\_\-decimal@{minutes\-\_\-decimal}}
-\index{minutes\-\_\-decimal@{minutes\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{minutes\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::minutes\-\_\-decimal} (
+
+Get the number of minutes represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+If the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of minutes, the returned value will be truncated. \hypertarget{structTimeDelta_adcf5fed9ca5f425246658f252082806f}{\index{Time\-Delta@{Time\-Delta}!minutes\-\_\-decimal@{minutes\-\_\-decimal}}
+\index{minutes\-\_\-decimal@{minutes\-\_\-decimal}!TimeDelta@{Time\-Delta}}
+\subsubsection[{minutes\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Time\-Delta\-::minutes\-\_\-decimal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_adcf5fed9ca5f425246658f252082806f}
-\-Get the number of minutes represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary.  \hypertarget{structTimeDelta_a5135596cbf7f7ef40001e25c5aa880b3}{\index{\-Time\-Delta@{\-Time\-Delta}!hours@{hours}}
-\index{hours@{hours}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{hours}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::hours} (
+
+
+Get the number of minutes represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{structTimeDelta_a5135596cbf7f7ef40001e25c5aa880b3}{\index{Time\-Delta@{Time\-Delta}!hours@{hours}}
+\index{hours@{hours}!TimeDelta@{Time\-Delta}}
+\subsubsection[{hours}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::hours (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a5135596cbf7f7ef40001e25c5aa880b3}
-\-Get the number of hours represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-If the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of hours, the returned value will be truncated.  \hypertarget{structTimeDelta_aaae58342e9d06c7c78e9b5dea5cafe02}{\index{\-Time\-Delta@{\-Time\-Delta}!hours\-\_\-decimal@{hours\-\_\-decimal}}
-\index{hours\-\_\-decimal@{hours\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{hours\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::hours\-\_\-decimal} (
+
+Get the number of hours represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+If the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of hours, the returned value will be truncated. \hypertarget{structTimeDelta_aaae58342e9d06c7c78e9b5dea5cafe02}{\index{Time\-Delta@{Time\-Delta}!hours\-\_\-decimal@{hours\-\_\-decimal}}
+\index{hours\-\_\-decimal@{hours\-\_\-decimal}!TimeDelta@{Time\-Delta}}
+\subsubsection[{hours\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Time\-Delta\-::hours\-\_\-decimal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_aaae58342e9d06c7c78e9b5dea5cafe02}
-\-Get the number of hours represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary.  \hypertarget{structTimeDelta_abad8a94a6c022af1a1871e452eca47ea}{\index{\-Time\-Delta@{\-Time\-Delta}!days@{days}}
-\index{days@{days}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{days}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::days} (
+
+
+Get the number of hours represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{structTimeDelta_abad8a94a6c022af1a1871e452eca47ea}{\index{Time\-Delta@{Time\-Delta}!days@{days}}
+\index{days@{days}!TimeDelta@{Time\-Delta}}
+\subsubsection[{days}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::days (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_abad8a94a6c022af1a1871e452eca47ea}
-\-Get the number of days represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-If the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days, the returned value will be truncated.  \hypertarget{structTimeDelta_aa73d3724b83ed4badb44b714d86124a2}{\index{\-Time\-Delta@{\-Time\-Delta}!days\-\_\-decimal@{days\-\_\-decimal}}
-\index{days\-\_\-decimal@{days\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{days\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::days\-\_\-decimal} (
+
+Get the number of days represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+If the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of days, the returned value will be truncated. \hypertarget{structTimeDelta_aa73d3724b83ed4badb44b714d86124a2}{\index{Time\-Delta@{Time\-Delta}!days\-\_\-decimal@{days\-\_\-decimal}}
+\index{days\-\_\-decimal@{days\-\_\-decimal}!TimeDelta@{Time\-Delta}}
+\subsubsection[{days\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Time\-Delta\-::days\-\_\-decimal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_aa73d3724b83ed4badb44b714d86124a2}
-\-Get the number of days represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary.  \hypertarget{structTimeDelta_a4e583a79abea664691df4680f4fd467d}{\index{\-Time\-Delta@{\-Time\-Delta}!weeks@{weeks}}
-\index{weeks@{weeks}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{weeks}]{\setlength{\rightskip}{0pt plus 5cm}int\-\_\-delta {\bf \-Time\-Delta\-::weeks} (
+
+
+Get the number of days represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{structTimeDelta_a4e583a79abea664691df4680f4fd467d}{\index{Time\-Delta@{Time\-Delta}!weeks@{weeks}}
+\index{weeks@{weeks}!TimeDelta@{Time\-Delta}}
+\subsubsection[{weeks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int\-\_\-delta} Time\-Delta\-::weeks (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a4e583a79abea664691df4680f4fd467d}
-\-Get the number of weeks represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-If the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of weeks, the returned value will be truncated.  \hypertarget{structTimeDelta_a11ca76e0cb990c9011a0ed91cda9ff8e}{\index{\-Time\-Delta@{\-Time\-Delta}!weeks\-\_\-decimal@{weeks\-\_\-decimal}}
-\index{weeks\-\_\-decimal@{weeks\-\_\-decimal}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{weeks\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Delta\-::weeks\-\_\-decimal} (
+
+Get the number of weeks represented by a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+If the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of weeks, the returned value will be truncated. \hypertarget{structTimeDelta_a11ca76e0cb990c9011a0ed91cda9ff8e}{\index{Time\-Delta@{Time\-Delta}!weeks\-\_\-decimal@{weeks\-\_\-decimal}}
+\index{weeks\-\_\-decimal@{weeks\-\_\-decimal}!TimeDelta@{Time\-Delta}}
+\subsubsection[{weeks\-\_\-decimal}]{\setlength{\rightskip}{0pt plus 5cm}double Time\-Delta\-::weeks\-\_\-decimal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a11ca76e0cb990c9011a0ed91cda9ff8e}
-\-Get the number of weeks represented by a \hyperlink{structTimeDelta}{\-Time\-Delta}, with a fractional part if necessary.  \hypertarget{structTimeDelta_a9ec83cf81fc5e809bfdad62b084c9456}{\index{\-Time\-Delta@{\-Time\-Delta}!to\-\_\-\-Day\-Delta\-\_\-truncated@{to\-\_\-\-Day\-Delta\-\_\-truncated}}
-\index{to\-\_\-\-Day\-Delta\-\_\-truncated@{to\-\_\-\-Day\-Delta\-\_\-truncated}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{to\-\_\-\-Day\-Delta\-\_\-truncated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Day\-Delta} {\bf \-Time\-Delta\-::to\-\_\-\-Day\-Delta\-\_\-truncated} (
+
+
+Get the number of weeks represented by a \hyperlink{structTimeDelta}{Time\-Delta}, with a fractional part if necessary. 
+
+\hypertarget{structTimeDelta_a9ec83cf81fc5e809bfdad62b084c9456}{\index{Time\-Delta@{Time\-Delta}!to\-\_\-\-Day\-Delta\-\_\-truncated@{to\-\_\-\-Day\-Delta\-\_\-truncated}}
+\index{to\-\_\-\-Day\-Delta\-\_\-truncated@{to\-\_\-\-Day\-Delta\-\_\-truncated}!TimeDelta@{Time\-Delta}}
+\subsubsection[{to\-\_\-\-Day\-Delta\-\_\-truncated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Day\-Delta} Time\-Delta\-::to\-\_\-\-Day\-Delta\-\_\-truncated (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a9ec83cf81fc5e809bfdad62b084c9456}
-\-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding towards zero if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days.  \hypertarget{structTimeDelta_ad4f0f7a7eb10b5c59e54faff404453e4}{\index{\-Time\-Delta@{\-Time\-Delta}!to\-\_\-\-Day\-Delta\-\_\-rounded@{to\-\_\-\-Day\-Delta\-\_\-rounded}}
-\index{to\-\_\-\-Day\-Delta\-\_\-rounded@{to\-\_\-\-Day\-Delta\-\_\-rounded}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{to\-\_\-\-Day\-Delta\-\_\-rounded}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Day\-Delta} {\bf \-Time\-Delta\-::to\-\_\-\-Day\-Delta\-\_\-rounded} (
+
+
+Convert a \hyperlink{structTimeDelta}{Time\-Delta} into a \hyperlink{structDayDelta}{Day\-Delta}, rounding towards zero if the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of days. 
+
+\hypertarget{structTimeDelta_ad4f0f7a7eb10b5c59e54faff404453e4}{\index{Time\-Delta@{Time\-Delta}!to\-\_\-\-Day\-Delta\-\_\-rounded@{to\-\_\-\-Day\-Delta\-\_\-rounded}}
+\index{to\-\_\-\-Day\-Delta\-\_\-rounded@{to\-\_\-\-Day\-Delta\-\_\-rounded}!TimeDelta@{Time\-Delta}}
+\subsubsection[{to\-\_\-\-Day\-Delta\-\_\-rounded}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Day\-Delta} Time\-Delta\-::to\-\_\-\-Day\-Delta\-\_\-rounded (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_ad4f0f7a7eb10b5c59e54faff404453e4}
-\-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding to the nearest day if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days.  \hypertarget{structTimeDelta_a7febe32ac5264cc90c672bd65e316187}{\index{\-Time\-Delta@{\-Time\-Delta}!to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil@{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}}
-\index{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil@{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Day\-Delta} {\bf \-Time\-Delta\-::to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil} (
+
+
+Convert a \hyperlink{structTimeDelta}{Time\-Delta} into a \hyperlink{structDayDelta}{Day\-Delta}, rounding to the nearest day if the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of days. 
+
+\hypertarget{structTimeDelta_a7febe32ac5264cc90c672bd65e316187}{\index{Time\-Delta@{Time\-Delta}!to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil@{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}}
+\index{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil@{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}!TimeDelta@{Time\-Delta}}
+\subsubsection[{to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Day\-Delta} Time\-Delta\-::to\-\_\-\-Day\-Delta\-\_\-abs\-\_\-ceil (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a7febe32ac5264cc90c672bd65e316187}
-\-Convert a \hyperlink{structTimeDelta}{\-Time\-Delta} into a \hyperlink{structDayDelta}{\-Day\-Delta}, rounding away from zero if the \hyperlink{structTimeDelta}{\-Time\-Delta} does not represent an exact number of days.  \hypertarget{structTimeDelta_acc2faf0e9a1563c84fb68cad42521c54}{\index{\-Time\-Delta@{\-Time\-Delta}!is\-\_\-negative@{is\-\_\-negative}}
-\index{is\-\_\-negative@{is\-\_\-negative}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{is\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Time\-Delta\-::is\-\_\-negative} (
+
+
+Convert a \hyperlink{structTimeDelta}{Time\-Delta} into a \hyperlink{structDayDelta}{Day\-Delta}, rounding away from zero if the \hyperlink{structTimeDelta}{Time\-Delta} does not represent an exact number of days. 
+
+\hypertarget{structTimeDelta_acc2faf0e9a1563c84fb68cad42521c54}{\index{Time\-Delta@{Time\-Delta}!is\-\_\-negative@{is\-\_\-negative}}
+\index{is\-\_\-negative@{is\-\_\-negative}!TimeDelta@{Time\-Delta}}
+\subsubsection[{is\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}bool Time\-Delta\-::is\-\_\-negative (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_acc2faf0e9a1563c84fb68cad42521c54}
-\-Determine whether a \hyperlink{structTimeDelta}{\-Time\-Delta} is negative.  \hypertarget{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}{\index{\-Time\-Delta@{\-Time\-Delta}!negate@{negate}}
-\index{negate@{negate}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{negate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Delta\-::negate} (
+
+
+Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is negative. 
+
+\hypertarget{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}{\index{Time\-Delta@{Time\-Delta}!negate@{negate}}
+\index{negate@{negate}!TimeDelta@{Time\-Delta}}
+\subsubsection[{negate}]{\setlength{\rightskip}{0pt plus 5cm}void Time\-Delta\-::negate (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}
-\-Negate a \hyperlink{structTimeDelta}{\-Time\-Delta}, making it negative if it was positive or positive if it was negative.  \hypertarget{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta} \-Time\-Delta\-::operator-\/ (
+
+
+Negate a \hyperlink{structTimeDelta}{Time\-Delta}, making it negative if it was positive or positive if it was negative. 
+
+\hypertarget{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}{\index{Time\-Delta@{Time\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta} Time\-Delta\-::operator-\/ (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{structTimeDelta_a660df6f5ba7291bef24d5a05639563b6}
 
 
-\-Return the negated version of this \hyperlink{structTimeDelta}{\-Time\-Delta}. 
+Return the negated version of this \hyperlink{structTimeDelta}{Time\-Delta}. 
 
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}{\-Time\-Delta\-::negate} 
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_a858c8d0eae6070a24ba7fd3e18a3cf3f}{Time\-Delta\-::negate} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_aa1417029a51a1e2e7cf20445ad6cfa01}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$=@{operator$\ast$=}}
-\index{operator$\ast$=@{operator$\ast$=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator$\ast$= (
+\hypertarget{structTimeDelta_aa1417029a51a1e2e7cf20445ad6cfa01}{\index{Time\-Delta@{Time\-Delta}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator$\ast$= (
 \begin{DoxyParamCaption}
 \item[{const int \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_aa1417029a51a1e2e7cf20445ad6cfa01}
-\-Scale a \hyperlink{structTimeDelta}{\-Time\-Delta} by multiplying it by an integer scale factor.  \hypertarget{structTimeDelta_a8301b98264ca9539a160a756e4014559}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$=@{operator$\ast$=}}
-\index{operator$\ast$=@{operator$\ast$=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator$\ast$= (
+
+
+Scale a \hyperlink{structTimeDelta}{Time\-Delta} by multiplying it by an integer scale factor. 
+
+\hypertarget{structTimeDelta_a8301b98264ca9539a160a756e4014559}{\index{Time\-Delta@{Time\-Delta}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator$\ast$= (
 \begin{DoxyParamCaption}
 \item[{const double \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_a8301b98264ca9539a160a756e4014559}
-\-Scale a \hyperlink{structTimeDelta}{\-Time\-Delta} by multiplying it by a floating point scale factor.  \hypertarget{structTimeDelta_ac3180211824572ea2f198ca1ad6887c9}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/=@{operator/=}}
-\index{operator/=@{operator/=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator/= (
+
+
+Scale a \hyperlink{structTimeDelta}{Time\-Delta} by multiplying it by a floating point scale factor. 
+
+\hypertarget{structTimeDelta_ac3180211824572ea2f198ca1ad6887c9}{\index{Time\-Delta@{Time\-Delta}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator/= (
 \begin{DoxyParamCaption}
 \item[{const int \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_ac3180211824572ea2f198ca1ad6887c9}
-\-Scale a \hyperlink{structTimeDelta}{\-Time\-Delta} by dividing it by an integer scale factor.  \hypertarget{structTimeDelta_ae514c2f5fa4266b53bb0220b89e50e54}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/=@{operator/=}}
-\index{operator/=@{operator/=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator/= (
+
+
+Scale a \hyperlink{structTimeDelta}{Time\-Delta} by dividing it by an integer scale factor. 
+
+\hypertarget{structTimeDelta_ae514c2f5fa4266b53bb0220b89e50e54}{\index{Time\-Delta@{Time\-Delta}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator/= (
 \begin{DoxyParamCaption}
 \item[{const double \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_ae514c2f5fa4266b53bb0220b89e50e54}
-\-Scale a \hyperlink{structTimeDelta}{\-Time\-Delta} by dividing it by a floating point scale factor.  \hypertarget{structTimeDelta_ae8d415b1d359e1f6c6a68ee3c44ea21e}{\index{\-Time\-Delta@{\-Time\-Delta}!operator+=@{operator+=}}
-\index{operator+=@{operator+=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator+= (
+
+
+Scale a \hyperlink{structTimeDelta}{Time\-Delta} by dividing it by a floating point scale factor. 
+
+\hypertarget{structTimeDelta_ae8d415b1d359e1f6c6a68ee3c44ea21e}{\index{Time\-Delta@{Time\-Delta}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator+= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{other}
+\item[{const {\bf Time\-Delta} \&}]{other}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_ae8d415b1d359e1f6c6a68ee3c44ea21e}
-\-Add another \hyperlink{structTimeDelta}{\-Time\-Delta} to a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-The second \hyperlink{structTimeDelta}{\-Time\-Delta} parameter is added to the first.  \hypertarget{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{\index{\-Time\-Delta@{\-Time\-Delta}!operator+=@{operator+=}}
-\index{operator+=@{operator+=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator+= (
+
+Add another \hyperlink{structTimeDelta}{Time\-Delta} to a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+The second \hyperlink{structTimeDelta}{Time\-Delta} parameter is added to the first. \hypertarget{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{\index{Time\-Delta@{Time\-Delta}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator+= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Day\-Delta} \&}]{other}
+\item[{const {\bf Day\-Delta} \&}]{other}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}
-\-Add a \hyperlink{structDayDelta}{\-Day\-Delta} to a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-The \hyperlink{structDayDelta}{\-Day\-Delta} parameter is added to the \hyperlink{structTimeDelta}{\-Time\-Delta}.  \hypertarget{structTimeDelta_adcacf2fa162c98c9a8c7278f0e32ce56}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/=@{operator-\/=}}
-\index{operator-\/=@{operator-\/=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator-\/= (
+
+Add a \hyperlink{structDayDelta}{Day\-Delta} to a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+The \hyperlink{structDayDelta}{Day\-Delta} parameter is added to the \hyperlink{structTimeDelta}{Time\-Delta}. \hypertarget{structTimeDelta_adcacf2fa162c98c9a8c7278f0e32ce56}{\index{Time\-Delta@{Time\-Delta}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator-\/= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{other}
+\item[{const {\bf Time\-Delta} \&}]{other}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_adcacf2fa162c98c9a8c7278f0e32ce56}
-\-Subtract another \hyperlink{structTimeDelta}{\-Time\-Delta} from a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-The second \hyperlink{structTimeDelta}{\-Time\-Delta} parameter is subtracted from the first.  \hypertarget{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/=@{operator-\/=}}
-\index{operator-\/=@{operator-\/=}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Delta}\& \-Time\-Delta\-::operator-\/= (
+
+Subtract another \hyperlink{structTimeDelta}{Time\-Delta} from a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+The second \hyperlink{structTimeDelta}{Time\-Delta} parameter is subtracted from the first. \hypertarget{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{\index{Time\-Delta@{Time\-Delta}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Delta}\& Time\-Delta\-::operator-\/= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Day\-Delta} \&}]{other}
+\item[{const {\bf Day\-Delta} \&}]{other}
 \end{DoxyParamCaption}
 )}}\label{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}
-\-Subtract a \hyperlink{structDayDelta}{\-Day\-Delta} from a \hyperlink{structTimeDelta}{\-Time\-Delta}. 
 
-\-The \hyperlink{structDayDelta}{\-Day\-Delta} parameter is subtracted from the \hyperlink{structTimeDelta}{\-Time\-Delta}.  \hypertarget{structTimeDelta_a1bee789870de5a374ee472ffa4bff172}{\index{\-Time\-Delta@{\-Time\-Delta}!compare@{compare}}
-\index{compare@{compare}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int {\bf \-Time\-Delta\-::compare} (
+
+Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+The \hyperlink{structDayDelta}{Day\-Delta} parameter is subtracted from the \hyperlink{structTimeDelta}{Time\-Delta}. \hypertarget{structTimeDelta_a1bee789870de5a374ee472ffa4bff172}{\index{Time\-Delta@{Time\-Delta}!compare@{compare}}
+\index{compare@{compare}!TimeDelta@{Time\-Delta}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int Time\-Delta\-::compare (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{structTimeDelta_a1bee789870de5a374ee472ffa4bff172}
-\-Compare two \hyperlink{structTimeDelta}{\-Time\-Delta} instances. 
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimeDelta_a1bee789870de5a374ee472ffa4bff172}
 
-\-If lhs $<$ rhs, then a negative integer will be returned. \-If lhs == rhs, then 0 will be returned. \-If lhs $>$ rhs, then a positive integer will be returned.  
 
-\subsection{\-Friends \-And \-Related \-Function \-Documentation}
-\hypertarget{structTimeDelta_ab7a91eba5b4f059a62b8514db14fc53b}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator$\ast$ (
+Compare two \hyperlink{structTimeDelta}{Time\-Delta} instances. 
+
+If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{structTimeDelta_ab7a91eba5b4f059a62b8514db14fc53b}{\index{Time\-Delta@{Time\-Delta}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator$\ast$ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{delta, }
+\item[{const {\bf Time\-Delta} \&}]{delta, }
 \item[{const int \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_ab7a91eba5b4f059a62b8514db14fc53b}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_aa1417029a51a1e2e7cf20445ad6cfa01}{\-Time\-Delta\-::operator$\ast$=(const int \& scale\-\_\-factor)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_ab7a91eba5b4f059a62b8514db14fc53b}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_aa1417029a51a1e2e7cf20445ad6cfa01}{Time\-Delta\-::operator$\ast$=(const int \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_adab5720acc96114e1dc60fee9e515cb8}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator$\ast$ (
+\hypertarget{structTimeDelta_adab5720acc96114e1dc60fee9e515cb8}{\index{Time\-Delta@{Time\-Delta}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator$\ast$ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{delta, }
+\item[{const {\bf Time\-Delta} \&}]{delta, }
 \item[{const double \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_adab5720acc96114e1dc60fee9e515cb8}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_a8301b98264ca9539a160a756e4014559}{\-Time\-Delta\-::operator$\ast$=(const double \& scale\-\_\-factor)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_adab5720acc96114e1dc60fee9e515cb8}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_a8301b98264ca9539a160a756e4014559}{Time\-Delta\-::operator$\ast$=(const double \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_ad9091904936708075238c1211784ac72}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/@{operator/}}
-\index{operator/@{operator/}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator/ (
+\hypertarget{structTimeDelta_ad9091904936708075238c1211784ac72}{\index{Time\-Delta@{Time\-Delta}!operator/@{operator/}}
+\index{operator/@{operator/}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator/ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{delta, }
+\item[{const {\bf Time\-Delta} \&}]{delta, }
 \item[{const int \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_ad9091904936708075238c1211784ac72}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_ac3180211824572ea2f198ca1ad6887c9}{\-Time\-Delta\-::operator/=(const int \& scale\-\_\-factor)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_ad9091904936708075238c1211784ac72}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_ac3180211824572ea2f198ca1ad6887c9}{Time\-Delta\-::operator/=(const int \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_aa3ef692470498914c3a3da20f5689333}{\index{\-Time\-Delta@{\-Time\-Delta}!operator/@{operator/}}
-\index{operator/@{operator/}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator/ (
+\hypertarget{structTimeDelta_aa3ef692470498914c3a3da20f5689333}{\index{Time\-Delta@{Time\-Delta}!operator/@{operator/}}
+\index{operator/@{operator/}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator/ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{delta, }
+\item[{const {\bf Time\-Delta} \&}]{delta, }
 \item[{const double \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_aa3ef692470498914c3a3da20f5689333}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_ae514c2f5fa4266b53bb0220b89e50e54}{\-Time\-Delta\-::operator/=(const double \& scale\-\_\-factor)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_aa3ef692470498914c3a3da20f5689333}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_ae514c2f5fa4266b53bb0220b89e50e54}{Time\-Delta\-::operator/=(const double \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_ab9dcf443fb6dde4d15657f270e5f1111}{\index{\-Time\-Delta@{\-Time\-Delta}!operator+@{operator+}}
-\index{operator+@{operator+}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator+ (
+\hypertarget{structTimeDelta_ab9dcf443fb6dde4d15657f270e5f1111}{\index{Time\-Delta@{Time\-Delta}!operator+@{operator+}}
+\index{operator+@{operator+}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator+ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_ab9dcf443fb6dde4d15657f270e5f1111}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_ae8d415b1d359e1f6c6a68ee3c44ea21e}{\-Time\-Delta\-::operator+=(const Time\-Delta \& other)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_ab9dcf443fb6dde4d15657f270e5f1111}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_ae8d415b1d359e1f6c6a68ee3c44ea21e}{Time\-Delta\-::operator+=(const Time\-Delta \& other)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_a8f6bef028089b857d7d4a1e14ab81d9a}{\index{\-Time\-Delta@{\-Time\-Delta}!operator+@{operator+}}
-\index{operator+@{operator+}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator+ (
+\hypertarget{structTimeDelta_a8f6bef028089b857d7d4a1e14ab81d9a}{\index{Time\-Delta@{Time\-Delta}!operator+@{operator+}}
+\index{operator+@{operator+}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator+ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Day\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Day\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a8f6bef028089b857d7d4a1e14ab81d9a}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{\-Time\-Delta\-::operator+=(const Day\-Delta \& other)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_a8f6bef028089b857d7d4a1e14ab81d9a}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{Time\-Delta\-::operator+=(const Day\-Delta \& other)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_adfb48eb9c656f4705fa593c8b58bc80f}{\index{\-Time\-Delta@{\-Time\-Delta}!operator+@{operator+}}
-\index{operator+@{operator+}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator+ (
+\hypertarget{structTimeDelta_adfb48eb9c656f4705fa593c8b58bc80f}{\index{Time\-Delta@{Time\-Delta}!operator+@{operator+}}
+\index{operator+@{operator+}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator+ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Day\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_adfb48eb9c656f4705fa593c8b58bc80f}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{\-Time\-Delta\-::operator+=(const Day\-Delta \& other)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_adfb48eb9c656f4705fa593c8b58bc80f}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_acf4db7ce2e954d9a706f3e85cd805e42}{Time\-Delta\-::operator+=(const Day\-Delta \& other)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_a0298dd60abe0bb412961af7325925999}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator-\/ (
+\hypertarget{structTimeDelta_a0298dd60abe0bb412961af7325925999}{\index{Time\-Delta@{Time\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator-\/ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a0298dd60abe0bb412961af7325925999}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_adcacf2fa162c98c9a8c7278f0e32ce56}{\-Time\-Delta\-::operator-\/=(const Time\-Delta \& other)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_a0298dd60abe0bb412961af7325925999}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_adcacf2fa162c98c9a8c7278f0e32ce56}{Time\-Delta\-::operator-\/=(const Time\-Delta \& other)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_ab4c141e3692561a153127782bda9a9f8}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator-\/ (
+\hypertarget{structTimeDelta_ab4c141e3692561a153127782bda9a9f8}{\index{Time\-Delta@{Time\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator-\/ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Day\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Day\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_ab4c141e3692561a153127782bda9a9f8}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{\-Time\-Delta\-::operator-\/=(const Day\-Delta \& other)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_ab4c141e3692561a153127782bda9a9f8}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{Time\-Delta\-::operator-\/=(const Day\-Delta \& other)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_afa45b09b5e63a55e656879efe36665d8}{\index{\-Time\-Delta@{\-Time\-Delta}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Time\-Delta} operator-\/ (
+\hypertarget{structTimeDelta_afa45b09b5e63a55e656879efe36665d8}{\index{Time\-Delta@{Time\-Delta}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!TimeDelta@{Time\-Delta}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Time\-Delta} operator-\/ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Day\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_afa45b09b5e63a55e656879efe36665d8}
-\begin{DoxySeeAlso}{\-See also}
-\hyperlink{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{\-Time\-Delta\-::operator-\/=(const Day\-Delta \& other)} 
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_afa45b09b5e63a55e656879efe36665d8}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structTimeDelta_a8a8d2796e13a24266d46c54873d57eb2}{Time\-Delta\-::operator-\/=(const Day\-Delta \& other)} 
 \end{DoxySeeAlso}
-\hypertarget{structTimeDelta_a9a4d0c810cfb1ede0c5abd2058ffa880}{\index{\-Time\-Delta@{\-Time\-Delta}!operator==@{operator==}}
-\index{operator==@{operator==}!TimeDelta@{\-Time\-Delta}}
+\hypertarget{structTimeDelta_a9a4d0c810cfb1ede0c5abd2058ffa880}{\index{Time\-Delta@{Time\-Delta}!operator==@{operator==}}
+\index{operator==@{operator==}!TimeDelta@{Time\-Delta}}
 \subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a9a4d0c810cfb1ede0c5abd2058ffa880}
-\-Determine whether two \hyperlink{structTimeDelta}{\-Time\-Delta} instances are equal (lhs == rhs).  \hypertarget{structTimeDelta_a34ecf194f14217e5a53721b47b55afea}{\index{\-Time\-Delta@{\-Time\-Delta}!operator!=@{operator!=}}
-\index{operator!=@{operator!=}!TimeDelta@{\-Time\-Delta}}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_a9a4d0c810cfb1ede0c5abd2058ffa880}
+
+
+Determine whether two \hyperlink{structTimeDelta}{Time\-Delta} instances are equal (lhs == rhs). 
+
+\hypertarget{structTimeDelta_a34ecf194f14217e5a53721b47b55afea}{\index{Time\-Delta@{Time\-Delta}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!TimeDelta@{Time\-Delta}}
 \subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a34ecf194f14217e5a53721b47b55afea}
-\hypertarget{structTimeDelta_a46cbd1394d5b9a671a2663d1ec292133}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$<$@{operator$<$}}
-\index{operator$<$@{operator$<$}!TimeDelta@{\-Time\-Delta}}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_a34ecf194f14217e5a53721b47b55afea}
+\hypertarget{structTimeDelta_a46cbd1394d5b9a671a2663d1ec292133}{\index{Time\-Delta@{Time\-Delta}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!TimeDelta@{Time\-Delta}}
 \subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a46cbd1394d5b9a671a2663d1ec292133}
-\-Determine whether a \hyperlink{structTimeDelta}{\-Time\-Delta} is less than another \hyperlink{structTimeDelta}{\-Time\-Delta} (lhs $<$ rhs).  \hypertarget{structTimeDelta_af313f41f00c31292ebf02d238270f925}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$<$=@{operator$<$=}}
-\index{operator$<$=@{operator$<$=}!TimeDelta@{\-Time\-Delta}}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_a46cbd1394d5b9a671a2663d1ec292133}
+
+
+Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is less than another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$ rhs). 
+
+\hypertarget{structTimeDelta_af313f41f00c31292ebf02d238270f925}{\index{Time\-Delta@{Time\-Delta}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!TimeDelta@{Time\-Delta}}
 \subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_af313f41f00c31292ebf02d238270f925}
-\-Determine whether a \hyperlink{structTimeDelta}{\-Time\-Delta} is less than or equal to another \hyperlink{structTimeDelta}{\-Time\-Delta} (lhs $<$= rhs).  \hypertarget{structTimeDelta_a321108cfb9e3902874cc743d899c4076}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$>$@{operator$>$}}
-\index{operator$>$@{operator$>$}!TimeDelta@{\-Time\-Delta}}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_af313f41f00c31292ebf02d238270f925}
+
+
+Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is less than or equal to another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$= rhs). 
+
+\hypertarget{structTimeDelta_a321108cfb9e3902874cc743d899c4076}{\index{Time\-Delta@{Time\-Delta}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!TimeDelta@{Time\-Delta}}
 \subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a321108cfb9e3902874cc743d899c4076}
-\-Determine whether a \hyperlink{structTimeDelta}{\-Time\-Delta} is greater than another \hyperlink{structTimeDelta}{\-Time\-Delta} (lhs $>$ rhs).  \hypertarget{structTimeDelta_a044ffed3fee34cab3b4abaf4869c5c0c}{\index{\-Time\-Delta@{\-Time\-Delta}!operator$>$=@{operator$>$=}}
-\index{operator$>$=@{operator$>$=}!TimeDelta@{\-Time\-Delta}}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_a321108cfb9e3902874cc743d899c4076}
+
+
+Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is greater than another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$ rhs). 
+
+\hypertarget{structTimeDelta_a044ffed3fee34cab3b4abaf4869c5c0c}{\index{Time\-Delta@{Time\-Delta}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!TimeDelta@{Time\-Delta}}
 \subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
 \begin{DoxyParamCaption}
-\item[{const {\bf \-Time\-Delta} \&}]{lhs, }
-\item[{const {\bf \-Time\-Delta} \&}]{rhs}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structTimeDelta_a044ffed3fee34cab3b4abaf4869c5c0c}
-\-Determine whether a \hyperlink{structTimeDelta}{\-Time\-Delta} is greater than or equal to another \hyperlink{structTimeDelta}{\-Time\-Delta} (lhs $>$= rhs).  
-
-\subsection{\-Member \-Data \-Documentation}
-\hypertarget{structTimeDelta_a212d89d50dc636a4e12ceac5fd9f0bfd}{\index{\-Time\-Delta@{\-Time\-Delta}!error@{error}}
-\index{error@{error}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Present\-Time\-Delta\-Error} {\bf \-Time\-Delta\-::error}}}\label{structTimeDelta_a212d89d50dc636a4e12ceac5fd9f0bfd}
-\hypertarget{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}{\index{\-Time\-Delta@{\-Time\-Delta}!data\-\_\-@{data\-\_\-}}
-\index{data\-\_\-@{data\-\_\-}!TimeDelta@{\-Time\-Delta}}
-\subsubsection[{data\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}struct \-Present\-Time\-Delta\-Data {\bf \-Time\-Delta\-::data\-\_\-}}}\label{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structTimeDelta_a044ffed3fee34cab3b4abaf4869c5c0c}
 
 
-\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+Determine whether a \hyperlink{structTimeDelta}{Time\-Delta} is greater than or equal to another \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$= rhs). 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}{\index{Time\-Delta@{Time\-Delta}!data\-\_\-@{data\-\_\-}}
+\index{data\-\_\-@{data\-\_\-}!TimeDelta@{Time\-Delta}}
+\subsubsection[{data\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}struct Present\-Time\-Delta\-Data Time\-Delta\-::data\-\_\-}}\label{structTimeDelta_ab88989772d6ab486e1e008238d96eb81}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
 present/\hyperlink{time-delta_8h}{time-\/delta.\-h}\end{DoxyCompactItemize}

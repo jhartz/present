@@ -1,14 +1,5 @@
 var structTimestamp =
 [
-    [ "create", "structTimestamp.html#a050609c408bf55dafa24a080757a471b", null ],
-    [ "create", "structTimestamp.html#aa5ab499f6e8a649ba6a160593dce9600", null ],
-    [ "create_utc", "structTimestamp.html#ae1ec817a76d5f43941548b9cccf3bdeb", null ],
-    [ "create_local", "structTimestamp.html#ae2d7fea77bd2f2c7ca3343be080dd90f", null ],
-    [ "create", "structTimestamp.html#a0585a5f7928f6bad9dda69eb5adf99ee", null ],
-    [ "create_utc", "structTimestamp.html#af18efc9b0db5803b00019e6e3f01895a", null ],
-    [ "create_local", "structTimestamp.html#acaa4f082d3a38dc42c8d815925add8a5", null ],
-    [ "now", "structTimestamp.html#ab2b17140c0c966ad672395f3f90b8653", null ],
-    [ "epoch", "structTimestamp.html#aa2f108710dbe1372d8fc7146a2e66c37", null ],
     [ "get_time_t", "structTimestamp.html#a54782bcc812fdeea952ec0e0880aac5f", null ],
     [ "get_struct_tm", "structTimestamp.html#ad75f04af1d0b038a2d43b117f72dee65", null ],
     [ "get_struct_tm_utc", "structTimestamp.html#a763f8ab757e5d6cfb45c7931f75c5654", null ],
@@ -27,7 +18,6 @@ var structTimestamp =
     [ "operator-=", "structTimestamp.html#a49de64b0a5d62eaebf82920d5028a17f", null ],
     [ "operator-=", "structTimestamp.html#abec186416fd4391030d937664223b339", null ],
     [ "operator-=", "structTimestamp.html#a4b70395805808b8fe9de49b730daac16", null ],
-    [ "compare", "structTimestamp.html#a64216c9061a4449c8d3fb9d1fecbb4a0", null ],
     [ "operator+", "structTimestamp.html#a5eb71bec7edce3a62bfc8ad803217d81", null ],
     [ "operator+", "structTimestamp.html#afd358fc0636aff7726ab1e4de62996b1", null ],
     [ "operator+", "structTimestamp.html#a4d4956a556c01ac7b2d80f2c6ad92169", null ],
@@ -43,6 +33,9 @@ var structTimestamp =
     [ "operator<=", "structTimestamp.html#a788d441309be58a69f9e008eee26d54a", null ],
     [ "operator>", "structTimestamp.html#aa16ec9b884f9fad57985d2c331139b69", null ],
     [ "operator>=", "structTimestamp.html#af5e67a38f1e4968c30a4c57c34fd51e6", null ],
-    [ "error", "structTimestamp.html#a2ac4b53468d2a270e2ba5f05af9d7472", null ],
+    [ "has_error", "structTimestamp.html#a7e49819ae41a46b5cae479d9ddbc3bdf", null ],
+    [ "invalid_clock_time", "structTimestamp.html#ad56711d7488c95189fd4635590b8adef", null ],
+    [ "invalid_date", "structTimestamp.html#ae74e1930abf6be5d7dfe552710c87899", null ],
+    [ "errors", "structTimestamp.html#abafff530b3a467c1dcc27b780f89d0a0", null ],
     [ "data_", "structTimestamp.html#adf3177050edc50aa8b6e768922e4cf56", null ]
 ];

@@ -1,14 +1,5 @@
 var structTimeDelta =
 [
-    [ "from_nanoseconds", "structTimeDelta.html#abc1b517c2156b2d9627fd07d42aecb2f", null ],
-    [ "from_microseconds", "structTimeDelta.html#a32f3fa21ba37d81507383d001f3b704b", null ],
-    [ "from_milliseconds", "structTimeDelta.html#a01e0919f444379030aa37559fa13542c", null ],
-    [ "from_seconds", "structTimeDelta.html#aad4311d8580ade36d8c567576630c967", null ],
-    [ "from_minutes", "structTimeDelta.html#a244bc3b143bfa760aa2b0cf350cf768c", null ],
-    [ "from_hours", "structTimeDelta.html#a912f6ceafac4b9252a1a5d76033754ea", null ],
-    [ "from_days", "structTimeDelta.html#a9bb1a85b6f27ad8488ae06e238d5808e", null ],
-    [ "from_weeks", "structTimeDelta.html#ae0f0a41d899e62b9d17bc4542c443ec6", null ],
-    [ "zero", "structTimeDelta.html#a2dec837a107c5e46e14b9c69557209fa", null ],
     [ "nanoseconds", "structTimeDelta.html#a27608357ea9addd1d0da20918f91d500", null ],
     [ "microseconds", "structTimeDelta.html#aa23b22a3b2a0f3f559e9dc343588b546", null ],
     [ "microseconds_decimal", "structTimeDelta.html#a44f7ddea28b3ca359d4cc3b1907fdf00", null ],
@@ -38,7 +29,6 @@ var structTimeDelta =
     [ "operator+=", "structTimeDelta.html#acf4db7ce2e954d9a706f3e85cd805e42", null ],
     [ "operator-=", "structTimeDelta.html#adcacf2fa162c98c9a8c7278f0e32ce56", null ],
     [ "operator-=", "structTimeDelta.html#a8a8d2796e13a24266d46c54873d57eb2", null ],
-    [ "compare", "structTimeDelta.html#a1bee789870de5a374ee472ffa4bff172", null ],
     [ "operator*", "structTimeDelta.html#ab7a91eba5b4f059a62b8514db14fc53b", null ],
     [ "operator*", "structTimeDelta.html#adab5720acc96114e1dc60fee9e515cb8", null ],
     [ "operator/", "structTimeDelta.html#ad9091904936708075238c1211784ac72", null ],
@@ -55,6 +45,5 @@ var structTimeDelta =
     [ "operator<=", "structTimeDelta.html#af313f41f00c31292ebf02d238270f925", null ],
     [ "operator>", "structTimeDelta.html#a321108cfb9e3902874cc743d899c4076", null ],
     [ "operator>=", "structTimeDelta.html#a044ffed3fee34cab3b4abaf4869c5c0c", null ],
-    [ "error", "structTimeDelta.html#a212d89d50dc636a4e12ceac5fd9f0bfd", null ],
     [ "data_", "structTimeDelta.html#ab88989772d6ab486e1e008238d96eb81", null ]
 ];

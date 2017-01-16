@@ -1,6 +1,6 @@
-var day-delta_8h =
+var day_delta_8h =
 [
-    [ "PresentDayDeltaError", "day-delta_8h.html#a1fc28c3187bc8bcf286a214ee7168f8f", null ],
+    [ "DayDelta", "structDayDelta.html", "structDayDelta" ],
     [ "DayDelta_from_days", "day-delta_8h.html#a50a5b111e380372e918e4d67f4b1814d", null ],
     [ "DayDelta_from_weeks", "day-delta_8h.html#ac44c70541cf4f255f25384194341ff07", null ],
     [ "DayDelta_zero", "day-delta_8h.html#ab87d828518fe1bdc7e7662be3e5e6289", null ],

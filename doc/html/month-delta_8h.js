@@ -1,6 +1,6 @@
-var month-delta_8h =
+var month_delta_8h =
 [
-    [ "PresentMonthDeltaError", "month-delta_8h.html#aee28c4c9b4054448713e954a7944cb51", null ],
+    [ "MonthDelta", "structMonthDelta.html", "structMonthDelta" ],
     [ "MonthDelta_from_months", "month-delta_8h.html#ab2435ae92655bed23406d37b4b8f4750", null ],
     [ "MonthDelta_from_years", "month-delta_8h.html#aec5607ad9e7e090c39b2f50a68974ef0", null ],
     [ "MonthDelta_zero", "month-delta_8h.html#aca81ef97d8ec1cd052ab391636f16bf7", null ],

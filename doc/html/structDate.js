@@ -1,10 +1,5 @@
 var structDate =
 [
-    [ "create", "structDate.html#af6a6aa2e75464311dc7eee91e25aee47", null ],
-    [ "create", "structDate.html#a0b1280e69ec6310ec8cdfb730e8dd7f6", null ],
-    [ "create", "structDate.html#ae0bcc2332237bf0f5b57ed646a00e6ac", null ],
-    [ "from_year_day", "structDate.html#af3a7ed97e385d134e39c42092d082405", null ],
-    [ "from_year_week_day", "structDate.html#a88c032d0e05efa136df450f1d3564760", null ],
     [ "year", "structDate.html#aac4f4635d8db0ea1a32c2f979a1a6cc0", null ],
     [ "month", "structDate.html#a39f4a9fd570f306025f78447477e42d6", null ],
     [ "day", "structDate.html#ac4993265144899a83ee57cd6d54d3bff", null ],
@@ -17,7 +12,6 @@ var structDate =
     [ "operator+=", "structDate.html#a6a69c92d288794dc5f33647b7fb67d67", null ],
     [ "operator-=", "structDate.html#a4fd0dac9dc8aeb5dbd008717c6bc8974", null ],
     [ "operator-=", "structDate.html#afe99434d7c9419d5505e9ba8ff599d05", null ],
-    [ "compare", "structDate.html#afc234509ba1c8b1717e52181e7ad256d", null ],
     [ "operator+", "structDate.html#a88a01e03ad6e96a22ee81ed7a38bdd5a", null ],
     [ "operator+", "structDate.html#a064b881a2d6c0460119fee5d230c28e4", null ],
     [ "operator+", "structDate.html#a0c895c337e87874cc232482d703db30e", null ],
@@ -30,6 +24,11 @@ var structDate =
     [ "operator<=", "structDate.html#acacb699d0fcffd2443c121586b7c22da", null ],
     [ "operator>", "structDate.html#a4e4faf476e7d66ef88aaca8b11a60175", null ],
     [ "operator>=", "structDate.html#aa72d3f6e17c7aab4d16e9e50b5069e1a", null ],
-    [ "error", "structDate.html#adb2a42cb857f6462788b856b2f60cfb2", null ],
+    [ "has_error", "structDate.html#a4f417d9dd4cd9fd081aff88f9b13931b", null ],
+    [ "month_out_of_range", "structDate.html#a29e199da53dd2c946b41ee97dbafd2cb", null ],
+    [ "day_out_of_range", "structDate.html#a75853bff950be7a8c71017f35e7b0003", null ],
+    [ "week_of_year_out_of_range", "structDate.html#a9e29181d3d839953ee7bae10aa45bf2d", null ],
+    [ "day_of_week_out_of_range", "structDate.html#a5dc47ea0e7d16cc6c95321c6b8bba51b", null ],
+    [ "errors", "structDate.html#a69b79f56137adf67014f4009f0047c79", null ],
     [ "data_", "structDate.html#a15a7ce699435bf3c9c60bfff5e1806de", null ]
 ];

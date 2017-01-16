@@ -1,6 +1,6 @@
-var time-delta_8h =
+var time_delta_8h =
 [
-    [ "PresentTimeDeltaError", "time-delta_8h.html#a6090105e9137c36754994cda35937b59", null ],
+    [ "TimeDelta", "structTimeDelta.html", "structTimeDelta" ],
     [ "TimeDelta_from_nanoseconds", "time-delta_8h.html#a4d69e5c655907802b1278e2bc0567c6b", null ],
     [ "TimeDelta_from_microseconds", "time-delta_8h.html#a8a5b10cada34e6093d985bb757671842", null ],
     [ "TimeDelta_from_milliseconds", "time-delta_8h.html#ae7919eccd5d372f5f954d560792699b5", null ],

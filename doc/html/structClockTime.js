@@ -1,12 +1,5 @@
 var structClockTime =
 [
-    [ "create", "structClockTime.html#a72284f0c4f53d026688e55cea607f219", null ],
-    [ "create", "structClockTime.html#aa4429a92963b67343bc6eab885938a5a", null ],
-    [ "create", "structClockTime.html#a3a34039699358c31a6f68d545f228728", null ],
-    [ "create", "structClockTime.html#afdf4e7a0b63e536f24a5eb85a3eb1ae8", null ],
-    [ "create_with_decimal_seconds", "structClockTime.html#a71e4e398da2cb0cfd3adb3f87cb6f3c2", null ],
-    [ "midnight", "structClockTime.html#a7baab35d60ad3a2236c14133d8d0083b", null ],
-    [ "noon", "structClockTime.html#ae206b86808ff1d0158cbc920eb289797", null ],
     [ "hour", "structClockTime.html#a46aca2fc3ed57f80398729383d7b81d3", null ],
     [ "minute", "structClockTime.html#a812681b81ece92f27756f0618e56f37b", null ],
     [ "second", "structClockTime.html#a568f139cb2e19fca3e2ae2acdf47787f", null ],
@@ -15,7 +8,6 @@ var structClockTime =
     [ "time_since_midnight", "structClockTime.html#a9c6423703cb0026435fb6e5b2d261d54", null ],
     [ "operator+=", "structClockTime.html#a8a98c385f805022b1bc229e472e8c1e9", null ],
     [ "operator-=", "structClockTime.html#a50a16387217243bc8986735c7cebd012", null ],
-    [ "compare", "structClockTime.html#a4c185648dcfc28f46ac3fc700b3415c2", null ],
     [ "operator+", "structClockTime.html#afceb2935d4b931a097145e4967ac71b6", null ],
     [ "operator+", "structClockTime.html#a5b2a233507a3e162854b69240c9c1091", null ],
     [ "operator-", "structClockTime.html#a21ba0831914be0b997460299bf287cf3", null ],
@@ -25,6 +17,11 @@ var structClockTime =
     [ "operator<=", "structClockTime.html#ae86e4ffa336f7ef101ab39631a143c19", null ],
     [ "operator>", "structClockTime.html#af8b6940e326db070a338d4adb7d54bd9", null ],
     [ "operator>=", "structClockTime.html#af2d17dcdd53d7cb57311cebe530be868", null ],
-    [ "error", "structClockTime.html#a58f5305f36468eee0d1c489b5d72d717", null ],
+    [ "has_error", "structClockTime.html#ab04bad96a5d91e8a29b61a1802e5faba", null ],
+    [ "hour_out_of_range", "structClockTime.html#ae1b535b4a771fa99feb0ca7e4d39d452", null ],
+    [ "minute_out_of_range", "structClockTime.html#a3cbd954dccf7539e4a03293e19bcfe2c", null ],
+    [ "second_out_of_range", "structClockTime.html#a3dd3292426da0f8b633cffcb24a26069", null ],
+    [ "nanosecond_out_of_range", "structClockTime.html#ac7051869fd450e25f77b7fd3c807bb8f", null ],
+    [ "errors", "structClockTime.html#a7aa79d494a580c4961d5e0f0c2e112a0", null ],
     [ "data_", "structClockTime.html#a3fe115dffef3ba153e1fff6e0b2c0a23", null ]
 ];

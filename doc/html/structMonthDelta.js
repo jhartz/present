@@ -1,8 +1,5 @@
 var structMonthDelta =
 [
-    [ "from_months", "structMonthDelta.html#afc96dd6ca914abc1ddd067f8f3755a89", null ],
-    [ "from_years", "structMonthDelta.html#a02632b6ef33850d9329bd04a686ce1ed", null ],
-    [ "zero", "structMonthDelta.html#a847cb9c956c133957dbaffb32fb9bd15", null ],
     [ "months", "structMonthDelta.html#a47f7592328f434f4091a5b044d83976a", null ],
     [ "years", "structMonthDelta.html#abd1a36332a0347d39a9a7b7befceb6f5", null ],
     [ "years_decimal", "structMonthDelta.html#ae7ac38d813d15ea4b9db82a43ed1be89", null ],
@@ -17,7 +14,6 @@ var structMonthDelta =
     [ "operator/=", "structMonthDelta.html#aa8333e32a1bcd75fd93410574af2ec00", null ],
     [ "operator+=", "structMonthDelta.html#aa244bc614894a3daaf8d71f0c9c6202b", null ],
     [ "operator-=", "structMonthDelta.html#ad62de2e3686f5b93088eb371e9ff4c87", null ],
-    [ "compare", "structMonthDelta.html#afb632f08f6278bcf7dfd5aef0cb12322", null ],
     [ "operator*", "structMonthDelta.html#a371fb6abbbaa0d2c2011d29af10171bc", null ],
     [ "operator/", "structMonthDelta.html#abd091fddaf6d6459ff88179670c45dda", null ],
     [ "operator+", "structMonthDelta.html#a9f7f420c48017d9fecdcebc1864fdcad", null ],
@@ -28,6 +24,5 @@ var structMonthDelta =
     [ "operator<=", "structMonthDelta.html#a4e21f655714fb7458c802657db98a92e", null ],
     [ "operator>", "structMonthDelta.html#a6cf5a665207c6f9817bf88d2f717971f", null ],
     [ "operator>=", "structMonthDelta.html#a4b5b7c83455bf5d2ed3422d2a9960f59", null ],
-    [ "error", "structMonthDelta.html#a437eb7cd23ab33a773a8fb97b5923454", null ],
     [ "data_", "structMonthDelta.html#a428f2591ca57d192424b298f95c87978", null ]
 ];
