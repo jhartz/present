@@ -102,7 +102,8 @@ Examples of interactions:
 - Using a `TimeDelta` as a time zone offset when creating a `Timestamp`
 
 Additionally, in C++, these types support operator overloading, so interacting
-with them looks and feels intuitive.
+with them looks and feels intuitive. For more, see the API documentation or the
+examples below.
 
 ## Usage
 
