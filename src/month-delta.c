@@ -16,34 +16,61 @@
 #include "utils/impl-utils.h"
 #include "utils/time-calls.h"
 
-struct MonthDelta
-MonthDelta_from_months(int_month_delta month_delta)
+/** Initialize a new MonthDelta based on the number of months. */
+static void
+init_month_delta(struct MonthDelta * const result, int_month_delta months)
 {
-    struct PresentMonthDeltaData data;
-    CONSTRUCTOR_HEAD(MonthDelta);
+    assert(result != NULL);
+    CLEAR(result);
 
-    data.delta_months = month_delta;
-    CONSTRUCTOR_RETURN(MonthDelta, data);
+    result->data_.delta_months = months;
+}
+
+
+struct MonthDelta
+MonthDelta_from_months(int_month_delta months)
+{
+    struct MonthDelta result;
+    init_month_delta(&result, months);
+    return result;
+}
+
+void
+MonthDelta_ptr_from_months(
+        struct MonthDelta * const result,
+        int_month_delta months)
+{
+    init_month_delta(result, months);
 }
 
 struct MonthDelta
-MonthDelta_from_years(int_year_delta year_delta)
+MonthDelta_from_years(int_year_delta years)
 {
-    struct PresentMonthDeltaData data;
-    CONSTRUCTOR_HEAD(MonthDelta);
+    struct MonthDelta result;
+    init_month_delta(&result, years * MONTHS_IN_YEAR);
+    return result;
+}
 
-    data.delta_months = year_delta * MONTHS_IN_YEAR;
-    CONSTRUCTOR_RETURN(MonthDelta, data);
+void
+MonthDelta_ptr_from_years(
+        struct MonthDelta * const result,
+        int_year_delta years)
+{
+    init_month_delta(result, years * MONTHS_IN_YEAR);
 }
 
 struct MonthDelta
 MonthDelta_zero()
 {
-    struct PresentMonthDeltaData data;
-    CONSTRUCTOR_HEAD(MonthDelta);
+    struct MonthDelta result;
+    init_month_delta(&result, 0);
+    return result;
+}
 
-    data.delta_months = 0;
-    CONSTRUCTOR_RETURN(MonthDelta, data);
+void
+MonthDelta_ptr_zero(struct MonthDelta * const result)
+{
+    init_month_delta(result, 0);
 }
 
 int_month_delta

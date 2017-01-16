@@ -21,43 +21,42 @@
  */
 static void
 init_clock_time(
-        struct ClockTime * const self,
+        struct ClockTime * const result,
         int_hour hour,
         int_minute minute,
         int_second second,
         int_nanosecond nanosecond)
 {
-    assert(self != NULL);
-
-    CLEAR(self);
+    assert(result != NULL);
+    CLEAR(result);
 
     if (hour == 24) hour = 0;
     if (hour < 0 || hour > 24) {
-        self->has_error = 1;
-        self->errors.hour_out_of_range = 1;
+        result->has_error = 1;
+        result->errors.hour_out_of_range = 1;
     }
 
     if (minute < 0 || minute >= 60) {
-        self->has_error = 1;
-        self->errors.minute_out_of_range = 1;
+        result->has_error = 1;
+        result->errors.minute_out_of_range = 1;
     }
 
     /* 61 because of leap seconds :( */
     if (second < 0 || second >= 61) {
-        self->has_error = 1;
-        self->errors.second_out_of_range = 1;
+        result->has_error = 1;
+        result->errors.second_out_of_range = 1;
     }
 
     if (nanosecond < 0 || nanosecond >= NANOSECONDS_IN_SECOND) {
-        self->has_error = 1;
-        self->errors.nanosecond_out_of_range = 1;
+        result->has_error = 1;
+        result->errors.nanosecond_out_of_range = 1;
     }
 
-    if (!self->has_error) {
-        self->data_.seconds = second +
+    if (!result->has_error) {
+        result->data_.seconds = second +
             minute * SECONDS_IN_MINUTE +
             hour * SECONDS_IN_HOUR;
-        self->data_.nanoseconds = nanosecond;
+        result->data_.nanoseconds = nanosecond;
     }
 }
 
@@ -86,6 +85,7 @@ check_clock_time(struct ClockTime * const self)
     }
 #undef d
 }
+
 
 struct ClockTime
 ClockTime_from_hour(int_hour hour)

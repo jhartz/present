@@ -124,16 +124,15 @@ timestamp_to_time_t(const int_timestamp timestamp_seconds)
 /** Initialize a new Timestamp instance based on its data parameters. */
 static void
 init_timestamp(
-        struct Timestamp * const self,
+        struct Timestamp * const result,
         int_timestamp timestamp_seconds,
         int_timestamp additional_nanoseconds)
 {
-    assert(self != NULL);
+    assert(result != NULL);
+    CLEAR(result);
 
-    CLEAR(self);
-
-    self->data_.timestamp_seconds = timestamp_seconds;
-    self->data_.additional_nanoseconds = additional_nanoseconds;
+    result->data_.timestamp_seconds = timestamp_seconds;
+    result->data_.additional_nanoseconds = additional_nanoseconds;
 }
 
 

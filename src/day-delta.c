@@ -16,34 +16,56 @@
 #include "utils/impl-utils.h"
 #include "utils/time-calls.h"
 
+/** Initialize a new DayDelta based on the number of days. */
+static void
+init_day_delta(struct DayDelta * const result, int_delta days)
+{
+    assert(result != NULL);
+    CLEAR(result);
+    result->data_.delta_days = days;
+}
+
+
 struct DayDelta
 DayDelta_from_days(int_delta days)
 {
-    struct PresentDayDeltaData data;
-    CONSTRUCTOR_HEAD(DayDelta);
+    struct DayDelta result;
+    init_day_delta(&result, days);
+    return result;
+}
 
-    data.delta_days = days;
-    CONSTRUCTOR_RETURN(DayDelta, data);
+void
+DayDelta_ptr_from_days(struct DayDelta * const result, int_delta days)
+{
+    init_day_delta(result, days);
 }
 
 struct DayDelta
 DayDelta_from_weeks(int_delta weeks)
 {
-    struct PresentDayDeltaData data;
-    CONSTRUCTOR_HEAD(DayDelta);
+    struct DayDelta result;
+    init_day_delta(&result, weeks * DAYS_IN_WEEK);
+    return result;
+}
 
-    data.delta_days = weeks * DAYS_IN_WEEK;
-    CONSTRUCTOR_RETURN(DayDelta, data);
+void
+DayDelta_ptr_from_weeks(struct DayDelta * const result, int_delta weeks)
+{
+    init_day_delta(result, weeks * DAYS_IN_WEEK);
 }
 
 struct DayDelta
 DayDelta_zero()
 {
-    struct PresentDayDeltaData data;
-    CONSTRUCTOR_HEAD(DayDelta);
+    struct DayDelta result;
+    init_day_delta(&result, 0);
+    return result;
+}
 
-    data.delta_days = 0;
-    CONSTRUCTOR_RETURN(DayDelta, data);
+void
+DayDelta_ptr_zero(struct DayDelta * const result)
+{
+    init_day_delta(result, 0);
 }
 
 int_delta

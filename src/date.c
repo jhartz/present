@@ -94,7 +94,11 @@ check_date_data(struct PresentDateData * const data)
  * Initialize a new Date instance based on its data parameters.
  */
 static void
-init_date(struct Date * const self, int_year year, int_month month, int_day day)
+init_date(
+        struct Date * const result,
+        int_year year,
+        int_month month,
+        int_day day)
 {
     static const int_day DAYS_PER_MONTH[13] = {
         0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
@@ -102,27 +106,26 @@ init_date(struct Date * const self, int_year year, int_month month, int_day day)
 
     int_day days_in_month;
 
-    assert(self != NULL);
-
-    CLEAR(self);
+    assert(result != NULL);
+    CLEAR(result);
 
     if (month < 1 || month > 12) {
-        self->has_error = 1;
-        self->errors.month_out_of_range = 1;
+        result->has_error = 1;
+        result->errors.month_out_of_range = 1;
     }
 
     days_in_month = (IS_LEAP_YEAR(year) && month == 2) ? 29 :
         DAYS_PER_MONTH[month];
     if (day < 1 || day > days_in_month) {
-        self->has_error = 1;
-        self->errors.day_out_of_range = 1;
+        result->has_error = 1;
+        result->errors.day_out_of_range = 1;
     }
 
-    if (!self->has_error) {
-        self->data_.year = year;
-        self->data_.month = month;
-        self->data_.day = day;
-        check_date_data(&self->data_);
+    if (!result->has_error) {
+        result->data_.year = year;
+        result->data_.month = month;
+        result->data_.day = day;
+        check_date_data(&result->data_);
     }
 }
 
@@ -132,20 +135,20 @@ init_date(struct Date * const self, int_year year, int_month month, int_day day)
  */
 static void
 init_date_no_bounds_check(
-        struct Date * const self,
+        struct Date * const result,
         int_year year,
         int_month month,
         int_day day)
 {
-    assert(self != NULL);
+    assert(result != NULL);
+    CLEAR(result);
 
-    CLEAR(self);
-
-    self->data_.year = year;
-    self->data_.month = month;
-    self->data_.day = day;
-    check_date_data(&self->data_);
+    result->data_.year = year;
+    result->data_.month = month;
+    result->data_.day = day;
+    check_date_data(&result->data_);
 }
+
 
 struct Date
 Date_from_year(int_year year)
@@ -217,7 +220,8 @@ struct Date
 Date_from_year_week_day(
         int_year year,
         int_week_of_year week_of_year,
-        int_day_of_week day_of_week) {
+        int_day_of_week day_of_week)
+{
     struct Date result;
     Date_ptr_from_year_week_day(&result, year, week_of_year, day_of_week);
     return result;
@@ -236,7 +240,6 @@ Date_ptr_from_year_week_day(
     int_day_of_year ordinal_date;
 
     assert(result != NULL);
-
     CLEAR(result);
 
     if (week_of_year < 1 || week_of_year > last_week_of_year(year)) {

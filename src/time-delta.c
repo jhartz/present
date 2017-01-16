@@ -46,73 +46,154 @@
         if (data.delta_seconds < 0) assert(data.delta_nanoseconds <= 0);    \
     } while (0)
 
-/** Create a new TimeDelta based on seconds and nanoseconds. */
-static struct TimeDelta
-new_time_delta(int_delta seconds, int_delta nanoseconds)
+/** Initialize a new TimeDelta based on seconds and nanoseconds. */
+static void
+init_time_delta(
+        struct TimeDelta * const result,
+        int_delta seconds,
+        int_delta nanoseconds)
 {
-    struct PresentTimeDeltaData data;
-    CONSTRUCTOR_HEAD(TimeDelta);
+    assert(result != NULL);
+    CLEAR(result);
 
-    data.delta_seconds = seconds;
-    data.delta_nanoseconds = nanoseconds;
+    result->data_.delta_seconds = seconds;
+    result->data_.delta_nanoseconds = nanoseconds;
     if (nanoseconds) {
-        CHECK_DATA(data);
+        CHECK_DATA(result->data_);
     }
-    CONSTRUCTOR_RETURN(TimeDelta, data);
 }
+
 
 struct TimeDelta
 TimeDelta_from_nanoseconds(int_delta nanoseconds)
 {
-    return new_time_delta(0, nanoseconds);
+    struct TimeDelta result;
+    init_time_delta(&result, 0, nanoseconds);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_nanoseconds(
+        struct TimeDelta * const result,
+        int_delta nanoseconds)
+{
+    init_time_delta(result, 0, nanoseconds);
 }
 
 struct TimeDelta
 TimeDelta_from_microseconds(int_delta microseconds)
 {
-    return new_time_delta(0, microseconds * NANOSECONDS_IN_MICROSECOND);
+    struct TimeDelta result;
+    init_time_delta(&result, 0, microseconds * NANOSECONDS_IN_MICROSECOND);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_microseconds(
+        struct TimeDelta * const result,
+        int_delta microseconds)
+{
+    init_time_delta(result, 0, microseconds * NANOSECONDS_IN_MICROSECOND);
 }
 
 struct TimeDelta
 TimeDelta_from_milliseconds(int_delta milliseconds)
 {
-    return new_time_delta(0, milliseconds * NANOSECONDS_IN_MILLISECOND);
+    struct TimeDelta result;
+    init_time_delta(&result, 0, milliseconds * NANOSECONDS_IN_MILLISECOND);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_milliseconds(
+        struct TimeDelta * const result,
+        int_delta milliseconds)
+{
+    init_time_delta(result, 0, milliseconds * NANOSECONDS_IN_MILLISECOND);
 }
 
 struct TimeDelta
 TimeDelta_from_seconds(int_delta seconds)
 {
-    return new_time_delta(seconds, 0);
+    struct TimeDelta result;
+    init_time_delta(&result, seconds, 0);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_seconds(struct TimeDelta * const result, int_delta seconds)
+{
+    init_time_delta(result, seconds, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_minutes(int_delta minutes)
 {
-    return new_time_delta(minutes * SECONDS_IN_MINUTE, 0);
+    struct TimeDelta result;
+    init_time_delta(&result, minutes * SECONDS_IN_MINUTE, 0);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_minutes(struct TimeDelta * const result, int_delta minutes)
+{
+    init_time_delta(result, minutes * SECONDS_IN_MINUTE, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_hours(int_delta hours)
 {
-    return new_time_delta(hours * SECONDS_IN_HOUR, 0);
+    struct TimeDelta result;
+    init_time_delta(&result, hours * SECONDS_IN_HOUR, 0);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_hours(struct TimeDelta * const result, int_delta hours)
+{
+    init_time_delta(result, hours * SECONDS_IN_HOUR, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_days(int_delta days)
 {
-    return new_time_delta(days * SECONDS_IN_DAY, 0);
+    struct TimeDelta result;
+    init_time_delta(&result, days * SECONDS_IN_DAY, 0);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_days(struct TimeDelta * const result, int_delta days)
+{
+    init_time_delta(result, days * SECONDS_IN_DAY, 0);
 }
 
 struct TimeDelta
 TimeDelta_from_weeks(int_delta weeks)
 {
-    return new_time_delta(weeks * SECONDS_IN_WEEK, 0);
+    struct TimeDelta result;
+    init_time_delta(&result, weeks * SECONDS_IN_WEEK, 0);
+    return result;
+}
+
+void
+TimeDelta_ptr_from_weeks(struct TimeDelta * const result, int_delta weeks)
+{
+    init_time_delta(result, weeks * SECONDS_IN_WEEK, 0);
 }
 
 struct TimeDelta
 TimeDelta_zero()
 {
-    return new_time_delta(0, 0);
+    struct TimeDelta result;
+    init_time_delta(&result, 0, 0);
+    return result;
+}
+
+void
+TimeDelta_ptr_zero(struct TimeDelta * const result)
+{
+    init_time_delta(result, 0, 0);
 }
 
 int_delta

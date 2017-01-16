@@ -145,16 +145,37 @@ PRESENT_API struct DayDelta
 DayDelta_from_days(int_delta days);
 
 /**
+ * @copydoc DayDelta_from_days
+ * @param[out] result A pointer to a struct DayDelta for the result.
+ */
+PRESENT_API void
+DayDelta_ptr_from_days(struct DayDelta * const result, int_delta days);
+
+/**
  * Create a new DayDelta based on a positive or negative number of weeks.
  */
 PRESENT_API struct DayDelta
 DayDelta_from_weeks(int_delta weeks);
 
 /**
+ * @copydoc DayDelta_from_weeks
+ * @param[out] result A pointer to a struct DayDelta for the result.
+ */
+PRESENT_API void
+DayDelta_ptr_from_weeks(struct DayDelta * const result, int_delta weeks);
+
+/**
  * Create a new DayDelta initialized to zero days.
  */
 PRESENT_API struct DayDelta
 DayDelta_zero();
+
+/**
+ * @copydoc DayDelta_zero
+ * @param[out] result A pointer to a struct DayDelta for the result.
+ */
+PRESENT_API void
+DayDelta_ptr_zero(struct DayDelta * const result);
 
 /**
  * Get the number of days represented by a DayDelta.

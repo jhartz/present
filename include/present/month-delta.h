@@ -140,16 +140,41 @@ PRESENT_API struct MonthDelta
 MonthDelta_from_months(int_month_delta month_delta);
 
 /**
+ * @copydoc MonthDelta_from_months
+ * @param[out] result A pointer to a struct MonthDelta for the result.
+ */
+PRESENT_API void
+MonthDelta_ptr_from_months(
+        struct MonthDelta * const result,
+        int_month_delta month_delta);
+
+/**
  * Create a new MonthDelta based on a positive or negative number of years.
  */
 PRESENT_API struct MonthDelta
 MonthDelta_from_years(int_year_delta year_delta);
 
 /**
+ * @copydoc MonthDelta_from_years
+ * @param[out] result A pointer to a struct MonthDelta for the result.
+ */
+PRESENT_API void
+MonthDelta_ptr_from_years(
+        struct MonthDelta * const result,
+        int_year_delta year_delta);
+
+/**
  * Create a new MonthDelta initialized to zero months.
  */
 PRESENT_API struct MonthDelta
 MonthDelta_zero();
+
+/**
+ * @copydoc MonthDelta_zero
+ * @param[out] result A pointer to a struct MonthDelta for the result.
+ */
+PRESENT_API void
+MonthDelta_ptr_zero(struct MonthDelta * const result);
 
 /**
  * Get the number of months represented by a MonthDelta.

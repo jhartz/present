@@ -33,31 +33,6 @@
 
 
 /**
- * Macros to create an instance of a struct, populated with either a
- * corresponding data object or an error, and return it.
- *
- * CONSTRUCTOR_HEAD: must be at the very top of the method
- * CONSTRUCTOR_RETURN: pass in the ...Data struct to return a struct wrapping
- * it
- * CONSTRUCTOR_ERROR_RETURN: pass in the name of an error from the struct's
- * corresponding error enum (not including "ClassName_ERROR_")
- */
-#define CONSTRUCTOR_HEAD(_ClassName)                    \
-    struct _ClassName internal_return_value;            \
-    memset((void *)&internal_return_value, 0,           \
-            sizeof(struct _ClassName));
-
-#define CONSTRUCTOR_RETURN(_ClassName, _Data)           \
-    internal_return_value.data_ = _Data;                \
-    return internal_return_value;
-
-#define CONSTRUCTOR_ERROR_RETURN(_ClassName, _Error)    \
-    internal_return_value.error =                       \
-        _ClassName ## _ERROR_ ## _Error;                \
-    return internal_return_value;
-
-
-/**
  * Compare 2 structs by the value of a data member.
  * _Else is returned if the 2 values are equal. If this is the last data
  * member being compared, _Else should be 0.

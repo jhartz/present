@@ -222,11 +222,29 @@ PRESENT_API struct TimeDelta
 TimeDelta_from_nanoseconds(int_delta nanoseconds);
 
 /**
+ * @copydoc TimeDelta_from_nanoseconds
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_nanoseconds(
+        struct TimeDelta * const result,
+        int_delta nanoseconds);
+
+/**
  * Create a new TimeDelta based on a positive or negative number of
  * microseconds.
  */
 PRESENT_API struct TimeDelta
 TimeDelta_from_microseconds(int_delta microseconds);
+
+/**
+ * @copydoc TimeDelta_from_microseconds
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_microseconds(
+        struct TimeDelta * const result,
+        int_delta microseconds);
 
 /**
  * Create a new TimeDelta based on a positive or negative number of
@@ -236,10 +254,26 @@ PRESENT_API struct TimeDelta
 TimeDelta_from_milliseconds(int_delta milliseconds);
 
 /**
+ * @copydoc TimeDelta_from_milliseconds
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_milliseconds(
+        struct TimeDelta * const result,
+        int_delta milliseconds);
+
+/**
  * Create a new TimeDelta based on a positive or negative number of seconds.
  */
 PRESENT_API struct TimeDelta
 TimeDelta_from_seconds(int_delta seconds);
+
+/**
+ * @copydoc TimeDelta_from_seconds
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_seconds(struct TimeDelta * const result, int_delta seconds);
 
 /**
  * Create a new TimeDelta based on a positive or negative number of minutes.
@@ -248,10 +282,24 @@ PRESENT_API struct TimeDelta
 TimeDelta_from_minutes(int_delta minutes);
 
 /**
+ * @copydoc TimeDelta_from_minutes
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_minutes(struct TimeDelta * const result, int_delta minutes);
+
+/**
  * Create a new TimeDelta based on a positive or negative number of hours.
  */
 PRESENT_API struct TimeDelta
 TimeDelta_from_hours(int_delta hours);
+
+/**
+ * @copydoc TimeDelta_from_hours
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_hours(struct TimeDelta * const result, int_delta hours);
 
 /**
  * Create a new TimeDelta based on a positive or negative number of days.
@@ -260,16 +308,37 @@ PRESENT_API struct TimeDelta
 TimeDelta_from_days(int_delta days);
 
 /**
+ * @copydoc TimeDelta_from_days
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_days(struct TimeDelta * const result, int_delta days);
+
+/**
  * Create a new TimeDelta based on a positive or negative number of weeks.
  */
 PRESENT_API struct TimeDelta
 TimeDelta_from_weeks(int_delta weeks);
 
 /**
+ * @copydoc TimeDelta_from_weeks
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_from_weeks(struct TimeDelta * const result, int_delta weeks);
+
+/**
  * Create a new TimeDelta initialized to zero time.
  */
 PRESENT_API struct TimeDelta
 TimeDelta_zero();
+
+/**
+ * @copydoc TimeDelta_zero
+ * @param[out] result A pointer to a struct TimeDelta for the result.
+ */
+PRESENT_API void
+TimeDelta_ptr_zero(struct TimeDelta * const result);
 
 /**
  * Get the number of nanoseconds represented by a TimeDelta.
