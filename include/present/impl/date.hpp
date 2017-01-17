@@ -13,25 +13,33 @@
 inline Date
 Date::create(int_year year)
 {
-    return Date_from_year(year);
+    Date result;
+    Date_ptr_from_year(&result, year);
+    return result;
 }
 
 inline Date
 Date::create(int_year year, int_month month)
 {
-    return Date_from_year_month(year, month);
+    Date result;
+    Date_ptr_from_year_month(&result, year, month);
+    return result;
 }
 
 inline Date
 Date::create(int_year year, int_month month, int_day day)
 {
-    return Date_from_year_month_day(year, month, day);
+    Date result;
+    Date_ptr_from_year_month_day(&result, year, month, day);
+    return result;
 }
 
 inline Date
 Date::from_year_day(int_year year, int_day_of_year day_of_year)
 {
-    return Date_from_year_day(year, day_of_year);
+    Date result;
+    Date_ptr_from_year_day(&result, year, day_of_year);
+    return result;
 }
 
 inline Date
@@ -40,7 +48,9 @@ Date::from_year_week_day(
         int_week_of_year week_of_year,
         int_day_of_week day_of_week)
 {
-    return Date_from_year_week_day(year, week_of_year, day_of_week);
+    Date result;
+    Date_ptr_from_year_week_day(&result, year, week_of_year, day_of_week);
+    return result;
 }
 
 inline int_year

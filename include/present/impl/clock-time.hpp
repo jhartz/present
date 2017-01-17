@@ -13,19 +13,25 @@
 inline ClockTime
 ClockTime::create(int_hour hour)
 {
-    return ClockTime_from_hour(hour);
+    ClockTime result;
+    ClockTime_ptr_from_hour(&result, hour);
+    return result;
 }
 
 inline ClockTime
 ClockTime::create(int_hour hour, int_minute minute)
 {
-    return ClockTime_from_hour_minute(hour, minute);
+    ClockTime result;
+    ClockTime_ptr_from_hour_minute(&result, hour, minute);
+    return result;
 }
 
 inline ClockTime
 ClockTime::create(int_hour hour, int_minute minute, int_second second)
 {
-    return ClockTime_from_hour_minute_second(hour, minute, second);
+    ClockTime result;
+    ClockTime_ptr_from_hour_minute_second(&result, hour, minute, second);
+    return result;
 }
 
 inline ClockTime
@@ -35,11 +41,14 @@ ClockTime::create(
         int_second second,
         int_nanosecond nanosecond)
 {
-    return ClockTime_from_hour_minute_second_nanosecond(
-        hour,
-        minute,
-        second,
-        nanosecond);
+    ClockTime result;
+    ClockTime_ptr_from_hour_minute_second_nanosecond(
+            &result,
+            hour,
+            minute,
+            second,
+            nanosecond);
+    return result;
 }
 
 inline ClockTime
@@ -48,19 +57,25 @@ ClockTime::create_with_decimal_seconds(
         int_minute minute,
         double second)
 {
-    return ClockTime_create_with_decimal_seconds(hour, minute, second);
+    ClockTime result;
+    ClockTime_ptr_create_with_decimal_seconds(&result, hour, minute, second);
+    return result;
 }
 
 inline ClockTime
 ClockTime::midnight()
 {
-    return ClockTime_midnight();
+    ClockTime result;
+    ClockTime_ptr_midnight(&result);
+    return result;
 }
 
 inline ClockTime
 ClockTime::noon()
 {
-    return ClockTime_noon();
+    ClockTime result;
+    ClockTime_ptr_noon(&result);
+    return result;
 }
 
 inline int_hour

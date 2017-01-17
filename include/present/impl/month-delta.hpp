@@ -15,19 +15,25 @@
 inline MonthDelta
 MonthDelta::from_months(int_month_delta months)
 {
-    return MonthDelta_from_months(months);
+    MonthDelta result;
+    MonthDelta_ptr_from_months(&result, months);
+    return result;
 }
 
 inline MonthDelta
 MonthDelta::from_years(int_year_delta years)
 {
-    return MonthDelta_from_years(years);
+    MonthDelta result;
+    MonthDelta_ptr_from_years(&result, years);
+    return result;
 }
 
 inline MonthDelta
 MonthDelta::zero()
 {
-    return MonthDelta_zero();
+    MonthDelta result;
+    MonthDelta_ptr_zero(&result);
+    return result;
 }
 
 inline int_month_delta

@@ -15,19 +15,25 @@
 inline DayDelta
 DayDelta::from_days(int_delta days)
 {
-    return DayDelta_from_days(days);
+    DayDelta result;
+    DayDelta_ptr_from_days(&result, days);
+    return result;
 }
 
 inline DayDelta
 DayDelta::from_weeks(int_delta weeks)
 {
-    return DayDelta_from_weeks(weeks);
+    DayDelta result;
+    DayDelta_ptr_from_weeks(&result, weeks);
+    return result;
 }
 
 inline DayDelta
 DayDelta::zero()
 {
-    return DayDelta_zero();
+    DayDelta result;
+    DayDelta_ptr_zero(&result);
+    return result;
 }
 
 inline int_delta

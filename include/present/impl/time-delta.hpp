@@ -15,55 +15,73 @@
 inline TimeDelta
 TimeDelta::from_nanoseconds(int_delta nanoseconds)
 {
-    return TimeDelta_from_nanoseconds(nanoseconds);
+    TimeDelta result;
+    TimeDelta_ptr_from_nanoseconds(&result, nanoseconds);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::from_microseconds(int_delta microseconds)
 {
-    return TimeDelta_from_microseconds(microseconds);
+    TimeDelta result;
+    TimeDelta_ptr_from_microseconds(&result, microseconds);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::from_milliseconds(int_delta milliseconds)
 {
-    return TimeDelta_from_milliseconds(milliseconds);
+    TimeDelta result;
+    TimeDelta_ptr_from_milliseconds(&result, milliseconds);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::from_seconds(int_delta seconds)
 {
-    return TimeDelta_from_seconds(seconds);
+    TimeDelta result;
+    TimeDelta_ptr_from_seconds(&result, seconds);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::from_minutes(int_delta minutes)
 {
-    return TimeDelta_from_minutes(minutes);
+    TimeDelta result;
+    TimeDelta_ptr_from_minutes(&result, minutes);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::from_hours(int_delta hours)
 {
-    return TimeDelta_from_hours(hours);
+    TimeDelta result;
+    TimeDelta_ptr_from_hours(&result, hours);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::from_days(int_delta days)
 {
-    return TimeDelta_from_days(days);
+    TimeDelta result;
+    TimeDelta_ptr_from_days(&result, days);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::from_weeks(int_delta weeks)
 {
-    return TimeDelta_from_weeks(weeks);
+    TimeDelta result;
+    TimeDelta_ptr_from_weeks(&result, weeks);
+    return result;
 }
 
 inline TimeDelta
 TimeDelta::zero()
 {
-    return TimeDelta_zero();
+    TimeDelta result;
+    TimeDelta_ptr_zero(&result);
+    return result;
 }
 
 inline int_delta

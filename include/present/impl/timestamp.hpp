@@ -13,25 +13,33 @@
 inline Timestamp
 Timestamp::create(const time_t timestamp)
 {
-    return Timestamp_from_time_t(timestamp);
+    Timestamp result;
+    Timestamp_ptr_from_time_t(&result, timestamp);
+    return result;
 }
 
 inline Timestamp
 Timestamp::create(const struct tm & tm, const TimeDelta & timeZoneOffset)
 {
-    return Timestamp_from_struct_tm(tm, &timeZoneOffset);
+    Timestamp result;
+    Timestamp_ptr_from_struct_tm(&result, tm, &timeZoneOffset);
+    return result;
 }
 
 inline Timestamp
 Timestamp::create_utc(const struct tm & tm)
 {
-    return Timestamp_from_struct_tm_utc(tm);
+    Timestamp result;
+    Timestamp_ptr_from_struct_tm_utc(&result, tm);
+    return result;
 }
 
 inline Timestamp
 Timestamp::create_local(const struct tm & tm)
 {
-    return Timestamp_from_struct_tm_local(tm);
+    Timestamp result;
+    Timestamp_ptr_from_struct_tm_local(&result, tm);
+    return result;
 }
 
 inline Timestamp
@@ -40,31 +48,41 @@ Timestamp::create(
         const ClockTime & clockTime,
         const TimeDelta & timeZoneOffset)
 {
-    return Timestamp_create(&date, &clockTime, &timeZoneOffset);
+    Timestamp result;
+    Timestamp_ptr_create(&result, &date, &clockTime, &timeZoneOffset);
+    return result;
 }
 
 inline Timestamp
 Timestamp::create_utc(const Date & date, const ClockTime & clockTime)
 {
-    return Timestamp_create_utc(&date, &clockTime);
+    Timestamp result;
+    Timestamp_ptr_create_utc(&result, &date, &clockTime);
+    return result;
 }
 
 inline Timestamp
 Timestamp::create_local(const Date & date, const ClockTime & clockTime)
 {
-    return Timestamp_create_local(&date, &clockTime);
+    Timestamp result;
+    Timestamp_ptr_create_local(&result, &date, &clockTime);
+    return result;
 }
 
 inline Timestamp
 Timestamp::now()
 {
-    return Timestamp_now();
+    Timestamp result;
+    Timestamp_ptr_now(&result);
+    return result;
 }
 
 inline Timestamp
 Timestamp::epoch()
 {
-    return Timestamp_epoch();
+    Timestamp result;
+    Timestamp_ptr_epoch(&result);
+    return result;
 }
 
 inline time_t
