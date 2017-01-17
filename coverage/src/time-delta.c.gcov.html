@@ -440,12 +440,12 @@
 <span class="lineNum">     378 </span><span class="lineCov">          2 : }</span>
 <a name="379"><span class="lineNum">     379 </span>            : </a>
 <span class="lineNum">     380 </span>            : void
-<span class="lineNum">     381 </span><span class="lineNoCov">          0 : TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor)</span>
+<span class="lineNum">     381 </span><span class="lineNoCov">          0 : TimeDelta_multiply_by(struct TimeDelta * const self, const int scale_factor)</span>
 <span class="lineNum">     382 </span>            : {
 <span class="lineNum">     383 </span><span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     384 </span>            : 
-<span class="lineNum">     385 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_seconds *= scaleFactor;</span>
-<span class="lineNum">     386 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds *= scaleFactor;</span>
+<span class="lineNum">     385 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_seconds *= scale_factor;</span>
+<span class="lineNum">     386 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds *= scale_factor;</span>
 <span class="lineNum">     387 </span>            : 
 <span class="lineNum">     388 </span><span class="lineNoCov">          0 :     CHECK_DATA(self-&gt;data_);</span>
 <span class="lineNum">     389 </span><span class="lineNoCov">          0 : }</span>
@@ -453,15 +453,15 @@
 <span class="lineNum">     391 </span>            : void
 <span class="lineNum">     392 </span><span class="lineNoCov">          0 : TimeDelta_multiply_by_decimal(</span>
 <span class="lineNum">     393 </span>            :         struct TimeDelta * const self,
-<span class="lineNum">     394 </span>            :         const double scaleFactor)
+<span class="lineNum">     394 </span>            :         const double scale_factor)
 <span class="lineNum">     395 </span>            : {
 <span class="lineNum">     396 </span>            :     double seconds;
 <span class="lineNum">     397 </span>            : 
 <span class="lineNum">     398 </span><span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     399 </span>            : 
-<span class="lineNum">     400 </span><span class="lineNoCov">          0 :     seconds = (double)self-&gt;data_.delta_seconds * scaleFactor;</span>
+<span class="lineNum">     400 </span><span class="lineNoCov">          0 :     seconds = (double)self-&gt;data_.delta_seconds * scale_factor;</span>
 <span class="lineNum">     401 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_seconds = (int_delta)seconds;</span>
-<span class="lineNum">     402 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds *= scaleFactor;</span>
+<span class="lineNum">     402 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds *= scale_factor;</span>
 <span class="lineNum">     403 </span>            : 
 <span class="lineNum">     404 </span>            :     /* When scaling the seconds, we may have a fractional part that needs to
 <span class="lineNum">     405 </span>            :        be stored in the nanoseconds */
@@ -473,25 +473,25 @@
 <span class="lineNum">     411 </span><span class="lineNoCov">          0 : }</span>
 <a name="412"><span class="lineNum">     412 </span>            : </a>
 <span class="lineNum">     413 </span>            : void
-<span class="lineNum">     414 </span><span class="lineNoCov">          0 : TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor)</span>
+<span class="lineNum">     414 </span><span class="lineNoCov">          0 : TimeDelta_divide_by(struct TimeDelta * const self, const int scale_factor)</span>
 <span class="lineNum">     415 </span>            : {
 <span class="lineNum">     416 </span>            :     int_delta orig_seconds;
 <span class="lineNum">     417 </span>            : 
 <span class="lineNum">     418 </span><span class="lineNoCov">          0 :     assert(self != NULL);</span>
-<span class="lineNum">     419 </span><span class="lineNoCov">          0 :     assert(scaleFactor != 0);</span>
+<span class="lineNum">     419 </span><span class="lineNoCov">          0 :     assert(scale_factor != 0);</span>
 <span class="lineNum">     420 </span>            : 
 <span class="lineNum">     421 </span>            :     /* Start by scaling just the seconds portion */
 <span class="lineNum">     422 </span><span class="lineNoCov">          0 :     orig_seconds = self-&gt;data_.delta_seconds;</span>
-<span class="lineNum">     423 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_seconds /= scaleFactor;</span>
+<span class="lineNum">     423 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_seconds /= scale_factor;</span>
 <span class="lineNum">     424 </span>            : 
 <span class="lineNum">     425 </span>            :     /* When scaling down, there may be fractional seconds that could be
 <span class="lineNum">     426 </span>            :        represented as nanoseconds. Add this to the nanoseconds (which we
 <span class="lineNum">     427 </span>            :        haven't scaled yet) */
-<span class="lineNum">     428 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds += (orig_seconds % scaleFactor) *</span>
+<span class="lineNum">     428 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds += (orig_seconds % scale_factor) *</span>
 <span class="lineNum">     429 </span>            :         NANOSECONDS_IN_SECOND;
 <span class="lineNum">     430 </span>            : 
 <span class="lineNum">     431 </span>            :     /* Now we can scale the nanoseconds */
-<span class="lineNum">     432 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds /= scaleFactor;</span>
+<span class="lineNum">     432 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds /= scale_factor;</span>
 <span class="lineNum">     433 </span>            : 
 <span class="lineNum">     434 </span><span class="lineNoCov">          0 :     CHECK_DATA(self-&gt;data_);</span>
 <span class="lineNum">     435 </span><span class="lineNoCov">          0 : }</span>
@@ -499,25 +499,25 @@
 <span class="lineNum">     437 </span>            : void
 <span class="lineNum">     438 </span><span class="lineNoCov">          0 : TimeDelta_divide_by_decimal(</span>
 <span class="lineNum">     439 </span>            :         struct TimeDelta * const self,
-<span class="lineNum">     440 </span>            :         const double scaleFactor)
+<span class="lineNum">     440 </span>            :         const double scale_factor)
 <span class="lineNum">     441 </span>            : {
 <span class="lineNum">     442 </span><span class="lineNoCov">          0 :     assert(self != NULL);</span>
-<span class="lineNum">     443 </span><span class="lineNoCov">          0 :     assert(scaleFactor != 0.0);</span>
+<span class="lineNum">     443 </span><span class="lineNoCov">          0 :     assert(scale_factor != 0.0);</span>
 <span class="lineNum">     444 </span>            : 
 <span class="lineNum">     445 </span>            :     /* Simplify our lives by reusing the float multiplication implementation */
-<span class="lineNum">     446 </span><span class="lineNoCov">          0 :     TimeDelta_multiply_by_decimal(self, 1.0/scaleFactor);</span>
+<span class="lineNum">     446 </span><span class="lineNoCov">          0 :     TimeDelta_multiply_by_decimal(self, 1.0/scale_factor);</span>
 <span class="lineNum">     447 </span><span class="lineNoCov">          0 : }</span>
 <a name="448"><span class="lineNum">     448 </span>            : </a>
 <span class="lineNum">     449 </span>            : void
 <span class="lineNum">     450 </span><span class="lineCov">         57 : TimeDelta_add(</span>
 <span class="lineNum">     451 </span>            :         struct TimeDelta * const self,
-<span class="lineNum">     452 </span>            :         const struct TimeDelta * const timeDeltaToAdd)
+<span class="lineNum">     452 </span>            :         const struct TimeDelta * const other)
 <span class="lineNum">     453 </span>            : {
 <span class="lineNum">     454 </span><span class="lineCov">         57 :     assert(self != NULL);</span>
-<span class="lineNum">     455 </span><span class="lineCov">         57 :     assert(timeDeltaToAdd != NULL);</span>
+<span class="lineNum">     455 </span><span class="lineCov">         57 :     assert(other != NULL);</span>
 <span class="lineNum">     456 </span>            : 
-<span class="lineNum">     457 </span><span class="lineCov">         57 :     self-&gt;data_.delta_seconds += timeDeltaToAdd-&gt;data_.delta_seconds;</span>
-<span class="lineNum">     458 </span><span class="lineCov">         57 :     self-&gt;data_.delta_nanoseconds += timeDeltaToAdd-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     457 </span><span class="lineCov">         57 :     self-&gt;data_.delta_seconds += other-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     458 </span><span class="lineCov">         57 :     self-&gt;data_.delta_nanoseconds += other-&gt;data_.delta_nanoseconds;</span>
 <span class="lineNum">     459 </span>            : 
 <span class="lineNum">     460 </span><span class="lineCov">         57 :     CHECK_DATA(self-&gt;data_);</span>
 <span class="lineNum">     461 </span><span class="lineCov">         57 : }</span>
@@ -538,13 +538,13 @@
 <span class="lineNum">     476 </span>            : void
 <span class="lineNum">     477 </span><span class="lineNoCov">          0 : TimeDelta_subtract(</span>
 <span class="lineNum">     478 </span>            :         struct TimeDelta * const self,
-<span class="lineNum">     479 </span>            :         const struct TimeDelta * const timeDeltaToSubtract)
+<span class="lineNum">     479 </span>            :         const struct TimeDelta * const other)
 <span class="lineNum">     480 </span>            : {
 <span class="lineNum">     481 </span><span class="lineNoCov">          0 :     assert(self != NULL);</span>
-<span class="lineNum">     482 </span><span class="lineNoCov">          0 :     assert(timeDeltaToSubtract != NULL);</span>
+<span class="lineNum">     482 </span><span class="lineNoCov">          0 :     assert(other != NULL);</span>
 <span class="lineNum">     483 </span>            : 
-<span class="lineNum">     484 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_seconds -= timeDeltaToSubtract-&gt;data_.delta_seconds;</span>
-<span class="lineNum">     485 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds -= timeDeltaToSubtract-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     484 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_seconds -= other-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     485 </span><span class="lineNoCov">          0 :     self-&gt;data_.delta_nanoseconds -= other-&gt;data_.delta_nanoseconds;</span>
 <span class="lineNum">     486 </span>            : 
 <span class="lineNum">     487 </span><span class="lineNoCov">          0 :     CHECK_DATA(self-&gt;data_);</span>
 <span class="lineNum">     488 </span><span class="lineNoCov">          0 : }</span>

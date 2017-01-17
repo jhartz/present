@@ -179,41 +179,41 @@
 <span class="lineNum">     117 </span><span class="lineCov">         13 : }</span>
 <a name="118"><span class="lineNum">     118 </span>            : </a>
 <span class="lineNum">     119 </span>            : void
-<span class="lineNum">     120 </span><span class="lineCov">          6 : DayDelta_multiply_by(struct DayDelta * const self, int scaleFactor)</span>
+<span class="lineNum">     120 </span><span class="lineCov">          6 : DayDelta_multiply_by(struct DayDelta * const self, int scale_factor)</span>
 <span class="lineNum">     121 </span>            : {
 <span class="lineNum">     122 </span><span class="lineCov">          6 :     assert(self != NULL);</span>
 <span class="lineNum">     123 </span>            : 
-<span class="lineNum">     124 </span><span class="lineCov">          6 :     self-&gt;data_.delta_days *= scaleFactor;</span>
+<span class="lineNum">     124 </span><span class="lineCov">          6 :     self-&gt;data_.delta_days *= scale_factor;</span>
 <span class="lineNum">     125 </span><span class="lineCov">          6 : }</span>
 <a name="126"><span class="lineNum">     126 </span>            : </a>
 <span class="lineNum">     127 </span>            : void
-<span class="lineNum">     128 </span><span class="lineCov">          6 : DayDelta_divide_by(struct DayDelta * const self, int scaleFactor)</span>
+<span class="lineNum">     128 </span><span class="lineCov">          6 : DayDelta_divide_by(struct DayDelta * const self, int scale_factor)</span>
 <span class="lineNum">     129 </span>            : {
 <span class="lineNum">     130 </span><span class="lineCov">          6 :     assert(self != NULL);</span>
 <span class="lineNum">     131 </span>            : 
-<span class="lineNum">     132 </span><span class="lineCov">          6 :     self-&gt;data_.delta_days /= scaleFactor;</span>
+<span class="lineNum">     132 </span><span class="lineCov">          6 :     self-&gt;data_.delta_days /= scale_factor;</span>
 <span class="lineNum">     133 </span><span class="lineCov">          6 : }</span>
 <a name="134"><span class="lineNum">     134 </span>            : </a>
 <span class="lineNum">     135 </span>            : void
 <span class="lineNum">     136 </span><span class="lineCov">          4 : DayDelta_add(</span>
 <span class="lineNum">     137 </span>            :         struct DayDelta * const self,
-<span class="lineNum">     138 </span>            :         const struct DayDelta * const dayDeltaToAdd)
+<span class="lineNum">     138 </span>            :         const struct DayDelta * const other)
 <span class="lineNum">     139 </span>            : {
 <span class="lineNum">     140 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
-<span class="lineNum">     141 </span><span class="lineCov">          4 :     assert(dayDeltaToAdd != NULL);</span>
+<span class="lineNum">     141 </span><span class="lineCov">          4 :     assert(other != NULL);</span>
 <span class="lineNum">     142 </span>            : 
-<span class="lineNum">     143 </span><span class="lineCov">          4 :     self-&gt;data_.delta_days += dayDeltaToAdd-&gt;data_.delta_days;</span>
+<span class="lineNum">     143 </span><span class="lineCov">          4 :     self-&gt;data_.delta_days += other-&gt;data_.delta_days;</span>
 <span class="lineNum">     144 </span><span class="lineCov">          4 : }</span>
 <a name="145"><span class="lineNum">     145 </span>            : </a>
 <span class="lineNum">     146 </span>            : void
 <span class="lineNum">     147 </span><span class="lineCov">          4 : DayDelta_subtract(</span>
 <span class="lineNum">     148 </span>            :         struct DayDelta * const self,
-<span class="lineNum">     149 </span>            :         const struct DayDelta * const dayDeltaToSubtract)
+<span class="lineNum">     149 </span>            :         const struct DayDelta * const other)
 <span class="lineNum">     150 </span>            : {
 <span class="lineNum">     151 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
-<span class="lineNum">     152 </span><span class="lineCov">          4 :     assert(dayDeltaToSubtract != NULL);</span>
+<span class="lineNum">     152 </span><span class="lineCov">          4 :     assert(other != NULL);</span>
 <span class="lineNum">     153 </span>            : 
-<span class="lineNum">     154 </span><span class="lineCov">          4 :     self-&gt;data_.delta_days -= dayDeltaToSubtract-&gt;data_.delta_days;</span>
+<span class="lineNum">     154 </span><span class="lineCov">          4 :     self-&gt;data_.delta_days -= other-&gt;data_.delta_days;</span>
 <span class="lineNum">     155 </span><span class="lineCov">          4 : }</span>
 <a name="156"><span class="lineNum">     156 </span>            : </a>
 <span class="lineNum">     157 </span>            : int

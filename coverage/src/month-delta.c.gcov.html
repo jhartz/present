@@ -176,41 +176,41 @@
 <span class="lineNum">     114 </span><span class="lineCov">          9 : }</span>
 <a name="115"><span class="lineNum">     115 </span>            : </a>
 <span class="lineNum">     116 </span>            : void
-<span class="lineNum">     117 </span><span class="lineCov">          6 : MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor)</span>
+<span class="lineNum">     117 </span><span class="lineCov">          6 : MonthDelta_multiply_by(struct MonthDelta * const self, int scale_factor)</span>
 <span class="lineNum">     118 </span>            : {
 <span class="lineNum">     119 </span><span class="lineCov">          6 :     assert(self != NULL);</span>
 <span class="lineNum">     120 </span>            : 
-<span class="lineNum">     121 </span><span class="lineCov">          6 :     self-&gt;data_.delta_months *= scaleFactor;</span>
+<span class="lineNum">     121 </span><span class="lineCov">          6 :     self-&gt;data_.delta_months *= scale_factor;</span>
 <span class="lineNum">     122 </span><span class="lineCov">          6 : }</span>
 <a name="123"><span class="lineNum">     123 </span>            : </a>
 <span class="lineNum">     124 </span>            : void
-<span class="lineNum">     125 </span><span class="lineCov">          6 : MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor)</span>
+<span class="lineNum">     125 </span><span class="lineCov">          6 : MonthDelta_divide_by(struct MonthDelta * const self, int scale_factor)</span>
 <span class="lineNum">     126 </span>            : {
 <span class="lineNum">     127 </span><span class="lineCov">          6 :     assert(self != NULL);</span>
 <span class="lineNum">     128 </span>            : 
-<span class="lineNum">     129 </span><span class="lineCov">          6 :     self-&gt;data_.delta_months /= scaleFactor;</span>
+<span class="lineNum">     129 </span><span class="lineCov">          6 :     self-&gt;data_.delta_months /= scale_factor;</span>
 <span class="lineNum">     130 </span><span class="lineCov">          6 : }</span>
 <a name="131"><span class="lineNum">     131 </span>            : </a>
 <span class="lineNum">     132 </span>            : void
 <span class="lineNum">     133 </span><span class="lineCov">          4 : MonthDelta_add(</span>
 <span class="lineNum">     134 </span>            :         struct MonthDelta * const self,
-<span class="lineNum">     135 </span>            :         const struct MonthDelta * const monthDeltaToAdd)
+<span class="lineNum">     135 </span>            :         const struct MonthDelta * const other)
 <span class="lineNum">     136 </span>            : {
 <span class="lineNum">     137 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
-<span class="lineNum">     138 </span><span class="lineCov">          4 :     assert(monthDeltaToAdd != NULL);</span>
+<span class="lineNum">     138 </span><span class="lineCov">          4 :     assert(other != NULL);</span>
 <span class="lineNum">     139 </span>            : 
-<span class="lineNum">     140 </span><span class="lineCov">          4 :     self-&gt;data_.delta_months += monthDeltaToAdd-&gt;data_.delta_months;</span>
+<span class="lineNum">     140 </span><span class="lineCov">          4 :     self-&gt;data_.delta_months += other-&gt;data_.delta_months;</span>
 <span class="lineNum">     141 </span><span class="lineCov">          4 : }</span>
 <a name="142"><span class="lineNum">     142 </span>            : </a>
 <span class="lineNum">     143 </span>            : void
 <span class="lineNum">     144 </span><span class="lineCov">          4 : MonthDelta_subtract(</span>
 <span class="lineNum">     145 </span>            :         struct MonthDelta * const self,
-<span class="lineNum">     146 </span>            :         const struct MonthDelta * const monthDeltaToSubtract)
+<span class="lineNum">     146 </span>            :         const struct MonthDelta * const other)
 <span class="lineNum">     147 </span>            : {
 <span class="lineNum">     148 </span><span class="lineCov">          4 :     assert(self != NULL);</span>
-<span class="lineNum">     149 </span><span class="lineCov">          4 :     assert(monthDeltaToSubtract != NULL);</span>
+<span class="lineNum">     149 </span><span class="lineCov">          4 :     assert(other != NULL);</span>
 <span class="lineNum">     150 </span>            : 
-<span class="lineNum">     151 </span><span class="lineCov">          4 :     self-&gt;data_.delta_months -= monthDeltaToSubtract-&gt;data_.delta_months;</span>
+<span class="lineNum">     151 </span><span class="lineCov">          4 :     self-&gt;data_.delta_months -= other-&gt;data_.delta_months;</span>
 <span class="lineNum">     152 </span><span class="lineCov">          4 : }</span>
 <a name="153"><span class="lineNum">     153 </span>            : </a>
 <span class="lineNum">     154 </span>            : int
