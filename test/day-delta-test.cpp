@@ -39,6 +39,12 @@ TEST_CASE("DayDelta creators", "[day-delta]") {
     d = DayDelta::from_days(-2147483647);
     IS(-2147483647);
 
+    d = DayDelta_from_days(13);
+    IS(13);
+
+    DayDelta_ptr_from_days(&d, -11);
+    IS(-11);
+
     // from_weeks
 
     d = DayDelta::from_weeks(1);
@@ -56,9 +62,21 @@ TEST_CASE("DayDelta creators", "[day-delta]") {
     d = DayDelta::from_weeks(-306783378);
     IS(-2147483646);
 
+    d = DayDelta_from_weeks(7);
+    IS(49);
+
+    DayDelta_ptr_from_weeks(&d, -9);
+    IS(-63);
+
     // zero
 
     d = DayDelta::zero();
+    IS(0);
+
+    d = DayDelta_zero();
+    IS(0);
+
+    DayDelta_ptr_zero(&d);
     IS(0);
 }
 

@@ -39,6 +39,12 @@ TEST_CASE("MonthDelta creators", "[month-delta]") {
     d = MonthDelta::from_months(-2147483647);
     IS(-2147483647);
 
+    d = MonthDelta_from_months(6);
+    IS(6);
+
+    MonthDelta_ptr_from_months(&d, -8);
+    IS(-8);
+
     // from_years
 
     d = MonthDelta::from_years(1);
@@ -56,9 +62,21 @@ TEST_CASE("MonthDelta creators", "[month-delta]") {
     d = MonthDelta::from_years(-32767);
     IS(-393204);
 
+    d = MonthDelta_from_years(5);
+    IS(60);
+
+    MonthDelta_ptr_from_years(&d, -8);
+    IS(-96);
+
     // zero
 
     d = MonthDelta::zero();
+    IS(0);
+
+    d = MonthDelta_zero();
+    IS(0);
+
+    MonthDelta_ptr_zero(&d);
     IS(0);
 }
 
