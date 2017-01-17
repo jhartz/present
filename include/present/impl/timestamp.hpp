@@ -19,10 +19,10 @@ Timestamp::create(const time_t timestamp)
 }
 
 inline Timestamp
-Timestamp::create(const struct tm & tm, const TimeDelta & timeZoneOffset)
+Timestamp::create(const struct tm & tm, const TimeDelta & time_zone_offset)
 {
     Timestamp result;
-    Timestamp_ptr_from_struct_tm(&result, tm, &timeZoneOffset);
+    Timestamp_ptr_from_struct_tm(&result, tm, &time_zone_offset);
     return result;
 }
 
@@ -45,27 +45,27 @@ Timestamp::create_local(const struct tm & tm)
 inline Timestamp
 Timestamp::create(
         const Date & date,
-        const ClockTime & clockTime,
-        const TimeDelta & timeZoneOffset)
+        const ClockTime & clock_time,
+        const TimeDelta & time_zone_offset)
 {
     Timestamp result;
-    Timestamp_ptr_create(&result, &date, &clockTime, &timeZoneOffset);
+    Timestamp_ptr_create(&result, &date, &clock_time, &time_zone_offset);
     return result;
 }
 
 inline Timestamp
-Timestamp::create_utc(const Date & date, const ClockTime & clockTime)
+Timestamp::create_utc(const Date & date, const ClockTime & clock_time)
 {
     Timestamp result;
-    Timestamp_ptr_create_utc(&result, &date, &clockTime);
+    Timestamp_ptr_create_utc(&result, &date, &clock_time);
     return result;
 }
 
 inline Timestamp
-Timestamp::create_local(const Date & date, const ClockTime & clockTime)
+Timestamp::create_local(const Date & date, const ClockTime & clock_time)
 {
     Timestamp result;
-    Timestamp_ptr_create_local(&result, &date, &clockTime);
+    Timestamp_ptr_create_local(&result, &date, &clock_time);
     return result;
 }
 
@@ -92,9 +92,9 @@ Timestamp::get_time_t() const
 }
 
 inline struct tm
-Timestamp::get_struct_tm(const TimeDelta & timeZoneOffset) const
+Timestamp::get_struct_tm(const TimeDelta & time_zone_offset) const
 {
-    return Timestamp_get_struct_tm(this, &timeZoneOffset);
+    return Timestamp_get_struct_tm(this, &time_zone_offset);
 }
 
 inline struct tm
@@ -110,9 +110,9 @@ Timestamp::get_struct_tm_local() const
 }
 
 inline Date
-Timestamp::get_date(const TimeDelta & timeZoneOffset) const
+Timestamp::get_date(const TimeDelta & time_zone_offset) const
 {
-    return Timestamp_get_date(this, &timeZoneOffset);
+    return Timestamp_get_date(this, &time_zone_offset);
 }
 
 inline Date
@@ -128,9 +128,9 @@ Timestamp::get_date_local() const
 }
 
 inline ClockTime
-Timestamp::get_clock_time(const TimeDelta & timeZoneOffset) const
+Timestamp::get_clock_time(const TimeDelta & time_zone_offset) const
 {
-    return Timestamp_get_clock_time(this, &timeZoneOffset);
+    return Timestamp_get_clock_time(this, &time_zone_offset);
 }
 
 inline ClockTime

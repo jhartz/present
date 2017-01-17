@@ -114,41 +114,41 @@ MonthDelta_negate(struct MonthDelta * const self)
 }
 
 void
-MonthDelta_multiply_by(struct MonthDelta * const self, int scaleFactor)
+MonthDelta_multiply_by(struct MonthDelta * const self, int scale_factor)
 {
     assert(self != NULL);
 
-    self->data_.delta_months *= scaleFactor;
+    self->data_.delta_months *= scale_factor;
 }
 
 void
-MonthDelta_divide_by(struct MonthDelta * const self, int scaleFactor)
+MonthDelta_divide_by(struct MonthDelta * const self, int scale_factor)
 {
     assert(self != NULL);
 
-    self->data_.delta_months /= scaleFactor;
+    self->data_.delta_months /= scale_factor;
 }
 
 void
 MonthDelta_add(
         struct MonthDelta * const self,
-        const struct MonthDelta * const monthDeltaToAdd)
+        const struct MonthDelta * const other)
 {
     assert(self != NULL);
-    assert(monthDeltaToAdd != NULL);
+    assert(other != NULL);
 
-    self->data_.delta_months += monthDeltaToAdd->data_.delta_months;
+    self->data_.delta_months += other->data_.delta_months;
 }
 
 void
 MonthDelta_subtract(
         struct MonthDelta * const self,
-        const struct MonthDelta * const monthDeltaToSubtract)
+        const struct MonthDelta * const other)
 {
     assert(self != NULL);
-    assert(monthDeltaToSubtract != NULL);
+    assert(other != NULL);
 
-    self->data_.delta_months -= monthDeltaToSubtract->data_.delta_months;
+    self->data_.delta_months -= other->data_.delta_months;
 }
 
 int

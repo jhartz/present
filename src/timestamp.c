@@ -56,15 +56,15 @@ struct_tm_to_clock_time(const struct tm tm)
 static struct tm
 convert_to_struct_tm(
         const struct Date * const date,
-        const struct ClockTime * const clockTime)
+        const struct ClockTime * const clock_time)
 {
     struct tm tm;
     time_t mktime_returned;
 
     memset((void *) &tm, 0, sizeof(struct tm));
-    tm.tm_sec = (int) ClockTime_second(clockTime);
-    tm.tm_min = (int) ClockTime_minute(clockTime);
-    tm.tm_hour = (int) ClockTime_hour(clockTime);
+    tm.tm_sec = (int) ClockTime_second(clock_time);
+    tm.tm_min = (int) ClockTime_minute(clock_time);
+    tm.tm_hour = (int) ClockTime_hour(clock_time);
     tm.tm_mday = (int) Date_day(date);
     tm.tm_mon = (int) Date_month(date) - STRUCT_TM_MONTH_OFFSET;
     tm.tm_year = (int) Date_year(date) - STRUCT_TM_YEAR_OFFSET;
@@ -110,12 +110,12 @@ timestamp_to_time_t(const int_timestamp timestamp_seconds)
  * Check a Date and a ClockTime to make sure they aren't erroneous (if so, set
  * the proper errors on "result").
  */
-#define CHECK_DATE_AND_CLOCK_TIME(date, clockTime)  \
+#define CHECK_DATE_AND_CLOCK_TIME(date, clock_time) \
     if ((date)->has_error) {                        \
         result->has_error = 1;                      \
         result->errors.invalid_date = 1;            \
     }                                               \
-    if ((clockTime)->has_error) {                   \
+    if ((clock_time)->has_error) {                  \
         result->has_error = 1;                      \
         result->errors.invalid_clock_time = 1;      \
     }
@@ -155,10 +155,10 @@ Timestamp_ptr_from_time_t(
 struct Timestamp
 Timestamp_from_struct_tm(
         const struct tm tm,
-        const struct TimeDelta * const timeZoneOffset)
+        const struct TimeDelta * const time_zone_offset)
 {
     struct Timestamp result;
-    Timestamp_ptr_from_struct_tm(&result, tm, timeZoneOffset);
+    Timestamp_ptr_from_struct_tm(&result, tm, time_zone_offset);
     return result;
 }
 
@@ -166,14 +166,14 @@ void
 Timestamp_ptr_from_struct_tm(
         struct Timestamp * const result,
         const struct tm tm,
-        const struct TimeDelta * const timeZoneOffset)
+        const struct TimeDelta * const time_zone_offset)
 {
     struct Date date;
     struct ClockTime clock_time;
 
     date = struct_tm_to_date(tm);
     clock_time = struct_tm_to_clock_time(tm);
-    Timestamp_ptr_create(result, &date, &clock_time, timeZoneOffset);
+    Timestamp_ptr_create(result, &date, &clock_time, time_zone_offset);
 }
 
 struct Timestamp
@@ -223,11 +223,11 @@ Timestamp_ptr_from_struct_tm_local(
 struct Timestamp
 Timestamp_create(
         const struct Date * const date,
-        const struct ClockTime * const clockTime,
-        const struct TimeDelta * const timeZoneOffset)
+        const struct ClockTime * const clock_time,
+        const struct TimeDelta * const time_zone_offset)
 {
     struct Timestamp result;
-    Timestamp_ptr_create(&result, date, clockTime, timeZoneOffset);
+    Timestamp_ptr_create(&result, date, clock_time, time_zone_offset);
     return result;
 }
 
@@ -235,34 +235,34 @@ void
 Timestamp_ptr_create(
         struct Timestamp * const result,
         const struct Date * const date,
-        const struct ClockTime * const clockTime,
-        const struct TimeDelta * const timeZoneOffset)
+        const struct ClockTime * const clock_time,
+        const struct TimeDelta * const time_zone_offset)
 {
     assert(result != NULL);
     assert(date != NULL);
-    assert(clockTime != NULL);
+    assert(clock_time != NULL);
 
     CLEAR(result);
 
     /* Make sure the Date and ClockTime aren't erroneous */
-    CHECK_DATE_AND_CLOCK_TIME(date, clockTime)
+    CHECK_DATE_AND_CLOCK_TIME(date, clock_time)
 
     if (!result->has_error) {
         /* First, pretend it's just UTC */
-        Timestamp_ptr_create_utc(result, date, clockTime);
+        Timestamp_ptr_create_utc(result, date, clock_time);
         /* Now, subtract the UTC offset (since we're technically converting
            TO UTC) */
-        Timestamp_subtract_TimeDelta(result, timeZoneOffset);
+        Timestamp_subtract_TimeDelta(result, time_zone_offset);
     }
 }
 
 struct Timestamp
 Timestamp_create_utc(
         const struct Date * const date,
-        const struct ClockTime * const clockTime)
+        const struct ClockTime * const clock_time)
 {
     struct Timestamp result;
-    Timestamp_ptr_create_utc(&result, date, clockTime);
+    Timestamp_ptr_create_utc(&result, date, clock_time);
     return result;
 }
 
@@ -270,7 +270,7 @@ void
 Timestamp_ptr_create_utc(
         struct Timestamp * const result,
         const struct Date * const date,
-        const struct ClockTime * const clockTime)
+        const struct ClockTime * const clock_time)
 {
     /** Day of the year that each month starts on (in non-leap years). */
     static const int_day_of_year DAY_OF_START_OF_MONTH[13] = {
@@ -282,12 +282,12 @@ Timestamp_ptr_create_utc(
 
     assert(result != NULL);
     assert(date != NULL);
-    assert(clockTime != NULL);
+    assert(clock_time != NULL);
 
     CLEAR(result);
 
     /* Make sure the Date and ClockTime aren't erroneous */
-    CHECK_DATE_AND_CLOCK_TIME(date, clockTime)
+    CHECK_DATE_AND_CLOCK_TIME(date, clock_time)
 
     if (!result->has_error) {
         /* First, the hard part... determining the number of days since the UNIX
@@ -311,7 +311,7 @@ Timestamp_ptr_create_utc(
         }
 
         /* This is a more useful form of the clock time */
-        time_since_midnight = ClockTime_time_since_midnight(clockTime);
+        time_since_midnight = ClockTime_time_since_midnight(clock_time);
 
         init_timestamp(
             result,
@@ -324,10 +324,10 @@ Timestamp_ptr_create_utc(
 struct Timestamp
 Timestamp_create_local(
         const struct Date * const date,
-        const struct ClockTime * const clockTime)
+        const struct ClockTime * const clock_time)
 {
     struct Timestamp result;
-    Timestamp_ptr_create_local(&result, date, clockTime);
+    Timestamp_ptr_create_local(&result, date, clock_time);
     return result;
 }
 
@@ -335,21 +335,21 @@ void
 Timestamp_ptr_create_local(
         struct Timestamp * const result,
         const struct Date * const date,
-        const struct ClockTime * const clockTime)
+        const struct ClockTime * const clock_time)
 {
     assert(result != NULL);
     assert(date != NULL);
-    assert(clockTime != NULL);
+    assert(clock_time != NULL);
 
     CLEAR(result);
 
     /* Make sure the Date and ClockTime aren't erroneous */
-    CHECK_DATE_AND_CLOCK_TIME(date, clockTime)
+    CHECK_DATE_AND_CLOCK_TIME(date, clock_time)
 
     if (!result->has_error) {
         Timestamp_ptr_from_struct_tm_local(
             result,
-            convert_to_struct_tm(date, clockTime));
+            convert_to_struct_tm(date, clock_time));
     }
 }
 
@@ -395,16 +395,16 @@ Timestamp_get_time_t(const struct Timestamp * const self)
 struct tm
 Timestamp_get_struct_tm(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset)
+        const struct TimeDelta * const time_zone_offset)
 {
     struct Timestamp copy;
 
     assert(self != NULL);
     assert(self->has_error == 0);
-    assert(timeZoneOffset != NULL);
+    assert(time_zone_offset != NULL);
 
     copy = *self;
-    Timestamp_add_TimeDelta(&copy, timeZoneOffset);
+    Timestamp_add_TimeDelta(&copy, time_zone_offset);
     return Timestamp_get_struct_tm_utc(&copy);
 }
 
@@ -439,13 +439,13 @@ Timestamp_get_struct_tm_local(const struct Timestamp * const self)
 struct Date
 Timestamp_get_date(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset)
+        const struct TimeDelta * const time_zone_offset)
 {
     assert(self != NULL);
     assert(self->has_error == 0);
-    assert(timeZoneOffset != NULL);
+    assert(time_zone_offset != NULL);
 
-    return struct_tm_to_date(Timestamp_get_struct_tm(self, timeZoneOffset));
+    return struct_tm_to_date(Timestamp_get_struct_tm(self, time_zone_offset));
 }
 
 struct Date
@@ -469,13 +469,13 @@ Timestamp_get_date_local(const struct Timestamp * const self)
 struct ClockTime
 Timestamp_get_clock_time(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset)
+        const struct TimeDelta * const time_zone_offset)
 {
     assert(self != NULL);
     assert(self->has_error == 0);
 
     return struct_tm_to_clock_time(
-            Timestamp_get_struct_tm(self, timeZoneOffset));
+            Timestamp_get_struct_tm(self, time_zone_offset));
 }
 
 struct ClockTime

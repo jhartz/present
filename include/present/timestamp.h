@@ -70,7 +70,7 @@ struct PRESENT_API Timestamp {
     /** @copydoc Timestamp_from_struct_tm */
     static Timestamp create(
         const struct tm & tm,
-        const TimeDelta & timeZoneOffset);
+        const TimeDelta & time_zone_offset);
     /** @copydoc Timestamp_from_struct_tm_utc */
     static Timestamp create_utc(const struct tm & tm);
     /** @copydoc Timestamp_from_struct_tm_local */
@@ -79,14 +79,16 @@ struct PRESENT_API Timestamp {
     /** @copydoc Timestamp_create */
     static Timestamp create(
         const Date & date,
-        const ClockTime & clockTime,
-        const TimeDelta & timeZoneOffset);
+        const ClockTime & clock_time,
+        const TimeDelta & time_zone_offset);
     /** @copydoc Timestamp_create_utc */
-    static Timestamp create_utc(const Date & date, const ClockTime & clockTime);
+    static Timestamp create_utc(
+            const Date & date,
+            const ClockTime & clock_time);
     /** @copydoc Timestamp_create_local */
     static Timestamp create_local(
         const Date & date,
-        const ClockTime & clockTime);
+        const ClockTime & clock_time);
 
     /** @copydoc Timestamp_now */
     static Timestamp now();
@@ -98,21 +100,21 @@ struct PRESENT_API Timestamp {
     time_t get_time_t() const;
 
     /** @copydoc Timestamp_get_struct_tm */
-    struct tm get_struct_tm(const TimeDelta & timeZoneOffset) const;
+    struct tm get_struct_tm(const TimeDelta & time_zone_offset) const;
     /** @copydoc Timestamp_get_struct_tm_utc */
     struct tm get_struct_tm_utc() const;
     /** @copydoc Timestamp_get_struct_tm_local */
     struct tm get_struct_tm_local() const;
 
     /** @copydoc Timestamp_get_date */
-    Date get_date(const TimeDelta & timeZoneOffset) const;
+    Date get_date(const TimeDelta & time_zone_offset) const;
     /** @copydoc Timestamp_get_date_utc */
     Date get_date_utc() const;
     /** @copydoc Timestamp_get_date_local */
     Date get_date_local() const;
 
     /** @copydoc Timestamp_get_clock_time */
-    ClockTime get_clock_time(const TimeDelta & timeZoneOffset) const;
+    ClockTime get_clock_time(const TimeDelta & time_zone_offset) const;
     /** @copydoc Timestamp_get_clock_time_utc */
     ClockTime get_clock_time_utc() const;
     /** @copydoc Timestamp_get_clock_time_local */
@@ -227,13 +229,13 @@ Timestamp_ptr_from_time_t(
  * in a certain time zone.
  *
  * @param tm The "struct tm" value representing the date and time.
- * @param timeZoneOffset The time zone offset (from UTC) used to interpret
+ * @param time_zone_offset The time zone offset (from UTC) used to interpret
  * @p tm.
  */
 PRESENT_API struct Timestamp
 Timestamp_from_struct_tm(
         const struct tm tm,
-        const struct TimeDelta * const timeZoneOffset);
+        const struct TimeDelta * const time_zone_offset);
 
 /**
  * @copydoc Timestamp_from_struct_tm
@@ -243,7 +245,7 @@ PRESENT_API void
 Timestamp_ptr_from_struct_tm(
         struct Timestamp * const result,
         const struct tm tm,
-        const struct TimeDelta * const timeZoneOffset);
+        const struct TimeDelta * const time_zone_offset);
 
 /**
  * Create a new Timestamp based on a "struct tm" value (from C's time library)
@@ -295,15 +297,15 @@ Timestamp_ptr_from_struct_tm_local(
  * @copydoc check_for_error_timestamp
  *
  * @param date The @ref Date component of the Timestamp.
- * @param clockTime The @ref ClockTime component of the Timestamp.
- * @param timeZoneOffset The time zone offset (from UTC) used to interpret
+ * @param clock_time The @ref ClockTime component of the Timestamp.
+ * @param time_zone_offset The time zone offset (from UTC) used to interpret
  * @p date and @p clockTime.
  */
 PRESENT_API struct Timestamp
 Timestamp_create(
         const struct Date * const date,
-        const struct ClockTime * const clockTime,
-        const struct TimeDelta * const timeZoneOffset);
+        const struct ClockTime * const clock_time,
+        const struct TimeDelta * const time_zone_offset);
 
 /**
  * @copydoc Timestamp_create
@@ -313,8 +315,8 @@ PRESENT_API void
 Timestamp_ptr_create(
         struct Timestamp * const result,
         const struct Date * const date,
-        const struct ClockTime * const clockTime,
-        const struct TimeDelta * const timeZoneOffset);
+        const struct ClockTime * const clock_time,
+        const struct TimeDelta * const time_zone_offset);
 
 /**
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in
@@ -329,12 +331,12 @@ Timestamp_ptr_create(
  * @copydoc check_for_error_timestamp
  *
  * @param date The @ref Date component of the Timestamp.
- * @param clockTime The @ref ClockTime component of the Timestamp.
+ * @param clock_time The @ref ClockTime component of the Timestamp.
  */
 PRESENT_API struct Timestamp
 Timestamp_create_utc(
         const struct Date * const date,
-        const struct ClockTime * const clockTime);
+        const struct ClockTime * const clock_time);
 
 /**
  * @copydoc Timestamp_create_utc
@@ -344,7 +346,7 @@ PRESENT_API void
 Timestamp_ptr_create_utc(
         struct Timestamp * const result,
         const struct Date * const date,
-        const struct ClockTime * const clockTime);
+        const struct ClockTime * const clock_time);
 
 /**
  * Create a new Timestamp based on a @ref Date and @ref ClockTime in the
@@ -359,12 +361,12 @@ Timestamp_ptr_create_utc(
  * @copydoc check_for_error_timestamp
  *
  * @param date The @ref Date component of the Timestamp.
- * @param clockTime The @ref ClockTime component of the Timestamp.
+ * @param clock_time The @ref ClockTime component of the Timestamp.
  */
 PRESENT_API struct Timestamp
 Timestamp_create_local(
         const struct Date * const date,
-        const struct ClockTime * const clockTime);
+        const struct ClockTime * const clock_time);
 
 /**
  * @copydoc Timestamp_create_local
@@ -374,7 +376,7 @@ PRESENT_API void
 Timestamp_ptr_create_local(
         struct Timestamp * const result,
         const struct Date * const date,
-        const struct ClockTime * const clockTime);
+        const struct ClockTime * const clock_time);
 
 
 /**
@@ -423,7 +425,7 @@ Timestamp_get_time_t(const struct Timestamp * const self);
 PRESENT_API struct tm
 Timestamp_get_struct_tm(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset);
+        const struct TimeDelta * const time_zone_offset);
 
 /**
  * Convert a Timestamp to a "struct tm" (from C's time library) in Coordinated
@@ -450,7 +452,7 @@ Timestamp_get_struct_tm_local(const struct Timestamp * const self);
 PRESENT_API struct Date
 Timestamp_get_date(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset);
+        const struct TimeDelta * const time_zone_offset);
 
 /**
  * Get the @ref Date component of a Timestamp in Coordinated Universal Time.
@@ -482,7 +484,7 @@ Timestamp_get_date_local(const struct Timestamp * const self);
 PRESENT_API struct ClockTime
 Timestamp_get_clock_time(
         const struct Timestamp * const self,
-        const struct TimeDelta * const timeZoneOffset);
+        const struct TimeDelta * const time_zone_offset);
 
 /**
  * Get the @ref ClockTime component of a Timestamp in Coordinated Universal

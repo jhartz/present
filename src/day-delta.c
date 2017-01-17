@@ -117,41 +117,41 @@ DayDelta_negate(struct DayDelta * const self)
 }
 
 void
-DayDelta_multiply_by(struct DayDelta * const self, int scaleFactor)
+DayDelta_multiply_by(struct DayDelta * const self, int scale_factor)
 {
     assert(self != NULL);
 
-    self->data_.delta_days *= scaleFactor;
+    self->data_.delta_days *= scale_factor;
 }
 
 void
-DayDelta_divide_by(struct DayDelta * const self, int scaleFactor)
+DayDelta_divide_by(struct DayDelta * const self, int scale_factor)
 {
     assert(self != NULL);
 
-    self->data_.delta_days /= scaleFactor;
+    self->data_.delta_days /= scale_factor;
 }
 
 void
 DayDelta_add(
         struct DayDelta * const self,
-        const struct DayDelta * const dayDeltaToAdd)
+        const struct DayDelta * const other)
 {
     assert(self != NULL);
-    assert(dayDeltaToAdd != NULL);
+    assert(other != NULL);
 
-    self->data_.delta_days += dayDeltaToAdd->data_.delta_days;
+    self->data_.delta_days += other->data_.delta_days;
 }
 
 void
 DayDelta_subtract(
         struct DayDelta * const self,
-        const struct DayDelta * const dayDeltaToSubtract)
+        const struct DayDelta * const other)
 {
     assert(self != NULL);
-    assert(dayDeltaToSubtract != NULL);
+    assert(other != NULL);
 
-    self->data_.delta_days -= dayDeltaToSubtract->data_.delta_days;
+    self->data_.delta_days -= other->data_.delta_days;
 }
 
 int

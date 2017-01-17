@@ -378,12 +378,12 @@ TimeDelta_negate(struct TimeDelta * const self)
 }
 
 void
-TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor)
+TimeDelta_multiply_by(struct TimeDelta * const self, const int scale_factor)
 {
     assert(self != NULL);
 
-    self->data_.delta_seconds *= scaleFactor;
-    self->data_.delta_nanoseconds *= scaleFactor;
+    self->data_.delta_seconds *= scale_factor;
+    self->data_.delta_nanoseconds *= scale_factor;
 
     CHECK_DATA(self->data_);
 }
@@ -391,15 +391,15 @@ TimeDelta_multiply_by(struct TimeDelta * const self, const int scaleFactor)
 void
 TimeDelta_multiply_by_decimal(
         struct TimeDelta * const self,
-        const double scaleFactor)
+        const double scale_factor)
 {
     double seconds;
 
     assert(self != NULL);
 
-    seconds = (double)self->data_.delta_seconds * scaleFactor;
+    seconds = (double)self->data_.delta_seconds * scale_factor;
     self->data_.delta_seconds = (int_delta)seconds;
-    self->data_.delta_nanoseconds *= scaleFactor;
+    self->data_.delta_nanoseconds *= scale_factor;
 
     /* When scaling the seconds, we may have a fractional part that needs to
        be stored in the nanoseconds */
@@ -411,25 +411,25 @@ TimeDelta_multiply_by_decimal(
 }
 
 void
-TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor)
+TimeDelta_divide_by(struct TimeDelta * const self, const int scale_factor)
 {
     int_delta orig_seconds;
 
     assert(self != NULL);
-    assert(scaleFactor != 0);
+    assert(scale_factor != 0);
 
     /* Start by scaling just the seconds portion */
     orig_seconds = self->data_.delta_seconds;
-    self->data_.delta_seconds /= scaleFactor;
+    self->data_.delta_seconds /= scale_factor;
 
     /* When scaling down, there may be fractional seconds that could be
        represented as nanoseconds. Add this to the nanoseconds (which we
        haven't scaled yet) */
-    self->data_.delta_nanoseconds += (orig_seconds % scaleFactor) *
+    self->data_.delta_nanoseconds += (orig_seconds % scale_factor) *
         NANOSECONDS_IN_SECOND;
 
     /* Now we can scale the nanoseconds */
-    self->data_.delta_nanoseconds /= scaleFactor;
+    self->data_.delta_nanoseconds /= scale_factor;
 
     CHECK_DATA(self->data_);
 }
@@ -437,25 +437,25 @@ TimeDelta_divide_by(struct TimeDelta * const self, const int scaleFactor)
 void
 TimeDelta_divide_by_decimal(
         struct TimeDelta * const self,
-        const double scaleFactor)
+        const double scale_factor)
 {
     assert(self != NULL);
-    assert(scaleFactor != 0.0);
+    assert(scale_factor != 0.0);
 
     /* Simplify our lives by reusing the float multiplication implementation */
-    TimeDelta_multiply_by_decimal(self, 1.0/scaleFactor);
+    TimeDelta_multiply_by_decimal(self, 1.0/scale_factor);
 }
 
 void
 TimeDelta_add(
         struct TimeDelta * const self,
-        const struct TimeDelta * const timeDeltaToAdd)
+        const struct TimeDelta * const other)
 {
     assert(self != NULL);
-    assert(timeDeltaToAdd != NULL);
+    assert(other != NULL);
 
-    self->data_.delta_seconds += timeDeltaToAdd->data_.delta_seconds;
-    self->data_.delta_nanoseconds += timeDeltaToAdd->data_.delta_nanoseconds;
+    self->data_.delta_seconds += other->data_.delta_seconds;
+    self->data_.delta_nanoseconds += other->data_.delta_nanoseconds;
 
     CHECK_DATA(self->data_);
 }
@@ -476,13 +476,13 @@ TimeDelta_add_DayDelta(
 void
 TimeDelta_subtract(
         struct TimeDelta * const self,
-        const struct TimeDelta * const timeDeltaToSubtract)
+        const struct TimeDelta * const other)
 {
     assert(self != NULL);
-    assert(timeDeltaToSubtract != NULL);
+    assert(other != NULL);
 
-    self->data_.delta_seconds -= timeDeltaToSubtract->data_.delta_seconds;
-    self->data_.delta_nanoseconds -= timeDeltaToSubtract->data_.delta_nanoseconds;
+    self->data_.delta_seconds -= other->data_.delta_seconds;
+    self->data_.delta_nanoseconds -= other->data_.delta_nanoseconds;
 
     CHECK_DATA(self->data_);
 }
