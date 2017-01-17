@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">55</td>
+            <td class="headerCovTableEntry">64</td>
             <td class="headerCovTableEntry">196</td>
-            <td class="headerCovTableEntryLo">28.1 %</td>
+            <td class="headerCovTableEntryLo">32.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-01-16</td>
+            <td class="headerValue">2017-01-17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">16</td>
             <td class="headerCovTableEntry">53</td>
-            <td class="headerCovTableEntryLo">24.5 %</td>
+            <td class="headerCovTableEntryLo">30.2 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -127,20 +127,20 @@
 <span class="lineNum">      65 </span>            : 
 <a name="66"><span class="lineNum">      66 </span>            : </a>
 <span class="lineNum">      67 </span>            : struct TimeDelta
-<span class="lineNum">      68 </span><span class="lineCov">         57 : TimeDelta_from_nanoseconds(int_delta nanoseconds)</span>
+<span class="lineNum">      68 </span><span class="lineCov">         55 : TimeDelta_from_nanoseconds(int_delta nanoseconds)</span>
 <span class="lineNum">      69 </span>            : {
 <span class="lineNum">      70 </span>            :     struct TimeDelta result;
-<span class="lineNum">      71 </span><span class="lineCov">         57 :     init_time_delta(&amp;result, 0, nanoseconds);</span>
-<span class="lineNum">      72 </span><span class="lineCov">         57 :     return result;</span>
+<span class="lineNum">      71 </span><span class="lineCov">         55 :     init_time_delta(&amp;result, 0, nanoseconds);</span>
+<span class="lineNum">      72 </span><span class="lineCov">         55 :     return result;</span>
 <span class="lineNum">      73 </span>            : }
 <a name="74"><span class="lineNum">      74 </span>            : </a>
 <span class="lineNum">      75 </span>            : void
-<span class="lineNum">      76 </span><span class="lineNoCov">          0 : TimeDelta_ptr_from_nanoseconds(</span>
+<span class="lineNum">      76 </span><span class="lineCov">          2 : TimeDelta_ptr_from_nanoseconds(</span>
 <span class="lineNum">      77 </span>            :         struct TimeDelta * const result,
 <span class="lineNum">      78 </span>            :         int_delta nanoseconds)
 <span class="lineNum">      79 </span>            : {
-<span class="lineNum">      80 </span><span class="lineNoCov">          0 :     init_time_delta(result, 0, nanoseconds);</span>
-<span class="lineNum">      81 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      80 </span><span class="lineCov">          2 :     init_time_delta(result, 0, nanoseconds);</span>
+<span class="lineNum">      81 </span><span class="lineCov">          2 : }</span>
 <a name="82"><span class="lineNum">      82 </span>            : </a>
 <span class="lineNum">      83 </span>            : struct TimeDelta
 <span class="lineNum">      84 </span><span class="lineNoCov">          0 : TimeDelta_from_microseconds(int_delta microseconds)</span>
@@ -175,60 +175,60 @@
 <span class="lineNum">     113 </span><span class="lineNoCov">          0 : }</span>
 <a name="114"><span class="lineNum">     114 </span>            : </a>
 <span class="lineNum">     115 </span>            : struct TimeDelta
-<span class="lineNum">     116 </span><span class="lineCov">         59 : TimeDelta_from_seconds(int_delta seconds)</span>
+<span class="lineNum">     116 </span><span class="lineCov">         55 : TimeDelta_from_seconds(int_delta seconds)</span>
 <span class="lineNum">     117 </span>            : {
 <span class="lineNum">     118 </span>            :     struct TimeDelta result;
-<span class="lineNum">     119 </span><span class="lineCov">         59 :     init_time_delta(&amp;result, seconds, 0);</span>
-<span class="lineNum">     120 </span><span class="lineCov">         59 :     return result;</span>
+<span class="lineNum">     119 </span><span class="lineCov">         55 :     init_time_delta(&amp;result, seconds, 0);</span>
+<span class="lineNum">     120 </span><span class="lineCov">         55 :     return result;</span>
 <span class="lineNum">     121 </span>            : }
 <a name="122"><span class="lineNum">     122 </span>            : </a>
 <span class="lineNum">     123 </span>            : void
-<span class="lineNum">     124 </span><span class="lineNoCov">          0 : TimeDelta_ptr_from_seconds(struct TimeDelta * const result, int_delta seconds)</span>
+<span class="lineNum">     124 </span><span class="lineCov">          4 : TimeDelta_ptr_from_seconds(struct TimeDelta * const result, int_delta seconds)</span>
 <span class="lineNum">     125 </span>            : {
-<span class="lineNum">     126 </span><span class="lineNoCov">          0 :     init_time_delta(result, seconds, 0);</span>
-<span class="lineNum">     127 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     126 </span><span class="lineCov">          4 :     init_time_delta(result, seconds, 0);</span>
+<span class="lineNum">     127 </span><span class="lineCov">          4 : }</span>
 <a name="128"><span class="lineNum">     128 </span>            : </a>
 <span class="lineNum">     129 </span>            : struct TimeDelta
-<span class="lineNum">     130 </span><span class="lineCov">          1 : TimeDelta_from_minutes(int_delta minutes)</span>
+<span class="lineNum">     130 </span><span class="lineNoCov">          0 : TimeDelta_from_minutes(int_delta minutes)</span>
 <span class="lineNum">     131 </span>            : {
 <span class="lineNum">     132 </span>            :     struct TimeDelta result;
-<span class="lineNum">     133 </span><span class="lineCov">          1 :     init_time_delta(&amp;result, minutes * SECONDS_IN_MINUTE, 0);</span>
-<span class="lineNum">     134 </span><span class="lineCov">          1 :     return result;</span>
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 :     init_time_delta(&amp;result, minutes * SECONDS_IN_MINUTE, 0);</span>
+<span class="lineNum">     134 </span><span class="lineNoCov">          0 :     return result;</span>
 <span class="lineNum">     135 </span>            : }
 <a name="136"><span class="lineNum">     136 </span>            : </a>
 <span class="lineNum">     137 </span>            : void
-<span class="lineNum">     138 </span><span class="lineNoCov">          0 : TimeDelta_ptr_from_minutes(struct TimeDelta * const result, int_delta minutes)</span>
+<span class="lineNum">     138 </span><span class="lineCov">          1 : TimeDelta_ptr_from_minutes(struct TimeDelta * const result, int_delta minutes)</span>
 <span class="lineNum">     139 </span>            : {
-<span class="lineNum">     140 </span><span class="lineNoCov">          0 :     init_time_delta(result, minutes * SECONDS_IN_MINUTE, 0);</span>
-<span class="lineNum">     141 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     140 </span><span class="lineCov">          1 :     init_time_delta(result, minutes * SECONDS_IN_MINUTE, 0);</span>
+<span class="lineNum">     141 </span><span class="lineCov">          1 : }</span>
 <a name="142"><span class="lineNum">     142 </span>            : </a>
 <span class="lineNum">     143 </span>            : struct TimeDelta
-<span class="lineNum">     144 </span><span class="lineCov">         34 : TimeDelta_from_hours(int_delta hours)</span>
+<span class="lineNum">     144 </span><span class="lineNoCov">          0 : TimeDelta_from_hours(int_delta hours)</span>
 <span class="lineNum">     145 </span>            : {
 <span class="lineNum">     146 </span>            :     struct TimeDelta result;
-<span class="lineNum">     147 </span><span class="lineCov">         34 :     init_time_delta(&amp;result, hours * SECONDS_IN_HOUR, 0);</span>
-<span class="lineNum">     148 </span><span class="lineCov">         34 :     return result;</span>
+<span class="lineNum">     147 </span><span class="lineNoCov">          0 :     init_time_delta(&amp;result, hours * SECONDS_IN_HOUR, 0);</span>
+<span class="lineNum">     148 </span><span class="lineNoCov">          0 :     return result;</span>
 <span class="lineNum">     149 </span>            : }
 <a name="150"><span class="lineNum">     150 </span>            : </a>
 <span class="lineNum">     151 </span>            : void
-<span class="lineNum">     152 </span><span class="lineNoCov">          0 : TimeDelta_ptr_from_hours(struct TimeDelta * const result, int_delta hours)</span>
+<span class="lineNum">     152 </span><span class="lineCov">         34 : TimeDelta_ptr_from_hours(struct TimeDelta * const result, int_delta hours)</span>
 <span class="lineNum">     153 </span>            : {
-<span class="lineNum">     154 </span><span class="lineNoCov">          0 :     init_time_delta(result, hours * SECONDS_IN_HOUR, 0);</span>
-<span class="lineNum">     155 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     154 </span><span class="lineCov">         34 :     init_time_delta(result, hours * SECONDS_IN_HOUR, 0);</span>
+<span class="lineNum">     155 </span><span class="lineCov">         34 : }</span>
 <a name="156"><span class="lineNum">     156 </span>            : </a>
 <span class="lineNum">     157 </span>            : struct TimeDelta
-<span class="lineNum">     158 </span><span class="lineCov">         10 : TimeDelta_from_days(int_delta days)</span>
+<span class="lineNum">     158 </span><span class="lineCov">          5 : TimeDelta_from_days(int_delta days)</span>
 <span class="lineNum">     159 </span>            : {
 <span class="lineNum">     160 </span>            :     struct TimeDelta result;
-<span class="lineNum">     161 </span><span class="lineCov">         10 :     init_time_delta(&amp;result, days * SECONDS_IN_DAY, 0);</span>
-<span class="lineNum">     162 </span><span class="lineCov">         10 :     return result;</span>
+<span class="lineNum">     161 </span><span class="lineCov">          5 :     init_time_delta(&amp;result, days * SECONDS_IN_DAY, 0);</span>
+<span class="lineNum">     162 </span><span class="lineCov">          5 :     return result;</span>
 <span class="lineNum">     163 </span>            : }
 <a name="164"><span class="lineNum">     164 </span>            : </a>
 <span class="lineNum">     165 </span>            : void
-<span class="lineNum">     166 </span><span class="lineNoCov">          0 : TimeDelta_ptr_from_days(struct TimeDelta * const result, int_delta days)</span>
+<span class="lineNum">     166 </span><span class="lineCov">          5 : TimeDelta_ptr_from_days(struct TimeDelta * const result, int_delta days)</span>
 <span class="lineNum">     167 </span>            : {
-<span class="lineNum">     168 </span><span class="lineNoCov">          0 :     init_time_delta(result, days * SECONDS_IN_DAY, 0);</span>
-<span class="lineNum">     169 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     168 </span><span class="lineCov">          5 :     init_time_delta(result, days * SECONDS_IN_DAY, 0);</span>
+<span class="lineNum">     169 </span><span class="lineCov">          5 : }</span>
 <a name="170"><span class="lineNum">     170 </span>            : </a>
 <span class="lineNum">     171 </span>            : struct TimeDelta
 <span class="lineNum">     172 </span><span class="lineNoCov">          0 : TimeDelta_from_weeks(int_delta weeks)</span>
@@ -245,18 +245,18 @@
 <span class="lineNum">     183 </span><span class="lineNoCov">          0 : }</span>
 <a name="184"><span class="lineNum">     184 </span>            : </a>
 <span class="lineNum">     185 </span>            : struct TimeDelta
-<span class="lineNum">     186 </span><span class="lineCov">          5 : TimeDelta_zero()</span>
+<span class="lineNum">     186 </span><span class="lineNoCov">          0 : TimeDelta_zero()</span>
 <span class="lineNum">     187 </span>            : {
 <span class="lineNum">     188 </span>            :     struct TimeDelta result;
-<span class="lineNum">     189 </span><span class="lineCov">          5 :     init_time_delta(&amp;result, 0, 0);</span>
-<span class="lineNum">     190 </span><span class="lineCov">          5 :     return result;</span>
+<span class="lineNum">     189 </span><span class="lineNoCov">          0 :     init_time_delta(&amp;result, 0, 0);</span>
+<span class="lineNum">     190 </span><span class="lineNoCov">          0 :     return result;</span>
 <span class="lineNum">     191 </span>            : }
 <a name="192"><span class="lineNum">     192 </span>            : </a>
 <span class="lineNum">     193 </span>            : void
-<span class="lineNum">     194 </span><span class="lineNoCov">          0 : TimeDelta_ptr_zero(struct TimeDelta * const result)</span>
+<span class="lineNum">     194 </span><span class="lineCov">          5 : TimeDelta_ptr_zero(struct TimeDelta * const result)</span>
 <span class="lineNum">     195 </span>            : {
-<span class="lineNum">     196 </span><span class="lineNoCov">          0 :     init_time_delta(result, 0, 0);</span>
-<span class="lineNum">     197 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     196 </span><span class="lineCov">          5 :     init_time_delta(result, 0, 0);</span>
+<span class="lineNum">     197 </span><span class="lineCov">          5 : }</span>
 <a name="198"><span class="lineNum">     198 </span>            : </a>
 <span class="lineNum">     199 </span>            : int_delta
 <span class="lineNum">     200 </span><span class="lineNoCov">          0 : TimeDelta_nanoseconds(const struct TimeDelta * const self)</span>

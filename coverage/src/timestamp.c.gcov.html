@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">205</td>
+            <td class="headerCovTableEntry">202</td>
             <td class="headerCovTableEntry">257</td>
-            <td class="headerCovTableEntryMed">79.8 %</td>
+            <td class="headerCovTableEntryMed">78.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-01-16</td>
+            <td class="headerValue">2017-01-17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">35</td>
+            <td class="headerCovTableEntry">34</td>
             <td class="headerCovTableEntry">48</td>
-            <td class="headerCovTableEntryLo">72.9 %</td>
+            <td class="headerCovTableEntryLo">70.8 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -199,29 +199,29 @@
 <span class="lineNum">     137 </span>            : 
 <a name="138"><span class="lineNum">     138 </span>            : </a>
 <span class="lineNum">     139 </span>            : struct Timestamp
-<span class="lineNum">     140 </span><span class="lineCov">          8 : Timestamp_from_time_t(const time_t timestamp)</span>
+<span class="lineNum">     140 </span><span class="lineCov">          2 : Timestamp_from_time_t(const time_t timestamp)</span>
 <span class="lineNum">     141 </span>            : {
 <span class="lineNum">     142 </span>            :     struct Timestamp result;
-<span class="lineNum">     143 </span><span class="lineCov">          8 :     init_timestamp(&amp;result, time_t_to_timestamp(timestamp), 0);</span>
-<span class="lineNum">     144 </span><span class="lineCov">          8 :     return result;</span>
+<span class="lineNum">     143 </span><span class="lineCov">          2 :     init_timestamp(&amp;result, time_t_to_timestamp(timestamp), 0);</span>
+<span class="lineNum">     144 </span><span class="lineCov">          2 :     return result;</span>
 <span class="lineNum">     145 </span>            : }
 <a name="146"><span class="lineNum">     146 </span>            : </a>
 <span class="lineNum">     147 </span>            : void
-<span class="lineNum">     148 </span><span class="lineCov">          2 : Timestamp_ptr_from_time_t(</span>
+<span class="lineNum">     148 </span><span class="lineCov">          8 : Timestamp_ptr_from_time_t(</span>
 <span class="lineNum">     149 </span>            :         struct Timestamp * const result,
 <span class="lineNum">     150 </span>            :         const time_t timestamp)
 <span class="lineNum">     151 </span>            : {
-<span class="lineNum">     152 </span><span class="lineCov">          2 :     init_timestamp(result, time_t_to_timestamp(timestamp), 0);</span>
-<span class="lineNum">     153 </span><span class="lineCov">          2 : }</span>
+<span class="lineNum">     152 </span><span class="lineCov">          8 :     init_timestamp(result, time_t_to_timestamp(timestamp), 0);</span>
+<span class="lineNum">     153 </span><span class="lineCov">          8 : }</span>
 <a name="154"><span class="lineNum">     154 </span>            : </a>
 <span class="lineNum">     155 </span>            : struct Timestamp
-<span class="lineNum">     156 </span><span class="lineCov">         12 : Timestamp_from_struct_tm(</span>
+<span class="lineNum">     156 </span><span class="lineCov">          6 : Timestamp_from_struct_tm(</span>
 <span class="lineNum">     157 </span>            :         const struct tm tm,
 <span class="lineNum">     158 </span>            :         const struct TimeDelta * const timeZoneOffset)
 <span class="lineNum">     159 </span>            : {
 <span class="lineNum">     160 </span>            :     struct Timestamp result;
-<span class="lineNum">     161 </span><span class="lineCov">         12 :     Timestamp_ptr_from_struct_tm(&amp;result, tm, timeZoneOffset);</span>
-<span class="lineNum">     162 </span><span class="lineCov">         12 :     return result;</span>
+<span class="lineNum">     161 </span><span class="lineCov">          6 :     Timestamp_ptr_from_struct_tm(&amp;result, tm, timeZoneOffset);</span>
+<span class="lineNum">     162 </span><span class="lineCov">          6 :     return result;</span>
 <span class="lineNum">     163 </span>            : }
 <a name="164"><span class="lineNum">     164 </span>            : </a>
 <span class="lineNum">     165 </span>            : void
@@ -283,14 +283,14 @@
 <span class="lineNum">     221 </span><span class="lineCov">          1 : }</span>
 <a name="222"><span class="lineNum">     222 </span>            : </a>
 <span class="lineNum">     223 </span>            : struct Timestamp
-<span class="lineNum">     224 </span><span class="lineCov">         14 : Timestamp_create(</span>
+<span class="lineNum">     224 </span><span class="lineCov">          6 : Timestamp_create(</span>
 <span class="lineNum">     225 </span>            :         const struct Date * const date,
 <span class="lineNum">     226 </span>            :         const struct ClockTime * const clockTime,
 <span class="lineNum">     227 </span>            :         const struct TimeDelta * const timeZoneOffset)
 <span class="lineNum">     228 </span>            : {
 <span class="lineNum">     229 </span>            :     struct Timestamp result;
-<span class="lineNum">     230 </span><span class="lineCov">         14 :     Timestamp_ptr_create(&amp;result, date, clockTime, timeZoneOffset);</span>
-<span class="lineNum">     231 </span><span class="lineCov">         14 :     return result;</span>
+<span class="lineNum">     230 </span><span class="lineCov">          6 :     Timestamp_ptr_create(&amp;result, date, clockTime, timeZoneOffset);</span>
+<span class="lineNum">     231 </span><span class="lineCov">          6 :     return result;</span>
 <span class="lineNum">     232 </span>            : }
 <a name="233"><span class="lineNum">     233 </span>            : </a>
 <span class="lineNum">     234 </span>            : void
@@ -319,13 +319,13 @@
 <span class="lineNum">     257 </span><span class="lineCov">         38 : }</span>
 <a name="258"><span class="lineNum">     258 </span>            : </a>
 <span class="lineNum">     259 </span>            : struct Timestamp
-<span class="lineNum">     260 </span><span class="lineCov">         10 : Timestamp_create_utc(</span>
+<span class="lineNum">     260 </span><span class="lineCov">          8 : Timestamp_create_utc(</span>
 <span class="lineNum">     261 </span>            :         const struct Date * const date,
 <span class="lineNum">     262 </span>            :         const struct ClockTime * const clockTime)
 <span class="lineNum">     263 </span>            : {
 <span class="lineNum">     264 </span>            :     struct Timestamp result;
-<span class="lineNum">     265 </span><span class="lineCov">         10 :     Timestamp_ptr_create_utc(&amp;result, date, clockTime);</span>
-<span class="lineNum">     266 </span><span class="lineCov">         10 :     return result;</span>
+<span class="lineNum">     265 </span><span class="lineCov">          8 :     Timestamp_ptr_create_utc(&amp;result, date, clockTime);</span>
+<span class="lineNum">     266 </span><span class="lineCov">          8 :     return result;</span>
 <span class="lineNum">     267 </span>            : }
 <a name="268"><span class="lineNum">     268 </span>            : </a>
 <span class="lineNum">     269 </span>            : void
@@ -384,13 +384,13 @@
 <span class="lineNum">     322 </span><span class="lineCov">         46 : }</span>
 <a name="323"><span class="lineNum">     323 </span>            : </a>
 <span class="lineNum">     324 </span>            : struct Timestamp
-<span class="lineNum">     325 </span><span class="lineCov">          3 : Timestamp_create_local(</span>
+<span class="lineNum">     325 </span><span class="lineNoCov">          0 : Timestamp_create_local(</span>
 <span class="lineNum">     326 </span>            :         const struct Date * const date,
 <span class="lineNum">     327 </span>            :         const struct ClockTime * const clockTime)
 <span class="lineNum">     328 </span>            : {
 <span class="lineNum">     329 </span>            :     struct Timestamp result;
-<span class="lineNum">     330 </span><span class="lineCov">          3 :     Timestamp_ptr_create_local(&amp;result, date, clockTime);</span>
-<span class="lineNum">     331 </span><span class="lineCov">          3 :     return result;</span>
+<span class="lineNum">     330 </span><span class="lineNoCov">          0 :     Timestamp_ptr_create_local(&amp;result, date, clockTime);</span>
+<span class="lineNum">     331 </span><span class="lineNoCov">          0 :     return result;</span>
 <span class="lineNum">     332 </span>            : }
 <a name="333"><span class="lineNum">     333 </span>            : </a>
 <span class="lineNum">     334 </span>            : void
@@ -416,11 +416,11 @@
 <span class="lineNum">     354 </span><span class="lineCov">          3 : }</span>
 <a name="355"><span class="lineNum">     355 </span>            : </a>
 <span class="lineNum">     356 </span>            : struct Timestamp
-<span class="lineNum">     357 </span><span class="lineCov">          3 : Timestamp_now()</span>
+<span class="lineNum">     357 </span><span class="lineCov">          1 : Timestamp_now()</span>
 <span class="lineNum">     358 </span>            : {
 <span class="lineNum">     359 </span>            :     struct Timestamp result;
-<span class="lineNum">     360 </span><span class="lineCov">          3 :     Timestamp_ptr_now(&amp;result);</span>
-<span class="lineNum">     361 </span><span class="lineCov">          3 :     return result;</span>
+<span class="lineNum">     360 </span><span class="lineCov">          1 :     Timestamp_ptr_now(&amp;result);</span>
+<span class="lineNum">     361 </span><span class="lineCov">          1 :     return result;</span>
 <span class="lineNum">     362 </span>            : }
 <a name="363"><span class="lineNum">     363 </span>            : </a>
 <span class="lineNum">     364 </span>            : void
@@ -432,18 +432,18 @@
 <span class="lineNum">     370 </span><span class="lineCov">          4 : }</span>
 <a name="371"><span class="lineNum">     371 </span>            : </a>
 <span class="lineNum">     372 </span>            : struct Timestamp
-<span class="lineNum">     373 </span><span class="lineCov">          2 : Timestamp_epoch()</span>
+<span class="lineNum">     373 </span><span class="lineCov">          1 : Timestamp_epoch()</span>
 <span class="lineNum">     374 </span>            : {
 <span class="lineNum">     375 </span>            :     struct Timestamp result;
-<span class="lineNum">     376 </span><span class="lineCov">          2 :     init_timestamp(&amp;result, 0, 0);</span>
-<span class="lineNum">     377 </span><span class="lineCov">          2 :     return result;</span>
+<span class="lineNum">     376 </span><span class="lineCov">          1 :     init_timestamp(&amp;result, 0, 0);</span>
+<span class="lineNum">     377 </span><span class="lineCov">          1 :     return result;</span>
 <span class="lineNum">     378 </span>            : }
 <a name="379"><span class="lineNum">     379 </span>            : </a>
 <span class="lineNum">     380 </span>            : void
-<span class="lineNum">     381 </span><span class="lineCov">          1 : Timestamp_ptr_epoch(struct Timestamp * const result)</span>
+<span class="lineNum">     381 </span><span class="lineCov">          2 : Timestamp_ptr_epoch(struct Timestamp * const result)</span>
 <span class="lineNum">     382 </span>            : {
-<span class="lineNum">     383 </span><span class="lineCov">          1 :     init_timestamp(result, 0, 0);</span>
-<span class="lineNum">     384 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">     383 </span><span class="lineCov">          2 :     init_timestamp(result, 0, 0);</span>
+<span class="lineNum">     384 </span><span class="lineCov">          2 : }</span>
 <a name="385"><span class="lineNum">     385 </span>            : </a>
 <span class="lineNum">     386 </span>            : time_t
 <span class="lineNum">     387 </span><span class="lineCov">          5 : Timestamp_get_time_t(const struct Timestamp * const self)</span>
