@@ -123,7 +123,7 @@
 <span class="lineNum">      61 </span>            :     struct tm tm;
 <span class="lineNum">      62 </span>            :     time_t mktime_returned;
 <span class="lineNum">      63 </span>            : 
-<span class="lineNum">      64 </span><span class="lineCov">          1 :     memset((void *) &amp;tm, 0, sizeof(struct tm));</span>
+<span class="lineNum">      64 </span><span class="lineCov">          1 :     CLEAR(&amp;tm);</span>
 <span class="lineNum">      65 </span><span class="lineCov">          1 :     tm.tm_sec = (int) ClockTime_second(clock_time);</span>
 <span class="lineNum">      66 </span><span class="lineCov">          1 :     tm.tm_min = (int) ClockTime_minute(clock_time);</span>
 <span class="lineNum">      67 </span><span class="lineCov">          1 :     tm.tm_hour = (int) ClockTime_hour(clock_time);</span>

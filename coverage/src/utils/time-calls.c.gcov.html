@@ -159,14 +159,14 @@
 <span class="lineNum">      97 </span><span class="lineCov">          3 : }</span>
 <a name="98"><span class="lineNum">      98 </span>            : </a>
 <span class="lineNum">      99 </span>            : time_t
-<span class="lineNum">     100 </span><span class="lineCov">        337 : present_mktime(struct tm * tm)</span>
+<span class="lineNum">     100 </span><span class="lineCov">        336 : present_mktime(struct tm * tm)</span>
 <span class="lineNum">     101 </span>            : {
 <span class="lineNum">     102 </span>            :     time_t value;
 <span class="lineNum">     103 </span>            : 
 <span class="lineNum">     104 </span>            :     INITIALIZE;
-<span class="lineNum">     105 </span><span class="lineCov">        337 :     value = mktime(tm);</span>
+<span class="lineNum">     105 </span><span class="lineCov">        336 :     value = mktime(tm);</span>
 <span class="lineNum">     106 </span>            :     DONE;
-<span class="lineNum">     107 </span><span class="lineCov">        337 :     return value;</span>
+<span class="lineNum">     107 </span><span class="lineCov">        336 :     return value;</span>
 <span class="lineNum">     108 </span>            : }
 <a name="109"><span class="lineNum">     109 </span>            : </a>
 <span class="lineNum">     110 </span>            : void
