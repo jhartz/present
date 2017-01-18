@@ -4,10 +4,6 @@ set -e
 DIR="$(dirname "${BASH_SOURCE[0]}")"
 . "$DIR/travis-util.sh"
 
-# Make the build directory
-mkdir -v build
-cd build
-
 # Set up cmake to run tests (with coverage, if necessary)
 CMAKE_ARGS=("-DCMAKE_BUILD_TYPE=Debug" "-DCOMPILE_TESTS=ON")
 if [ "$PUBLISH_DOC" = "yup" ]; then
@@ -15,15 +11,10 @@ if [ "$PUBLISH_DOC" = "yup" ]; then
 fi
 
 # Run cmake
-status "Running cmake with args:" "${CMAKE_ARGS[@]}"
-cmake "${CMAKE_ARGS[@]}" ..
+status "Running cmake..."
+"$DIR/mkbuild.sh" "${CMAKE_ARGS[@]}"
 
-# Compile present
-status "Compiling..."
-make
+# Compile present and run tests
+status "Compiling and running tests..."
+"$DIR/mktest.sh"
 
-# Compile and run the tests
-status "Running tests..."
-make test
-
-cd ..
