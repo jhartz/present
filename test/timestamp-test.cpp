@@ -14,6 +14,11 @@
 #include "utils/constants.h"
 #include "utils/time-calls.h"
 
+// If we're using GCC, disable the annoying warning about missing initializers
+#ifdef __GNUC__
+# pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+#endif
+
 static const struct Timestamp EMPTY_TIMESTAMP = {};
 
 /**
