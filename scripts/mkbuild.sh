@@ -1,8 +1,15 @@
 #!/bin/bash
+# Make a "builds" directory with subdirectories of different cmake
+# configurations.
+#
+# NOTE: This just creates the cmake build directories; it doesn't actually
+# compile or test Present (for that, see mktest.sh).
+#
+# Usage: mkbuild.sh [any cmake args] ...
 
 set -e
 
-CMAKE_ARGS=("-DCMAKE_BUILD_TYPE=Debug" "-DCOMPILE_TESTS=ON" "$@")
+CMAKE_ARGS=("$@")
 
 mk_build() {
     echo "*** Creating cmake build directory for $1"

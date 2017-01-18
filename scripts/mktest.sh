@@ -1,4 +1,6 @@
 #!/bin/bash
+# Compile and test Present for each cmake build configuration created
+# by mkbuild.sh
 
 set -e
 
