@@ -17,7 +17,7 @@ var time_delta_8h =
     [ "TimeDelta_ptr_from_days", "time-delta_8h.html#a8fbe0f084eda4cd4aa7e21e1f5cbaf55", null ],
     [ "TimeDelta_from_weeks", "time-delta_8h.html#adeaef2754da892c29f03834c14ad1204", null ],
     [ "TimeDelta_ptr_from_weeks", "time-delta_8h.html#a55e3b1a8b44c8805b04f52886a979d4f", null ],
-    [ "TimeDelta_zero", "time-delta_8h.html#a4d78cdef19464e2c645923c831f38910", null ],
+    [ "TimeDelta_zero", "time-delta_8h.html#a31e978d4f72d18e2f1404f132b8fca58", null ],
     [ "TimeDelta_ptr_zero", "time-delta_8h.html#ae37ea514d306a44df57cea83e2d42051", null ],
     [ "TimeDelta_nanoseconds", "time-delta_8h.html#a6bb384cf10338d51d1e40fdde5d032b8", null ],
     [ "TimeDelta_microseconds", "time-delta_8h.html#a64740843f3016de2bddd73ca40dc6465", null ],

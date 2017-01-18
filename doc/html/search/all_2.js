@@ -70,7 +70,7 @@ var searchData=
   ['daydelta_5fto_5ftimedelta',['DayDelta_to_TimeDelta',['../day-delta_8h.html#afaef350c558f8db4d84585c9bf64d871',1,'day-delta.h']]],
   ['daydelta_5fweeks',['DayDelta_weeks',['../day-delta_8h.html#ae0cf870931630123311dc3f532916813',1,'day-delta.h']]],
   ['daydelta_5fweeks_5fdecimal',['DayDelta_weeks_decimal',['../day-delta_8h.html#af6698416f241e2d9a6f54459fd0282ef',1,'day-delta.h']]],
-  ['daydelta_5fzero',['DayDelta_zero',['../day-delta_8h.html#ab87d828518fe1bdc7e7662be3e5e6289',1,'day-delta.h']]],
+  ['daydelta_5fzero',['DayDelta_zero',['../day-delta_8h.html#af53928d9c3fe865087e911fb91e435fe',1,'day-delta.h']]],
   ['days',['days',['../structDayDelta.html#af7d15328d1c97bbd3316f014c69a6e3b',1,'DayDelta::days()'],['../structTimeDelta.html#abad8a94a6c022af1a1871e452eca47ea',1,'TimeDelta::days()']]],
   ['days_5fdecimal',['days_decimal',['../structTimeDelta.html#aa73d3724b83ed4badb44b714d86124a2',1,'TimeDelta']]],
   ['difference',['difference',['../structDate.html#aaf5d0adf703c6d7d48f1742c320cb2b6',1,'Date::difference()'],['../structTimestamp.html#af2520c21fa08751cfa7b195768e77171',1,'Timestamp::difference()']]],

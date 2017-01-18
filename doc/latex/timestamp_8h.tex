@@ -37,11 +37,11 @@ struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_a5d9c73077
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} based on a \hyperlink{structDate}{Date} and \hyperlink{structClockTime}{Clock\-Time} in the system's current local time zone. \end{DoxyCompactList}\item 
 void \hyperlink{timestamp_8h_ab5d5a112decd3b75c54d8f62728c94f3}{Timestamp\-\_\-ptr\-\_\-create\-\_\-local} (struct \hyperlink{structTimestamp}{Timestamp} $\ast$const result, const struct \hyperlink{structDate}{Date} $\ast$const date, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const clock\-\_\-time)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} based on a \hyperlink{structDate}{Date} and \hyperlink{structClockTime}{Clock\-Time} in the system's current local time zone. \end{DoxyCompactList}\item 
-struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_ae3155f9c8fed278bfbef2254ab7bf71a}{Timestamp\-\_\-now} ()
+struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_a24652dac749ad93f8c3bda53ad423a0c}{Timestamp\-\_\-now} (void)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} representing the exact time right now. \end{DoxyCompactList}\item 
 void \hyperlink{timestamp_8h_a386f2ce3e170e502be079d08f954b10d}{Timestamp\-\_\-ptr\-\_\-now} (struct \hyperlink{structTimestamp}{Timestamp} $\ast$const result)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} representing the exact time right now. \end{DoxyCompactList}\item 
-struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_a810edf0892d3ff0eb177a47edbb35f39}{Timestamp\-\_\-epoch} ()
+struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_a823f79bcc30ac981f3377c4df11d98f8}{Timestamp\-\_\-epoch} (void)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} representing the U\-N\-I\-X epoch (Jan. \end{DoxyCompactList}\item 
 void \hyperlink{timestamp_8h_a18cec06d80453581958042df98a4e4ab}{Timestamp\-\_\-ptr\-\_\-epoch} (struct \hyperlink{structTimestamp}{Timestamp} $\ast$const result)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} representing the U\-N\-I\-X epoch (Jan. \end{DoxyCompactList}\item 
@@ -455,13 +455,13 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 \mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structTimestamp}{Timestamp} for the result. \\
 \hline
 \end{DoxyParams}
-\hypertarget{timestamp_8h_ae3155f9c8fed278bfbef2254ab7bf71a}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-now@{Timestamp\-\_\-now}}
+\hypertarget{timestamp_8h_a24652dac749ad93f8c3bda53ad423a0c}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-now@{Timestamp\-\_\-now}}
 \index{Timestamp\-\_\-now@{Timestamp\-\_\-now}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{Timestamp\-\_\-now}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Timestamp} Timestamp\-\_\-now (
 \begin{DoxyParamCaption}
-{}
+\item[{void}]{}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_ae3155f9c8fed278bfbef2254ab7bf71a}
+)}}\label{timestamp_8h_a24652dac749ad93f8c3bda53ad423a0c}
 
 
 Create a new \hyperlink{structTimestamp}{Timestamp} representing the exact time right now. 
@@ -482,13 +482,13 @@ On most P\-O\-S\-I\-X systems, this will return a \hyperlink{structTimestamp}{Ti
 \mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structTimestamp}{Timestamp} for the result. \\
 \hline
 \end{DoxyParams}
-\hypertarget{timestamp_8h_a810edf0892d3ff0eb177a47edbb35f39}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-epoch@{Timestamp\-\_\-epoch}}
+\hypertarget{timestamp_8h_a823f79bcc30ac981f3377c4df11d98f8}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-epoch@{Timestamp\-\_\-epoch}}
 \index{Timestamp\-\_\-epoch@{Timestamp\-\_\-epoch}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{Timestamp\-\_\-epoch}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Timestamp} Timestamp\-\_\-epoch (
 \begin{DoxyParamCaption}
-{}
+\item[{void}]{}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_a810edf0892d3ff0eb177a47edbb35f39}
+)}}\label{timestamp_8h_a823f79bcc30ac981f3377c4df11d98f8}
 
 
 Create a new \hyperlink{structTimestamp}{Timestamp} representing the U\-N\-I\-X epoch (Jan. 

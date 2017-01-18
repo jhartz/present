@@ -5,7 +5,7 @@ var day_delta_8h =
     [ "DayDelta_ptr_from_days", "day-delta_8h.html#a196d880e550d8423bc6314894010e744", null ],
     [ "DayDelta_from_weeks", "day-delta_8h.html#ac44c70541cf4f255f25384194341ff07", null ],
     [ "DayDelta_ptr_from_weeks", "day-delta_8h.html#a6a006f452867d3828a3eb69a8f5ba1dd", null ],
-    [ "DayDelta_zero", "day-delta_8h.html#ab87d828518fe1bdc7e7662be3e5e6289", null ],
+    [ "DayDelta_zero", "day-delta_8h.html#af53928d9c3fe865087e911fb91e435fe", null ],
     [ "DayDelta_ptr_zero", "day-delta_8h.html#a07b0ef860cf57d04ca3e5e5aaeae3e86", null ],
     [ "DayDelta_days", "day-delta_8h.html#aa57ce59c7908dcad9d8dcc18c84909a6", null ],
     [ "DayDelta_weeks", "day-delta_8h.html#ae0cf870931630123311dc3f532916813", null ],
