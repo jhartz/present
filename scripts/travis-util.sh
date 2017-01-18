@@ -9,8 +9,7 @@ status() {
 }
 
 # Only publish documentation/coverage if it's master (and not a pull request)
-#export PUBLISH_DOC=
-export PUBLISH_DOC=yup
+export PUBLISH_DOC=
 if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
     export PUBLISH_DOC=yup
 fi
