@@ -21,25 +21,40 @@
 #ifndef _PRESENT_H_
 #define _PRESENT_H_
 
+
 /*
  * Definitions of the C++ classes / C structs;
  * Declarations of the C functions
  */
 
 /*
- * NOTE: The order here isn't arbitrary; it's meant to make the least compiler
- * error warnings possible when compiling using the clang C++ compiler (which
- * loves to complain about "extern C" functions returning one of our types with
- * only a forward declaration to go on -- so we try to get as many full
- * definitions as possible before their use in other functions).
+ * Disable clang warning about "incomplete type could be incompatible with C"
+ * (we know this won't happen, since we declare all of our types as extern "C")
  */
+#ifdef __cplusplus
+# ifdef __clang__
+#  ifndef __ICC
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
+#  endif
+# endif
+#endif
 
+#include "present/clock-time.h"
+#include "present/date.h"
 #include "present/day-delta.h"
 #include "present/month-delta.h"
 #include "present/time-delta.h"
-#include "present/clock-time.h"
-#include "present/date.h"
 #include "present/timestamp.h"
+
+#ifdef __cplusplus
+# ifdef __clang__
+#  ifndef __ICC
+#   pragma clang diagnostic pop
+#  endif
+# endif
+#endif
+
 
 #ifdef __cplusplus
 
