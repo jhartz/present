@@ -39,3 +39,6 @@
 build/
 build-*/
 builds/
+
+# Modified config file
+include/present-config.h
