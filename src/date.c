@@ -76,6 +76,8 @@ check_date_data(struct PresentDateData * const data)
     tm.tm_mon = (int)data->month - STRUCT_TM_MONTH_OFFSET;
     tm.tm_mday = (int)data->day;
     tm.tm_isdst = -1;
+    /* TODO: On some platforms, mktime doesn't work for older dates
+       (usually dates before 1901, but sometimes dates before 1970) */
     mktime_returned = present_mktime(&tm);
     assert(mktime_returned != -1);
 
@@ -264,6 +266,8 @@ Date_ptr_from_year_week_day(
         /* tm_wday will be filled in */
         tm.tm_isdst = -1;
 
+        /* TODO: On some platforms, mktime doesn't work for older dates
+           (usually dates before 1901, but sometimes dates before 1970) */
         mktime_returned = present_mktime(&tm);
         assert(mktime_returned != -1);
 

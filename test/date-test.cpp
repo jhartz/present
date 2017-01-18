@@ -39,10 +39,8 @@ TEST_CASE("Date creators", "[date]") {
 
     // from_year
 
-    d = Date::create(0);
-    IS(0, 1, 1);
-    d = Date::create(1);
-    IS(1, 1, 1);
+    d = Date::create(1902);
+    IS(1902, 1, 1);
     d = Date::create(1999);
     IS(1999, 1, 1);
     d = Date::create(2003);
@@ -78,7 +76,7 @@ TEST_CASE("Date creators", "[date]") {
 
     Date_ptr_from_year_month(&d, 1960, 7);
     IS(1960, 7, 1);
-    Date_ptr_from_year_month(&d, 1900, -1);
+    Date_ptr_from_year_month(&d, 1902, -1);
     IS_ERROR(month_out_of_range);
 
     // from_year_month_day
@@ -227,14 +225,14 @@ TEST_CASE("Date creators", "[date]") {
 }
 
 TEST_CASE("Date accessors", "[date]") {
-    Date d1 = Date::create(1857, 1, 1);
+    Date d1 = Date::create(1902, 1, 1);
     Date d2 = Date::create(2011, 4, 19);
     Date d3 = Date::create(2000, 2, 29);
     Date d4 = Date::create(2000, 3, 1);
     Date d5 = Date::create(1995, 1, 1);
 
     // Check year
-    CHECK(d1.year() == 1857);
+    CHECK(d1.year() == 1902);
     CHECK(d2.year() == 2011);
     CHECK(d3.year() == 2000);
     CHECK(d4.year() == 2000);
@@ -266,7 +264,7 @@ TEST_CASE("Date accessors", "[date]") {
 
     weekyear = d1.week_of_year();
     CHECK(weekyear.week == 1);
-    CHECK(weekyear.year == 1857);
+    CHECK(weekyear.year == 1902);
 
     weekyear = d2.week_of_year();
     CHECK(weekyear.week == 16);
@@ -285,7 +283,7 @@ TEST_CASE("Date accessors", "[date]") {
     CHECK(weekyear.year == 1994);
 
     // Check day_of_week
-    CHECK(d1.day_of_week() == DAY_OF_WEEK_THURSDAY);
+    CHECK(d1.day_of_week() == DAY_OF_WEEK_WEDNESDAY);
     CHECK(d2.day_of_week() == DAY_OF_WEEK_TUESDAY);
     CHECK(d3.day_of_week() == DAY_OF_WEEK_TUESDAY);
     CHECK(d4.day_of_week() == DAY_OF_WEEK_WEDNESDAY);
@@ -401,11 +399,11 @@ TEST_CASE("Date arithmetic operators", "[date]") {
 }
 
 TEST_CASE("Date comparison operators", "[date]") {
-    Date d1 = Date::create(1900, 1, 1),
-         d2 = Date::create(1900, 1, 27),
-         d3 = Date::create(1900, 3, 1),
-         d4 = Date::create(1901, 1, 1),
-         d5 = Date::create(1901, 1, 1);
+    Date d1 = Date::create(2100, 1, 1),
+         d2 = Date::create(2100, 1, 27),
+         d3 = Date::create(2100, 3, 1),
+         d4 = Date::create(2101, 1, 1),
+         d5 = Date::create(2101, 1, 1);
 
     CHECK(Date::compare(d1, d1) == 0);
     CHECK(Date::compare(d5, d5) == 0);
