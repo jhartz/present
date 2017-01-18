@@ -55,9 +55,9 @@ endif (COMPILE_ANSI)
 include(EnableExtraCompilerWarnings)
 globally_enable_extra_compiler_warnings()
 if (CMAKE_COMPILER_IS_GNUCXX)
-    # -Wtype-limits is annoying, and -Wno-parentheses blows up for each unit test
-    set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -Wno-type-limits -Wno-parentheses")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-type-limits -Wno-parentheses")
+    # -Wtype-limits is annoying
+    set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -Wno-type-limits")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-type-limits")
 endif (CMAKE_COMPILER_IS_GNUCXX)
 
 # Set up coverage if necessary
