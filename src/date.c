@@ -32,7 +32,7 @@ last_week_of_year(int_year year)
     week = 52;
 
     /* Get some information on Jan. 1 of this year */
-    memset((void *)&tm, 0, sizeof(struct tm));
+    CLEAR(&tm);
     tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
     tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET;
     tm.tm_mday = 1;
@@ -70,7 +70,7 @@ check_date_data(struct PresentDateData * const data)
     struct tm tm;
     time_t mktime_returned;
 
-    memset((void *)&tm, 0, sizeof(struct tm));
+    CLEAR(&tm);
 
     tm.tm_year = (int)data->year - STRUCT_TM_YEAR_OFFSET;
     tm.tm_mon = (int)data->month - STRUCT_TM_MONTH_OFFSET;
@@ -257,7 +257,7 @@ Date_ptr_from_year_week_day(
 
     if (!result->has_error) {
         /* Get the weekday of Jan. 4 of this year */
-        memset((void *)&tm, 0, sizeof(struct tm));
+        CLEAR(&tm);
         tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
         tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; /* January */
         tm.tm_mday = 4; /* 4th day of the month */

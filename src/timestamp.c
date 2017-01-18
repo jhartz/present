@@ -61,7 +61,7 @@ convert_to_struct_tm(
     struct tm tm;
     time_t mktime_returned;
 
-    memset((void *) &tm, 0, sizeof(struct tm));
+    CLEAR(&tm);
     tm.tm_sec = (int) ClockTime_second(clock_time);
     tm.tm_min = (int) ClockTime_minute(clock_time);
     tm.tm_hour = (int) ClockTime_hour(clock_time);
