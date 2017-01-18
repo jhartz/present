@@ -189,7 +189,7 @@ ClockTime_ptr_create_with_decimal_seconds(
 }
 
 struct ClockTime
-ClockTime_midnight()
+ClockTime_midnight(void)
 {
     struct ClockTime result;
     init_clock_time(&result, 0, 0, 0, 0);
@@ -203,7 +203,7 @@ ClockTime_ptr_midnight(struct ClockTime * const result)
 }
 
 struct ClockTime
-ClockTime_noon()
+ClockTime_noon(void)
 {
     struct ClockTime result;
     init_clock_time(&result, 12, 0, 0, 0);

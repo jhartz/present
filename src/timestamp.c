@@ -354,7 +354,7 @@ Timestamp_ptr_create_local(
 }
 
 struct Timestamp
-Timestamp_now()
+Timestamp_now(void)
 {
     struct Timestamp result;
     Timestamp_ptr_now(&result);
@@ -370,7 +370,7 @@ Timestamp_ptr_now(struct Timestamp * const result)
 }
 
 struct Timestamp
-Timestamp_epoch()
+Timestamp_epoch(void)
 {
     struct Timestamp result;
     init_timestamp(&result, 0, 0);

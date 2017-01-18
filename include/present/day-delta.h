@@ -168,7 +168,7 @@ DayDelta_ptr_from_weeks(struct DayDelta * const result, int_delta weeks);
  * Create a new DayDelta initialized to zero days.
  */
 PRESENT_API struct DayDelta
-DayDelta_zero();
+DayDelta_zero(void);
 
 /**
  * @copydoc DayDelta_zero

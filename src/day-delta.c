@@ -55,7 +55,7 @@ DayDelta_ptr_from_weeks(struct DayDelta * const result, int_delta weeks)
 }
 
 struct DayDelta
-DayDelta_zero()
+DayDelta_zero(void)
 {
     struct DayDelta result;
     init_day_delta(&result, 0);

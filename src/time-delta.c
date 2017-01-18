@@ -183,7 +183,7 @@ TimeDelta_ptr_from_weeks(struct TimeDelta * const result, int_delta weeks)
 }
 
 struct TimeDelta
-TimeDelta_zero()
+TimeDelta_zero(void)
 {
     struct TimeDelta result;
     init_time_delta(&result, 0, 0);

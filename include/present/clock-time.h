@@ -91,7 +91,7 @@ struct PRESENT_API ClockTime {
             double second);
 
     /** @copydoc ClockTime_midnight */
-    static ClockTime midnight();
+    static ClockTime midnight(void);
 
     /** @copydoc ClockTime_noon */
     static ClockTime noon();
@@ -339,7 +339,7 @@ ClockTime_ptr_create_with_decimal_seconds(
  * Create a new ClockTime initialized to midnight (00:00).
  */
 PRESENT_API struct ClockTime
-ClockTime_midnight();
+ClockTime_midnight(void);
 
 /**
  * @copydoc ClockTime_midnight
@@ -352,7 +352,7 @@ ClockTime_ptr_midnight(struct ClockTime * const result);
  * Create a new ClockTime initialized to noon (12:00).
  */
 PRESENT_API struct ClockTime
-ClockTime_noon();
+ClockTime_noon(void);
 
 /**
  * @copydoc ClockTime_noon

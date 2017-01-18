@@ -387,7 +387,7 @@ Timestamp_ptr_create_local(
  * systems, the Timestamp will only be to the nearest second.
  */
 PRESENT_API struct Timestamp
-Timestamp_now();
+Timestamp_now(void);
 
 /**
  * @copydoc Timestamp_now
@@ -401,7 +401,7 @@ Timestamp_ptr_now(struct Timestamp * const result);
  * (Jan. 1, 1970 00:00:00 UTC).
  */
 PRESENT_API struct Timestamp
-Timestamp_epoch();
+Timestamp_epoch(void);
 
 /**
  * @copydoc Timestamp_epoch

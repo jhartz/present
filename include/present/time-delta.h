@@ -331,7 +331,7 @@ TimeDelta_ptr_from_weeks(struct TimeDelta * const result, int_delta weeks);
  * Create a new TimeDelta initialized to zero time.
  */
 PRESENT_API struct TimeDelta
-TimeDelta_zero();
+TimeDelta_zero(void);
 
 /**
  * @copydoc TimeDelta_zero

@@ -167,7 +167,7 @@ MonthDelta_ptr_from_years(
  * Create a new MonthDelta initialized to zero months.
  */
 PRESENT_API struct MonthDelta
-MonthDelta_zero();
+MonthDelta_zero(void);
 
 /**
  * @copydoc MonthDelta_zero

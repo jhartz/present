@@ -60,7 +60,7 @@ MonthDelta_ptr_from_years(
 }
 
 struct MonthDelta
-MonthDelta_zero()
+MonthDelta_zero(void)
 {
     struct MonthDelta result;
     init_month_delta(&result, 0);
