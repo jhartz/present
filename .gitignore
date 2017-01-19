@@ -35,10 +35,14 @@
 # Vim
 *.swp
 
+# IDEs
+.idea/
+
 # Build directory
 build/
 build-*/
 builds/
+cmake-build-*/
 
 # Modified config file
 include/present-config.h
