@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">235</td>
-            <td class="headerCovTableEntry">257</td>
-            <td class="headerCovTableEntryHi">91.4 %</td>
+            <td class="headerCovTableEntry">241</td>
+            <td class="headerCovTableEntry">263</td>
+            <td class="headerCovTableEntryHi">91.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
             <td class="headerValue">2017-01-20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">38</td>
-            <td class="headerCovTableEntry">48</td>
-            <td class="headerCovTableEntryMed">79.2 %</td>
+            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">50</td>
+            <td class="headerCovTableEntryMed">80.0 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -140,7 +140,7 @@
 <span class="lineNum">      78 </span>            : 
 <a name="79"><span class="lineNum">      79 </span>            : /** Convert a time_t to a UNIX timestamp. */</a>
 <span class="lineNum">      80 </span>            : static int_timestamp
-<span class="lineNum">      81 </span><span class="lineCov">         18 : time_t_to_timestamp(const time_t timestamp)</span>
+<span class="lineNum">      81 </span><span class="lineCov">         18 : time_t_to_timestamp_seconds(const time_t timestamp)</span>
 <span class="lineNum">      82 </span>            : {
 <span class="lineNum">      83 </span>            :     /* TODO: We're just assuming that time_t is already a UNIX timestamp */
 <span class="lineNum">      84 </span><span class="lineCov">         18 :     return (int_timestamp) timestamp;</span>
@@ -163,548 +163,577 @@
 <span class="lineNum">     101 </span>            :         data.timestamp_seconds -= 1;                                \
 <span class="lineNum">     102 </span>            :         data.additional_nanoseconds += NANOSECONDS_IN_SECOND;       \
 <span class="lineNum">     103 </span>            :     }                                                               \
-<span class="lineNum">     104 </span>            :     while (data.additional_nanoseconds &gt;= NANOSECONDS_IN_SECOND) {  \
-<span class="lineNum">     105 </span>            :         data.timestamp_seconds += 1;                                \
-<span class="lineNum">     106 </span>            :         data.additional_nanoseconds -= NANOSECONDS_IN_SECOND;       \
-<span class="lineNum">     107 </span>            :     }
-<span class="lineNum">     108 </span>            : 
-<span class="lineNum">     109 </span>            : /**
-<span class="lineNum">     110 </span>            :  * Check a Date and a ClockTime to make sure they aren't erroneous (if so, set
-<span class="lineNum">     111 </span>            :  * the proper errors on &quot;result&quot;).
-<span class="lineNum">     112 </span>            :  */
-<span class="lineNum">     113 </span>            : #define CHECK_DATE_AND_CLOCK_TIME(date, clock_time) \
-<span class="lineNum">     114 </span>            :     if ((date)-&gt;has_error) {                        \
-<span class="lineNum">     115 </span>            :         result-&gt;has_error = 1;                      \
-<span class="lineNum">     116 </span>            :         result-&gt;errors.invalid_date = 1;            \
-<span class="lineNum">     117 </span>            :     }                                               \
-<span class="lineNum">     118 </span>            :     if ((clock_time)-&gt;has_error) {                  \
-<span class="lineNum">     119 </span>            :         result-&gt;has_error = 1;                      \
-<span class="lineNum">     120 </span>            :         result-&gt;errors.invalid_clock_time = 1;      \
-<span class="lineNum">     121 </span>            :     }
-<span class="lineNum">     122 </span>            : 
+<span class="lineNum">     104 </span>            :     if (data.additional_nanoseconds &gt;= NANOSECONDS_IN_SECOND) {     \
+<span class="lineNum">     105 </span>            :         data.timestamp_seconds += data.additional_nanoseconds /     \
+<span class="lineNum">     106 </span>            :             NANOSECONDS_IN_SECOND;                                  \
+<span class="lineNum">     107 </span>            :         data.additional_nanoseconds %= NANOSECONDS_IN_SECOND;       \
+<span class="lineNum">     108 </span>            :     }
+<span class="lineNum">     109 </span>            : 
+<span class="lineNum">     110 </span>            : /**
+<span class="lineNum">     111 </span>            :  * Check a Date and a ClockTime to make sure they aren't erroneous (if so, set
+<span class="lineNum">     112 </span>            :  * the proper errors on &quot;result&quot;).
+<span class="lineNum">     113 </span>            :  */
+<span class="lineNum">     114 </span>            : #define CHECK_DATE_AND_CLOCK_TIME(date, clock_time) \
+<span class="lineNum">     115 </span>            :     if ((date)-&gt;has_error) {                        \
+<span class="lineNum">     116 </span>            :         result-&gt;has_error = 1;                      \
+<span class="lineNum">     117 </span>            :         result-&gt;errors.invalid_date = 1;            \
+<span class="lineNum">     118 </span>            :     }                                               \
+<span class="lineNum">     119 </span>            :     if ((clock_time)-&gt;has_error) {                  \
+<span class="lineNum">     120 </span>            :         result-&gt;has_error = 1;                      \
+<span class="lineNum">     121 </span>            :         result-&gt;errors.invalid_clock_time = 1;      \
+<span class="lineNum">     122 </span>            :     }
 <span class="lineNum">     123 </span>            : 
-<a name="124"><span class="lineNum">     124 </span>            : /** Initialize a new Timestamp instance based on its data parameters. */</a>
-<span class="lineNum">     125 </span>            : static void
-<span class="lineNum">     126 </span><span class="lineCov">         70 : init_timestamp(</span>
-<span class="lineNum">     127 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     128 </span>            :         int_timestamp timestamp_seconds,
-<span class="lineNum">     129 </span>            :         int_timestamp additional_nanoseconds)
-<span class="lineNum">     130 </span>            : {
-<span class="lineNum">     131 </span><span class="lineCov">         70 :     assert(result != NULL);</span>
-<span class="lineNum">     132 </span><span class="lineCov">         70 :     CLEAR(result);</span>
-<span class="lineNum">     133 </span>            : 
-<span class="lineNum">     134 </span><span class="lineCov">         70 :     result-&gt;data_.timestamp_seconds = timestamp_seconds;</span>
-<span class="lineNum">     135 </span><span class="lineCov">         70 :     result-&gt;data_.additional_nanoseconds = additional_nanoseconds;</span>
-<span class="lineNum">     136 </span><span class="lineCov">         70 : }</span>
-<span class="lineNum">     137 </span>            : 
-<a name="138"><span class="lineNum">     138 </span>            : </a>
-<span class="lineNum">     139 </span>            : struct Timestamp
-<span class="lineNum">     140 </span><span class="lineCov">          2 : Timestamp_from_time_t(const time_t timestamp)</span>
-<span class="lineNum">     141 </span>            : {
-<span class="lineNum">     142 </span>            :     struct Timestamp result;
-<span class="lineNum">     143 </span><span class="lineCov">          2 :     init_timestamp(&amp;result, time_t_to_timestamp(timestamp), 0);</span>
-<span class="lineNum">     144 </span><span class="lineCov">          2 :     return result;</span>
-<span class="lineNum">     145 </span>            : }
-<a name="146"><span class="lineNum">     146 </span>            : </a>
-<span class="lineNum">     147 </span>            : void
-<span class="lineNum">     148 </span><span class="lineCov">         11 : Timestamp_ptr_from_time_t(</span>
-<span class="lineNum">     149 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     150 </span>            :         const time_t timestamp)
-<span class="lineNum">     151 </span>            : {
-<span class="lineNum">     152 </span><span class="lineCov">         11 :     init_timestamp(result, time_t_to_timestamp(timestamp), 0);</span>
-<span class="lineNum">     153 </span><span class="lineCov">         11 : }</span>
-<a name="154"><span class="lineNum">     154 </span>            : </a>
-<span class="lineNum">     155 </span>            : struct Timestamp
-<span class="lineNum">     156 </span><span class="lineCov">          6 : Timestamp_from_struct_tm(</span>
-<span class="lineNum">     157 </span>            :         const struct tm tm,
-<span class="lineNum">     158 </span>            :         const struct TimeDelta * const time_zone_offset)
-<span class="lineNum">     159 </span>            : {
-<span class="lineNum">     160 </span>            :     struct Timestamp result;
-<span class="lineNum">     161 </span><span class="lineCov">          6 :     Timestamp_ptr_from_struct_tm(&amp;result, tm, time_zone_offset);</span>
-<span class="lineNum">     162 </span><span class="lineCov">          6 :     return result;</span>
-<span class="lineNum">     163 </span>            : }
-<a name="164"><span class="lineNum">     164 </span>            : </a>
-<span class="lineNum">     165 </span>            : void
-<span class="lineNum">     166 </span><span class="lineCov">         18 : Timestamp_ptr_from_struct_tm(</span>
-<span class="lineNum">     167 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     168 </span>            :         const struct tm tm,
-<span class="lineNum">     169 </span>            :         const struct TimeDelta * const time_zone_offset)
-<span class="lineNum">     170 </span>            : {
-<span class="lineNum">     171 </span>            :     struct Date date;
-<span class="lineNum">     172 </span>            :     struct ClockTime clock_time;
-<span class="lineNum">     173 </span>            : 
-<span class="lineNum">     174 </span><span class="lineCov">         18 :     date = struct_tm_to_date(tm);</span>
-<span class="lineNum">     175 </span><span class="lineCov">         18 :     clock_time = struct_tm_to_clock_time(tm);</span>
-<span class="lineNum">     176 </span><span class="lineCov">         18 :     Timestamp_ptr_create(result, &amp;date, &amp;clock_time, time_zone_offset);</span>
-<span class="lineNum">     177 </span><span class="lineCov">         18 : }</span>
-<a name="178"><span class="lineNum">     178 </span>            : </a>
-<span class="lineNum">     179 </span>            : struct Timestamp
-<span class="lineNum">     180 </span><span class="lineNoCov">          0 : Timestamp_from_struct_tm_utc(const struct tm tm)</span>
-<span class="lineNum">     181 </span>            : {
-<span class="lineNum">     182 </span>            :     struct Timestamp result;
-<span class="lineNum">     183 </span><span class="lineNoCov">          0 :     Timestamp_ptr_from_struct_tm_utc(&amp;result, tm);</span>
-<span class="lineNum">     184 </span><span class="lineNoCov">          0 :     return result;</span>
-<span class="lineNum">     185 </span>            : }
-<a name="186"><span class="lineNum">     186 </span>            : </a>
-<span class="lineNum">     187 </span>            : void
-<span class="lineNum">     188 </span><span class="lineNoCov">          0 : Timestamp_ptr_from_struct_tm_utc(</span>
-<span class="lineNum">     189 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     190 </span>            :         const struct tm tm)
-<span class="lineNum">     191 </span>            : {
-<span class="lineNum">     192 </span>            :     struct Date date;
-<span class="lineNum">     193 </span>            :     struct ClockTime clock_time;
-<span class="lineNum">     194 </span>            : 
-<span class="lineNum">     195 </span><span class="lineNoCov">          0 :     date = struct_tm_to_date(tm);</span>
-<span class="lineNum">     196 </span><span class="lineNoCov">          0 :     clock_time = struct_tm_to_clock_time(tm);</span>
-<span class="lineNum">     197 </span><span class="lineNoCov">          0 :     Timestamp_ptr_create_utc(result, &amp;date, &amp;clock_time);</span>
-<span class="lineNum">     198 </span><span class="lineNoCov">          0 : }</span>
-<a name="199"><span class="lineNum">     199 </span>            : </a>
-<span class="lineNum">     200 </span>            : struct Timestamp
-<span class="lineNum">     201 </span><span class="lineNoCov">          0 : Timestamp_from_struct_tm_local(const struct tm tm)</span>
-<span class="lineNum">     202 </span>            : {
-<span class="lineNum">     203 </span>            :     struct Timestamp result;
-<span class="lineNum">     204 </span><span class="lineNoCov">          0 :     Timestamp_ptr_from_struct_tm_local(&amp;result, tm);</span>
-<span class="lineNum">     205 </span><span class="lineNoCov">          0 :     return result;</span>
-<span class="lineNum">     206 </span>            : }
-<a name="207"><span class="lineNum">     207 </span>            : </a>
-<span class="lineNum">     208 </span>            : void
-<span class="lineNum">     209 </span><span class="lineCov">          1 : Timestamp_ptr_from_struct_tm_local(</span>
-<span class="lineNum">     210 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     211 </span>            :         const struct tm tm)
-<span class="lineNum">     212 </span>            : {
-<span class="lineNum">     213 </span>            :     struct tm tm_copy;
-<span class="lineNum">     214 </span>            :     time_t timestamp;
-<span class="lineNum">     215 </span>            : 
-<span class="lineNum">     216 </span><span class="lineCov">          1 :     tm_copy = tm;</span>
-<span class="lineNum">     217 </span>            :     /* Throw it right through mktime */
-<span class="lineNum">     218 </span><span class="lineCov">          1 :     timestamp = present_mktime(&amp;tm_copy);</span>
-<span class="lineNum">     219 </span><span class="lineCov">          1 :     assert(timestamp != -1);</span>
-<span class="lineNum">     220 </span><span class="lineCov">          1 :     init_timestamp(result, time_t_to_timestamp(timestamp), 0);</span>
-<span class="lineNum">     221 </span><span class="lineCov">          1 : }</span>
-<a name="222"><span class="lineNum">     222 </span>            : </a>
-<span class="lineNum">     223 </span>            : struct Timestamp
-<span class="lineNum">     224 </span><span class="lineCov">          6 : Timestamp_create(</span>
-<span class="lineNum">     225 </span>            :         const struct Date * const date,
-<span class="lineNum">     226 </span>            :         const struct ClockTime * const clock_time,
-<span class="lineNum">     227 </span>            :         const struct TimeDelta * const time_zone_offset)
-<span class="lineNum">     228 </span>            : {
-<span class="lineNum">     229 </span>            :     struct Timestamp result;
-<span class="lineNum">     230 </span><span class="lineCov">          6 :     Timestamp_ptr_create(&amp;result, date, clock_time, time_zone_offset);</span>
-<span class="lineNum">     231 </span><span class="lineCov">          6 :     return result;</span>
-<span class="lineNum">     232 </span>            : }
-<a name="233"><span class="lineNum">     233 </span>            : </a>
-<span class="lineNum">     234 </span>            : void
-<span class="lineNum">     235 </span><span class="lineCov">         38 : Timestamp_ptr_create(</span>
-<span class="lineNum">     236 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     237 </span>            :         const struct Date * const date,
-<span class="lineNum">     238 </span>            :         const struct ClockTime * const clock_time,
-<span class="lineNum">     239 </span>            :         const struct TimeDelta * const time_zone_offset)
-<span class="lineNum">     240 </span>            : {
-<span class="lineNum">     241 </span><span class="lineCov">         38 :     assert(result != NULL);</span>
-<span class="lineNum">     242 </span><span class="lineCov">         38 :     assert(date != NULL);</span>
-<span class="lineNum">     243 </span><span class="lineCov">         38 :     assert(clock_time != NULL);</span>
-<span class="lineNum">     244 </span>            : 
-<span class="lineNum">     245 </span><span class="lineCov">         38 :     CLEAR(result);</span>
-<span class="lineNum">     246 </span>            : 
-<span class="lineNum">     247 </span>            :     /* Make sure the Date and ClockTime aren't erroneous */
-<span class="lineNum">     248 </span><span class="lineCov">         38 :     CHECK_DATE_AND_CLOCK_TIME(date, clock_time)</span>
-<span class="lineNum">     249 </span>            : 
-<span class="lineNum">     250 </span><span class="lineCov">         38 :     if (!result-&gt;has_error) {</span>
-<span class="lineNum">     251 </span>            :         /* First, pretend it's just UTC */
-<span class="lineNum">     252 </span><span class="lineCov">         36 :         Timestamp_ptr_create_utc(result, date, clock_time);</span>
-<span class="lineNum">     253 </span>            :         /* Now, subtract the UTC offset (since we're technically converting
-<span class="lineNum">     254 </span>            :            TO UTC) */
-<span class="lineNum">     255 </span><span class="lineCov">         36 :         Timestamp_subtract_TimeDelta(result, time_zone_offset);</span>
-<span class="lineNum">     256 </span>            :     }
-<span class="lineNum">     257 </span><span class="lineCov">         38 : }</span>
-<a name="258"><span class="lineNum">     258 </span>            : </a>
-<span class="lineNum">     259 </span>            : struct Timestamp
-<span class="lineNum">     260 </span><span class="lineCov">          8 : Timestamp_create_utc(</span>
-<span class="lineNum">     261 </span>            :         const struct Date * const date,
-<span class="lineNum">     262 </span>            :         const struct ClockTime * const clock_time)
-<span class="lineNum">     263 </span>            : {
-<span class="lineNum">     264 </span>            :     struct Timestamp result;
-<span class="lineNum">     265 </span><span class="lineCov">          8 :     Timestamp_ptr_create_utc(&amp;result, date, clock_time);</span>
-<span class="lineNum">     266 </span><span class="lineCov">          8 :     return result;</span>
-<span class="lineNum">     267 </span>            : }
-<a name="268"><span class="lineNum">     268 </span>            : </a>
-<span class="lineNum">     269 </span>            : void
-<span class="lineNum">     270 </span><span class="lineCov">         51 : Timestamp_ptr_create_utc(</span>
-<span class="lineNum">     271 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     272 </span>            :         const struct Date * const date,
-<span class="lineNum">     273 </span>            :         const struct ClockTime * const clock_time)
-<span class="lineNum">     274 </span>            : {
-<span class="lineNum">     275 </span>            :     /** Day of the year that each month starts on (in non-leap years). */
-<span class="lineNum">     276 </span>            :     static const int_day_of_year DAY_OF_START_OF_MONTH[13] = {
-<span class="lineNum">     277 </span>            :         0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
-<span class="lineNum">     278 </span>            :     };
-<span class="lineNum">     279 </span>            : 
-<span class="lineNum">     280 </span>            :     int_timestamp year, month, days_since_epoch;
-<span class="lineNum">     281 </span>            :     struct TimeDelta time_since_midnight;
-<span class="lineNum">     282 </span>            : 
-<span class="lineNum">     283 </span><span class="lineCov">         51 :     assert(result != NULL);</span>
-<span class="lineNum">     284 </span><span class="lineCov">         51 :     assert(date != NULL);</span>
-<span class="lineNum">     285 </span><span class="lineCov">         51 :     assert(clock_time != NULL);</span>
-<span class="lineNum">     286 </span>            : 
-<span class="lineNum">     287 </span><span class="lineCov">         51 :     CLEAR(result);</span>
-<span class="lineNum">     288 </span>            : 
-<span class="lineNum">     289 </span>            :     /* Make sure the Date and ClockTime aren't erroneous */
-<span class="lineNum">     290 </span><span class="lineCov">         51 :     CHECK_DATE_AND_CLOCK_TIME(date, clock_time)</span>
-<span class="lineNum">     291 </span>            : 
-<span class="lineNum">     292 </span><span class="lineCov">         51 :     if (!result-&gt;has_error) {</span>
-<span class="lineNum">     293 </span>            :         /* First, the hard part... determining the number of days since the UNIX
-<span class="lineNum">     294 </span>            :            epoch, taking leap years into account */
-<span class="lineNum">     295 </span><span class="lineCov">         49 :         year = Date_year(date);</span>
-<span class="lineNum">     296 </span><span class="lineCov">         49 :         month = Date_month(date);</span>
-<span class="lineNum">     297 </span><span class="lineCov">         49 :         days_since_epoch = Date_day(date) - 1;</span>
-<span class="lineNum">     298 </span>            : 
-<span class="lineNum">     299 </span><span class="lineCov">         49 :         days_since_epoch += DAY_OF_START_OF_MONTH[month];</span>
-<span class="lineNum">     300 </span><span class="lineCov">         49 :         days_since_epoch += 365 * (year - 1970);</span>
-<span class="lineNum">     301 </span>            :         /* Every 4 years is a leap year */
-<span class="lineNum">     302 </span><span class="lineCov">         49 :         days_since_epoch += (year - 1968) / 4;</span>
-<span class="lineNum">     303 </span>            :         /* Except the turn of the century */
-<span class="lineNum">     304 </span><span class="lineCov">         49 :         days_since_epoch -= (year - 1900) / 100;</span>
-<span class="lineNum">     305 </span>            :         /* Except every 4th century */
-<span class="lineNum">     306 </span><span class="lineCov">         49 :         days_since_epoch += (year - 1600) / 400;</span>
-<span class="lineNum">     307 </span>            :         /* If it's still January or February of this year, though, we don't
-<span class="lineNum">     308 </span>            :            need to include the extra for this year yet */
-<span class="lineNum">     309 </span><span class="lineCov">         49 :         if (IS_LEAP_YEAR(year) &amp;&amp; month &lt;= 2) {</span>
-<span class="lineNum">     310 </span><span class="lineCov">          1 :             days_since_epoch--;</span>
-<span class="lineNum">     311 </span>            :         }
-<span class="lineNum">     312 </span>            : 
-<span class="lineNum">     313 </span>            :         /* This is a more useful form of the clock time */
-<span class="lineNum">     314 </span><span class="lineCov">         49 :         time_since_midnight = ClockTime_time_since_midnight(clock_time);</span>
-<span class="lineNum">     315 </span>            : 
-<span class="lineNum">     316 </span><span class="lineCov">         98 :         init_timestamp(</span>
-<span class="lineNum">     317 </span>            :             result,
-<span class="lineNum">     318 </span><span class="lineCov">         49 :             days_since_epoch * SECONDS_IN_DAY +</span>
-<span class="lineNum">     319 </span><span class="lineCov">         49 :             time_since_midnight.data_.delta_seconds,</span>
-<span class="lineNum">     320 </span>            :             time_since_midnight.data_.delta_nanoseconds);
-<span class="lineNum">     321 </span>            :     }
-<span class="lineNum">     322 </span><span class="lineCov">         51 : }</span>
-<a name="323"><span class="lineNum">     323 </span>            : </a>
-<span class="lineNum">     324 </span>            : struct Timestamp
-<span class="lineNum">     325 </span><span class="lineNoCov">          0 : Timestamp_create_local(</span>
+<span class="lineNum">     124 </span>            : 
+<a name="125"><span class="lineNum">     125 </span>            : /** Initialize a new Timestamp instance based on its data parameters. */</a>
+<span class="lineNum">     126 </span>            : static void
+<span class="lineNum">     127 </span><span class="lineCov">         70 : init_timestamp(</span>
+<span class="lineNum">     128 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     129 </span>            :         int_timestamp timestamp_seconds,
+<span class="lineNum">     130 </span>            :         int_timestamp additional_nanoseconds)
+<span class="lineNum">     131 </span>            : {
+<span class="lineNum">     132 </span><span class="lineCov">         70 :     assert(result != NULL);</span>
+<span class="lineNum">     133 </span><span class="lineCov">         70 :     CLEAR(result);</span>
+<span class="lineNum">     134 </span>            : 
+<span class="lineNum">     135 </span><span class="lineCov">         70 :     result-&gt;data_.timestamp_seconds = timestamp_seconds;</span>
+<span class="lineNum">     136 </span><span class="lineCov">         70 :     result-&gt;data_.additional_nanoseconds = additional_nanoseconds;</span>
+<span class="lineNum">     137 </span><span class="lineCov">         70 : }</span>
+<span class="lineNum">     138 </span>            : 
+<span class="lineNum">     139 </span>            : /**
+<span class="lineNum">     140 </span>            :  * Initialize a new Timestamp instance based on a Date and a ClockTime in UTC.
+<a name="141"><span class="lineNum">     141 </span>            :  */</a>
+<span class="lineNum">     142 </span>            : static void
+<span class="lineNum">     143 </span><span class="lineCov">         51 : init_timestamp_from_date_and_clock_time_utc(</span>
+<span class="lineNum">     144 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     145 </span>            :         const struct Date * const date,
+<span class="lineNum">     146 </span>            :         const struct ClockTime * const clock_time)
+<span class="lineNum">     147 </span>            : {
+<span class="lineNum">     148 </span>            :     /** Day of the year that each month starts on (in non-leap years). */
+<span class="lineNum">     149 </span>            :     static const int_day_of_year DAY_OF_START_OF_MONTH[13] = {
+<span class="lineNum">     150 </span>            :             0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
+<span class="lineNum">     151 </span>            :     };
+<span class="lineNum">     152 </span>            : 
+<span class="lineNum">     153 </span>            :     int_timestamp year, month, days_since_epoch;
+<span class="lineNum">     154 </span>            :     struct TimeDelta time_since_midnight;
+<span class="lineNum">     155 </span>            : 
+<span class="lineNum">     156 </span><span class="lineCov">         51 :     assert(result != NULL);</span>
+<span class="lineNum">     157 </span><span class="lineCov">         51 :     assert(date != NULL);</span>
+<span class="lineNum">     158 </span><span class="lineCov">         51 :     assert(clock_time != NULL);</span>
+<span class="lineNum">     159 </span>            : 
+<span class="lineNum">     160 </span><span class="lineCov">         51 :     CLEAR(result);</span>
+<span class="lineNum">     161 </span>            : 
+<span class="lineNum">     162 </span>            :     /* Make sure the Date and ClockTime aren't erroneous */
+<span class="lineNum">     163 </span><span class="lineCov">         51 :     CHECK_DATE_AND_CLOCK_TIME(date, clock_time)</span>
+<span class="lineNum">     164 </span>            : 
+<span class="lineNum">     165 </span><span class="lineCov">         51 :     if (!result-&gt;has_error) {</span>
+<span class="lineNum">     166 </span>            :         /* First, the hard part... determining the number of days since the UNIX
+<span class="lineNum">     167 </span>            :            epoch, taking leap years into account */
+<span class="lineNum">     168 </span><span class="lineCov">         49 :         year = Date_year(date);</span>
+<span class="lineNum">     169 </span><span class="lineCov">         49 :         month = Date_month(date);</span>
+<span class="lineNum">     170 </span><span class="lineCov">         49 :         days_since_epoch = Date_day(date) - 1;</span>
+<span class="lineNum">     171 </span>            : 
+<span class="lineNum">     172 </span><span class="lineCov">         49 :         days_since_epoch += DAY_OF_START_OF_MONTH[month];</span>
+<span class="lineNum">     173 </span><span class="lineCov">         49 :         days_since_epoch += 365 * (year - 1970);</span>
+<span class="lineNum">     174 </span>            :         /* Every 4 years is a leap year */
+<span class="lineNum">     175 </span><span class="lineCov">         49 :         days_since_epoch += (year - 1968) / 4;</span>
+<span class="lineNum">     176 </span>            :         /* Except the turn of the century */
+<span class="lineNum">     177 </span><span class="lineCov">         49 :         days_since_epoch -= (year - 1900) / 100;</span>
+<span class="lineNum">     178 </span>            :         /* Except every 4th century */
+<span class="lineNum">     179 </span><span class="lineCov">         49 :         days_since_epoch += (year - 1600) / 400;</span>
+<span class="lineNum">     180 </span>            :         /* If it's still January or February of this year, though, we don't
+<span class="lineNum">     181 </span>            :            need to include the extra for this year yet */
+<span class="lineNum">     182 </span><span class="lineCov">         49 :         if (IS_LEAP_YEAR(year) &amp;&amp; month &lt;= 2) {</span>
+<span class="lineNum">     183 </span><span class="lineCov">          1 :             days_since_epoch--;</span>
+<span class="lineNum">     184 </span>            :         }
+<span class="lineNum">     185 </span>            : 
+<span class="lineNum">     186 </span>            :         /* This is a more useful form of the clock time */
+<span class="lineNum">     187 </span><span class="lineCov">         49 :         time_since_midnight = ClockTime_time_since_midnight(clock_time);</span>
+<span class="lineNum">     188 </span>            : 
+<span class="lineNum">     189 </span><span class="lineCov">         98 :         init_timestamp(</span>
+<span class="lineNum">     190 </span>            :                 result,
+<span class="lineNum">     191 </span><span class="lineCov">         49 :                 days_since_epoch * SECONDS_IN_DAY +</span>
+<span class="lineNum">     192 </span><span class="lineCov">         49 :                 time_since_midnight.data_.delta_seconds,</span>
+<span class="lineNum">     193 </span>            :                 time_since_midnight.data_.delta_nanoseconds);
+<span class="lineNum">     194 </span>            :     }
+<span class="lineNum">     195 </span><span class="lineCov">         51 : }</span>
+<span class="lineNum">     196 </span>            : 
+<span class="lineNum">     197 </span>            : /**
+<span class="lineNum">     198 </span>            :  * Initialize a new Timestamp instance based on a Date, a ClockTime, and a time
+<span class="lineNum">     199 </span>            :  * zone offset.
+<a name="200"><span class="lineNum">     200 </span>            :  */</a>
+<span class="lineNum">     201 </span>            : static void
+<span class="lineNum">     202 </span><span class="lineCov">         38 : init_timestamp_from_date_and_clock_time(</span>
+<span class="lineNum">     203 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     204 </span>            :         const struct Date * const date,
+<span class="lineNum">     205 </span>            :         const struct ClockTime * const clock_time,
+<span class="lineNum">     206 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     207 </span>            : {
+<span class="lineNum">     208 </span><span class="lineCov">         38 :     assert(result != NULL);</span>
+<span class="lineNum">     209 </span><span class="lineCov">         38 :     assert(date != NULL);</span>
+<span class="lineNum">     210 </span><span class="lineCov">         38 :     assert(clock_time != NULL);</span>
+<span class="lineNum">     211 </span>            : 
+<span class="lineNum">     212 </span><span class="lineCov">         38 :     CLEAR(result);</span>
+<span class="lineNum">     213 </span>            : 
+<span class="lineNum">     214 </span>            :     /* Make sure the Date and ClockTime aren't erroneous */
+<span class="lineNum">     215 </span><span class="lineCov">         38 :     CHECK_DATE_AND_CLOCK_TIME(date, clock_time)</span>
+<span class="lineNum">     216 </span>            : 
+<span class="lineNum">     217 </span><span class="lineCov">         38 :     if (!result-&gt;has_error) {</span>
+<span class="lineNum">     218 </span>            :         /* First, pretend it's just UTC */
+<span class="lineNum">     219 </span><span class="lineCov">         36 :         init_timestamp_from_date_and_clock_time_utc(result, date, clock_time);</span>
+<span class="lineNum">     220 </span>            :         /* Now, subtract the UTC offset (since we're technically converting
+<span class="lineNum">     221 </span>            :            TO UTC) */
+<span class="lineNum">     222 </span><span class="lineCov">         36 :         Timestamp_subtract_TimeDelta(result, time_zone_offset);</span>
+<span class="lineNum">     223 </span>            :     }
+<span class="lineNum">     224 </span><span class="lineCov">         38 : }</span>
+<span class="lineNum">     225 </span>            : 
+<a name="226"><span class="lineNum">     226 </span>            : </a>
+<span class="lineNum">     227 </span>            : struct Timestamp
+<span class="lineNum">     228 </span><span class="lineCov">          2 : Timestamp_from_time_t(const time_t timestamp)</span>
+<span class="lineNum">     229 </span>            : {
+<span class="lineNum">     230 </span>            :     struct Timestamp result;
+<span class="lineNum">     231 </span><span class="lineCov">          2 :     init_timestamp(&amp;result, time_t_to_timestamp_seconds(timestamp), 0);</span>
+<span class="lineNum">     232 </span><span class="lineCov">          2 :     return result;</span>
+<span class="lineNum">     233 </span>            : }
+<a name="234"><span class="lineNum">     234 </span>            : </a>
+<span class="lineNum">     235 </span>            : void
+<span class="lineNum">     236 </span><span class="lineCov">         11 : Timestamp_ptr_from_time_t(</span>
+<span class="lineNum">     237 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     238 </span>            :         const time_t timestamp)
+<span class="lineNum">     239 </span>            : {
+<span class="lineNum">     240 </span><span class="lineCov">         11 :     init_timestamp(result, time_t_to_timestamp_seconds(timestamp), 0);</span>
+<span class="lineNum">     241 </span><span class="lineCov">         11 : }</span>
+<a name="242"><span class="lineNum">     242 </span>            : </a>
+<span class="lineNum">     243 </span>            : struct Timestamp
+<span class="lineNum">     244 </span><span class="lineCov">          6 : Timestamp_from_struct_tm(</span>
+<span class="lineNum">     245 </span>            :         const struct tm tm,
+<span class="lineNum">     246 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     247 </span>            : {
+<span class="lineNum">     248 </span>            :     struct Timestamp result;
+<span class="lineNum">     249 </span><span class="lineCov">          6 :     Timestamp_ptr_from_struct_tm(&amp;result, tm, time_zone_offset);</span>
+<span class="lineNum">     250 </span><span class="lineCov">          6 :     return result;</span>
+<span class="lineNum">     251 </span>            : }
+<a name="252"><span class="lineNum">     252 </span>            : </a>
+<span class="lineNum">     253 </span>            : void
+<span class="lineNum">     254 </span><span class="lineCov">         18 : Timestamp_ptr_from_struct_tm(</span>
+<span class="lineNum">     255 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     256 </span>            :         const struct tm tm,
+<span class="lineNum">     257 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     258 </span>            : {
+<span class="lineNum">     259 </span>            :     struct Date date;
+<span class="lineNum">     260 </span>            :     struct ClockTime clock_time;
+<span class="lineNum">     261 </span>            : 
+<span class="lineNum">     262 </span><span class="lineCov">         18 :     date = struct_tm_to_date(tm);</span>
+<span class="lineNum">     263 </span><span class="lineCov">         18 :     clock_time = struct_tm_to_clock_time(tm);</span>
+<span class="lineNum">     264 </span><span class="lineCov">         18 :     init_timestamp_from_date_and_clock_time(</span>
+<span class="lineNum">     265 </span>            :             result, &amp;date, &amp;clock_time, time_zone_offset);
+<span class="lineNum">     266 </span><span class="lineCov">         18 : }</span>
+<a name="267"><span class="lineNum">     267 </span>            : </a>
+<span class="lineNum">     268 </span>            : struct Timestamp
+<span class="lineNum">     269 </span><span class="lineNoCov">          0 : Timestamp_from_struct_tm_utc(const struct tm tm)</span>
+<span class="lineNum">     270 </span>            : {
+<span class="lineNum">     271 </span>            :     struct Timestamp result;
+<span class="lineNum">     272 </span><span class="lineNoCov">          0 :     Timestamp_ptr_from_struct_tm_utc(&amp;result, tm);</span>
+<span class="lineNum">     273 </span><span class="lineNoCov">          0 :     return result;</span>
+<span class="lineNum">     274 </span>            : }
+<a name="275"><span class="lineNum">     275 </span>            : </a>
+<span class="lineNum">     276 </span>            : void
+<span class="lineNum">     277 </span><span class="lineNoCov">          0 : Timestamp_ptr_from_struct_tm_utc(</span>
+<span class="lineNum">     278 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     279 </span>            :         const struct tm tm)
+<span class="lineNum">     280 </span>            : {
+<span class="lineNum">     281 </span>            :     struct Date date;
+<span class="lineNum">     282 </span>            :     struct ClockTime clock_time;
+<span class="lineNum">     283 </span>            : 
+<span class="lineNum">     284 </span><span class="lineNoCov">          0 :     date = struct_tm_to_date(tm);</span>
+<span class="lineNum">     285 </span><span class="lineNoCov">          0 :     clock_time = struct_tm_to_clock_time(tm);</span>
+<span class="lineNum">     286 </span><span class="lineNoCov">          0 :     init_timestamp_from_date_and_clock_time_utc(result, &amp;date, &amp;clock_time);</span>
+<span class="lineNum">     287 </span><span class="lineNoCov">          0 : }</span>
+<a name="288"><span class="lineNum">     288 </span>            : </a>
+<span class="lineNum">     289 </span>            : struct Timestamp
+<span class="lineNum">     290 </span><span class="lineNoCov">          0 : Timestamp_from_struct_tm_local(const struct tm tm)</span>
+<span class="lineNum">     291 </span>            : {
+<span class="lineNum">     292 </span>            :     struct Timestamp result;
+<span class="lineNum">     293 </span><span class="lineNoCov">          0 :     Timestamp_ptr_from_struct_tm_local(&amp;result, tm);</span>
+<span class="lineNum">     294 </span><span class="lineNoCov">          0 :     return result;</span>
+<span class="lineNum">     295 </span>            : }
+<a name="296"><span class="lineNum">     296 </span>            : </a>
+<span class="lineNum">     297 </span>            : void
+<span class="lineNum">     298 </span><span class="lineCov">          1 : Timestamp_ptr_from_struct_tm_local(</span>
+<span class="lineNum">     299 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     300 </span>            :         const struct tm tm)
+<span class="lineNum">     301 </span>            : {
+<span class="lineNum">     302 </span>            :     struct tm tm_copy;
+<span class="lineNum">     303 </span>            :     time_t timestamp;
+<span class="lineNum">     304 </span>            : 
+<span class="lineNum">     305 </span><span class="lineCov">          1 :     tm_copy = tm;</span>
+<span class="lineNum">     306 </span>            :     /* Throw it right through mktime */
+<span class="lineNum">     307 </span><span class="lineCov">          1 :     timestamp = present_mktime(&amp;tm_copy);</span>
+<span class="lineNum">     308 </span><span class="lineCov">          1 :     assert(timestamp != -1);</span>
+<span class="lineNum">     309 </span><span class="lineCov">          1 :     init_timestamp(result, time_t_to_timestamp_seconds(timestamp), 0);</span>
+<span class="lineNum">     310 </span><span class="lineCov">          1 : }</span>
+<a name="311"><span class="lineNum">     311 </span>            : </a>
+<span class="lineNum">     312 </span>            : struct Timestamp
+<span class="lineNum">     313 </span><span class="lineCov">          6 : Timestamp_create(</span>
+<span class="lineNum">     314 </span>            :         const struct Date * const date,
+<span class="lineNum">     315 </span>            :         const struct ClockTime * const clock_time,
+<span class="lineNum">     316 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     317 </span>            : {
+<span class="lineNum">     318 </span>            :     struct Timestamp result;
+<span class="lineNum">     319 </span><span class="lineCov">          6 :     Timestamp_ptr_create(&amp;result, date, clock_time, time_zone_offset);</span>
+<span class="lineNum">     320 </span><span class="lineCov">          6 :     return result;</span>
+<span class="lineNum">     321 </span>            : }
+<a name="322"><span class="lineNum">     322 </span>            : </a>
+<span class="lineNum">     323 </span>            : void
+<span class="lineNum">     324 </span><span class="lineCov">         20 : Timestamp_ptr_create(</span>
+<span class="lineNum">     325 </span>            :         struct Timestamp * const result,
 <span class="lineNum">     326 </span>            :         const struct Date * const date,
-<span class="lineNum">     327 </span>            :         const struct ClockTime * const clock_time)
-<span class="lineNum">     328 </span>            : {
-<span class="lineNum">     329 </span>            :     struct Timestamp result;
-<span class="lineNum">     330 </span><span class="lineNoCov">          0 :     Timestamp_ptr_create_local(&amp;result, date, clock_time);</span>
-<span class="lineNum">     331 </span><span class="lineNoCov">          0 :     return result;</span>
-<span class="lineNum">     332 </span>            : }
+<span class="lineNum">     327 </span>            :         const struct ClockTime * const clock_time,
+<span class="lineNum">     328 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     329 </span>            : {
+<span class="lineNum">     330 </span><span class="lineCov">         20 :     init_timestamp_from_date_and_clock_time(</span>
+<span class="lineNum">     331 </span>            :             result, date, clock_time, time_zone_offset);
+<span class="lineNum">     332 </span><span class="lineCov">         20 : }</span>
 <a name="333"><span class="lineNum">     333 </span>            : </a>
-<span class="lineNum">     334 </span>            : void
-<span class="lineNum">     335 </span><span class="lineCov">          3 : Timestamp_ptr_create_local(</span>
-<span class="lineNum">     336 </span>            :         struct Timestamp * const result,
-<span class="lineNum">     337 </span>            :         const struct Date * const date,
-<span class="lineNum">     338 </span>            :         const struct ClockTime * const clock_time)
-<span class="lineNum">     339 </span>            : {
-<span class="lineNum">     340 </span><span class="lineCov">          3 :     assert(result != NULL);</span>
-<span class="lineNum">     341 </span><span class="lineCov">          3 :     assert(date != NULL);</span>
-<span class="lineNum">     342 </span><span class="lineCov">          3 :     assert(clock_time != NULL);</span>
-<span class="lineNum">     343 </span>            : 
-<span class="lineNum">     344 </span><span class="lineCov">          3 :     CLEAR(result);</span>
-<span class="lineNum">     345 </span>            : 
-<span class="lineNum">     346 </span>            :     /* Make sure the Date and ClockTime aren't erroneous */
-<span class="lineNum">     347 </span><span class="lineCov">          3 :     CHECK_DATE_AND_CLOCK_TIME(date, clock_time)</span>
-<span class="lineNum">     348 </span>            : 
-<span class="lineNum">     349 </span><span class="lineCov">          3 :     if (!result-&gt;has_error) {</span>
-<span class="lineNum">     350 </span><span class="lineCov">          1 :         Timestamp_ptr_from_struct_tm_local(</span>
-<span class="lineNum">     351 </span>            :             result,
-<span class="lineNum">     352 </span>            :             convert_to_struct_tm(date, clock_time));
-<span class="lineNum">     353 </span>            :     }
-<span class="lineNum">     354 </span><span class="lineCov">          3 : }</span>
-<a name="355"><span class="lineNum">     355 </span>            : </a>
-<span class="lineNum">     356 </span>            : struct Timestamp
-<span class="lineNum">     357 </span><span class="lineCov">          1 : Timestamp_now(void)</span>
-<span class="lineNum">     358 </span>            : {
-<span class="lineNum">     359 </span>            :     struct Timestamp result;
-<span class="lineNum">     360 </span><span class="lineCov">          1 :     Timestamp_ptr_now(&amp;result);</span>
-<span class="lineNum">     361 </span><span class="lineCov">          1 :     return result;</span>
-<span class="lineNum">     362 </span>            : }
-<a name="363"><span class="lineNum">     363 </span>            : </a>
-<span class="lineNum">     364 </span>            : void
-<span class="lineNum">     365 </span><span class="lineCov">          4 : Timestamp_ptr_now(struct Timestamp * const result)</span>
-<span class="lineNum">     366 </span>            : {
-<span class="lineNum">     367 </span>            :     struct PresentNowStruct now;
-<span class="lineNum">     368 </span><span class="lineCov">          4 :     present_now(&amp;now);</span>
-<span class="lineNum">     369 </span><span class="lineCov">          4 :     init_timestamp(result, time_t_to_timestamp(now.sec), now.nsec);</span>
-<span class="lineNum">     370 </span><span class="lineCov">          4 : }</span>
-<a name="371"><span class="lineNum">     371 </span>            : </a>
-<span class="lineNum">     372 </span>            : struct Timestamp
-<span class="lineNum">     373 </span><span class="lineCov">          1 : Timestamp_epoch(void)</span>
-<span class="lineNum">     374 </span>            : {
-<span class="lineNum">     375 </span>            :     struct Timestamp result;
-<span class="lineNum">     376 </span><span class="lineCov">          1 :     init_timestamp(&amp;result, 0, 0);</span>
-<span class="lineNum">     377 </span><span class="lineCov">          1 :     return result;</span>
-<span class="lineNum">     378 </span>            : }
-<a name="379"><span class="lineNum">     379 </span>            : </a>
-<span class="lineNum">     380 </span>            : void
-<span class="lineNum">     381 </span><span class="lineCov">          2 : Timestamp_ptr_epoch(struct Timestamp * const result)</span>
-<span class="lineNum">     382 </span>            : {
-<span class="lineNum">     383 </span><span class="lineCov">          2 :     init_timestamp(result, 0, 0);</span>
-<span class="lineNum">     384 </span><span class="lineCov">          2 : }</span>
-<a name="385"><span class="lineNum">     385 </span>            : </a>
-<span class="lineNum">     386 </span>            : time_t
-<span class="lineNum">     387 </span><span class="lineCov">          8 : Timestamp_get_time_t(const struct Timestamp * const self)</span>
-<span class="lineNum">     388 </span>            : {
-<span class="lineNum">     389 </span><span class="lineCov">          8 :     assert(self != NULL);</span>
-<span class="lineNum">     390 </span><span class="lineCov">          8 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     391 </span>            : 
-<span class="lineNum">     392 </span><span class="lineCov">          8 :     return timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
-<span class="lineNum">     393 </span>            : }
-<a name="394"><span class="lineNum">     394 </span>            : </a>
-<span class="lineNum">     395 </span>            : struct tm
-<span class="lineNum">     396 </span><span class="lineCov">          8 : Timestamp_get_struct_tm(</span>
-<span class="lineNum">     397 </span>            :         const struct Timestamp * const self,
-<span class="lineNum">     398 </span>            :         const struct TimeDelta * const time_zone_offset)
-<span class="lineNum">     399 </span>            : {
-<span class="lineNum">     400 </span>            :     struct Timestamp copy;
-<span class="lineNum">     401 </span>            : 
-<span class="lineNum">     402 </span><span class="lineCov">          8 :     assert(self != NULL);</span>
-<span class="lineNum">     403 </span><span class="lineCov">          8 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     404 </span><span class="lineCov">          8 :     assert(time_zone_offset != NULL);</span>
-<span class="lineNum">     405 </span>            : 
-<span class="lineNum">     406 </span><span class="lineCov">          8 :     copy = *self;</span>
-<span class="lineNum">     407 </span><span class="lineCov">          8 :     Timestamp_add_TimeDelta(&amp;copy, time_zone_offset);</span>
-<span class="lineNum">     408 </span><span class="lineCov">          8 :     return Timestamp_get_struct_tm_utc(&amp;copy);</span>
-<span class="lineNum">     409 </span>            : }
-<a name="410"><span class="lineNum">     410 </span>            : </a>
-<span class="lineNum">     411 </span>            : struct tm
-<span class="lineNum">     412 </span><span class="lineCov">        141 : Timestamp_get_struct_tm_utc(const struct Timestamp * const self)</span>
-<span class="lineNum">     413 </span>            : {
-<span class="lineNum">     414 </span>            :     time_t timestamp;
-<span class="lineNum">     415 </span>            :     struct tm result;
-<span class="lineNum">     416 </span>            : 
-<span class="lineNum">     417 </span><span class="lineCov">        141 :     assert(self != NULL);</span>
-<span class="lineNum">     418 </span><span class="lineCov">        141 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     419 </span>            : 
-<span class="lineNum">     420 </span><span class="lineCov">        141 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
-<span class="lineNum">     421 </span><span class="lineCov">        141 :     present_gmtime(&amp;timestamp, &amp;result);</span>
-<span class="lineNum">     422 </span><span class="lineCov">        141 :     return result;</span>
-<span class="lineNum">     423 </span>            : }
-<a name="424"><span class="lineNum">     424 </span>            : </a>
-<span class="lineNum">     425 </span>            : struct tm
-<span class="lineNum">     426 </span><span class="lineCov">          3 : Timestamp_get_struct_tm_local(const struct Timestamp * const self)</span>
-<span class="lineNum">     427 </span>            : {
-<span class="lineNum">     428 </span>            :     time_t timestamp;
-<span class="lineNum">     429 </span>            :     struct tm result;
+<span class="lineNum">     334 </span>            : struct Timestamp
+<span class="lineNum">     335 </span><span class="lineCov">          8 : Timestamp_create_utc(</span>
+<span class="lineNum">     336 </span>            :         const struct Date * const date,
+<span class="lineNum">     337 </span>            :         const struct ClockTime * const clock_time)
+<span class="lineNum">     338 </span>            : {
+<span class="lineNum">     339 </span>            :     struct Timestamp result;
+<span class="lineNum">     340 </span><span class="lineCov">          8 :     Timestamp_ptr_create_utc(&amp;result, date, clock_time);</span>
+<span class="lineNum">     341 </span><span class="lineCov">          8 :     return result;</span>
+<span class="lineNum">     342 </span>            : }
+<a name="343"><span class="lineNum">     343 </span>            : </a>
+<span class="lineNum">     344 </span>            : void
+<span class="lineNum">     345 </span><span class="lineCov">         15 : Timestamp_ptr_create_utc(</span>
+<span class="lineNum">     346 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     347 </span>            :         const struct Date * const date,
+<span class="lineNum">     348 </span>            :         const struct ClockTime * const clock_time)
+<span class="lineNum">     349 </span>            : {
+<span class="lineNum">     350 </span><span class="lineCov">         15 :     init_timestamp_from_date_and_clock_time_utc(result, date, clock_time);</span>
+<span class="lineNum">     351 </span><span class="lineCov">         15 : }</span>
+<a name="352"><span class="lineNum">     352 </span>            : </a>
+<span class="lineNum">     353 </span>            : struct Timestamp
+<span class="lineNum">     354 </span><span class="lineNoCov">          0 : Timestamp_create_local(</span>
+<span class="lineNum">     355 </span>            :         const struct Date * const date,
+<span class="lineNum">     356 </span>            :         const struct ClockTime * const clock_time)
+<span class="lineNum">     357 </span>            : {
+<span class="lineNum">     358 </span>            :     struct Timestamp result;
+<span class="lineNum">     359 </span><span class="lineNoCov">          0 :     Timestamp_ptr_create_local(&amp;result, date, clock_time);</span>
+<span class="lineNum">     360 </span><span class="lineNoCov">          0 :     return result;</span>
+<span class="lineNum">     361 </span>            : }
+<a name="362"><span class="lineNum">     362 </span>            : </a>
+<span class="lineNum">     363 </span>            : void
+<span class="lineNum">     364 </span><span class="lineCov">          3 : Timestamp_ptr_create_local(</span>
+<span class="lineNum">     365 </span>            :         struct Timestamp * const result,
+<span class="lineNum">     366 </span>            :         const struct Date * const date,
+<span class="lineNum">     367 </span>            :         const struct ClockTime * const clock_time)
+<span class="lineNum">     368 </span>            : {
+<span class="lineNum">     369 </span><span class="lineCov">          3 :     assert(result != NULL);</span>
+<span class="lineNum">     370 </span><span class="lineCov">          3 :     assert(date != NULL);</span>
+<span class="lineNum">     371 </span><span class="lineCov">          3 :     assert(clock_time != NULL);</span>
+<span class="lineNum">     372 </span>            : 
+<span class="lineNum">     373 </span><span class="lineCov">          3 :     CLEAR(result);</span>
+<span class="lineNum">     374 </span>            : 
+<span class="lineNum">     375 </span>            :     /* Make sure the Date and ClockTime aren't erroneous */
+<span class="lineNum">     376 </span><span class="lineCov">          3 :     CHECK_DATE_AND_CLOCK_TIME(date, clock_time)</span>
+<span class="lineNum">     377 </span>            : 
+<span class="lineNum">     378 </span><span class="lineCov">          3 :     if (!result-&gt;has_error) {</span>
+<span class="lineNum">     379 </span><span class="lineCov">          1 :         Timestamp_ptr_from_struct_tm_local(</span>
+<span class="lineNum">     380 </span>            :             result,
+<span class="lineNum">     381 </span>            :             convert_to_struct_tm(date, clock_time));
+<span class="lineNum">     382 </span>            :     }
+<span class="lineNum">     383 </span><span class="lineCov">          3 : }</span>
+<a name="384"><span class="lineNum">     384 </span>            : </a>
+<span class="lineNum">     385 </span>            : struct Timestamp
+<span class="lineNum">     386 </span><span class="lineCov">          1 : Timestamp_now(void)</span>
+<span class="lineNum">     387 </span>            : {
+<span class="lineNum">     388 </span>            :     struct Timestamp result;
+<span class="lineNum">     389 </span><span class="lineCov">          1 :     Timestamp_ptr_now(&amp;result);</span>
+<span class="lineNum">     390 </span><span class="lineCov">          1 :     return result;</span>
+<span class="lineNum">     391 </span>            : }
+<a name="392"><span class="lineNum">     392 </span>            : </a>
+<span class="lineNum">     393 </span>            : void
+<span class="lineNum">     394 </span><span class="lineCov">          4 : Timestamp_ptr_now(struct Timestamp * const result)</span>
+<span class="lineNum">     395 </span>            : {
+<span class="lineNum">     396 </span>            :     struct PresentNowStruct now;
+<span class="lineNum">     397 </span><span class="lineCov">          4 :     present_now(&amp;now);</span>
+<span class="lineNum">     398 </span><span class="lineCov">          4 :     init_timestamp(result, time_t_to_timestamp_seconds(now.sec), now.nsec);</span>
+<span class="lineNum">     399 </span><span class="lineCov">          4 : }</span>
+<a name="400"><span class="lineNum">     400 </span>            : </a>
+<span class="lineNum">     401 </span>            : struct Timestamp
+<span class="lineNum">     402 </span><span class="lineCov">          1 : Timestamp_epoch(void)</span>
+<span class="lineNum">     403 </span>            : {
+<span class="lineNum">     404 </span>            :     struct Timestamp result;
+<span class="lineNum">     405 </span><span class="lineCov">          1 :     init_timestamp(&amp;result, 0, 0);</span>
+<span class="lineNum">     406 </span><span class="lineCov">          1 :     return result;</span>
+<span class="lineNum">     407 </span>            : }
+<a name="408"><span class="lineNum">     408 </span>            : </a>
+<span class="lineNum">     409 </span>            : void
+<span class="lineNum">     410 </span><span class="lineCov">          2 : Timestamp_ptr_epoch(struct Timestamp * const result)</span>
+<span class="lineNum">     411 </span>            : {
+<span class="lineNum">     412 </span><span class="lineCov">          2 :     init_timestamp(result, 0, 0);</span>
+<span class="lineNum">     413 </span><span class="lineCov">          2 : }</span>
+<a name="414"><span class="lineNum">     414 </span>            : </a>
+<span class="lineNum">     415 </span>            : time_t
+<span class="lineNum">     416 </span><span class="lineCov">          8 : Timestamp_get_time_t(const struct Timestamp * const self)</span>
+<span class="lineNum">     417 </span>            : {
+<span class="lineNum">     418 </span><span class="lineCov">          8 :     assert(self != NULL);</span>
+<span class="lineNum">     419 </span><span class="lineCov">          8 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     420 </span>            : 
+<span class="lineNum">     421 </span><span class="lineCov">          8 :     return timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
+<span class="lineNum">     422 </span>            : }
+<a name="423"><span class="lineNum">     423 </span>            : </a>
+<span class="lineNum">     424 </span>            : struct tm
+<span class="lineNum">     425 </span><span class="lineCov">          8 : Timestamp_get_struct_tm(</span>
+<span class="lineNum">     426 </span>            :         const struct Timestamp * const self,
+<span class="lineNum">     427 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     428 </span>            : {
+<span class="lineNum">     429 </span>            :     struct Timestamp copy;
 <span class="lineNum">     430 </span>            : 
-<span class="lineNum">     431 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
-<span class="lineNum">     432 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     433 </span>            : 
-<span class="lineNum">     434 </span><span class="lineCov">          3 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
-<span class="lineNum">     435 </span><span class="lineCov">          3 :     present_localtime(&amp;timestamp, &amp;result);</span>
-<span class="lineNum">     436 </span><span class="lineCov">          3 :     return result;</span>
-<span class="lineNum">     437 </span>            : }
-<a name="438"><span class="lineNum">     438 </span>            : </a>
-<span class="lineNum">     439 </span>            : struct Date
-<span class="lineNum">     440 </span><span class="lineCov">          3 : Timestamp_get_date(</span>
-<span class="lineNum">     441 </span>            :         const struct Timestamp * const self,
-<span class="lineNum">     442 </span>            :         const struct TimeDelta * const time_zone_offset)
-<span class="lineNum">     443 </span>            : {
-<span class="lineNum">     444 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
-<span class="lineNum">     445 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     446 </span><span class="lineCov">          3 :     assert(time_zone_offset != NULL);</span>
-<span class="lineNum">     447 </span>            : 
-<span class="lineNum">     448 </span><span class="lineCov">          3 :     return struct_tm_to_date(Timestamp_get_struct_tm(self, time_zone_offset));</span>
-<span class="lineNum">     449 </span>            : }
-<a name="450"><span class="lineNum">     450 </span>            : </a>
-<span class="lineNum">     451 </span>            : struct Date
-<span class="lineNum">     452 </span><span class="lineCov">         23 : Timestamp_get_date_utc(const struct Timestamp * const self)</span>
-<span class="lineNum">     453 </span>            : {
-<span class="lineNum">     454 </span><span class="lineCov">         23 :     assert(self != NULL);</span>
-<span class="lineNum">     455 </span><span class="lineCov">         23 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     456 </span>            : 
-<span class="lineNum">     457 </span><span class="lineCov">         23 :     return struct_tm_to_date(Timestamp_get_struct_tm_utc(self));</span>
-<span class="lineNum">     458 </span>            : }
-<a name="459"><span class="lineNum">     459 </span>            : </a>
-<span class="lineNum">     460 </span>            : struct Date
-<span class="lineNum">     461 </span><span class="lineCov">          1 : Timestamp_get_date_local(const struct Timestamp * const self)</span>
-<span class="lineNum">     462 </span>            : {
-<span class="lineNum">     463 </span><span class="lineCov">          1 :     assert(self != NULL);</span>
-<span class="lineNum">     464 </span><span class="lineCov">          1 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     465 </span>            : 
-<span class="lineNum">     466 </span><span class="lineCov">          1 :     return struct_tm_to_date(Timestamp_get_struct_tm_local(self));</span>
-<span class="lineNum">     467 </span>            : }
-<a name="468"><span class="lineNum">     468 </span>            : </a>
-<span class="lineNum">     469 </span>            : struct ClockTime
-<span class="lineNum">     470 </span><span class="lineCov">          3 : Timestamp_get_clock_time(</span>
-<span class="lineNum">     471 </span>            :         const struct Timestamp * const self,
-<span class="lineNum">     472 </span>            :         const struct TimeDelta * const time_zone_offset)
-<span class="lineNum">     473 </span>            : {
-<span class="lineNum">     474 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
-<span class="lineNum">     475 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     431 </span><span class="lineCov">          8 :     assert(self != NULL);</span>
+<span class="lineNum">     432 </span><span class="lineCov">          8 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     433 </span><span class="lineCov">          8 :     assert(time_zone_offset != NULL);</span>
+<span class="lineNum">     434 </span>            : 
+<span class="lineNum">     435 </span><span class="lineCov">          8 :     copy = *self;</span>
+<span class="lineNum">     436 </span><span class="lineCov">          8 :     Timestamp_add_TimeDelta(&amp;copy, time_zone_offset);</span>
+<span class="lineNum">     437 </span><span class="lineCov">          8 :     return Timestamp_get_struct_tm_utc(&amp;copy);</span>
+<span class="lineNum">     438 </span>            : }
+<a name="439"><span class="lineNum">     439 </span>            : </a>
+<span class="lineNum">     440 </span>            : struct tm
+<span class="lineNum">     441 </span><span class="lineCov">        141 : Timestamp_get_struct_tm_utc(const struct Timestamp * const self)</span>
+<span class="lineNum">     442 </span>            : {
+<span class="lineNum">     443 </span>            :     time_t timestamp;
+<span class="lineNum">     444 </span>            :     struct tm result;
+<span class="lineNum">     445 </span>            : 
+<span class="lineNum">     446 </span><span class="lineCov">        141 :     assert(self != NULL);</span>
+<span class="lineNum">     447 </span><span class="lineCov">        141 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     448 </span>            : 
+<span class="lineNum">     449 </span><span class="lineCov">        141 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
+<span class="lineNum">     450 </span><span class="lineCov">        141 :     present_gmtime(&amp;timestamp, &amp;result);</span>
+<span class="lineNum">     451 </span><span class="lineCov">        141 :     return result;</span>
+<span class="lineNum">     452 </span>            : }
+<a name="453"><span class="lineNum">     453 </span>            : </a>
+<span class="lineNum">     454 </span>            : struct tm
+<span class="lineNum">     455 </span><span class="lineCov">          3 : Timestamp_get_struct_tm_local(const struct Timestamp * const self)</span>
+<span class="lineNum">     456 </span>            : {
+<span class="lineNum">     457 </span>            :     time_t timestamp;
+<span class="lineNum">     458 </span>            :     struct tm result;
+<span class="lineNum">     459 </span>            : 
+<span class="lineNum">     460 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
+<span class="lineNum">     461 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     462 </span>            : 
+<span class="lineNum">     463 </span><span class="lineCov">          3 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
+<span class="lineNum">     464 </span><span class="lineCov">          3 :     present_localtime(&amp;timestamp, &amp;result);</span>
+<span class="lineNum">     465 </span><span class="lineCov">          3 :     return result;</span>
+<span class="lineNum">     466 </span>            : }
+<a name="467"><span class="lineNum">     467 </span>            : </a>
+<span class="lineNum">     468 </span>            : struct Date
+<span class="lineNum">     469 </span><span class="lineCov">          3 : Timestamp_get_date(</span>
+<span class="lineNum">     470 </span>            :         const struct Timestamp * const self,
+<span class="lineNum">     471 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     472 </span>            : {
+<span class="lineNum">     473 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
+<span class="lineNum">     474 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     475 </span><span class="lineCov">          3 :     assert(time_zone_offset != NULL);</span>
 <span class="lineNum">     476 </span>            : 
-<span class="lineNum">     477 </span><span class="lineCov">          3 :     return struct_tm_to_clock_time(</span>
-<span class="lineNum">     478 </span>            :             Timestamp_get_struct_tm(self, time_zone_offset));
-<span class="lineNum">     479 </span>            : }
-<a name="480"><span class="lineNum">     480 </span>            : </a>
-<span class="lineNum">     481 </span>            : struct ClockTime
-<span class="lineNum">     482 </span><span class="lineCov">        109 : Timestamp_get_clock_time_utc(const struct Timestamp * const self)</span>
-<span class="lineNum">     483 </span>            : {
-<span class="lineNum">     484 </span><span class="lineCov">        109 :     assert(self != NULL);</span>
-<span class="lineNum">     485 </span><span class="lineCov">        109 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     486 </span>            : 
-<span class="lineNum">     487 </span><span class="lineCov">        109 :     return struct_tm_to_clock_time(Timestamp_get_struct_tm_utc(self));</span>
-<span class="lineNum">     488 </span>            : }
-<a name="489"><span class="lineNum">     489 </span>            : </a>
-<span class="lineNum">     490 </span>            : struct ClockTime
-<span class="lineNum">     491 </span><span class="lineCov">          1 : Timestamp_get_clock_time_local(const struct Timestamp * const self)</span>
-<span class="lineNum">     492 </span>            : {
-<span class="lineNum">     493 </span><span class="lineCov">          1 :     assert(self != NULL);</span>
-<span class="lineNum">     494 </span><span class="lineCov">          1 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     495 </span>            : 
-<span class="lineNum">     496 </span><span class="lineCov">          1 :     return struct_tm_to_clock_time(Timestamp_get_struct_tm_local(self));</span>
-<span class="lineNum">     497 </span>            : }
-<a name="498"><span class="lineNum">     498 </span>            : </a>
-<span class="lineNum">     499 </span>            : struct TimeDelta
-<span class="lineNum">     500 </span><span class="lineCov">          8 : Timestamp_difference(</span>
-<span class="lineNum">     501 </span>            :         const struct Timestamp * const self,
-<span class="lineNum">     502 </span>            :         const struct Timestamp * const other)
-<span class="lineNum">     503 </span>            : {
-<span class="lineNum">     504 </span>            :     struct TimeDelta delta, ns_delta;
+<span class="lineNum">     477 </span><span class="lineCov">          3 :     return struct_tm_to_date(Timestamp_get_struct_tm(self, time_zone_offset));</span>
+<span class="lineNum">     478 </span>            : }
+<a name="479"><span class="lineNum">     479 </span>            : </a>
+<span class="lineNum">     480 </span>            : struct Date
+<span class="lineNum">     481 </span><span class="lineCov">         23 : Timestamp_get_date_utc(const struct Timestamp * const self)</span>
+<span class="lineNum">     482 </span>            : {
+<span class="lineNum">     483 </span><span class="lineCov">         23 :     assert(self != NULL);</span>
+<span class="lineNum">     484 </span><span class="lineCov">         23 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     485 </span>            : 
+<span class="lineNum">     486 </span><span class="lineCov">         23 :     return struct_tm_to_date(Timestamp_get_struct_tm_utc(self));</span>
+<span class="lineNum">     487 </span>            : }
+<a name="488"><span class="lineNum">     488 </span>            : </a>
+<span class="lineNum">     489 </span>            : struct Date
+<span class="lineNum">     490 </span><span class="lineCov">          1 : Timestamp_get_date_local(const struct Timestamp * const self)</span>
+<span class="lineNum">     491 </span>            : {
+<span class="lineNum">     492 </span><span class="lineCov">          1 :     assert(self != NULL);</span>
+<span class="lineNum">     493 </span><span class="lineCov">          1 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     494 </span>            : 
+<span class="lineNum">     495 </span><span class="lineCov">          1 :     return struct_tm_to_date(Timestamp_get_struct_tm_local(self));</span>
+<span class="lineNum">     496 </span>            : }
+<a name="497"><span class="lineNum">     497 </span>            : </a>
+<span class="lineNum">     498 </span>            : struct ClockTime
+<span class="lineNum">     499 </span><span class="lineCov">          3 : Timestamp_get_clock_time(</span>
+<span class="lineNum">     500 </span>            :         const struct Timestamp * const self,
+<span class="lineNum">     501 </span>            :         const struct TimeDelta * const time_zone_offset)
+<span class="lineNum">     502 </span>            : {
+<span class="lineNum">     503 </span><span class="lineCov">          3 :     assert(self != NULL);</span>
+<span class="lineNum">     504 </span><span class="lineCov">          3 :     assert(self-&gt;has_error == 0);</span>
 <span class="lineNum">     505 </span>            : 
-<span class="lineNum">     506 </span><span class="lineCov">          8 :     assert(self != NULL);</span>
-<span class="lineNum">     507 </span><span class="lineCov">          8 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     508 </span><span class="lineCov">          8 :     assert(other != NULL);</span>
-<span class="lineNum">     509 </span><span class="lineCov">          8 :     assert(other-&gt;has_error == 0);</span>
-<span class="lineNum">     510 </span>            : 
-<span class="lineNum">     511 </span><span class="lineCov">          8 :     delta = TimeDelta_from_seconds(</span>
-<span class="lineNum">     512 </span><span class="lineCov">          8 :             self-&gt;data_.timestamp_seconds - other-&gt;data_.timestamp_seconds);</span>
-<span class="lineNum">     513 </span><span class="lineCov">          8 :     ns_delta = TimeDelta_from_nanoseconds(</span>
-<span class="lineNum">     514 </span><span class="lineCov">          8 :             self-&gt;data_.additional_nanoseconds -</span>
-<span class="lineNum">     515 </span><span class="lineCov">          8 :             other-&gt;data_.additional_nanoseconds);</span>
-<span class="lineNum">     516 </span><span class="lineCov">          8 :     TimeDelta_add(&amp;delta, &amp;ns_delta);</span>
-<span class="lineNum">     517 </span><span class="lineCov">          8 :     return delta;</span>
-<span class="lineNum">     518 </span>            : }
-<a name="519"><span class="lineNum">     519 </span>            : </a>
-<span class="lineNum">     520 </span>            : struct TimeDelta
-<span class="lineNum">     521 </span><span class="lineCov">          2 : Timestamp_absolute_difference(</span>
-<span class="lineNum">     522 </span>            :         const struct Timestamp * const self,
-<span class="lineNum">     523 </span>            :         const struct Timestamp * const other)
-<span class="lineNum">     524 </span>            : {
-<span class="lineNum">     525 </span>            :     struct TimeDelta delta;
-<span class="lineNum">     526 </span>            : 
-<span class="lineNum">     527 </span><span class="lineCov">          2 :     assert(self != NULL);</span>
-<span class="lineNum">     528 </span><span class="lineCov">          2 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     529 </span><span class="lineCov">          2 :     assert(other != NULL);</span>
-<span class="lineNum">     530 </span><span class="lineCov">          2 :     assert(other-&gt;has_error == 0);</span>
-<span class="lineNum">     531 </span>            : 
-<span class="lineNum">     532 </span><span class="lineCov">          2 :     delta = Timestamp_difference(self, other);</span>
-<span class="lineNum">     533 </span><span class="lineCov">          2 :     if (TimeDelta_is_negative(&amp;delta)) {</span>
-<span class="lineNum">     534 </span><span class="lineCov">          1 :         TimeDelta_negate(&amp;delta);</span>
-<span class="lineNum">     535 </span>            :     }
-<span class="lineNum">     536 </span><span class="lineCov">          2 :     return delta;</span>
-<span class="lineNum">     537 </span>            : }
-<a name="538"><span class="lineNum">     538 </span>            : </a>
-<span class="lineNum">     539 </span>            : void
-<span class="lineNum">     540 </span><span class="lineCov">         10 : Timestamp_add_TimeDelta(</span>
-<span class="lineNum">     541 </span>            :         struct Timestamp * const self,
-<span class="lineNum">     542 </span>            :         const struct TimeDelta * const delta)
-<span class="lineNum">     543 </span>            : {
-<span class="lineNum">     544 </span><span class="lineCov">         10 :     assert(self != NULL);</span>
-<span class="lineNum">     545 </span><span class="lineCov">         10 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     546 </span><span class="lineCov">         10 :     assert(delta != NULL);</span>
-<span class="lineNum">     547 </span>            : 
-<span class="lineNum">     548 </span><span class="lineCov">         10 :     self-&gt;data_.timestamp_seconds += delta-&gt;data_.delta_seconds;</span>
-<span class="lineNum">     549 </span><span class="lineCov">         10 :     self-&gt;data_.additional_nanoseconds += delta-&gt;data_.delta_nanoseconds;</span>
-<span class="lineNum">     550 </span><span class="lineCov">         10 :     CHECK_DATA(self-&gt;data_)</span>
-<span class="lineNum">     551 </span><span class="lineCov">         10 : }</span>
-<a name="552"><span class="lineNum">     552 </span>            : </a>
-<span class="lineNum">     553 </span>            : void
-<span class="lineNum">     554 </span><span class="lineCov">          7 : Timestamp_add_DayDelta(</span>
-<span class="lineNum">     555 </span>            :         struct Timestamp * const self,
-<span class="lineNum">     556 </span>            :         const struct DayDelta * const delta)
-<span class="lineNum">     557 </span>            : {
-<span class="lineNum">     558 </span><span class="lineCov">          7 :     assert(self != NULL);</span>
-<span class="lineNum">     559 </span><span class="lineCov">          7 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     560 </span><span class="lineCov">          7 :     assert(delta != NULL);</span>
-<span class="lineNum">     561 </span>            : 
-<span class="lineNum">     562 </span><span class="lineCov">          7 :     self-&gt;data_.timestamp_seconds += delta-&gt;data_.delta_days * SECONDS_IN_DAY;</span>
-<span class="lineNum">     563 </span><span class="lineCov">          7 : }</span>
-<a name="564"><span class="lineNum">     564 </span>            : </a>
-<span class="lineNum">     565 </span>            : void
-<span class="lineNum">     566 </span><span class="lineCov">          6 : Timestamp_add_MonthDelta(</span>
-<span class="lineNum">     567 </span>            :         struct Timestamp * const self,
-<span class="lineNum">     568 </span>            :         const struct MonthDelta * const delta)
-<span class="lineNum">     569 </span>            : {
-<span class="lineNum">     570 </span>            :     time_t timestamp;
-<span class="lineNum">     571 </span>            :     struct tm tm;
-<span class="lineNum">     572 </span>            : 
-<span class="lineNum">     573 </span><span class="lineCov">          6 :     assert(self != NULL);</span>
-<span class="lineNum">     574 </span><span class="lineCov">          6 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     575 </span><span class="lineCov">          6 :     assert(delta != NULL);</span>
+<span class="lineNum">     506 </span><span class="lineCov">          3 :     return struct_tm_to_clock_time(</span>
+<span class="lineNum">     507 </span>            :             Timestamp_get_struct_tm(self, time_zone_offset));
+<span class="lineNum">     508 </span>            : }
+<a name="509"><span class="lineNum">     509 </span>            : </a>
+<span class="lineNum">     510 </span>            : struct ClockTime
+<span class="lineNum">     511 </span><span class="lineCov">        109 : Timestamp_get_clock_time_utc(const struct Timestamp * const self)</span>
+<span class="lineNum">     512 </span>            : {
+<span class="lineNum">     513 </span><span class="lineCov">        109 :     assert(self != NULL);</span>
+<span class="lineNum">     514 </span><span class="lineCov">        109 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     515 </span>            : 
+<span class="lineNum">     516 </span><span class="lineCov">        109 :     return struct_tm_to_clock_time(Timestamp_get_struct_tm_utc(self));</span>
+<span class="lineNum">     517 </span>            : }
+<a name="518"><span class="lineNum">     518 </span>            : </a>
+<span class="lineNum">     519 </span>            : struct ClockTime
+<span class="lineNum">     520 </span><span class="lineCov">          1 : Timestamp_get_clock_time_local(const struct Timestamp * const self)</span>
+<span class="lineNum">     521 </span>            : {
+<span class="lineNum">     522 </span><span class="lineCov">          1 :     assert(self != NULL);</span>
+<span class="lineNum">     523 </span><span class="lineCov">          1 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     524 </span>            : 
+<span class="lineNum">     525 </span><span class="lineCov">          1 :     return struct_tm_to_clock_time(Timestamp_get_struct_tm_local(self));</span>
+<span class="lineNum">     526 </span>            : }
+<a name="527"><span class="lineNum">     527 </span>            : </a>
+<span class="lineNum">     528 </span>            : struct TimeDelta
+<span class="lineNum">     529 </span><span class="lineCov">          8 : Timestamp_difference(</span>
+<span class="lineNum">     530 </span>            :         const struct Timestamp * const self,
+<span class="lineNum">     531 </span>            :         const struct Timestamp * const other)
+<span class="lineNum">     532 </span>            : {
+<span class="lineNum">     533 </span>            :     struct TimeDelta delta, ns_delta;
+<span class="lineNum">     534 </span>            : 
+<span class="lineNum">     535 </span><span class="lineCov">          8 :     assert(self != NULL);</span>
+<span class="lineNum">     536 </span><span class="lineCov">          8 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     537 </span><span class="lineCov">          8 :     assert(other != NULL);</span>
+<span class="lineNum">     538 </span><span class="lineCov">          8 :     assert(other-&gt;has_error == 0);</span>
+<span class="lineNum">     539 </span>            : 
+<span class="lineNum">     540 </span><span class="lineCov">          8 :     delta = TimeDelta_from_seconds(</span>
+<span class="lineNum">     541 </span><span class="lineCov">          8 :             self-&gt;data_.timestamp_seconds - other-&gt;data_.timestamp_seconds);</span>
+<span class="lineNum">     542 </span><span class="lineCov">          8 :     ns_delta = TimeDelta_from_nanoseconds(</span>
+<span class="lineNum">     543 </span><span class="lineCov">          8 :             self-&gt;data_.additional_nanoseconds -</span>
+<span class="lineNum">     544 </span><span class="lineCov">          8 :             other-&gt;data_.additional_nanoseconds);</span>
+<span class="lineNum">     545 </span><span class="lineCov">          8 :     TimeDelta_add(&amp;delta, &amp;ns_delta);</span>
+<span class="lineNum">     546 </span><span class="lineCov">          8 :     return delta;</span>
+<span class="lineNum">     547 </span>            : }
+<a name="548"><span class="lineNum">     548 </span>            : </a>
+<span class="lineNum">     549 </span>            : struct TimeDelta
+<span class="lineNum">     550 </span><span class="lineCov">          2 : Timestamp_absolute_difference(</span>
+<span class="lineNum">     551 </span>            :         const struct Timestamp * const self,
+<span class="lineNum">     552 </span>            :         const struct Timestamp * const other)
+<span class="lineNum">     553 </span>            : {
+<span class="lineNum">     554 </span>            :     struct TimeDelta delta;
+<span class="lineNum">     555 </span>            : 
+<span class="lineNum">     556 </span><span class="lineCov">          2 :     assert(self != NULL);</span>
+<span class="lineNum">     557 </span><span class="lineCov">          2 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     558 </span><span class="lineCov">          2 :     assert(other != NULL);</span>
+<span class="lineNum">     559 </span><span class="lineCov">          2 :     assert(other-&gt;has_error == 0);</span>
+<span class="lineNum">     560 </span>            : 
+<span class="lineNum">     561 </span><span class="lineCov">          2 :     delta = Timestamp_difference(self, other);</span>
+<span class="lineNum">     562 </span><span class="lineCov">          2 :     if (TimeDelta_is_negative(&amp;delta)) {</span>
+<span class="lineNum">     563 </span><span class="lineCov">          1 :         TimeDelta_negate(&amp;delta);</span>
+<span class="lineNum">     564 </span>            :     }
+<span class="lineNum">     565 </span><span class="lineCov">          2 :     return delta;</span>
+<span class="lineNum">     566 </span>            : }
+<a name="567"><span class="lineNum">     567 </span>            : </a>
+<span class="lineNum">     568 </span>            : void
+<span class="lineNum">     569 </span><span class="lineCov">         10 : Timestamp_add_TimeDelta(</span>
+<span class="lineNum">     570 </span>            :         struct Timestamp * const self,
+<span class="lineNum">     571 </span>            :         const struct TimeDelta * const delta)
+<span class="lineNum">     572 </span>            : {
+<span class="lineNum">     573 </span><span class="lineCov">         10 :     assert(self != NULL);</span>
+<span class="lineNum">     574 </span><span class="lineCov">         10 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     575 </span><span class="lineCov">         10 :     assert(delta != NULL);</span>
 <span class="lineNum">     576 </span>            : 
-<span class="lineNum">     577 </span><span class="lineCov">          6 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
-<span class="lineNum">     578 </span><span class="lineCov">          6 :     present_localtime(&amp;timestamp, &amp;tm);</span>
-<span class="lineNum">     579 </span><span class="lineCov">          6 :     tm.tm_mon += delta-&gt;data_.delta_months;</span>
-<span class="lineNum">     580 </span><span class="lineCov">          6 :     self-&gt;data_.timestamp_seconds = present_mktime(&amp;tm);</span>
-<span class="lineNum">     581 </span><span class="lineCov">          6 :     assert(self-&gt;data_.timestamp_seconds != -1);</span>
-<span class="lineNum">     582 </span><span class="lineCov">          6 : }</span>
-<a name="583"><span class="lineNum">     583 </span>            : </a>
-<span class="lineNum">     584 </span>            : void
-<span class="lineNum">     585 </span><span class="lineCov">         38 : Timestamp_subtract_TimeDelta(</span>
-<span class="lineNum">     586 </span>            :         struct Timestamp * const self,
-<span class="lineNum">     587 </span>            :         const struct TimeDelta * const delta)
-<span class="lineNum">     588 </span>            : {
-<span class="lineNum">     589 </span><span class="lineCov">         38 :     assert(self != NULL);</span>
-<span class="lineNum">     590 </span><span class="lineCov">         38 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     591 </span><span class="lineCov">         38 :     assert(delta != NULL);</span>
-<span class="lineNum">     592 </span>            : 
-<span class="lineNum">     593 </span><span class="lineCov">         38 :     self-&gt;data_.timestamp_seconds -= delta-&gt;data_.delta_seconds;</span>
-<span class="lineNum">     594 </span><span class="lineCov">         38 :     self-&gt;data_.additional_nanoseconds -= delta-&gt;data_.delta_nanoseconds;</span>
-<span class="lineNum">     595 </span><span class="lineCov">         38 :     CHECK_DATA(self-&gt;data_)</span>
-<span class="lineNum">     596 </span><span class="lineCov">         38 : }</span>
-<a name="597"><span class="lineNum">     597 </span>            : </a>
-<span class="lineNum">     598 </span>            : void
-<span class="lineNum">     599 </span><span class="lineCov">          5 : Timestamp_subtract_DayDelta(</span>
-<span class="lineNum">     600 </span>            :         struct Timestamp * const self,
-<span class="lineNum">     601 </span>            :         const struct DayDelta * const delta)
-<span class="lineNum">     602 </span>            : {
-<span class="lineNum">     603 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
-<span class="lineNum">     604 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     605 </span><span class="lineCov">          5 :     assert(delta != NULL);</span>
-<span class="lineNum">     606 </span>            : 
-<span class="lineNum">     607 </span><span class="lineCov">          5 :     self-&gt;data_.timestamp_seconds -= delta-&gt;data_.delta_days * SECONDS_IN_DAY;</span>
-<span class="lineNum">     608 </span><span class="lineCov">          5 : }</span>
-<a name="609"><span class="lineNum">     609 </span>            : </a>
-<span class="lineNum">     610 </span>            : void
-<span class="lineNum">     611 </span><span class="lineCov">          5 : Timestamp_subtract_MonthDelta(</span>
-<span class="lineNum">     612 </span>            :         struct Timestamp * const self,
-<span class="lineNum">     613 </span>            :         const struct MonthDelta * const delta)
-<span class="lineNum">     614 </span>            : {
-<span class="lineNum">     615 </span>            :     time_t timestamp;
-<span class="lineNum">     616 </span>            :     struct tm tm;
-<span class="lineNum">     617 </span>            : 
-<span class="lineNum">     618 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
-<span class="lineNum">     619 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
-<span class="lineNum">     620 </span><span class="lineCov">          5 :     assert(delta != NULL);</span>
+<span class="lineNum">     577 </span><span class="lineCov">         10 :     self-&gt;data_.timestamp_seconds += delta-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     578 </span><span class="lineCov">         10 :     self-&gt;data_.additional_nanoseconds += delta-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     579 </span><span class="lineCov">         10 :     CHECK_DATA(self-&gt;data_)</span>
+<span class="lineNum">     580 </span><span class="lineCov">         10 : }</span>
+<a name="581"><span class="lineNum">     581 </span>            : </a>
+<span class="lineNum">     582 </span>            : void
+<span class="lineNum">     583 </span><span class="lineCov">          7 : Timestamp_add_DayDelta(</span>
+<span class="lineNum">     584 </span>            :         struct Timestamp * const self,
+<span class="lineNum">     585 </span>            :         const struct DayDelta * const delta)
+<span class="lineNum">     586 </span>            : {
+<span class="lineNum">     587 </span><span class="lineCov">          7 :     assert(self != NULL);</span>
+<span class="lineNum">     588 </span><span class="lineCov">          7 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     589 </span><span class="lineCov">          7 :     assert(delta != NULL);</span>
+<span class="lineNum">     590 </span>            : 
+<span class="lineNum">     591 </span><span class="lineCov">          7 :     self-&gt;data_.timestamp_seconds += delta-&gt;data_.delta_days * SECONDS_IN_DAY;</span>
+<span class="lineNum">     592 </span><span class="lineCov">          7 : }</span>
+<a name="593"><span class="lineNum">     593 </span>            : </a>
+<span class="lineNum">     594 </span>            : void
+<span class="lineNum">     595 </span><span class="lineCov">          6 : Timestamp_add_MonthDelta(</span>
+<span class="lineNum">     596 </span>            :         struct Timestamp * const self,
+<span class="lineNum">     597 </span>            :         const struct MonthDelta * const delta)
+<span class="lineNum">     598 </span>            : {
+<span class="lineNum">     599 </span>            :     time_t timestamp;
+<span class="lineNum">     600 </span>            :     struct tm tm;
+<span class="lineNum">     601 </span>            : 
+<span class="lineNum">     602 </span><span class="lineCov">          6 :     assert(self != NULL);</span>
+<span class="lineNum">     603 </span><span class="lineCov">          6 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     604 </span><span class="lineCov">          6 :     assert(delta != NULL);</span>
+<span class="lineNum">     605 </span>            : 
+<span class="lineNum">     606 </span><span class="lineCov">          6 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
+<span class="lineNum">     607 </span><span class="lineCov">          6 :     present_localtime(&amp;timestamp, &amp;tm);</span>
+<span class="lineNum">     608 </span><span class="lineCov">          6 :     tm.tm_mon += delta-&gt;data_.delta_months;</span>
+<span class="lineNum">     609 </span><span class="lineCov">          6 :     self-&gt;data_.timestamp_seconds = present_mktime(&amp;tm);</span>
+<span class="lineNum">     610 </span><span class="lineCov">          6 :     assert(self-&gt;data_.timestamp_seconds != -1);</span>
+<span class="lineNum">     611 </span><span class="lineCov">          6 : }</span>
+<a name="612"><span class="lineNum">     612 </span>            : </a>
+<span class="lineNum">     613 </span>            : void
+<span class="lineNum">     614 </span><span class="lineCov">         38 : Timestamp_subtract_TimeDelta(</span>
+<span class="lineNum">     615 </span>            :         struct Timestamp * const self,
+<span class="lineNum">     616 </span>            :         const struct TimeDelta * const delta)
+<span class="lineNum">     617 </span>            : {
+<span class="lineNum">     618 </span><span class="lineCov">         38 :     assert(self != NULL);</span>
+<span class="lineNum">     619 </span><span class="lineCov">         38 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     620 </span><span class="lineCov">         38 :     assert(delta != NULL);</span>
 <span class="lineNum">     621 </span>            : 
-<span class="lineNum">     622 </span><span class="lineCov">          5 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
-<span class="lineNum">     623 </span><span class="lineCov">          5 :     present_localtime(&amp;timestamp, &amp;tm);</span>
-<span class="lineNum">     624 </span><span class="lineCov">          5 :     tm.tm_mon -= delta-&gt;data_.delta_months;</span>
-<span class="lineNum">     625 </span><span class="lineCov">          5 :     self-&gt;data_.timestamp_seconds = present_mktime(&amp;tm);</span>
-<span class="lineNum">     626 </span><span class="lineCov">          5 :     assert(self-&gt;data_.timestamp_seconds != -1);</span>
-<span class="lineNum">     627 </span><span class="lineCov">          5 : }</span>
-<a name="628"><span class="lineNum">     628 </span>            : </a>
-<span class="lineNum">     629 </span>            : int
-<span class="lineNum">     630 </span><span class="lineNoCov">          0 : Timestamp_compare(</span>
-<span class="lineNum">     631 </span>            :         const struct Timestamp * const lhs,
-<span class="lineNum">     632 </span>            :         const struct Timestamp * const rhs)
-<span class="lineNum">     633 </span>            : {
-<span class="lineNum">     634 </span><span class="lineNoCov">          0 :     assert(lhs != NULL);</span>
-<span class="lineNum">     635 </span><span class="lineNoCov">          0 :     assert(lhs-&gt;has_error == 0);</span>
-<span class="lineNum">     636 </span><span class="lineNoCov">          0 :     assert(rhs != NULL);</span>
-<span class="lineNum">     637 </span><span class="lineNoCov">          0 :     assert(rhs-&gt;has_error == 0);</span>
-<span class="lineNum">     638 </span>            : 
-<span class="lineNum">     639 </span><span class="lineNoCov">          0 :     return</span>
-<span class="lineNum">     640 </span><span class="lineNoCov">          0 :         STRUCT_COMPARE(timestamp_seconds,</span>
-<span class="lineNum">     641 </span>            :             STRUCT_COMPARE(additional_nanoseconds, 0));
-<a name="642"><span class="lineNum">     642 </span>            : }</a>
-<span class="lineNum">     643 </span>            : 
-<span class="lineNum">     644 </span><span class="lineNoCov">          0 : STRUCT_COMPARISON_OPERATORS(Timestamp)</span>
-<span class="lineNum">     645 </span>            : 
+<span class="lineNum">     622 </span><span class="lineCov">         38 :     self-&gt;data_.timestamp_seconds -= delta-&gt;data_.delta_seconds;</span>
+<span class="lineNum">     623 </span><span class="lineCov">         38 :     self-&gt;data_.additional_nanoseconds -= delta-&gt;data_.delta_nanoseconds;</span>
+<span class="lineNum">     624 </span><span class="lineCov">         38 :     CHECK_DATA(self-&gt;data_)</span>
+<span class="lineNum">     625 </span><span class="lineCov">         38 : }</span>
+<a name="626"><span class="lineNum">     626 </span>            : </a>
+<span class="lineNum">     627 </span>            : void
+<span class="lineNum">     628 </span><span class="lineCov">          5 : Timestamp_subtract_DayDelta(</span>
+<span class="lineNum">     629 </span>            :         struct Timestamp * const self,
+<span class="lineNum">     630 </span>            :         const struct DayDelta * const delta)
+<span class="lineNum">     631 </span>            : {
+<span class="lineNum">     632 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
+<span class="lineNum">     633 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     634 </span><span class="lineCov">          5 :     assert(delta != NULL);</span>
+<span class="lineNum">     635 </span>            : 
+<span class="lineNum">     636 </span><span class="lineCov">          5 :     self-&gt;data_.timestamp_seconds -= delta-&gt;data_.delta_days * SECONDS_IN_DAY;</span>
+<span class="lineNum">     637 </span><span class="lineCov">          5 : }</span>
+<a name="638"><span class="lineNum">     638 </span>            : </a>
+<span class="lineNum">     639 </span>            : void
+<span class="lineNum">     640 </span><span class="lineCov">          5 : Timestamp_subtract_MonthDelta(</span>
+<span class="lineNum">     641 </span>            :         struct Timestamp * const self,
+<span class="lineNum">     642 </span>            :         const struct MonthDelta * const delta)
+<span class="lineNum">     643 </span>            : {
+<span class="lineNum">     644 </span>            :     time_t timestamp;
+<span class="lineNum">     645 </span>            :     struct tm tm;
+<span class="lineNum">     646 </span>            : 
+<span class="lineNum">     647 </span><span class="lineCov">          5 :     assert(self != NULL);</span>
+<span class="lineNum">     648 </span><span class="lineCov">          5 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     649 </span><span class="lineCov">          5 :     assert(delta != NULL);</span>
+<span class="lineNum">     650 </span>            : 
+<span class="lineNum">     651 </span><span class="lineCov">          5 :     timestamp = timestamp_to_time_t(self-&gt;data_.timestamp_seconds);</span>
+<span class="lineNum">     652 </span><span class="lineCov">          5 :     present_localtime(&amp;timestamp, &amp;tm);</span>
+<span class="lineNum">     653 </span><span class="lineCov">          5 :     tm.tm_mon -= delta-&gt;data_.delta_months;</span>
+<span class="lineNum">     654 </span><span class="lineCov">          5 :     self-&gt;data_.timestamp_seconds = present_mktime(&amp;tm);</span>
+<span class="lineNum">     655 </span><span class="lineCov">          5 :     assert(self-&gt;data_.timestamp_seconds != -1);</span>
+<span class="lineNum">     656 </span><span class="lineCov">          5 : }</span>
+<a name="657"><span class="lineNum">     657 </span>            : </a>
+<span class="lineNum">     658 </span>            : int
+<span class="lineNum">     659 </span><span class="lineNoCov">          0 : Timestamp_compare(</span>
+<span class="lineNum">     660 </span>            :         const struct Timestamp * const lhs,
+<span class="lineNum">     661 </span>            :         const struct Timestamp * const rhs)
+<span class="lineNum">     662 </span>            : {
+<span class="lineNum">     663 </span><span class="lineNoCov">          0 :     assert(lhs != NULL);</span>
+<span class="lineNum">     664 </span><span class="lineNoCov">          0 :     assert(lhs-&gt;has_error == 0);</span>
+<span class="lineNum">     665 </span><span class="lineNoCov">          0 :     assert(rhs != NULL);</span>
+<span class="lineNum">     666 </span><span class="lineNoCov">          0 :     assert(rhs-&gt;has_error == 0);</span>
+<span class="lineNum">     667 </span>            : 
+<span class="lineNum">     668 </span><span class="lineNoCov">          0 :     return</span>
+<span class="lineNum">     669 </span><span class="lineNoCov">          0 :         STRUCT_COMPARE(timestamp_seconds,</span>
+<span class="lineNum">     670 </span>            :             STRUCT_COMPARE(additional_nanoseconds, 0));
+<a name="671"><span class="lineNum">     671 </span>            : }</a>
+<span class="lineNum">     672 </span>            : 
+<span class="lineNum">     673 </span><span class="lineNoCov">          0 : STRUCT_COMPARISON_OPERATORS(Timestamp)</span>
+<span class="lineNum">     674 </span>            : 
 </pre>
       </td>
     </tr>
