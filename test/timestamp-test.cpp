@@ -135,118 +135,123 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     Timestamp t;
 
     // create(time_t)
-    // from_time_t
+    // from_time_t(time_t)
+    SECTION("creating from a time_t") {
+        t = Timestamp::create((time_t) 0);
+        IS(0, 0);
+        t = Timestamp::create((time_t) 1325376000);
+        IS(1325376000, 0);
 
-    t = Timestamp::create((time_t) 0);
-    IS(0, 0);
-    t = Timestamp::create((time_t) 1325376000);
-    IS(1325376000, 0);
+        t = Timestamp_from_time_t((time_t) 0);
+        IS(0, 0);
+        t = Timestamp_from_time_t((time_t) 918491000);
+        IS(918491000, 0);
 
-    t = Timestamp_from_time_t((time_t) 0);
-    IS(0, 0);
-    t = Timestamp_from_time_t((time_t) 918491000);
-    IS(918491000, 0);
-
-    Timestamp_ptr_from_time_t(&t, (time_t) 0);
-    IS(0, 0);
-    Timestamp_ptr_from_time_t(&t, (time_t) 1);
-    IS(1, 0);
+        Timestamp_ptr_from_time_t(&t, (time_t) 0);
+        IS(0, 0);
+        Timestamp_ptr_from_time_t(&t, (time_t) 1);
+        IS(1, 0);
+    }
 
     // create(struct tm, TimeDelta)
     // create(Date, ClockTime, TimeDelta)
-    // from_struct_tm
+    // from_struct_tm(struct tm, TimeDelta)
+    SECTION("creating from a struct tm, or from a Date/ClockTime/TimeDelta") {
+        TEST_CREATE_FROM_STRUCT_TM(
+                1970, 1, 1,     // date
+                0, 0, 0,        // time
+                0,              // time zone offset
+                0);             // expected UNIX timestamp
+        TEST_CREATE_FROM_DATE_TIME(1970, 1, 1, 0, 0, 0,     0, 0);
 
-    TEST_CREATE_FROM_STRUCT_TM(
-            1970, 1, 1,     // date
-            0, 0, 0,        // time
-            0,              // time zone offset
-            0);             // expected UNIX timestamp
-    TEST_CREATE_FROM_DATE_TIME(1970, 1, 1, 0, 0, 0,     0, 0);
+        TEST_CREATE_FROM_STRUCT_TM(1969, 12, 31, 0, 0, 0,   0, -86400);
+        TEST_CREATE_FROM_DATE_TIME(1969, 12, 31, 0, 0, 0,   0, -86400);
 
-    TEST_CREATE_FROM_STRUCT_TM(1969, 12, 31, 0, 0, 0,   0, -86400);
-    TEST_CREATE_FROM_DATE_TIME(1969, 12, 31, 0, 0, 0,   0, -86400);
+        TEST_CREATE_FROM_STRUCT_TM(1970, 1, 2, 0, 0, 0,     0, 86400);
+        TEST_CREATE_FROM_DATE_TIME(1970, 1, 2, 0, 0, 0,     0, 86400);
 
-    TEST_CREATE_FROM_STRUCT_TM(1970, 1, 2, 0, 0, 0,     0, 86400);
-    TEST_CREATE_FROM_DATE_TIME(1970, 1, 2, 0, 0, 0,     0, 86400);
+        // All the same timestamp (197589599):
+        // Apr. 5, 1976 21:59:59 UTC
+        // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
+        // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
+        TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 21, 59, 59,  0,  197589599);
+        TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 21, 59, 59,  0,  197589599);
 
-    // All the same timestamp (197589599):
-    // Apr. 5, 1976 21:59:59 UTC
-    // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
-    // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
-    TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 21, 59, 59,  0,  197589599);
-    TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 21, 59, 59,  0,  197589599);
+        TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 16, 59, 59,  -5, 197589599);
+        TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 16, 59, 59,  -5, 197589599);
 
-    TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 16, 59, 59,  -5, 197589599);
-    TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 16, 59, 59,  -5, 197589599);
+        TEST_CREATE_FROM_STRUCT_TM(1976, 4, 6, 0, 59, 59,   +3, 197589599);
+        TEST_CREATE_FROM_DATE_TIME(1976, 4, 6, 0, 59, 59,   +3, 197589599);
+    }
 
-    TEST_CREATE_FROM_STRUCT_TM(1976, 4, 6, 0, 59, 59,   +3, 197589599);
-    TEST_CREATE_FROM_DATE_TIME(1976, 4, 6, 0, 59, 59,   +3, 197589599);
+    SECTION("creating from a Date/ClockTime with a bad Date or ClockTime") {
+        Date bad_d = Date::create(0, 0, 0);
+        REQUIRE(bad_d.has_error);
+        Date good_d = Date::create(2000, 1, 1);
+        REQUIRE_FALSE(good_d.has_error);
 
-    // create(Date, ClockTime) with bad Date / ClockTime
-    Date bad_d = Date::create(0, 0, 0);
-    REQUIRE(bad_d.has_error);
-    Date good_d = Date::create(2000, 1, 1);
-    REQUIRE_FALSE(good_d.has_error);
+        ClockTime bad_ct = ClockTime::create(99, 99, 99);
+        REQUIRE(bad_ct.has_error);
+        ClockTime good_ct = ClockTime::noon();
+        REQUIRE_FALSE(good_ct.has_error);
 
-    ClockTime bad_ct = ClockTime::create(99, 99, 99);
-    REQUIRE(bad_ct.has_error);
-    ClockTime good_ct = ClockTime::noon();
-    REQUIRE_FALSE(good_ct.has_error);
+        t = Timestamp::create(bad_d, good_ct, TimeDelta::zero());
+        IS_ERROR(invalid_date);
+        t = Timestamp::create_utc(bad_d, good_ct);
+        IS_ERROR(invalid_date);
+        t = Timestamp::create_local(bad_d, good_ct);
+        IS_ERROR(invalid_date);
 
-    t = Timestamp::create(bad_d, good_ct, TimeDelta::zero());
-    IS_ERROR(invalid_date);
-    t = Timestamp::create_utc(bad_d, good_ct);
-    IS_ERROR(invalid_date);
-    t = Timestamp::create_local(bad_d, good_ct);
-    IS_ERROR(invalid_date);
+        t = Timestamp::create(good_d, bad_ct, TimeDelta::zero());
+        IS_ERROR(invalid_clock_time);
+        t = Timestamp::create_utc(good_d, bad_ct);
+        IS_ERROR(invalid_clock_time);
+        t = Timestamp::create_local(good_d, bad_ct);
+        IS_ERROR(invalid_clock_time);
+    }
 
-    t = Timestamp::create(good_d, bad_ct, TimeDelta::zero());
-    IS_ERROR(invalid_clock_time);
-    t = Timestamp::create_utc(good_d, bad_ct);
-    IS_ERROR(invalid_clock_time);
-    t = Timestamp::create_local(good_d, bad_ct);
-    IS_ERROR(invalid_clock_time);
+    SECTION("now()") {
+        // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
+        struct PresentNowStruct test_now = {
+            (time_t) 920180081,
+            (long)   986000000
+        };
+        present_set_test_time(test_now);
 
-    // now()
-    // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
-    struct PresentNowStruct test_now = {
-        (time_t) 920180081,
-        (long)   986000000
-    };
-    present_set_test_time(test_now);
+        t = EMPTY_TIMESTAMP;
+        t = Timestamp::now();
+        IS(920180081, 986000000);
 
-    t = EMPTY_TIMESTAMP;
-    t = Timestamp::now();
-    IS(920180081, 986000000);
+        t = EMPTY_TIMESTAMP;
+        t = Timestamp_now();
+        IS(920180081, 986000000);
 
-    t = EMPTY_TIMESTAMP;
-    t = Timestamp_now();
-    IS(920180081, 986000000);
+        t = EMPTY_TIMESTAMP;
+        Timestamp_ptr_now(&t);
+        IS(920180081, 986000000);
 
-    t = EMPTY_TIMESTAMP;
-    Timestamp_ptr_now(&t);
-    IS(920180081, 986000000);
+        present_reset_test_time();
 
-    present_reset_test_time();
+        // (make sure it returns something different now)
+        t = EMPTY_TIMESTAMP;
+        t = Timestamp::now();
+        REQUIRE_FALSE(t.has_error);
+        CHECK(t.data_.timestamp_seconds != 920180081);
+    }
 
-    // (make sure it returns something different now)
-    t = EMPTY_TIMESTAMP;
-    t = Timestamp::now();
-    REQUIRE_FALSE(t.has_error);
-    CHECK(t.data_.timestamp_seconds != 920180081);
+    SECTION("epoch()") {
+        t = EMPTY_TIMESTAMP;
+        t = Timestamp::epoch();
+        IS(0, 0);
 
-    // epoch()
-    t = EMPTY_TIMESTAMP;
-    t = Timestamp::epoch();
-    IS(0, 0);
+        t = EMPTY_TIMESTAMP;
+        t = Timestamp_epoch();
+        IS(0, 0);
 
-    t = EMPTY_TIMESTAMP;
-    t = Timestamp_epoch();
-    IS(0, 0);
-
-    t = EMPTY_TIMESTAMP;
-    Timestamp_ptr_epoch(&t);
-    IS(0, 0);
+        t = EMPTY_TIMESTAMP;
+        Timestamp_ptr_epoch(&t);
+        IS(0, 0);
+    }
 }
 
 TEST_CASE("Timestamp accessors", "[timestamp]") {
@@ -261,62 +266,69 @@ TEST_CASE("Timestamp accessors", "[timestamp]") {
     // get_time_t
     CHECK(t.get_time_t() == 197589599);
 
-    // get_struct_tm family
-    struct tm tm_utc = t.get_struct_tm_utc();
-    CHECK(tm_utc.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
-    CHECK(tm_utc.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
-    CHECK(tm_utc.tm_mday == 5);
-    CHECK(tm_utc.tm_hour == 21);
-    CHECK(tm_utc.tm_min == 59);
-    CHECK(tm_utc.tm_sec == 59);
+    SECTION("get_struct_tm family") {
+        struct tm tm_utc = t.get_struct_tm_utc();
+        CHECK(tm_utc.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
+        CHECK(tm_utc.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
+        CHECK(tm_utc.tm_mday == 5);
+        CHECK(tm_utc.tm_hour == 21);
+        CHECK(tm_utc.tm_min == 59);
+        CHECK(tm_utc.tm_sec == 59);
 
-    struct tm tm_est = t.get_struct_tm(TimeDelta::from_hours(-5));
-    CHECK(tm_est.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
-    CHECK(tm_est.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
-    CHECK(tm_est.tm_mday == 5);
-    CHECK(tm_est.tm_hour == 16);
-    CHECK(tm_est.tm_min == 59);
-    CHECK(tm_est.tm_sec == 59);
+        struct tm tm_est = t.get_struct_tm(TimeDelta::from_hours(-5));
+        CHECK(tm_est.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
+        CHECK(tm_est.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
+        CHECK(tm_est.tm_mday == 5);
+        CHECK(tm_est.tm_hour == 16);
+        CHECK(tm_est.tm_min == 59);
+        CHECK(tm_est.tm_sec == 59);
 
-    struct tm tm_msk = t.get_struct_tm(TimeDelta::from_hours(3));
-    CHECK(tm_msk.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
-    CHECK(tm_msk.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
-    CHECK(tm_msk.tm_mday == 6);
-    CHECK(tm_msk.tm_hour == 0);
-    CHECK(tm_msk.tm_min == 59);
-    CHECK(tm_msk.tm_sec == 59);
+        struct tm tm_msk = t.get_struct_tm(TimeDelta::from_hours(3));
+        CHECK(tm_msk.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);
+        CHECK(tm_msk.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);
+        CHECK(tm_msk.tm_mday == 6);
+        CHECK(tm_msk.tm_hour == 0);
+        CHECK(tm_msk.tm_min == 59);
+        CHECK(tm_msk.tm_sec == 59);
+    }
 
-    // get_date family
-    CHECK(t.get_date_utc() == Date::create(1976, 4, 5));
-    CHECK(t.get_date(TimeDelta::zero()) == Date::create(1976, 4, 5));
-    CHECK(t.get_date(TimeDelta::from_hours(-5)) == Date::create(1976, 4, 5));
-    CHECK(t.get_date(TimeDelta::from_hours(3)) == Date::create(1976, 4, 6));
+    SECTION("get_date family") {
+        CHECK(t.get_date_utc() == Date::create(1976, 4, 5));
+        CHECK(t.get_date(TimeDelta::zero()) == Date::create(1976, 4, 5));
+        CHECK(t.get_date(TimeDelta::from_hours(-5)) ==
+                Date::create(1976, 4, 5));
+        CHECK(t.get_date(TimeDelta::from_hours(3)) ==
+                Date::create(1976, 4, 6));
+    }
 
-    // get_clock_time family
-    CHECK(t.get_clock_time_utc() == ClockTime::create(21, 59, 59));
-    CHECK(t.get_clock_time(TimeDelta::zero()) ==
-            ClockTime::create(21, 59, 59));
-    CHECK(t.get_clock_time(TimeDelta::from_hours(-5)) ==
-            ClockTime::create(16, 59, 59));
-    CHECK(t.get_clock_time(TimeDelta::from_hours(3)) ==
-            ClockTime::create(0, 59, 59));
+    SECTION("get_clock_time family") {
+        CHECK(t.get_clock_time_utc() == ClockTime::create(21, 59, 59));
+        CHECK(t.get_clock_time(TimeDelta::zero()) ==
+                ClockTime::create(21, 59, 59));
+        CHECK(t.get_clock_time(TimeDelta::from_hours(-5)) ==
+                ClockTime::create(16, 59, 59));
+        CHECK(t.get_clock_time(TimeDelta::from_hours(3)) ==
+                ClockTime::create(0, 59, 59));
+    }
 
-    // The best we can do for the "local" methods is try throwing something at
-    // it and seeing that we get the same thing back
-    t = Timestamp::create_local(Date::create(1959, 5, 17),
-            ClockTime::create(14, 39, 45));
-    REQUIRE_FALSE(t.has_error);
+    SECTION("\"local\" accessors") {
+        // The best we can do for the "local" methods is try throwing something
+        // at it and seeing that we get the same thing back
+        t = Timestamp::create_local(Date::create(1959, 5, 17),
+                ClockTime::create(14, 39, 45));
+        REQUIRE_FALSE(t.has_error);
 
-    struct tm tm_local = t.get_struct_tm_local();
-    CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);
-    CHECK(tm_local.tm_mon == 5 - STRUCT_TM_MONTH_OFFSET);
-    CHECK(tm_local.tm_mday == 17);
-    CHECK(tm_local.tm_hour == 14);
-    CHECK(tm_local.tm_min == 39);
-    CHECK(tm_local.tm_sec == 45);
+        struct tm tm_local = t.get_struct_tm_local();
+        CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);
+        CHECK(tm_local.tm_mon == 5 - STRUCT_TM_MONTH_OFFSET);
+        CHECK(tm_local.tm_mday == 17);
+        CHECK(tm_local.tm_hour == 14);
+        CHECK(tm_local.tm_min == 39);
+        CHECK(tm_local.tm_sec == 45);
 
-    CHECK(t.get_date_local() == Date::create(1959, 5, 17));
-    CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));
+        CHECK(t.get_date_local() == Date::create(1959, 5, 17));
+        CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));
+    }
 }
 
 TEST_CASE("Timestamp 'difference' functions", "[timestamp]") {

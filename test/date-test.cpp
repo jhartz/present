@@ -38,191 +38,190 @@
 TEST_CASE("Date creators", "[date]") {
     Date d;
 
-    // from_year
+    SECTION("creating from a year") {
+        d = Date::create(1902);
+        IS(1902, 1, 1);
+        d = Date::create(1999);
+        IS(1999, 1, 1);
+        d = Date::create(2003);
+        IS(2003, 1, 1);
+        d = Date::create(2040);
+        IS(2040, 1, 1);
+        d = Date::create(9999);
+        IS(9999, 1, 1);
 
-    d = Date::create(1902);
-    IS(1902, 1, 1);
-    d = Date::create(1999);
-    IS(1999, 1, 1);
-    d = Date::create(2003);
-    IS(2003, 1, 1);
-    d = Date::create(2040);
-    IS(2040, 1, 1);
-    d = Date::create(9999);
-    IS(9999, 1, 1);
+        d = Date_from_year(1995);
+        IS(1995, 1, 1);
 
-    d = Date_from_year(1995);
-    IS(1995, 1, 1);
+        Date_ptr_from_year(&d, 1960);
+        IS(1960, 1, 1);
+    }
 
-    Date_ptr_from_year(&d, 1960);
-    IS(1960, 1, 1);
+    SECTION("creating from a year and month") {
+        d = Date::create(1999, 1);
+        IS(1999, 1, 1);
+        d = Date::create(1999, 2);
+        IS(1999, 2, 1);
+        d = Date::create(1999, 12);
+        IS(1999, 12, 1);
+        d = Date::create(1999, 13);
+        IS_ERROR(month_out_of_range);
+        d = Date::create(1999, 0);
+        IS_ERROR(month_out_of_range);
 
-    // from_year_month
+        d = Date_from_year_month(1995, 4);
+        IS(1995, 4, 1);
+        d = Date_from_year_month(1969, -3);
+        IS_ERROR(month_out_of_range);
 
-    d = Date::create(1999, 1);
-    IS(1999, 1, 1);
-    d = Date::create(1999, 2);
-    IS(1999, 2, 1);
-    d = Date::create(1999, 12);
-    IS(1999, 12, 1);
-    d = Date::create(1999, 13);
-    IS_ERROR(month_out_of_range);
-    d = Date::create(1999, 0);
-    IS_ERROR(month_out_of_range);
+        Date_ptr_from_year_month(&d, 1960, 7);
+        IS(1960, 7, 1);
+        Date_ptr_from_year_month(&d, 1902, -1);
+        IS_ERROR(month_out_of_range);
+    }
 
-    d = Date_from_year_month(1995, 4);
-    IS(1995, 4, 1);
-    d = Date_from_year_month(1969, -3);
-    IS_ERROR(month_out_of_range);
+    SECTION("creating from a year, month, and day") {
+        d = Date::create(1999, 1, 1);
+        IS(1999, 1, 1);
+        d = Date::create(1999, 1, 2);
+        IS(1999, 1, 2);
+        d = Date::create(1999, 1, 0);
+        IS_ERROR(day_out_of_range);
+        // Jan.
+        d = Date::create(1999, 1, 31);
+        IS(1999, 1, 31);
+        d = Date::create(1999, 1, 32);
+        IS_ERROR(day_out_of_range);
+        // Feb. (without and with leap years)
+        d = Date::create(1999, 2, 28);
+        IS(1999, 2, 28);
+        d = Date::create(1999, 2, 29);
+        IS_ERROR(day_out_of_range);
+        d = Date::create(2000, 2, 28);
+        IS(2000, 2, 28);
+        d = Date::create(2000, 2, 29);
+        IS(2000, 2, 29);
+        d = Date::create(2000, 2, 30);
+        IS_ERROR(day_out_of_range);
+        // Apr.
+        d = Date::create(1999, 4, 30);
+        IS(1999, 4, 30);
+        d = Date::create(1999, 4, 31);
+        IS_ERROR(day_out_of_range);
 
-    Date_ptr_from_year_month(&d, 1960, 7);
-    IS(1960, 7, 1);
-    Date_ptr_from_year_month(&d, 1902, -1);
-    IS_ERROR(month_out_of_range);
+        d = Date_from_year_month_day(2006, 11, 13);
+        IS(2006, 11, 13);
+        d = Date_from_year_month_day(1990, 1, -1);
+        IS_ERROR(day_out_of_range);
 
-    // from_year_month_day
+        Date_ptr_from_year_month_day(&d, 1991, 3, 4);
+        IS(1991, 3, 4);
+        Date_ptr_from_year_month_day(&d, 1990, 1, -2);
+        IS_ERROR(day_out_of_range);
+    }
 
-    d = Date::create(1999, 1, 1);
-    IS(1999, 1, 1);
-    d = Date::create(1999, 1, 2);
-    IS(1999, 1, 2);
-    d = Date::create(1999, 1, 0);
-    IS_ERROR(day_out_of_range);
-    // Jan.
-    d = Date::create(1999, 1, 31);
-    IS(1999, 1, 31);
-    d = Date::create(1999, 1, 32);
-    IS_ERROR(day_out_of_range);
-    // Feb. (without and with leap years)
-    d = Date::create(1999, 2, 28);
-    IS(1999, 2, 28);
-    d = Date::create(1999, 2, 29);
-    IS_ERROR(day_out_of_range);
-    d = Date::create(2000, 2, 28);
-    IS(2000, 2, 28);
-    d = Date::create(2000, 2, 29);
-    IS(2000, 2, 29);
-    d = Date::create(2000, 2, 30);
-    IS_ERROR(day_out_of_range);
-    // Apr.
-    d = Date::create(1999, 4, 30);
-    IS(1999, 4, 30);
-    d = Date::create(1999, 4, 31);
-    IS_ERROR(day_out_of_range);
+    SECTION("creating from a year and a day") {
+        d = Date::from_year_day(2000, 1);
+        IS(2000, 1, 1);
+        d = Date::from_year_day(2000, 2);
+        IS(2000, 1, 2);
+        d = Date::from_year_day(2000, 31);
+        IS(2000, 1, 31);
+        d = Date::from_year_day(2000, 32);
+        IS(2000, 2, 1);
+        d = Date::from_year_day(2000, 60);
+        IS(2000, 2, 29);
+        d = Date::from_year_day(2000, 365);
+        IS(2000, 12, 30);
+        d = Date::from_year_day(2000, 366);
+        IS(2000, 12, 31);
 
-    d = Date_from_year_month_day(2006, 11, 13);
-    IS(2006, 11, 13);
-    d = Date_from_year_month_day(1990, 1, -1);
-    IS_ERROR(day_out_of_range);
+        d = Date_from_year_day(1990, 1);
+        IS(1990, 1, 1);
 
-    Date_ptr_from_year_month_day(&d, 1991, 3, 4);
-    IS(1991, 3, 4);
-    Date_ptr_from_year_month_day(&d, 1990, 1, -2);
-    IS_ERROR(day_out_of_range);
+        Date_ptr_from_year_day(&d, 1969, 4);
+        IS(1969, 1, 4);
+    }
 
-    // from_year_day
+    SECTION("creating from a year, a week, and a day") {
+        // Each of these has a matching test for week_of_year and
+        // day_of_week down in the "week_of_year and day_of_week
+        // edge cases" test case.
 
-    d = Date::from_year_day(2000, 1);
-    IS(2000, 1, 1);
-    d = Date::from_year_day(2000, 2);
-    IS(2000, 1, 2);
-    d = Date::from_year_day(2000, 31);
-    IS(2000, 1, 31);
-    d = Date::from_year_day(2000, 32);
-    IS(2000, 2, 1);
-    d = Date::from_year_day(2000, 60);
-    IS(2000, 2, 29);
-    d = Date::from_year_day(2000, 365);
-    IS(2000, 12, 30);
-    d = Date::from_year_day(2000, 366);
-    IS(2000, 12, 31);
+        d = Date::from_year_week_day(2016, 31, DAY_OF_WEEK_WEDNESDAY);
+        IS(2016, 8, 3);
 
-    d = Date_from_year_day(1990, 1);
-    IS(1990, 1, 1);
+        // In 2004, the first week of the year started in the end of 2003
+        d = Date::from_year_week_day(2004, 1, DAY_OF_WEEK_MONDAY);
+        IS(2003, 12, 29);
 
-    Date_ptr_from_year_day(&d, 1969, 4);
-    IS(1969, 1, 4);
+        // But not in 2007
+        d = Date::from_year_week_day(2007, 1, DAY_OF_WEEK_MONDAY);
+        IS(2007, 1, 1);
 
-    // from_year_week_day
-    // Each of these has a matching test for week_of_year and
-    // day_of_week down in the "week_of_year and day_of_week
-    // edge cases" test case.
+        // The last week of 2005 was week 52
+        d = Date::from_year_week_day(2005, 52, DAY_OF_WEEK_MONDAY);
+        IS(2005, 12, 26);
 
-    d = Date::from_year_week_day(2016, 31, DAY_OF_WEEK_WEDNESDAY);
-    IS(2016, 8, 3);
+        // It rolls over into 2006
+        d = Date::from_year_week_day(2005, 52, DAY_OF_WEEK_SUNDAY);
+        IS(2006, 1, 1);
 
-    // In 2004, the first week of the year started in the end of 2003
-    d = Date::from_year_week_day(2004, 1, DAY_OF_WEEK_MONDAY);
-    IS(2003, 12, 29);
+        // Even if we use the wrong Sunday
+        d = Date::from_year_week_day(2005, 52, DAY_OF_WEEK_SUNDAY_COMPAT);
+        IS(2006, 1, 1);
 
-    // But not in 2007
-    d = Date::from_year_week_day(2007, 1, DAY_OF_WEEK_MONDAY);
-    IS(2007, 1, 1);
+        // 2005 didn't have a week 53
+        d = Date::from_year_week_day(2005, 53, DAY_OF_WEEK_MONDAY);
+        IS_ERROR(week_of_year_out_of_range);
 
-    // The last week of 2005 was week 52
-    d = Date::from_year_week_day(2005, 52, DAY_OF_WEEK_MONDAY);
-    IS(2005, 12, 26);
+        // 2009 did, though
+        d = Date::from_year_week_day(2009, 53, DAY_OF_WEEK_MONDAY);
+        IS(2009, 12, 28);
 
-    // It rolls over into 2006
-    d = Date::from_year_week_day(2005, 52, DAY_OF_WEEK_SUNDAY);
-    IS(2006, 1, 1);
+        // And it rolls over into 2010
+        d = Date::from_year_week_day(2009, 53, DAY_OF_WEEK_FRIDAY);
+        IS(2010, 1, 1);
 
-    // Even if we use the wrong Sunday
-    d = Date::from_year_week_day(2005, 52, DAY_OF_WEEK_SUNDAY_COMPAT);
-    IS(2006, 1, 1);
+        // But 2009 didn't have a week 54
+        d = Date::from_year_week_day(2009, 54, DAY_OF_WEEK_MONDAY);
+        IS_ERROR(week_of_year_out_of_range);
 
-    // 2005 didn't have a week 53
-    d = Date::from_year_week_day(2005, 53, DAY_OF_WEEK_MONDAY);
-    IS_ERROR(week_of_year_out_of_range);
+        // 1992 has a week 53, and it was a leap year starting on Wed.
+        // It also spilled over into 1993
+        d = Date::from_year_week_day(1992, 53, DAY_OF_WEEK_SUNDAY);
+        IS(1993, 1, 3);
 
-    // 2009 did, though
-    d = Date::from_year_week_day(2009, 53, DAY_OF_WEEK_MONDAY);
-    IS(2009, 12, 28);
+        // 1995 started on a Sunday, and does not have 53 weeks
+        d = Date::from_year_week_day(1995, 53, DAY_OF_WEEK_MONDAY);
+        IS_ERROR(week_of_year_out_of_range);
 
-    // And it rolls over into 2010
-    d = Date::from_year_week_day(2009, 53, DAY_OF_WEEK_FRIDAY);
-    IS(2010, 1, 1);
+        // And nobody should have weeks less than 1
+        d = Date::from_year_week_day(1999, 0, DAY_OF_WEEK_MONDAY);
+        IS_ERROR(week_of_year_out_of_range);
+        d = Date::from_year_week_day(1999, -1, DAY_OF_WEEK_MONDAY);
+        IS_ERROR(week_of_year_out_of_range);
 
-    // But 2009 didn't have a week 54
-    d = Date::from_year_week_day(2009, 54, DAY_OF_WEEK_MONDAY);
-    IS_ERROR(week_of_year_out_of_range);
+        // Nor days of the week outside 0 to 7
+        d = Date::from_year_week_day(2007, 1, 8);
+        IS_ERROR(day_of_week_out_of_range);
+        d = Date::from_year_week_day(2007, 1, -1);
+        IS_ERROR(day_of_week_out_of_range);
 
-    // 1992 has a week 53, and it was a leap year starting on Wed.
-    // It also spilled over into 1993
-    d = Date::from_year_week_day(1992, 53, DAY_OF_WEEK_SUNDAY);
-    IS(1993, 1, 3);
+        d = Date_from_year_week_day(2016, 31, DAY_OF_WEEK_WEDNESDAY);
+        IS(2016, 8, 3);
+        d = Date_from_year_week_day(1999, 0, DAY_OF_WEEK_MONDAY);
+        IS_ERROR(week_of_year_out_of_range);
+        d = Date_from_year_week_day(1990, 1, -1);
+        IS_ERROR(day_of_week_out_of_range);
 
-    // 1995 started on a Sunday, and does not have 53 weeks
-    d = Date::from_year_week_day(1995, 53, DAY_OF_WEEK_MONDAY);
-    IS_ERROR(week_of_year_out_of_range);
-
-    // And nobody should have weeks less than 1
-    d = Date::from_year_week_day(1999, 0, DAY_OF_WEEK_MONDAY);
-    IS_ERROR(week_of_year_out_of_range);
-    d = Date::from_year_week_day(1999, -1, DAY_OF_WEEK_MONDAY);
-    IS_ERROR(week_of_year_out_of_range);
-
-    // Nor days of the week outside 0 to 7
-    d = Date::from_year_week_day(2007, 1, 8);
-    IS_ERROR(day_of_week_out_of_range);
-    d = Date::from_year_week_day(2007, 1, -1);
-    IS_ERROR(day_of_week_out_of_range);
-
-    // Test the C methods too
-
-    d = Date_from_year_week_day(2016, 31, DAY_OF_WEEK_WEDNESDAY);
-    IS(2016, 8, 3);
-    d = Date_from_year_week_day(1999, 0, DAY_OF_WEEK_MONDAY);
-    IS_ERROR(week_of_year_out_of_range);
-    d = Date_from_year_week_day(1990, 1, -1);
-    IS_ERROR(day_of_week_out_of_range);
-
-    Date_ptr_from_year_week_day(&d, 2016, 31, DAY_OF_WEEK_WEDNESDAY);
-    IS(2016, 8, 3);
-    Date_ptr_from_year_week_day(&d, 1996, -1, DAY_OF_WEEK_THURSDAY);
-    IS_ERROR(week_of_year_out_of_range);
-    Date_ptr_from_year_week_day(&d, 1968, 2, -3);
-    IS_ERROR(day_of_week_out_of_range);
+        Date_ptr_from_year_week_day(&d, 2016, 31, DAY_OF_WEEK_WEDNESDAY);
+        IS(2016, 8, 3);
+        Date_ptr_from_year_week_day(&d, 1996, -1, DAY_OF_WEEK_THURSDAY);
+        IS_ERROR(week_of_year_out_of_range);
+        Date_ptr_from_year_week_day(&d, 1968, 2, -3);
+        IS_ERROR(day_of_week_out_of_range);
+    }
 }
 
 TEST_CASE("Date accessors", "[date]") {

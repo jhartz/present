@@ -27,58 +27,58 @@
 TEST_CASE("DayDelta creators", "[day-delta]") {
     DayDelta d;
 
-    // from_days
+    SECTION("creating from a number of days") {
+        d = DayDelta::from_days(1);
+        IS(1);
+        d = DayDelta::from_days(-1);
+        IS(-1);
+        d = DayDelta::from_days(0);
+        IS(0);
+        d = DayDelta::from_days(2147483647);
+        IS(2147483647);
+        d = DayDelta::from_days(-2147483647);
+        IS(-2147483647);
 
-    d = DayDelta::from_days(1);
-    IS(1);
-    d = DayDelta::from_days(-1);
-    IS(-1);
-    d = DayDelta::from_days(0);
-    IS(0);
-    d = DayDelta::from_days(2147483647);
-    IS(2147483647);
-    d = DayDelta::from_days(-2147483647);
-    IS(-2147483647);
+        d = DayDelta_from_days(13);
+        IS(13);
 
-    d = DayDelta_from_days(13);
-    IS(13);
+        DayDelta_ptr_from_days(&d, -11);
+        IS(-11);
+    }
 
-    DayDelta_ptr_from_days(&d, -11);
-    IS(-11);
+    SECTION("creating from a number of weeks") {
+        d = DayDelta::from_weeks(1);
+        IS(7);
+        d = DayDelta::from_weeks(5);
+        IS(35);
+        d = DayDelta::from_weeks(-1);
+        IS(-7);
+        d = DayDelta::from_weeks(-11);
+        IS(-77);
+        d = DayDelta::from_weeks(0);
+        IS(0);
+        d = DayDelta::from_weeks(306783378);
+        IS(2147483646);
+        d = DayDelta::from_weeks(-306783378);
+        IS(-2147483646);
 
-    // from_weeks
+        d = DayDelta_from_weeks(7);
+        IS(49);
 
-    d = DayDelta::from_weeks(1);
-    IS(7);
-    d = DayDelta::from_weeks(5);
-    IS(35);
-    d = DayDelta::from_weeks(-1);
-    IS(-7);
-    d = DayDelta::from_weeks(-11);
-    IS(-77);
-    d = DayDelta::from_weeks(0);
-    IS(0);
-    d = DayDelta::from_weeks(306783378);
-    IS(2147483646);
-    d = DayDelta::from_weeks(-306783378);
-    IS(-2147483646);
+        DayDelta_ptr_from_weeks(&d, -9);
+        IS(-63);
+    }
 
-    d = DayDelta_from_weeks(7);
-    IS(49);
+    SECTION("creating with 0 days") {
+        d = DayDelta::zero();
+        IS(0);
 
-    DayDelta_ptr_from_weeks(&d, -9);
-    IS(-63);
+        d = DayDelta_zero();
+        IS(0);
 
-    // zero
-
-    d = DayDelta::zero();
-    IS(0);
-
-    d = DayDelta_zero();
-    IS(0);
-
-    DayDelta_ptr_zero(&d);
-    IS(0);
+        DayDelta_ptr_zero(&d);
+        IS(0);
+    }
 }
 
 TEST_CASE("DayDelta accessors", "[day-delta]") {
@@ -118,118 +118,124 @@ TEST_CASE("DayDelta arithmetic operators", "[day-delta]") {
              d2 = DayDelta::from_days(-21),
              d3 = DayDelta::zero();
 
-    // is_negative()
+    SECTION("is_negative()") {
+        CHECK(!d1.is_negative());
+        CHECK(d2.is_negative());
+        CHECK(!d3.is_negative());
+    }
 
-    CHECK(!d1.is_negative());
-    CHECK(d2.is_negative());
-    CHECK(!d3.is_negative());
+    SECTION("negate()") {
+        d1.negate();
+        CHECK(d1.days() == -8);
+        CHECK(d1.weeks() == -1);
+        d1.negate();
+        CHECK(d1.days() == 8);
+        CHECK(d1.weeks() == 1);
 
-    // negate()
+        d2.negate();
+        CHECK(d2.days() == 21);
+        CHECK(d2.weeks() == 3);
+        d2.negate();
+        CHECK(d2.days() == -21);
+        CHECK(d2.weeks() == -3);
 
-    d1.negate();
-    CHECK(d1.days() == -8);
-    CHECK(d1.weeks() == -1);
-    d1.negate();
-    CHECK(d1.days() == 8);
-    CHECK(d1.weeks() == 1);
+        d3.negate();
+        CHECK(!d3.is_negative());
+        d3.negate();
+        CHECK(!d3.is_negative());
+    }
 
-    d2.negate();
-    CHECK(d2.days() == 21);
-    CHECK(d2.weeks() == 3);
-    d2.negate();
-    CHECK(d2.days() == -21);
-    CHECK(d2.weeks() == -3);
+    SECTION("operator-") {
+        DayDelta d;
 
-    d3.negate();
-    CHECK(!d3.is_negative());
-    d3.negate();
-    CHECK(!d3.is_negative());
+        d = -d1;
+        IS(-8);
+        d = -d2;
+        IS(21);
+        d = -d3;
+        IS(0);
+    }
 
-    // operator-
+    SECTION("operator++ / operator--") {
+        DayDelta d;
 
-    DayDelta d;
+        d = DayDelta::from_days(5);
+        IS(5);
+        CHECK((d++).days() == 5);
+        IS(6);
+        CHECK((++d).days() == 7);
+        IS(7);
+        CHECK((d--).days() == 7);
+        IS(6);
+        CHECK((--d).days() == 5);
+        IS(5);
+    }
 
-    d = -d1;
-    IS(-8);
-    d = -d2;
-    IS(21);
-    d = -d3;
-    IS(0);
+    SECTION("scaling") {
+        DayDelta d;
 
-    // operator++ / --
+        d = DayDelta::from_days(5);
+        IS(5);
+        d *= 6;
+        IS(30);
+        d /= 10;
+        IS(3);
 
-    d = DayDelta::from_days(5);
-    IS(5);
-    CHECK((d++).days() == 5);
-    IS(6);
-    CHECK((++d).days() == 7);
-    IS(7);
-    CHECK((d--).days() == 7);
-    IS(6);
-    CHECK((--d).days() == 5);
-    IS(5);
+        d = DayDelta::from_days(-10);
+        IS(-10);
+        d *= 6;
+        IS(-60);
+        d /= 25;
+        IS(-2);
 
-    // scaling
+        d = DayDelta::from_days(9);
+        IS(9);
+        CHECK((d * 3).days() == 27);
+        IS(9);
+        CHECK((d * -5).days() == -45);
+        IS(9);
+        CHECK((d / 4).days() == 2);
+        IS(9);
+        CHECK((d / -3).days() == -3);
+        IS(9);
 
-    d = DayDelta::from_days(5);
-    IS(5);
-    d *= 6;
-    IS(30);
-    d /= 10;
-    IS(3);
+        d = DayDelta::from_days(-43);
+        IS(-43);
+        CHECK((d * 2).days() == -86);
+        IS(-43);
+        CHECK((d * -4).days() == 172);
+        IS(-43);
+        CHECK((d / 6).days() == -7);
+        IS(-43);
+        CHECK((d / -7).days() == 6);
+        IS(-43);
+    }
 
-    d = DayDelta::from_days(-10);
-    IS(-10);
-    d *= 6;
-    IS(-60);
-    d /= 25;
-    IS(-2);
+    SECTION("addition / subtraction") {
+        DayDelta d;
 
-    d = DayDelta::from_days(9);
-    IS(9);
-    CHECK((d * 3).days() == 27);
-    IS(9);
-    CHECK((d * -5).days() == -45);
-    IS(9);
-    CHECK((d / 4).days() == 2);
-    IS(9);
-    CHECK((d / -3).days() == -3);
-    IS(9);
+        d = DayDelta::from_days(5);
+        IS(5);
+        d += DayDelta::from_days(8);
+        IS(13);
+        d += DayDelta::from_days(-4);
+        IS(9);
+        d -= DayDelta::from_days(12);
+        IS(-3);
+        d -= DayDelta::from_days(-5);
+        IS(2);
 
-    d = DayDelta::from_days(-43);
-    IS(-43);
-    CHECK((d * 2).days() == -86);
-    IS(-43);
-    CHECK((d * -4).days() == 172);
-    IS(-43);
-    CHECK((d / 6).days() == -7);
-    IS(-43);
-    CHECK((d / -7).days() == 6);
-    IS(-43);
-
-    // addition/subtraction
-
-    d = DayDelta::from_days(5);
-    IS(5);
-    d += DayDelta::from_days(8);
-    IS(13);
-    d += DayDelta::from_days(-4);
-    IS(9);
-    d -= DayDelta::from_days(12);
-    IS(-3);
-    d -= DayDelta::from_days(-5);
-    IS(2);
-
-    d = DayDelta::from_days(-13);
-    IS(-13);
-    CHECK((d + DayDelta::from_days(4)).days() == -9);
-    IS(-13);
-    CHECK((d + DayDelta::from_days(-7)).days() == -20);
-    IS(-13);
-    CHECK((d - DayDelta::from_days(8)).days() == -21);
-    IS(-13);
-    CHECK((d - DayDelta::from_days(-34)).days() == 21);
-    IS(-13);
+        d = DayDelta::from_days(-13);
+        IS(-13);
+        CHECK((d + DayDelta::from_days(4)).days() == -9);
+        IS(-13);
+        CHECK((d + DayDelta::from_days(-7)).days() == -20);
+        IS(-13);
+        CHECK((d - DayDelta::from_days(8)).days() == -21);
+        IS(-13);
+        CHECK((d - DayDelta::from_days(-34)).days() == 21);
+        IS(-13);
+    }
 }
 
 TEST_CASE("DayDelta comparison operators", "[day-delta]") {
