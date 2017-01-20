@@ -137,36 +137,36 @@
 <span class="lineNum">      75 </span>            : }
 <a name="76"><span class="lineNum">      76 </span>            : </a>
 <span class="lineNum">      77 </span>            : void
-<span class="lineNum">      78 </span><span class="lineCov">        119 : present_gmtime(const time_t * timep, struct tm * result)</span>
+<span class="lineNum">      78 </span><span class="lineCov">        141 : present_gmtime(const time_t * timep, struct tm * result)</span>
 <span class="lineNum">      79 </span>            : {
 <span class="lineNum">      80 </span>            :     struct tm * value;
 <span class="lineNum">      81 </span>            : 
 <span class="lineNum">      82 </span>            :     INITIALIZE;
-<span class="lineNum">      83 </span><span class="lineCov">        119 :     value = gmtime(timep);</span>
-<span class="lineNum">      84 </span><span class="lineCov">        119 :     memcpy(result, value, sizeof(struct tm));</span>
+<span class="lineNum">      83 </span><span class="lineCov">        141 :     value = gmtime(timep);</span>
+<span class="lineNum">      84 </span><span class="lineCov">        141 :     memcpy(result, value, sizeof(struct tm));</span>
 <span class="lineNum">      85 </span>            :     DONE;
-<span class="lineNum">      86 </span><span class="lineCov">        119 : }</span>
+<span class="lineNum">      86 </span><span class="lineCov">        141 : }</span>
 <a name="87"><span class="lineNum">      87 </span>            : </a>
 <span class="lineNum">      88 </span>            : void
-<span class="lineNum">      89 </span><span class="lineCov">          3 : present_localtime(const time_t * timep, struct tm * result)</span>
+<span class="lineNum">      89 </span><span class="lineCov">         14 : present_localtime(const time_t * timep, struct tm * result)</span>
 <span class="lineNum">      90 </span>            : {
 <span class="lineNum">      91 </span>            :     struct tm * value;
 <span class="lineNum">      92 </span>            : 
 <span class="lineNum">      93 </span>            :     INITIALIZE;
-<span class="lineNum">      94 </span><span class="lineCov">          3 :     value = localtime(timep);</span>
-<span class="lineNum">      95 </span><span class="lineCov">          3 :     memcpy(result, value, sizeof(struct tm));</span>
+<span class="lineNum">      94 </span><span class="lineCov">         14 :     value = localtime(timep);</span>
+<span class="lineNum">      95 </span><span class="lineCov">         14 :     memcpy(result, value, sizeof(struct tm));</span>
 <span class="lineNum">      96 </span>            :     DONE;
-<span class="lineNum">      97 </span><span class="lineCov">          3 : }</span>
+<span class="lineNum">      97 </span><span class="lineCov">         14 : }</span>
 <a name="98"><span class="lineNum">      98 </span>            : </a>
 <span class="lineNum">      99 </span>            : time_t
-<span class="lineNum">     100 </span><span class="lineCov">        336 : present_mktime(struct tm * tm)</span>
+<span class="lineNum">     100 </span><span class="lineCov">        418 : present_mktime(struct tm * tm)</span>
 <span class="lineNum">     101 </span>            : {
 <span class="lineNum">     102 </span>            :     time_t value;
 <span class="lineNum">     103 </span>            : 
 <span class="lineNum">     104 </span>            :     INITIALIZE;
-<span class="lineNum">     105 </span><span class="lineCov">        336 :     value = mktime(tm);</span>
+<span class="lineNum">     105 </span><span class="lineCov">        418 :     value = mktime(tm);</span>
 <span class="lineNum">     106 </span>            :     DONE;
-<span class="lineNum">     107 </span><span class="lineCov">        336 :     return value;</span>
+<span class="lineNum">     107 </span><span class="lineCov">        418 :     return value;</span>
 <span class="lineNum">     108 </span>            : }
 <a name="109"><span class="lineNum">     109 </span>            : </a>
 <span class="lineNum">     110 </span>            : void
