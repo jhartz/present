@@ -31,8 +31,8 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">216</td>
-            <td class="headerCovTableEntry">216</td>
+            <td class="headerCovTableEntry">234</td>
+            <td class="headerCovTableEntry">234</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -193,327 +193,339 @@
 <span class="lineNum">     131 </span>            :  * This test case tests all the overloads of the &quot;create&quot; method (which also
 <a name="132"><span class="lineNum">     132 </span>            :  * tests the C &quot;Timestamp_create_...&quot; functions).</a>
 <span class="lineNum">     133 </span>            :  */
-<span class="lineNum">     134 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp creators&quot;, &quot;[timestamp]&quot;) {</span>
+<span class="lineNum">     134 </span><span class="lineCov">          6 : TEST_CASE(&quot;Timestamp creators&quot;, &quot;[timestamp]&quot;) {</span>
 <span class="lineNum">     135 </span>            :     Timestamp t;
 <span class="lineNum">     136 </span>            : 
 <span class="lineNum">     137 </span>            :     // create(time_t)
-<span class="lineNum">     138 </span>            :     // from_time_t
-<span class="lineNum">     139 </span>            : 
-<span class="lineNum">     140 </span><span class="lineCov">          1 :     t = Timestamp::create((time_t) 0);</span>
-<span class="lineNum">     141 </span><span class="lineCov">          1 :     IS(0, 0);</span>
-<span class="lineNum">     142 </span><span class="lineCov">          1 :     t = Timestamp::create((time_t) 1325376000);</span>
-<span class="lineNum">     143 </span><span class="lineCov">          1 :     IS(1325376000, 0);</span>
+<span class="lineNum">     138 </span>            :     // from_time_t(time_t)
+<span class="lineNum">     139 </span><span class="lineCov">          5 :     SECTION(&quot;creating from a time_t&quot;) {</span>
+<span class="lineNum">     140 </span><span class="lineCov">          1 :         t = Timestamp::create((time_t) 0);</span>
+<span class="lineNum">     141 </span><span class="lineCov">          1 :         IS(0, 0);</span>
+<span class="lineNum">     142 </span><span class="lineCov">          1 :         t = Timestamp::create((time_t) 1325376000);</span>
+<span class="lineNum">     143 </span><span class="lineCov">          1 :         IS(1325376000, 0);</span>
 <span class="lineNum">     144 </span>            : 
-<span class="lineNum">     145 </span><span class="lineCov">          1 :     t = Timestamp_from_time_t((time_t) 0);</span>
-<span class="lineNum">     146 </span><span class="lineCov">          1 :     IS(0, 0);</span>
-<span class="lineNum">     147 </span><span class="lineCov">          1 :     t = Timestamp_from_time_t((time_t) 918491000);</span>
-<span class="lineNum">     148 </span><span class="lineCov">          1 :     IS(918491000, 0);</span>
+<span class="lineNum">     145 </span><span class="lineCov">          1 :         t = Timestamp_from_time_t((time_t) 0);</span>
+<span class="lineNum">     146 </span><span class="lineCov">          1 :         IS(0, 0);</span>
+<span class="lineNum">     147 </span><span class="lineCov">          1 :         t = Timestamp_from_time_t((time_t) 918491000);</span>
+<span class="lineNum">     148 </span><span class="lineCov">          1 :         IS(918491000, 0);</span>
 <span class="lineNum">     149 </span>            : 
-<span class="lineNum">     150 </span><span class="lineCov">          1 :     Timestamp_ptr_from_time_t(&amp;t, (time_t) 0);</span>
-<span class="lineNum">     151 </span><span class="lineCov">          1 :     IS(0, 0);</span>
-<span class="lineNum">     152 </span><span class="lineCov">          1 :     Timestamp_ptr_from_time_t(&amp;t, (time_t) 1);</span>
-<span class="lineNum">     153 </span><span class="lineCov">          1 :     IS(1, 0);</span>
-<span class="lineNum">     154 </span>            : 
-<span class="lineNum">     155 </span>            :     // create(struct tm, TimeDelta)
-<span class="lineNum">     156 </span>            :     // create(Date, ClockTime, TimeDelta)
-<span class="lineNum">     157 </span>            :     // from_struct_tm
-<span class="lineNum">     158 </span>            : 
-<span class="lineNum">     159 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_STRUCT_TM(</span>
-<span class="lineNum">     160 </span>            :             1970, 1, 1,     // date
-<span class="lineNum">     161 </span>            :             0, 0, 0,        // time
-<span class="lineNum">     162 </span>            :             0,              // time zone offset
-<span class="lineNum">     163 </span>            :             0);             // expected UNIX timestamp
-<span class="lineNum">     164 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_DATE_TIME(1970, 1, 1, 0, 0, 0,     0, 0);</span>
-<span class="lineNum">     165 </span>            : 
-<span class="lineNum">     166 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_STRUCT_TM(1969, 12, 31, 0, 0, 0,   0, -86400);</span>
-<span class="lineNum">     167 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_DATE_TIME(1969, 12, 31, 0, 0, 0,   0, -86400);</span>
-<span class="lineNum">     168 </span>            : 
-<span class="lineNum">     169 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_STRUCT_TM(1970, 1, 2, 0, 0, 0,     0, 86400);</span>
-<span class="lineNum">     170 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_DATE_TIME(1970, 1, 2, 0, 0, 0,     0, 86400);</span>
-<span class="lineNum">     171 </span>            : 
-<span class="lineNum">     172 </span>            :     // All the same timestamp (197589599):
-<span class="lineNum">     173 </span>            :     // Apr. 5, 1976 21:59:59 UTC
-<span class="lineNum">     174 </span>            :     // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
-<span class="lineNum">     175 </span>            :     // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
-<span class="lineNum">     176 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 21, 59, 59,  0,  197589599);</span>
-<span class="lineNum">     177 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 21, 59, 59,  0,  197589599);</span>
-<span class="lineNum">     178 </span>            : 
-<span class="lineNum">     179 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 16, 59, 59,  -5, 197589599);</span>
-<span class="lineNum">     180 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 16, 59, 59,  -5, 197589599);</span>
-<span class="lineNum">     181 </span>            : 
-<span class="lineNum">     182 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_STRUCT_TM(1976, 4, 6, 0, 59, 59,   +3, 197589599);</span>
-<span class="lineNum">     183 </span><span class="lineCov">          1 :     TEST_CREATE_FROM_DATE_TIME(1976, 4, 6, 0, 59, 59,   +3, 197589599);</span>
-<span class="lineNum">     184 </span>            : 
-<span class="lineNum">     185 </span>            :     // create(Date, ClockTime) with bad Date / ClockTime
-<span class="lineNum">     186 </span><span class="lineCov">          1 :     Date bad_d = Date::create(0, 0, 0);</span>
-<span class="lineNum">     187 </span><span class="lineCov">          1 :     REQUIRE(bad_d.has_error);</span>
-<span class="lineNum">     188 </span><span class="lineCov">          1 :     Date good_d = Date::create(2000, 1, 1);</span>
-<span class="lineNum">     189 </span><span class="lineCov">          1 :     REQUIRE_FALSE(good_d.has_error);</span>
-<span class="lineNum">     190 </span>            : 
-<span class="lineNum">     191 </span><span class="lineCov">          1 :     ClockTime bad_ct = ClockTime::create(99, 99, 99);</span>
-<span class="lineNum">     192 </span><span class="lineCov">          1 :     REQUIRE(bad_ct.has_error);</span>
-<span class="lineNum">     193 </span><span class="lineCov">          1 :     ClockTime good_ct = ClockTime::noon();</span>
-<span class="lineNum">     194 </span><span class="lineCov">          1 :     REQUIRE_FALSE(good_ct.has_error);</span>
-<span class="lineNum">     195 </span>            : 
-<span class="lineNum">     196 </span><span class="lineCov">          1 :     t = Timestamp::create(bad_d, good_ct, TimeDelta::zero());</span>
-<span class="lineNum">     197 </span><span class="lineCov">          1 :     IS_ERROR(invalid_date);</span>
-<span class="lineNum">     198 </span><span class="lineCov">          1 :     t = Timestamp::create_utc(bad_d, good_ct);</span>
-<span class="lineNum">     199 </span><span class="lineCov">          1 :     IS_ERROR(invalid_date);</span>
-<span class="lineNum">     200 </span><span class="lineCov">          1 :     t = Timestamp::create_local(bad_d, good_ct);</span>
-<span class="lineNum">     201 </span><span class="lineCov">          1 :     IS_ERROR(invalid_date);</span>
-<span class="lineNum">     202 </span>            : 
-<span class="lineNum">     203 </span><span class="lineCov">          1 :     t = Timestamp::create(good_d, bad_ct, TimeDelta::zero());</span>
-<span class="lineNum">     204 </span><span class="lineCov">          1 :     IS_ERROR(invalid_clock_time);</span>
-<span class="lineNum">     205 </span><span class="lineCov">          1 :     t = Timestamp::create_utc(good_d, bad_ct);</span>
-<span class="lineNum">     206 </span><span class="lineCov">          1 :     IS_ERROR(invalid_clock_time);</span>
-<span class="lineNum">     207 </span><span class="lineCov">          1 :     t = Timestamp::create_local(good_d, bad_ct);</span>
-<span class="lineNum">     208 </span><span class="lineCov">          1 :     IS_ERROR(invalid_clock_time);</span>
-<span class="lineNum">     209 </span>            : 
-<span class="lineNum">     210 </span>            :     // now()
-<span class="lineNum">     211 </span>            :     // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
-<span class="lineNum">     212 </span>            :     struct PresentNowStruct test_now = {
-<span class="lineNum">     213 </span>            :         (time_t) 920180081,
-<span class="lineNum">     214 </span>            :         (long)   986000000
-<span class="lineNum">     215 </span><span class="lineCov">          1 :     };</span>
-<span class="lineNum">     216 </span><span class="lineCov">          1 :     present_set_test_time(test_now);</span>
-<span class="lineNum">     217 </span>            : 
-<span class="lineNum">     218 </span><span class="lineCov">          1 :     t = EMPTY_TIMESTAMP;</span>
-<span class="lineNum">     219 </span><span class="lineCov">          1 :     t = Timestamp::now();</span>
-<span class="lineNum">     220 </span><span class="lineCov">          1 :     IS(920180081, 986000000);</span>
-<span class="lineNum">     221 </span>            : 
-<span class="lineNum">     222 </span><span class="lineCov">          1 :     t = EMPTY_TIMESTAMP;</span>
-<span class="lineNum">     223 </span><span class="lineCov">          1 :     t = Timestamp_now();</span>
-<span class="lineNum">     224 </span><span class="lineCov">          1 :     IS(920180081, 986000000);</span>
-<span class="lineNum">     225 </span>            : 
-<span class="lineNum">     226 </span><span class="lineCov">          1 :     t = EMPTY_TIMESTAMP;</span>
-<span class="lineNum">     227 </span><span class="lineCov">          1 :     Timestamp_ptr_now(&amp;t);</span>
-<span class="lineNum">     228 </span><span class="lineCov">          1 :     IS(920180081, 986000000);</span>
-<span class="lineNum">     229 </span>            : 
-<span class="lineNum">     230 </span><span class="lineCov">          1 :     present_reset_test_time();</span>
-<span class="lineNum">     231 </span>            : 
-<span class="lineNum">     232 </span>            :     // (make sure it returns something different now)
-<span class="lineNum">     233 </span><span class="lineCov">          1 :     t = EMPTY_TIMESTAMP;</span>
-<span class="lineNum">     234 </span><span class="lineCov">          1 :     t = Timestamp::now();</span>
-<span class="lineNum">     235 </span><span class="lineCov">          1 :     REQUIRE_FALSE(t.has_error);</span>
-<span class="lineNum">     236 </span><span class="lineCov">          1 :     CHECK(t.data_.timestamp_seconds != 920180081);</span>
-<span class="lineNum">     237 </span>            : 
-<span class="lineNum">     238 </span>            :     // epoch()
-<span class="lineNum">     239 </span><span class="lineCov">          1 :     t = EMPTY_TIMESTAMP;</span>
-<span class="lineNum">     240 </span><span class="lineCov">          1 :     t = Timestamp::epoch();</span>
-<span class="lineNum">     241 </span><span class="lineCov">          1 :     IS(0, 0);</span>
-<span class="lineNum">     242 </span>            : 
-<span class="lineNum">     243 </span><span class="lineCov">          1 :     t = EMPTY_TIMESTAMP;</span>
-<span class="lineNum">     244 </span><span class="lineCov">          1 :     t = Timestamp_epoch();</span>
-<span class="lineNum">     245 </span><span class="lineCov">          1 :     IS(0, 0);</span>
+<span class="lineNum">     150 </span><span class="lineCov">          1 :         Timestamp_ptr_from_time_t(&amp;t, (time_t) 0);</span>
+<span class="lineNum">     151 </span><span class="lineCov">          1 :         IS(0, 0);</span>
+<span class="lineNum">     152 </span><span class="lineCov">          1 :         Timestamp_ptr_from_time_t(&amp;t, (time_t) 1);</span>
+<span class="lineNum">     153 </span><span class="lineCov">          1 :         IS(1, 0);</span>
+<span class="lineNum">     154 </span><span class="lineCov">          5 :     }</span>
+<span class="lineNum">     155 </span>            : 
+<span class="lineNum">     156 </span>            :     // create(struct tm, TimeDelta)
+<span class="lineNum">     157 </span>            :     // create(Date, ClockTime, TimeDelta)
+<span class="lineNum">     158 </span>            :     // from_struct_tm(struct tm, TimeDelta)
+<span class="lineNum">     159 </span><span class="lineCov">          5 :     SECTION(&quot;creating from a struct tm, or from a Date/ClockTime/TimeDelta&quot;) {</span>
+<span class="lineNum">     160 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_STRUCT_TM(</span>
+<span class="lineNum">     161 </span>            :                 1970, 1, 1,     // date
+<span class="lineNum">     162 </span>            :                 0, 0, 0,        // time
+<span class="lineNum">     163 </span>            :                 0,              // time zone offset
+<span class="lineNum">     164 </span>            :                 0);             // expected UNIX timestamp
+<span class="lineNum">     165 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_DATE_TIME(1970, 1, 1, 0, 0, 0,     0, 0);</span>
+<span class="lineNum">     166 </span>            : 
+<span class="lineNum">     167 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_STRUCT_TM(1969, 12, 31, 0, 0, 0,   0, -86400);</span>
+<span class="lineNum">     168 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_DATE_TIME(1969, 12, 31, 0, 0, 0,   0, -86400);</span>
+<span class="lineNum">     169 </span>            : 
+<span class="lineNum">     170 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_STRUCT_TM(1970, 1, 2, 0, 0, 0,     0, 86400);</span>
+<span class="lineNum">     171 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_DATE_TIME(1970, 1, 2, 0, 0, 0,     0, 86400);</span>
+<span class="lineNum">     172 </span>            : 
+<span class="lineNum">     173 </span>            :         // All the same timestamp (197589599):
+<span class="lineNum">     174 </span>            :         // Apr. 5, 1976 21:59:59 UTC
+<span class="lineNum">     175 </span>            :         // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
+<span class="lineNum">     176 </span>            :         // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
+<span class="lineNum">     177 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 21, 59, 59,  0,  197589599);</span>
+<span class="lineNum">     178 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 21, 59, 59,  0,  197589599);</span>
+<span class="lineNum">     179 </span>            : 
+<span class="lineNum">     180 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_STRUCT_TM(1976, 4, 5, 16, 59, 59,  -5, 197589599);</span>
+<span class="lineNum">     181 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_DATE_TIME(1976, 4, 5, 16, 59, 59,  -5, 197589599);</span>
+<span class="lineNum">     182 </span>            : 
+<span class="lineNum">     183 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_STRUCT_TM(1976, 4, 6, 0, 59, 59,   +3, 197589599);</span>
+<span class="lineNum">     184 </span><span class="lineCov">          1 :         TEST_CREATE_FROM_DATE_TIME(1976, 4, 6, 0, 59, 59,   +3, 197589599);</span>
+<span class="lineNum">     185 </span><span class="lineCov">          5 :     }</span>
+<span class="lineNum">     186 </span>            : 
+<span class="lineNum">     187 </span><span class="lineCov">          5 :     SECTION(&quot;creating from a Date/ClockTime with a bad Date or ClockTime&quot;) {</span>
+<span class="lineNum">     188 </span><span class="lineCov">          1 :         Date bad_d = Date::create(0, 0, 0);</span>
+<span class="lineNum">     189 </span><span class="lineCov">          1 :         REQUIRE(bad_d.has_error);</span>
+<span class="lineNum">     190 </span><span class="lineCov">          1 :         Date good_d = Date::create(2000, 1, 1);</span>
+<span class="lineNum">     191 </span><span class="lineCov">          1 :         REQUIRE_FALSE(good_d.has_error);</span>
+<span class="lineNum">     192 </span>            : 
+<span class="lineNum">     193 </span><span class="lineCov">          1 :         ClockTime bad_ct = ClockTime::create(99, 99, 99);</span>
+<span class="lineNum">     194 </span><span class="lineCov">          1 :         REQUIRE(bad_ct.has_error);</span>
+<span class="lineNum">     195 </span><span class="lineCov">          1 :         ClockTime good_ct = ClockTime::noon();</span>
+<span class="lineNum">     196 </span><span class="lineCov">          1 :         REQUIRE_FALSE(good_ct.has_error);</span>
+<span class="lineNum">     197 </span>            : 
+<span class="lineNum">     198 </span><span class="lineCov">          1 :         t = Timestamp::create(bad_d, good_ct, TimeDelta::zero());</span>
+<span class="lineNum">     199 </span><span class="lineCov">          1 :         IS_ERROR(invalid_date);</span>
+<span class="lineNum">     200 </span><span class="lineCov">          1 :         t = Timestamp::create_utc(bad_d, good_ct);</span>
+<span class="lineNum">     201 </span><span class="lineCov">          1 :         IS_ERROR(invalid_date);</span>
+<span class="lineNum">     202 </span><span class="lineCov">          1 :         t = Timestamp::create_local(bad_d, good_ct);</span>
+<span class="lineNum">     203 </span><span class="lineCov">          1 :         IS_ERROR(invalid_date);</span>
+<span class="lineNum">     204 </span>            : 
+<span class="lineNum">     205 </span><span class="lineCov">          1 :         t = Timestamp::create(good_d, bad_ct, TimeDelta::zero());</span>
+<span class="lineNum">     206 </span><span class="lineCov">          1 :         IS_ERROR(invalid_clock_time);</span>
+<span class="lineNum">     207 </span><span class="lineCov">          1 :         t = Timestamp::create_utc(good_d, bad_ct);</span>
+<span class="lineNum">     208 </span><span class="lineCov">          1 :         IS_ERROR(invalid_clock_time);</span>
+<span class="lineNum">     209 </span><span class="lineCov">          1 :         t = Timestamp::create_local(good_d, bad_ct);</span>
+<span class="lineNum">     210 </span><span class="lineCov">          1 :         IS_ERROR(invalid_clock_time);</span>
+<span class="lineNum">     211 </span><span class="lineCov">          5 :     }</span>
+<span class="lineNum">     212 </span>            : 
+<span class="lineNum">     213 </span><span class="lineCov">          5 :     SECTION(&quot;now()&quot;) {</span>
+<span class="lineNum">     214 </span>            :         // (change what present_now() returns to 1999-2-28 05:34:41.986 UTC)
+<span class="lineNum">     215 </span>            :         struct PresentNowStruct test_now = {
+<span class="lineNum">     216 </span>            :             (time_t) 920180081,
+<span class="lineNum">     217 </span>            :             (long)   986000000
+<span class="lineNum">     218 </span><span class="lineCov">          1 :         };</span>
+<span class="lineNum">     219 </span><span class="lineCov">          1 :         present_set_test_time(test_now);</span>
+<span class="lineNum">     220 </span>            : 
+<span class="lineNum">     221 </span><span class="lineCov">          1 :         t = EMPTY_TIMESTAMP;</span>
+<span class="lineNum">     222 </span><span class="lineCov">          1 :         t = Timestamp::now();</span>
+<span class="lineNum">     223 </span><span class="lineCov">          1 :         IS(920180081, 986000000);</span>
+<span class="lineNum">     224 </span>            : 
+<span class="lineNum">     225 </span><span class="lineCov">          1 :         t = EMPTY_TIMESTAMP;</span>
+<span class="lineNum">     226 </span><span class="lineCov">          1 :         t = Timestamp_now();</span>
+<span class="lineNum">     227 </span><span class="lineCov">          1 :         IS(920180081, 986000000);</span>
+<span class="lineNum">     228 </span>            : 
+<span class="lineNum">     229 </span><span class="lineCov">          1 :         t = EMPTY_TIMESTAMP;</span>
+<span class="lineNum">     230 </span><span class="lineCov">          1 :         Timestamp_ptr_now(&amp;t);</span>
+<span class="lineNum">     231 </span><span class="lineCov">          1 :         IS(920180081, 986000000);</span>
+<span class="lineNum">     232 </span>            : 
+<span class="lineNum">     233 </span><span class="lineCov">          1 :         present_reset_test_time();</span>
+<span class="lineNum">     234 </span>            : 
+<span class="lineNum">     235 </span>            :         // (make sure it returns something different now)
+<span class="lineNum">     236 </span><span class="lineCov">          1 :         t = EMPTY_TIMESTAMP;</span>
+<span class="lineNum">     237 </span><span class="lineCov">          1 :         t = Timestamp::now();</span>
+<span class="lineNum">     238 </span><span class="lineCov">          1 :         REQUIRE_FALSE(t.has_error);</span>
+<span class="lineNum">     239 </span><span class="lineCov">          1 :         CHECK(t.data_.timestamp_seconds != 920180081);</span>
+<span class="lineNum">     240 </span><span class="lineCov">          5 :     }</span>
+<span class="lineNum">     241 </span>            : 
+<span class="lineNum">     242 </span><span class="lineCov">          5 :     SECTION(&quot;epoch()&quot;) {</span>
+<span class="lineNum">     243 </span><span class="lineCov">          1 :         t = EMPTY_TIMESTAMP;</span>
+<span class="lineNum">     244 </span><span class="lineCov">          1 :         t = Timestamp::epoch();</span>
+<span class="lineNum">     245 </span><span class="lineCov">          1 :         IS(0, 0);</span>
 <span class="lineNum">     246 </span>            : 
-<span class="lineNum">     247 </span><span class="lineCov">          1 :     t = EMPTY_TIMESTAMP;</span>
-<span class="lineNum">     248 </span><span class="lineCov">          1 :     Timestamp_ptr_epoch(&amp;t);</span>
-<span class="lineNum">     249 </span><span class="lineCov">          1 :     IS(0, 0);</span>
-<a name="250"><span class="lineNum">     250 </span><span class="lineCov">          1 : }</span></a>
-<span class="lineNum">     251 </span>            : 
-<span class="lineNum">     252 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp accessors&quot;, &quot;[timestamp]&quot;) {</span>
-<span class="lineNum">     253 </span>            :     // All the same timestamp (197589599):
-<span class="lineNum">     254 </span>            :     // Apr. 5, 1976 21:59:59 UTC
-<span class="lineNum">     255 </span>            :     // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
-<span class="lineNum">     256 </span>            :     // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
-<span class="lineNum">     257 </span>            : 
-<span class="lineNum">     258 </span><span class="lineCov">          1 :     Timestamp t = Timestamp::create((time_t) 197589599);</span>
-<span class="lineNum">     259 </span><span class="lineCov">          1 :     REQUIRE_FALSE(t.has_error);</span>
-<span class="lineNum">     260 </span>            : 
-<span class="lineNum">     261 </span>            :     // get_time_t
-<span class="lineNum">     262 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == 197589599);</span>
-<span class="lineNum">     263 </span>            : 
-<span class="lineNum">     264 </span>            :     // get_struct_tm family
-<span class="lineNum">     265 </span><span class="lineCov">          1 :     struct tm tm_utc = t.get_struct_tm_utc();</span>
-<span class="lineNum">     266 </span><span class="lineCov">          1 :     CHECK(tm_utc.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);</span>
-<span class="lineNum">     267 </span><span class="lineCov">          1 :     CHECK(tm_utc.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);</span>
-<span class="lineNum">     268 </span><span class="lineCov">          1 :     CHECK(tm_utc.tm_mday == 5);</span>
-<span class="lineNum">     269 </span><span class="lineCov">          1 :     CHECK(tm_utc.tm_hour == 21);</span>
-<span class="lineNum">     270 </span><span class="lineCov">          1 :     CHECK(tm_utc.tm_min == 59);</span>
-<span class="lineNum">     271 </span><span class="lineCov">          1 :     CHECK(tm_utc.tm_sec == 59);</span>
-<span class="lineNum">     272 </span>            : 
-<span class="lineNum">     273 </span><span class="lineCov">          1 :     struct tm tm_est = t.get_struct_tm(TimeDelta::from_hours(-5));</span>
-<span class="lineNum">     274 </span><span class="lineCov">          1 :     CHECK(tm_est.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);</span>
-<span class="lineNum">     275 </span><span class="lineCov">          1 :     CHECK(tm_est.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);</span>
-<span class="lineNum">     276 </span><span class="lineCov">          1 :     CHECK(tm_est.tm_mday == 5);</span>
-<span class="lineNum">     277 </span><span class="lineCov">          1 :     CHECK(tm_est.tm_hour == 16);</span>
-<span class="lineNum">     278 </span><span class="lineCov">          1 :     CHECK(tm_est.tm_min == 59);</span>
-<span class="lineNum">     279 </span><span class="lineCov">          1 :     CHECK(tm_est.tm_sec == 59);</span>
-<span class="lineNum">     280 </span>            : 
-<span class="lineNum">     281 </span><span class="lineCov">          1 :     struct tm tm_msk = t.get_struct_tm(TimeDelta::from_hours(3));</span>
-<span class="lineNum">     282 </span><span class="lineCov">          1 :     CHECK(tm_msk.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);</span>
-<span class="lineNum">     283 </span><span class="lineCov">          1 :     CHECK(tm_msk.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);</span>
-<span class="lineNum">     284 </span><span class="lineCov">          1 :     CHECK(tm_msk.tm_mday == 6);</span>
-<span class="lineNum">     285 </span><span class="lineCov">          1 :     CHECK(tm_msk.tm_hour == 0);</span>
-<span class="lineNum">     286 </span><span class="lineCov">          1 :     CHECK(tm_msk.tm_min == 59);</span>
-<span class="lineNum">     287 </span><span class="lineCov">          1 :     CHECK(tm_msk.tm_sec == 59);</span>
-<span class="lineNum">     288 </span>            : 
-<span class="lineNum">     289 </span>            :     // get_date family
-<span class="lineNum">     290 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1976, 4, 5));</span>
-<span class="lineNum">     291 </span><span class="lineCov">          1 :     CHECK(t.get_date(TimeDelta::zero()) == Date::create(1976, 4, 5));</span>
-<span class="lineNum">     292 </span><span class="lineCov">          1 :     CHECK(t.get_date(TimeDelta::from_hours(-5)) == Date::create(1976, 4, 5));</span>
-<span class="lineNum">     293 </span><span class="lineCov">          1 :     CHECK(t.get_date(TimeDelta::from_hours(3)) == Date::create(1976, 4, 6));</span>
+<span class="lineNum">     247 </span><span class="lineCov">          1 :         t = EMPTY_TIMESTAMP;</span>
+<span class="lineNum">     248 </span><span class="lineCov">          1 :         t = Timestamp_epoch();</span>
+<span class="lineNum">     249 </span><span class="lineCov">          1 :         IS(0, 0);</span>
+<span class="lineNum">     250 </span>            : 
+<span class="lineNum">     251 </span><span class="lineCov">          1 :         t = EMPTY_TIMESTAMP;</span>
+<span class="lineNum">     252 </span><span class="lineCov">          1 :         Timestamp_ptr_epoch(&amp;t);</span>
+<span class="lineNum">     253 </span><span class="lineCov">          1 :         IS(0, 0);</span>
+<span class="lineNum">     254 </span><span class="lineCov">          5 :     }</span>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">          5 : }</span></a>
+<span class="lineNum">     256 </span>            : 
+<span class="lineNum">     257 </span><span class="lineCov">          5 : TEST_CASE(&quot;Timestamp accessors&quot;, &quot;[timestamp]&quot;) {</span>
+<span class="lineNum">     258 </span>            :     // All the same timestamp (197589599):
+<span class="lineNum">     259 </span>            :     // Apr. 5, 1976 21:59:59 UTC
+<span class="lineNum">     260 </span>            :     // Apr. 5, 1976 16:59:59 EST (UTC-05:00)
+<span class="lineNum">     261 </span>            :     // Apr. 6, 1976 00:59:59 MSK (UTC+03:00)
+<span class="lineNum">     262 </span>            : 
+<span class="lineNum">     263 </span><span class="lineCov">          4 :     Timestamp t = Timestamp::create((time_t) 197589599);</span>
+<span class="lineNum">     264 </span><span class="lineCov">          4 :     REQUIRE_FALSE(t.has_error);</span>
+<span class="lineNum">     265 </span>            : 
+<span class="lineNum">     266 </span>            :     // get_time_t
+<span class="lineNum">     267 </span><span class="lineCov">          4 :     CHECK(t.get_time_t() == 197589599);</span>
+<span class="lineNum">     268 </span>            : 
+<span class="lineNum">     269 </span><span class="lineCov">          4 :     SECTION(&quot;get_struct_tm family&quot;) {</span>
+<span class="lineNum">     270 </span><span class="lineCov">          1 :         struct tm tm_utc = t.get_struct_tm_utc();</span>
+<span class="lineNum">     271 </span><span class="lineCov">          1 :         CHECK(tm_utc.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);</span>
+<span class="lineNum">     272 </span><span class="lineCov">          1 :         CHECK(tm_utc.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);</span>
+<span class="lineNum">     273 </span><span class="lineCov">          1 :         CHECK(tm_utc.tm_mday == 5);</span>
+<span class="lineNum">     274 </span><span class="lineCov">          1 :         CHECK(tm_utc.tm_hour == 21);</span>
+<span class="lineNum">     275 </span><span class="lineCov">          1 :         CHECK(tm_utc.tm_min == 59);</span>
+<span class="lineNum">     276 </span><span class="lineCov">          1 :         CHECK(tm_utc.tm_sec == 59);</span>
+<span class="lineNum">     277 </span>            : 
+<span class="lineNum">     278 </span><span class="lineCov">          1 :         struct tm tm_est = t.get_struct_tm(TimeDelta::from_hours(-5));</span>
+<span class="lineNum">     279 </span><span class="lineCov">          1 :         CHECK(tm_est.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);</span>
+<span class="lineNum">     280 </span><span class="lineCov">          1 :         CHECK(tm_est.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);</span>
+<span class="lineNum">     281 </span><span class="lineCov">          1 :         CHECK(tm_est.tm_mday == 5);</span>
+<span class="lineNum">     282 </span><span class="lineCov">          1 :         CHECK(tm_est.tm_hour == 16);</span>
+<span class="lineNum">     283 </span><span class="lineCov">          1 :         CHECK(tm_est.tm_min == 59);</span>
+<span class="lineNum">     284 </span><span class="lineCov">          1 :         CHECK(tm_est.tm_sec == 59);</span>
+<span class="lineNum">     285 </span>            : 
+<span class="lineNum">     286 </span><span class="lineCov">          1 :         struct tm tm_msk = t.get_struct_tm(TimeDelta::from_hours(3));</span>
+<span class="lineNum">     287 </span><span class="lineCov">          1 :         CHECK(tm_msk.tm_year == 1976 - STRUCT_TM_YEAR_OFFSET);</span>
+<span class="lineNum">     288 </span><span class="lineCov">          1 :         CHECK(tm_msk.tm_mon == 4 - STRUCT_TM_MONTH_OFFSET);</span>
+<span class="lineNum">     289 </span><span class="lineCov">          1 :         CHECK(tm_msk.tm_mday == 6);</span>
+<span class="lineNum">     290 </span><span class="lineCov">          1 :         CHECK(tm_msk.tm_hour == 0);</span>
+<span class="lineNum">     291 </span><span class="lineCov">          1 :         CHECK(tm_msk.tm_min == 59);</span>
+<span class="lineNum">     292 </span><span class="lineCov">          1 :         CHECK(tm_msk.tm_sec == 59);</span>
+<span class="lineNum">     293 </span><span class="lineCov">          4 :     }</span>
 <span class="lineNum">     294 </span>            : 
-<span class="lineNum">     295 </span>            :     // get_clock_time family
-<span class="lineNum">     296 </span><span class="lineCov">          1 :     CHECK(t.get_clock_time_utc() == ClockTime::create(21, 59, 59));</span>
-<span class="lineNum">     297 </span><span class="lineCov">          1 :     CHECK(t.get_clock_time(TimeDelta::zero()) ==</span>
-<span class="lineNum">     298 </span>            :             ClockTime::create(21, 59, 59));
-<span class="lineNum">     299 </span><span class="lineCov">          1 :     CHECK(t.get_clock_time(TimeDelta::from_hours(-5)) ==</span>
-<span class="lineNum">     300 </span>            :             ClockTime::create(16, 59, 59));
-<span class="lineNum">     301 </span><span class="lineCov">          1 :     CHECK(t.get_clock_time(TimeDelta::from_hours(3)) ==</span>
-<span class="lineNum">     302 </span>            :             ClockTime::create(0, 59, 59));
+<span class="lineNum">     295 </span><span class="lineCov">          4 :     SECTION(&quot;get_date family&quot;) {</span>
+<span class="lineNum">     296 </span><span class="lineCov">          1 :         CHECK(t.get_date_utc() == Date::create(1976, 4, 5));</span>
+<span class="lineNum">     297 </span><span class="lineCov">          1 :         CHECK(t.get_date(TimeDelta::zero()) == Date::create(1976, 4, 5));</span>
+<span class="lineNum">     298 </span><span class="lineCov">          1 :         CHECK(t.get_date(TimeDelta::from_hours(-5)) ==</span>
+<span class="lineNum">     299 </span>            :                 Date::create(1976, 4, 5));
+<span class="lineNum">     300 </span><span class="lineCov">          1 :         CHECK(t.get_date(TimeDelta::from_hours(3)) ==</span>
+<span class="lineNum">     301 </span>            :                 Date::create(1976, 4, 6));
+<span class="lineNum">     302 </span><span class="lineCov">          4 :     }</span>
 <span class="lineNum">     303 </span>            : 
-<span class="lineNum">     304 </span>            :     // The best we can do for the &quot;local&quot; methods is try throwing something at
-<span class="lineNum">     305 </span>            :     // it and seeing that we get the same thing back
-<span class="lineNum">     306 </span>            :     t = Timestamp::create_local(Date::create(1959, 5, 17),
-<span class="lineNum">     307 </span><span class="lineCov">          1 :             ClockTime::create(14, 39, 45));</span>
-<span class="lineNum">     308 </span><span class="lineCov">          1 :     REQUIRE_FALSE(t.has_error);</span>
-<span class="lineNum">     309 </span>            : 
-<span class="lineNum">     310 </span><span class="lineCov">          1 :     struct tm tm_local = t.get_struct_tm_local();</span>
-<span class="lineNum">     311 </span><span class="lineCov">          1 :     CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);</span>
-<span class="lineNum">     312 </span><span class="lineCov">          1 :     CHECK(tm_local.tm_mon == 5 - STRUCT_TM_MONTH_OFFSET);</span>
-<span class="lineNum">     313 </span><span class="lineCov">          1 :     CHECK(tm_local.tm_mday == 17);</span>
-<span class="lineNum">     314 </span><span class="lineCov">          1 :     CHECK(tm_local.tm_hour == 14);</span>
-<span class="lineNum">     315 </span><span class="lineCov">          1 :     CHECK(tm_local.tm_min == 39);</span>
-<span class="lineNum">     316 </span><span class="lineCov">          1 :     CHECK(tm_local.tm_sec == 45);</span>
-<span class="lineNum">     317 </span>            : 
-<span class="lineNum">     318 </span><span class="lineCov">          1 :     CHECK(t.get_date_local() == Date::create(1959, 5, 17));</span>
-<span class="lineNum">     319 </span><span class="lineCov">          1 :     CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));</span>
-<a name="320"><span class="lineNum">     320 </span><span class="lineCov">          1 : }</span></a>
-<span class="lineNum">     321 </span>            : 
-<span class="lineNum">     322 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp 'difference' functions&quot;, &quot;[timestamp]&quot;) {</span>
-<span class="lineNum">     323 </span><span class="lineCov">          1 :     const time_t base = 197589599;</span>
-<span class="lineNum">     324 </span><span class="lineCov">          1 :     Timestamp t1 = Timestamp::create(base),</span>
-<span class="lineNum">     325 </span><span class="lineCov">          1 :               t2 = Timestamp::create(base + 86400 + 3600);  // + 1 day, 1 hour</span>
-<span class="lineNum">     326 </span><span class="lineCov">          1 :     REQUIRE_FALSE(t1.has_error);</span>
-<span class="lineNum">     327 </span><span class="lineCov">          1 :     REQUIRE_FALSE(t2.has_error);</span>
+<span class="lineNum">     304 </span><span class="lineCov">          4 :     SECTION(&quot;get_clock_time family&quot;) {</span>
+<span class="lineNum">     305 </span><span class="lineCov">          1 :         CHECK(t.get_clock_time_utc() == ClockTime::create(21, 59, 59));</span>
+<span class="lineNum">     306 </span><span class="lineCov">          1 :         CHECK(t.get_clock_time(TimeDelta::zero()) ==</span>
+<span class="lineNum">     307 </span>            :                 ClockTime::create(21, 59, 59));
+<span class="lineNum">     308 </span><span class="lineCov">          1 :         CHECK(t.get_clock_time(TimeDelta::from_hours(-5)) ==</span>
+<span class="lineNum">     309 </span>            :                 ClockTime::create(16, 59, 59));
+<span class="lineNum">     310 </span><span class="lineCov">          1 :         CHECK(t.get_clock_time(TimeDelta::from_hours(3)) ==</span>
+<span class="lineNum">     311 </span>            :                 ClockTime::create(0, 59, 59));
+<span class="lineNum">     312 </span><span class="lineCov">          4 :     }</span>
+<span class="lineNum">     313 </span>            : 
+<span class="lineNum">     314 </span><span class="lineCov">          4 :     SECTION(&quot;\&quot;local\&quot; accessors&quot;) {</span>
+<span class="lineNum">     315 </span>            :         // The best we can do for the &quot;local&quot; methods is try throwing something
+<span class="lineNum">     316 </span>            :         // at it and seeing that we get the same thing back
+<span class="lineNum">     317 </span>            :         t = Timestamp::create_local(Date::create(1959, 5, 17),
+<span class="lineNum">     318 </span><span class="lineCov">          1 :                 ClockTime::create(14, 39, 45));</span>
+<span class="lineNum">     319 </span><span class="lineCov">          1 :         REQUIRE_FALSE(t.has_error);</span>
+<span class="lineNum">     320 </span>            : 
+<span class="lineNum">     321 </span><span class="lineCov">          1 :         struct tm tm_local = t.get_struct_tm_local();</span>
+<span class="lineNum">     322 </span><span class="lineCov">          1 :         CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);</span>
+<span class="lineNum">     323 </span><span class="lineCov">          1 :         CHECK(tm_local.tm_mon == 5 - STRUCT_TM_MONTH_OFFSET);</span>
+<span class="lineNum">     324 </span><span class="lineCov">          1 :         CHECK(tm_local.tm_mday == 17);</span>
+<span class="lineNum">     325 </span><span class="lineCov">          1 :         CHECK(tm_local.tm_hour == 14);</span>
+<span class="lineNum">     326 </span><span class="lineCov">          1 :         CHECK(tm_local.tm_min == 39);</span>
+<span class="lineNum">     327 </span><span class="lineCov">          1 :         CHECK(tm_local.tm_sec == 45);</span>
 <span class="lineNum">     328 </span>            : 
-<span class="lineNum">     329 </span><span class="lineCov">          1 :     TimeDelta exp_diff = TimeDelta::from_seconds(86400 + 3600);</span>
-<span class="lineNum">     330 </span><span class="lineCov">          1 :     CHECK(t1.difference(t2) == -exp_diff);</span>
-<span class="lineNum">     331 </span><span class="lineCov">          1 :     CHECK(t2.difference(t1) == exp_diff);</span>
-<span class="lineNum">     332 </span><span class="lineCov">          1 :     CHECK(t1.absolute_difference(t2) == exp_diff);</span>
-<span class="lineNum">     333 </span><span class="lineCov">          1 :     CHECK(t2.absolute_difference(t1) == exp_diff);</span>
-<a name="334"><span class="lineNum">     334 </span><span class="lineCov">          1 : }</span></a>
-<span class="lineNum">     335 </span>            : 
-<span class="lineNum">     336 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp arithmetic operators with TimeDelta&quot;, &quot;[timestamp]&quot;) {</span>
-<span class="lineNum">     337 </span><span class="lineCov">          1 :     const time_t base_time = 197589599;</span>
-<span class="lineNum">     338 </span><span class="lineCov">          1 :     TimeDelta seconds_plus4 = TimeDelta::from_seconds(4),</span>
-<span class="lineNum">     339 </span><span class="lineCov">          1 :               hours_minus4 = TimeDelta::from_hours(-4);</span>
+<span class="lineNum">     329 </span><span class="lineCov">          1 :         CHECK(t.get_date_local() == Date::create(1959, 5, 17));</span>
+<span class="lineNum">     330 </span><span class="lineCov">          1 :         CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));</span>
+<span class="lineNum">     331 </span><span class="lineCov">          4 :     }</span>
+<a name="332"><span class="lineNum">     332 </span><span class="lineCov">          4 : }</span></a>
+<span class="lineNum">     333 </span>            : 
+<span class="lineNum">     334 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp 'difference' functions&quot;, &quot;[timestamp]&quot;) {</span>
+<span class="lineNum">     335 </span><span class="lineCov">          1 :     const time_t base = 197589599;</span>
+<span class="lineNum">     336 </span><span class="lineCov">          1 :     Timestamp t1 = Timestamp::create(base),</span>
+<span class="lineNum">     337 </span><span class="lineCov">          1 :               t2 = Timestamp::create(base + 86400 + 3600);  // + 1 day, 1 hour</span>
+<span class="lineNum">     338 </span><span class="lineCov">          1 :     REQUIRE_FALSE(t1.has_error);</span>
+<span class="lineNum">     339 </span><span class="lineCov">          1 :     REQUIRE_FALSE(t2.has_error);</span>
 <span class="lineNum">     340 </span>            : 
-<span class="lineNum">     341 </span><span class="lineCov">          1 :     Timestamp orig_t = Timestamp::create(base_time),</span>
-<span class="lineNum">     342 </span>            :               t;
-<span class="lineNum">     343 </span><span class="lineCov">          1 :     REQUIRE_FALSE(orig_t.has_error);</span>
-<span class="lineNum">     344 </span>            : 
-<span class="lineNum">     345 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     346 </span><span class="lineCov">          1 :     t += seconds_plus4;</span>
-<span class="lineNum">     347 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time + 4);</span>
-<span class="lineNum">     348 </span>            : 
-<span class="lineNum">     349 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     350 </span><span class="lineCov">          1 :     t -= seconds_plus4;</span>
-<span class="lineNum">     351 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time - 4);</span>
+<span class="lineNum">     341 </span><span class="lineCov">          1 :     TimeDelta exp_diff = TimeDelta::from_seconds(86400 + 3600);</span>
+<span class="lineNum">     342 </span><span class="lineCov">          1 :     CHECK(t1.difference(t2) == -exp_diff);</span>
+<span class="lineNum">     343 </span><span class="lineCov">          1 :     CHECK(t2.difference(t1) == exp_diff);</span>
+<span class="lineNum">     344 </span><span class="lineCov">          1 :     CHECK(t1.absolute_difference(t2) == exp_diff);</span>
+<span class="lineNum">     345 </span><span class="lineCov">          1 :     CHECK(t2.absolute_difference(t1) == exp_diff);</span>
+<a name="346"><span class="lineNum">     346 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     347 </span>            : 
+<span class="lineNum">     348 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp arithmetic operators with TimeDelta&quot;, &quot;[timestamp]&quot;) {</span>
+<span class="lineNum">     349 </span><span class="lineCov">          1 :     const time_t base_time = 197589599;</span>
+<span class="lineNum">     350 </span><span class="lineCov">          1 :     TimeDelta seconds_plus4 = TimeDelta::from_seconds(4),</span>
+<span class="lineNum">     351 </span><span class="lineCov">          1 :               hours_minus4 = TimeDelta::from_hours(-4);</span>
 <span class="lineNum">     352 </span>            : 
-<span class="lineNum">     353 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     354 </span><span class="lineCov">          1 :     t += hours_minus4;</span>
-<span class="lineNum">     355 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time + (3600 * -4));</span>
+<span class="lineNum">     353 </span><span class="lineCov">          1 :     Timestamp orig_t = Timestamp::create(base_time),</span>
+<span class="lineNum">     354 </span>            :               t;
+<span class="lineNum">     355 </span><span class="lineCov">          1 :     REQUIRE_FALSE(orig_t.has_error);</span>
 <span class="lineNum">     356 </span>            : 
 <span class="lineNum">     357 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     358 </span><span class="lineCov">          1 :     t -= hours_minus4;</span>
-<span class="lineNum">     359 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time - (3600 * -4));</span>
-<a name="360"><span class="lineNum">     360 </span><span class="lineCov">          1 : }</span></a>
-<span class="lineNum">     361 </span>            : 
-<span class="lineNum">     362 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp arithmetic operators with DayDelta&quot;, &quot;[timestamp]&quot;) {</span>
-<span class="lineNum">     363 </span><span class="lineCov">          1 :     DayDelta days_plus5 = DayDelta::from_days(5),</span>
-<span class="lineNum">     364 </span><span class="lineCov">          1 :              weeks_minus2 = DayDelta::from_weeks(-2);</span>
-<span class="lineNum">     365 </span>            : 
-<span class="lineNum">     366 </span>            :     Timestamp orig_t = Timestamp::create_utc(Date::create(1981, 4, 1),
-<span class="lineNum">     367 </span><span class="lineCov">          1 :             ClockTime::midnight());</span>
-<span class="lineNum">     368 </span><span class="lineCov">          1 :     REQUIRE_FALSE(orig_t.has_error);</span>
-<span class="lineNum">     369 </span>            :     Timestamp t;
-<span class="lineNum">     370 </span>            : 
-<span class="lineNum">     371 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     372 </span><span class="lineCov">          1 :     t += days_plus5;</span>
-<span class="lineNum">     373 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 6));</span>
-<span class="lineNum">     374 </span><span class="lineCov">          1 :     t += days_plus5;</span>
-<span class="lineNum">     375 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 11));</span>
-<span class="lineNum">     376 </span>            : 
-<span class="lineNum">     377 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     378 </span><span class="lineCov">          1 :     t -= days_plus5;</span>
-<span class="lineNum">     379 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 3, 27));</span>
-<span class="lineNum">     380 </span><span class="lineCov">          1 :     t -= days_plus5;</span>
-<span class="lineNum">     381 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 3, 22));</span>
+<span class="lineNum">     358 </span><span class="lineCov">          1 :     t += seconds_plus4;</span>
+<span class="lineNum">     359 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time + 4);</span>
+<span class="lineNum">     360 </span>            : 
+<span class="lineNum">     361 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     362 </span><span class="lineCov">          1 :     t -= seconds_plus4;</span>
+<span class="lineNum">     363 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time - 4);</span>
+<span class="lineNum">     364 </span>            : 
+<span class="lineNum">     365 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     366 </span><span class="lineCov">          1 :     t += hours_minus4;</span>
+<span class="lineNum">     367 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time + (3600 * -4));</span>
+<span class="lineNum">     368 </span>            : 
+<span class="lineNum">     369 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     370 </span><span class="lineCov">          1 :     t -= hours_minus4;</span>
+<span class="lineNum">     371 </span><span class="lineCov">          1 :     CHECK(t.get_time_t() == base_time - (3600 * -4));</span>
+<a name="372"><span class="lineNum">     372 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     373 </span>            : 
+<span class="lineNum">     374 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp arithmetic operators with DayDelta&quot;, &quot;[timestamp]&quot;) {</span>
+<span class="lineNum">     375 </span><span class="lineCov">          1 :     DayDelta days_plus5 = DayDelta::from_days(5),</span>
+<span class="lineNum">     376 </span><span class="lineCov">          1 :              weeks_minus2 = DayDelta::from_weeks(-2);</span>
+<span class="lineNum">     377 </span>            : 
+<span class="lineNum">     378 </span>            :     Timestamp orig_t = Timestamp::create_utc(Date::create(1981, 4, 1),
+<span class="lineNum">     379 </span><span class="lineCov">          1 :             ClockTime::midnight());</span>
+<span class="lineNum">     380 </span><span class="lineCov">          1 :     REQUIRE_FALSE(orig_t.has_error);</span>
+<span class="lineNum">     381 </span>            :     Timestamp t;
 <span class="lineNum">     382 </span>            : 
 <span class="lineNum">     383 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     384 </span><span class="lineCov">          1 :     t += weeks_minus2;</span>
-<span class="lineNum">     385 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 3, 18));</span>
-<span class="lineNum">     386 </span>            : 
-<span class="lineNum">     387 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     388 </span><span class="lineCov">          1 :     t -= weeks_minus2;</span>
-<span class="lineNum">     389 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 15));</span>
-<span class="lineNum">     390 </span><span class="lineCov">          1 :     t += weeks_minus2;</span>
-<span class="lineNum">     391 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 1));</span>
-<span class="lineNum">     392 </span>            : 
-<span class="lineNum">     393 </span>            : 
-<span class="lineNum">     394 </span><span class="lineCov">          2 :     t = Timestamp::create_utc(Date::create(1995, 6, 23), ClockTime::midnight())</span>
-<span class="lineNum">     395 </span><span class="lineCov">          3 :             + DayDelta::from_days(4);</span>
-<span class="lineNum">     396 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1995, 6, 27));</span>
-<span class="lineNum">     397 </span>            : 
-<span class="lineNum">     398 </span><span class="lineCov">          2 :     t = Timestamp::create_utc(Date::create(1968, 2, 24), ClockTime::midnight())</span>
-<span class="lineNum">     399 </span><span class="lineCov">          3 :             - DayDelta::from_days(16);</span>
-<span class="lineNum">     400 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1968, 2, 8));</span>
-<span class="lineNum">     401 </span>            : 
-<span class="lineNum">     402 </span><span class="lineCov">          2 :     t = (Timestamp::create_utc(Date::create(2002, 1, 1), ClockTime::midnight())</span>
-<span class="lineNum">     403 </span><span class="lineCov">          4 :             - DayDelta::from_days(3))</span>
-<span class="lineNum">     404 </span><span class="lineCov">          3 :             + DayDelta::from_weeks(2);</span>
-<span class="lineNum">     405 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(2002, 1, 12));</span>
-<span class="lineNum">     406 </span>            : 
-<span class="lineNum">     407 </span><span class="lineCov">          1 :     t = DayDelta::from_days(8) + orig_t;</span>
-<span class="lineNum">     408 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 9));</span>
-<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          1 : }</span></a>
-<span class="lineNum">     410 </span>            : 
-<span class="lineNum">     411 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp arithmetic operators with MonthDelta&quot;, &quot;[timestamp]&quot;) {</span>
-<span class="lineNum">     412 </span><span class="lineCov">          1 :     MonthDelta months_plus2 = MonthDelta::from_months(2),</span>
-<span class="lineNum">     413 </span><span class="lineCov">          1 :                months_minus5 = MonthDelta::from_months(-5),</span>
-<span class="lineNum">     414 </span><span class="lineCov">          1 :                years_plus4 = MonthDelta::from_years(4),</span>
-<span class="lineNum">     415 </span><span class="lineCov">          1 :                years_minus16 = MonthDelta::from_years(-16);</span>
-<span class="lineNum">     416 </span>            : 
-<span class="lineNum">     417 </span>            :     Timestamp orig_t = Timestamp::create_utc(Date::create(1982, 11, 13),
-<span class="lineNum">     418 </span><span class="lineCov">          1 :             ClockTime::midnight());</span>
-<span class="lineNum">     419 </span>            :     Timestamp t;
-<span class="lineNum">     420 </span>            : 
-<span class="lineNum">     421 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     422 </span><span class="lineCov">          1 :     t += months_plus2;</span>
-<span class="lineNum">     423 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1983, 1, 13));</span>
-<span class="lineNum">     424 </span><span class="lineCov">          1 :     t += months_minus5;</span>
-<span class="lineNum">     425 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1982, 8, 13));</span>
-<span class="lineNum">     426 </span>            : 
-<span class="lineNum">     427 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     428 </span><span class="lineCov">          1 :     t -= months_plus2;</span>
-<span class="lineNum">     429 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1982, 9, 13));</span>
-<span class="lineNum">     430 </span><span class="lineCov">          1 :     t -= months_minus5;</span>
-<span class="lineNum">     431 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1983, 2, 13));</span>
+<span class="lineNum">     384 </span><span class="lineCov">          1 :     t += days_plus5;</span>
+<span class="lineNum">     385 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 6));</span>
+<span class="lineNum">     386 </span><span class="lineCov">          1 :     t += days_plus5;</span>
+<span class="lineNum">     387 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 11));</span>
+<span class="lineNum">     388 </span>            : 
+<span class="lineNum">     389 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     390 </span><span class="lineCov">          1 :     t -= days_plus5;</span>
+<span class="lineNum">     391 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 3, 27));</span>
+<span class="lineNum">     392 </span><span class="lineCov">          1 :     t -= days_plus5;</span>
+<span class="lineNum">     393 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 3, 22));</span>
+<span class="lineNum">     394 </span>            : 
+<span class="lineNum">     395 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     396 </span><span class="lineCov">          1 :     t += weeks_minus2;</span>
+<span class="lineNum">     397 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 3, 18));</span>
+<span class="lineNum">     398 </span>            : 
+<span class="lineNum">     399 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     400 </span><span class="lineCov">          1 :     t -= weeks_minus2;</span>
+<span class="lineNum">     401 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 15));</span>
+<span class="lineNum">     402 </span><span class="lineCov">          1 :     t += weeks_minus2;</span>
+<span class="lineNum">     403 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 1));</span>
+<span class="lineNum">     404 </span>            : 
+<span class="lineNum">     405 </span>            : 
+<span class="lineNum">     406 </span><span class="lineCov">          2 :     t = Timestamp::create_utc(Date::create(1995, 6, 23), ClockTime::midnight())</span>
+<span class="lineNum">     407 </span><span class="lineCov">          3 :             + DayDelta::from_days(4);</span>
+<span class="lineNum">     408 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1995, 6, 27));</span>
+<span class="lineNum">     409 </span>            : 
+<span class="lineNum">     410 </span><span class="lineCov">          2 :     t = Timestamp::create_utc(Date::create(1968, 2, 24), ClockTime::midnight())</span>
+<span class="lineNum">     411 </span><span class="lineCov">          3 :             - DayDelta::from_days(16);</span>
+<span class="lineNum">     412 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1968, 2, 8));</span>
+<span class="lineNum">     413 </span>            : 
+<span class="lineNum">     414 </span><span class="lineCov">          2 :     t = (Timestamp::create_utc(Date::create(2002, 1, 1), ClockTime::midnight())</span>
+<span class="lineNum">     415 </span><span class="lineCov">          4 :             - DayDelta::from_days(3))</span>
+<span class="lineNum">     416 </span><span class="lineCov">          3 :             + DayDelta::from_weeks(2);</span>
+<span class="lineNum">     417 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(2002, 1, 12));</span>
+<span class="lineNum">     418 </span>            : 
+<span class="lineNum">     419 </span><span class="lineCov">          1 :     t = DayDelta::from_days(8) + orig_t;</span>
+<span class="lineNum">     420 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1981, 4, 9));</span>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     422 </span>            : 
+<span class="lineNum">     423 </span><span class="lineCov">          2 : TEST_CASE(&quot;Timestamp arithmetic operators with MonthDelta&quot;, &quot;[timestamp]&quot;) {</span>
+<span class="lineNum">     424 </span><span class="lineCov">          1 :     MonthDelta months_plus2 = MonthDelta::from_months(2),</span>
+<span class="lineNum">     425 </span><span class="lineCov">          1 :                months_minus5 = MonthDelta::from_months(-5),</span>
+<span class="lineNum">     426 </span><span class="lineCov">          1 :                years_plus4 = MonthDelta::from_years(4),</span>
+<span class="lineNum">     427 </span><span class="lineCov">          1 :                years_minus16 = MonthDelta::from_years(-16);</span>
+<span class="lineNum">     428 </span>            : 
+<span class="lineNum">     429 </span>            :     Timestamp orig_t = Timestamp::create_utc(Date::create(1982, 11, 13),
+<span class="lineNum">     430 </span><span class="lineCov">          1 :             ClockTime::midnight());</span>
+<span class="lineNum">     431 </span>            :     Timestamp t;
 <span class="lineNum">     432 </span>            : 
 <span class="lineNum">     433 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     434 </span><span class="lineCov">          1 :     t += years_plus4;</span>
-<span class="lineNum">     435 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1986, 11, 13));</span>
-<span class="lineNum">     436 </span><span class="lineCov">          1 :     t += years_minus16;</span>
-<span class="lineNum">     437 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1970, 11, 13));</span>
+<span class="lineNum">     434 </span><span class="lineCov">          1 :     t += months_plus2;</span>
+<span class="lineNum">     435 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1983, 1, 13));</span>
+<span class="lineNum">     436 </span><span class="lineCov">          1 :     t += months_minus5;</span>
+<span class="lineNum">     437 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1982, 8, 13));</span>
 <span class="lineNum">     438 </span>            : 
 <span class="lineNum">     439 </span><span class="lineCov">          1 :     t = orig_t;</span>
-<span class="lineNum">     440 </span><span class="lineCov">          1 :     t -= years_plus4;</span>
-<span class="lineNum">     441 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1978, 11, 13));</span>
-<span class="lineNum">     442 </span><span class="lineCov">          1 :     t -= years_minus16;</span>
-<span class="lineNum">     443 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1994, 11, 13));</span>
+<span class="lineNum">     440 </span><span class="lineCov">          1 :     t -= months_plus2;</span>
+<span class="lineNum">     441 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1982, 9, 13));</span>
+<span class="lineNum">     442 </span><span class="lineCov">          1 :     t -= months_minus5;</span>
+<span class="lineNum">     443 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1983, 2, 13));</span>
 <span class="lineNum">     444 </span>            : 
-<span class="lineNum">     445 </span><span class="lineCov">          1 :     t = orig_t + MonthDelta::from_months(7);</span>
-<span class="lineNum">     446 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1983, 6, 13));</span>
-<span class="lineNum">     447 </span>            : 
-<span class="lineNum">     448 </span><span class="lineCov">          1 :     t = orig_t - MonthDelta::from_months(3);</span>
-<span class="lineNum">     449 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1982, 8, 13));</span>
+<span class="lineNum">     445 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     446 </span><span class="lineCov">          1 :     t += years_plus4;</span>
+<span class="lineNum">     447 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1986, 11, 13));</span>
+<span class="lineNum">     448 </span><span class="lineCov">          1 :     t += years_minus16;</span>
+<span class="lineNum">     449 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1970, 11, 13));</span>
 <span class="lineNum">     450 </span>            : 
-<a name="451"><span class="lineNum">     451 </span><span class="lineCov">          1 :     t = MonthDelta::from_years(4) + orig_t;</span></a>
-<span class="lineNum">     452 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1986, 11, 13));</span>
-<span class="lineNum">     453 </span><span class="lineCov">          4 : }</span>
-<span class="lineNum">     454 </span>            : 
+<span class="lineNum">     451 </span><span class="lineCov">          1 :     t = orig_t;</span>
+<span class="lineNum">     452 </span><span class="lineCov">          1 :     t -= years_plus4;</span>
+<span class="lineNum">     453 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1978, 11, 13));</span>
+<span class="lineNum">     454 </span><span class="lineCov">          1 :     t -= years_minus16;</span>
+<span class="lineNum">     455 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1994, 11, 13));</span>
+<span class="lineNum">     456 </span>            : 
+<span class="lineNum">     457 </span><span class="lineCov">          1 :     t = orig_t + MonthDelta::from_months(7);</span>
+<span class="lineNum">     458 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1983, 6, 13));</span>
+<span class="lineNum">     459 </span>            : 
+<span class="lineNum">     460 </span><span class="lineCov">          1 :     t = orig_t - MonthDelta::from_months(3);</span>
+<span class="lineNum">     461 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1982, 8, 13));</span>
+<span class="lineNum">     462 </span>            : 
+<a name="463"><span class="lineNum">     463 </span><span class="lineCov">          1 :     t = MonthDelta::from_years(4) + orig_t;</span></a>
+<span class="lineNum">     464 </span><span class="lineCov">          1 :     CHECK(t.get_date_utc() == Date::create(1986, 11, 13));</span>
+<span class="lineNum">     465 </span><span class="lineCov">          4 : }</span>
+<span class="lineNum">     466 </span>            : 
 </pre>
       </td>
     </tr>

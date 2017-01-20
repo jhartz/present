@@ -73,11 +73,11 @@
 <span class="lineNum">      11 </span>            :  */
 <a name="12"><span class="lineNum">      12 </span>            : </a>
 <span class="lineNum">      13 </span>            : inline Timestamp
-<span class="lineNum">      14 </span><span class="lineCov">          6 : Timestamp::create(const time_t timestamp)</span>
+<span class="lineNum">      14 </span><span class="lineCov">          9 : Timestamp::create(const time_t timestamp)</span>
 <span class="lineNum">      15 </span>            : {
 <span class="lineNum">      16 </span>            :     Timestamp result;
-<span class="lineNum">      17 </span><span class="lineCov">          6 :     Timestamp_ptr_from_time_t(&amp;result, timestamp);</span>
-<span class="lineNum">      18 </span><span class="lineCov">          6 :     return result;</span>
+<span class="lineNum">      17 </span><span class="lineCov">          9 :     Timestamp_ptr_from_time_t(&amp;result, timestamp);</span>
+<span class="lineNum">      18 </span><span class="lineCov">          9 :     return result;</span>
 <span class="lineNum">      19 </span>            : }
 <a name="20"><span class="lineNum">      20 </span>            : </a>
 <span class="lineNum">      21 </span>            : inline Timestamp
@@ -148,9 +148,9 @@
 <span class="lineNum">      86 </span>            : }
 <a name="87"><span class="lineNum">      87 </span>            : </a>
 <span class="lineNum">      88 </span>            : inline time_t
-<span class="lineNum">      89 </span><span class="lineCov">          5 : Timestamp::get_time_t() const</span>
+<span class="lineNum">      89 </span><span class="lineCov">          8 : Timestamp::get_time_t() const</span>
 <span class="lineNum">      90 </span>            : {
-<span class="lineNum">      91 </span><span class="lineCov">          5 :     return Timestamp_get_time_t(this);</span>
+<span class="lineNum">      91 </span><span class="lineCov">          8 :     return Timestamp_get_time_t(this);</span>
 <span class="lineNum">      92 </span>            : }
 <a name="93"><span class="lineNum">      93 </span>            : </a>
 <span class="lineNum">      94 </span>            : inline struct tm

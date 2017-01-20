@@ -80,13 +80,13 @@
 <span class="lineNum">      18 </span>            : 
 <a name="19"><span class="lineNum">      19 </span>            : /** Initialize a new MonthDelta based on the number of months. */</a>
 <span class="lineNum">      20 </span>            : static void
-<span class="lineNum">      21 </span><span class="lineCov">         59 : init_month_delta(struct MonthDelta * const result, int_month_delta months)</span>
+<span class="lineNum">      21 </span><span class="lineCov">         74 : init_month_delta(struct MonthDelta * const result, int_month_delta months)</span>
 <span class="lineNum">      22 </span>            : {
-<span class="lineNum">      23 </span><span class="lineCov">         59 :     assert(result != NULL);</span>
-<span class="lineNum">      24 </span><span class="lineCov">         59 :     CLEAR(result);</span>
+<span class="lineNum">      23 </span><span class="lineCov">         74 :     assert(result != NULL);</span>
+<span class="lineNum">      24 </span><span class="lineCov">         74 :     CLEAR(result);</span>
 <span class="lineNum">      25 </span>            : 
-<span class="lineNum">      26 </span><span class="lineCov">         59 :     result-&gt;data_.delta_months = months;</span>
-<span class="lineNum">      27 </span><span class="lineCov">         59 : }</span>
+<span class="lineNum">      26 </span><span class="lineCov">         74 :     result-&gt;data_.delta_months = months;</span>
+<span class="lineNum">      27 </span><span class="lineCov">         74 : }</span>
 <span class="lineNum">      28 </span>            : 
 <a name="29"><span class="lineNum">      29 </span>            : </a>
 <span class="lineNum">      30 </span>            : struct MonthDelta
@@ -98,12 +98,12 @@
 <span class="lineNum">      36 </span>            : }
 <a name="37"><span class="lineNum">      37 </span>            : </a>
 <span class="lineNum">      38 </span>            : void
-<span class="lineNum">      39 </span><span class="lineCov">         39 : MonthDelta_ptr_from_months(</span>
+<span class="lineNum">      39 </span><span class="lineCov">         49 : MonthDelta_ptr_from_months(</span>
 <span class="lineNum">      40 </span>            :         struct MonthDelta * const result,
 <span class="lineNum">      41 </span>            :         int_month_delta months)
 <span class="lineNum">      42 </span>            : {
-<span class="lineNum">      43 </span><span class="lineCov">         39 :     init_month_delta(result, months);</span>
-<span class="lineNum">      44 </span><span class="lineCov">         39 : }</span>
+<span class="lineNum">      43 </span><span class="lineCov">         49 :     init_month_delta(result, months);</span>
+<span class="lineNum">      44 </span><span class="lineCov">         49 : }</span>
 <a name="45"><span class="lineNum">      45 </span>            : </a>
 <span class="lineNum">      46 </span>            : struct MonthDelta
 <span class="lineNum">      47 </span><span class="lineCov">          1 : MonthDelta_from_years(int_year_delta years)</span>
@@ -130,10 +130,10 @@
 <span class="lineNum">      68 </span>            : }
 <a name="69"><span class="lineNum">      69 </span>            : </a>
 <span class="lineNum">      70 </span>            : void
-<span class="lineNum">      71 </span><span class="lineCov">          5 : MonthDelta_ptr_zero(struct MonthDelta * const result)</span>
+<span class="lineNum">      71 </span><span class="lineCov">         10 : MonthDelta_ptr_zero(struct MonthDelta * const result)</span>
 <span class="lineNum">      72 </span>            : {
-<span class="lineNum">      73 </span><span class="lineCov">          5 :     init_month_delta(result, 0);</span>
-<span class="lineNum">      74 </span><span class="lineCov">          5 : }</span>
+<span class="lineNum">      73 </span><span class="lineCov">         10 :     init_month_delta(result, 0);</span>
+<span class="lineNum">      74 </span><span class="lineCov">         10 : }</span>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
 <span class="lineNum">      76 </span>            : int_month_delta
 <span class="lineNum">      77 </span><span class="lineCov">         59 : MonthDelta_months(const struct MonthDelta * const self)</span>
