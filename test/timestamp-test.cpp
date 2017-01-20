@@ -356,6 +356,99 @@ TEST_CASE("Timestamp arithmetic operators with TimeDelta", "[timestamp]") {
 
     t = orig_t;
     t -= hours_minus4;
-    CHECK(t.get_time_t() == 197589599 - (3600 * -4));
+    CHECK(t.get_time_t() == base_time - (3600 * -4));
+}
+
+TEST_CASE("Timestamp arithmetic operators with DayDelta", "[timestamp]") {
+    DayDelta days_plus5 = DayDelta::from_days(5),
+             weeks_minus2 = DayDelta::from_weeks(-2);
+
+    Timestamp orig_t = Timestamp::create_utc(Date::create(1981, 4, 1),
+            ClockTime::midnight());
+    REQUIRE_FALSE(orig_t.has_error);
+    Timestamp t;
+
+    t = orig_t;
+    t += days_plus5;
+    CHECK(t.get_date_utc() == Date::create(1981, 4, 6));
+    t += days_plus5;
+    CHECK(t.get_date_utc() == Date::create(1981, 4, 11));
+
+    t = orig_t;
+    t -= days_plus5;
+    CHECK(t.get_date_utc() == Date::create(1981, 3, 27));
+    t -= days_plus5;
+    CHECK(t.get_date_utc() == Date::create(1981, 3, 22));
+
+    t = orig_t;
+    t += weeks_minus2;
+    CHECK(t.get_date_utc() == Date::create(1981, 3, 18));
+
+    t = orig_t;
+    t -= weeks_minus2;
+    CHECK(t.get_date_utc() == Date::create(1981, 4, 15));
+    t += weeks_minus2;
+    CHECK(t.get_date_utc() == Date::create(1981, 4, 1));
+
+
+    t = Timestamp::create_utc(Date::create(1995, 6, 23), ClockTime::midnight())
+            + DayDelta::from_days(4);
+    CHECK(t.get_date_utc() == Date::create(1995, 6, 27));
+
+    t = Timestamp::create_utc(Date::create(1968, 2, 24), ClockTime::midnight())
+            - DayDelta::from_days(16);
+    CHECK(t.get_date_utc() == Date::create(1968, 2, 8));
+
+    t = (Timestamp::create_utc(Date::create(2002, 1, 1), ClockTime::midnight())
+            - DayDelta::from_days(3))
+            + DayDelta::from_weeks(2);
+    CHECK(t.get_date_utc() == Date::create(2002, 1, 12));
+
+    t = DayDelta::from_days(8) + orig_t;
+    CHECK(t.get_date_utc() == Date::create(1981, 4, 9));
+}
+
+TEST_CASE("Timestamp arithmetic operators with MonthDelta", "[timestamp]") {
+    MonthDelta months_plus2 = MonthDelta::from_months(2),
+               months_minus5 = MonthDelta::from_months(-5),
+               years_plus4 = MonthDelta::from_years(4),
+               years_minus16 = MonthDelta::from_years(-16);
+
+    Timestamp orig_t = Timestamp::create_utc(Date::create(1982, 11, 13),
+            ClockTime::midnight());
+    Timestamp t;
+
+    t = orig_t;
+    t += months_plus2;
+    CHECK(t.get_date_utc() == Date::create(1983, 1, 13));
+    t += months_minus5;
+    CHECK(t.get_date_utc() == Date::create(1982, 8, 13));
+
+    t = orig_t;
+    t -= months_plus2;
+    CHECK(t.get_date_utc() == Date::create(1982, 9, 13));
+    t -= months_minus5;
+    CHECK(t.get_date_utc() == Date::create(1983, 2, 13));
+
+    t = orig_t;
+    t += years_plus4;
+    CHECK(t.get_date_utc() == Date::create(1986, 11, 13));
+    t += years_minus16;
+    CHECK(t.get_date_utc() == Date::create(1970, 11, 13));
+
+    t = orig_t;
+    t -= years_plus4;
+    CHECK(t.get_date_utc() == Date::create(1978, 11, 13));
+    t -= years_minus16;
+    CHECK(t.get_date_utc() == Date::create(1994, 11, 13));
+
+    t = orig_t + MonthDelta::from_months(7);
+    CHECK(t.get_date_utc() == Date::create(1983, 6, 13));
+
+    t = orig_t - MonthDelta::from_months(3);
+    CHECK(t.get_date_utc() == Date::create(1982, 8, 13));
+
+    t = MonthDelta::from_years(4) + orig_t;
+    CHECK(t.get_date_utc() == Date::create(1986, 11, 13));
 }
 
