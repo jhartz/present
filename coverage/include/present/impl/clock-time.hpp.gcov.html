@@ -141,15 +141,15 @@
 <span class="lineNum">      79 </span>            : }
 <a name="80"><span class="lineNum">      80 </span>            : </a>
 <span class="lineNum">      81 </span>            : inline int_hour
-<span class="lineNum">      82 </span><span class="lineCov">          2 : ClockTime::hour() const</span>
+<span class="lineNum">      82 </span><span class="lineCov">         54 : ClockTime::hour() const</span>
 <span class="lineNum">      83 </span>            : {
-<span class="lineNum">      84 </span><span class="lineCov">          2 :     return ClockTime_hour(this);</span>
+<span class="lineNum">      84 </span><span class="lineCov">         54 :     return ClockTime_hour(this);</span>
 <span class="lineNum">      85 </span>            : }
 <a name="86"><span class="lineNum">      86 </span>            : </a>
 <span class="lineNum">      87 </span>            : inline int_minute
-<span class="lineNum">      88 </span><span class="lineCov">         38 : ClockTime::minute() const</span>
+<span class="lineNum">      88 </span><span class="lineCov">         90 : ClockTime::minute() const</span>
 <span class="lineNum">      89 </span>            : {
-<span class="lineNum">      90 </span><span class="lineCov">         38 :     return ClockTime_minute(this);</span>
+<span class="lineNum">      90 </span><span class="lineCov">         90 :     return ClockTime_minute(this);</span>
 <span class="lineNum">      91 </span>            : }
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <span class="lineNum">      93 </span>            : inline int_second
@@ -165,9 +165,9 @@
 <span class="lineNum">     103 </span>            : }
 <a name="104"><span class="lineNum">     104 </span>            : </a>
 <span class="lineNum">     105 </span>            : inline double
-<span class="lineNum">     106 </span><span class="lineCov">          2 : ClockTime::second_decimal() const</span>
+<span class="lineNum">     106 </span><span class="lineCov">         54 : ClockTime::second_decimal() const</span>
 <span class="lineNum">     107 </span>            : {
-<span class="lineNum">     108 </span><span class="lineCov">          2 :     return ClockTime_second_decimal(this);</span>
+<span class="lineNum">     108 </span><span class="lineCov">         54 :     return ClockTime_second_decimal(this);</span>
 <span class="lineNum">     109 </span>            : }
 <a name="110"><span class="lineNum">     110 </span>            : </a>
 <span class="lineNum">     111 </span>            : inline TimeDelta

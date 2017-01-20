@@ -32,7 +32,7 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">1325</td>
-            <td class="headerCovTableEntry">3451</td>
+            <td class="headerCovTableEntry">3450</td>
             <td class="headerCovTableEntryLo">38.4 %</td>
           </tr>
           <tr>
@@ -40,9 +40,9 @@
             <td class="headerValue">2017-01-20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">752</td>
-            <td class="headerCovTableEntry">1358</td>
-            <td class="headerCovTableEntryLo">55.4 %</td>
+            <td class="headerCovTableEntry">756</td>
+            <td class="headerCovTableEntry">1362</td>
+            <td class="headerCovTableEntryLo">55.5 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -1711,19 +1711,19 @@
 <span class="lineNum">    1649 </span>            :         {
 <span class="lineNum">    1650 </span>            :             return EnumStringMaker&lt;T&gt;::convert( v );
 <span class="lineNum">    1651 </span>            :         }
-<a name="1652"><span class="lineNum">    1652 </span>            : #else</a>
+<span class="lineNum">    1652 </span>            : #else
 <span class="lineNum">    1653 </span>            :         template&lt;typename T&gt;
-<span class="lineNum">    1654 </span><span class="lineCov">        216 :         static std::string convert( T const&amp; ) { return unprintableString; }</span>
+<span class="lineNum">    1654 </span>            :         static std::string convert( T const&amp; ) { return unprintableString; }
 <span class="lineNum">    1655 </span>            : #endif
 <span class="lineNum">    1656 </span>            :     };
 <span class="lineNum">    1657 </span>            : 
 <span class="lineNum">    1658 </span>            :     template&lt;&gt;
 <a name="1659"><span class="lineNum">    1659 </span>            :     struct StringMakerBase&lt;true&gt; {</a>
 <span class="lineNum">    1660 </span>            :         template&lt;typename T&gt;
-<span class="lineNum">    1661 </span><span class="lineCov">        710 :         static std::string convert( T const&amp; _value ) {</span>
-<span class="lineNum">    1662 </span><span class="lineCov">        710 :             std::ostringstream oss;</span>
-<span class="lineNum">    1663 </span><span class="lineCov">        710 :             oss &lt;&lt; _value;</span>
-<span class="lineNum">    1664 </span><span class="lineCov">        710 :             return oss.str();</span>
+<span class="lineNum">    1661 </span><span class="lineCov">        929 :         static std::string convert( T const&amp; _value ) {</span>
+<span class="lineNum">    1662 </span><span class="lineCov">        929 :             std::ostringstream oss;</span>
+<span class="lineNum">    1663 </span><span class="lineCov">        929 :             oss &lt;&lt; _value;</span>
+<span class="lineNum">    1664 </span><span class="lineCov">        929 :             return oss.str();</span>
 <span class="lineNum">    1665 </span>            :         }
 <span class="lineNum">    1666 </span>            :     };
 <span class="lineNum">    1667 </span>            : 
@@ -1835,8 +1835,8 @@
 <span class="lineNum">    1773 </span>            : /// Overload (not specialise) this template for custom typs that you don't want
 <a name="1774"><span class="lineNum">    1774 </span>            : /// to provide an ostream overload for.</a>
 <span class="lineNum">    1775 </span>            : template&lt;typename T&gt;
-<span class="lineNum">    1776 </span><span class="lineCov">        920 : std::string toString( T const&amp; value ) {</span>
-<span class="lineNum">    1777 </span><span class="lineCov">        920 :     return StringMaker&lt;T&gt;::convert( value );</span>
+<span class="lineNum">    1776 </span><span class="lineCov">        923 : std::string toString( T const&amp; value ) {</span>
+<span class="lineNum">    1777 </span><span class="lineCov">        923 :     return StringMaker&lt;T&gt;::convert( value );</span>
 <span class="lineNum">    1778 </span>            : }
 <span class="lineNum">    1779 </span>            : 
 <span class="lineNum">    1780 </span>            :     namespace Detail {
@@ -8181,12 +8181,12 @@
 <span class="lineNum">    8119 </span><span class="lineNoCov">          0 :         return Catch::toString( static_cast&lt;const wchar_t*&gt;( value ) );</span>
 <a name="8120"><span class="lineNum">    8120 </span>            : }</a>
 <span class="lineNum">    8121 </span>            : 
-<span class="lineNum">    8122 </span><span class="lineCov">        814 : std::string toString( int value ) {</span>
-<span class="lineNum">    8123 </span><span class="lineCov">        814 :     std::ostringstream oss;</span>
-<span class="lineNum">    8124 </span><span class="lineCov">        814 :     oss &lt;&lt; value;</span>
-<span class="lineNum">    8125 </span><span class="lineCov">        814 :     if( value &gt; Detail::hexThreshold )</span>
-<span class="lineNum">    8126 </span><span class="lineCov">        154 :         oss &lt;&lt; &quot; (0x&quot; &lt;&lt; std::hex &lt;&lt; value &lt;&lt; &quot;)&quot;;</span>
-<span class="lineNum">    8127 </span><span class="lineCov">        814 :     return oss.str();</span>
+<span class="lineNum">    8122 </span><span class="lineCov">        811 : std::string toString( int value ) {</span>
+<span class="lineNum">    8123 </span><span class="lineCov">        811 :     std::ostringstream oss;</span>
+<span class="lineNum">    8124 </span><span class="lineCov">        811 :     oss &lt;&lt; value;</span>
+<span class="lineNum">    8125 </span><span class="lineCov">        811 :     if( value &gt; Detail::hexThreshold )</span>
+<span class="lineNum">    8126 </span><span class="lineCov">        151 :         oss &lt;&lt; &quot; (0x&quot; &lt;&lt; std::hex &lt;&lt; value &lt;&lt; &quot;)&quot;;</span>
+<span class="lineNum">    8127 </span><span class="lineCov">        811 :     return oss.str();</span>
 <a name="8128"><span class="lineNum">    8128 </span>            : }</a>
 <span class="lineNum">    8129 </span>            : 
 <span class="lineNum">    8130 </span><span class="lineCov">         20 : std::string toString( unsigned long value ) {</span>
@@ -8415,12 +8415,12 @@
 <span class="lineNum">    8353 </span><span class="lineCov">        894 :         else if( m_exprComponents.op == &quot;matches&quot; )</span>
 <span class="lineNum">    8354 </span><span class="lineNoCov">          0 :             return m_exprComponents.lhs + &quot; &quot; + m_exprComponents.rhs;</span>
 <span class="lineNum">    8355 </span><span class="lineCov">        894 :         else if( m_exprComponents.op != &quot;!&quot; ) {</span>
-<span class="lineNum">    8356 </span><span class="lineCov">       2682 :             if( m_exprComponents.lhs.size() + m_exprComponents.rhs.size() &lt; 40 &amp;&amp;</span>
-<span class="lineNum">    8357 </span><span class="lineCov">       1788 :                 m_exprComponents.lhs.find(&quot;\n&quot;) == std::string::npos &amp;&amp;</span>
-<span class="lineNum">    8358 </span><span class="lineCov">        894 :                 m_exprComponents.rhs.find(&quot;\n&quot;) == std::string::npos )</span>
-<span class="lineNum">    8359 </span><span class="lineCov">        894 :                 return m_exprComponents.lhs + &quot; &quot; + m_exprComponents.op + &quot; &quot; + m_exprComponents.rhs;</span>
+<span class="lineNum">    8356 </span><span class="lineCov">       2661 :             if( m_exprComponents.lhs.size() + m_exprComponents.rhs.size() &lt; 40 &amp;&amp;</span>
+<span class="lineNum">    8357 </span><span class="lineCov">       1767 :                 m_exprComponents.lhs.find(&quot;\n&quot;) == std::string::npos &amp;&amp;</span>
+<span class="lineNum">    8358 </span><span class="lineCov">        873 :                 m_exprComponents.rhs.find(&quot;\n&quot;) == std::string::npos )</span>
+<span class="lineNum">    8359 </span><span class="lineCov">        873 :                 return m_exprComponents.lhs + &quot; &quot; + m_exprComponents.op + &quot; &quot; + m_exprComponents.rhs;</span>
 <span class="lineNum">    8360 </span>            :             else
-<span class="lineNum">    8361 </span><span class="lineNoCov">          0 :                 return m_exprComponents.lhs + &quot;\n&quot; + m_exprComponents.op + &quot;\n&quot; + m_exprComponents.rhs;</span>
+<span class="lineNum">    8361 </span><span class="lineCov">         21 :                 return m_exprComponents.lhs + &quot;\n&quot; + m_exprComponents.op + &quot;\n&quot; + m_exprComponents.rhs;</span>
 <span class="lineNum">    8362 </span>            :         }
 <span class="lineNum">    8363 </span>            :         else
 <span class="lineNum">    8364 </span><span class="lineNoCov">          0 :             return &quot;{can't expand - use &quot; + m_assertionInfo.macroName + &quot;_FALSE( &quot; + m_assertionInfo.capturedExpression.substr(1) + &quot; ) instead of &quot; + m_assertionInfo.macroName + &quot;( &quot; + m_assertionInfo.capturedExpression + &quot; ) for better diagnostics}&quot;;</span>

@@ -357,30 +357,30 @@
 <span class="lineNum">     295 </span><span class="lineCov">         22 : }</span>
 <a name="296"><span class="lineNum">     296 </span>            : </a>
 <span class="lineNum">     297 </span>            : int_year
-<span class="lineNum">     298 </span><span class="lineCov">         50 : Date_year(const struct Date * const self)</span>
+<span class="lineNum">     298 </span><span class="lineCov">        118 : Date_year(const struct Date * const self)</span>
 <span class="lineNum">     299 </span>            : {
-<span class="lineNum">     300 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
-<span class="lineNum">     301 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     300 </span><span class="lineCov">        118 :     assert(self != NULL);</span>
+<span class="lineNum">     301 </span><span class="lineCov">        118 :     assert(self-&gt;has_error == 0);</span>
 <span class="lineNum">     302 </span>            : 
-<span class="lineNum">     303 </span><span class="lineCov">         50 :     return self-&gt;data_.year;</span>
+<span class="lineNum">     303 </span><span class="lineCov">        118 :     return self-&gt;data_.year;</span>
 <span class="lineNum">     304 </span>            : }
 <a name="305"><span class="lineNum">     305 </span>            : </a>
 <span class="lineNum">     306 </span>            : int_month
-<span class="lineNum">     307 </span><span class="lineCov">         50 : Date_month(const struct Date * const self)</span>
+<span class="lineNum">     307 </span><span class="lineCov">        118 : Date_month(const struct Date * const self)</span>
 <span class="lineNum">     308 </span>            : {
-<span class="lineNum">     309 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
-<span class="lineNum">     310 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     309 </span><span class="lineCov">        118 :     assert(self != NULL);</span>
+<span class="lineNum">     310 </span><span class="lineCov">        118 :     assert(self-&gt;has_error == 0);</span>
 <span class="lineNum">     311 </span>            : 
-<span class="lineNum">     312 </span><span class="lineCov">         50 :     return self-&gt;data_.month;</span>
+<span class="lineNum">     312 </span><span class="lineCov">        118 :     return self-&gt;data_.month;</span>
 <span class="lineNum">     313 </span>            : }
 <a name="314"><span class="lineNum">     314 </span>            : </a>
 <span class="lineNum">     315 </span>            : int_day
-<span class="lineNum">     316 </span><span class="lineCov">         50 : Date_day(const struct Date * const self)</span>
+<span class="lineNum">     316 </span><span class="lineCov">        118 : Date_day(const struct Date * const self)</span>
 <span class="lineNum">     317 </span>            : {
-<span class="lineNum">     318 </span><span class="lineCov">         50 :     assert(self != NULL);</span>
-<span class="lineNum">     319 </span><span class="lineCov">         50 :     assert(self-&gt;has_error == 0);</span>
+<span class="lineNum">     318 </span><span class="lineCov">        118 :     assert(self != NULL);</span>
+<span class="lineNum">     319 </span><span class="lineCov">        118 :     assert(self-&gt;has_error == 0);</span>
 <span class="lineNum">     320 </span>            : 
-<span class="lineNum">     321 </span><span class="lineCov">         50 :     return self-&gt;data_.day;</span>
+<span class="lineNum">     321 </span><span class="lineCov">        118 :     return self-&gt;data_.day;</span>
 <span class="lineNum">     322 </span>            : }
 <a name="323"><span class="lineNum">     323 </span>            : </a>
 <span class="lineNum">     324 </span>            : int_day_of_year
