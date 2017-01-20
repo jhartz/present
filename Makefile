@@ -20,7 +20,7 @@ CXXFLAGS += $(FLAGS) -std=c++11
 
 MODULES = clock-time date day-delta month-delta time-delta timestamp
 C_OBJECTS = $(MODULES:%=build/%.c.o) build/utils/time-calls.c.o
-TEST_SRC = $(MODULES:%=test/%-test.cpp)
+TEST_SRC = $(MODULES:%=test/%-test.cpp) test/test-utils.cpp test/test.cpp
 UTIL_HEADERS = include/present.h include/present-config.h	\
 			   include/present/internal/header-utils.h		\
 			   include/present/internal/typedefs-nostdint.h	\
@@ -58,7 +58,7 @@ build/repl.o: src/repl.cpp
 
 # Tests
 
-build/present-test: $(C_OBJECTS) $(TEST_SRC) test/test.cpp
+build/present-test: $(C_OBJECTS) $(TEST_SRC)
 	$(CXX) $(CXXFLAGS) -L./build -o $@ $^
 
 # Shared libraries

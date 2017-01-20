@@ -173,6 +173,7 @@ if (COMPILE_TESTS)
     # Compile the unit tests
     add_executable (present-test
         test/test.cpp
+        test/test-utils.cpp
 
         test/clock-time-test.cpp
         test/date-test.cpp

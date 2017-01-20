@@ -8,6 +8,7 @@
  */
 
 #include "catch.hpp"
+#include "test-utils.hpp"
 
 #include "present.h"
 
