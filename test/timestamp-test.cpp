@@ -333,25 +333,26 @@ TEST_CASE("Timestamp 'difference' functions", "[timestamp]") {
     CHECK(t2.absolute_difference(t1) == exp_diff);
 }
 
-TEST_CASE("Timestamp arithmetic operators", "[timestamp]") {
+TEST_CASE("Timestamp arithmetic operators with TimeDelta", "[timestamp]") {
+    const time_t base_time = 197589599;
     TimeDelta seconds_plus4 = TimeDelta::from_seconds(4),
               hours_minus4 = TimeDelta::from_hours(-4);
 
-    Timestamp orig_t = Timestamp::create((time_t) 197589599),
+    Timestamp orig_t = Timestamp::create(base_time),
               t;
     REQUIRE_FALSE(orig_t.has_error);
 
     t = orig_t;
     t += seconds_plus4;
-    CHECK(t.get_time_t() == 197589599 + 4);
+    CHECK(t.get_time_t() == base_time + 4);
 
     t = orig_t;
     t -= seconds_plus4;
-    CHECK(t.get_time_t() == 197589599 - 4);
+    CHECK(t.get_time_t() == base_time - 4);
 
     t = orig_t;
     t += hours_minus4;
-    CHECK(t.get_time_t() == 197589599 + (3600 * -4));
+    CHECK(t.get_time_t() == base_time + (3600 * -4));
 
     t = orig_t;
     t -= hours_minus4;
