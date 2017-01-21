@@ -1,8 +1,10 @@
 status() {
     echo ""
     echo "***"
+    echo "*** $1"
+    shift 1
     for arg; do
-        echo "*** $arg"
+        echo "    $arg"
     done
     echo "***"
     echo ""
@@ -15,16 +17,13 @@ CMAKE_ARG_NAMES=(CMAKE_BUILD_TYPE COMPILE_TESTS COMPILE_WITH_CXX_AS_CC PRESENT_U
 # - it's not a pull request
 # - the branch is master
 # - we're compiling in the most normal way possible in the Travis matrix
+# - the compiler is gcc
 export PUBLISH_DOC=
-if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
-    if  [ "$CC" = "gcc" ] &&
-        [ "$CMAKE_BUILD_TYPE" = "Debug" ] &&
-        [ "$COMPILE_TESTS" = "ON" ] &&
-        [ "$COMPILE_WITH_CXX_AS_CC" = "OFF" ] &&
-        [ "$PRESENT_USE_PTHREAD" = "OFF" ] &&
-        [ "$COMPILE_ANSI" = "OFF" ]
-    then
-        export PUBLISH_DOC=yup
-    fi
+if  [ "$TRAVIS_PULL_REQUEST" = "false" ] &&
+    [ "$TRAVIS_BRANCH" = "master" ] &&
+    [ "$TRY_PUBLISH_DOC" = "yup" ] &&
+    [ "$CC" = "gcc" ]
+then
+    export PUBLISH_DOC=yup
 fi
 
