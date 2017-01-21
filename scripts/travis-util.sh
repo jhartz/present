@@ -1,12 +1,10 @@
 status() {
     echo ""
-    echo "***"
-    echo "*** $1"
-    shift 1
+    echo "==="
     for arg; do
-        echo "    $arg"
+        echo "=== $arg"
     done
-    echo "***"
+    echo "==="
     echo ""
 }
 
