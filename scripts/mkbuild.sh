@@ -1,15 +1,16 @@
 #!/bin/bash
 # Make a "builds" directory with subdirectories of different cmake
-# configurations.
+# configurations. These configurations are a subset of all the configurations
+# that the Travis build runs and tests.
 #
 # NOTE: This just creates the cmake build directories; it doesn't actually
 # compile or test Present (for that, see mktest.sh).
 #
-# Usage: mkbuild.sh [any cmake args] ...
+# Usage: mkbuild.sh [any extra cmake args] ...
 
 set -e
 
-CMAKE_ARGS=("$@")
+CMAKE_ARGS=("-DCMAKE_BUILD_TYPE=Debug" "-DCOMPILE_TESTS=ON" "$@")
 
 mk_build() {
     echo "*** Creating cmake build directory for $1"
