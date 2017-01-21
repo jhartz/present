@@ -8,9 +8,13 @@
 Present makes working with dates, times, and durations simple in both C and
 C++.
 
-Its functionality is broken down into 6 types. Each has a struct definition
-that encapsulates its data. In C, these structs are passed around helper
-methods that access and manipulate them, but, in C++, each struct is a
+For full documentation, see the [Present wiki](https://github.com/jhartz/present/wiki).
+
+---
+
+Present's functionality is broken down into 6 types. Each has a struct
+definition that encapsulates its data. In C, these structs are passed around
+helper methods that access and manipulate them, but, in C++, each struct is a
 full-blown class with methods (although they remain "Plain Old Data", and thus
 can be copied easily and shared with C programs).
 
@@ -105,67 +109,9 @@ Additionally, in C++, these types support operator overloading, so interacting
 with them looks and feels intuitive. For more, see the API documentation or the
 examples below.
 
-## Usage
-
-To use Present in your code, just add `#include "present.h"` to your C or C++
-source and link with `libpresent` (which can be compiled as either a shared or
-a static library).
-
-- `libpresent` contains implementations of the C functions.
-- `present.h` contains the struct definitions for the 6 Present types, and
-  includes inline implementations of all the C++ methods (which are just
-  wrappers around the C functions).
-
-Note that the library itself (`libpresent`) does not contain the definitions
-of the C++ methods; all the methods are declared `inline` in the header files
-(since each one is just a wrapper around the corresponding C function).
-
-This also means that you only need a C compiler (not a C++ compiler) to compile
-`libpresent`. The compiled library can then be used with both C and C++ code.
-(`libpresent` can also be compiled with a C++ compiler without issue.)
-
-## API Documentation
-
-The full API documentation is automatically generated from the code, and thus
-is always up to date with the code in `master`.
-
-- [C++ Documentation](https://jhartz.github.io/present/doc/html/annotated.html)
-- [C Documentation](https://jhartz.github.io/present/doc/html/files.html)
-
-## Requirements
-
-Present should support any compiler compatible with ANSI C (C89) or any C++
-compiler. However, it is recommended to use a version that supports stdint.h
-(required since C99). Also, C99 variadic macros are used for shortcut macros
-that make it easier to create and initialize some of the types in C (the
-`ClockTime_create(...)` and `Date_create(...)` macros).
-
-Present is meant to work across platforms. If there is an issue compiling it
-on a certain platform, please file an issue report.
-
 No part of the Present implementation uses dynamic memory access, so it can be
 used on systems that don't support `malloc` and friends, and you don't have to
 worry about doing any special cleanup for Present types.
-
-## Building
-
-First, make sure you have all git submodules:
-
-    git submodule update --init --recursive
-
-Present comes with both a traditional `Makefile` and a `CMakeLists.txt` file
-that can be used for compilation. However, using CMake is recommended as it
-exposes more options and features. Basic CMake usage on UNIX-like systems:
-
-    mkdir build-cmake
-    cd build-cmake
-    cmake ..
-    make
-
-If, for some reason, you need to use the traditional Makefile, first you will
-have to copy "include/present-config.h.in" to "include/present-config.h",
-filling in the version numbers and changing all the `#cmakedefine _____`
-statements to `#define _____` to enable any of those features.
 
 ## C++ Examples
 
