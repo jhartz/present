@@ -19,7 +19,7 @@ CXXFLAGS += $(FLAGS) -std=c++11
 
 
 MODULES = clock-time date day-delta month-delta time-delta timestamp
-C_OBJECTS = $(MODULES:%=build/%.c.o) build/utils/time-calls.c.o
+C_OBJECTS = $(MODULES:%=build/%.c.o) build/utils/time-utils.c.o
 TEST_SRC = $(MODULES:%=test/%-test.cpp) test/test-utils.cpp test/test.cpp
 UTIL_HEADERS = include/present.h include/present-config.h	\
 			   include/present/internal/header-utils.h		\
@@ -27,7 +27,7 @@ UTIL_HEADERS = include/present.h include/present-config.h	\
 			   include/present/internal/typedefs-stdint.h	\
 			   include/present/internal/types.h				\
 			   src/utils/constants.h src/utils/impl-utils.h	\
-			   src/utils/time-calls.h
+			   src/utils/time-utils.h
 
 LIBRARY_OBJECT_FLAGS = -fpic
 LIBRARY_FLAGS = -shared

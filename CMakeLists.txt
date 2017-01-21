@@ -106,7 +106,7 @@ install (
 # If we're compiling C with a C++ compiler, set that
 if (COMPILE_WITH_CXX_AS_CC)
     set_source_files_properties(
-        src/utils/time-calls.c
+        src/utils/time-utils.c
         src/clock-time.c
         src/date.c
         src/day-delta.c
@@ -120,7 +120,7 @@ endif (COMPILE_WITH_CXX_AS_CC)
 
 # Compile the C library
 add_library (present SHARED
-    src/utils/time-calls.c
+    src/utils/time-utils.c
     src/clock-time.c
     src/date.c
     src/day-delta.c
