@@ -160,9 +160,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a050609c408bf55dafa24a080757a471b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimestamp.html">Timestamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a050609c408bf55dafa24a080757a471b">create</a> (const time_t timestamp)</td></tr>
-<tr class="memdesc:a050609c408bf55dafa24a080757a471b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library).  <a href="#a050609c408bf55dafa24a080757a471b">More...</a><br/></td></tr>
-<tr class="separator:a050609c408bf55dafa24a080757a471b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af811b2a56455db514336c0eeeb061ae0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimestamp.html">Timestamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#af811b2a56455db514336c0eeeb061ae0">create</a> (const time_t time)</td></tr>
+<tr class="memdesc:af811b2a56455db514336c0eeeb061ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library).  <a href="#af811b2a56455db514336c0eeeb061ae0">More...</a><br/></td></tr>
+<tr class="separator:af811b2a56455db514336c0eeeb061ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f19b24e53fb06f9ea0285f7ed495aa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimestamp.html">Timestamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a33f19b24e53fb06f9ea0285f7ed495aa">create</a> (const struct tm &amp;tm, const <a class="el" href="structTimeDelta.html">TimeDelta</a> &amp;time_zone_offset)</td></tr>
 <tr class="memdesc:a33f19b24e53fb06f9ea0285f7ed495aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "struct tm" value (from C's time library) in a certain time zone.  <a href="#a33f19b24e53fb06f9ea0285f7ed495aa">More...</a><br/></td></tr>
 <tr class="separator:a33f19b24e53fb06f9ea0285f7ed495aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -249,7 +249,7 @@ Friends</h2></td></tr>
 <div class="textblock"><p>Class or struct representing an exact point in time. </p>
 <p>This includes a full date and time, and is sensitive to time zones. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a050609c408bf55dafa24a080757a471b"></a>
+<a class="anchor" id="af811b2a56455db514336c0eeeb061ae0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -260,7 +260,7 @@ Friends</h2></td></tr>
           <td class="memname">static <a class="el" href="structTimestamp.html">Timestamp</a> Timestamp::create </td>
           <td>(</td>
           <td class="paramtype">const time_t&#160;</td>
-          <td class="paramname"><em>timestamp</em></td><td>)</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -274,7 +274,7 @@ Friends</h2></td></tr>
 <p>Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timestamp</td><td>The "time_t" value representing the timestamp. </td></tr>
+    <tr><td class="paramname">time</td><td>The "time_t" value representing the timestamp. </td></tr>
   </table>
   </dd>
 </dl>

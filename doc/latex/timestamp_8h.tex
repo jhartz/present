@@ -9,9 +9,9 @@ struct \hyperlink{structTimestamp}{Timestamp}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_aaf014bbf9f8e2e877aa862226616de28}{Timestamp\-\_\-from\-\_\-time\-\_\-t} (const time\-\_\-t timestamp)
+struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_aa9bf9b09bfcc22fdad8934ba186b7576}{Timestamp\-\_\-from\-\_\-time\-\_\-t} (const time\-\_\-t time)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from C's time library). \end{DoxyCompactList}\item 
-void \hyperlink{timestamp_8h_a79dd80d73671fb1312fc85ef8c459b03}{Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t} (struct \hyperlink{structTimestamp}{Timestamp} $\ast$const result, const time\-\_\-t timestamp)
+void \hyperlink{timestamp_8h_ad38e4c7702c28f3219428ba59acffa6c}{Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t} (struct \hyperlink{structTimestamp}{Timestamp} $\ast$const result, const time\-\_\-t time)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from C's time library). \end{DoxyCompactList}\item 
 struct \hyperlink{structTimestamp}{Timestamp} \hyperlink{timestamp_8h_a448c40f429c87fc758e9f05145092a13}{Timestamp\-\_\-from\-\_\-struct\-\_\-tm} (const struct tm tm, const struct \hyperlink{structTimeDelta}{Time\-Delta} $\ast$const time\-\_\-zone\-\_\-offset)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from C's time library) in a certain time zone. \end{DoxyCompactList}\item 
@@ -96,37 +96,37 @@ int \hyperlink{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}{Timestamp\-\_\-co
 
 
 \subsection{Function Documentation}
-\hypertarget{timestamp_8h_aaf014bbf9f8e2e877aa862226616de28}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-from\-\_\-time\-\_\-t@{Timestamp\-\_\-from\-\_\-time\-\_\-t}}
+\hypertarget{timestamp_8h_aa9bf9b09bfcc22fdad8934ba186b7576}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-from\-\_\-time\-\_\-t@{Timestamp\-\_\-from\-\_\-time\-\_\-t}}
 \index{Timestamp\-\_\-from\-\_\-time\-\_\-t@{Timestamp\-\_\-from\-\_\-time\-\_\-t}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{Timestamp\-\_\-from\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Timestamp} Timestamp\-\_\-from\-\_\-time\-\_\-t (
 \begin{DoxyParamCaption}
-\item[{const time\-\_\-t}]{timestamp}
+\item[{const time\-\_\-t}]{time}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_aaf014bbf9f8e2e877aa862226616de28}
+)}}\label{timestamp_8h_aa9bf9b09bfcc22fdad8934ba186b7576}
 
 
 Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from C's time library). 
 
 
 \begin{DoxyParams}{Parameters}
-{\em timestamp} & The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
+{\em time} & The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
 \hline
 \end{DoxyParams}
-\hypertarget{timestamp_8h_a79dd80d73671fb1312fc85ef8c459b03}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t@{Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t}}
+\hypertarget{timestamp_8h_ad38e4c7702c28f3219428ba59acffa6c}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t@{Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t}}
 \index{Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t@{Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}void Timestamp\-\_\-ptr\-\_\-from\-\_\-time\-\_\-t (
 \begin{DoxyParamCaption}
 \item[{struct {\bf Timestamp} $\ast$const}]{result, }
-\item[{const time\-\_\-t}]{timestamp}
+\item[{const time\-\_\-t}]{time}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_a79dd80d73671fb1312fc85ef8c459b03}
+)}}\label{timestamp_8h_ad38e4c7702c28f3219428ba59acffa6c}
 
 
 Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from C's time library). 
 
 
 \begin{DoxyParams}[1]{Parameters}
- & {\em timestamp} & The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
+ & {\em time} & The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
 \hline
 \mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structTimestamp}{Timestamp} for the result. \\
 \hline

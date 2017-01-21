@@ -1,8 +1,8 @@
 var timestamp_8h =
 [
     [ "Timestamp", "structTimestamp.html", "structTimestamp" ],
-    [ "Timestamp_from_time_t", "timestamp_8h.html#aaf014bbf9f8e2e877aa862226616de28", null ],
-    [ "Timestamp_ptr_from_time_t", "timestamp_8h.html#a79dd80d73671fb1312fc85ef8c459b03", null ],
+    [ "Timestamp_from_time_t", "timestamp_8h.html#aa9bf9b09bfcc22fdad8934ba186b7576", null ],
+    [ "Timestamp_ptr_from_time_t", "timestamp_8h.html#ad38e4c7702c28f3219428ba59acffa6c", null ],
     [ "Timestamp_from_struct_tm", "timestamp_8h.html#a448c40f429c87fc758e9f05145092a13", null ],
     [ "Timestamp_ptr_from_struct_tm", "timestamp_8h.html#a5a3443280816758aebc38a05a6d8204f", null ],
     [ "Timestamp_from_struct_tm_utc", "timestamp_8h.html#ae745fc746ff12f533b5277d38e94939f", null ],

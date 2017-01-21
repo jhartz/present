@@ -48,7 +48,7 @@ struct tm \hyperlink{structTimestamp_abc2107430b61e373e5ff84d16c1a097a}{get\-\_\
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{structTimestamp}{Timestamp} \hyperlink{structTimestamp_a050609c408bf55dafa24a080757a471b}{create} (const time\-\_\-t timestamp)
+static \hyperlink{structTimestamp}{Timestamp} \hyperlink{structTimestamp_af811b2a56455db514336c0eeeb061ae0}{create} (const time\-\_\-t time)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from C's time library). \end{DoxyCompactList}\item 
 static \hyperlink{structTimestamp}{Timestamp} \hyperlink{structTimestamp_a33f19b24e53fb06f9ea0285f7ed495aa}{create} (const struct tm \&tm, const \hyperlink{structTimeDelta}{Time\-Delta} \&time\-\_\-zone\-\_\-offset)
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}struct tm\char`\"{} value (from C's time library) in a certain time zone. \end{DoxyCompactList}\item 
@@ -124,20 +124,20 @@ Class or struct representing an exact point in time.
 This includes a full date and time, and is sensitive to time zones. 
 
 \subsection{Member Function Documentation}
-\hypertarget{structTimestamp_a050609c408bf55dafa24a080757a471b}{\index{Timestamp@{Timestamp}!create@{create}}
+\hypertarget{structTimestamp_af811b2a56455db514336c0eeeb061ae0}{\index{Timestamp@{Timestamp}!create@{create}}
 \index{create@{create}!Timestamp@{Timestamp}}
 \subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Timestamp} Timestamp\-::create (
 \begin{DoxyParamCaption}
-\item[{const time\-\_\-t}]{timestamp}
+\item[{const time\-\_\-t}]{time}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimestamp_a050609c408bf55dafa24a080757a471b}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimestamp_af811b2a56455db514336c0eeeb061ae0}
 
 
 Create a new \hyperlink{structTimestamp}{Timestamp} based on a \char`\"{}time\-\_\-t\char`\"{} value (from C's time library). 
 
 
 \begin{DoxyParams}{Parameters}
-{\em timestamp} & The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
+{\em time} & The \char`\"{}time\-\_\-t\char`\"{} value representing the timestamp. \\
 \hline
 \end{DoxyParams}
 \hypertarget{structTimestamp_a33f19b24e53fb06f9ea0285f7ed495aa}{\index{Timestamp@{Timestamp}!create@{create}}

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-01-20</td>
+            <td class="headerValue">2017-01-21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">25</td>
@@ -89,11 +89,11 @@
 <span class="lineNum">      27 </span>            : }
 <a name="28"><span class="lineNum">      28 </span>            : </a>
 <span class="lineNum">      29 </span>            : inline ClockTime
-<span class="lineNum">      30 </span><span class="lineCov">         22 : ClockTime::create(int_hour hour, int_minute minute, int_second second)</span>
+<span class="lineNum">      30 </span><span class="lineCov">         23 : ClockTime::create(int_hour hour, int_minute minute, int_second second)</span>
 <span class="lineNum">      31 </span>            : {
 <span class="lineNum">      32 </span>            :     ClockTime result;
-<span class="lineNum">      33 </span><span class="lineCov">         22 :     ClockTime_ptr_from_hour_minute_second(&amp;result, hour, minute, second);</span>
-<span class="lineNum">      34 </span><span class="lineCov">         22 :     return result;</span>
+<span class="lineNum">      33 </span><span class="lineCov">         23 :     ClockTime_ptr_from_hour_minute_second(&amp;result, hour, minute, second);</span>
+<span class="lineNum">      34 </span><span class="lineCov">         23 :     return result;</span>
 <span class="lineNum">      35 </span>            : }
 <a name="36"><span class="lineNum">      36 </span>            : </a>
 <span class="lineNum">      37 </span>            : inline ClockTime
@@ -125,11 +125,11 @@
 <span class="lineNum">      63 </span>            : }
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <span class="lineNum">      65 </span>            : inline ClockTime
-<span class="lineNum">      66 </span><span class="lineCov">          6 : ClockTime::midnight()</span>
+<span class="lineNum">      66 </span><span class="lineCov">       1206 : ClockTime::midnight()</span>
 <span class="lineNum">      67 </span>            : {
 <span class="lineNum">      68 </span>            :     ClockTime result;
-<span class="lineNum">      69 </span><span class="lineCov">          6 :     ClockTime_ptr_midnight(&amp;result);</span>
-<span class="lineNum">      70 </span><span class="lineCov">          6 :     return result;</span>
+<span class="lineNum">      69 </span><span class="lineCov">       1206 :     ClockTime_ptr_midnight(&amp;result);</span>
+<span class="lineNum">      70 </span><span class="lineCov">       1206 :     return result;</span>
 <span class="lineNum">      71 </span>            : }
 <a name="72"><span class="lineNum">      72 </span>            : </a>
 <span class="lineNum">      73 </span>            : inline ClockTime

@@ -105,12 +105,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aaf014bbf9f8e2e877aa862226616de28"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimestamp.html">Timestamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#aaf014bbf9f8e2e877aa862226616de28">Timestamp_from_time_t</a> (const time_t timestamp)</td></tr>
-<tr class="memdesc:aaf014bbf9f8e2e877aa862226616de28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library).  <a href="#aaf014bbf9f8e2e877aa862226616de28">More...</a><br/></td></tr>
-<tr class="separator:aaf014bbf9f8e2e877aa862226616de28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79dd80d73671fb1312fc85ef8c459b03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#a79dd80d73671fb1312fc85ef8c459b03">Timestamp_ptr_from_time_t</a> (struct <a class="el" href="structTimestamp.html">Timestamp</a> *const result, const time_t timestamp)</td></tr>
-<tr class="memdesc:a79dd80d73671fb1312fc85ef8c459b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library).  <a href="#a79dd80d73671fb1312fc85ef8c459b03">More...</a><br/></td></tr>
-<tr class="separator:a79dd80d73671fb1312fc85ef8c459b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bf9b09bfcc22fdad8934ba186b7576"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimestamp.html">Timestamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#aa9bf9b09bfcc22fdad8934ba186b7576">Timestamp_from_time_t</a> (const time_t time)</td></tr>
+<tr class="memdesc:aa9bf9b09bfcc22fdad8934ba186b7576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library).  <a href="#aa9bf9b09bfcc22fdad8934ba186b7576">More...</a><br/></td></tr>
+<tr class="separator:aa9bf9b09bfcc22fdad8934ba186b7576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad38e4c7702c28f3219428ba59acffa6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#ad38e4c7702c28f3219428ba59acffa6c">Timestamp_ptr_from_time_t</a> (struct <a class="el" href="structTimestamp.html">Timestamp</a> *const result, const time_t time)</td></tr>
+<tr class="memdesc:ad38e4c7702c28f3219428ba59acffa6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library).  <a href="#ad38e4c7702c28f3219428ba59acffa6c">More...</a><br/></td></tr>
+<tr class="separator:ad38e4c7702c28f3219428ba59acffa6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a448c40f429c87fc758e9f05145092a13"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structTimestamp.html">Timestamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timestamp_8h.html#a448c40f429c87fc758e9f05145092a13">Timestamp_from_struct_tm</a> (const struct tm tm, const struct <a class="el" href="structTimeDelta.html">TimeDelta</a> *const time_zone_offset)</td></tr>
 <tr class="memdesc:a448c40f429c87fc758e9f05145092a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "struct tm" value (from C's time library) in a certain time zone.  <a href="#a448c40f429c87fc758e9f05145092a13">More...</a><br/></td></tr>
 <tr class="separator:a448c40f429c87fc758e9f05145092a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,7 +233,7 @@ Functions</h2></td></tr>
 <tr class="separator:ac63553d8670ddbfa7a531581e4b51047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="aaf014bbf9f8e2e877aa862226616de28"></a>
+<a class="anchor" id="aa9bf9b09bfcc22fdad8934ba186b7576"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -241,7 +241,7 @@ Functions</h2></td></tr>
           <td class="memname">struct <a class="el" href="structTimestamp.html">Timestamp</a> Timestamp_from_time_t </td>
           <td>(</td>
           <td class="paramtype">const time_t&#160;</td>
-          <td class="paramname"><em>timestamp</em></td><td>)</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -250,14 +250,14 @@ Functions</h2></td></tr>
 <p>Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timestamp</td><td>The "time_t" value representing the timestamp. </td></tr>
+    <tr><td class="paramname">time</td><td>The "time_t" value representing the timestamp. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a79dd80d73671fb1312fc85ef8c459b03"></a>
+<a class="anchor" id="ad38e4c7702c28f3219428ba59acffa6c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -271,7 +271,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const time_t&#160;</td>
-          <td class="paramname"><em>timestamp</em>&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -284,7 +284,7 @@ Functions</h2></td></tr>
 <p>Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> based on a "time_t" value (from C's time library). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">timestamp</td><td>The "time_t" value representing the timestamp. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">time</td><td>The "time_t" value representing the timestamp. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> for the result. </td></tr>
   </table>
   </dd>

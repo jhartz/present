@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-01-20</td>
+            <td class="headerValue">2017-01-21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">31</td>
@@ -73,10 +73,10 @@
 <span class="lineNum">      11 </span>            :  */
 <a name="12"><span class="lineNum">      12 </span>            : </a>
 <span class="lineNum">      13 </span>            : inline Timestamp
-<span class="lineNum">      14 </span><span class="lineCov">          9 : Timestamp::create(const time_t timestamp)</span>
+<span class="lineNum">      14 </span><span class="lineCov">          9 : Timestamp::create(const time_t time)</span>
 <span class="lineNum">      15 </span>            : {
 <span class="lineNum">      16 </span>            :     Timestamp result;
-<span class="lineNum">      17 </span><span class="lineCov">          9 :     Timestamp_ptr_from_time_t(&amp;result, timestamp);</span>
+<span class="lineNum">      17 </span><span class="lineCov">          9 :     Timestamp_ptr_from_time_t(&amp;result, time);</span>
 <span class="lineNum">      18 </span><span class="lineCov">          9 :     return result;</span>
 <span class="lineNum">      19 </span>            : }
 <a name="20"><span class="lineNum">      20 </span>            : </a>
@@ -116,11 +116,11 @@
 <span class="lineNum">      54 </span>            : }
 <a name="55"><span class="lineNum">      55 </span>            : </a>
 <span class="lineNum">      56 </span>            : inline Timestamp
-<span class="lineNum">      57 </span><span class="lineCov">          7 : Timestamp::create_utc(const Date &amp; date, const ClockTime &amp; clock_time)</span>
+<span class="lineNum">      57 </span><span class="lineCov">       1208 : Timestamp::create_utc(const Date &amp; date, const ClockTime &amp; clock_time)</span>
 <span class="lineNum">      58 </span>            : {
 <span class="lineNum">      59 </span>            :     Timestamp result;
-<span class="lineNum">      60 </span><span class="lineCov">          7 :     Timestamp_ptr_create_utc(&amp;result, &amp;date, &amp;clock_time);</span>
-<span class="lineNum">      61 </span><span class="lineCov">          7 :     return result;</span>
+<span class="lineNum">      60 </span><span class="lineCov">       1208 :     Timestamp_ptr_create_utc(&amp;result, &amp;date, &amp;clock_time);</span>
+<span class="lineNum">      61 </span><span class="lineCov">       1208 :     return result;</span>
 <span class="lineNum">      62 </span>            : }
 <a name="63"><span class="lineNum">      63 </span>            : </a>
 <span class="lineNum">      64 </span>            : inline Timestamp
@@ -178,9 +178,9 @@
 <span class="lineNum">     116 </span>            : }
 <a name="117"><span class="lineNum">     117 </span>            : </a>
 <span class="lineNum">     118 </span>            : inline Date
-<span class="lineNum">     119 </span><span class="lineCov">         23 : Timestamp::get_date_utc() const</span>
+<span class="lineNum">     119 </span><span class="lineCov">       1229 : Timestamp::get_date_utc() const</span>
 <span class="lineNum">     120 </span>            : {
-<span class="lineNum">     121 </span><span class="lineCov">         23 :     return Timestamp_get_date_utc(this);</span>
+<span class="lineNum">     121 </span><span class="lineCov">       1229 :     return Timestamp_get_date_utc(this);</span>
 <span class="lineNum">     122 </span>            : }
 <a name="123"><span class="lineNum">     123 </span>            : </a>
 <span class="lineNum">     124 </span>            : inline Date
@@ -227,17 +227,17 @@
 <span class="lineNum">     165 </span>            : }
 <a name="166"><span class="lineNum">     166 </span>            : </a>
 <span class="lineNum">     167 </span>            : inline Timestamp &amp;
-<span class="lineNum">     168 </span><span class="lineCov">          7 : Timestamp::operator+=(const DayDelta &amp; delta)</span>
+<span class="lineNum">     168 </span><span class="lineCov">          8 : Timestamp::operator+=(const DayDelta &amp; delta)</span>
 <span class="lineNum">     169 </span>            : {
-<span class="lineNum">     170 </span><span class="lineCov">          7 :     Timestamp_add_DayDelta(this, &amp;delta);</span>
-<span class="lineNum">     171 </span><span class="lineCov">          7 :     return *this;</span>
+<span class="lineNum">     170 </span><span class="lineCov">          8 :     Timestamp_add_DayDelta(this, &amp;delta);</span>
+<span class="lineNum">     171 </span><span class="lineCov">          8 :     return *this;</span>
 <span class="lineNum">     172 </span>            : }
 <a name="173"><span class="lineNum">     173 </span>            : </a>
 <span class="lineNum">     174 </span>            : inline Timestamp &amp;
-<span class="lineNum">     175 </span><span class="lineCov">          6 : Timestamp::operator+=(const MonthDelta &amp; delta)</span>
+<span class="lineNum">     175 </span><span class="lineCov">          8 : Timestamp::operator+=(const MonthDelta &amp; delta)</span>
 <span class="lineNum">     176 </span>            : {
-<span class="lineNum">     177 </span><span class="lineCov">          6 :     Timestamp_add_MonthDelta(this, &amp;delta);</span>
-<span class="lineNum">     178 </span><span class="lineCov">          6 :     return *this;</span>
+<span class="lineNum">     177 </span><span class="lineCov">          8 :     Timestamp_add_MonthDelta(this, &amp;delta);</span>
+<span class="lineNum">     178 </span><span class="lineCov">          8 :     return *this;</span>
 <span class="lineNum">     179 </span>            : }
 <a name="180"><span class="lineNum">     180 </span>            : </a>
 <span class="lineNum">     181 </span>            : inline Timestamp &amp;
@@ -248,17 +248,17 @@
 <span class="lineNum">     186 </span>            : }
 <a name="187"><span class="lineNum">     187 </span>            : </a>
 <span class="lineNum">     188 </span>            : inline Timestamp &amp;
-<span class="lineNum">     189 </span><span class="lineCov">          5 : Timestamp::operator-=(const DayDelta &amp; delta)</span>
+<span class="lineNum">     189 </span><span class="lineCov">          6 : Timestamp::operator-=(const DayDelta &amp; delta)</span>
 <span class="lineNum">     190 </span>            : {
-<span class="lineNum">     191 </span><span class="lineCov">          5 :     Timestamp_subtract_DayDelta(this, &amp;delta);</span>
-<span class="lineNum">     192 </span><span class="lineCov">          5 :     return *this;</span>
+<span class="lineNum">     191 </span><span class="lineCov">          6 :     Timestamp_subtract_DayDelta(this, &amp;delta);</span>
+<span class="lineNum">     192 </span><span class="lineCov">          6 :     return *this;</span>
 <span class="lineNum">     193 </span>            : }
 <a name="194"><span class="lineNum">     194 </span>            : </a>
 <span class="lineNum">     195 </span>            : inline Timestamp &amp;
-<span class="lineNum">     196 </span><span class="lineCov">          5 : Timestamp::operator-=(const MonthDelta &amp; delta)</span>
+<span class="lineNum">     196 </span><span class="lineCov">          7 : Timestamp::operator-=(const MonthDelta &amp; delta)</span>
 <span class="lineNum">     197 </span>            : {
-<span class="lineNum">     198 </span><span class="lineCov">          5 :     Timestamp_subtract_MonthDelta(this, &amp;delta);</span>
-<span class="lineNum">     199 </span><span class="lineCov">          5 :     return *this;</span>
+<span class="lineNum">     198 </span><span class="lineCov">          7 :     Timestamp_subtract_MonthDelta(this, &amp;delta);</span>
+<span class="lineNum">     199 </span><span class="lineCov">          7 :     return *this;</span>
 <span class="lineNum">     200 </span>            : }
 <span class="lineNum">     201 </span>            : 
 <span class="lineNum">     202 </span>            : inline const Timestamp
