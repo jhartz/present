@@ -11,10 +11,10 @@
  */
 
 inline Timestamp
-Timestamp::create(const time_t timestamp)
+Timestamp::create(const time_t time)
 {
     Timestamp result;
-    Timestamp_ptr_from_time_t(&result, timestamp);
+    Timestamp_ptr_from_time_t(&result, time);
     return result;
 }
 

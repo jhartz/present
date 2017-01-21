@@ -13,7 +13,7 @@
 #include "present.h"
 
 #include "utils/constants.h"
-#include "utils/time-calls.h"
+#include "utils/time-utils.h"
 
 // If we're using GCC, disable the annoying warning about missing initializers
 #ifdef __GNUC__
@@ -254,6 +254,18 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
     }
 }
 
+TEST_CASE("Timestamp creators edge case finder", "[timestamp]") {
+    Timestamp t;
+
+    for (int_year year = 2099; year >= 1500; year--) {
+        t = Timestamp::create_utc(Date::create(year, 1, 1), ClockTime::midnight());
+        CHECK(t.get_date_utc() == Date::create(year, 1, 1));
+
+        t = Timestamp::create_utc(Date::create(year, 3, 1), ClockTime::midnight());
+        CHECK(t.get_date_utc() == Date::create(year, 3, 1));
+    }
+}
+
 TEST_CASE("Timestamp accessors", "[timestamp]") {
     // All the same timestamp (197589599):
     // Apr. 5, 1976 21:59:59 UTC
@@ -369,6 +381,8 @@ TEST_CASE("Timestamp arithmetic operators with TimeDelta", "[timestamp]") {
     t = orig_t;
     t -= hours_minus4;
     CHECK(t.get_time_t() == base_time - (3600 * -4));
+
+    // TODO: more...
 }
 
 TEST_CASE("Timestamp arithmetic operators with DayDelta", "[timestamp]") {
@@ -462,5 +476,39 @@ TEST_CASE("Timestamp arithmetic operators with MonthDelta", "[timestamp]") {
 
     t = MonthDelta::from_years(4) + orig_t;
     CHECK(t.get_date_utc() == Date::create(1986, 11, 13));
+}
+
+TEST_CASE("Timestamp arithmetic operators edge cases", "[timestamp]") {
+    DayDelta days_plus8 = DayDelta::from_days(8);
+    MonthDelta months_plus5 = MonthDelta::from_months(5),
+               months_minus11 = MonthDelta::from_months(-11);
+
+    Timestamp orig_t = Timestamp::create_utc(
+            Date::create(1934, 8, 16), ClockTime::create(23, 37, 48));
+    Timestamp t;
+
+    t = orig_t;
+    t += days_plus8;
+    CHECK(t.get_date_utc() == Date::create(1934, 8, 24));
+
+    t = orig_t;
+    t -= days_plus8;
+    CHECK(t.get_date_utc() == Date::create(1934, 8, 8));
+
+    t = orig_t;
+    t += months_plus5;
+    CHECK(t.get_date_utc() == Date::create(1935, 1, 16));
+
+    t = orig_t;
+    t -= months_plus5;
+    CHECK(t.get_date_utc() == Date::create(1934, 3, 16));
+
+    t = orig_t;
+    t += months_minus11;
+    CHECK(t.get_date_utc() == Date::create(1933, 9, 16));
+
+    t = orig_t;
+    t -= months_minus11;
+    CHECK(t.get_date_utc() == Date::create(1935, 7, 16));
 }
 

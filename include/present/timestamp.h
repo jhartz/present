@@ -65,7 +65,7 @@ struct PRESENT_API Timestamp {
 
 #ifdef __cplusplus
     /** @copydoc Timestamp_from_time_t */
-    static Timestamp create(const time_t timestamp);
+    static Timestamp create(const time_t time);
 
     /** @copydoc Timestamp_from_struct_tm */
     static Timestamp create(
@@ -209,10 +209,10 @@ extern "C" {
 /**
  * Create a new Timestamp based on a "time_t" value (from C's time library).
  *
- * @param timestamp The "time_t" value representing the timestamp.
+ * @param time The "time_t" value representing the timestamp.
  */
 PRESENT_API struct Timestamp
-Timestamp_from_time_t(const time_t timestamp);
+Timestamp_from_time_t(const time_t time);
 
 /**
  * @copydoc Timestamp_from_time_t
@@ -221,7 +221,7 @@ Timestamp_from_time_t(const time_t timestamp);
 PRESENT_API void
 Timestamp_ptr_from_time_t(
         struct Timestamp * const result,
-        const time_t timestamp);
+        const time_t time);
 
 
 /**

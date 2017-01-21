@@ -15,7 +15,7 @@
 
 #include "utils/constants.h"
 #include "utils/impl-utils.h"
-#include "utils/time-calls.h"
+#include "utils/time-utils.h"
 
 /**
  * Get the week number of the last week of a given year (either 52 or 53).
@@ -24,22 +24,16 @@ static int_week_of_year
 last_week_of_year(int_year year)
 {
     int_week_of_year week;
+    time_t time;
     struct tm tm;
-    time_t mktime_returned;
     int_day_of_week day_of_week;
 
     /* https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year */
     week = 52;
 
     /* Get some information on Jan. 1 of this year */
-    CLEAR(&tm);
-    tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
-    tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET;
-    tm.tm_mday = 1;
-    tm.tm_isdst = -1;
-
-    mktime_returned = present_mktime(&tm);
-    assert(mktime_returned != -1);
+    time = unix_timestamp_to_time_t(to_unix_timestamp(year, 1, 1, 0, 0, 0));
+    time_t_to_struct_tm(&time, &tm);
 
     day_of_week = tm.tm_wday;
     if (day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
@@ -67,19 +61,12 @@ last_week_of_year(int_year year)
 static void
 check_date_data(struct PresentDateData * const data)
 {
+    time_t time;
     struct tm tm;
-    time_t mktime_returned;
 
-    CLEAR(&tm);
-
-    tm.tm_year = (int)data->year - STRUCT_TM_YEAR_OFFSET;
-    tm.tm_mon = (int)data->month - STRUCT_TM_MONTH_OFFSET;
-    tm.tm_mday = (int)data->day;
-    tm.tm_isdst = -1;
-    /* TODO: On some platforms, mktime doesn't work for older dates
-       (usually dates before 1901, but sometimes dates before 1970) */
-    mktime_returned = present_mktime(&tm);
-    assert(mktime_returned != -1);
+    time = unix_timestamp_to_time_t(to_unix_timestamp(
+            data->year, data->month, data->day, 0, 0, 0));
+    time_t_to_struct_tm(&time, &tm);
 
     data->year = (int_year)tm.tm_year + STRUCT_TM_YEAR_OFFSET;
     data->month = (int_month)tm.tm_mon + STRUCT_TM_MONTH_OFFSET;
@@ -236,8 +223,8 @@ Date_ptr_from_year_week_day(
         int_week_of_year week_of_year,
         int_day_of_week day_of_week)
 {
+    time_t time;
     struct tm tm;
-    time_t mktime_returned;
     int_day_of_week jan_4_day_of_week;
     int_day_of_year ordinal_date;
 
@@ -259,17 +246,9 @@ Date_ptr_from_year_week_day(
 
     if (!result->has_error) {
         /* Get the weekday of Jan. 4 of this year */
-        CLEAR(&tm);
-        tm.tm_year = year - STRUCT_TM_YEAR_OFFSET;
-        tm.tm_mon = 1 - STRUCT_TM_MONTH_OFFSET; /* January */
-        tm.tm_mday = 4; /* 4th day of the month */
-        /* tm_wday will be filled in */
-        tm.tm_isdst = -1;
-
-        /* TODO: On some platforms, mktime doesn't work for older dates
-           (usually dates before 1901, but sometimes dates before 1970) */
-        mktime_returned = present_mktime(&tm);
-        assert(mktime_returned != -1);
+        time = unix_timestamp_to_time_t(to_unix_timestamp(
+                year, 1, 4, 0, 0, 0));
+        time_t_to_struct_tm(&time, &tm);
 
         jan_4_day_of_week = tm.tm_wday;
         if (jan_4_day_of_week == DAY_OF_WEEK_SUNDAY_COMPAT) {
