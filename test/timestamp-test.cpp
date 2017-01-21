@@ -258,10 +258,14 @@ TEST_CASE("Timestamp creators edge case finder", "[timestamp]") {
     Timestamp t;
 
     for (int_year year = 2099; year >= 1500; year--) {
-        t = Timestamp::create_utc(Date::create(year, 1, 1), ClockTime::midnight());
+        t = Timestamp::create_utc(
+                Date::create(year, 1, 1),
+                ClockTime::midnight());
         CHECK(t.get_date_utc() == Date::create(year, 1, 1));
 
-        t = Timestamp::create_utc(Date::create(year, 3, 1), ClockTime::midnight());
+        t = Timestamp::create_utc(
+                Date::create(year, 3, 1),
+                ClockTime::midnight());
         CHECK(t.get_date_utc() == Date::create(year, 3, 1));
     }
 }
@@ -322,25 +326,140 @@ TEST_CASE("Timestamp accessors", "[timestamp]") {
         CHECK(t.get_clock_time(TimeDelta::from_hours(3)) ==
                 ClockTime::create(0, 59, 59));
     }
+}
 
-    SECTION("\"local\" accessors") {
-        // The best we can do for the "local" methods is try throwing something
-        // at it and seeing that we get the same thing back
-        t = Timestamp::create_local(Date::create(1959, 5, 17),
+TEST_CASE("Timestamp creators and accessors in local time", "[timestamp]") {
+    SECTION("create in local time, access in local time (winter)") {
+        Timestamp t = Timestamp::create_local(
+                Date::create(1959, 1, 17),
                 ClockTime::create(14, 39, 45));
         REQUIRE_FALSE(t.has_error);
 
         struct tm tm_local = t.get_struct_tm_local();
         CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);
-        CHECK(tm_local.tm_mon == 5 - STRUCT_TM_MONTH_OFFSET);
+        CHECK(tm_local.tm_mon == 1 - STRUCT_TM_MONTH_OFFSET);
         CHECK(tm_local.tm_mday == 17);
         CHECK(tm_local.tm_hour == 14);
         CHECK(tm_local.tm_min == 39);
         CHECK(tm_local.tm_sec == 45);
 
-        CHECK(t.get_date_local() == Date::create(1959, 5, 17));
+        CHECK(t.get_date_local() == Date::create(1959, 1, 17));
         CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));
     }
+
+    SECTION("create in local time, access in local time (summer)") {
+        Timestamp t = Timestamp::create_local(
+                Date::create(1959, 7, 17),
+                ClockTime::create(14, 39, 45));
+        REQUIRE_FALSE(t.has_error);
+
+        struct tm tm_local = t.get_struct_tm_local();
+        CHECK(tm_local.tm_year == 1959 - STRUCT_TM_YEAR_OFFSET);
+        CHECK(tm_local.tm_mon == 7 - STRUCT_TM_MONTH_OFFSET);
+        CHECK(tm_local.tm_mday == 17);
+        CHECK(tm_local.tm_hour == 14);
+        CHECK(tm_local.tm_min == 39);
+        CHECK(tm_local.tm_sec == 45);
+
+        CHECK(t.get_date_local() == Date::create(1959, 7, 17));
+        CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));
+    }
+
+    // The rest of this test depends way too much on the system's platform...
+    // (we do it based on trying to calculate their time zone offset, which
+    // is very messy)
+
+    time_t time_zone_offset_winter = get_local_time_zone_offset_for_date(
+            1987, 1, 1);
+    // If it couldn't figure out a way to do that, it returns -1;
+    // in this case, just skip the rest of the test.
+    // This test also won't work if the absolute value of the time zone offset
+    // is greater than 12 hours.
+    if (time_zone_offset_winter != -1 &&
+            time_zone_offset_winter < 12 * SECONDS_IN_HOUR &&
+            time_zone_offset_winter > -12 * SECONDS_IN_HOUR) {
+        TimeDelta time_zone_offset(
+                TimeDelta::from_seconds(time_zone_offset_winter));
+
+        SECTION("create in UTC, access in local time (winter)") {
+            Timestamp t = Timestamp::create_utc(
+                    Date::create(1987, 1, 4),
+                    ClockTime::noon());
+            REQUIRE_FALSE(t.has_error);
+
+            CHECK(t.get_date_local() == Date::create(1987, 1, 4));
+            CHECK(t.get_clock_time_local() - time_zone_offset
+                    == ClockTime::noon());
+
+            // Sanity check
+            CHECK((t - time_zone_offset).get_date_local() ==
+                    Date::create(1987, 1, 4));
+            CHECK((t - time_zone_offset).get_clock_time_local() ==
+                    ClockTime::noon());
+        }
+
+        SECTION("create in local time, access in UTC (winter)") {
+            Timestamp t = Timestamp::create_local(
+                    Date::create(1987, 1, 4),
+                    ClockTime::noon());
+            REQUIRE_FALSE(t.has_error);
+
+            CHECK(t.get_date_utc() == Date::create(1987, 1, 4));
+            CHECK(t.get_clock_time_utc() + time_zone_offset
+                    == ClockTime::noon());
+
+            // Sanity check
+            CHECK((t + time_zone_offset).get_date_utc() ==
+                    Date::create(1987, 1, 4));
+            CHECK((t + time_zone_offset).get_clock_time_utc() ==
+                    ClockTime::noon());
+        }
+    }
+
+    // Now, do the same thing for summer
+    time_t time_zone_offset_summer = get_local_time_zone_offset_for_date(
+            1992, 7, 1);
+    if (time_zone_offset_summer != -1 &&
+            time_zone_offset_summer < 12 * SECONDS_IN_HOUR &&
+            time_zone_offset_summer > -12 * SECONDS_IN_HOUR) {
+        TimeDelta time_zone_offset(
+                TimeDelta::from_seconds(time_zone_offset_summer));
+
+        SECTION("create in UTC, access in local time (summer)") {
+            Timestamp t = Timestamp::create_utc(
+                    Date::create(1992, 7, 4),
+                    ClockTime::noon());
+            REQUIRE_FALSE(t.has_error);
+
+            CHECK(t.get_date_local() == Date::create(1992, 7, 4));
+            CHECK(t.get_clock_time_local() - time_zone_offset
+                    == ClockTime::noon());
+
+            // Sanity check
+            CHECK((t - time_zone_offset).get_date_local() ==
+                    Date::create(1992, 7, 4));
+            CHECK((t - time_zone_offset).get_clock_time_local() ==
+                    ClockTime::noon());
+        }
+
+        SECTION("create in local time, access in UTC (summer)") {
+            Timestamp t = Timestamp::create_local(
+                    Date::create(1992, 7, 4),
+                    ClockTime::noon());
+            REQUIRE_FALSE(t.has_error);
+
+            CHECK(t.get_date_utc() == Date::create(1992, 7, 4));
+            CHECK(t.get_clock_time_utc() + time_zone_offset
+                    == ClockTime::noon());
+
+            // Sanity check
+            CHECK((t + time_zone_offset).get_date_utc() ==
+                    Date::create(1992, 7, 4));
+            CHECK((t + time_zone_offset).get_clock_time_utc() ==
+                    ClockTime::noon());
+        }
+    }
+
 }
 
 TEST_CASE("Timestamp 'difference' functions", "[timestamp]") {

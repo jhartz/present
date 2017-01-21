@@ -7,7 +7,52 @@
  * For details, see LICENSE.
  */
 
+#include <stdlib.h>
+#include <time.h>
+
 #include "test-utils.hpp"
+
+time_t get_local_time_zone_offset_for_date(
+        int_year year, int_month month, int_day day) {
+    struct tm tm = {};
+    tm.tm_year = year;
+    tm.tm_mon = month;
+    tm.tm_mday = day;
+    tm.tm_hour = 12;
+    tm.tm_min = 0;
+    tm.tm_sec = 0;
+    tm.tm_isdst = -1;
+
+    time_t in_local_time = mktime(&tm);
+    if (in_local_time == -1) return -1;
+
+    time_t in_utc;
+
+#ifdef _WIN32
+    in_utc = _mkgmtime(&tm);
+#elif defined(__GNUC__)
+    in_utc = timegm(&tm);
+#elif defined(_POSIX_VERSION)
+    char *tz = getenv("TZ");
+    setenv("TZ", "", 1);
+    tzset();
+
+    in_utc = mktime(&tm);
+
+    if (tz) {
+        setenv("TZ", tz, 1);
+    } else {
+        unsetenv("TZ");
+    }
+    tzset();
+#else
+    return -1;
+#endif
+
+    if (in_utc == -1) return -1;
+
+    return in_utc - in_local_time;
+}
 
 std::ostream & operator<<(std::ostream & os, ClockTime const & v) {
     os  << "ClockTime{" << v.hour() << ":" << v.minute() << ":"

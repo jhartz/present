@@ -14,6 +14,8 @@
 #ifndef _PRESENT_TEST_UTILS_H_
 #define _PRESENT_TEST_UTILS_H_
 
+time_t get_local_time_zone_offset_for_date(int_year, int_month, int_day);
+
 std::ostream & operator<<(std::ostream &, ClockTime const &);
 
 std::ostream & operator<<(std::ostream &, Date const &);
