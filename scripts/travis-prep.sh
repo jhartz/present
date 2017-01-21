@@ -7,7 +7,7 @@ DIR="$(dirname "${BASH_SOURCE[0]}")"
 # Set up the proper cmake args
 CMAKE_ARGS=()
 for arg_name in "${CMAKE_ARG_NAMES[@]}"; do
-    CMAKE_ARGS=("${CMAKE_ARGS[@]}" "-D${!arg_name}")
+    CMAKE_ARGS=("${CMAKE_ARGS[@]}" "-D${arg_name}=${!arg_name}")
 done
 
 # Set up cmake to run tests with coverage, if necessary
