@@ -10,6 +10,14 @@
 #include <stdlib.h>
 #include <time.h>
 
+// We need this to be able to properly detect BSD (so we can determine if we
+// have timegm, for use in get_local_time_zone_offset_for_date)
+#ifndef __GNUC__
+# if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
+#  include <sys/param.h>
+# endif
+#endif
+
 #include "test-utils.hpp"
 
 time_t get_local_time_zone_offset_for_date(
@@ -23,28 +31,16 @@ time_t get_local_time_zone_offset_for_date(
     tm.tm_sec = 0;
     tm.tm_isdst = -1;
 
-    time_t in_local_time = mktime(&tm);
+    struct tm tm_copy = tm;
+    time_t in_local_time = mktime(&tm_copy);
     if (in_local_time == -1) return -1;
 
     time_t in_utc;
 
 #ifdef _WIN32
     in_utc = _mkgmtime(&tm);
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) || defined(BSD)
     in_utc = timegm(&tm);
-#elif defined(_POSIX_VERSION)
-    char *tz = getenv("TZ");
-    setenv("TZ", "", 1);
-    tzset();
-
-    in_utc = mktime(&tm);
-
-    if (tz) {
-        setenv("TZ", tz, 1);
-    } else {
-        unsetenv("TZ");
-    }
-    tzset();
 #else
     return -1;
 #endif
