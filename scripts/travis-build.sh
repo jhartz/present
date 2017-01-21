@@ -4,7 +4,13 @@ set -e
 DIR="$(dirname "${BASH_SOURCE[0]}")"
 . "$DIR/travis-util.sh"
 
-# Compile present and run tests
-status "Compiling and running tests..."
-"$DIR/mktest.sh"
+cd build
+
+status "Compiling Present..."
+make
+
+status "Running tests..."
+bin/present-test
+
+status "All good"
 

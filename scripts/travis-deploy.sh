@@ -4,7 +4,7 @@ set -e
 DIR="$(dirname "${BASH_SOURCE[0]}")"
 . "$DIR/travis-util.sh"
 
-cd "$DOC_BUILD_DIR"
+cd build
 
 # Update online API documentation and code coverage report, if necessary
 if [ "$PUBLISH_DOC" = "yup" ]; then
