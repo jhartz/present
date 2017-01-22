@@ -199,6 +199,10 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
         nicks_bday.tm_sec = 59;
         nicks_bday.tm_isdst = -1;
 
+        t = Timestamp_from_struct_tm_utc(nicks_bday);
+        CHECK(t.get_date_utc() == Date::create(2000, 8, 18));
+        CHECK(t.get_clock_time_utc() == ClockTime::create(17, 12, 59));
+
         t = Timestamp::create_utc(nicks_bday);
         CHECK(t.get_date_utc() == Date::create(2000, 8, 18));
         CHECK(t.get_clock_time_utc() == ClockTime::create(17, 12, 59));
