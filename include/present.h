@@ -68,34 +68,34 @@
  *
  * Possible units and their returned types:
  *
- * - *year*, *years*: @ref MonthDelta
- * - *month*, *months*: @ref MonthDelta
+ * - *year*, *years*: MonthDelta
+ * - *month*, *months*: MonthDelta
  *
- * - *week*, *weeks*: @ref DayDelta
- * - *day*, *days*: @ref DayDelta
+ * - *week*, *weeks*: DayDelta
+ * - *day*, *days*: DayDelta
  *
- * - *week_time*, *weeks_time*: @ref TimeDelta
- * - *day_time*, *days_time*: @ref TimeDelta
+ * - *week_time*, *weeks_time*: TimeDelta
+ * - *day_time*, *days_time*: TimeDelta
  *
- * - *hour*, *hours*, *hr*, *hrs*: @ref TimeDelta
- * - *minute*, *minutes*, *min*, *mins*: @ref TimeDelta
- * - *second*, *seconds*, *sec*, *secs*: @ref TimeDelta
- * - *millisecond*, *milliseconds*, *ms*: @ref TimeDelta
- * - *microsecond*, *microseconds*, *us*: @ref TimeDelta
- * - *nanosecond*, *nanoseconds*, *ns*: @ref TimeDelta
+ * - *hour*, *hours*, *hr*, *hrs*: TimeDelta
+ * - *minute*, *minutes*, *min*, *mins*: TimeDelta
+ * - *second*, *seconds*, *sec*, *secs*: TimeDelta
+ * - *millisecond*, *milliseconds*, *ms*: TimeDelta
+ * - *microsecond*, *microseconds*, *us*: TimeDelta
+ * - *nanosecond*, *nanoseconds*, *ns*: TimeDelta
  *
- * Note that *day* and *week* return a @p DayDelta, not a @p TimeDelta. If you
- * need a @p TimeDelta instead in one of these situations, you need to use
- * *day_time* and *week_time*.
+ * Note that *day* and *week* return a DayDelta, not a TimeDelta. If you need
+ * a TimeDelta instead in one of these situations, you need to use *day_time*
+ * and *week_time*.
  *
  * Examples:
  *
- * ```
+ * ~~~{.c}
  * MonthDelta d = present_delta(6, months);
  * DayDelta   d = present_delta(-10, days);
  * TimeDelta  d = present_delta(4, weeks_time);
  * TimeDelta  d = present_delta(1, second);
- * ```
+ * ~~~
  */
 #define present_delta(value, unit)  \
     present_delta_constructor_unit_ ## unit (value)
