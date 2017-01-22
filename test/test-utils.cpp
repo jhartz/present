@@ -7,47 +7,44 @@
  * For details, see LICENSE.
  */
 
-#include <stdlib.h>
+#include <assert.h>
 #include <time.h>
-
-// We need this to be able to properly detect BSD (so we can determine if we
-// have timegm, for use in get_local_time_zone_offset_for_date)
-#ifndef __GNUC__
-# if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
-#  include <sys/param.h>
-# endif
-#endif
 
 #include "test-utils.hpp"
 
-time_t get_local_time_zone_offset_for_date(
-        int_year year, int_month month, int_day day) {
+static const time_t JAN_1_1970_UNIX_TIMESTAMP = 0;
+static const time_t JUL_1_1970_UNIX_TIMESTAMP = 15638400;
+
+time_t get_local_time_zone_offset_for_january() {
     struct tm tm = {};
-    tm.tm_year = year;
-    tm.tm_mon = month;
-    tm.tm_mday = day;
-    tm.tm_hour = 12;
+    tm.tm_year = 1970;
+    tm.tm_mon = 1;
+    tm.tm_mday = 1;
+    tm.tm_hour = 0;
     tm.tm_min = 0;
     tm.tm_sec = 0;
     tm.tm_isdst = -1;
 
-    struct tm tm_copy = tm;
-    time_t in_local_time = mktime(&tm_copy);
-    if (in_local_time == -1) return -1;
+    time_t local_timestamp = mktime(&tm);
+    assert(local_timestamp != -1);
 
-    time_t in_utc;
+    return JAN_1_1970_UNIX_TIMESTAMP - local_timestamp;
+}
 
-#ifdef _WIN32
-    in_utc = _mkgmtime(&tm);
-#elif defined(__GNUC__) || defined(BSD)
-    in_utc = timegm(&tm);
-#else
-    return -1;
-#endif
+time_t get_local_time_zone_offset_for_july() {
+    struct tm tm = {};
+    tm.tm_year = 1970;
+    tm.tm_mon = 7;
+    tm.tm_mday = 1;
+    tm.tm_hour = 0;
+    tm.tm_min = 0;
+    tm.tm_sec = 0;
+    tm.tm_isdst = -1;
 
-    if (in_utc == -1) return -1;
+    time_t local_timestamp = mktime(&tm);
+    assert(local_timestamp != -1);
 
-    return in_utc - in_local_time;
+    return JUL_1_1970_UNIX_TIMESTAMP - local_timestamp;
 }
 
 std::ostream & operator<<(std::ostream & os, ClockTime const & v) {

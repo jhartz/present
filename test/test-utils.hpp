@@ -14,7 +14,21 @@
 #ifndef _PRESENT_TEST_UTILS_H_
 #define _PRESENT_TEST_UTILS_H_
 
-time_t get_local_time_zone_offset_for_date(int_year, int_month, int_day);
+/**
+ * Get the number of seconds difference between the local time zone and UTC,
+ * in January.
+ *
+ * This function is only intended for tests, not for actual use.
+ */
+time_t get_local_time_zone_offset_for_january();
+
+/**
+ * Get the number of seconds difference between the local time zone and UTC,
+ * in July.
+ *
+ * This function is only intended for tests, not for actual use.
+ */
+time_t get_local_time_zone_offset_for_july();
 
 std::ostream & operator<<(std::ostream &, ClockTime const &);
 

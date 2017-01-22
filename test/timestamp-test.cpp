@@ -7,6 +7,8 @@
  * For details, see LICENSE.
  */
 
+#include <stdlib.h>
+
 #include "catch.hpp"
 #include "test-utils.hpp"
 
@@ -365,19 +367,10 @@ TEST_CASE("Timestamp creators and accessors in local time", "[timestamp]") {
         CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));
     }
 
-    // The rest of this test depends way too much on the system's platform...
-    // (we do it based on trying to calculate their time zone offset, which
-    // is very messy)
-
-    time_t time_zone_offset_winter = get_local_time_zone_offset_for_date(
-            1987, 1, 1);
-    // If it couldn't figure out a way to do that, it returns -1;
-    // in this case, just skip the rest of the test.
-    // This test also won't work if the absolute value of the time zone offset
-    // is greater than 12 hours.
-    if (time_zone_offset_winter != -1 &&
-            time_zone_offset_winter < 12 * SECONDS_IN_HOUR &&
-            time_zone_offset_winter > -12 * SECONDS_IN_HOUR) {
+    // This test won't work if the absolute value of the time zone offset is
+    // greater than 12 hours :(
+    time_t time_zone_offset_winter = get_local_time_zone_offset_for_january();
+    if (abs(time_zone_offset_winter) < 12 * SECONDS_IN_HOUR) {
         TimeDelta time_zone_offset(
                 TimeDelta::from_seconds(time_zone_offset_winter));
 
@@ -417,11 +410,8 @@ TEST_CASE("Timestamp creators and accessors in local time", "[timestamp]") {
     }
 
     // Now, do the same thing for summer
-    time_t time_zone_offset_summer = get_local_time_zone_offset_for_date(
-            1992, 7, 1);
-    if (time_zone_offset_summer != -1 &&
-            time_zone_offset_summer < 12 * SECONDS_IN_HOUR &&
-            time_zone_offset_summer > -12 * SECONDS_IN_HOUR) {
+    time_t time_zone_offset_summer = get_local_time_zone_offset_for_july();
+    if (abs(time_zone_offset_summer) < 12 * SECONDS_IN_HOUR) {
         TimeDelta time_zone_offset(
                 TimeDelta::from_seconds(time_zone_offset_summer));
 
