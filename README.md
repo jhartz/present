@@ -96,7 +96,7 @@ because months cannot be converted to a smaller unit (such as days) accurately.
 
 One of Present's most powerful features is the simplicity of interactions
 between various types. For example, applying deltas to clock times, dates, and
-timestamps is quick and simple.
+timestamps is simple and intuitive.
 
 Examples of interactions:
 
@@ -106,8 +106,9 @@ Examples of interactions:
 - Using a `TimeDelta` as a time zone offset when creating a `Timestamp`
 
 Additionally, in C++, these types support operator overloading, so interacting
-with them looks and feels intuitive. For more, see the API documentation or the
-examples below.
+with them looks and feels intuitive. For more, see the
+[API documentation](https://github.com/jhartz/present/wiki/API-Documentation)
+or the examples below.
 
 No part of the Present implementation uses dynamic memory access, so it can be
 used on systems that don't support `malloc` and friends, and you don't have to
@@ -136,23 +137,32 @@ MonthDelta myYearDelta(MonthDelta::from_years(2));
 myMonthDelta < myYearDelta      // true
 myMonthDelta * 6 == myYearDelta // true
 myMonthDelta - myYearDelta == -MonthDelta::from_months(20)  // true
+
+// The `present_delta` macro can be used to make creating deltas easier
+myClockTime += present_delta(3, hours);
+myClockTime += present_delta(-180, mins);
 ```
 
 ```C++
 // Create some Dates
-Date myDate1(Date::create(1969, 4, 19));
-Date myDate2(myDate1 + myMonthDelta);
+Date myDate(Date::create(1969, 4, 19));
+Date myDate2(myDate + myMonthDelta);
 
 // Dates can be compared too
-myDate2 > myDate1       // true
+myDate2 > myDate  // true
 ```
 
 ```C++
 // Create a Timestamp based on the Date and ClockTime above, in UTC
 Timestamp myTimestamp(Timestamp::create_utc(myDate, myClockTime));
 
-// Now, get the ClockTime in Eastern Daylight Time (UTC-4:00)
-myTimestamp.get_clock_time(TimeDelta::from_hours(-4))   // 09:00:00
+// Add 4 years to the Timestamp
+myTimestamp += present_delta(4, years);
+
+// Now, get the Date and ClockTime in Eastern Daylight Time (UTC-4:00)
+// (using the normal TimeDelta constructor, then the present_delta macro)
+myTimestamp.get_date(TimeDelta::from_hours(-4))     // 1973-04-19
+myTimestamp.get_clock_time(present_delta(-4, hrs))  // 09:00:00
 ```
 
 ## C Examples
@@ -169,7 +179,7 @@ struct ClockTime myClockTime = ClockTime_create(12, 59, 59);
 
 // Add a TimeDelta of 1 second to make it 13:00:00
 const struct TimeDelta tempTimeDelta = TimeDelta_from_seconds(1);
-ClockTime_add_time_delta(&myClockTime, &myTimeDelta);
+ClockTime_add_time_delta(&myClockTime, &tempTimeDelta);
 ```
 
 ```C
@@ -178,28 +188,42 @@ struct MonthDelta myMonthDelta = MonthDelta_from_months(4);
 struct MonthDelta myYearDelta = MonthDelta_from_years(2);
 
 // Some arithmetic modifications and comparisons supported by deltas
-MonthDelta_less_than(&myMonthDelta, &myYearDelta)   // true
+MonthDelta_less_than(&myMonthDelta, &myYearDelta)  // true
 struct MonthDelta tempMonthDelta = myMonthDelta;
 MonthDelta_multiply_by(&tempMonthDelta, 6);
-MonthDelta_equal(&tempMonthDelta, &myYearDelta)     // true
+MonthDelta_equal(&tempMonthDelta, &myYearDelta)    // true
+
+// The `present_delta` macro can be used to make creating deltas easier
+struct TimeDelta tempTimeDelta1 = present_delta(3, hours),
+                 tempTimeDelta2 = present_delta(-180, mins);
+ClockTime_add_time_delta(&myClockTime, &tempTimeDelta1);
+ClockTime_add_time_delta(&myClockTime, &tempTimeDelta2);
 ```
 
 ```C
 // Create some Dates
-struct Date myDate1 = Date_create(1969, 4, 19);
-struct Date myDate2 = myDate1;
+struct Date myDate = Date_create(1969, 4, 19);
+struct Date myDate2 = myDate;
 Date_add_month_delta(&myDate2, &myMonthDelta);
 
 // Dates can be compared too
-Date_greater_than(&myDate2, &myDate1)       // true
+Date_greater_than(&myDate2, &myDate)  // true
 ```
 
 ```C
 // Create a Timestamp based on the Date and ClockTime above, in UTC
 struct Timestamp myTimestamp = Timestamp_create_utc(&myDate, &myClockTime);
 
-// Now, get the ClockTime in Eastern Daylight Time (UTC-4:00)
-const struct TimeDelta tempTimeDelta = TimeDelta_from_hours(-4);
-Timestamp_get_clock_time(&myTimestamp, &tempTimeDelta)  // 09:00:00
+// Add 4 years to the Timestamp
+struct MonthDelta tempMonthDeta = present_delta(4, years);
+Timestamp_add_month_delta(&myTimestamp, &tempMonthDelta);
+
+// Now, get the Date and ClockTime in Eastern Daylight Time (UTC-4:00)
+// (using the normal TimeDelta constructor, then the present_delta macro)
+const struct TimeDelta tempTimeDelta1 = TimeDelta_from_hours(-4),
+                       tempTimeDelta2 = present_delta(-4, hrs);
+tempTimeDelta1 == tempTimeDelta2  // true
+Timestamp_get_date(&myTimestamp, &tempTimeDelta1)        // 1973-04-19
+Timestamp_get_clock_time(&myTimestamp, &tempTimeDelta2)  // 09:00:00
 ```
 
