@@ -23,7 +23,7 @@
 static const struct Timestamp EMPTY_TIMESTAMP = {};
 
 /** Absolute value for time_t's */
-#define ABS(a, b) (((a) < (time_t) 0) ? -(a) : (a))
+#define ABS(a) (((a) < (time_t) 0) ? -(a) : (a))
 
 /**
  * Shortcut macro to compare timestamp_seconds and additional_nanoseconds all
