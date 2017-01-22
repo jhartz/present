@@ -7,8 +7,6 @@
  * For details, see LICENSE.
  */
 
-#include <stdlib.h>
-
 #include "catch.hpp"
 #include "test-utils.hpp"
 
@@ -23,6 +21,9 @@
 #endif
 
 static const struct Timestamp EMPTY_TIMESTAMP = {};
+
+/** Absolute value for time_t's */
+#define ABS(a, b) (((a) < (time_t) 0) ? -(a) : (a))
 
 /**
  * Shortcut macro to compare timestamp_seconds and additional_nanoseconds all
@@ -370,7 +371,7 @@ TEST_CASE("Timestamp creators and accessors in local time", "[timestamp]") {
     // This test won't work if the absolute value of the time zone offset is
     // greater than 12 hours :(
     time_t time_zone_offset_winter = get_local_time_zone_offset_for_january();
-    if (abs(time_zone_offset_winter) < 12 * SECONDS_IN_HOUR) {
+    if (ABS(time_zone_offset_winter) < 12 * SECONDS_IN_HOUR) {
         TimeDelta time_zone_offset(
                 TimeDelta::from_seconds(time_zone_offset_winter));
 
@@ -411,7 +412,7 @@ TEST_CASE("Timestamp creators and accessors in local time", "[timestamp]") {
 
     // Now, do the same thing for summer
     time_t time_zone_offset_summer = get_local_time_zone_offset_for_july();
-    if (abs(time_zone_offset_summer) < 12 * SECONDS_IN_HOUR) {
+    if (ABS(time_zone_offset_summer) < 12 * SECONDS_IN_HOUR) {
         TimeDelta time_zone_offset(
                 TimeDelta::from_seconds(time_zone_offset_summer));
 
