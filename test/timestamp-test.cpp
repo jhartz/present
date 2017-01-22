@@ -187,6 +187,23 @@ TEST_CASE("Timestamp creators", "[timestamp]") {
         TEST_CREATE_FROM_DATE_TIME(1976, 4, 6, 0, 59, 59,   +3, 197589599);
     }
 
+    // create_utc(struct tm)
+    // from_struct_tm_utc(struct tm)
+    SECTION("creating from a struct tm in UTC") {
+        struct tm nicks_bday = {};
+        nicks_bday.tm_year = 2000 - STRUCT_TM_YEAR_OFFSET;
+        nicks_bday.tm_mon = 8 - STRUCT_TM_MONTH_OFFSET;
+        nicks_bday.tm_mday = 18;
+        nicks_bday.tm_hour = 17;
+        nicks_bday.tm_min = 12;
+        nicks_bday.tm_sec = 59;
+        nicks_bday.tm_isdst = -1;
+
+        t = Timestamp::create_utc(nicks_bday);
+        CHECK(t.get_date_utc() == Date::create(2000, 8, 18));
+        CHECK(t.get_clock_time_utc() == ClockTime::create(17, 12, 59));
+    }
+
     SECTION("creating from a Date/ClockTime with a bad Date or ClockTime") {
         Date bad_d = Date::create(0, 0, 0);
         REQUIRE(bad_d.has_error);
@@ -333,9 +350,10 @@ TEST_CASE("Timestamp accessors", "[timestamp]") {
 
 TEST_CASE("Timestamp creators and accessors in local time", "[timestamp]") {
     SECTION("create in local time, access in local time (winter)") {
-        Timestamp t = Timestamp::create_local(
-                Date::create(1959, 1, 17),
-                ClockTime::create(14, 39, 45));
+        // create with the C function, from a Date and ClockTime
+        const Date date_input = Date::create(1959, 1, 17);
+        const ClockTime clock_time_input = ClockTime::create(14, 39, 45);
+        Timestamp t = Timestamp_create_local(&date_input, &clock_time_input);
         REQUIRE_FALSE(t.has_error);
 
         struct tm tm_local = t.get_struct_tm_local();
@@ -346,14 +364,22 @@ TEST_CASE("Timestamp creators and accessors in local time", "[timestamp]") {
         CHECK(tm_local.tm_min == 39);
         CHECK(tm_local.tm_sec == 45);
 
-        CHECK(t.get_date_local() == Date::create(1959, 1, 17));
-        CHECK(t.get_clock_time_local() == ClockTime::create(14, 39, 45));
+        CHECK(t.get_date_local() == date_input);
+        CHECK(t.get_clock_time_local() == clock_time_input);
     }
 
     SECTION("create in local time, access in local time (summer)") {
-        Timestamp t = Timestamp::create_local(
-                Date::create(1959, 7, 17),
-                ClockTime::create(14, 39, 45));
+        struct tm tm_input = {};
+        tm_input.tm_year = 1959 - STRUCT_TM_YEAR_OFFSET;
+        tm_input.tm_mon = 7 - STRUCT_TM_MONTH_OFFSET;
+        tm_input.tm_mday = 17;
+        tm_input.tm_hour = 14;
+        tm_input.tm_min = 39;
+        tm_input.tm_sec = 45;
+        tm_input.tm_isdst = -1;
+
+        // create with the C function, from a struct tm
+        Timestamp t = Timestamp_from_struct_tm_local(tm_input);
         REQUIRE_FALSE(t.has_error);
 
         struct tm tm_local = t.get_struct_tm_local();
