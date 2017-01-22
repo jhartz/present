@@ -181,6 +181,8 @@ if (COMPILE_TESTS)
         test/month-delta-test.cpp
         test/time-delta-test.cpp
         test/timestamp-test.cpp
+
+        test/delta-macros-test.cpp
     )
     target_link_libraries (present-test
         present

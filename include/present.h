@@ -56,11 +56,56 @@
 #endif
 
 
-#ifdef __cplusplus
+/*
+ * Shortcut macro for creating Present delta types
+ */
+
+#include "present/internal/delta-constructor-macros.h"
+
+/**
+ * Shortcut macro to create an instance of a Present delta type, based on a
+ * numeric value and a unit.
+ *
+ * Possible units and their returned types:
+ *
+ * - *year*, *years*: @ref MonthDelta
+ * - *month*, *months*: @ref MonthDelta
+ *
+ * - *week*, *weeks*: @ref DayDelta
+ * - *day*, *days*: @ref DayDelta
+ *
+ * - *week_time*, *weeks_time*: @ref TimeDelta
+ * - *day_time*, *days_time*: @ref TimeDelta
+ *
+ * - *hour*, *hours*, *hr*, *hrs*: @ref TimeDelta
+ * - *minute*, *minutes*, *min*, *mins*: @ref TimeDelta
+ * - *second*, *seconds*, *sec*, *secs*: @ref TimeDelta
+ * - *millisecond*, *milliseconds*, *ms*: @ref TimeDelta
+ * - *microsecond*, *microseconds*, *us*: @ref TimeDelta
+ * - *nanosecond*, *nanoseconds*, *ns*: @ref TimeDelta
+ *
+ * Note that *day* and *week* return a @p DayDelta, not a @p TimeDelta. If you
+ * need a @p TimeDelta instead in one of these situations, you need to use
+ * *day_time* and *week_time*.
+ *
+ * Examples:
+ *
+ * ```
+ * MonthDelta d = present_delta(6, months);
+ * DayDelta   d = present_delta(-10, days);
+ * TimeDelta  d = present_delta(4, weeks_time);
+ * TimeDelta  d = present_delta(1, second);
+ * ```
+ */
+#define present_delta(value, unit)  \
+    present_delta_constructor_unit_ ## unit (value)
+
 
 /*
  * Implementations of the C++ methods (defined "inline")
  */
+
+#ifdef __cplusplus
 
 #include "present/impl/clock-time.hpp"
 #include "present/impl/date.hpp"
