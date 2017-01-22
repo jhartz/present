@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"structMonthDelta.html#a5d754349cccfb68c729461b7a96d666f":[6,0,3,5],
+"structMonthDelta.html#a63ed19158fcd7fd743ecb4afb83ff874":[6,0,3,10],
+"structMonthDelta.html#a6cf5a665207c6f9817bf88d2f717971f":[6,0,3,22],
 "structMonthDelta.html#a6f3a37e7ae7d150527288eb9bca5ba32":[6,0,3,20],
 "structMonthDelta.html#a792c4dd313efad2aec9dc80b7d18dc4e":[6,0,3,8],
 "structMonthDelta.html#a88f17c6793e3e48ac00a70e12b9045d3":[6,0,3,4],

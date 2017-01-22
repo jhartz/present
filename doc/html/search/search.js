@@ -9,12 +9,12 @@ var indexSectionsWithContent =
 {
   0: "acdefghimnopstwyz",
   1: "cdmpt",
-  2: "cdmt",
+  2: "cdmpt",
   3: "acdefghimnostwyz",
   4: "dehimnswy",
   5: "ip",
   6: "o",
-  7: "cd",
+  7: "cdp",
   8: "cdet"
 };
 

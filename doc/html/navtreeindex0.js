@@ -153,6 +153,9 @@ var NAVTREEINDEX0 =
 "month-delta_8h.html#af10d7aa9aad3ecb5d10f2091fa4fb5c4":[7,0,0,4,18],
 "month-delta_8h_source.html":[7,0,0,4],
 "pages.html":[],
+"present_8h.html":[7,0,1],
+"present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c":[7,0,1,0],
+"present_8h_source.html":[7,0,1],
 "structClockTime.html":[6,0,0],
 "structClockTime.html#a1559fb2a3b03d37e75624999c9da2bc8":[6,0,0,13],
 "structClockTime.html#a21ba0831914be0b997460299bf287cf3":[6,0,0,10],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "structMonthDelta.html#a4b5b7c83455bf5d2ed3422d2a9960f59":[6,0,3,23],
 "structMonthDelta.html#a4e21f655714fb7458c802657db98a92e":[6,0,3,21],
 "structMonthDelta.html#a4f0b4051d92cd180ac5f9f7466a36f57":[6,0,3,3],
-"structMonthDelta.html#a57b2bfc986e466491dc6ae5546988de7":[6,0,3,9],
-"structMonthDelta.html#a5d754349cccfb68c729461b7a96d666f":[6,0,3,5],
-"structMonthDelta.html#a63ed19158fcd7fd743ecb4afb83ff874":[6,0,3,10],
-"structMonthDelta.html#a6cf5a665207c6f9817bf88d2f717971f":[6,0,3,22]
+"structMonthDelta.html#a57b2bfc986e466491dc6ae5546988de7":[6,0,3,9]
 };
