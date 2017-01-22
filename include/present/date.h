@@ -422,9 +422,9 @@ Date_subtract_MonthDelta(
 /**
  * Compare two Date instances.
  *
- * If lhs < rhs, then a negative integer will be returned.
- * If lhs == rhs, then 0 will be returned.
- * If lhs > rhs, then a positive integer will be returned.
+ * - If lhs < rhs, then a negative integer will be returned.
+ * - If lhs == rhs, then 0 will be returned.
+ * - If lhs > rhs, then a positive integer will be returned.
  */
 PRESENT_API short
 Date_compare(

@@ -513,5 +513,19 @@ TimeDelta_compare(
             STRUCT_COMPARE(delta_nanoseconds, 0));
 }
 
+short
+TimeDelta_compare_to_DayDelta(
+        const struct TimeDelta * const lhs,
+        const struct DayDelta * const rhs)
+{
+    assert(lhs != NULL);
+    assert(rhs != NULL);
+
+    struct TimeDelta rhs_as_time_delta = DayDelta_to_TimeDelta(rhs);
+    return TimeDelta_compare(lhs, &rhs_as_time_delta);
+}
+
 STRUCT_COMPARISON_OPERATORS(TimeDelta)
+
+STRUCT_COMPARISON_OPERATORS_WITH_OTHER_STRUCT(TimeDelta, DayDelta)
 

@@ -191,18 +191,38 @@ struct PRESENT_API TimeDelta {
     /** @copydoc TimeDelta_compare */
     static short compare(const TimeDelta & lhs, const TimeDelta & rhs);
 
+    /** @copydoc TimeDelta_compare_to_DayDelta */
+    static short compare(const TimeDelta & lhs, const DayDelta & rhs);
+    /** @see TimeDelta::compare(const TimeDelta & lhs, const DayDelta & rhs) */
+    static short compare(const DayDelta & lhs, const TimeDelta & rhs);
+
     /** @copydoc TimeDelta_equal */
     friend bool operator==(const TimeDelta & lhs, const TimeDelta & rhs);
+    /** @copydoc TimeDelta_equal_DayDelta */
+    friend bool operator==(const TimeDelta & lhs, const DayDelta & rhs);
+
     friend bool operator!=(const TimeDelta & lhs, const TimeDelta & rhs);
+    friend bool operator!=(const TimeDelta & lhs, const DayDelta & rhs);
 
     /** @copydoc TimeDelta_less_than */
     friend bool operator<(const TimeDelta & lhs, const TimeDelta & rhs);
+    /** @copydoc TimeDelta_less_than_DayDelta */
+    friend bool operator<(const TimeDelta & lhs, const DayDelta & rhs);
+
     /** @copydoc TimeDelta_less_than_or_equal */
     friend bool operator<=(const TimeDelta & lhs, const TimeDelta & rhs);
+    /** @copydoc TimeDelta_less_than_or_equal_DayDelta */
+    friend bool operator<=(const TimeDelta & lhs, const DayDelta & rhs);
+
     /** @copydoc TimeDelta_greater_than */
     friend bool operator>(const TimeDelta & lhs, const TimeDelta & rhs);
+    /** @copydoc TimeDelta_greater_than_DayDelta */
+    friend bool operator>(const TimeDelta & lhs, const DayDelta & rhs);
+
     /** @copydoc TimeDelta_greater_than_or_equal */
     friend bool operator>=(const TimeDelta & lhs, const TimeDelta & rhs);
+    /** @copydoc TimeDelta_greater_than_or_equal_DayDelta */
+    friend bool operator>=(const TimeDelta & lhs, const DayDelta & rhs);
 #endif
 };
 
@@ -552,14 +572,26 @@ TimeDelta_subtract_DayDelta(
 /**
  * Compare two TimeDelta instances.
  *
- * If lhs < rhs, then a negative integer will be returned.
- * If lhs == rhs, then 0 will be returned.
- * If lhs > rhs, then a positive integer will be returned.
+ * - If lhs < rhs, then a negative integer will be returned.
+ * - If lhs == rhs, then 0 will be returned.
+ * - If lhs > rhs, then a positive integer will be returned.
  */
 PRESENT_API short
 TimeDelta_compare(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
+
+/**
+ * Compare a TimeDelta to a DayDelta.
+ *
+ * - If lhs < rhs, then a negative integer will be returned.
+ * - If lhs == rhs, then 0 will be returned.
+ * - If lhs > rhs, then a positive integer will be returned.
+ */
+PRESENT_API short
+TimeDelta_compare_to_DayDelta(
+        const struct TimeDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 /**
  * Determine whether two TimeDelta instances are equal (lhs == rhs).
@@ -570,12 +602,28 @@ TimeDelta_equal(
         const struct TimeDelta * const rhs);
 
 /**
+ * Determine whether a TimeDelta is equal to a DayDelta (lhs == rhs).
+ */
+PRESENT_API present_bool
+TimeDelta_equal_DayDelta(
+        const struct TimeDelta * const lhs,
+        const struct DayDelta * const rhs);
+
+/**
  * Determine whether a TimeDelta is less than another TimeDelta (lhs < rhs).
  */
 PRESENT_API present_bool
 TimeDelta_less_than(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
+
+/**
+ * Determine whether a TimeDelta is less than a DayDelta (lhs < rhs).
+ */
+PRESENT_API present_bool
+TimeDelta_less_than_DayDelta(
+        const struct TimeDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 /**
  * Determine whether a TimeDelta is less than or equal to another TimeDelta
@@ -587,12 +635,29 @@ TimeDelta_less_than_or_equal(
         const struct TimeDelta * const rhs);
 
 /**
+ * Determine whether a TimeDelta is less than or equal to a DayDelta
+ * (lhs <= rhs).
+ */
+PRESENT_API present_bool
+TimeDelta_less_than_or_equal_DayDelta(
+        const struct TimeDelta * const lhs,
+        const struct DayDelta * const rhs);
+
+/**
  * Determine whether a TimeDelta is greater than another TimeDelta (lhs > rhs).
  */
 PRESENT_API present_bool
 TimeDelta_greater_than(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
+
+/**
+ * Determine whether a TimeDelta is greater than a DayDelta (lhs > rhs).
+ */
+PRESENT_API present_bool
+TimeDelta_greater_than_DayDelta(
+        const struct TimeDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 /**
  * Determine whether a TimeDelta is greater than or equal to another TimeDelta
@@ -602,6 +667,15 @@ PRESENT_API present_bool
 TimeDelta_greater_than_or_equal(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs);
+
+/**
+ * Determine whether a TimeDelta is greater than or equal to a DayDelta
+ * (lhs >= rhs).
+ */
+PRESENT_API present_bool
+TimeDelta_greater_than_or_equal_DayDelta(
+        const struct TimeDelta * const lhs,
+        const struct DayDelta * const rhs);
 
 #ifdef __cplusplus
 }

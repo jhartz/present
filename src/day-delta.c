@@ -165,5 +165,15 @@ DayDelta_compare(
     return STRUCT_COMPARE(delta_days, 0);
 }
 
+short
+DayDelta_compare_to_TimeDelta(
+        const struct DayDelta * const lhs,
+        const struct TimeDelta * const rhs)
+{
+    return -TimeDelta_compare_to_DayDelta(rhs, lhs);
+}
+
 STRUCT_COMPARISON_OPERATORS(DayDelta)
+
+STRUCT_COMPARISON_OPERATORS_WITH_OTHER_STRUCT(DayDelta, TimeDelta)
 

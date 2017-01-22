@@ -34,43 +34,79 @@
 
 /**
  * Compare 2 structs by the value of a data member.
- * _Else is returned if the 2 values are equal. If this is the last data
- * member being compared, _Else should be 0.
+ * __Else__ is returned if the 2 values are equal. If this is the last data
+ * member being compared, __Else__ should be 0.
  */
-#define STRUCT_COMPARE(_DataMember, _Else)                              \
-    ((lhs->data_._DataMember < rhs->data_._DataMember) ? -1 :           \
-        ((lhs->data_._DataMember > rhs->data_._DataMember) ? 1 :        \
-         (_Else)))
+#define STRUCT_COMPARE(__DataMember__, __Else__)                        \
+    ((lhs->data_.__DataMember__ < rhs->data_.__DataMember__) ? -1 :     \
+        ((lhs->data_.__DataMember__ > rhs->data_.__DataMember__) ? 1 :  \
+         (__Else__)))
 
 /**
- * Define a comparison operator for a struct that uses the struct's "compare"
- * function to determine the result.
- * @param _StructName The name of the struct being compared.
- * @param _Operator The name, in words, of the operator (used for the
- * method name).
- * @param _Condition The condition of the "compare" result for which this
- * function should be true.
+ * Define a comparison operator for a struct that uses a comparison function
+ * (returns <0, =0, or >0) to determine the result.
+ *
+ * @param __StructName__ The name of the struct being compared.
+ * @param __OtherStructName__ The name of the struct being compared to.
+ * @param __CompareFunc__ The name of the comparison function (not including
+ *        the "Type_" prefix).
+ * @param __Operator__ The name, in words, of the operator (used for the
+ *        method name).
+ * @param __Condition__ The condition of the "compare" result for which this
+ *        function should be true.
  */
-#define STRUCT_DEFINE_COMPARISON_OPERATOR(                              \
-        _StructName, _Operator, _Condition)                             \
-    present_bool _StructName ## _ ## _Operator(                         \
-            const struct _StructName * const lhs,                       \
-            const struct _StructName * const rhs) {                     \
-        return _StructName ## _compare(lhs, rhs) _Condition;            \
+#define STRUCT_DEFINE_COMPARISON_OPERATOR(                      \
+        __StructName__,__OtherStructName__, __CompareFunc__,    \
+        __Operator__, __Condition__)                            \
+    present_bool __StructName__ ## _ ## __Operator__(           \
+            const struct __StructName__ * const lhs,            \
+            const struct __OtherStructName__ * const rhs) {     \
+        return __StructName__ ## _ ## __CompareFunc__           \
+                (lhs, rhs) __Condition__;                       \
     }
 
 /**
  * Shortcut for implementations of an equality function and the 4 standard
  * inequality operators.
+ *
+ * The implementations are based on the StructName_compare(lhs, rhs) function.
  */
-#define STRUCT_COMPARISON_OPERATORS(_StructName)                        \
-    STRUCT_DEFINE_COMPARISON_OPERATOR(_StructName, equal, == 0)         \
-    STRUCT_DEFINE_COMPARISON_OPERATOR(_StructName, less_than, < 0)      \
-    STRUCT_DEFINE_COMPARISON_OPERATOR(_StructName,                      \
-            less_than_or_equal, <= 0)                                   \
-    STRUCT_DEFINE_COMPARISON_OPERATOR(_StructName, greater_than, > 0)   \
-    STRUCT_DEFINE_COMPARISON_OPERATOR(_StructName,                      \
-            greater_than_or_equal, >= 0)
+#define STRUCT_COMPARISON_OPERATORS(__StructName__)                     \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __StructName__,   \
+            compare, equal, == 0)                                       \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __StructName__,   \
+            compare, less_than, < 0)                                    \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __StructName__,   \
+            compare, less_than_or_equal, <= 0)                          \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __StructName__,   \
+            compare, greater_than, > 0)                                 \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __StructName__,   \
+            compare, greater_than_or_equal, >= 0)
+
+/**
+ * Shortcut for implementations of an equality function and the 4 standard
+ * inequality operators, with a struct of a different type.
+ *
+ * The implementations are based on the
+ * StructName_compare_to_OtherStructName(lhs, rhs) function.
+ */
+#define STRUCT_COMPARISON_OPERATORS_WITH_OTHER_STRUCT(                      \
+        __StructName__, __OtherStructName__)                                \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __OtherStructName__,  \
+            compare_to_ ## __OtherStructName__,                             \
+            equal_ ## __OtherStructName__, == 0)                            \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __OtherStructName__,  \
+            compare_to_ ## __OtherStructName__,                             \
+            less_than_ ## __OtherStructName__, < 0)                         \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __OtherStructName__,  \
+            compare_to_ ## __OtherStructName__,                             \
+            less_than_or_equal_ ## __OtherStructName__, <= 0)               \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __OtherStructName__,  \
+            compare_to_ ## __OtherStructName__,                             \
+            greater_than_ ## __OtherStructName__, > 0)                      \
+    STRUCT_DEFINE_COMPARISON_OPERATOR(__StructName__, __OtherStructName__,  \
+            compare_to_ ## __OtherStructName__,                             \
+            greater_than_or_equal_ ## __OtherStructName__, >= 0)
 
 
 #endif /* _PRESENT_IMPL_UTILS_H_ */

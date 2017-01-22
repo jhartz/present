@@ -168,6 +168,18 @@ DayDelta::compare(const DayDelta & lhs, const DayDelta & rhs)
     return DayDelta_compare(&lhs, &rhs);
 }
 
+inline short
+DayDelta::compare(const DayDelta & lhs, const TimeDelta & rhs)
+{
+    return DayDelta_compare_to_TimeDelta(&lhs, &rhs);
+}
+
+inline short
+DayDelta::compare(const TimeDelta & lhs, const DayDelta & rhs)
+{
+    return -DayDelta_compare_to_TimeDelta(&rhs, &lhs);
+}
+
 inline bool
 operator==(const DayDelta & lhs, const DayDelta & rhs)
 {
@@ -175,7 +187,19 @@ operator==(const DayDelta & lhs, const DayDelta & rhs)
 }
 
 inline bool
+operator==(const DayDelta & lhs, const TimeDelta & rhs)
+{
+    return DayDelta_equal_TimeDelta(&lhs, &rhs);
+}
+
+inline bool
 operator!=(const DayDelta & lhs, const DayDelta & rhs)
+{
+    return !(lhs == rhs);
+}
+
+inline bool
+operator!=(const DayDelta & lhs, const TimeDelta & rhs)
 {
     return !(lhs == rhs);
 }
@@ -187,9 +211,21 @@ operator<(const DayDelta & lhs, const DayDelta & rhs)
 }
 
 inline bool
+operator<(const DayDelta & lhs, const TimeDelta & rhs)
+{
+    return DayDelta_less_than_TimeDelta(&lhs, &rhs);
+}
+
+inline bool
 operator<=(const DayDelta & lhs, const DayDelta & rhs)
 {
     return DayDelta_less_than_or_equal(&lhs, &rhs);
+}
+
+inline bool
+operator<=(const DayDelta & lhs, const TimeDelta & rhs)
+{
+    return DayDelta_less_than_or_equal_TimeDelta(&lhs, &rhs);
 }
 
 inline bool
@@ -199,8 +235,20 @@ operator>(const DayDelta & lhs, const DayDelta & rhs)
 }
 
 inline bool
+operator>(const DayDelta & lhs, const TimeDelta & rhs)
+{
+    return DayDelta_greater_than_TimeDelta(&lhs, &rhs);
+}
+
+inline bool
 operator>=(const DayDelta & lhs, const DayDelta & rhs)
 {
     return DayDelta_greater_than_or_equal(&lhs, &rhs);
+}
+
+inline bool
+operator>=(const DayDelta & lhs, const TimeDelta & rhs)
+{
+    return DayDelta_greater_than_or_equal_TimeDelta(&lhs, &rhs);
 }
 
