@@ -89,11 +89,11 @@
 <span class="lineNum">      27 </span>            : }
 <a name="28"><span class="lineNum">      28 </span>            : </a>
 <span class="lineNum">      29 </span>            : inline Date
-<span class="lineNum">      30 </span><span class="lineCov">       2493 : Date::create(int_year year, int_month month, int_day day)</span>
+<span class="lineNum">      30 </span><span class="lineCov">       2492 : Date::create(int_year year, int_month month, int_day day)</span>
 <span class="lineNum">      31 </span>            : {
 <span class="lineNum">      32 </span>            :     Date result;
-<span class="lineNum">      33 </span><span class="lineCov">       2493 :     Date_ptr_from_year_month_day(&amp;result, year, month, day);</span>
-<span class="lineNum">      34 </span><span class="lineCov">       2493 :     return result;</span>
+<span class="lineNum">      33 </span><span class="lineCov">       2492 :     Date_ptr_from_year_month_day(&amp;result, year, month, day);</span>
+<span class="lineNum">      34 </span><span class="lineCov">       2492 :     return result;</span>
 <span class="lineNum">      35 </span>            : }
 <a name="36"><span class="lineNum">      36 </span>            : </a>
 <span class="lineNum">      37 </span>            : inline Date
@@ -116,21 +116,21 @@
 <span class="lineNum">      54 </span>            : }
 <a name="55"><span class="lineNum">      55 </span>            : </a>
 <span class="lineNum">      56 </span>            : inline int_year
-<span class="lineNum">      57 </span><span class="lineCov">       2531 : Date::year() const</span>
+<span class="lineNum">      57 </span><span class="lineCov">       2533 : Date::year() const</span>
 <span class="lineNum">      58 </span>            : {
-<span class="lineNum">      59 </span><span class="lineCov">       2531 :     return Date_year(this);</span>
+<span class="lineNum">      59 </span><span class="lineCov">       2533 :     return Date_year(this);</span>
 <span class="lineNum">      60 </span>            : }
 <a name="61"><span class="lineNum">      61 </span>            : </a>
 <span class="lineNum">      62 </span>            : inline int_month
-<span class="lineNum">      63 </span><span class="lineCov">       2531 : Date::month() const</span>
+<span class="lineNum">      63 </span><span class="lineCov">       2533 : Date::month() const</span>
 <span class="lineNum">      64 </span>            : {
-<span class="lineNum">      65 </span><span class="lineCov">       2531 :     return Date_month(this);</span>
+<span class="lineNum">      65 </span><span class="lineCov">       2533 :     return Date_month(this);</span>
 <span class="lineNum">      66 </span>            : }
 <a name="67"><span class="lineNum">      67 </span>            : </a>
 <span class="lineNum">      68 </span>            : inline int_day
-<span class="lineNum">      69 </span><span class="lineCov">       2531 : Date::day() const</span>
+<span class="lineNum">      69 </span><span class="lineCov">       2533 : Date::day() const</span>
 <span class="lineNum">      70 </span>            : {
-<span class="lineNum">      71 </span><span class="lineCov">       2531 :     return Date_day(this);</span>
+<span class="lineNum">      71 </span><span class="lineCov">       2533 :     return Date_day(this);</span>
 <span class="lineNum">      72 </span>            : }
 <a name="73"><span class="lineNum">      73 </span>            : </a>
 <span class="lineNum">      74 </span>            : inline int_day_of_year
@@ -232,9 +232,9 @@
 <span class="lineNum">     170 </span>            : }
 <a name="171"><span class="lineNum">     171 </span>            : </a>
 <span class="lineNum">     172 </span>            : inline bool
-<span class="lineNum">     173 </span><span class="lineCov">       1239 : operator==(const Date &amp; lhs, const Date &amp; rhs)</span>
+<span class="lineNum">     173 </span><span class="lineCov">       1240 : operator==(const Date &amp; lhs, const Date &amp; rhs)</span>
 <span class="lineNum">     174 </span>            : {
-<span class="lineNum">     175 </span><span class="lineCov">       1239 :     return Date_equal(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     175 </span><span class="lineCov">       1240 :     return Date_equal(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     176 </span>            : }
 <a name="177"><span class="lineNum">     177 </span>            : </a>
 <span class="lineNum">     178 </span>            : inline bool

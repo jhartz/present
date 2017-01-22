@@ -114,17 +114,17 @@
 <span class="lineNum">      52 </span><span class="lineCov">          2 :     return JUL_1_1970_UNIX_TIMESTAMP - local_timestamp;</span>
 <a name="53"><span class="lineNum">      53 </span>            : }</a>
 <span class="lineNum">      54 </span>            : 
-<span class="lineNum">      55 </span><span class="lineCov">         54 : std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, ClockTime const &amp; v) {</span>
-<span class="lineNum">      56 </span><span class="lineCov">         54 :     os  &lt;&lt; &quot;ClockTime{&quot; &lt;&lt; v.hour() &lt;&lt; &quot;:&quot; &lt;&lt; v.minute() &lt;&lt; &quot;:&quot;</span>
-<span class="lineNum">      57 </span><span class="lineCov">        108 :         &lt;&lt; v.second_decimal() &lt;&lt; &quot;}&quot;;</span>
+<span class="lineNum">      55 </span><span class="lineCov">         56 : std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, ClockTime const &amp; v) {</span>
+<span class="lineNum">      56 </span><span class="lineCov">         56 :     os  &lt;&lt; &quot;ClockTime{&quot; &lt;&lt; v.hour() &lt;&lt; &quot;:&quot; &lt;&lt; v.minute() &lt;&lt; &quot;:&quot;</span>
+<span class="lineNum">      57 </span><span class="lineCov">        112 :         &lt;&lt; v.second_decimal() &lt;&lt; &quot;}&quot;;</span>
 <span class="lineNum">      58 </span>            : 
-<span class="lineNum">      59 </span><span class="lineCov">         54 :     return os;</span>
+<span class="lineNum">      59 </span><span class="lineCov">         56 :     return os;</span>
 <a name="60"><span class="lineNum">      60 </span>            : }</a>
 <span class="lineNum">      61 </span>            : 
-<span class="lineNum">      62 </span><span class="lineCov">       2526 : std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, Date const &amp; v) {</span>
-<span class="lineNum">      63 </span><span class="lineCov">       2526 :     os  &lt;&lt; &quot;Date{&quot; &lt;&lt; v.year() &lt;&lt; &quot;-&quot; &lt;&lt; v.month() &lt;&lt; &quot;-&quot; &lt;&lt; v.day() &lt;&lt; &quot;}&quot;;</span>
+<span class="lineNum">      62 </span><span class="lineCov">       2528 : std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, Date const &amp; v) {</span>
+<span class="lineNum">      63 </span><span class="lineCov">       2528 :     os  &lt;&lt; &quot;Date{&quot; &lt;&lt; v.year() &lt;&lt; &quot;-&quot; &lt;&lt; v.month() &lt;&lt; &quot;-&quot; &lt;&lt; v.day() &lt;&lt; &quot;}&quot;;</span>
 <span class="lineNum">      64 </span>            : 
-<span class="lineNum">      65 </span><span class="lineCov">       2526 :     return os;</span>
+<span class="lineNum">      65 </span><span class="lineCov">       2528 :     return os;</span>
 <a name="66"><span class="lineNum">      66 </span>            : }</a>
 <span class="lineNum">      67 </span>            : 
 <span class="lineNum">      68 </span><span class="lineCov">         56 : std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, DayDelta const &amp; v) {</span>

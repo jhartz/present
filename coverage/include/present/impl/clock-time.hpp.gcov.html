@@ -89,11 +89,11 @@
 <span class="lineNum">      27 </span>            : }
 <a name="28"><span class="lineNum">      28 </span>            : </a>
 <span class="lineNum">      29 </span>            : inline ClockTime
-<span class="lineNum">      30 </span><span class="lineCov">         25 : ClockTime::create(int_hour hour, int_minute minute, int_second second)</span>
+<span class="lineNum">      30 </span><span class="lineCov">         24 : ClockTime::create(int_hour hour, int_minute minute, int_second second)</span>
 <span class="lineNum">      31 </span>            : {
 <span class="lineNum">      32 </span>            :     ClockTime result;
-<span class="lineNum">      33 </span><span class="lineCov">         25 :     ClockTime_ptr_from_hour_minute_second(&amp;result, hour, minute, second);</span>
-<span class="lineNum">      34 </span><span class="lineCov">         25 :     return result;</span>
+<span class="lineNum">      33 </span><span class="lineCov">         24 :     ClockTime_ptr_from_hour_minute_second(&amp;result, hour, minute, second);</span>
+<span class="lineNum">      34 </span><span class="lineCov">         24 :     return result;</span>
 <span class="lineNum">      35 </span>            : }
 <a name="36"><span class="lineNum">      36 </span>            : </a>
 <span class="lineNum">      37 </span>            : inline ClockTime
@@ -141,15 +141,15 @@
 <span class="lineNum">      79 </span>            : }
 <a name="80"><span class="lineNum">      80 </span>            : </a>
 <span class="lineNum">      81 </span>            : inline int_hour
-<span class="lineNum">      82 </span><span class="lineCov">         56 : ClockTime::hour() const</span>
+<span class="lineNum">      82 </span><span class="lineCov">         58 : ClockTime::hour() const</span>
 <span class="lineNum">      83 </span>            : {
-<span class="lineNum">      84 </span><span class="lineCov">         56 :     return ClockTime_hour(this);</span>
+<span class="lineNum">      84 </span><span class="lineCov">         58 :     return ClockTime_hour(this);</span>
 <span class="lineNum">      85 </span>            : }
 <a name="86"><span class="lineNum">      86 </span>            : </a>
 <span class="lineNum">      87 </span>            : inline int_minute
-<span class="lineNum">      88 </span><span class="lineCov">         92 : ClockTime::minute() const</span>
+<span class="lineNum">      88 </span><span class="lineCov">         94 : ClockTime::minute() const</span>
 <span class="lineNum">      89 </span>            : {
-<span class="lineNum">      90 </span><span class="lineCov">         92 :     return ClockTime_minute(this);</span>
+<span class="lineNum">      90 </span><span class="lineCov">         94 :     return ClockTime_minute(this);</span>
 <span class="lineNum">      91 </span>            : }
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <span class="lineNum">      93 </span>            : inline int_second
@@ -165,9 +165,9 @@
 <span class="lineNum">     103 </span>            : }
 <a name="104"><span class="lineNum">     104 </span>            : </a>
 <span class="lineNum">     105 </span>            : inline double
-<span class="lineNum">     106 </span><span class="lineCov">         56 : ClockTime::second_decimal() const</span>
+<span class="lineNum">     106 </span><span class="lineCov">         58 : ClockTime::second_decimal() const</span>
 <span class="lineNum">     107 </span>            : {
-<span class="lineNum">     108 </span><span class="lineCov">         56 :     return ClockTime_second_decimal(this);</span>
+<span class="lineNum">     108 </span><span class="lineCov">         58 :     return ClockTime_second_decimal(this);</span>
 <span class="lineNum">     109 </span>            : }
 <a name="110"><span class="lineNum">     110 </span>            : </a>
 <span class="lineNum">     111 </span>            : inline TimeDelta
@@ -214,9 +214,9 @@
 <span class="lineNum">     152 </span>            : }
 <a name="153"><span class="lineNum">     153 </span>            : </a>
 <span class="lineNum">     154 </span>            : inline bool
-<span class="lineNum">     155 </span><span class="lineCov">         11 : operator==(const ClockTime &amp; lhs, const ClockTime &amp; rhs)</span>
+<span class="lineNum">     155 </span><span class="lineCov">         12 : operator==(const ClockTime &amp; lhs, const ClockTime &amp; rhs)</span>
 <span class="lineNum">     156 </span>            : {
-<span class="lineNum">     157 </span><span class="lineCov">         11 :     return ClockTime_equal(&amp;lhs, &amp;rhs);</span>
+<span class="lineNum">     157 </span><span class="lineCov">         12 :     return ClockTime_equal(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     158 </span>            : }
 <a name="159"><span class="lineNum">     159 </span>            : </a>
 <span class="lineNum">     160 </span>            : inline bool

@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">75</td>
-            <td class="headerCovTableEntry">79</td>
-            <td class="headerCovTableEntryHi">94.9 %</td>
+            <td class="headerCovTableEntry">78</td>
+            <td class="headerCovTableEntry">82</td>
+            <td class="headerCovTableEntryHi">95.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
             <td class="headerValue">2017-01-22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">31</td>
-            <td class="headerCovTableEntry">33</td>
-            <td class="headerCovTableEntryHi">93.9 %</td>
+            <td class="headerCovTableEntry">32</td>
+            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntryHi">94.1 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -87,13 +87,13 @@
 <span class="lineNum">      25 </span><span class="lineCov">          6 :     Timestamp_ptr_from_struct_tm(&amp;result, tm, &amp;time_zone_offset);</span>
 <span class="lineNum">      26 </span><span class="lineCov">          6 :     return result;</span>
 <span class="lineNum">      27 </span>            : }
-<span class="lineNum">      28 </span>            : 
+<a name="28"><span class="lineNum">      28 </span>            : </a>
 <span class="lineNum">      29 </span>            : inline Timestamp
-<span class="lineNum">      30 </span>            : Timestamp::create_utc(const struct tm &amp; tm)
+<span class="lineNum">      30 </span><span class="lineCov">          1 : Timestamp::create_utc(const struct tm &amp; tm)</span>
 <span class="lineNum">      31 </span>            : {
 <span class="lineNum">      32 </span>            :     Timestamp result;
-<span class="lineNum">      33 </span>            :     Timestamp_ptr_from_struct_tm_utc(&amp;result, tm);
-<span class="lineNum">      34 </span>            :     return result;
+<span class="lineNum">      33 </span><span class="lineCov">          1 :     Timestamp_ptr_from_struct_tm_utc(&amp;result, tm);</span>
+<span class="lineNum">      34 </span><span class="lineCov">          1 :     return result;</span>
 <span class="lineNum">      35 </span>            : }
 <span class="lineNum">      36 </span>            : 
 <span class="lineNum">      37 </span>            : inline Timestamp
@@ -124,11 +124,11 @@
 <span class="lineNum">      62 </span>            : }
 <a name="63"><span class="lineNum">      63 </span>            : </a>
 <span class="lineNum">      64 </span>            : inline Timestamp
-<span class="lineNum">      65 </span><span class="lineCov">          4 : Timestamp::create_local(const Date &amp; date, const ClockTime &amp; clock_time)</span>
+<span class="lineNum">      65 </span><span class="lineCov">          2 : Timestamp::create_local(const Date &amp; date, const ClockTime &amp; clock_time)</span>
 <span class="lineNum">      66 </span>            : {
 <span class="lineNum">      67 </span>            :     Timestamp result;
-<span class="lineNum">      68 </span><span class="lineCov">          4 :     Timestamp_ptr_create_local(&amp;result, &amp;date, &amp;clock_time);</span>
-<span class="lineNum">      69 </span><span class="lineCov">          4 :     return result;</span>
+<span class="lineNum">      68 </span><span class="lineCov">          2 :     Timestamp_ptr_create_local(&amp;result, &amp;date, &amp;clock_time);</span>
+<span class="lineNum">      69 </span><span class="lineCov">          2 :     return result;</span>
 <span class="lineNum">      70 </span>            : }
 <a name="71"><span class="lineNum">      71 </span>            : </a>
 <span class="lineNum">      72 </span>            : inline Timestamp
@@ -178,9 +178,9 @@
 <span class="lineNum">     116 </span>            : }
 <a name="117"><span class="lineNum">     117 </span>            : </a>
 <span class="lineNum">     118 </span>            : inline Date
-<span class="lineNum">     119 </span><span class="lineCov">       1229 : Timestamp::get_date_utc() const</span>
+<span class="lineNum">     119 </span><span class="lineCov">       1230 : Timestamp::get_date_utc() const</span>
 <span class="lineNum">     120 </span>            : {
-<span class="lineNum">     121 </span><span class="lineCov">       1229 :     return Timestamp_get_date_utc(this);</span>
+<span class="lineNum">     121 </span><span class="lineCov">       1230 :     return Timestamp_get_date_utc(this);</span>
 <span class="lineNum">     122 </span>            : }
 <a name="123"><span class="lineNum">     123 </span>            : </a>
 <span class="lineNum">     124 </span>            : inline Date
@@ -196,9 +196,9 @@
 <span class="lineNum">     134 </span>            : }
 <a name="135"><span class="lineNum">     135 </span>            : </a>
 <span class="lineNum">     136 </span>            : inline ClockTime
-<span class="lineNum">     137 </span><span class="lineCov">        109 : Timestamp::get_clock_time_utc() const</span>
+<span class="lineNum">     137 </span><span class="lineCov">        110 : Timestamp::get_clock_time_utc() const</span>
 <span class="lineNum">     138 </span>            : {
-<span class="lineNum">     139 </span><span class="lineCov">        109 :     return Timestamp_get_clock_time_utc(this);</span>
+<span class="lineNum">     139 </span><span class="lineCov">        110 :     return Timestamp_get_clock_time_utc(this);</span>
 <span class="lineNum">     140 </span>            : }
 <a name="141"><span class="lineNum">     141 </span>            : </a>
 <span class="lineNum">     142 </span>            : inline ClockTime

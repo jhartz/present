@@ -398,7 +398,7 @@
 <span class="lineNum">     336 </span>            : #endif
 <a name="337"><span class="lineNum">     337 </span>            : </a>
 <span class="lineNum">     338 </span>            :     protected:
-<span class="lineNum">     339 </span><span class="lineCov">        386 :         NonCopyable() {}</span>
+<span class="lineNum">     339 </span><span class="lineCov">        398 :         NonCopyable() {}</span>
 <span class="lineNum">     340 </span>            :         virtual ~NonCopyable();
 <span class="lineNum">     341 </span>            :     };
 <span class="lineNum">     342 </span>            : 
@@ -445,7 +445,7 @@
 <span class="lineNum">     383 </span>            :         std::string m_label;
 <a name="384"><span class="lineNum">     384 </span>            :     };</a>
 <span class="lineNum">     385 </span>            : 
-<span class="lineNum">     386 </span><span class="lineCov">      19287 :     struct SourceLineInfo {</span>
+<span class="lineNum">     386 </span><span class="lineCov">      19343 :     struct SourceLineInfo {</span>
 <span class="lineNum">     387 </span>            : 
 <span class="lineNum">     388 </span>            :         SourceLineInfo();
 <span class="lineNum">     389 </span>            :         SourceLineInfo( char const* _file, std::size_t _line );
@@ -466,7 +466,7 @@
 <span class="lineNum">     404 </span>            :     std::ostream&amp; operator &lt;&lt; ( std::ostream&amp; os, SourceLineInfo const&amp; info );
 <a name="405"><span class="lineNum">     405 </span>            : </a>
 <a name="406"><span class="lineNum">     406 </span>            :     // This is just here to avoid compiler warnings with macro constants and boolean literals</a>
-<span class="lineNum">     407 </span><span class="lineCov">       2530 :     inline bool isTrue( bool value ){ return value; }</span>
+<span class="lineNum">     407 </span><span class="lineCov">       2532 :     inline bool isTrue( bool value ){ return value; }</span>
 <span class="lineNum">     408 </span><span class="lineNoCov">          0 :     inline bool alwaysTrue() { return true; }</span>
 <span class="lineNum">     409 </span>            :     inline bool alwaysFalse() { return false; }
 <span class="lineNum">     410 </span>            : 
@@ -561,18 +561,18 @@
 <a name="499"><span class="lineNum">     499 </span>            :     class Ptr {</a>
 <a name="500"><span class="lineNum">     500 </span>            :     public:</a>
 <span class="lineNum">     501 </span><span class="lineCov">          4 :         Ptr() : m_p( CATCH_NULL ){}</span>
-<span class="lineNum">     502 </span><span class="lineCov">        150 :         Ptr( T* p ) : m_p( p ){</span>
-<span class="lineNum">     503 </span><span class="lineCov">        150 :             if( m_p )</span>
-<a name="504"><span class="lineNum">     504 </span><span class="lineCov">        149 :                 m_p-&gt;addRef();</span></a>
-<span class="lineNum">     505 </span><span class="lineCov">        150 :         }</span>
-<span class="lineNum">     506 </span><span class="lineCov">        316 :         Ptr( Ptr const&amp; other ) : m_p( other.m_p ){</span>
-<span class="lineNum">     507 </span><span class="lineCov">        316 :             if( m_p )</span>
-<a name="508"><span class="lineNum">     508 </span><span class="lineCov">        316 :                 m_p-&gt;addRef();</span></a>
-<span class="lineNum">     509 </span><span class="lineCov">        316 :         }</span>
-<span class="lineNum">     510 </span><span class="lineCov">        470 :         ~Ptr(){</span>
-<span class="lineNum">     511 </span><span class="lineCov">        470 :             if( m_p )</span>
-<a name="512"><span class="lineNum">     512 </span><span class="lineCov">        465 :                 m_p-&gt;release();</span></a>
-<span class="lineNum">     513 </span><span class="lineCov">        470 :         }</span>
+<span class="lineNum">     502 </span><span class="lineCov">        151 :         Ptr( T* p ) : m_p( p ){</span>
+<span class="lineNum">     503 </span><span class="lineCov">        151 :             if( m_p )</span>
+<a name="504"><span class="lineNum">     504 </span><span class="lineCov">        150 :                 m_p-&gt;addRef();</span></a>
+<span class="lineNum">     505 </span><span class="lineCov">        151 :         }</span>
+<span class="lineNum">     506 </span><span class="lineCov">        317 :         Ptr( Ptr const&amp; other ) : m_p( other.m_p ){</span>
+<span class="lineNum">     507 </span><span class="lineCov">        317 :             if( m_p )</span>
+<a name="508"><span class="lineNum">     508 </span><span class="lineCov">        317 :                 m_p-&gt;addRef();</span></a>
+<span class="lineNum">     509 </span><span class="lineCov">        317 :         }</span>
+<span class="lineNum">     510 </span><span class="lineCov">        472 :         ~Ptr(){</span>
+<span class="lineNum">     511 </span><span class="lineCov">        472 :             if( m_p )</span>
+<a name="512"><span class="lineNum">     512 </span><span class="lineCov">        467 :                 m_p-&gt;release();</span></a>
+<span class="lineNum">     513 </span><span class="lineCov">        472 :         }</span>
 <span class="lineNum">     514 </span><span class="lineCov">          1 :         void reset() {</span>
 <span class="lineNum">     515 </span><span class="lineCov">          1 :             if( m_p )</span>
 <span class="lineNum">     516 </span><span class="lineNoCov">          0 :                 m_p-&gt;release();</span>
@@ -589,9 +589,9 @@
 <a name="527"><span class="lineNum">     527 </span><span class="lineCov">          4 :             return *this;</span></a>
 <a name="528"><span class="lineNum">     528 </span>            :         }</a>
 <a name="529"><span class="lineNum">     529 </span><span class="lineCov">         37 :         void swap( Ptr&amp; other ) { std::swap( m_p, other.m_p ); }</span></a>
-<a name="530"><span class="lineNum">     530 </span><span class="lineCov">        297 :         T* get() const{ return m_p; }</span></a>
-<a name="531"><span class="lineNum">     531 </span><span class="lineCov">        133 :         T&amp; operator*() const { return *m_p; }</span></a>
-<a name="532"><span class="lineNum">     532 </span><span class="lineCov">       6589 :         T* operator-&gt;() const { return m_p; }</span></a>
+<a name="530"><span class="lineNum">     530 </span><span class="lineCov">        309 :         T* get() const{ return m_p; }</span></a>
+<a name="531"><span class="lineNum">     531 </span><span class="lineCov">        134 :         T&amp; operator*() const { return *m_p; }</span></a>
+<a name="532"><span class="lineNum">     532 </span><span class="lineCov">       6654 :         T* operator-&gt;() const { return m_p; }</span></a>
 <span class="lineNum">     533 </span><span class="lineCov">          3 :         bool operator !() const { return m_p == CATCH_NULL; }</span>
 <span class="lineNum">     534 </span><span class="lineCov">          2 :         operator SafeBool::type() const { return SafeBool::makeSafe( m_p != CATCH_NULL ); }</span>
 <span class="lineNum">     535 </span>            : 
@@ -599,24 +599,24 @@
 <span class="lineNum">     537 </span>            :         T* m_p;
 <a name="538"><span class="lineNum">     538 </span>            :     };</a>
 <span class="lineNum">     539 </span>            : 
-<span class="lineNum">     540 </span><span class="lineCov">        147 :     struct IShared : NonCopyable {</span>
+<span class="lineNum">     540 </span><span class="lineCov">        148 :     struct IShared : NonCopyable {</span>
 <span class="lineNum">     541 </span>            :         virtual ~IShared();
 <span class="lineNum">     542 </span>            :         virtual void addRef() const = 0;
 <span class="lineNum">     543 </span>            :         virtual void release() const = 0;
 <span class="lineNum">     544 </span>            :     };
 <a name="545"><span class="lineNum">     545 </span>            : </a>
 <span class="lineNum">     546 </span>            :     template&lt;typename T = IShared&gt;
-<a name="547"><span class="lineNum">     547 </span><span class="lineCov">        147 :     struct SharedImpl : T {</span></a>
+<a name="547"><span class="lineNum">     547 </span><span class="lineCov">        148 :     struct SharedImpl : T {</span></a>
 <span class="lineNum">     548 </span>            : 
-<a name="549"><span class="lineNum">     549 </span><span class="lineCov">        147 :         SharedImpl() : m_rc( 0 ){}</span></a>
+<a name="549"><span class="lineNum">     549 </span><span class="lineCov">        148 :         SharedImpl() : m_rc( 0 ){}</span></a>
 <span class="lineNum">     550 </span>            : 
-<span class="lineNum">     551 </span><span class="lineCov">        465 :         virtual void addRef() const {</span>
-<a name="552"><span class="lineNum">     552 </span><span class="lineCov">        465 :             ++m_rc;</span></a>
-<span class="lineNum">     553 </span><span class="lineCov">        465 :         }</span>
-<span class="lineNum">     554 </span><span class="lineCov">        465 :         virtual void release() const {</span>
-<span class="lineNum">     555 </span><span class="lineCov">        465 :             if( --m_rc == 0 )</span>
-<span class="lineNum">     556 </span><span class="lineCov">        147 :                 delete this;</span>
-<span class="lineNum">     557 </span><span class="lineCov">        465 :         }</span>
+<span class="lineNum">     551 </span><span class="lineCov">        467 :         virtual void addRef() const {</span>
+<a name="552"><span class="lineNum">     552 </span><span class="lineCov">        467 :             ++m_rc;</span></a>
+<span class="lineNum">     553 </span><span class="lineCov">        467 :         }</span>
+<span class="lineNum">     554 </span><span class="lineCov">        467 :         virtual void release() const {</span>
+<span class="lineNum">     555 </span><span class="lineCov">        467 :             if( --m_rc == 0 )</span>
+<span class="lineNum">     556 </span><span class="lineCov">        148 :                 delete this;</span>
+<span class="lineNum">     557 </span><span class="lineCov">        467 :         }</span>
 <span class="lineNum">     558 </span>            : 
 <span class="lineNum">     559 </span>            :         mutable unsigned int m_rc;
 <span class="lineNum">     560 </span>            :     };
@@ -861,8 +861,8 @@
 <span class="lineNum">     799 </span>            : 
 <a name="800"><span class="lineNum">     800 </span>            :     }; };</a>
 <span class="lineNum">     801 </span>            : 
-<span class="lineNum">     802 </span><span class="lineCov">       5060 :     inline bool isOk( ResultWas::OfType resultType ) {</span>
-<span class="lineNum">     803 </span><span class="lineCov">       5060 :         return ( resultType &amp; ResultWas::FailureBit ) == 0;</span>
+<span class="lineNum">     802 </span><span class="lineCov">       5064 :     inline bool isOk( ResultWas::OfType resultType ) {</span>
+<span class="lineNum">     803 </span><span class="lineCov">       5064 :         return ( resultType &amp; ResultWas::FailureBit ) == 0;</span>
 <span class="lineNum">     804 </span>            :     }
 <span class="lineNum">     805 </span>            :     inline bool isJustInfo( int flags ) {
 <span class="lineNum">     806 </span>            :         return flags == ResultWas::Info;
@@ -882,7 +882,7 @@
 <span class="lineNum">     820 </span>            :     }
 <a name="821"><span class="lineNum">     821 </span>            : </a>
 <a name="822"><span class="lineNum">     822 </span>            :     inline bool shouldContinueOnFailure( int flags )    { return ( flags &amp; ResultDisposition::ContinueOnFailure ) != 0; }</a>
-<span class="lineNum">     823 </span><span class="lineCov">       2530 :     inline bool isFalseTest( int flags )                { return ( flags &amp; ResultDisposition::FalseTest ) != 0; }</span>
+<span class="lineNum">     823 </span><span class="lineCov">       2532 :     inline bool isFalseTest( int flags )                { return ( flags &amp; ResultDisposition::FalseTest ) != 0; }</span>
 <span class="lineNum">     824 </span><span class="lineNoCov">          0 :     inline bool shouldSuppressFailure( int flags )      { return ( flags &amp; ResultDisposition::SuppressFail ) != 0; }</span>
 <span class="lineNum">     825 </span>            : 
 <span class="lineNum">     826 </span>            : } // end namespace Catch
@@ -894,7 +894,7 @@
 <span class="lineNum">     832 </span>            : 
 <a name="833"><span class="lineNum">     833 </span>            : namespace Catch {</a>
 <span class="lineNum">     834 </span>            : 
-<a name="835"><span class="lineNum">     835 </span><span class="lineCov">      20376 :     struct AssertionInfo</span></a>
+<a name="835"><span class="lineNum">     835 </span><span class="lineCov">      20394 :     struct AssertionInfo</span></a>
 <span class="lineNum">     836 </span>            :     {
 <span class="lineNum">     837 </span><span class="lineCov">          2 :         AssertionInfo() {}</span>
 <span class="lineNum">     838 </span>            :         AssertionInfo(  std::string const&amp; _macroName,
@@ -908,16 +908,16 @@
 <span class="lineNum">     846 </span>            :         ResultDisposition::Flags resultDisposition;
 <a name="847"><span class="lineNum">     847 </span>            :     };</a>
 <span class="lineNum">     848 </span>            : 
-<a name="849"><span class="lineNum">     849 </span><span class="lineCov">      20241 :     struct AssertionResultData</span></a>
+<a name="849"><span class="lineNum">     849 </span><span class="lineCov">      20257 :     struct AssertionResultData</span></a>
 <span class="lineNum">     850 </span>            :     {
-<span class="lineNum">     851 </span><span class="lineCov">       2531 :         AssertionResultData() : resultType( ResultWas::Unknown ) {}</span>
+<span class="lineNum">     851 </span><span class="lineCov">       2533 :         AssertionResultData() : resultType( ResultWas::Unknown ) {}</span>
 <span class="lineNum">     852 </span>            : 
 <span class="lineNum">     853 </span>            :         std::string reconstructedExpression;
 <span class="lineNum">     854 </span>            :         std::string message;
 <span class="lineNum">     855 </span>            :         ResultWas::OfType resultType;
 <a name="856"><span class="lineNum">     856 </span>            :     };</a>
 <span class="lineNum">     857 </span>            : 
-<span class="lineNum">     858 </span><span class="lineCov">       5060 :     class AssertionResult {</span>
+<span class="lineNum">     858 </span><span class="lineCov">       5064 :     class AssertionResult {</span>
 <span class="lineNum">     859 </span>            :     public:
 <span class="lineNum">     860 </span>            :         AssertionResult();
 <span class="lineNum">     861 </span>            :         AssertionResult( AssertionInfo const&amp; info, AssertionResultData const&amp; data );
@@ -1274,8 +1274,8 @@
 <span class="lineNum">    1212 </span>            : 
 <a name="1213"><span class="lineNum">    1213 </span>            :     struct STATIC_ASSERT_Expression_Too_Complex_Please_Rewrite_As_Binary_Comparison;</a>
 <a name="1214"><span class="lineNum">    1214 </span>            : </a>
-<span class="lineNum">    1215 </span><span class="lineCov">       2530 :     struct CopyableStream {</span>
-<span class="lineNum">    1216 </span><span class="lineCov">       2530 :         CopyableStream() {}</span>
+<span class="lineNum">    1215 </span><span class="lineCov">       2532 :     struct CopyableStream {</span>
+<span class="lineNum">    1216 </span><span class="lineCov">       2532 :         CopyableStream() {}</span>
 <span class="lineNum">    1217 </span>            :         CopyableStream( CopyableStream const&amp; other ) {
 <span class="lineNum">    1218 </span>            :             oss &lt;&lt; other.oss.str();
 <span class="lineNum">    1219 </span>            :         }
@@ -1287,7 +1287,7 @@
 <span class="lineNum">    1225 </span>            :         std::ostringstream oss;
 <a name="1226"><span class="lineNum">    1226 </span>            :     };</a>
 <span class="lineNum">    1227 </span>            : 
-<span class="lineNum">    1228 </span><span class="lineCov">       2530 :     class ResultBuilder {</span>
+<span class="lineNum">    1228 </span><span class="lineCov">       2532 :     class ResultBuilder {</span>
 <span class="lineNum">    1229 </span>            :     public:
 <span class="lineNum">    1230 </span>            :         ResultBuilder(  char const* macroName,
 <span class="lineNum">    1231 </span>            :                         SourceLineInfo const&amp; lineInfo,
@@ -1332,8 +1332,8 @@
 <span class="lineNum">    1270 </span>            :     private:
 <a name="1271"><span class="lineNum">    1271 </span>            :         AssertionInfo m_assertionInfo;</a>
 <a name="1272"><span class="lineNum">    1272 </span>            :         AssertionResultData m_data;</a>
-<span class="lineNum">    1273 </span><span class="lineCov">       2530 :         struct ExprComponents {</span>
-<span class="lineNum">    1274 </span><span class="lineCov">       2530 :             ExprComponents() : testFalse( false ) {}</span>
+<span class="lineNum">    1273 </span><span class="lineCov">       2532 :         struct ExprComponents {</span>
+<span class="lineNum">    1274 </span><span class="lineCov">       2532 :             ExprComponents() : testFalse( false ) {}</span>
 <span class="lineNum">    1275 </span>            :             bool testFalse;
 <span class="lineNum">    1276 </span>            :             std::string lhs, rhs, op;
 <span class="lineNum">    1277 </span>            :         } m_exprComponents;
@@ -1372,7 +1372,7 @@
 <span class="lineNum">    1310 </span>            :     };
 <a name="1311"><span class="lineNum">    1311 </span>            : </a>
 <a name="1312"><span class="lineNum">    1312 </span>            :     template&lt;Operator Op&gt; struct OperatorTraits             { static const char* getName(){ return &quot;*error*&quot;; } };</a>
-<a name="1313"><span class="lineNum">    1313 </span><span class="lineCov">       2094 :     template&lt;&gt; struct OperatorTraits&lt;IsEqualTo&gt;             { static const char* getName(){ return &quot;==&quot;; } };</span></a>
+<a name="1313"><span class="lineNum">    1313 </span><span class="lineCov">       2096 :     template&lt;&gt; struct OperatorTraits&lt;IsEqualTo&gt;             { static const char* getName(){ return &quot;==&quot;; } };</span></a>
 <a name="1314"><span class="lineNum">    1314 </span><span class="lineCov">         15 :     template&lt;&gt; struct OperatorTraits&lt;IsNotEqualTo&gt;          { static const char* getName(){ return &quot;!=&quot;; } };</span></a>
 <a name="1315"><span class="lineNum">    1315 </span><span class="lineCov">         17 :     template&lt;&gt; struct OperatorTraits&lt;IsLessThan&gt;            { static const char* getName(){ return &quot;&lt;&quot;; } };</span></a>
 <a name="1316"><span class="lineNum">    1316 </span><span class="lineCov">         20 :     template&lt;&gt; struct OperatorTraits&lt;IsGreaterThan&gt;         { static const char* getName(){ return &quot;&gt;&quot;; } };</span></a>
@@ -1380,7 +1380,7 @@
 <span class="lineNum">    1318 </span><span class="lineCov">         21 :     template&lt;&gt; struct OperatorTraits&lt;IsGreaterThanOrEqualTo&gt;{ static const char* getName(){ return &quot;&gt;=&quot;; } };</span>
 <a name="1319"><span class="lineNum">    1319 </span>            : </a>
 <span class="lineNum">    1320 </span>            :     template&lt;typename T&gt;
-<span class="lineNum">    1321 </span><span class="lineCov">       4370 :     inline T&amp; opCast(T const&amp; t) { return const_cast&lt;T&amp;&gt;(t); }</span>
+<span class="lineNum">    1321 </span><span class="lineCov">       4374 :     inline T&amp; opCast(T const&amp; t) { return const_cast&lt;T&amp;&gt;(t); }</span>
 <span class="lineNum">    1322 </span>            : 
 <span class="lineNum">    1323 </span>            : // nullptr_t support based on pull request #154 from Konstantin Baumann
 <span class="lineNum">    1324 </span>            : #ifdef CATCH_CONFIG_CPP11_NULLPTR
@@ -1394,8 +1394,8 @@
 <span class="lineNum">    1332 </span>            : 
 <a name="1333"><span class="lineNum">    1333 </span>            :     template&lt;typename T1, typename T2&gt;</a>
 <span class="lineNum">    1334 </span>            :     struct Evaluator&lt;T1, T2, IsEqualTo&gt; {
-<span class="lineNum">    1335 </span><span class="lineCov">       2094 :         static bool evaluate( T1 const&amp; lhs, T2 const&amp; rhs) {</span>
-<span class="lineNum">    1336 </span><span class="lineCov">       2094 :             return bool( opCast( lhs ) ==  opCast( rhs ) );</span>
+<span class="lineNum">    1335 </span><span class="lineCov">       2096 :         static bool evaluate( T1 const&amp; lhs, T2 const&amp; rhs) {</span>
+<span class="lineNum">    1336 </span><span class="lineCov">       2096 :             return bool( opCast( lhs ) ==  opCast( rhs ) );</span>
 <span class="lineNum">    1337 </span>            :         }
 <span class="lineNum">    1338 </span>            :     };
 <a name="1339"><span class="lineNum">    1339 </span>            :     template&lt;typename T1, typename T2&gt;</a>
@@ -1439,8 +1439,8 @@
 <span class="lineNum">    1377 </span>            : 
 <a name="1378"><span class="lineNum">    1378 </span>            :     // &quot;base&quot; overload</a>
 <span class="lineNum">    1379 </span>            :     template&lt;Operator Op, typename T1, typename T2&gt;
-<span class="lineNum">    1380 </span><span class="lineCov">       2172 :     bool compare( T1 const&amp; lhs, T2 const&amp; rhs ) {</span>
-<span class="lineNum">    1381 </span><span class="lineCov">       2172 :         return Evaluator&lt;T1, T2, Op&gt;::evaluate( lhs, rhs );</span>
+<span class="lineNum">    1380 </span><span class="lineCov">       2174 :     bool compare( T1 const&amp; lhs, T2 const&amp; rhs ) {</span>
+<span class="lineNum">    1381 </span><span class="lineCov">       2174 :         return Evaluator&lt;T1, T2, Op&gt;::evaluate( lhs, rhs );</span>
 <span class="lineNum">    1382 </span>            :     }
 <span class="lineNum">    1383 </span>            : 
 <span class="lineNum">    1384 </span>            :     // unsigned X to int
@@ -1720,10 +1720,10 @@
 <span class="lineNum">    1658 </span>            :     template&lt;&gt;
 <a name="1659"><span class="lineNum">    1659 </span>            :     struct StringMakerBase&lt;true&gt; {</a>
 <span class="lineNum">    1660 </span>            :         template&lt;typename T&gt;
-<span class="lineNum">    1661 </span><span class="lineCov">       3490 :         static std::string convert( T const&amp; _value ) {</span>
-<span class="lineNum">    1662 </span><span class="lineCov">       3490 :             std::ostringstream oss;</span>
-<span class="lineNum">    1663 </span><span class="lineCov">       3490 :             oss &lt;&lt; _value;</span>
-<span class="lineNum">    1664 </span><span class="lineCov">       3490 :             return oss.str();</span>
+<span class="lineNum">    1661 </span><span class="lineCov">       3494 :         static std::string convert( T const&amp; _value ) {</span>
+<span class="lineNum">    1662 </span><span class="lineCov">       3494 :             std::ostringstream oss;</span>
+<span class="lineNum">    1663 </span><span class="lineCov">       3494 :             oss &lt;&lt; _value;</span>
+<span class="lineNum">    1664 </span><span class="lineCov">       3494 :             return oss.str();</span>
 <span class="lineNum">    1665 </span>            :         }
 <span class="lineNum">    1666 </span>            :     };
 <span class="lineNum">    1667 </span>            : 
@@ -1835,8 +1835,8 @@
 <span class="lineNum">    1773 </span>            : /// Overload (not specialise) this template for custom typs that you don't want
 <a name="1774"><span class="lineNum">    1774 </span>            : /// to provide an ostream overload for.</a>
 <span class="lineNum">    1775 </span>            : template&lt;typename T&gt;
-<span class="lineNum">    1776 </span><span class="lineCov">       3484 : std::string toString( T const&amp; value ) {</span>
-<span class="lineNum">    1777 </span><span class="lineCov">       3484 :     return StringMaker&lt;T&gt;::convert( value );</span>
+<span class="lineNum">    1776 </span><span class="lineCov">       3488 : std::string toString( T const&amp; value ) {</span>
+<span class="lineNum">    1777 </span><span class="lineCov">       3488 :     return StringMaker&lt;T&gt;::convert( value );</span>
 <span class="lineNum">    1778 </span>            : }
 <span class="lineNum">    1779 </span>            : 
 <span class="lineNum">    1780 </span>            :     namespace Detail {
@@ -1868,15 +1868,15 @@
 <span class="lineNum">    1806 </span>            : #  endif
 <a name="1807"><span class="lineNum">    1807 </span>            : </a>
 <span class="lineNum">    1808 </span>            : public:
-<span class="lineNum">    1809 </span><span class="lineCov">       2530 :     ExpressionLhs( ResultBuilder&amp; rb, T lhs ) : m_rb( rb ), m_lhs( lhs ) {}</span>
+<span class="lineNum">    1809 </span><span class="lineCov">       2532 :     ExpressionLhs( ResultBuilder&amp; rb, T lhs ) : m_rb( rb ), m_lhs( lhs ) {}</span>
 <span class="lineNum">    1810 </span>            : #  ifdef CATCH_CONFIG_CPP11_GENERATED_METHODS
 <span class="lineNum">    1811 </span>            :     ExpressionLhs( ExpressionLhs const&amp; ) = default;
 <span class="lineNum">    1812 </span>            :     ExpressionLhs( ExpressionLhs &amp;&amp; )     = default;
 <span class="lineNum">    1813 </span>            : #  endif
 <a name="1814"><span class="lineNum">    1814 </span>            : </a>
 <span class="lineNum">    1815 </span>            :     template&lt;typename RhsT&gt;
-<span class="lineNum">    1816 </span><span class="lineCov">       2094 :     ResultBuilder&amp; operator == ( RhsT const&amp; rhs ) {</span>
-<span class="lineNum">    1817 </span><span class="lineCov">       2094 :         return captureExpression&lt;Internal::IsEqualTo&gt;( rhs );</span>
+<span class="lineNum">    1816 </span><span class="lineCov">       2096 :     ResultBuilder&amp; operator == ( RhsT const&amp; rhs ) {</span>
+<span class="lineNum">    1817 </span><span class="lineCov">       2096 :         return captureExpression&lt;Internal::IsEqualTo&gt;( rhs );</span>
 <span class="lineNum">    1818 </span>            :     }
 <a name="1819"><span class="lineNum">    1819 </span>            : </a>
 <span class="lineNum">    1820 </span>            :     template&lt;typename RhsT&gt;
@@ -1931,12 +1931,12 @@
 <span class="lineNum">    1869 </span>            : 
 <a name="1870"><span class="lineNum">    1870 </span>            : private:</a>
 <span class="lineNum">    1871 </span>            :     template&lt;Internal::Operator Op, typename RhsT&gt;
-<span class="lineNum">    1872 </span><span class="lineCov">       2185 :     ResultBuilder&amp; captureExpression( RhsT const&amp; rhs ) {</span>
+<span class="lineNum">    1872 </span><span class="lineCov">       2187 :     ResultBuilder&amp; captureExpression( RhsT const&amp; rhs ) {</span>
 <span class="lineNum">    1873 </span>            :         return m_rb
-<span class="lineNum">    1874 </span><span class="lineCov">       2185 :             .setResultType( Internal::compare&lt;Op&gt;( m_lhs, rhs ) )</span>
+<span class="lineNum">    1874 </span><span class="lineCov">       2187 :             .setResultType( Internal::compare&lt;Op&gt;( m_lhs, rhs ) )</span>
 <span class="lineNum">    1875 </span>            :             .setLhs( Catch::toString( m_lhs ) )
 <span class="lineNum">    1876 </span>            :             .setRhs( Catch::toString( rhs ) )
-<span class="lineNum">    1877 </span><span class="lineCov">       4370 :             .setOp( Internal::OperatorTraits&lt;Op&gt;::getName() );</span>
+<span class="lineNum">    1877 </span><span class="lineCov">       4374 :             .setOp( Internal::OperatorTraits&lt;Op&gt;::getName() );</span>
 <span class="lineNum">    1878 </span>            :     }
 <span class="lineNum">    1879 </span>            : 
 <span class="lineNum">    1880 </span>            : private:
@@ -1950,8 +1950,8 @@
 <span class="lineNum">    1888 </span>            : namespace Catch {
 <a name="1889"><span class="lineNum">    1889 </span>            : </a>
 <span class="lineNum">    1890 </span>            :     template&lt;typename T&gt;
-<span class="lineNum">    1891 </span><span class="lineCov">       2233 :     inline ExpressionLhs&lt;T const&amp;&gt; ResultBuilder::operator &lt;= ( T const&amp; operand ) {</span>
-<span class="lineNum">    1892 </span><span class="lineCov">       2233 :         return ExpressionLhs&lt;T const&amp;&gt;( *this, operand );</span>
+<span class="lineNum">    1891 </span><span class="lineCov">       2235 :     inline ExpressionLhs&lt;T const&amp;&gt; ResultBuilder::operator &lt;= ( T const&amp; operand ) {</span>
+<span class="lineNum">    1892 </span><span class="lineCov">       2235 :         return ExpressionLhs&lt;T const&amp;&gt;( *this, operand );</span>
 <a name="1893"><span class="lineNum">    1893 </span>            :     }</a>
 <span class="lineNum">    1894 </span>            : 
 <span class="lineNum">    1895 </span><span class="lineCov">        297 :     inline ExpressionLhs&lt;bool&gt; ResultBuilder::operator &lt;= ( bool value ) {</span>
@@ -2253,14 +2253,14 @@
 <span class="lineNum">    2191 </span>            : namespace Catch {
 <a name="2192"><span class="lineNum">    2192 </span>            : </a>
 <span class="lineNum">    2193 </span>            :     struct Counts {
-<a name="2194"><span class="lineNum">    2194 </span><span class="lineCov">        479 :         Counts() : passed( 0 ), failed( 0 ), failedButOk( 0 ) {}</span></a>
+<a name="2194"><span class="lineNum">    2194 </span><span class="lineCov">        492 :         Counts() : passed( 0 ), failed( 0 ), failedButOk( 0 ) {}</span></a>
 <span class="lineNum">    2195 </span>            : 
-<span class="lineNum">    2196 </span><span class="lineCov">        175 :         Counts operator - ( Counts const&amp; other ) const {</span>
-<span class="lineNum">    2197 </span><span class="lineCov">        175 :             Counts diff;</span>
-<span class="lineNum">    2198 </span><span class="lineCov">        175 :             diff.passed = passed - other.passed;</span>
-<span class="lineNum">    2199 </span><span class="lineCov">        175 :             diff.failed = failed - other.failed;</span>
-<span class="lineNum">    2200 </span><span class="lineCov">        175 :             diff.failedButOk = failedButOk - other.failedButOk;</span>
-<a name="2201"><span class="lineNum">    2201 </span><span class="lineCov">        175 :             return diff;</span></a>
+<span class="lineNum">    2196 </span><span class="lineCov">        177 :         Counts operator - ( Counts const&amp; other ) const {</span>
+<span class="lineNum">    2197 </span><span class="lineCov">        177 :             Counts diff;</span>
+<span class="lineNum">    2198 </span><span class="lineCov">        177 :             diff.passed = passed - other.passed;</span>
+<span class="lineNum">    2199 </span><span class="lineCov">        177 :             diff.failed = failed - other.failed;</span>
+<span class="lineNum">    2200 </span><span class="lineCov">        177 :             diff.failedButOk = failedButOk - other.failedButOk;</span>
+<a name="2201"><span class="lineNum">    2201 </span><span class="lineCov">        177 :             return diff;</span></a>
 <span class="lineNum">    2202 </span>            :         }
 <span class="lineNum">    2203 </span><span class="lineCov">         93 :         Counts&amp; operator += ( Counts const&amp; other ) {</span>
 <span class="lineNum">    2204 </span><span class="lineCov">         93 :             passed += other.passed;</span>
@@ -2269,8 +2269,8 @@
 <span class="lineNum">    2207 </span><span class="lineCov">         93 :             return *this;</span>
 <a name="2208"><span class="lineNum">    2208 </span>            :         }</a>
 <span class="lineNum">    2209 </span>            : 
-<span class="lineNum">    2210 </span><span class="lineCov">        119 :         std::size_t total() const {</span>
-<a name="2211"><span class="lineNum">    2211 </span><span class="lineCov">        119 :             return passed + failed + failedButOk;</span></a>
+<span class="lineNum">    2210 </span><span class="lineCov">        121 :         std::size_t total() const {</span>
+<a name="2211"><span class="lineNum">    2211 </span><span class="lineCov">        121 :             return passed + failed + failedButOk;</span></a>
 <span class="lineNum">    2212 </span>            :         }
 <span class="lineNum">    2213 </span><span class="lineCov">          2 :         bool allPassed() const {</span>
 <a name="2214"><span class="lineNum">    2214 </span><span class="lineCov">          2 :             return failed == 0 &amp;&amp; failedButOk == 0;</span></a>
@@ -2317,7 +2317,7 @@
 <span class="lineNum">    2255 </span>            : 
 <a name="2256"><span class="lineNum">    2256 </span>            : namespace Catch {</a>
 <span class="lineNum">    2257 </span>            : 
-<span class="lineNum">    2258 </span><span class="lineCov">       1327 :     struct SectionInfo {</span>
+<span class="lineNum">    2258 </span><span class="lineCov">       1371 :     struct SectionInfo {</span>
 <span class="lineNum">    2259 </span>            :         SectionInfo
 <span class="lineNum">    2260 </span>            :             (   SourceLineInfo const&amp; _lineInfo,
 <span class="lineNum">    2261 </span>            :                 std::string const&amp; _name,
@@ -2328,10 +2328,10 @@
 <span class="lineNum">    2266 </span>            :         SourceLineInfo lineInfo;
 <a name="2267"><span class="lineNum">    2267 </span>            :     };</a>
 <a name="2268"><span class="lineNum">    2268 </span>            : </a>
-<span class="lineNum">    2269 </span><span class="lineCov">         46 :     struct SectionEndInfo {</span>
-<span class="lineNum">    2270 </span><span class="lineCov">         46 :         SectionEndInfo( SectionInfo const&amp; _sectionInfo, Counts const&amp; _prevAssertions, double _durationInSeconds )</span>
-<span class="lineNum">    2271 </span><span class="lineCov">         46 :         : sectionInfo( _sectionInfo ), prevAssertions( _prevAssertions ), durationInSeconds( _durationInSeconds )</span>
-<span class="lineNum">    2272 </span><span class="lineCov">         46 :         {}</span>
+<span class="lineNum">    2269 </span><span class="lineCov">         47 :     struct SectionEndInfo {</span>
+<span class="lineNum">    2270 </span><span class="lineCov">         47 :         SectionEndInfo( SectionInfo const&amp; _sectionInfo, Counts const&amp; _prevAssertions, double _durationInSeconds )</span>
+<span class="lineNum">    2271 </span><span class="lineCov">         47 :         : sectionInfo( _sectionInfo ), prevAssertions( _prevAssertions ), durationInSeconds( _durationInSeconds )</span>
+<span class="lineNum">    2272 </span><span class="lineCov">         47 :         {}</span>
 <span class="lineNum">    2273 </span>            : 
 <span class="lineNum">    2274 </span>            :         SectionInfo sectionInfo;
 <span class="lineNum">    2275 </span>            :         Counts prevAssertions;
@@ -2353,7 +2353,7 @@
 <span class="lineNum">    2291 </span>            : 
 <a name="2292"><span class="lineNum">    2292 </span>            :     class Timer {</a>
 <span class="lineNum">    2293 </span>            :     public:
-<span class="lineNum">    2294 </span><span class="lineCov">        305 :         Timer() : m_ticks( 0 ) {}</span>
+<span class="lineNum">    2294 </span><span class="lineCov">        317 :         Timer() : m_ticks( 0 ) {}</span>
 <span class="lineNum">    2295 </span>            :         void start();
 <span class="lineNum">    2296 </span>            :         unsigned int getElapsedMicroseconds() const;
 <span class="lineNum">    2297 </span>            :         unsigned int getElapsedMilliseconds() const;
@@ -3636,7 +3636,7 @@
 <span class="lineNum">    3574 </span>            : 
 <a name="3575"><span class="lineNum">    3575 </span><span class="lineCov">          1 :         std::vector&lt;std::string&gt; getReporterNames() const { return m_data.reporterNames; }</span></a>
 <span class="lineNum">    3576 </span>            : 
-<a name="3577"><span class="lineNum">    3577 </span><span class="lineCov">        100 :         int abortAfter() const { return m_data.abortAfter; }</span></a>
+<a name="3577"><span class="lineNum">    3577 </span><span class="lineCov">        101 :         int abortAfter() const { return m_data.abortAfter; }</span></a>
 <span class="lineNum">    3578 </span>            : 
 <span class="lineNum">    3579 </span><span class="lineCov">          1 :         TestSpec const&amp; testSpec() const { return m_testSpec; }</span>
 <a name="3580"><span class="lineNum">    3580 </span>            : </a>
@@ -3647,11 +3647,11 @@
 <a name="3585"><span class="lineNum">    3585 </span><span class="lineCov">         31 :         virtual bool allowThrows() const        { return !m_data.noThrow; }</span></a>
 <a name="3586"><span class="lineNum">    3586 </span><span class="lineCov">          1 :         virtual std::ostream&amp; stream() const    { return m_stream-&gt;stream(); }</span></a>
 <a name="3587"><span class="lineNum">    3587 </span><span class="lineCov">          3 :         virtual std::string name() const        { return m_data.name.empty() ? m_data.processName : m_data.name; }</span></a>
-<a name="3588"><span class="lineNum">    3588 </span><span class="lineCov">       2530 :         virtual bool includeSuccessfulResults() const   { return m_data.showSuccessfulTests; }</span></a>
+<a name="3588"><span class="lineNum">    3588 </span><span class="lineCov">       2532 :         virtual bool includeSuccessfulResults() const   { return m_data.showSuccessfulTests; }</span></a>
 <a name="3589"><span class="lineNum">    3589 </span><span class="lineNoCov">          0 :         virtual bool warnAboutMissingAssertions() const { return m_data.warnings &amp; WarnAbout::NoAssertions; }</span></a>
-<a name="3590"><span class="lineNum">    3590 </span><span class="lineCov">        113 :         virtual ShowDurations::OrNot showDurations() const { return m_data.showDurations; }</span></a>
+<a name="3590"><span class="lineNum">    3590 </span><span class="lineCov">        115 :         virtual ShowDurations::OrNot showDurations() const { return m_data.showDurations; }</span></a>
 <a name="3591"><span class="lineNum">    3591 </span><span class="lineCov">          3 :         virtual RunTests::InWhatOrder runOrder() const  { return m_data.runOrder; }</span></a>
-<span class="lineNum">    3592 </span><span class="lineCov">         68 :         virtual unsigned int rngSeed() const    { return m_data.rngSeed; }</span>
+<span class="lineNum">    3592 </span><span class="lineCov">         69 :         virtual unsigned int rngSeed() const    { return m_data.rngSeed; }</span>
 <span class="lineNum">    3593 </span><span class="lineCov">          1 :         virtual UseColour::YesOrNo useColour() const { return m_data.useColour; }</span>
 <span class="lineNum">    3594 </span>            : 
 <a name="3595"><span class="lineNum">    3595 </span>            :     private:</a>
@@ -5194,14 +5194,14 @@
 <a name="5132"><span class="lineNum">    5132 </span>            :     };</a>
 <a name="5133"><span class="lineNum">    5133 </span>            : </a>
 <span class="lineNum">    5134 </span><span class="lineNoCov">          0 :     struct AssertionStats {</span>
-<span class="lineNum">    5135 </span><span class="lineCov">       2530 :         AssertionStats( AssertionResult const&amp; _assertionResult,</span>
+<span class="lineNum">    5135 </span><span class="lineCov">       2532 :         AssertionStats( AssertionResult const&amp; _assertionResult,</span>
 <span class="lineNum">    5136 </span>            :                         std::vector&lt;MessageInfo&gt; const&amp; _infoMessages,
 <span class="lineNum">    5137 </span>            :                         Totals const&amp; _totals )
 <span class="lineNum">    5138 </span>            :         :   assertionResult( _assertionResult ),
 <span class="lineNum">    5139 </span>            :             infoMessages( _infoMessages ),
-<span class="lineNum">    5140 </span><span class="lineCov">       2530 :             totals( _totals )</span>
+<span class="lineNum">    5140 </span><span class="lineCov">       2532 :             totals( _totals )</span>
 <span class="lineNum">    5141 </span>            :         {
-<span class="lineNum">    5142 </span><span class="lineCov">       2530 :             if( assertionResult.hasMessage() ) {</span>
+<span class="lineNum">    5142 </span><span class="lineCov">       2532 :             if( assertionResult.hasMessage() ) {</span>
 <span class="lineNum">    5143 </span>            :                 // Copy message into messages list.
 <span class="lineNum">    5144 </span>            :                 // !TBD This should have been done earlier, somewhere
 <span class="lineNum">    5145 </span><span class="lineNoCov">          0 :                 MessageBuilder builder( assertionResult.getTestMacroName(), assertionResult.getSourceInfo(), assertionResult.getResultType() );</span>
@@ -5210,7 +5210,7 @@
 <span class="lineNum">    5148 </span>            : 
 <span class="lineNum">    5149 </span><span class="lineNoCov">          0 :                 infoMessages.push_back( builder.m_info );</span>
 <span class="lineNum">    5150 </span>            :             }
-<span class="lineNum">    5151 </span><span class="lineCov">       2530 :         }</span>
+<span class="lineNum">    5151 </span><span class="lineCov">       2532 :         }</span>
 <span class="lineNum">    5152 </span>            :         virtual ~AssertionStats();
 <span class="lineNum">    5153 </span>            : 
 <span class="lineNum">    5154 </span>            : #  ifdef CATCH_CONFIG_CPP11_GENERATED_METHODS
@@ -5226,15 +5226,15 @@
 <a name="5164"><span class="lineNum">    5164 </span>            :     };</a>
 <a name="5165"><span class="lineNum">    5165 </span>            : </a>
 <span class="lineNum">    5166 </span><span class="lineNoCov">          0 :     struct SectionStats {</span>
-<span class="lineNum">    5167 </span><span class="lineCov">        113 :         SectionStats(   SectionInfo const&amp; _sectionInfo,</span>
+<span class="lineNum">    5167 </span><span class="lineCov">        115 :         SectionStats(   SectionInfo const&amp; _sectionInfo,</span>
 <span class="lineNum">    5168 </span>            :                         Counts const&amp; _assertions,
 <span class="lineNum">    5169 </span>            :                         double _durationInSeconds,
 <span class="lineNum">    5170 </span>            :                         bool _missingAssertions )
 <span class="lineNum">    5171 </span>            :         :   sectionInfo( _sectionInfo ),
 <span class="lineNum">    5172 </span>            :             assertions( _assertions ),
 <span class="lineNum">    5173 </span>            :             durationInSeconds( _durationInSeconds ),
-<span class="lineNum">    5174 </span><span class="lineCov">        113 :             missingAssertions( _missingAssertions )</span>
-<span class="lineNum">    5175 </span><span class="lineCov">        113 :         {}</span>
+<span class="lineNum">    5174 </span><span class="lineCov">        115 :             missingAssertions( _missingAssertions )</span>
+<span class="lineNum">    5175 </span><span class="lineCov">        115 :         {}</span>
 <span class="lineNum">    5176 </span>            :         virtual ~SectionStats();
 <span class="lineNum">    5177 </span>            : #  ifdef CATCH_CONFIG_CPP11_GENERATED_METHODS
 <span class="lineNum">    5178 </span>            :         SectionStats( SectionStats const&amp; )              = default;
@@ -5560,7 +5560,7 @@
 <span class="lineNum">    5498 </span>            : namespace Catch {
 <a name="5499"><span class="lineNum">    5499 </span>            : namespace TestCaseTracking {</a>
 <span class="lineNum">    5500 </span>            : 
-<span class="lineNum">    5501 </span><span class="lineCov">        108 :     struct ITracker : SharedImpl&lt;&gt; {</span>
+<span class="lineNum">    5501 </span><span class="lineCov">        109 :     struct ITracker : SharedImpl&lt;&gt; {</span>
 <span class="lineNum">    5502 </span>            :         virtual ~ITracker();
 <span class="lineNum">    5503 </span>            : 
 <span class="lineNum">    5504 </span>            :         // static queries
@@ -5620,23 +5620,23 @@
 <span class="lineNum">    5558 </span>            :             m_runState = NotStarted;
 <a name="5559"><span class="lineNum">    5559 </span>            :         }</a>
 <span class="lineNum">    5560 </span>            : 
-<span class="lineNum">    5561 </span><span class="lineCov">         67 :         void startCycle() {</span>
-<span class="lineNum">    5562 </span><span class="lineCov">         67 :             m_currentTracker = m_rootTracker.get();</span>
-<a name="5563"><span class="lineNum">    5563 </span><span class="lineCov">         67 :             m_runState = Executing;</span></a>
-<span class="lineNum">    5564 </span><span class="lineCov">         67 :         }</span>
-<span class="lineNum">    5565 </span><span class="lineCov">        113 :         void completeCycle() {</span>
-<span class="lineNum">    5566 </span><span class="lineCov">        113 :             m_runState = CompletedCycle;</span>
-<a name="5567"><span class="lineNum">    5567 </span><span class="lineCov">        113 :         }</span></a>
+<span class="lineNum">    5561 </span><span class="lineCov">         68 :         void startCycle() {</span>
+<span class="lineNum">    5562 </span><span class="lineCov">         68 :             m_currentTracker = m_rootTracker.get();</span>
+<a name="5563"><span class="lineNum">    5563 </span><span class="lineCov">         68 :             m_runState = Executing;</span></a>
+<span class="lineNum">    5564 </span><span class="lineCov">         68 :         }</span>
+<span class="lineNum">    5565 </span><span class="lineCov">        115 :         void completeCycle() {</span>
+<span class="lineNum">    5566 </span><span class="lineCov">        115 :             m_runState = CompletedCycle;</span>
+<a name="5567"><span class="lineNum">    5567 </span><span class="lineCov">        115 :         }</span></a>
 <span class="lineNum">    5568 </span>            : 
-<span class="lineNum">    5569 </span><span class="lineCov">        305 :         bool completedCycle() const {</span>
-<a name="5570"><span class="lineNum">    5570 </span><span class="lineCov">        305 :             return m_runState == CompletedCycle;</span></a>
+<span class="lineNum">    5569 </span><span class="lineCov">        317 :         bool completedCycle() const {</span>
+<a name="5570"><span class="lineNum">    5570 </span><span class="lineCov">        317 :             return m_runState == CompletedCycle;</span></a>
 <span class="lineNum">    5571 </span>            :         }
-<span class="lineNum">    5572 </span><span class="lineCov">        418 :         ITracker&amp; currentTracker() {</span>
-<a name="5573"><span class="lineNum">    5573 </span><span class="lineCov">        418 :             return *m_currentTracker;</span></a>
+<span class="lineNum">    5572 </span><span class="lineCov">        432 :         ITracker&amp; currentTracker() {</span>
+<a name="5573"><span class="lineNum">    5573 </span><span class="lineCov">        432 :             return *m_currentTracker;</span></a>
 <span class="lineNum">    5574 </span>            :         }
-<span class="lineNum">    5575 </span><span class="lineCov">        226 :         void setCurrentTracker( ITracker* tracker ) {</span>
-<span class="lineNum">    5576 </span><span class="lineCov">        226 :             m_currentTracker = tracker;</span>
-<span class="lineNum">    5577 </span><span class="lineCov">        226 :         }</span>
+<span class="lineNum">    5575 </span><span class="lineCov">        230 :         void setCurrentTracker( ITracker* tracker ) {</span>
+<span class="lineNum">    5576 </span><span class="lineCov">        230 :             m_currentTracker = tracker;</span>
+<span class="lineNum">    5577 </span><span class="lineCov">        230 :         }</span>
 <span class="lineNum">    5578 </span>            :     };
 <span class="lineNum">    5579 </span>            : 
 <span class="lineNum">    5580 </span>            :     class TrackerBase : public ITracker {
@@ -5649,12 +5649,12 @@
 <span class="lineNum">    5587 </span>            :             CompletedSuccessfully,
 <a name="5588"><span class="lineNum">    5588 </span>            :             Failed</a>
 <span class="lineNum">    5589 </span>            :         };
-<span class="lineNum">    5590 </span><span class="lineCov">        915 :         class TrackerHasName {</span>
+<span class="lineNum">    5590 </span><span class="lineCov">        951 :         class TrackerHasName {</span>
 <a name="5591"><span class="lineNum">    5591 </span>            :             std::string m_name;</a>
 <a name="5592"><span class="lineNum">    5592 </span>            :         public:</a>
-<span class="lineNum">    5593 </span><span class="lineCov">        305 :             TrackerHasName( std::string const&amp; name ) : m_name( name ) {}</span>
-<span class="lineNum">    5594 </span><span class="lineCov">        774 :             bool operator ()( Ptr&lt;ITracker&gt; const&amp; tracker ) {</span>
-<span class="lineNum">    5595 </span><span class="lineCov">        774 :                 return tracker-&gt;name() == m_name;</span>
+<span class="lineNum">    5593 </span><span class="lineCov">        317 :             TrackerHasName( std::string const&amp; name ) : m_name( name ) {}</span>
+<span class="lineNum">    5594 </span><span class="lineCov">        825 :             bool operator ()( Ptr&lt;ITracker&gt; const&amp; tracker ) {</span>
+<span class="lineNum">    5595 </span><span class="lineCov">        825 :                 return tracker-&gt;name() == m_name;</span>
 <span class="lineNum">    5596 </span>            :             }
 <span class="lineNum">    5597 </span>            :         };
 <span class="lineNum">    5598 </span>            :         typedef std::vector&lt;Ptr&lt;ITracker&gt; &gt; Children;
@@ -5664,70 +5664,70 @@
 <span class="lineNum">    5602 </span>            :         Children m_children;
 <a name="5603"><span class="lineNum">    5603 </span>            :         CycleState m_runState;</a>
 <span class="lineNum">    5604 </span>            :     public:
-<span class="lineNum">    5605 </span><span class="lineCov">        108 :         TrackerBase( std::string const&amp; name, TrackerContext&amp; ctx, ITracker* parent )</span>
+<span class="lineNum">    5605 </span><span class="lineCov">        109 :         TrackerBase( std::string const&amp; name, TrackerContext&amp; ctx, ITracker* parent )</span>
 <span class="lineNum">    5606 </span>            :         :   m_name( name ),
 <span class="lineNum">    5607 </span>            :             m_ctx( ctx ),
 <span class="lineNum">    5608 </span>            :             m_parent( parent ),
-<span class="lineNum">    5609 </span><span class="lineCov">        108 :             m_runState( NotStarted )</span>
-<span class="lineNum">    5610 </span><span class="lineCov">        108 :         {}</span>
+<span class="lineNum">    5609 </span><span class="lineCov">        109 :             m_runState( NotStarted )</span>
+<span class="lineNum">    5610 </span><span class="lineCov">        109 :         {}</span>
 <a name="5611"><span class="lineNum">    5611 </span>            :         virtual ~TrackerBase();</a>
 <span class="lineNum">    5612 </span>            : 
-<span class="lineNum">    5613 </span><span class="lineCov">        774 :         virtual std::string name() const CATCH_OVERRIDE {</span>
-<a name="5614"><span class="lineNum">    5614 </span><span class="lineCov">        774 :             return m_name;</span></a>
+<span class="lineNum">    5613 </span><span class="lineCov">        825 :         virtual std::string name() const CATCH_OVERRIDE {</span>
+<a name="5614"><span class="lineNum">    5614 </span><span class="lineCov">        825 :             return m_name;</span></a>
 <span class="lineNum">    5615 </span>            :         }
-<span class="lineNum">    5616 </span><span class="lineCov">        397 :         virtual bool isComplete() const CATCH_OVERRIDE {</span>
-<a name="5617"><span class="lineNum">    5617 </span><span class="lineCov">        397 :             return m_runState == CompletedSuccessfully || m_runState == Failed;</span></a>
+<span class="lineNum">    5616 </span><span class="lineCov">        411 :         virtual bool isComplete() const CATCH_OVERRIDE {</span>
+<a name="5617"><span class="lineNum">    5617 </span><span class="lineCov">        411 :             return m_runState == CompletedSuccessfully || m_runState == Failed;</span></a>
 <span class="lineNum">    5618 </span>            :         }
-<span class="lineNum">    5619 </span><span class="lineCov">         67 :         virtual bool isSuccessfullyCompleted() const CATCH_OVERRIDE {</span>
-<a name="5620"><span class="lineNum">    5620 </span><span class="lineCov">         67 :             return m_runState == CompletedSuccessfully;</span></a>
+<span class="lineNum">    5619 </span><span class="lineCov">         68 :         virtual bool isSuccessfullyCompleted() const CATCH_OVERRIDE {</span>
+<a name="5620"><span class="lineNum">    5620 </span><span class="lineCov">         68 :             return m_runState == CompletedSuccessfully;</span></a>
 <span class="lineNum">    5621 </span>            :         }
-<span class="lineNum">    5622 </span><span class="lineCov">        238 :         virtual bool isOpen() const CATCH_OVERRIDE {</span>
-<a name="5623"><span class="lineNum">    5623 </span><span class="lineCov">        238 :             return m_runState != NotStarted &amp;&amp; !isComplete();</span></a>
+<span class="lineNum">    5622 </span><span class="lineCov">        249 :         virtual bool isOpen() const CATCH_OVERRIDE {</span>
+<a name="5623"><span class="lineNum">    5623 </span><span class="lineCov">        249 :             return m_runState != NotStarted &amp;&amp; !isComplete();</span></a>
 <span class="lineNum">    5624 </span>            :         }
 <span class="lineNum">    5625 </span><span class="lineNoCov">          0 :         virtual bool hasChildren() const CATCH_OVERRIDE {</span>
 <span class="lineNum">    5626 </span><span class="lineNoCov">          0 :             return !m_children.empty();</span>
 <a name="5627"><span class="lineNum">    5627 </span>            :         }</a>
 <span class="lineNum">    5628 </span>            : 
-<span class="lineNum">    5629 </span><span class="lineCov">         77 :         virtual void addChild( Ptr&lt;ITracker&gt; const&amp; child ) CATCH_OVERRIDE {</span>
-<span class="lineNum">    5630 </span><span class="lineCov">         77 :             m_children.push_back( child );</span>
-<a name="5631"><span class="lineNum">    5631 </span><span class="lineCov">         77 :         }</span></a>
+<span class="lineNum">    5629 </span><span class="lineCov">         78 :         virtual void addChild( Ptr&lt;ITracker&gt; const&amp; child ) CATCH_OVERRIDE {</span>
+<span class="lineNum">    5630 </span><span class="lineCov">         78 :             m_children.push_back( child );</span>
+<a name="5631"><span class="lineNum">    5631 </span><span class="lineCov">         78 :         }</span></a>
 <span class="lineNum">    5632 </span>            : 
-<span class="lineNum">    5633 </span><span class="lineCov">        305 :         virtual ITracker* findChild( std::string const&amp; name ) CATCH_OVERRIDE {</span>
-<span class="lineNum">    5634 </span><span class="lineCov">        305 :             Children::const_iterator it = std::find_if( m_children.begin(), m_children.end(), TrackerHasName( name ) );</span>
-<span class="lineNum">    5635 </span><span class="lineCov">        610 :             return( it != m_children.end() )</span>
-<span class="lineNum">    5636 </span><span class="lineCov">        228 :                 ? it-&gt;get()</span>
-<a name="5637"><span class="lineNum">    5637 </span><span class="lineCov">        838 :                 : CATCH_NULL;</span></a>
+<span class="lineNum">    5633 </span><span class="lineCov">        317 :         virtual ITracker* findChild( std::string const&amp; name ) CATCH_OVERRIDE {</span>
+<span class="lineNum">    5634 </span><span class="lineCov">        317 :             Children::const_iterator it = std::find_if( m_children.begin(), m_children.end(), TrackerHasName( name ) );</span>
+<span class="lineNum">    5635 </span><span class="lineCov">        634 :             return( it != m_children.end() )</span>
+<span class="lineNum">    5636 </span><span class="lineCov">        239 :                 ? it-&gt;get()</span>
+<a name="5637"><span class="lineNum">    5637 </span><span class="lineCov">        873 :                 : CATCH_NULL;</span></a>
 <span class="lineNum">    5638 </span>            :         }
 <span class="lineNum">    5639 </span><span class="lineNoCov">          0 :         virtual ITracker&amp; parent() CATCH_OVERRIDE {</span>
 <span class="lineNum">    5640 </span><span class="lineNoCov">          0 :             assert( m_parent ); // Should always be non-null except for root</span>
 <span class="lineNum">    5641 </span><span class="lineNoCov">          0 :             return *m_parent;</span>
 <a name="5642"><span class="lineNum">    5642 </span>            :         }</a>
 <span class="lineNum">    5643 </span>            : 
-<span class="lineNum">    5644 </span><span class="lineCov">        159 :         virtual void openChild() CATCH_OVERRIDE {</span>
-<span class="lineNum">    5645 </span><span class="lineCov">        159 :             if( m_runState != ExecutingChildren ) {</span>
-<span class="lineNum">    5646 </span><span class="lineCov">         77 :                 m_runState = ExecutingChildren;</span>
-<span class="lineNum">    5647 </span><span class="lineCov">         77 :                 if( m_parent )</span>
-<span class="lineNum">    5648 </span><span class="lineCov">         46 :                     m_parent-&gt;openChild();</span>
+<span class="lineNum">    5644 </span><span class="lineCov">        162 :         virtual void openChild() CATCH_OVERRIDE {</span>
+<span class="lineNum">    5645 </span><span class="lineCov">        162 :             if( m_runState != ExecutingChildren ) {</span>
+<span class="lineNum">    5646 </span><span class="lineCov">         78 :                 m_runState = ExecutingChildren;</span>
+<span class="lineNum">    5647 </span><span class="lineCov">         78 :                 if( m_parent )</span>
+<span class="lineNum">    5648 </span><span class="lineCov">         47 :                     m_parent-&gt;openChild();</span>
 <span class="lineNum">    5649 </span>            :             }
-<a name="5650"><span class="lineNum">    5650 </span><span class="lineCov">        159 :         }</span></a>
+<a name="5650"><span class="lineNum">    5650 </span><span class="lineCov">        162 :         }</span></a>
 <a name="5651"><span class="lineNum">    5651 </span>            : </a>
 <span class="lineNum">    5652 </span><span class="lineNoCov">          0 :         virtual bool isSectionTracker() const CATCH_OVERRIDE { return false; }</span>
 <a name="5653"><span class="lineNum">    5653 </span><span class="lineNoCov">          0 :         virtual bool isIndexTracker() const CATCH_OVERRIDE { return false; }</span></a>
 <span class="lineNum">    5654 </span>            : 
-<span class="lineNum">    5655 </span><span class="lineCov">        113 :         void open() {</span>
-<span class="lineNum">    5656 </span><span class="lineCov">        113 :             m_runState = Executing;</span>
-<span class="lineNum">    5657 </span><span class="lineCov">        113 :             moveToThis();</span>
-<span class="lineNum">    5658 </span><span class="lineCov">        113 :             if( m_parent )</span>
-<span class="lineNum">    5659 </span><span class="lineCov">        113 :                 m_parent-&gt;openChild();</span>
-<a name="5660"><span class="lineNum">    5660 </span><span class="lineCov">        113 :         }</span></a>
+<span class="lineNum">    5655 </span><span class="lineCov">        115 :         void open() {</span>
+<span class="lineNum">    5656 </span><span class="lineCov">        115 :             m_runState = Executing;</span>
+<span class="lineNum">    5657 </span><span class="lineCov">        115 :             moveToThis();</span>
+<span class="lineNum">    5658 </span><span class="lineCov">        115 :             if( m_parent )</span>
+<span class="lineNum">    5659 </span><span class="lineCov">        115 :                 m_parent-&gt;openChild();</span>
+<a name="5660"><span class="lineNum">    5660 </span><span class="lineCov">        115 :         }</span></a>
 <span class="lineNum">    5661 </span>            : 
-<span class="lineNum">    5662 </span><span class="lineCov">        113 :         virtual void close() CATCH_OVERRIDE {</span>
+<span class="lineNum">    5662 </span><span class="lineCov">        115 :         virtual void close() CATCH_OVERRIDE {</span>
 <span class="lineNum">    5663 </span>            : 
 <span class="lineNum">    5664 </span>            :             // Close any still open children (e.g. generators)
-<span class="lineNum">    5665 </span><span class="lineCov">        226 :             while( &amp;m_ctx.currentTracker() != this )</span>
+<span class="lineNum">    5665 </span><span class="lineCov">        230 :             while( &amp;m_ctx.currentTracker() != this )</span>
 <span class="lineNum">    5666 </span><span class="lineNoCov">          0 :                 m_ctx.currentTracker().close();</span>
 <span class="lineNum">    5667 </span>            : 
-<span class="lineNum">    5668 </span><span class="lineCov">        113 :             switch( m_runState ) {</span>
+<span class="lineNum">    5668 </span><span class="lineCov">        115 :             switch( m_runState ) {</span>
 <span class="lineNum">    5669 </span>            :                 case NotStarted:
 <span class="lineNum">    5670 </span>            :                 case CompletedSuccessfully:
 <span class="lineNum">    5671 </span>            :                 case Failed:
@@ -5737,19 +5737,19 @@
 <span class="lineNum">    5675 </span><span class="lineNoCov">          0 :                     break;;</span>
 <span class="lineNum">    5676 </span>            : 
 <span class="lineNum">    5677 </span>            :                 case Executing:
-<span class="lineNum">    5678 </span><span class="lineCov">         67 :                     m_runState = CompletedSuccessfully;</span>
-<span class="lineNum">    5679 </span><span class="lineCov">         67 :                     break;</span>
+<span class="lineNum">    5678 </span><span class="lineCov">         68 :                     m_runState = CompletedSuccessfully;</span>
+<span class="lineNum">    5679 </span><span class="lineCov">         68 :                     break;</span>
 <span class="lineNum">    5680 </span>            :                 case ExecutingChildren:
-<span class="lineNum">    5681 </span><span class="lineCov">         46 :                     if( m_children.empty() || m_children.back()-&gt;isComplete() )</span>
+<span class="lineNum">    5681 </span><span class="lineCov">         47 :                     if( m_children.empty() || m_children.back()-&gt;isComplete() )</span>
 <span class="lineNum">    5682 </span><span class="lineCov">         10 :                         m_runState = CompletedSuccessfully;</span>
-<span class="lineNum">    5683 </span><span class="lineCov">         46 :                     break;</span>
+<span class="lineNum">    5683 </span><span class="lineCov">         47 :                     break;</span>
 <span class="lineNum">    5684 </span>            : 
 <span class="lineNum">    5685 </span>            :                 default:
 <span class="lineNum">    5686 </span><span class="lineNoCov">          0 :                     throw std::logic_error( &quot;Unexpected state&quot; );</span>
 <span class="lineNum">    5687 </span>            :             }
-<span class="lineNum">    5688 </span><span class="lineCov">        113 :             moveToParent();</span>
-<a name="5689"><span class="lineNum">    5689 </span><span class="lineCov">        113 :             m_ctx.completeCycle();</span></a>
-<span class="lineNum">    5690 </span><span class="lineCov">        113 :         }</span>
+<span class="lineNum">    5688 </span><span class="lineCov">        115 :             moveToParent();</span>
+<a name="5689"><span class="lineNum">    5689 </span><span class="lineCov">        115 :             m_ctx.completeCycle();</span></a>
+<span class="lineNum">    5690 </span><span class="lineCov">        115 :         }</span>
 <span class="lineNum">    5691 </span><span class="lineNoCov">          0 :         virtual void fail() CATCH_OVERRIDE {</span>
 <span class="lineNum">    5692 </span><span class="lineNoCov">          0 :             m_runState = Failed;</span>
 <span class="lineNum">    5693 </span><span class="lineNoCov">          0 :             if( m_parent )</span>
@@ -5761,42 +5761,42 @@
 <span class="lineNum">    5699 </span><span class="lineNoCov">          0 :             m_runState = NeedsAnotherRun;</span>
 <a name="5700"><span class="lineNum">    5700 </span><span class="lineNoCov">          0 :         }</span></a>
 <span class="lineNum">    5701 </span>            :     private:
-<span class="lineNum">    5702 </span><span class="lineCov">        113 :         void moveToParent() {</span>
-<span class="lineNum">    5703 </span><span class="lineCov">        113 :             assert( m_parent );</span>
-<a name="5704"><span class="lineNum">    5704 </span><span class="lineCov">        113 :             m_ctx.setCurrentTracker( m_parent );</span></a>
-<span class="lineNum">    5705 </span><span class="lineCov">        113 :         }</span>
-<span class="lineNum">    5706 </span><span class="lineCov">        113 :         void moveToThis() {</span>
-<span class="lineNum">    5707 </span><span class="lineCov">        113 :             m_ctx.setCurrentTracker( this );</span>
-<span class="lineNum">    5708 </span><span class="lineCov">        113 :         }</span>
+<span class="lineNum">    5702 </span><span class="lineCov">        115 :         void moveToParent() {</span>
+<span class="lineNum">    5703 </span><span class="lineCov">        115 :             assert( m_parent );</span>
+<a name="5704"><span class="lineNum">    5704 </span><span class="lineCov">        115 :             m_ctx.setCurrentTracker( m_parent );</span></a>
+<span class="lineNum">    5705 </span><span class="lineCov">        115 :         }</span>
+<span class="lineNum">    5706 </span><span class="lineCov">        115 :         void moveToThis() {</span>
+<span class="lineNum">    5707 </span><span class="lineCov">        115 :             m_ctx.setCurrentTracker( this );</span>
+<span class="lineNum">    5708 </span><span class="lineCov">        115 :         }</span>
 <span class="lineNum">    5709 </span>            :     };
 <span class="lineNum">    5710 </span>            : 
 <a name="5711"><span class="lineNum">    5711 </span>            :     class SectionTracker : public TrackerBase {</a>
 <span class="lineNum">    5712 </span>            :     public:
-<span class="lineNum">    5713 </span><span class="lineCov">        108 :         SectionTracker( std::string const&amp; name, TrackerContext&amp; ctx, ITracker* parent )</span>
-<span class="lineNum">    5714 </span><span class="lineCov">        108 :         :   TrackerBase( name, ctx, parent )</span>
-<span class="lineNum">    5715 </span><span class="lineCov">        108 :         {}</span>
+<span class="lineNum">    5713 </span><span class="lineCov">        109 :         SectionTracker( std::string const&amp; name, TrackerContext&amp; ctx, ITracker* parent )</span>
+<span class="lineNum">    5714 </span><span class="lineCov">        109 :         :   TrackerBase( name, ctx, parent )</span>
+<span class="lineNum">    5715 </span><span class="lineCov">        109 :         {}</span>
 <a name="5716"><span class="lineNum">    5716 </span>            :         virtual ~SectionTracker();</a>
 <span class="lineNum">    5717 </span>            : 
-<a name="5718"><span class="lineNum">    5718 </span><span class="lineCov">        228 :         virtual bool isSectionTracker() const CATCH_OVERRIDE { return true; }</span></a>
+<a name="5718"><span class="lineNum">    5718 </span><span class="lineCov">        239 :         virtual bool isSectionTracker() const CATCH_OVERRIDE { return true; }</span></a>
 <span class="lineNum">    5719 </span>            : 
-<span class="lineNum">    5720 </span><span class="lineCov">        305 :         static SectionTracker&amp; acquire( TrackerContext&amp; ctx, std::string const&amp; name ) {</span>
-<span class="lineNum">    5721 </span><span class="lineCov">        305 :             SectionTracker* section = CATCH_NULL;</span>
+<span class="lineNum">    5720 </span><span class="lineCov">        317 :         static SectionTracker&amp; acquire( TrackerContext&amp; ctx, std::string const&amp; name ) {</span>
+<span class="lineNum">    5721 </span><span class="lineCov">        317 :             SectionTracker* section = CATCH_NULL;</span>
 <span class="lineNum">    5722 </span>            : 
-<span class="lineNum">    5723 </span><span class="lineCov">        305 :             ITracker&amp; currentTracker = ctx.currentTracker();</span>
-<span class="lineNum">    5724 </span><span class="lineCov">        305 :             if( ITracker* childTracker = currentTracker.findChild( name ) ) {</span>
-<span class="lineNum">    5725 </span><span class="lineCov">        228 :                 assert( childTracker );</span>
-<span class="lineNum">    5726 </span><span class="lineCov">        228 :                 assert( childTracker-&gt;isSectionTracker() );</span>
-<span class="lineNum">    5727 </span><span class="lineCov">        228 :                 section = static_cast&lt;SectionTracker*&gt;( childTracker );</span>
+<span class="lineNum">    5723 </span><span class="lineCov">        317 :             ITracker&amp; currentTracker = ctx.currentTracker();</span>
+<span class="lineNum">    5724 </span><span class="lineCov">        317 :             if( ITracker* childTracker = currentTracker.findChild( name ) ) {</span>
+<span class="lineNum">    5725 </span><span class="lineCov">        239 :                 assert( childTracker );</span>
+<span class="lineNum">    5726 </span><span class="lineCov">        239 :                 assert( childTracker-&gt;isSectionTracker() );</span>
+<span class="lineNum">    5727 </span><span class="lineCov">        239 :                 section = static_cast&lt;SectionTracker*&gt;( childTracker );</span>
 <span class="lineNum">    5728 </span>            :             }
 <span class="lineNum">    5729 </span>            :             else {
-<span class="lineNum">    5730 </span><span class="lineCov">         77 :                 section = new SectionTracker( name, ctx, &amp;currentTracker );</span>
-<span class="lineNum">    5731 </span><span class="lineCov">         77 :                 currentTracker.addChild( section );</span>
+<span class="lineNum">    5730 </span><span class="lineCov">         78 :                 section = new SectionTracker( name, ctx, &amp;currentTracker );</span>
+<span class="lineNum">    5731 </span><span class="lineCov">         78 :                 currentTracker.addChild( section );</span>
 <span class="lineNum">    5732 </span>            :             }
-<span class="lineNum">    5733 </span><span class="lineCov">        305 :             if( !ctx.completedCycle() &amp;&amp; !section-&gt;isComplete() ) {</span>
+<span class="lineNum">    5733 </span><span class="lineCov">        317 :             if( !ctx.completedCycle() &amp;&amp; !section-&gt;isComplete() ) {</span>
 <span class="lineNum">    5734 </span>            : 
-<span class="lineNum">    5735 </span><span class="lineCov">        113 :                 section-&gt;open();</span>
+<span class="lineNum">    5735 </span><span class="lineCov">        115 :                 section-&gt;open();</span>
 <span class="lineNum">    5736 </span>            :             }
-<span class="lineNum">    5737 </span><span class="lineCov">        305 :             return *section;</span>
+<span class="lineNum">    5737 </span><span class="lineCov">        317 :             return *section;</span>
 <span class="lineNum">    5738 </span>            :         }
 <span class="lineNum">    5739 </span>            :     };
 <span class="lineNum">    5740 </span>            : 
@@ -5919,20 +5919,20 @@
 <span class="lineNum">    5857 </span><span class="lineNoCov">          0 :             fatal( &quot;&lt;unknown signal&gt;&quot;, -sig );</span>
 <a name="5858"><span class="lineNum">    5858 </span><span class="lineNoCov">          0 :         }</span></a>
 <span class="lineNum">    5859 </span>            : 
-<span class="lineNum">    5860 </span><span class="lineCov">         67 :         FatalConditionHandler() : m_isSet( true ) {</span>
-<span class="lineNum">    5861 </span><span class="lineCov">        469 :             for( std::size_t i = 0; i &lt; sizeof(signalDefs)/sizeof(SignalDefs); ++i )</span>
-<a name="5862"><span class="lineNum">    5862 </span><span class="lineCov">        402 :                 signal( signalDefs[i].id, handleSignal );</span></a>
-<span class="lineNum">    5863 </span><span class="lineCov">         67 :         }</span>
-<span class="lineNum">    5864 </span><span class="lineCov">         67 :         ~FatalConditionHandler() {</span>
-<a name="5865"><span class="lineNum">    5865 </span><span class="lineCov">         67 :             reset();</span></a>
-<span class="lineNum">    5866 </span><span class="lineCov">         67 :         }</span>
-<span class="lineNum">    5867 </span><span class="lineCov">        134 :         void reset() {</span>
-<span class="lineNum">    5868 </span><span class="lineCov">        134 :             if( m_isSet ) {</span>
-<span class="lineNum">    5869 </span><span class="lineCov">        469 :                 for( std::size_t i = 0; i &lt; sizeof(signalDefs)/sizeof(SignalDefs); ++i )</span>
-<span class="lineNum">    5870 </span><span class="lineCov">        402 :                     signal( signalDefs[i].id, SIG_DFL );</span>
-<span class="lineNum">    5871 </span><span class="lineCov">         67 :                 m_isSet = false;</span>
+<span class="lineNum">    5860 </span><span class="lineCov">         68 :         FatalConditionHandler() : m_isSet( true ) {</span>
+<span class="lineNum">    5861 </span><span class="lineCov">        476 :             for( std::size_t i = 0; i &lt; sizeof(signalDefs)/sizeof(SignalDefs); ++i )</span>
+<a name="5862"><span class="lineNum">    5862 </span><span class="lineCov">        408 :                 signal( signalDefs[i].id, handleSignal );</span></a>
+<span class="lineNum">    5863 </span><span class="lineCov">         68 :         }</span>
+<span class="lineNum">    5864 </span><span class="lineCov">         68 :         ~FatalConditionHandler() {</span>
+<a name="5865"><span class="lineNum">    5865 </span><span class="lineCov">         68 :             reset();</span></a>
+<span class="lineNum">    5866 </span><span class="lineCov">         68 :         }</span>
+<span class="lineNum">    5867 </span><span class="lineCov">        136 :         void reset() {</span>
+<span class="lineNum">    5868 </span><span class="lineCov">        136 :             if( m_isSet ) {</span>
+<span class="lineNum">    5869 </span><span class="lineCov">        476 :                 for( std::size_t i = 0; i &lt; sizeof(signalDefs)/sizeof(SignalDefs); ++i )</span>
+<span class="lineNum">    5870 </span><span class="lineCov">        408 :                     signal( signalDefs[i].id, SIG_DFL );</span>
+<span class="lineNum">    5871 </span><span class="lineCov">         68 :                 m_isSet = false;</span>
 <span class="lineNum">    5872 </span>            :             }
-<span class="lineNum">    5873 </span><span class="lineCov">        134 :         }</span>
+<span class="lineNum">    5873 </span><span class="lineCov">        136 :         }</span>
 <span class="lineNum">    5874 </span>            : 
 <span class="lineNum">    5875 </span>            :         bool m_isSet;
 <span class="lineNum">    5876 </span>            :     };
@@ -6016,12 +6016,12 @@
 <span class="lineNum">    5954 </span>            : 
 <span class="lineNum">    5955 </span><span class="lineCov">         31 :             do {</span>
 <span class="lineNum">    5956 </span><span class="lineCov">         31 :                 m_trackerContext.startRun();</span>
-<span class="lineNum">    5957 </span><span class="lineCov">         67 :                 do {</span>
-<span class="lineNum">    5958 </span><span class="lineCov">         67 :                     m_trackerContext.startCycle();</span>
-<span class="lineNum">    5959 </span><span class="lineCov">         67 :                     m_testCaseTracker = &amp;SectionTracker::acquire( m_trackerContext, testInfo.name );</span>
-<span class="lineNum">    5960 </span><span class="lineCov">         67 :                     runCurrentTest( redirectedCout, redirectedCerr );</span>
+<span class="lineNum">    5957 </span><span class="lineCov">         68 :                 do {</span>
+<span class="lineNum">    5958 </span><span class="lineCov">         68 :                     m_trackerContext.startCycle();</span>
+<span class="lineNum">    5959 </span><span class="lineCov">         68 :                     m_testCaseTracker = &amp;SectionTracker::acquire( m_trackerContext, testInfo.name );</span>
+<span class="lineNum">    5960 </span><span class="lineCov">         68 :                     runCurrentTest( redirectedCout, redirectedCerr );</span>
 <span class="lineNum">    5961 </span>            :                 }
-<span class="lineNum">    5962 </span><span class="lineCov">         67 :                 while( !m_testCaseTracker-&gt;isSuccessfullyCompleted() &amp;&amp; !aborting() );</span>
+<span class="lineNum">    5962 </span><span class="lineCov">         68 :                 while( !m_testCaseTracker-&gt;isSuccessfullyCompleted() &amp;&amp; !aborting() );</span>
 <span class="lineNum">    5963 </span>            :             }
 <span class="lineNum">    5964 </span>            :             // !TBD: deprecated - this will be replaced by indexed trackers
 <span class="lineNum">    5965 </span><span class="lineCov">         31 :             while( getCurrentContext().advanceGeneratorsForCurrentTest() &amp;&amp; !aborting() );</span>
@@ -6051,46 +6051,46 @@
 <span class="lineNum">    5989 </span>            : 
 <a name="5990"><span class="lineNum">    5990 </span>            :     private: // IResultCapture</a>
 <span class="lineNum">    5991 </span>            : 
-<span class="lineNum">    5992 </span><span class="lineCov">       2530 :         virtual void assertionEnded( AssertionResult const&amp; result ) {</span>
-<span class="lineNum">    5993 </span><span class="lineCov">       2530 :             if( result.getResultType() == ResultWas::Ok ) {</span>
-<span class="lineNum">    5994 </span><span class="lineCov">       2530 :                 m_totals.assertions.passed++;</span>
+<span class="lineNum">    5992 </span><span class="lineCov">       2532 :         virtual void assertionEnded( AssertionResult const&amp; result ) {</span>
+<span class="lineNum">    5993 </span><span class="lineCov">       2532 :             if( result.getResultType() == ResultWas::Ok ) {</span>
+<span class="lineNum">    5994 </span><span class="lineCov">       2532 :                 m_totals.assertions.passed++;</span>
 <span class="lineNum">    5995 </span>            :             }
 <span class="lineNum">    5996 </span><span class="lineNoCov">          0 :             else if( !result.isOk() ) {</span>
 <span class="lineNum">    5997 </span><span class="lineNoCov">          0 :                 m_totals.assertions.failed++;</span>
 <span class="lineNum">    5998 </span>            :             }
 <span class="lineNum">    5999 </span>            : 
-<span class="lineNum">    6000 </span><span class="lineCov">       2530 :             if( m_reporter-&gt;assertionEnded( AssertionStats( result, m_messages, m_totals ) ) )</span>
+<span class="lineNum">    6000 </span><span class="lineCov">       2532 :             if( m_reporter-&gt;assertionEnded( AssertionStats( result, m_messages, m_totals ) ) )</span>
 <span class="lineNum">    6001 </span><span class="lineNoCov">          0 :                 m_messages.clear();</span>
 <span class="lineNum">    6002 </span>            : 
 <span class="lineNum">    6003 </span>            :             // Reset working state
-<span class="lineNum">    6004 </span><span class="lineCov">       2530 :             m_lastAssertionInfo = AssertionInfo( &quot;&quot;, m_lastAssertionInfo.lineInfo, &quot;{Unknown expression after the reported line}&quot; , m_lastAssertionInfo.resultDisposition );</span>
-<span class="lineNum">    6005 </span><span class="lineCov">       2530 :             m_lastResult = result;</span>
-<a name="6006"><span class="lineNum">    6006 </span><span class="lineCov">       2530 :         }</span></a>
+<span class="lineNum">    6004 </span><span class="lineCov">       2532 :             m_lastAssertionInfo = AssertionInfo( &quot;&quot;, m_lastAssertionInfo.lineInfo, &quot;{Unknown expression after the reported line}&quot; , m_lastAssertionInfo.resultDisposition );</span>
+<span class="lineNum">    6005 </span><span class="lineCov">       2532 :             m_lastResult = result;</span>
+<a name="6006"><span class="lineNum">    6006 </span><span class="lineCov">       2532 :         }</span></a>
 <span class="lineNum">    6007 </span>            : 
-<span class="lineNum">    6008 </span><span class="lineCov">        238 :         virtual bool sectionStarted (</span>
+<span class="lineNum">    6008 </span><span class="lineCov">        249 :         virtual bool sectionStarted (</span>
 <span class="lineNum">    6009 </span>            :             SectionInfo const&amp; sectionInfo,
 <span class="lineNum">    6010 </span>            :             Counts&amp; assertions
 <span class="lineNum">    6011 </span>            :         )
 <span class="lineNum">    6012 </span>            :         {
-<span class="lineNum">    6013 </span><span class="lineCov">        238 :             std::ostringstream oss;</span>
-<span class="lineNum">    6014 </span><span class="lineCov">        238 :             oss &lt;&lt; sectionInfo.name &lt;&lt; &quot;@&quot; &lt;&lt; sectionInfo.lineInfo;</span>
+<span class="lineNum">    6013 </span><span class="lineCov">        249 :             std::ostringstream oss;</span>
+<span class="lineNum">    6014 </span><span class="lineCov">        249 :             oss &lt;&lt; sectionInfo.name &lt;&lt; &quot;@&quot; &lt;&lt; sectionInfo.lineInfo;</span>
 <span class="lineNum">    6015 </span>            : 
-<span class="lineNum">    6016 </span><span class="lineCov">        238 :             ITracker&amp; sectionTracker = SectionTracker::acquire( m_trackerContext, oss.str() );</span>
-<span class="lineNum">    6017 </span><span class="lineCov">        238 :             if( !sectionTracker.isOpen() )</span>
-<span class="lineNum">    6018 </span><span class="lineCov">        192 :                 return false;</span>
-<span class="lineNum">    6019 </span><span class="lineCov">         46 :             m_activeSections.push_back( &amp;sectionTracker );</span>
+<span class="lineNum">    6016 </span><span class="lineCov">        249 :             ITracker&amp; sectionTracker = SectionTracker::acquire( m_trackerContext, oss.str() );</span>
+<span class="lineNum">    6017 </span><span class="lineCov">        249 :             if( !sectionTracker.isOpen() )</span>
+<span class="lineNum">    6018 </span><span class="lineCov">        202 :                 return false;</span>
+<span class="lineNum">    6019 </span><span class="lineCov">         47 :             m_activeSections.push_back( &amp;sectionTracker );</span>
 <span class="lineNum">    6020 </span>            : 
-<span class="lineNum">    6021 </span><span class="lineCov">         46 :             m_lastAssertionInfo.lineInfo = sectionInfo.lineInfo;</span>
+<span class="lineNum">    6021 </span><span class="lineCov">         47 :             m_lastAssertionInfo.lineInfo = sectionInfo.lineInfo;</span>
 <span class="lineNum">    6022 </span>            : 
-<span class="lineNum">    6023 </span><span class="lineCov">         46 :             m_reporter-&gt;sectionStarting( sectionInfo );</span>
+<span class="lineNum">    6023 </span><span class="lineCov">         47 :             m_reporter-&gt;sectionStarting( sectionInfo );</span>
 <span class="lineNum">    6024 </span>            : 
-<span class="lineNum">    6025 </span><span class="lineCov">         46 :             assertions = m_totals.assertions;</span>
+<span class="lineNum">    6025 </span><span class="lineCov">         47 :             assertions = m_totals.assertions;</span>
 <span class="lineNum">    6026 </span>            : 
-<a name="6027"><span class="lineNum">    6027 </span><span class="lineCov">         46 :             return true;</span></a>
+<a name="6027"><span class="lineNum">    6027 </span><span class="lineCov">         47 :             return true;</span></a>
 <span class="lineNum">    6028 </span>            :         }
-<span class="lineNum">    6029 </span><span class="lineCov">        113 :         bool testForMissingAssertions( Counts&amp; assertions ) {</span>
-<span class="lineNum">    6030 </span><span class="lineCov">        113 :             if( assertions.total() != 0 )</span>
-<span class="lineNum">    6031 </span><span class="lineCov">        113 :                 return false;</span>
+<span class="lineNum">    6029 </span><span class="lineCov">        115 :         bool testForMissingAssertions( Counts&amp; assertions ) {</span>
+<span class="lineNum">    6030 </span><span class="lineCov">        115 :             if( assertions.total() != 0 )</span>
+<span class="lineNum">    6031 </span><span class="lineCov">        115 :                 return false;</span>
 <span class="lineNum">    6032 </span><span class="lineNoCov">          0 :             if( !m_config-&gt;warnAboutMissingAssertions() )</span>
 <span class="lineNum">    6033 </span><span class="lineNoCov">          0 :                 return false;</span>
 <span class="lineNum">    6034 </span><span class="lineNoCov">          0 :             if( m_trackerContext.currentTracker().hasChildren() )</span>
@@ -6100,18 +6100,18 @@
 <span class="lineNum">    6038 </span><span class="lineNoCov">          0 :             return true;</span>
 <a name="6039"><span class="lineNum">    6039 </span>            :         }</a>
 <span class="lineNum">    6040 </span>            : 
-<span class="lineNum">    6041 </span><span class="lineCov">         46 :         virtual void sectionEnded( SectionEndInfo const&amp; endInfo ) {</span>
-<span class="lineNum">    6042 </span><span class="lineCov">         46 :             Counts assertions = m_totals.assertions - endInfo.prevAssertions;</span>
-<span class="lineNum">    6043 </span><span class="lineCov">         46 :             bool missingAssertions = testForMissingAssertions( assertions );</span>
+<span class="lineNum">    6041 </span><span class="lineCov">         47 :         virtual void sectionEnded( SectionEndInfo const&amp; endInfo ) {</span>
+<span class="lineNum">    6042 </span><span class="lineCov">         47 :             Counts assertions = m_totals.assertions - endInfo.prevAssertions;</span>
+<span class="lineNum">    6043 </span><span class="lineCov">         47 :             bool missingAssertions = testForMissingAssertions( assertions );</span>
 <span class="lineNum">    6044 </span>            : 
-<span class="lineNum">    6045 </span><span class="lineCov">         46 :             if( !m_activeSections.empty() ) {</span>
-<span class="lineNum">    6046 </span><span class="lineCov">         46 :                 m_activeSections.back()-&gt;close();</span>
-<span class="lineNum">    6047 </span><span class="lineCov">         46 :                 m_activeSections.pop_back();</span>
+<span class="lineNum">    6045 </span><span class="lineCov">         47 :             if( !m_activeSections.empty() ) {</span>
+<span class="lineNum">    6046 </span><span class="lineCov">         47 :                 m_activeSections.back()-&gt;close();</span>
+<span class="lineNum">    6047 </span><span class="lineCov">         47 :                 m_activeSections.pop_back();</span>
 <span class="lineNum">    6048 </span>            :             }
 <span class="lineNum">    6049 </span>            : 
-<span class="lineNum">    6050 </span><span class="lineCov">         46 :             m_reporter-&gt;sectionEnded( SectionStats( endInfo.sectionInfo, assertions, endInfo.durationInSeconds, missingAssertions ) );</span>
-<span class="lineNum">    6051 </span><span class="lineCov">         46 :             m_messages.clear();</span>
-<a name="6052"><span class="lineNum">    6052 </span><span class="lineCov">         46 :         }</span></a>
+<span class="lineNum">    6050 </span><span class="lineCov">         47 :             m_reporter-&gt;sectionEnded( SectionStats( endInfo.sectionInfo, assertions, endInfo.durationInSeconds, missingAssertions ) );</span>
+<span class="lineNum">    6051 </span><span class="lineCov">         47 :             m_messages.clear();</span>
+<a name="6052"><span class="lineNum">    6052 </span><span class="lineCov">         47 :         }</span></a>
 <span class="lineNum">    6053 </span>            : 
 <span class="lineNum">    6054 </span><span class="lineNoCov">          0 :         virtual void sectionEndedEarly( SectionEndInfo const&amp; endInfo ) {</span>
 <span class="lineNum">    6055 </span><span class="lineNoCov">          0 :             if( m_unfinishedSections.empty() )</span>
@@ -6174,34 +6174,34 @@
 <span class="lineNum">    6112 </span>            : 
 <a name="6113"><span class="lineNum">    6113 </span>            :     public:</a>
 <span class="lineNum">    6114 </span>            :         // !TBD We need to do this another way!
-<span class="lineNum">    6115 </span><span class="lineCov">        100 :         bool aborting() const {</span>
-<span class="lineNum">    6116 </span><span class="lineCov">        100 :             return m_totals.assertions.failed == static_cast&lt;std::size_t&gt;( m_config-&gt;abortAfter() );</span>
+<span class="lineNum">    6115 </span><span class="lineCov">        101 :         bool aborting() const {</span>
+<span class="lineNum">    6116 </span><span class="lineCov">        101 :             return m_totals.assertions.failed == static_cast&lt;std::size_t&gt;( m_config-&gt;abortAfter() );</span>
 <span class="lineNum">    6117 </span>            :         }
 <span class="lineNum">    6118 </span>            : 
 <a name="6119"><span class="lineNum">    6119 </span>            :     private:</a>
 <span class="lineNum">    6120 </span>            : 
-<span class="lineNum">    6121 </span><span class="lineCov">         67 :         void runCurrentTest( std::string&amp; redirectedCout, std::string&amp; redirectedCerr ) {</span>
-<span class="lineNum">    6122 </span><span class="lineCov">         67 :             TestCaseInfo const&amp; testCaseInfo = m_activeTestCase-&gt;getTestCaseInfo();</span>
-<span class="lineNum">    6123 </span><span class="lineCov">         67 :             SectionInfo testCaseSection( testCaseInfo.lineInfo, testCaseInfo.name, testCaseInfo.description );</span>
-<span class="lineNum">    6124 </span><span class="lineCov">         67 :             m_reporter-&gt;sectionStarting( testCaseSection );</span>
-<span class="lineNum">    6125 </span><span class="lineCov">         67 :             Counts prevAssertions = m_totals.assertions;</span>
-<span class="lineNum">    6126 </span><span class="lineCov">         67 :             double duration = 0;</span>
+<span class="lineNum">    6121 </span><span class="lineCov">         68 :         void runCurrentTest( std::string&amp; redirectedCout, std::string&amp; redirectedCerr ) {</span>
+<span class="lineNum">    6122 </span><span class="lineCov">         68 :             TestCaseInfo const&amp; testCaseInfo = m_activeTestCase-&gt;getTestCaseInfo();</span>
+<span class="lineNum">    6123 </span><span class="lineCov">         68 :             SectionInfo testCaseSection( testCaseInfo.lineInfo, testCaseInfo.name, testCaseInfo.description );</span>
+<span class="lineNum">    6124 </span><span class="lineCov">         68 :             m_reporter-&gt;sectionStarting( testCaseSection );</span>
+<span class="lineNum">    6125 </span><span class="lineCov">         68 :             Counts prevAssertions = m_totals.assertions;</span>
+<span class="lineNum">    6126 </span><span class="lineCov">         68 :             double duration = 0;</span>
 <span class="lineNum">    6127 </span>            :             try {
-<span class="lineNum">    6128 </span><span class="lineCov">         67 :                 m_lastAssertionInfo = AssertionInfo( &quot;TEST_CASE&quot;, testCaseInfo.lineInfo, &quot;&quot;, ResultDisposition::Normal );</span>
+<span class="lineNum">    6128 </span><span class="lineCov">         68 :                 m_lastAssertionInfo = AssertionInfo( &quot;TEST_CASE&quot;, testCaseInfo.lineInfo, &quot;&quot;, ResultDisposition::Normal );</span>
 <span class="lineNum">    6129 </span>            : 
-<span class="lineNum">    6130 </span><span class="lineCov">         67 :                 seedRng( *m_config );</span>
+<span class="lineNum">    6130 </span><span class="lineCov">         68 :                 seedRng( *m_config );</span>
 <span class="lineNum">    6131 </span>            : 
-<span class="lineNum">    6132 </span><span class="lineCov">         67 :                 Timer timer;</span>
-<span class="lineNum">    6133 </span><span class="lineCov">         67 :                 timer.start();</span>
-<span class="lineNum">    6134 </span><span class="lineCov">         67 :                 if( m_reporter-&gt;getPreferences().shouldRedirectStdOut ) {</span>
+<span class="lineNum">    6132 </span><span class="lineCov">         68 :                 Timer timer;</span>
+<span class="lineNum">    6133 </span><span class="lineCov">         68 :                 timer.start();</span>
+<span class="lineNum">    6134 </span><span class="lineCov">         68 :                 if( m_reporter-&gt;getPreferences().shouldRedirectStdOut ) {</span>
 <span class="lineNum">    6135 </span><span class="lineNoCov">          0 :                     StreamRedirect coutRedir( Catch::cout(), redirectedCout );</span>
 <span class="lineNum">    6136 </span><span class="lineNoCov">          0 :                     StreamRedirect cerrRedir( Catch::cerr(), redirectedCerr );</span>
 <span class="lineNum">    6137 </span><span class="lineNoCov">          0 :                     invokeActiveTestCase();</span>
 <span class="lineNum">    6138 </span>            :                 }
 <span class="lineNum">    6139 </span>            :                 else {
-<span class="lineNum">    6140 </span><span class="lineCov">         67 :                     invokeActiveTestCase();</span>
+<span class="lineNum">    6140 </span><span class="lineCov">         68 :                     invokeActiveTestCase();</span>
 <span class="lineNum">    6141 </span>            :                 }
-<span class="lineNum">    6142 </span><span class="lineCov">         67 :                 duration = timer.getElapsedSeconds();</span>
+<span class="lineNum">    6142 </span><span class="lineCov">         68 :                 duration = timer.getElapsedSeconds();</span>
 <span class="lineNum">    6143 </span>            :             }
 <span class="lineNum">    6144 </span>            :             catch( TestFailureException&amp; ) {
 <span class="lineNum">    6145 </span>            :                 // This just means the test was aborted due to failure
@@ -6209,28 +6209,28 @@
 <span class="lineNum">    6147 </span>            :             catch(...) {
 <span class="lineNum">    6148 </span>            :                 makeUnexpectedResultBuilder().useActiveException();
 <span class="lineNum">    6149 </span>            :             }
-<span class="lineNum">    6150 </span><span class="lineCov">         67 :             m_testCaseTracker-&gt;close();</span>
-<span class="lineNum">    6151 </span><span class="lineCov">         67 :             handleUnfinishedSections();</span>
-<span class="lineNum">    6152 </span><span class="lineCov">         67 :             m_messages.clear();</span>
+<span class="lineNum">    6150 </span><span class="lineCov">         68 :             m_testCaseTracker-&gt;close();</span>
+<span class="lineNum">    6151 </span><span class="lineCov">         68 :             handleUnfinishedSections();</span>
+<span class="lineNum">    6152 </span><span class="lineCov">         68 :             m_messages.clear();</span>
 <span class="lineNum">    6153 </span>            : 
-<span class="lineNum">    6154 </span><span class="lineCov">         67 :             Counts assertions = m_totals.assertions - prevAssertions;</span>
-<span class="lineNum">    6155 </span><span class="lineCov">         67 :             bool missingAssertions = testForMissingAssertions( assertions );</span>
+<span class="lineNum">    6154 </span><span class="lineCov">         68 :             Counts assertions = m_totals.assertions - prevAssertions;</span>
+<span class="lineNum">    6155 </span><span class="lineCov">         68 :             bool missingAssertions = testForMissingAssertions( assertions );</span>
 <span class="lineNum">    6156 </span>            : 
-<span class="lineNum">    6157 </span><span class="lineCov">         67 :             if( testCaseInfo.okToFail() ) {</span>
+<span class="lineNum">    6157 </span><span class="lineCov">         68 :             if( testCaseInfo.okToFail() ) {</span>
 <span class="lineNum">    6158 </span><span class="lineNoCov">          0 :                 std::swap( assertions.failedButOk, assertions.failed );</span>
 <span class="lineNum">    6159 </span><span class="lineNoCov">          0 :                 m_totals.assertions.failed -= assertions.failedButOk;</span>
 <span class="lineNum">    6160 </span><span class="lineNoCov">          0 :                 m_totals.assertions.failedButOk += assertions.failedButOk;</span>
 <span class="lineNum">    6161 </span>            :             }
 <span class="lineNum">    6162 </span>            : 
-<span class="lineNum">    6163 </span><span class="lineCov">        134 :             SectionStats testCaseSectionStats( testCaseSection, assertions, duration, missingAssertions );</span>
-<span class="lineNum">    6164 </span><span class="lineCov">        134 :             m_reporter-&gt;sectionEnded( testCaseSectionStats );</span>
-<a name="6165"><span class="lineNum">    6165 </span><span class="lineCov">         67 :         }</span></a>
+<span class="lineNum">    6163 </span><span class="lineCov">        136 :             SectionStats testCaseSectionStats( testCaseSection, assertions, duration, missingAssertions );</span>
+<span class="lineNum">    6164 </span><span class="lineCov">        136 :             m_reporter-&gt;sectionEnded( testCaseSectionStats );</span>
+<a name="6165"><span class="lineNum">    6165 </span><span class="lineCov">         68 :         }</span></a>
 <span class="lineNum">    6166 </span>            : 
-<span class="lineNum">    6167 </span><span class="lineCov">         67 :         void invokeActiveTestCase() {</span>
-<span class="lineNum">    6168 </span><span class="lineCov">         67 :             FatalConditionHandler fatalConditionHandler; // Handle signals</span>
-<span class="lineNum">    6169 </span><span class="lineCov">         67 :             m_activeTestCase-&gt;invoke();</span>
-<span class="lineNum">    6170 </span><span class="lineCov">         67 :             fatalConditionHandler.reset();</span>
-<span class="lineNum">    6171 </span><span class="lineCov">         67 :         }</span>
+<span class="lineNum">    6167 </span><span class="lineCov">         68 :         void invokeActiveTestCase() {</span>
+<span class="lineNum">    6168 </span><span class="lineCov">         68 :             FatalConditionHandler fatalConditionHandler; // Handle signals</span>
+<span class="lineNum">    6169 </span><span class="lineCov">         68 :             m_activeTestCase-&gt;invoke();</span>
+<span class="lineNum">    6170 </span><span class="lineCov">         68 :             fatalConditionHandler.reset();</span>
+<span class="lineNum">    6171 </span><span class="lineCov">         68 :         }</span>
 <span class="lineNum">    6172 </span>            : 
 <a name="6173"><span class="lineNum">    6173 </span>            :     private:</a>
 <span class="lineNum">    6174 </span>            : 
@@ -6241,16 +6241,16 @@
 <span class="lineNum">    6179 </span><span class="lineNoCov">          0 :                                     m_lastAssertionInfo.resultDisposition );</span>
 <a name="6180"><span class="lineNum">    6180 </span>            :         }</a>
 <span class="lineNum">    6181 </span>            : 
-<span class="lineNum">    6182 </span><span class="lineCov">         67 :         void handleUnfinishedSections() {</span>
+<span class="lineNum">    6182 </span><span class="lineCov">         68 :         void handleUnfinishedSections() {</span>
 <span class="lineNum">    6183 </span>            :             // If sections ended prematurely due to an exception we stored their
 <span class="lineNum">    6184 </span>            :             // infos here so we can tear them down outside the unwind process.
-<span class="lineNum">    6185 </span><span class="lineCov">        134 :             for( std::vector&lt;SectionEndInfo&gt;::const_reverse_iterator it = m_unfinishedSections.rbegin(),</span>
-<span class="lineNum">    6186 </span><span class="lineCov">         67 :                         itEnd = m_unfinishedSections.rend();</span>
+<span class="lineNum">    6185 </span><span class="lineCov">        136 :             for( std::vector&lt;SectionEndInfo&gt;::const_reverse_iterator it = m_unfinishedSections.rbegin(),</span>
+<span class="lineNum">    6186 </span><span class="lineCov">         68 :                         itEnd = m_unfinishedSections.rend();</span>
 <span class="lineNum">    6187 </span>            :                     it != itEnd;
 <span class="lineNum">    6188 </span>            :                     ++it )
 <span class="lineNum">    6189 </span><span class="lineNoCov">          0 :                 sectionEnded( *it );</span>
-<span class="lineNum">    6190 </span><span class="lineCov">         67 :             m_unfinishedSections.clear();</span>
-<span class="lineNum">    6191 </span><span class="lineCov">         67 :         }</span>
+<span class="lineNum">    6190 </span><span class="lineCov">         68 :             m_unfinishedSections.clear();</span>
+<span class="lineNum">    6191 </span><span class="lineCov">         68 :         }</span>
 <span class="lineNum">    6192 </span>            : 
 <span class="lineNum">    6193 </span>            :         TestRunInfo m_runInfo;
 <span class="lineNum">    6194 </span>            :         IMutableContext&amp; m_context;
@@ -6269,9 +6269,9 @@
 <span class="lineNum">    6207 </span>            :         TrackerContext m_trackerContext;
 <a name="6208"><span class="lineNum">    6208 </span>            :     };</a>
 <span class="lineNum">    6209 </span>            : 
-<span class="lineNum">    6210 </span><span class="lineCov">       2814 :     IResultCapture&amp; getResultCapture() {</span>
-<span class="lineNum">    6211 </span><span class="lineCov">       2814 :         if( IResultCapture* capture = getCurrentContext().getResultCapture() )</span>
-<span class="lineNum">    6212 </span><span class="lineCov">       5628 :             return *capture;</span>
+<span class="lineNum">    6210 </span><span class="lineCov">       2828 :     IResultCapture&amp; getResultCapture() {</span>
+<span class="lineNum">    6211 </span><span class="lineCov">       2828 :         if( IResultCapture* capture = getCurrentContext().getResultCapture() )</span>
+<span class="lineNum">    6212 </span><span class="lineCov">       5656 :             return *capture;</span>
 <span class="lineNum">    6213 </span>            :         else
 <span class="lineNum">    6214 </span><span class="lineNoCov">          0 :             throw std::logic_error( &quot;No result capture instance&quot; );</span>
 <span class="lineNum">    6215 </span>            :     }
@@ -6651,9 +6651,9 @@
 <span class="lineNum">    6589 </span>            : 
 <a name="6590"><span class="lineNum">    6590 </span><span class="lineCov">         31 :         FreeFunctionTestCase( TestFunction fun ) : m_fun( fun ) {}</span></a>
 <span class="lineNum">    6591 </span>            : 
-<span class="lineNum">    6592 </span><span class="lineCov">         67 :         virtual void invoke() const {</span>
-<span class="lineNum">    6593 </span><span class="lineCov">         67 :             m_fun();</span>
-<span class="lineNum">    6594 </span><span class="lineCov">         67 :         }</span>
+<span class="lineNum">    6592 </span><span class="lineCov">         68 :         virtual void invoke() const {</span>
+<span class="lineNum">    6593 </span><span class="lineCov">         68 :             m_fun();</span>
+<span class="lineNum">    6594 </span><span class="lineCov">         68 :         }</span>
 <span class="lineNum">    6595 </span>            : 
 <span class="lineNum">    6596 </span>            :     private:
 <span class="lineNum">    6597 </span>            :         virtual ~FreeFunctionTestCase();
@@ -7007,8 +7007,8 @@
 <span class="lineNum">    6945 </span>            :         void operator=( Context const&amp; );
 <a name="6946"><span class="lineNum">    6946 </span>            : </a>
 <span class="lineNum">    6947 </span>            :     public: // IContext
-<span class="lineNum">    6948 </span><span class="lineCov">       2845 :         virtual IResultCapture* getResultCapture() {</span>
-<a name="6949"><span class="lineNum">    6949 </span><span class="lineCov">       2845 :             return m_resultCapture;</span></a>
+<span class="lineNum">    6948 </span><span class="lineCov">       2859 :         virtual IResultCapture* getResultCapture() {</span>
+<a name="6949"><span class="lineNum">    6949 </span><span class="lineCov">       2859 :             return m_resultCapture;</span></a>
 <span class="lineNum">    6950 </span>            :         }
 <span class="lineNum">    6951 </span><span class="lineNoCov">          0 :         virtual IRunner* getRunner() {</span>
 <a name="6952"><span class="lineNum">    6952 </span><span class="lineNoCov">          0 :             return m_runner;</span></a>
@@ -7071,13 +7071,13 @@
 <span class="lineNum">    7009 </span>            :     namespace {
 <a name="7010"><span class="lineNum">    7010 </span>            :         Context* currentContext = CATCH_NULL;</a>
 <span class="lineNum">    7011 </span>            :     }
-<span class="lineNum">    7012 </span><span class="lineCov">       2847 :     IMutableContext&amp; getCurrentMutableContext() {</span>
-<span class="lineNum">    7013 </span><span class="lineCov">       2847 :         if( !currentContext )</span>
+<span class="lineNum">    7012 </span><span class="lineCov">       2861 :     IMutableContext&amp; getCurrentMutableContext() {</span>
+<span class="lineNum">    7013 </span><span class="lineCov">       2861 :         if( !currentContext )</span>
 <span class="lineNum">    7014 </span><span class="lineCov">          1 :             currentContext = new Context();</span>
-<a name="7015"><span class="lineNum">    7015 </span><span class="lineCov">       2847 :         return *currentContext;</span></a>
+<a name="7015"><span class="lineNum">    7015 </span><span class="lineCov">       2861 :         return *currentContext;</span></a>
 <span class="lineNum">    7016 </span>            :     }
-<span class="lineNum">    7017 </span><span class="lineCov">       2846 :     IContext&amp; getCurrentContext() {</span>
-<span class="lineNum">    7018 </span><span class="lineCov">       2846 :         return getCurrentMutableContext();</span>
+<span class="lineNum">    7017 </span><span class="lineCov">       2860 :     IContext&amp; getCurrentContext() {</span>
+<span class="lineNum">    7018 </span><span class="lineCov">       2860 :         return getCurrentMutableContext();</span>
 <a name="7019"><span class="lineNum">    7019 </span>            :     }</a>
 <span class="lineNum">    7020 </span>            : 
 <span class="lineNum">    7021 </span><span class="lineCov">          1 :     void cleanUpContext() {</span>
@@ -7352,24 +7352,24 @@
 <span class="lineNum">    7290 </span>            : 
 <a name="7291"><span class="lineNum">    7291 </span>            : namespace Catch {</a>
 <span class="lineNum">    7292 </span>            : 
-<span class="lineNum">    7293 </span><span class="lineCov">       5127 :     AssertionInfo::AssertionInfo(   std::string const&amp; _macroName,</span>
+<span class="lineNum">    7293 </span><span class="lineCov">       5132 :     AssertionInfo::AssertionInfo(   std::string const&amp; _macroName,</span>
 <span class="lineNum">    7294 </span>            :                                     SourceLineInfo const&amp; _lineInfo,
 <span class="lineNum">    7295 </span>            :                                     std::string const&amp; _capturedExpression,
 <span class="lineNum">    7296 </span>            :                                     ResultDisposition::Flags _resultDisposition )
 <span class="lineNum">    7297 </span>            :     :   macroName( _macroName ),
 <span class="lineNum">    7298 </span>            :         lineInfo( _lineInfo ),
 <span class="lineNum">    7299 </span>            :         capturedExpression( _capturedExpression ),
-<span class="lineNum">    7300 </span><span class="lineCov">       5127 :         resultDisposition( _resultDisposition )</span>
-<a name="7301"><span class="lineNum">    7301 </span><span class="lineCov">       5127 :     {}</span></a>
+<span class="lineNum">    7300 </span><span class="lineCov">       5132 :         resultDisposition( _resultDisposition )</span>
+<a name="7301"><span class="lineNum">    7301 </span><span class="lineCov">       5132 :     {}</span></a>
 <span class="lineNum">    7302 </span>            : 
 <a name="7303"><span class="lineNum">    7303 </span><span class="lineCov">          1 :     AssertionResult::AssertionResult() {}</span></a>
 <span class="lineNum">    7304 </span>            : 
-<span class="lineNum">    7305 </span><span class="lineCov">       2530 :     AssertionResult::AssertionResult( AssertionInfo const&amp; info, AssertionResultData const&amp; data )</span>
+<span class="lineNum">    7305 </span><span class="lineCov">       2532 :     AssertionResult::AssertionResult( AssertionInfo const&amp; info, AssertionResultData const&amp; data )</span>
 <span class="lineNum">    7306 </span>            :     :   m_info( info ),
-<span class="lineNum">    7307 </span><span class="lineCov">       2530 :         m_resultData( data )</span>
-<a name="7308"><span class="lineNum">    7308 </span><span class="lineCov">       2530 :     {}</span></a>
+<span class="lineNum">    7307 </span><span class="lineCov">       2532 :         m_resultData( data )</span>
+<a name="7308"><span class="lineNum">    7308 </span><span class="lineCov">       2532 :     {}</span></a>
 <span class="lineNum">    7309 </span>            : 
-<span class="lineNum">    7310 </span><span class="lineCov">       5061 :     AssertionResult::~AssertionResult() {}</span>
+<span class="lineNum">    7310 </span><span class="lineCov">       5065 :     AssertionResult::~AssertionResult() {}</span>
 <a name="7311"><span class="lineNum">    7311 </span>            : </a>
 <span class="lineNum">    7312 </span>            :     // Result was a success
 <span class="lineNum">    7313 </span><span class="lineNoCov">          0 :     bool AssertionResult::succeeded() const {</span>
@@ -7377,20 +7377,20 @@
 <span class="lineNum">    7315 </span>            :     }
 <a name="7316"><span class="lineNum">    7316 </span>            : </a>
 <span class="lineNum">    7317 </span>            :     // Result was a success, or failure is suppressed
-<span class="lineNum">    7318 </span><span class="lineCov">       5060 :     bool AssertionResult::isOk() const {</span>
-<span class="lineNum">    7319 </span><span class="lineCov">       5060 :         return Catch::isOk( m_resultData.resultType ) || shouldSuppressFailure( m_info.resultDisposition );</span>
+<span class="lineNum">    7318 </span><span class="lineCov">       5064 :     bool AssertionResult::isOk() const {</span>
+<span class="lineNum">    7319 </span><span class="lineCov">       5064 :         return Catch::isOk( m_resultData.resultType ) || shouldSuppressFailure( m_info.resultDisposition );</span>
 <a name="7320"><span class="lineNum">    7320 </span>            :     }</a>
 <span class="lineNum">    7321 </span>            : 
-<span class="lineNum">    7322 </span><span class="lineCov">       5060 :     ResultWas::OfType AssertionResult::getResultType() const {</span>
-<span class="lineNum">    7323 </span><span class="lineCov">       5060 :         return m_resultData.resultType;</span>
+<span class="lineNum">    7322 </span><span class="lineCov">       5064 :     ResultWas::OfType AssertionResult::getResultType() const {</span>
+<span class="lineNum">    7323 </span><span class="lineCov">       5064 :         return m_resultData.resultType;</span>
 <a name="7324"><span class="lineNum">    7324 </span>            :     }</a>
 <span class="lineNum">    7325 </span>            : 
 <span class="lineNum">    7326 </span><span class="lineNoCov">          0 :     bool AssertionResult::hasExpression() const {</span>
 <span class="lineNum">    7327 </span><span class="lineNoCov">          0 :         return !m_info.capturedExpression.empty();</span>
 <a name="7328"><span class="lineNum">    7328 </span>            :     }</a>
 <span class="lineNum">    7329 </span>            : 
-<span class="lineNum">    7330 </span><span class="lineCov">       2530 :     bool AssertionResult::hasMessage() const {</span>
-<span class="lineNum">    7331 </span><span class="lineCov">       2530 :         return !m_resultData.message.empty();</span>
+<span class="lineNum">    7330 </span><span class="lineCov">       2532 :     bool AssertionResult::hasMessage() const {</span>
+<span class="lineNum">    7331 </span><span class="lineCov">       2532 :         return !m_resultData.message.empty();</span>
 <a name="7332"><span class="lineNum">    7332 </span>            :     }</a>
 <span class="lineNum">    7333 </span>            : 
 <span class="lineNum">    7334 </span><span class="lineNoCov">          0 :     std::string AssertionResult::getExpression() const {</span>
@@ -7556,8 +7556,8 @@
 <span class="lineNum">    7494 </span><span class="lineNoCov">          0 :     bool TestCaseInfo::throws() const {</span>
 <a name="7495"><span class="lineNum">    7495 </span><span class="lineNoCov">          0 :         return ( properties &amp; Throws ) != 0;</span></a>
 <span class="lineNum">    7496 </span>            :     }
-<span class="lineNum">    7497 </span><span class="lineCov">         67 :     bool TestCaseInfo::okToFail() const {</span>
-<a name="7498"><span class="lineNum">    7498 </span><span class="lineCov">         67 :         return ( properties &amp; (ShouldFail | MayFail ) ) != 0;</span></a>
+<span class="lineNum">    7497 </span><span class="lineCov">         68 :     bool TestCaseInfo::okToFail() const {</span>
+<a name="7498"><span class="lineNum">    7498 </span><span class="lineCov">         68 :         return ( properties &amp; (ShouldFail | MayFail ) ) != 0;</span></a>
 <span class="lineNum">    7499 </span>            :     }
 <span class="lineNum">    7500 </span><span class="lineCov">         31 :     bool TestCaseInfo::expectedToFail() const {</span>
 <span class="lineNum">    7501 </span><span class="lineCov">         31 :         return ( properties &amp; (ShouldFail ) ) != 0;</span>
@@ -7588,9 +7588,9 @@
 <span class="lineNum">    7526 </span><span class="lineNoCov">          0 :         std::swap( lineInfo, other.lineInfo );</span>
 <a name="7527"><span class="lineNum">    7527 </span><span class="lineNoCov">          0 :     }</span></a>
 <span class="lineNum">    7528 </span>            : 
-<span class="lineNum">    7529 </span><span class="lineCov">         67 :     void TestCase::invoke() const {</span>
-<span class="lineNum">    7530 </span><span class="lineCov">         67 :         test-&gt;invoke();</span>
-<a name="7531"><span class="lineNum">    7531 </span><span class="lineCov">         67 :     }</span></a>
+<span class="lineNum">    7529 </span><span class="lineCov">         68 :     void TestCase::invoke() const {</span>
+<span class="lineNum">    7530 </span><span class="lineCov">         68 :         test-&gt;invoke();</span>
+<a name="7531"><span class="lineNum">    7531 </span><span class="lineCov">         68 :     }</span></a>
 <span class="lineNum">    7532 </span>            : 
 <span class="lineNum">    7533 </span><span class="lineNoCov">          0 :     bool TestCase::operator == ( TestCase const&amp; other ) const {</span>
 <span class="lineNum">    7534 </span><span class="lineNoCov">          0 :         return  test.get() == other.test.get() &amp;&amp;</span>
@@ -7607,9 +7607,9 @@
 <span class="lineNum">    7545 </span><span class="lineNoCov">          0 :         return *this;</span>
 <a name="7546"><span class="lineNum">    7546 </span>            :     }</a>
 <span class="lineNum">    7547 </span>            : 
-<span class="lineNum">    7548 </span><span class="lineCov">        160 :     TestCaseInfo const&amp; TestCase::getTestCaseInfo() const</span>
+<span class="lineNum">    7548 </span><span class="lineCov">        161 :     TestCaseInfo const&amp; TestCase::getTestCaseInfo() const</span>
 <span class="lineNum">    7549 </span>            :     {
-<span class="lineNum">    7550 </span><span class="lineCov">        160 :         return *this;</span>
+<span class="lineNum">    7550 </span><span class="lineCov">        161 :         return *this;</span>
 <span class="lineNum">    7551 </span>            :     }
 <span class="lineNum">    7552 </span>            : 
 <span class="lineNum">    7553 </span>            : } // end namespace Catch
@@ -7835,25 +7835,25 @@
 <span class="lineNum">    7773 </span>            :             return ((t-hzo)*1000000)/hz;
 <a name="7774"><span class="lineNum">    7774 </span>            :         }</a>
 <span class="lineNum">    7775 </span>            : #else
-<span class="lineNum">    7776 </span><span class="lineCov">        418 :         uint64_t getCurrentTicks() {</span>
+<span class="lineNum">    7776 </span><span class="lineCov">        432 :         uint64_t getCurrentTicks() {</span>
 <span class="lineNum">    7777 </span>            :             timeval t;
-<span class="lineNum">    7778 </span><span class="lineCov">        418 :             gettimeofday(&amp;t,CATCH_NULL);</span>
-<span class="lineNum">    7779 </span><span class="lineCov">        418 :             return static_cast&lt;uint64_t&gt;( t.tv_sec ) * 1000000ull + static_cast&lt;uint64_t&gt;( t.tv_usec );</span>
+<span class="lineNum">    7778 </span><span class="lineCov">        432 :             gettimeofday(&amp;t,CATCH_NULL);</span>
+<span class="lineNum">    7779 </span><span class="lineCov">        432 :             return static_cast&lt;uint64_t&gt;( t.tv_sec ) * 1000000ull + static_cast&lt;uint64_t&gt;( t.tv_usec );</span>
 <span class="lineNum">    7780 </span>            :         }
 <span class="lineNum">    7781 </span>            : #endif
 <a name="7782"><span class="lineNum">    7782 </span>            :     }</a>
 <span class="lineNum">    7783 </span>            : 
-<span class="lineNum">    7784 </span><span class="lineCov">        305 :     void Timer::start() {</span>
-<a name="7785"><span class="lineNum">    7785 </span><span class="lineCov">        305 :         m_ticks = getCurrentTicks();</span></a>
-<span class="lineNum">    7786 </span><span class="lineCov">        305 :     }</span>
-<span class="lineNum">    7787 </span><span class="lineCov">        113 :     unsigned int Timer::getElapsedMicroseconds() const {</span>
-<a name="7788"><span class="lineNum">    7788 </span><span class="lineCov">        113 :         return static_cast&lt;unsigned int&gt;(getCurrentTicks() - m_ticks);</span></a>
+<span class="lineNum">    7784 </span><span class="lineCov">        317 :     void Timer::start() {</span>
+<a name="7785"><span class="lineNum">    7785 </span><span class="lineCov">        317 :         m_ticks = getCurrentTicks();</span></a>
+<span class="lineNum">    7786 </span><span class="lineCov">        317 :     }</span>
+<span class="lineNum">    7787 </span><span class="lineCov">        115 :     unsigned int Timer::getElapsedMicroseconds() const {</span>
+<a name="7788"><span class="lineNum">    7788 </span><span class="lineCov">        115 :         return static_cast&lt;unsigned int&gt;(getCurrentTicks() - m_ticks);</span></a>
 <span class="lineNum">    7789 </span>            :     }
 <span class="lineNum">    7790 </span><span class="lineNoCov">          0 :     unsigned int Timer::getElapsedMilliseconds() const {</span>
 <a name="7791"><span class="lineNum">    7791 </span><span class="lineNoCov">          0 :         return static_cast&lt;unsigned int&gt;(getElapsedMicroseconds()/1000);</span></a>
 <span class="lineNum">    7792 </span>            :     }
-<span class="lineNum">    7793 </span><span class="lineCov">        113 :     double Timer::getElapsedSeconds() const {</span>
-<span class="lineNum">    7794 </span><span class="lineCov">        113 :         return getElapsedMicroseconds()/1000000.0;</span>
+<span class="lineNum">    7793 </span><span class="lineCov">        115 :     double Timer::getElapsedSeconds() const {</span>
+<span class="lineNum">    7794 </span><span class="lineCov">        115 :         return getElapsedMicroseconds()/1000000.0;</span>
 <span class="lineNum">    7795 </span>            :     }
 <span class="lineNum">    7796 </span>            : 
 <span class="lineNum">    7797 </span>            : } // namespace Catch
@@ -7921,14 +7921,14 @@
 <a name="7859"><span class="lineNum">    7859 </span>            :     }</a>
 <a name="7860"><span class="lineNum">    7860 </span>            : </a>
 <span class="lineNum">    7861 </span><span class="lineCov">          2 :     SourceLineInfo::SourceLineInfo() : line( 0 ){}</span>
-<span class="lineNum">    7862 </span><span class="lineCov">       2799 :     SourceLineInfo::SourceLineInfo( char const* _file, std::size_t _line )</span>
+<span class="lineNum">    7862 </span><span class="lineCov">       2812 :     SourceLineInfo::SourceLineInfo( char const* _file, std::size_t _line )</span>
 <span class="lineNum">    7863 </span>            :     :   file( _file ),
-<a name="7864"><span class="lineNum">    7864 </span><span class="lineCov">       2799 :         line( _line )</span></a>
-<span class="lineNum">    7865 </span><span class="lineCov">       2799 :     {}</span>
-<span class="lineNum">    7866 </span><span class="lineCov">      11313 :     SourceLineInfo::SourceLineInfo( SourceLineInfo const&amp; other )</span>
+<a name="7864"><span class="lineNum">    7864 </span><span class="lineCov">       2812 :         line( _line )</span></a>
+<span class="lineNum">    7865 </span><span class="lineCov">       2812 :     {}</span>
+<span class="lineNum">    7866 </span><span class="lineCov">      11350 :     SourceLineInfo::SourceLineInfo( SourceLineInfo const&amp; other )</span>
 <span class="lineNum">    7867 </span>            :     :   file( other.file ),
-<a name="7868"><span class="lineNum">    7868 </span><span class="lineCov">      11313 :         line( other.line )</span></a>
-<span class="lineNum">    7869 </span><span class="lineCov">      11313 :     {}</span>
+<a name="7868"><span class="lineNum">    7868 </span><span class="lineCov">      11350 :         line( other.line )</span></a>
+<span class="lineNum">    7869 </span><span class="lineCov">      11350 :     {}</span>
 <span class="lineNum">    7870 </span><span class="lineNoCov">          0 :     bool SourceLineInfo::empty() const {</span>
 <a name="7871"><span class="lineNum">    7871 </span><span class="lineNoCov">          0 :         return file.empty();</span></a>
 <span class="lineNum">    7872 </span>            :     }
@@ -7939,21 +7939,21 @@
 <span class="lineNum">    7877 </span><span class="lineNoCov">          0 :         return line &lt; other.line || ( line == other.line  &amp;&amp; file &lt; other.file );</span>
 <a name="7878"><span class="lineNum">    7878 </span>            :     }</a>
 <span class="lineNum">    7879 </span>            : 
-<span class="lineNum">    7880 </span><span class="lineCov">         68 :     void seedRng( IConfig const&amp; config ) {</span>
-<span class="lineNum">    7881 </span><span class="lineCov">         68 :         if( config.rngSeed() != 0 )</span>
+<span class="lineNum">    7880 </span><span class="lineCov">         69 :     void seedRng( IConfig const&amp; config ) {</span>
+<span class="lineNum">    7881 </span><span class="lineCov">         69 :         if( config.rngSeed() != 0 )</span>
 <a name="7882"><span class="lineNum">    7882 </span><span class="lineNoCov">          0 :             std::srand( config.rngSeed() );</span></a>
-<span class="lineNum">    7883 </span><span class="lineCov">         68 :     }</span>
+<span class="lineNum">    7883 </span><span class="lineCov">         69 :     }</span>
 <span class="lineNum">    7884 </span><span class="lineNoCov">          0 :     unsigned int rngSeed() {</span>
 <span class="lineNum">    7885 </span><span class="lineNoCov">          0 :         return getCurrentContext().getConfig()-&gt;rngSeed();</span>
 <a name="7886"><span class="lineNum">    7886 </span>            :     }</a>
 <span class="lineNum">    7887 </span>            : 
-<span class="lineNum">    7888 </span><span class="lineCov">        238 :     std::ostream&amp; operator &lt;&lt; ( std::ostream&amp; os, SourceLineInfo const&amp; info ) {</span>
+<span class="lineNum">    7888 </span><span class="lineCov">        249 :     std::ostream&amp; operator &lt;&lt; ( std::ostream&amp; os, SourceLineInfo const&amp; info ) {</span>
 <span class="lineNum">    7889 </span>            : #ifndef __GNUG__
 <span class="lineNum">    7890 </span>            :         os &lt;&lt; info.file &lt;&lt; &quot;(&quot; &lt;&lt; info.line &lt;&lt; &quot;)&quot;;
 <span class="lineNum">    7891 </span>            : #else
-<span class="lineNum">    7892 </span><span class="lineCov">        238 :         os &lt;&lt; info.file &lt;&lt; &quot;:&quot; &lt;&lt; info.line;</span>
+<span class="lineNum">    7892 </span><span class="lineCov">        249 :         os &lt;&lt; info.file &lt;&lt; &quot;:&quot; &lt;&lt; info.line;</span>
 <span class="lineNum">    7893 </span>            : #endif
-<span class="lineNum">    7894 </span><span class="lineCov">        238 :         return os;</span>
+<span class="lineNum">    7894 </span><span class="lineCov">        249 :         return os;</span>
 <a name="7895"><span class="lineNum">    7895 </span>            :     }</a>
 <span class="lineNum">    7896 </span>            : 
 <span class="lineNum">    7897 </span><span class="lineNoCov">          0 :     void throwLogicError( std::string const&amp; message, SourceLineInfo const&amp; locationInfo ) {</span>
@@ -7969,35 +7969,35 @@
 <span class="lineNum">    7907 </span>            : 
 <a name="7908"><span class="lineNum">    7908 </span>            : namespace Catch {</a>
 <span class="lineNum">    7909 </span>            : 
-<span class="lineNum">    7910 </span><span class="lineCov">        305 :     SectionInfo::SectionInfo</span>
+<span class="lineNum">    7910 </span><span class="lineCov">        317 :     SectionInfo::SectionInfo</span>
 <span class="lineNum">    7911 </span>            :         (   SourceLineInfo const&amp; _lineInfo,
 <span class="lineNum">    7912 </span>            :             std::string const&amp; _name,
 <span class="lineNum">    7913 </span>            :             std::string const&amp; _description )
 <span class="lineNum">    7914 </span>            :     :   name( _name ),
 <span class="lineNum">    7915 </span>            :         description( _description ),
-<span class="lineNum">    7916 </span><span class="lineCov">        305 :         lineInfo( _lineInfo )</span>
-<a name="7917"><span class="lineNum">    7917 </span><span class="lineCov">        305 :     {}</span></a>
+<span class="lineNum">    7916 </span><span class="lineCov">        317 :         lineInfo( _lineInfo )</span>
+<a name="7917"><span class="lineNum">    7917 </span><span class="lineCov">        317 :     {}</span></a>
 <span class="lineNum">    7918 </span>            : 
-<span class="lineNum">    7919 </span><span class="lineCov">        238 :     Section::Section( SectionInfo const&amp; info )</span>
+<span class="lineNum">    7919 </span><span class="lineCov">        249 :     Section::Section( SectionInfo const&amp; info )</span>
 <span class="lineNum">    7920 </span>            :     :   m_info( info ),
-<span class="lineNum">    7921 </span><span class="lineCov">        238 :         m_sectionIncluded( getResultCapture().sectionStarted( m_info, m_assertions ) )</span>
+<span class="lineNum">    7921 </span><span class="lineCov">        249 :         m_sectionIncluded( getResultCapture().sectionStarted( m_info, m_assertions ) )</span>
 <span class="lineNum">    7922 </span>            :     {
-<span class="lineNum">    7923 </span><span class="lineCov">        238 :         m_timer.start();</span>
-<a name="7924"><span class="lineNum">    7924 </span><span class="lineCov">        238 :     }</span></a>
+<span class="lineNum">    7923 </span><span class="lineCov">        249 :         m_timer.start();</span>
+<a name="7924"><span class="lineNum">    7924 </span><span class="lineCov">        249 :     }</span></a>
 <span class="lineNum">    7925 </span>            : 
-<span class="lineNum">    7926 </span><span class="lineCov">        476 :     Section::~Section() {</span>
-<span class="lineNum">    7927 </span><span class="lineCov">        238 :         if( m_sectionIncluded ) {</span>
-<span class="lineNum">    7928 </span><span class="lineCov">         46 :             SectionEndInfo endInfo( m_info, m_assertions, m_timer.getElapsedSeconds() );</span>
-<span class="lineNum">    7929 </span><span class="lineCov">         46 :             if( std::uncaught_exception() )</span>
+<span class="lineNum">    7926 </span><span class="lineCov">        498 :     Section::~Section() {</span>
+<span class="lineNum">    7927 </span><span class="lineCov">        249 :         if( m_sectionIncluded ) {</span>
+<span class="lineNum">    7928 </span><span class="lineCov">         47 :             SectionEndInfo endInfo( m_info, m_assertions, m_timer.getElapsedSeconds() );</span>
+<span class="lineNum">    7929 </span><span class="lineCov">         47 :             if( std::uncaught_exception() )</span>
 <span class="lineNum">    7930 </span><span class="lineNoCov">          0 :                 getResultCapture().sectionEndedEarly( endInfo );</span>
 <span class="lineNum">    7931 </span>            :             else
-<span class="lineNum">    7932 </span><span class="lineCov">         46 :                 getResultCapture().sectionEnded( endInfo );</span>
+<span class="lineNum">    7932 </span><span class="lineCov">         47 :                 getResultCapture().sectionEnded( endInfo );</span>
 <span class="lineNum">    7933 </span>            :         }
-<span class="lineNum">    7934 </span><span class="lineCov">        238 :     }</span>
+<span class="lineNum">    7934 </span><span class="lineCov">        249 :     }</span>
 <a name="7935"><span class="lineNum">    7935 </span>            : </a>
 <span class="lineNum">    7936 </span>            :     // This indicates whether the section should be executed or not
-<span class="lineNum">    7937 </span><span class="lineCov">        238 :     Section::operator bool() const {</span>
-<span class="lineNum">    7938 </span><span class="lineCov">        238 :         return m_sectionIncluded;</span>
+<span class="lineNum">    7937 </span><span class="lineCov">        249 :     Section::operator bool() const {</span>
+<span class="lineNum">    7938 </span><span class="lineCov">        249 :         return m_sectionIncluded;</span>
 <span class="lineNum">    7939 </span>            :     }
 <span class="lineNum">    7940 </span>            : 
 <span class="lineNum">    7941 </span>            : } // end namespace Catch
@@ -8288,46 +8288,46 @@
 <span class="lineNum">    8226 </span>            : 
 <a name="8227"><span class="lineNum">    8227 </span>            : namespace Catch {</a>
 <span class="lineNum">    8228 </span>            : 
-<span class="lineNum">    8229 </span><span class="lineCov">       2530 :     std::string capturedExpressionWithSecondArgument( std::string const&amp; capturedExpression, std::string const&amp; secondArg ) {</span>
-<span class="lineNum">    8230 </span><span class="lineCov">       2530 :         return secondArg.empty() || secondArg == &quot;\&quot;\&quot;&quot;</span>
+<span class="lineNum">    8229 </span><span class="lineCov">       2532 :     std::string capturedExpressionWithSecondArgument( std::string const&amp; capturedExpression, std::string const&amp; secondArg ) {</span>
+<span class="lineNum">    8230 </span><span class="lineCov">       2532 :         return secondArg.empty() || secondArg == &quot;\&quot;\&quot;&quot;</span>
 <span class="lineNum">    8231 </span>            :             ? capturedExpression
-<a name="8232"><span class="lineNum">    8232 </span><span class="lineCov">       7590 :             : capturedExpression + &quot;, &quot; + secondArg;</span></a>
+<a name="8232"><span class="lineNum">    8232 </span><span class="lineCov">       7596 :             : capturedExpression + &quot;, &quot; + secondArg;</span></a>
 <span class="lineNum">    8233 </span>            :     }
-<span class="lineNum">    8234 </span><span class="lineCov">       2530 :     ResultBuilder::ResultBuilder(   char const* macroName,</span>
+<span class="lineNum">    8234 </span><span class="lineCov">       2532 :     ResultBuilder::ResultBuilder(   char const* macroName,</span>
 <span class="lineNum">    8235 </span>            :                                     SourceLineInfo const&amp; lineInfo,
 <span class="lineNum">    8236 </span>            :                                     char const* capturedExpression,
 <span class="lineNum">    8237 </span>            :                                     ResultDisposition::Flags resultDisposition,
 <span class="lineNum">    8238 </span>            :                                     char const* secondArg )
 <span class="lineNum">    8239 </span>            :     :   m_assertionInfo( macroName, lineInfo, capturedExpressionWithSecondArgument( capturedExpression, secondArg ), resultDisposition ),
 <span class="lineNum">    8240 </span>            :         m_shouldDebugBreak( false ),
-<span class="lineNum">    8241 </span><span class="lineCov">       2530 :         m_shouldThrow( false )</span>
-<a name="8242"><span class="lineNum">    8242 </span><span class="lineCov">       2530 :     {}</span></a>
+<span class="lineNum">    8241 </span><span class="lineCov">       2532 :         m_shouldThrow( false )</span>
+<a name="8242"><span class="lineNum">    8242 </span><span class="lineCov">       2532 :     {}</span></a>
 <span class="lineNum">    8243 </span>            : 
 <span class="lineNum">    8244 </span><span class="lineNoCov">          0 :     ResultBuilder&amp; ResultBuilder::setResultType( ResultWas::OfType result ) {</span>
 <span class="lineNum">    8245 </span><span class="lineNoCov">          0 :         m_data.resultType = result;</span>
 <a name="8246"><span class="lineNum">    8246 </span><span class="lineNoCov">          0 :         return *this;</span></a>
 <span class="lineNum">    8247 </span>            :     }
-<span class="lineNum">    8248 </span><span class="lineCov">       2530 :     ResultBuilder&amp; ResultBuilder::setResultType( bool result ) {</span>
-<span class="lineNum">    8249 </span><span class="lineCov">       2530 :         m_data.resultType = result ? ResultWas::Ok : ResultWas::ExpressionFailed;</span>
-<a name="8250"><span class="lineNum">    8250 </span><span class="lineCov">       2530 :         return *this;</span></a>
+<span class="lineNum">    8248 </span><span class="lineCov">       2532 :     ResultBuilder&amp; ResultBuilder::setResultType( bool result ) {</span>
+<span class="lineNum">    8249 </span><span class="lineCov">       2532 :         m_data.resultType = result ? ResultWas::Ok : ResultWas::ExpressionFailed;</span>
+<a name="8250"><span class="lineNum">    8250 </span><span class="lineCov">       2532 :         return *this;</span></a>
 <span class="lineNum">    8251 </span>            :     }
-<span class="lineNum">    8252 </span><span class="lineCov">       2530 :     ResultBuilder&amp; ResultBuilder::setLhs( std::string const&amp; lhs ) {</span>
-<span class="lineNum">    8253 </span><span class="lineCov">       2530 :         m_exprComponents.lhs = lhs;</span>
-<a name="8254"><span class="lineNum">    8254 </span><span class="lineCov">       2530 :         return *this;</span></a>
+<span class="lineNum">    8252 </span><span class="lineCov">       2532 :     ResultBuilder&amp; ResultBuilder::setLhs( std::string const&amp; lhs ) {</span>
+<span class="lineNum">    8253 </span><span class="lineCov">       2532 :         m_exprComponents.lhs = lhs;</span>
+<a name="8254"><span class="lineNum">    8254 </span><span class="lineCov">       2532 :         return *this;</span></a>
 <span class="lineNum">    8255 </span>            :     }
-<span class="lineNum">    8256 </span><span class="lineCov">       2185 :     ResultBuilder&amp; ResultBuilder::setRhs( std::string const&amp; rhs ) {</span>
-<span class="lineNum">    8257 </span><span class="lineCov">       2185 :         m_exprComponents.rhs = rhs;</span>
-<a name="8258"><span class="lineNum">    8258 </span><span class="lineCov">       2185 :         return *this;</span></a>
+<span class="lineNum">    8256 </span><span class="lineCov">       2187 :     ResultBuilder&amp; ResultBuilder::setRhs( std::string const&amp; rhs ) {</span>
+<span class="lineNum">    8257 </span><span class="lineCov">       2187 :         m_exprComponents.rhs = rhs;</span>
+<a name="8258"><span class="lineNum">    8258 </span><span class="lineCov">       2187 :         return *this;</span></a>
 <span class="lineNum">    8259 </span>            :     }
-<span class="lineNum">    8260 </span><span class="lineCov">       2185 :     ResultBuilder&amp; ResultBuilder::setOp( std::string const&amp; op ) {</span>
-<span class="lineNum">    8261 </span><span class="lineCov">       2185 :         m_exprComponents.op = op;</span>
-<span class="lineNum">    8262 </span><span class="lineCov">       2185 :         return *this;</span>
+<span class="lineNum">    8260 </span><span class="lineCov">       2187 :     ResultBuilder&amp; ResultBuilder::setOp( std::string const&amp; op ) {</span>
+<span class="lineNum">    8261 </span><span class="lineCov">       2187 :         m_exprComponents.op = op;</span>
+<span class="lineNum">    8262 </span><span class="lineCov">       2187 :         return *this;</span>
 <a name="8263"><span class="lineNum">    8263 </span>            :     }</a>
 <span class="lineNum">    8264 </span>            : 
-<span class="lineNum">    8265 </span><span class="lineCov">       2530 :     void ResultBuilder::endExpression() {</span>
-<span class="lineNum">    8266 </span><span class="lineCov">       2530 :         m_exprComponents.testFalse = isFalseTest( m_assertionInfo.resultDisposition );</span>
-<span class="lineNum">    8267 </span><span class="lineCov">       2530 :         captureExpression();</span>
-<a name="8268"><span class="lineNum">    8268 </span><span class="lineCov">       2530 :     }</span></a>
+<span class="lineNum">    8265 </span><span class="lineCov">       2532 :     void ResultBuilder::endExpression() {</span>
+<span class="lineNum">    8266 </span><span class="lineCov">       2532 :         m_exprComponents.testFalse = isFalseTest( m_assertionInfo.resultDisposition );</span>
+<span class="lineNum">    8267 </span><span class="lineCov">       2532 :         captureExpression();</span>
+<a name="8268"><span class="lineNum">    8268 </span><span class="lineCov">       2532 :     }</span></a>
 <span class="lineNum">    8269 </span>            : 
 <span class="lineNum">    8270 </span><span class="lineNoCov">          0 :     void ResultBuilder::useActiveException( ResultDisposition::Flags resultDisposition ) {</span>
 <span class="lineNum">    8271 </span><span class="lineNoCov">          0 :         m_assertionInfo.resultDisposition = resultDisposition;</span>
@@ -8362,63 +8362,63 @@
 <span class="lineNum">    8300 </span><span class="lineNoCov">          0 :         handleResult( result );</span>
 <a name="8301"><span class="lineNum">    8301 </span><span class="lineNoCov">          0 :     }</span></a>
 <span class="lineNum">    8302 </span>            : 
-<span class="lineNum">    8303 </span><span class="lineCov">       2530 :     void ResultBuilder::captureExpression() {</span>
-<span class="lineNum">    8304 </span><span class="lineCov">       2530 :         AssertionResult result = build();</span>
-<a name="8305"><span class="lineNum">    8305 </span><span class="lineCov">       2530 :         handleResult( result );</span></a>
-<span class="lineNum">    8306 </span><span class="lineCov">       2530 :     }</span>
-<span class="lineNum">    8307 </span><span class="lineCov">       2530 :     void ResultBuilder::handleResult( AssertionResult const&amp; result )</span>
+<span class="lineNum">    8303 </span><span class="lineCov">       2532 :     void ResultBuilder::captureExpression() {</span>
+<span class="lineNum">    8304 </span><span class="lineCov">       2532 :         AssertionResult result = build();</span>
+<a name="8305"><span class="lineNum">    8305 </span><span class="lineCov">       2532 :         handleResult( result );</span></a>
+<span class="lineNum">    8306 </span><span class="lineCov">       2532 :     }</span>
+<span class="lineNum">    8307 </span><span class="lineCov">       2532 :     void ResultBuilder::handleResult( AssertionResult const&amp; result )</span>
 <span class="lineNum">    8308 </span>            :     {
-<span class="lineNum">    8309 </span><span class="lineCov">       2530 :         getResultCapture().assertionEnded( result );</span>
+<span class="lineNum">    8309 </span><span class="lineCov">       2532 :         getResultCapture().assertionEnded( result );</span>
 <span class="lineNum">    8310 </span>            : 
-<span class="lineNum">    8311 </span><span class="lineCov">       2530 :         if( !result.isOk() ) {</span>
+<span class="lineNum">    8311 </span><span class="lineCov">       2532 :         if( !result.isOk() ) {</span>
 <span class="lineNum">    8312 </span><span class="lineNoCov">          0 :             if( getCurrentContext().getConfig()-&gt;shouldDebugBreak() )</span>
 <span class="lineNum">    8313 </span><span class="lineNoCov">          0 :                 m_shouldDebugBreak = true;</span>
 <span class="lineNum">    8314 </span><span class="lineNoCov">          0 :             if( getCurrentContext().getRunner()-&gt;aborting() || (m_assertionInfo.resultDisposition &amp; ResultDisposition::Normal) )</span>
 <span class="lineNum">    8315 </span><span class="lineNoCov">          0 :                 m_shouldThrow = true;</span>
 <a name="8316"><span class="lineNum">    8316 </span>            :         }</a>
-<span class="lineNum">    8317 </span><span class="lineCov">       2530 :     }</span>
-<span class="lineNum">    8318 </span><span class="lineCov">       2530 :     void ResultBuilder::react() {</span>
-<span class="lineNum">    8319 </span><span class="lineCov">       2530 :         if( m_shouldThrow )</span>
+<span class="lineNum">    8317 </span><span class="lineCov">       2532 :     }</span>
+<span class="lineNum">    8318 </span><span class="lineCov">       2532 :     void ResultBuilder::react() {</span>
+<span class="lineNum">    8319 </span><span class="lineCov">       2532 :         if( m_shouldThrow )</span>
 <span class="lineNum">    8320 </span><span class="lineNoCov">          0 :             throw Catch::TestFailureException();</span>
-<a name="8321"><span class="lineNum">    8321 </span><span class="lineCov">       2530 :     }</span></a>
+<a name="8321"><span class="lineNum">    8321 </span><span class="lineCov">       2532 :     }</span></a>
 <a name="8322"><span class="lineNum">    8322 </span>            : </a>
-<span class="lineNum">    8323 </span><span class="lineCov">       2530 :     bool ResultBuilder::shouldDebugBreak() const { return m_shouldDebugBreak; }</span>
+<span class="lineNum">    8323 </span><span class="lineCov">       2532 :     bool ResultBuilder::shouldDebugBreak() const { return m_shouldDebugBreak; }</span>
 <a name="8324"><span class="lineNum">    8324 </span><span class="lineNoCov">          0 :     bool ResultBuilder::allowThrows() const { return getCurrentContext().getConfig()-&gt;allowThrows(); }</span></a>
 <span class="lineNum">    8325 </span>            : 
-<span class="lineNum">    8326 </span><span class="lineCov">       2530 :     AssertionResult ResultBuilder::build() const</span>
+<span class="lineNum">    8326 </span><span class="lineCov">       2532 :     AssertionResult ResultBuilder::build() const</span>
 <span class="lineNum">    8327 </span>            :     {
-<span class="lineNum">    8328 </span><span class="lineCov">       2530 :         assert( m_data.resultType != ResultWas::Unknown );</span>
+<span class="lineNum">    8328 </span><span class="lineCov">       2532 :         assert( m_data.resultType != ResultWas::Unknown );</span>
 <span class="lineNum">    8329 </span>            : 
-<span class="lineNum">    8330 </span><span class="lineCov">       2530 :         AssertionResultData data = m_data;</span>
+<span class="lineNum">    8330 </span><span class="lineCov">       2532 :         AssertionResultData data = m_data;</span>
 <span class="lineNum">    8331 </span>            : 
 <span class="lineNum">    8332 </span>            :         // Flip bool results if testFalse is set
-<span class="lineNum">    8333 </span><span class="lineCov">       2530 :         if( m_exprComponents.testFalse ) {</span>
+<span class="lineNum">    8333 </span><span class="lineCov">       2532 :         if( m_exprComponents.testFalse ) {</span>
 <span class="lineNum">    8334 </span><span class="lineCov">        207 :             if( data.resultType == ResultWas::Ok )</span>
 <span class="lineNum">    8335 </span><span class="lineNoCov">          0 :                 data.resultType = ResultWas::ExpressionFailed;</span>
 <span class="lineNum">    8336 </span><span class="lineCov">        207 :             else if( data.resultType == ResultWas::ExpressionFailed )</span>
 <span class="lineNum">    8337 </span><span class="lineCov">        207 :                 data.resultType = ResultWas::Ok;</span>
 <span class="lineNum">    8338 </span>            :         }
 <span class="lineNum">    8339 </span>            : 
-<span class="lineNum">    8340 </span><span class="lineCov">       2530 :         data.message = m_stream.oss.str();</span>
-<span class="lineNum">    8341 </span><span class="lineCov">       2530 :         data.reconstructedExpression = reconstructExpression();</span>
-<span class="lineNum">    8342 </span><span class="lineCov">       2530 :         if( m_exprComponents.testFalse ) {</span>
+<span class="lineNum">    8340 </span><span class="lineCov">       2532 :         data.message = m_stream.oss.str();</span>
+<span class="lineNum">    8341 </span><span class="lineCov">       2532 :         data.reconstructedExpression = reconstructExpression();</span>
+<span class="lineNum">    8342 </span><span class="lineCov">       2532 :         if( m_exprComponents.testFalse ) {</span>
 <span class="lineNum">    8343 </span><span class="lineCov">        207 :             if( m_exprComponents.op == &quot;&quot; )</span>
 <span class="lineNum">    8344 </span><span class="lineCov">        207 :                 data.reconstructedExpression = &quot;!&quot; + data.reconstructedExpression;</span>
 <span class="lineNum">    8345 </span>            :             else
 <span class="lineNum">    8346 </span><span class="lineNoCov">          0 :                 data.reconstructedExpression = &quot;!(&quot; + data.reconstructedExpression + &quot;)&quot;;</span>
 <span class="lineNum">    8347 </span>            :         }
-<a name="8348"><span class="lineNum">    8348 </span><span class="lineCov">       2530 :         return AssertionResult( m_assertionInfo, data );</span></a>
+<a name="8348"><span class="lineNum">    8348 </span><span class="lineCov">       2532 :         return AssertionResult( m_assertionInfo, data );</span></a>
 <span class="lineNum">    8349 </span>            :     }
-<span class="lineNum">    8350 </span><span class="lineCov">       2530 :     std::string ResultBuilder::reconstructExpression() const {</span>
-<span class="lineNum">    8351 </span><span class="lineCov">       2530 :         if( m_exprComponents.op == &quot;&quot; )</span>
+<span class="lineNum">    8350 </span><span class="lineCov">       2532 :     std::string ResultBuilder::reconstructExpression() const {</span>
+<span class="lineNum">    8351 </span><span class="lineCov">       2532 :         if( m_exprComponents.op == &quot;&quot; )</span>
 <span class="lineNum">    8352 </span><span class="lineCov">        345 :             return m_exprComponents.lhs.empty() ? m_assertionInfo.capturedExpression : m_exprComponents.op + m_exprComponents.lhs;</span>
-<span class="lineNum">    8353 </span><span class="lineCov">       2185 :         else if( m_exprComponents.op == &quot;matches&quot; )</span>
+<span class="lineNum">    8353 </span><span class="lineCov">       2187 :         else if( m_exprComponents.op == &quot;matches&quot; )</span>
 <span class="lineNum">    8354 </span><span class="lineNoCov">          0 :             return m_exprComponents.lhs + &quot; &quot; + m_exprComponents.rhs;</span>
-<span class="lineNum">    8355 </span><span class="lineCov">       2185 :         else if( m_exprComponents.op != &quot;!&quot; ) {</span>
-<span class="lineNum">    8356 </span><span class="lineCov">       6512 :             if( m_exprComponents.lhs.size() + m_exprComponents.rhs.size() &lt; 40 &amp;&amp;</span>
-<span class="lineNum">    8357 </span><span class="lineCov">       4327 :                 m_exprComponents.lhs.find(&quot;\n&quot;) == std::string::npos &amp;&amp;</span>
-<span class="lineNum">    8358 </span><span class="lineCov">       2142 :                 m_exprComponents.rhs.find(&quot;\n&quot;) == std::string::npos )</span>
-<span class="lineNum">    8359 </span><span class="lineCov">       2142 :                 return m_exprComponents.lhs + &quot; &quot; + m_exprComponents.op + &quot; &quot; + m_exprComponents.rhs;</span>
+<span class="lineNum">    8355 </span><span class="lineCov">       2187 :         else if( m_exprComponents.op != &quot;!&quot; ) {</span>
+<span class="lineNum">    8356 </span><span class="lineCov">       6518 :             if( m_exprComponents.lhs.size() + m_exprComponents.rhs.size() &lt; 40 &amp;&amp;</span>
+<span class="lineNum">    8357 </span><span class="lineCov">       4331 :                 m_exprComponents.lhs.find(&quot;\n&quot;) == std::string::npos &amp;&amp;</span>
+<span class="lineNum">    8358 </span><span class="lineCov">       2144 :                 m_exprComponents.rhs.find(&quot;\n&quot;) == std::string::npos )</span>
+<span class="lineNum">    8359 </span><span class="lineCov">       2144 :                 return m_exprComponents.lhs + &quot; &quot; + m_exprComponents.op + &quot; &quot; + m_exprComponents.rhs;</span>
 <span class="lineNum">    8360 </span>            :             else
 <span class="lineNum">    8361 </span><span class="lineCov">         43 :                 return m_exprComponents.lhs + &quot;\n&quot; + m_exprComponents.op + &quot;\n&quot; + m_exprComponents.rhs;</span>
 <span class="lineNum">    8362 </span>            :         }
@@ -8675,8 +8675,8 @@
 <span class="lineNum">    8613 </span><span class="lineCov">          1 :             m_reporterPrefs.shouldRedirectStdOut = false;</span>
 <a name="8614"><span class="lineNum">    8614 </span><span class="lineCov">          1 :         }</span></a>
 <span class="lineNum">    8615 </span>            : 
-<span class="lineNum">    8616 </span><span class="lineCov">         67 :         virtual ReporterPreferences getPreferences() const CATCH_OVERRIDE {</span>
-<span class="lineNum">    8617 </span><span class="lineCov">         67 :             return m_reporterPrefs;</span>
+<span class="lineNum">    8616 </span><span class="lineCov">         68 :         virtual ReporterPreferences getPreferences() const CATCH_OVERRIDE {</span>
+<span class="lineNum">    8617 </span><span class="lineCov">         68 :             return m_reporterPrefs;</span>
 <span class="lineNum">    8618 </span>            :         }
 <span class="lineNum">    8619 </span>            : 
 <a name="8620"><span class="lineNum">    8620 </span>            :         virtual ~StreamingReporterBase() CATCH_OVERRIDE;</a>
@@ -8693,13 +8693,13 @@
 <span class="lineNum">    8631 </span><span class="lineCov">         31 :         virtual void testCaseStarting( TestCaseInfo const&amp; _testInfo ) CATCH_OVERRIDE {</span>
 <a name="8632"><span class="lineNum">    8632 </span><span class="lineCov">         31 :             currentTestCaseInfo = _testInfo;</span></a>
 <span class="lineNum">    8633 </span><span class="lineCov">         31 :         }</span>
-<span class="lineNum">    8634 </span><span class="lineCov">        113 :         virtual void sectionStarting( SectionInfo const&amp; _sectionInfo ) CATCH_OVERRIDE {</span>
-<span class="lineNum">    8635 </span><span class="lineCov">        113 :             m_sectionStack.push_back( _sectionInfo );</span>
-<a name="8636"><span class="lineNum">    8636 </span><span class="lineCov">        113 :         }</span></a>
+<span class="lineNum">    8634 </span><span class="lineCov">        115 :         virtual void sectionStarting( SectionInfo const&amp; _sectionInfo ) CATCH_OVERRIDE {</span>
+<span class="lineNum">    8635 </span><span class="lineCov">        115 :             m_sectionStack.push_back( _sectionInfo );</span>
+<a name="8636"><span class="lineNum">    8636 </span><span class="lineCov">        115 :         }</span></a>
 <span class="lineNum">    8637 </span>            : 
-<span class="lineNum">    8638 </span><span class="lineCov">        113 :         virtual void sectionEnded( SectionStats const&amp; /* _sectionStats */ ) CATCH_OVERRIDE {</span>
-<a name="8639"><span class="lineNum">    8639 </span><span class="lineCov">        113 :             m_sectionStack.pop_back();</span></a>
-<span class="lineNum">    8640 </span><span class="lineCov">        113 :         }</span>
+<span class="lineNum">    8638 </span><span class="lineCov">        115 :         virtual void sectionEnded( SectionStats const&amp; /* _sectionStats */ ) CATCH_OVERRIDE {</span>
+<a name="8639"><span class="lineNum">    8639 </span><span class="lineCov">        115 :             m_sectionStack.pop_back();</span></a>
+<span class="lineNum">    8640 </span><span class="lineCov">        115 :         }</span>
 <span class="lineNum">    8641 </span><span class="lineCov">         31 :         virtual void testCaseEnded( TestCaseStats const&amp; /* _testCaseStats */ ) CATCH_OVERRIDE {</span>
 <a name="8642"><span class="lineNum">    8642 </span><span class="lineCov">         31 :             currentTestCaseInfo.reset();</span></a>
 <span class="lineNum">    8643 </span><span class="lineCov">         31 :         }</span>
@@ -9640,15 +9640,15 @@
 <span class="lineNum">    9578 </span><span class="lineNoCov">          0 :         virtual void assertionStarting( AssertionInfo const&amp; ) CATCH_OVERRIDE {</span>
 <a name="9579"><span class="lineNum">    9579 </span><span class="lineNoCov">          0 :         }</span></a>
 <span class="lineNum">    9580 </span>            : 
-<span class="lineNum">    9581 </span><span class="lineCov">       2530 :         virtual bool assertionEnded( AssertionStats const&amp; _assertionStats ) CATCH_OVERRIDE {</span>
-<span class="lineNum">    9582 </span><span class="lineCov">       2530 :             AssertionResult const&amp; result = _assertionStats.assertionResult;</span>
+<span class="lineNum">    9581 </span><span class="lineCov">       2532 :         virtual bool assertionEnded( AssertionStats const&amp; _assertionStats ) CATCH_OVERRIDE {</span>
+<span class="lineNum">    9582 </span><span class="lineCov">       2532 :             AssertionResult const&amp; result = _assertionStats.assertionResult;</span>
 <span class="lineNum">    9583 </span>            : 
-<span class="lineNum">    9584 </span><span class="lineCov">       2530 :             bool printInfoMessages = true;</span>
+<span class="lineNum">    9584 </span><span class="lineCov">       2532 :             bool printInfoMessages = true;</span>
 <span class="lineNum">    9585 </span>            : 
 <span class="lineNum">    9586 </span>            :             // Drop out if result was successful and we're not printing those
-<span class="lineNum">    9587 </span><span class="lineCov">       2530 :             if( !m_config-&gt;includeSuccessfulResults() &amp;&amp; result.isOk() ) {</span>
-<span class="lineNum">    9588 </span><span class="lineCov">       2530 :                 if( result.getResultType() != ResultWas::Warning )</span>
-<span class="lineNum">    9589 </span><span class="lineCov">       2530 :                     return false;</span>
+<span class="lineNum">    9587 </span><span class="lineCov">       2532 :             if( !m_config-&gt;includeSuccessfulResults() &amp;&amp; result.isOk() ) {</span>
+<span class="lineNum">    9588 </span><span class="lineCov">       2532 :                 if( result.getResultType() != ResultWas::Warning )</span>
+<span class="lineNum">    9589 </span><span class="lineCov">       2532 :                     return false;</span>
 <span class="lineNum">    9590 </span><span class="lineNoCov">          0 :                 printInfoMessages = false;</span>
 <span class="lineNum">    9591 </span>            :             }
 <span class="lineNum">    9592 </span>            : 
@@ -9660,12 +9660,12 @@
 <span class="lineNum">    9598 </span><span class="lineNoCov">          0 :             return true;</span>
 <a name="9599"><span class="lineNum">    9599 </span>            :         }</a>
 <span class="lineNum">    9600 </span>            : 
-<span class="lineNum">    9601 </span><span class="lineCov">        113 :         virtual void sectionStarting( SectionInfo const&amp; _sectionInfo ) CATCH_OVERRIDE {</span>
-<span class="lineNum">    9602 </span><span class="lineCov">        113 :             m_headerPrinted = false;</span>
-<a name="9603"><span class="lineNum">    9603 </span><span class="lineCov">        113 :             StreamingReporterBase::sectionStarting( _sectionInfo );</span></a>
-<span class="lineNum">    9604 </span><span class="lineCov">        113 :         }</span>
-<span class="lineNum">    9605 </span><span class="lineCov">        113 :         virtual void sectionEnded( SectionStats const&amp; _sectionStats ) CATCH_OVERRIDE {</span>
-<span class="lineNum">    9606 </span><span class="lineCov">        113 :             if( _sectionStats.missingAssertions ) {</span>
+<span class="lineNum">    9601 </span><span class="lineCov">        115 :         virtual void sectionStarting( SectionInfo const&amp; _sectionInfo ) CATCH_OVERRIDE {</span>
+<span class="lineNum">    9602 </span><span class="lineCov">        115 :             m_headerPrinted = false;</span>
+<a name="9603"><span class="lineNum">    9603 </span><span class="lineCov">        115 :             StreamingReporterBase::sectionStarting( _sectionInfo );</span></a>
+<span class="lineNum">    9604 </span><span class="lineCov">        115 :         }</span>
+<span class="lineNum">    9605 </span><span class="lineCov">        115 :         virtual void sectionEnded( SectionStats const&amp; _sectionStats ) CATCH_OVERRIDE {</span>
+<span class="lineNum">    9606 </span><span class="lineCov">        115 :             if( _sectionStats.missingAssertions ) {</span>
 <span class="lineNum">    9607 </span><span class="lineNoCov">          0 :                 lazyPrint();</span>
 <span class="lineNum">    9608 </span><span class="lineNoCov">          0 :                 Colour colour( Colour::ResultError );</span>
 <span class="lineNum">    9609 </span><span class="lineNoCov">          0 :                 if( m_sectionStack.size() &gt; 1 )</span>
@@ -9674,17 +9674,17 @@
 <span class="lineNum">    9612 </span><span class="lineNoCov">          0 :                     stream &lt;&lt; &quot;\nNo assertions in test case&quot;;</span>
 <span class="lineNum">    9613 </span><span class="lineNoCov">          0 :                 stream &lt;&lt; &quot; '&quot; &lt;&lt; _sectionStats.sectionInfo.name &lt;&lt; &quot;'\n&quot; &lt;&lt; std::endl;</span>
 <span class="lineNum">    9614 </span>            :             }
-<span class="lineNum">    9615 </span><span class="lineCov">        113 :             if( m_headerPrinted ) {</span>
+<span class="lineNum">    9615 </span><span class="lineCov">        115 :             if( m_headerPrinted ) {</span>
 <span class="lineNum">    9616 </span><span class="lineNoCov">          0 :                 if( m_config-&gt;showDurations() == ShowDurations::Always )</span>
 <span class="lineNum">    9617 </span><span class="lineNoCov">          0 :                     stream &lt;&lt; &quot;Completed in &quot; &lt;&lt; _sectionStats.durationInSeconds &lt;&lt; &quot;s&quot; &lt;&lt; std::endl;</span>
 <span class="lineNum">    9618 </span><span class="lineNoCov">          0 :                 m_headerPrinted = false;</span>
 <span class="lineNum">    9619 </span>            :             }
 <span class="lineNum">    9620 </span>            :             else {
-<span class="lineNum">    9621 </span><span class="lineCov">        113 :                 if( m_config-&gt;showDurations() == ShowDurations::Always )</span>
+<span class="lineNum">    9621 </span><span class="lineCov">        115 :                 if( m_config-&gt;showDurations() == ShowDurations::Always )</span>
 <span class="lineNum">    9622 </span><span class="lineNoCov">          0 :                     stream &lt;&lt; _sectionStats.sectionInfo.name &lt;&lt; &quot; completed in &quot; &lt;&lt; _sectionStats.durationInSeconds &lt;&lt; &quot;s&quot; &lt;&lt; std::endl;</span>
 <span class="lineNum">    9623 </span>            :             }
-<span class="lineNum">    9624 </span><span class="lineCov">        113 :             StreamingReporterBase::sectionEnded( _sectionStats );</span>
-<a name="9625"><span class="lineNum">    9625 </span><span class="lineCov">        113 :         }</span></a>
+<span class="lineNum">    9624 </span><span class="lineCov">        115 :             StreamingReporterBase::sectionEnded( _sectionStats );</span>
+<a name="9625"><span class="lineNum">    9625 </span><span class="lineCov">        115 :         }</span></a>
 <span class="lineNum">    9626 </span>            : 
 <span class="lineNum">    9627 </span><span class="lineCov">         31 :         virtual void testCaseEnded( TestCaseStats const&amp; _testCaseStats ) CATCH_OVERRIDE {</span>
 <span class="lineNum">    9628 </span><span class="lineCov">         31 :             StreamingReporterBase::testCaseEnded( _testCaseStats );</span>
@@ -10340,8 +10340,8 @@
 <span class="lineNum">   10278 </span>            : namespace Catch {
 <a name="10279"><span class="lineNum">   10279 </span>            :     // These are all here to avoid warnings about not having any out of line</a>
 <a name="10280"><span class="lineNum">   10280 </span>            :     // virtual methods</a>
-<a name="10281"><span class="lineNum">   10281 </span><span class="lineCov">        386 :     NonCopyable::~NonCopyable() {}</span></a>
-<a name="10282"><span class="lineNum">   10282 </span><span class="lineCov">        147 :     IShared::~IShared() {}</span></a>
+<a name="10281"><span class="lineNum">   10281 </span><span class="lineCov">        398 :     NonCopyable::~NonCopyable() {}</span></a>
+<a name="10282"><span class="lineNum">   10282 </span><span class="lineCov">        148 :     IShared::~IShared() {}</span></a>
 <a name="10283"><span class="lineNum">   10283 </span><span class="lineCov">          1 :     IStream::~IStream() CATCH_NOEXCEPT {}</span></a>
 <a name="10284"><span class="lineNum">   10284 </span><span class="lineNoCov">          0 :     FileStream::~FileStream() CATCH_NOEXCEPT {}</span></a>
 <a name="10285"><span class="lineNum">   10285 </span><span class="lineCov">          2 :     CoutStream::~CoutStream() CATCH_NOEXCEPT {}</span></a>
@@ -10359,8 +10359,8 @@
 <a name="10297"><span class="lineNum">   10297 </span><span class="lineCov">          4 :     IReporterFactory::~IReporterFactory() {}</span></a>
 <a name="10298"><span class="lineNum">   10298 </span><span class="lineCov">          1 :     IReporterRegistry::~IReporterRegistry() {}</span></a>
 <a name="10299"><span class="lineNum">   10299 </span><span class="lineCov">          1 :     IStreamingReporter::~IStreamingReporter() {}</span></a>
-<a name="10300"><span class="lineNum">   10300 </span><span class="lineCov">       2530 :     AssertionStats::~AssertionStats() {}</span></a>
-<a name="10301"><span class="lineNum">   10301 </span><span class="lineCov">        113 :     SectionStats::~SectionStats() {}</span></a>
+<a name="10300"><span class="lineNum">   10300 </span><span class="lineCov">       2532 :     AssertionStats::~AssertionStats() {}</span></a>
+<a name="10301"><span class="lineNum">   10301 </span><span class="lineCov">        115 :     SectionStats::~SectionStats() {}</span></a>
 <a name="10302"><span class="lineNum">   10302 </span><span class="lineCov">         31 :     TestCaseStats::~TestCaseStats() {}</span></a>
 <a name="10303"><span class="lineNum">   10303 </span><span class="lineCov">          1 :     TestGroupStats::~TestGroupStats() {}</span></a>
 <a name="10304"><span class="lineNum">   10304 </span><span class="lineCov">          1 :     TestRunStats::~TestRunStats() {}</span></a>
@@ -10393,9 +10393,9 @@
 <span class="lineNum">   10331 </span><span class="lineNoCov">          0 :     void Config::dummy() {}</span>
 <a name="10332"><span class="lineNum">   10332 </span>            : </a>
 <a name="10333"><span class="lineNum">   10333 </span>            :     namespace TestCaseTracking {</a>
-<a name="10334"><span class="lineNum">   10334 </span><span class="lineCov">        108 :         ITracker::~ITracker() {}</span></a>
-<a name="10335"><span class="lineNum">   10335 </span><span class="lineCov">        108 :         TrackerBase::~TrackerBase() {}</span></a>
-<span class="lineNum">   10336 </span><span class="lineCov">        216 :         SectionTracker::~SectionTracker() {}</span>
+<a name="10334"><span class="lineNum">   10334 </span><span class="lineCov">        109 :         ITracker::~ITracker() {}</span></a>
+<a name="10335"><span class="lineNum">   10335 </span><span class="lineCov">        109 :         TrackerBase::~TrackerBase() {}</span></a>
+<span class="lineNum">   10336 </span><span class="lineCov">        218 :         SectionTracker::~SectionTracker() {}</span>
 <span class="lineNum">   10337 </span><span class="lineNoCov">          0 :         IndexTracker::~IndexTracker() {}</span>
 <span class="lineNum">   10338 </span>            :     }
 <span class="lineNum">   10339 </span>            : }
