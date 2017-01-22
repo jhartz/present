@@ -68,7 +68,7 @@
  *
  * Possible units and their returned types:
  *
- * - *year*, *years*: MonthDelta
+ * - *year*, *years*, *yr*, *yrs*: MonthDelta
  * - *month*, *months*: MonthDelta
  *
  * - *week*, *weeks*: DayDelta

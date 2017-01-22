@@ -19,6 +19,10 @@
     MonthDelta_from_years(value)
 #define present_delta_constructor_unit_years(value)         \
     MonthDelta_from_years(value)
+#define present_delta_constructor_unit_yr(value)            \
+    MonthDelta_from_years(value)
+#define present_delta_constructor_unit_yrs(value)           \
+    MonthDelta_from_years(value)
 
 #define present_delta_constructor_unit_month(value)         \
     MonthDelta_from_months(value)

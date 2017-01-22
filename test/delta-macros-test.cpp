@@ -15,9 +15,9 @@
 TEST_CASE("present_delta macro creating MonthDeltas",
           "[delta-macros] [month-delta]") {
     CHECK(present_delta(3, year) == MonthDelta::from_years(3));
-    CHECK(present_delta(-4, year) == MonthDelta::from_years(-4));
+    CHECK(present_delta(-4, yr) == MonthDelta::from_years(-4));
     CHECK(present_delta(5, years) == MonthDelta::from_years(5));
-    CHECK(present_delta(-6, years) == MonthDelta::from_years(-6));
+    CHECK(present_delta(-6, yrs) == MonthDelta::from_years(-6));
 
     CHECK(present_delta(7, month) == MonthDelta::from_months(7));
     CHECK(present_delta(-8, month) == MonthDelta::from_months(-8));
