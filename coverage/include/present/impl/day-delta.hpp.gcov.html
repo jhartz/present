@@ -31,8 +31,8 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">74</td>
-            <td class="headerCovTableEntry">74</td>
+            <td class="headerCovTableEntry">90</td>
+            <td class="headerCovTableEntry">90</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -40,8 +40,8 @@
             <td class="headerValue">2017-01-22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">29</td>
-            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntry">37</td>
+            <td class="headerCovTableEntry">37</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -99,9 +99,9 @@
 <span class="lineNum">      37 </span>            : }
 <a name="38"><span class="lineNum">      38 </span>            : </a>
 <span class="lineNum">      39 </span>            : inline int_delta
-<span class="lineNum">      40 </span><span class="lineCov">         81 : DayDelta::days() const</span>
+<span class="lineNum">      40 </span><span class="lineCov">         97 : DayDelta::days() const</span>
 <span class="lineNum">      41 </span>            : {
-<span class="lineNum">      42 </span><span class="lineCov">         81 :     return DayDelta_days(this);</span>
+<span class="lineNum">      42 </span><span class="lineCov">         97 :     return DayDelta_days(this);</span>
 <span class="lineNum">      43 </span>            : }
 <a name="44"><span class="lineNum">      44 </span>            : </a>
 <span class="lineNum">      45 </span>            : inline int_delta
@@ -229,17 +229,17 @@
 <span class="lineNum">     167 </span>            : {
 <span class="lineNum">     168 </span><span class="lineCov">          6 :     return DayDelta_compare(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     169 </span>            : }
-<span class="lineNum">     170 </span>            : 
+<a name="170"><span class="lineNum">     170 </span>            : </a>
 <span class="lineNum">     171 </span>            : inline short
-<span class="lineNum">     172 </span>            : DayDelta::compare(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)
+<span class="lineNum">     172 </span><span class="lineCov">          6 : DayDelta::compare(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     173 </span>            : {
-<span class="lineNum">     174 </span>            :     return DayDelta_compare_to_TimeDelta(&amp;lhs, &amp;rhs);
+<span class="lineNum">     174 </span><span class="lineCov">          6 :     return DayDelta_compare_to_TimeDelta(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     175 </span>            : }
-<span class="lineNum">     176 </span>            : 
+<a name="176"><span class="lineNum">     176 </span>            : </a>
 <span class="lineNum">     177 </span>            : inline short
-<span class="lineNum">     178 </span>            : DayDelta::compare(const TimeDelta &amp; lhs, const DayDelta &amp; rhs)
+<span class="lineNum">     178 </span><span class="lineCov">          6 : DayDelta::compare(const TimeDelta &amp; lhs, const DayDelta &amp; rhs)</span>
 <span class="lineNum">     179 </span>            : {
-<span class="lineNum">     180 </span>            :     return -DayDelta_compare_to_TimeDelta(&amp;rhs, &amp;lhs);
+<span class="lineNum">     180 </span><span class="lineCov">          6 :     return -DayDelta_compare_to_TimeDelta(&amp;rhs, &amp;lhs);</span>
 <span class="lineNum">     181 </span>            : }
 <a name="182"><span class="lineNum">     182 </span>            : </a>
 <span class="lineNum">     183 </span>            : inline bool
@@ -247,11 +247,11 @@
 <span class="lineNum">     185 </span>            : {
 <span class="lineNum">     186 </span><span class="lineCov">         18 :     return DayDelta_equal(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     187 </span>            : }
-<span class="lineNum">     188 </span>            : 
+<a name="188"><span class="lineNum">     188 </span>            : </a>
 <span class="lineNum">     189 </span>            : inline bool
-<span class="lineNum">     190 </span>            : operator==(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)
+<span class="lineNum">     190 </span><span class="lineCov">          6 : operator==(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     191 </span>            : {
-<span class="lineNum">     192 </span>            :     return DayDelta_equal_TimeDelta(&amp;lhs, &amp;rhs);
+<span class="lineNum">     192 </span><span class="lineCov">          6 :     return DayDelta_equal_TimeDelta(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     193 </span>            : }
 <a name="194"><span class="lineNum">     194 </span>            : </a>
 <span class="lineNum">     195 </span>            : inline bool
@@ -259,11 +259,11 @@
 <span class="lineNum">     197 </span>            : {
 <span class="lineNum">     198 </span><span class="lineCov">          2 :     return !(lhs == rhs);</span>
 <span class="lineNum">     199 </span>            : }
-<span class="lineNum">     200 </span>            : 
+<a name="200"><span class="lineNum">     200 </span>            : </a>
 <span class="lineNum">     201 </span>            : inline bool
-<span class="lineNum">     202 </span>            : operator!=(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)
+<span class="lineNum">     202 </span><span class="lineCov">          2 : operator!=(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     203 </span>            : {
-<span class="lineNum">     204 </span>            :     return !(lhs == rhs);
+<span class="lineNum">     204 </span><span class="lineCov">          2 :     return !(lhs == rhs);</span>
 <span class="lineNum">     205 </span>            : }
 <a name="206"><span class="lineNum">     206 </span>            : </a>
 <span class="lineNum">     207 </span>            : inline bool
@@ -271,11 +271,11 @@
 <span class="lineNum">     209 </span>            : {
 <span class="lineNum">     210 </span><span class="lineCov">          4 :     return DayDelta_less_than(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     211 </span>            : }
-<span class="lineNum">     212 </span>            : 
+<a name="212"><span class="lineNum">     212 </span>            : </a>
 <span class="lineNum">     213 </span>            : inline bool
-<span class="lineNum">     214 </span>            : operator&lt;(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)
+<span class="lineNum">     214 </span><span class="lineCov">          4 : operator&lt;(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     215 </span>            : {
-<span class="lineNum">     216 </span>            :     return DayDelta_less_than_TimeDelta(&amp;lhs, &amp;rhs);
+<span class="lineNum">     216 </span><span class="lineCov">          4 :     return DayDelta_less_than_TimeDelta(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     217 </span>            : }
 <a name="218"><span class="lineNum">     218 </span>            : </a>
 <span class="lineNum">     219 </span>            : inline bool
@@ -283,11 +283,11 @@
 <span class="lineNum">     221 </span>            : {
 <span class="lineNum">     222 </span><span class="lineCov">          4 :     return DayDelta_less_than_or_equal(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     223 </span>            : }
-<span class="lineNum">     224 </span>            : 
+<a name="224"><span class="lineNum">     224 </span>            : </a>
 <span class="lineNum">     225 </span>            : inline bool
-<span class="lineNum">     226 </span>            : operator&lt;=(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)
+<span class="lineNum">     226 </span><span class="lineCov">          4 : operator&lt;=(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     227 </span>            : {
-<span class="lineNum">     228 </span>            :     return DayDelta_less_than_or_equal_TimeDelta(&amp;lhs, &amp;rhs);
+<span class="lineNum">     228 </span><span class="lineCov">          4 :     return DayDelta_less_than_or_equal_TimeDelta(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     229 </span>            : }
 <a name="230"><span class="lineNum">     230 </span>            : </a>
 <span class="lineNum">     231 </span>            : inline bool
@@ -295,11 +295,11 @@
 <span class="lineNum">     233 </span>            : {
 <span class="lineNum">     234 </span><span class="lineCov">          6 :     return DayDelta_greater_than(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     235 </span>            : }
-<span class="lineNum">     236 </span>            : 
+<a name="236"><span class="lineNum">     236 </span>            : </a>
 <span class="lineNum">     237 </span>            : inline bool
-<span class="lineNum">     238 </span>            : operator&gt;(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)
+<span class="lineNum">     238 </span><span class="lineCov">          6 : operator&gt;(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     239 </span>            : {
-<span class="lineNum">     240 </span>            :     return DayDelta_greater_than_TimeDelta(&amp;lhs, &amp;rhs);
+<span class="lineNum">     240 </span><span class="lineCov">          6 :     return DayDelta_greater_than_TimeDelta(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     241 </span>            : }
 <a name="242"><span class="lineNum">     242 </span>            : </a>
 <span class="lineNum">     243 </span>            : inline bool
@@ -307,11 +307,11 @@
 <span class="lineNum">     245 </span>            : {
 <span class="lineNum">     246 </span><span class="lineCov">          5 :     return DayDelta_greater_than_or_equal(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     247 </span>            : }
-<span class="lineNum">     248 </span>            : 
+<a name="248"><span class="lineNum">     248 </span>            : </a>
 <span class="lineNum">     249 </span>            : inline bool
-<span class="lineNum">     250 </span>            : operator&gt;=(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)
+<span class="lineNum">     250 </span><span class="lineCov">          5 : operator&gt;=(const DayDelta &amp; lhs, const TimeDelta &amp; rhs)</span>
 <span class="lineNum">     251 </span>            : {
-<span class="lineNum">     252 </span>            :     return DayDelta_greater_than_or_equal_TimeDelta(&amp;lhs, &amp;rhs);
+<span class="lineNum">     252 </span><span class="lineCov">          5 :     return DayDelta_greater_than_or_equal_TimeDelta(&amp;lhs, &amp;rhs);</span>
 <span class="lineNum">     253 </span>            : }
 <span class="lineNum">     254 </span>            : 
 </pre>

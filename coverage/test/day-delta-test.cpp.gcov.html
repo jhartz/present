@@ -31,8 +31,8 @@
             <td class="headerValue">coverage.info.cleaned</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">215</td>
-            <td class="headerCovTableEntry">215</td>
+            <td class="headerCovTableEntry">232</td>
+            <td class="headerCovTableEntry">232</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -307,44 +307,64 @@
 <span class="lineNum">     245 </span><span class="lineCov">          1 :              d4 = DayDelta::from_days(-13),</span>
 <span class="lineNum">     246 </span><span class="lineCov">          1 :              d5 = DayDelta::zero();</span>
 <span class="lineNum">     247 </span>            : 
-<span class="lineNum">     248 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, d2) &lt; 0);</span>
-<span class="lineNum">     249 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, d3) &gt; 0);</span>
-<span class="lineNum">     250 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, d5) &gt; 0);</span>
-<span class="lineNum">     251 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d3, d4) == 0);</span>
-<span class="lineNum">     252 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d4, d3) == 0);</span>
-<span class="lineNum">     253 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d5, d5) == 0);</span>
-<span class="lineNum">     254 </span>            : 
-<span class="lineNum">     255 </span><span class="lineCov">          1 :     CHECK(d3 == d4);</span>
-<span class="lineNum">     256 </span><span class="lineCov">          1 :     CHECK(d4 == d3);</span>
-<span class="lineNum">     257 </span><span class="lineCov">          1 :     CHECK(!(d1 == d2));</span>
-<span class="lineNum">     258 </span><span class="lineCov">          1 :     CHECK(!(d1 == d5));</span>
-<span class="lineNum">     259 </span><span class="lineCov">          1 :     CHECK(d1 != d2);</span>
-<span class="lineNum">     260 </span><span class="lineCov">          1 :     CHECK(d5 != d1);</span>
-<span class="lineNum">     261 </span>            : 
-<span class="lineNum">     262 </span><span class="lineCov">          1 :     CHECK(d1 &lt; d2);</span>
-<span class="lineNum">     263 </span><span class="lineCov">          1 :     CHECK(d3 &lt; d1);</span>
-<span class="lineNum">     264 </span><span class="lineCov">          1 :     CHECK(!(d5 &lt; d4));</span>
-<span class="lineNum">     265 </span><span class="lineCov">          1 :     CHECK(!(d3 &lt; d4));</span>
-<span class="lineNum">     266 </span>            : 
-<span class="lineNum">     267 </span><span class="lineCov">          1 :     CHECK(d1 &lt;= d2);</span>
-<span class="lineNum">     268 </span><span class="lineCov">          1 :     CHECK(d3 &lt;= d2);</span>
-<span class="lineNum">     269 </span><span class="lineCov">          1 :     CHECK(!(d5 &lt;= d4));</span>
-<span class="lineNum">     270 </span><span class="lineCov">          1 :     CHECK(d3 &lt;= d4);</span>
-<span class="lineNum">     271 </span>            : 
-<span class="lineNum">     272 </span><span class="lineCov">          1 :     CHECK(d1 &gt; d3);</span>
-<span class="lineNum">     273 </span><span class="lineCov">          1 :     CHECK(d2 &gt; d1);</span>
-<span class="lineNum">     274 </span><span class="lineCov">          1 :     CHECK(d5 &gt; d3);</span>
-<span class="lineNum">     275 </span><span class="lineCov">          1 :     CHECK(!(d3 &gt; d4));</span>
-<span class="lineNum">     276 </span><span class="lineCov">          1 :     CHECK(!(d3 &gt; d2));</span>
-<span class="lineNum">     277 </span><span class="lineCov">          1 :     CHECK(!(d1 &gt; d2));</span>
-<span class="lineNum">     278 </span>            : 
-<span class="lineNum">     279 </span><span class="lineCov">          1 :     CHECK(d1 &gt;= d3);</span>
-<span class="lineNum">     280 </span><span class="lineCov">          1 :     CHECK(d2 &gt;= d1);</span>
-<span class="lineNum">     281 </span><span class="lineCov">          1 :     CHECK(d5 &gt;= d3);</span>
-<a name="282"><span class="lineNum">     282 </span><span class="lineCov">          1 :     CHECK(d3 &gt;= d4);</span></a>
-<span class="lineNum">     283 </span><span class="lineCov">          1 :     CHECK(!(d5 &gt;= d2));</span>
-<span class="lineNum">     284 </span><span class="lineCov">          4 : }</span>
-<span class="lineNum">     285 </span>            : 
+<span class="lineNum">     248 </span><span class="lineCov">          1 :     TimeDelta td1 = TimeDelta::from_days(19),</span>
+<span class="lineNum">     249 </span><span class="lineCov">          1 :               td2 = TimeDelta::from_days(21),</span>
+<span class="lineNum">     250 </span><span class="lineCov">          1 :               td3 = TimeDelta::from_days(-13),</span>
+<span class="lineNum">     251 </span><span class="lineCov">          1 :               td4 = TimeDelta::from_days(-13),</span>
+<span class="lineNum">     252 </span><span class="lineCov">          1 :               td5 = TimeDelta::zero();</span>
+<span class="lineNum">     253 </span>            : 
+<span class="lineNum">     254 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, d2) &lt; 0);</span>
+<span class="lineNum">     255 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, d3) &gt; 0);</span>
+<span class="lineNum">     256 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, d5) &gt; 0);</span>
+<span class="lineNum">     257 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d3, d4) == 0);</span>
+<span class="lineNum">     258 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d4, d3) == 0);</span>
+<span class="lineNum">     259 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d5, d5) == 0);</span>
+<span class="lineNum">     260 </span>            : 
+<span class="lineNum">     261 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, td2) &lt; 0);</span>
+<span class="lineNum">     262 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, td3) &gt; 0);</span>
+<span class="lineNum">     263 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d1, td5) &gt; 0);</span>
+<span class="lineNum">     264 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d3, td4) == 0);</span>
+<span class="lineNum">     265 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d4, td3) == 0);</span>
+<span class="lineNum">     266 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(d5, td5) == 0);</span>
+<span class="lineNum">     267 </span>            : 
+<span class="lineNum">     268 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(td1, d2) &lt; 0);</span>
+<span class="lineNum">     269 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(td1, d3) &gt; 0);</span>
+<span class="lineNum">     270 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(td1, d5) &gt; 0);</span>
+<span class="lineNum">     271 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(td3, d4) == 0);</span>
+<span class="lineNum">     272 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(td4, d3) == 0);</span>
+<span class="lineNum">     273 </span><span class="lineCov">          1 :     CHECK(DayDelta::compare(td5, d5) == 0);</span>
+<span class="lineNum">     274 </span>            : 
+<span class="lineNum">     275 </span><span class="lineCov">          1 :     CHECK(d3 == d4);        CHECK(d3 == td4);</span>
+<span class="lineNum">     276 </span><span class="lineCov">          1 :     CHECK(d4 == d3);        CHECK(d4 == td3);</span>
+<span class="lineNum">     277 </span><span class="lineCov">          1 :     CHECK(!(d1 == d2));     CHECK(!(d1 == td2));</span>
+<span class="lineNum">     278 </span><span class="lineCov">          1 :     CHECK(!(d1 == d5));     CHECK(!(d1 == td5));</span>
+<span class="lineNum">     279 </span><span class="lineCov">          1 :     CHECK(d1 != d2);        CHECK(d1 != td2);</span>
+<span class="lineNum">     280 </span><span class="lineCov">          1 :     CHECK(d5 != d1);        CHECK(d5 != td1);</span>
+<span class="lineNum">     281 </span>            : 
+<span class="lineNum">     282 </span><span class="lineCov">          1 :     CHECK(d1 &lt; d2);         CHECK(d1 &lt; td2);</span>
+<span class="lineNum">     283 </span><span class="lineCov">          1 :     CHECK(d3 &lt; d1);         CHECK(d3 &lt; td1);</span>
+<span class="lineNum">     284 </span><span class="lineCov">          1 :     CHECK(!(d5 &lt; d4));      CHECK(!(d5 &lt; td4));</span>
+<span class="lineNum">     285 </span><span class="lineCov">          1 :     CHECK(!(d3 &lt; d4));      CHECK(!(d3 &lt; td4));</span>
+<span class="lineNum">     286 </span>            : 
+<span class="lineNum">     287 </span><span class="lineCov">          1 :     CHECK(d1 &lt;= d2);        CHECK(d1 &lt;= td2);</span>
+<span class="lineNum">     288 </span><span class="lineCov">          1 :     CHECK(d3 &lt;= d2);        CHECK(d3 &lt;= td2);</span>
+<span class="lineNum">     289 </span><span class="lineCov">          1 :     CHECK(!(d5 &lt;= d4));     CHECK(!(d5 &lt;= td4));</span>
+<span class="lineNum">     290 </span><span class="lineCov">          1 :     CHECK(d3 &lt;= d4);        CHECK(d3 &lt;= td4);</span>
+<span class="lineNum">     291 </span>            : 
+<span class="lineNum">     292 </span><span class="lineCov">          1 :     CHECK(d1 &gt; d3);         CHECK(d1 &gt; td3);</span>
+<span class="lineNum">     293 </span><span class="lineCov">          1 :     CHECK(d2 &gt; d1);         CHECK(d2 &gt; td1);</span>
+<span class="lineNum">     294 </span><span class="lineCov">          1 :     CHECK(d5 &gt; d3);         CHECK(d5 &gt; td3);</span>
+<span class="lineNum">     295 </span><span class="lineCov">          1 :     CHECK(!(d3 &gt; d4));      CHECK(!(d3 &gt; td4));</span>
+<span class="lineNum">     296 </span><span class="lineCov">          1 :     CHECK(!(d3 &gt; d2));      CHECK(!(d3 &gt; td2));</span>
+<span class="lineNum">     297 </span><span class="lineCov">          1 :     CHECK(!(d1 &gt; d2));      CHECK(!(d1 &gt; td2));</span>
+<span class="lineNum">     298 </span>            : 
+<span class="lineNum">     299 </span><span class="lineCov">          1 :     CHECK(d1 &gt;= d3);        CHECK(d1 &gt;= td3);</span>
+<span class="lineNum">     300 </span><span class="lineCov">          1 :     CHECK(d2 &gt;= d1);        CHECK(d2 &gt;= td1);</span>
+<span class="lineNum">     301 </span><span class="lineCov">          1 :     CHECK(d5 &gt;= d3);        CHECK(d5 &gt;= td3);</span>
+<a name="302"><span class="lineNum">     302 </span><span class="lineCov">          1 :     CHECK(d3 &gt;= d4);        CHECK(d3 &gt;= td4);</span></a>
+<span class="lineNum">     303 </span><span class="lineCov">          1 :     CHECK(!(d5 &gt;= d2));     CHECK(!(d5 &gt;= td2));</span>
+<span class="lineNum">     304 </span><span class="lineCov">          4 : }</span>
+<span class="lineNum">     305 </span>            : 
 </pre>
       </td>
     </tr>
