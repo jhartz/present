@@ -12,6 +12,11 @@
 
 #include "test-utils.hpp"
 
+// If we're using GCC, disable the annoying warning about missing initializers
+#ifdef __GNUC__
+# pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+#endif
+
 static const time_t JAN_1_1970_UNIX_TIMESTAMP = 0;
 static const time_t JUL_1_1970_UNIX_TIMESTAMP = 15638400;
 
