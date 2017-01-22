@@ -60,7 +60,7 @@ void \hyperlink{clock-time_8h_a265e7bf3c63b2986d13dcdc8f43883d4}{Clock\-Time\-\_
 \begin{DoxyCompactList}\small\item\em Add a \hyperlink{structTimeDelta}{Time\-Delta} to a \hyperlink{structClockTime}{Clock\-Time}. \end{DoxyCompactList}\item 
 void \hyperlink{clock-time_8h_a9594699dbdbcd56c79928da5e969ba42}{Clock\-Time\-\_\-subtract\-\_\-\-Time\-Delta} (struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const self, const struct \hyperlink{structTimeDelta}{Time\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em Subtract a \hyperlink{structTimeDelta}{Time\-Delta} from a \hyperlink{structClockTime}{Clock\-Time}. \end{DoxyCompactList}\item 
-int \hyperlink{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}{Clock\-Time\-\_\-compare} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
+short \hyperlink{clock-time_8h_ad37e5e53161a2f6113202b30779d5439}{Clock\-Time\-\_\-compare} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structClockTime}{Clock\-Time} instances. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}{Clock\-Time\-\_\-equal} (const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const lhs, const struct \hyperlink{structClockTime}{Clock\-Time} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em Determine whether two \hyperlink{structClockTime}{Clock\-Time} instances are equal (lhs == rhs). \end{DoxyCompactList}\item 
@@ -641,19 +641,24 @@ If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{
 
 Subtract a \hyperlink{structTimeDelta}{Time\-Delta} from a \hyperlink{structClockTime}{Clock\-Time}. 
 
-If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{Clock\-Time} will wrap around. \hypertarget{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-compare@{Clock\-Time\-\_\-compare}}
+If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{Clock\-Time} will wrap around. \hypertarget{clock-time_8h_ad37e5e53161a2f6113202b30779d5439}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-compare@{Clock\-Time\-\_\-compare}}
 \index{Clock\-Time\-\_\-compare@{Clock\-Time\-\_\-compare}!clock-time.h@{clock-\/time.\-h}}
-\subsubsection[{Clock\-Time\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int Clock\-Time\-\_\-compare (
+\subsubsection[{Clock\-Time\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}short Clock\-Time\-\_\-compare (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf Clock\-Time} $\ast$const}]{lhs, }
 \item[{const struct {\bf Clock\-Time} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{clock-time_8h_a769989ae3695814b6f64b17ff059d76a}
+)}}\label{clock-time_8h_ad37e5e53161a2f6113202b30779d5439}
 
 
 Compare two \hyperlink{structClockTime}{Clock\-Time} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. \hypertarget{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-equal@{Clock\-Time\-\_\-equal}}
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}\hypertarget{clock-time_8h_aface5d0e8bf75acddb72475d76c4b1d8}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-equal@{Clock\-Time\-\_\-equal}}
 \index{Clock\-Time\-\_\-equal@{Clock\-Time\-\_\-equal}!clock-time.h@{clock-\/time.\-h}}
 \subsubsection[{Clock\-Time\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Clock\-Time\-\_\-equal (
 \begin{DoxyParamCaption}

@@ -25,7 +25,7 @@ var clock_time_8h =
     [ "ClockTime_time_since_midnight", "clock-time_8h.html#ace4db26641fe01b2edd311b09589ebbb", null ],
     [ "ClockTime_add_TimeDelta", "clock-time_8h.html#a265e7bf3c63b2986d13dcdc8f43883d4", null ],
     [ "ClockTime_subtract_TimeDelta", "clock-time_8h.html#a9594699dbdbcd56c79928da5e969ba42", null ],
-    [ "ClockTime_compare", "clock-time_8h.html#a769989ae3695814b6f64b17ff059d76a", null ],
+    [ "ClockTime_compare", "clock-time_8h.html#ad37e5e53161a2f6113202b30779d5439", null ],
     [ "ClockTime_equal", "clock-time_8h.html#aface5d0e8bf75acddb72475d76c4b1d8", null ],
     [ "ClockTime_less_than", "clock-time_8h.html#ad0b394066f11e1f695bd10c2aad04ea0", null ],
     [ "ClockTime_less_than_or_equal", "clock-time_8h.html#a8725113f40fe7aae309480cc0b666c16", null ],

@@ -46,7 +46,7 @@ static \hyperlink{structDate}{Date} \hyperlink{structDate_af3a7ed97e385d134e39c4
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structDate}{Date} based on a year and the day of that year. \end{DoxyCompactList}\item 
 static \hyperlink{structDate}{Date} \hyperlink{structDate_a88c032d0e05efa136df450f1d3564760}{from\-\_\-year\-\_\-week\-\_\-day} (\hyperlink{types_8h_a7ff53e164374f5b24e06f3c04362e61d}{int\-\_\-year} \hyperlink{structDate_aac4f4635d8db0ea1a32c2f979a1a6cc0}{year}, \hyperlink{types_8h_af13e483c5f00ae8ea8ada4c7f5fad337}{int\-\_\-week\-\_\-of\-\_\-year} \hyperlink{structDate_af051f922cdc105f86b92fc6d8bbdfa90}{week\-\_\-of\-\_\-year}, \hyperlink{types_8h_a78b244794c680f1753a6d92eed77aeda}{int\-\_\-day\-\_\-of\-\_\-week} \hyperlink{structDate_ac85eed3a3b2d579cdc74b2af801740b0}{day\-\_\-of\-\_\-week})
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structDate}{Date} based on a year, a week of that year, and a day of the week. \end{DoxyCompactList}\item 
-static int \hyperlink{structDate_afc234509ba1c8b1717e52181e7ad256d}{compare} (const \hyperlink{structDate}{Date} \&lhs, const \hyperlink{structDate}{Date} \&rhs)
+static short \hyperlink{structDate_affbeb90f7db9710e090d268e3f9e772a}{compare} (const \hyperlink{structDate}{Date} \&lhs, const \hyperlink{structDate}{Date} \&rhs)
 \begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structDate}{Date} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -375,19 +375,24 @@ Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structDate}{
 
 Subtract a \hyperlink{structMonthDelta}{Month\-Delta} from a \hyperlink{structDate}{Date}. 
 
-\hypertarget{structDate_afc234509ba1c8b1717e52181e7ad256d}{\index{Date@{Date}!compare@{compare}}
+\hypertarget{structDate_affbeb90f7db9710e090d268e3f9e772a}{\index{Date@{Date}!compare@{compare}}
 \index{compare@{compare}!Date@{Date}}
-\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int Date\-::compare (
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static short Date\-::compare (
 \begin{DoxyParamCaption}
 \item[{const {\bf Date} \&}]{lhs, }
 \item[{const {\bf Date} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{structDate_afc234509ba1c8b1717e52181e7ad256d}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structDate_affbeb90f7db9710e090d268e3f9e772a}
 
 
 Compare two \hyperlink{structDate}{Date} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. 
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}
 
 \subsection{Friends And Related Function Documentation}
 \hypertarget{structDate_a88a01e03ad6e96a22ee81ed7a38bdd5a}{\index{Date@{Date}!operator+@{operator+}}

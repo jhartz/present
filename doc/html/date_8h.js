@@ -26,7 +26,7 @@ var date_8h =
     [ "Date_add_MonthDelta", "date_8h.html#a02ae36b3b6e78d46dbcb74d685a22519", null ],
     [ "Date_subtract_DayDelta", "date_8h.html#a716bf0637b696d9b315da68732f05703", null ],
     [ "Date_subtract_MonthDelta", "date_8h.html#a0a78857ea2f6fd1d0fc4867729c7df77", null ],
-    [ "Date_compare", "date_8h.html#a3d60efd11d46f93eda8a02d7103c4fab", null ],
+    [ "Date_compare", "date_8h.html#ae651bd8f734d7f77d65b0be33879da77", null ],
     [ "Date_equal", "date_8h.html#aac70e60c05c18e841b5394a6bae3ff9d", null ],
     [ "Date_less_than", "date_8h.html#a87536c4ad5b674fc6129b734b070ba5d", null ],
     [ "Date_less_than_or_equal", "date_8h.html#a33fd7117393e57bb40ae764a5c4007a8", null ],

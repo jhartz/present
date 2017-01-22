@@ -40,9 +40,9 @@
             <td class="headerValue">2017-01-22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">769</td>
-            <td class="headerCovTableEntry">1362</td>
-            <td class="headerCovTableEntryLo">56.5 %</td>
+            <td class="headerCovTableEntry">778</td>
+            <td class="headerCovTableEntry">1371</td>
+            <td class="headerCovTableEntryLo">56.7 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -1720,10 +1720,10 @@
 <span class="lineNum">    1658 </span>            :     template&lt;&gt;
 <a name="1659"><span class="lineNum">    1659 </span>            :     struct StringMakerBase&lt;true&gt; {</a>
 <span class="lineNum">    1660 </span>            :         template&lt;typename T&gt;
-<span class="lineNum">    1661 </span><span class="lineCov">       3494 :         static std::string convert( T const&amp; _value ) {</span>
-<span class="lineNum">    1662 </span><span class="lineCov">       3494 :             std::ostringstream oss;</span>
-<span class="lineNum">    1663 </span><span class="lineCov">       3494 :             oss &lt;&lt; _value;</span>
-<span class="lineNum">    1664 </span><span class="lineCov">       3494 :             return oss.str();</span>
+<span class="lineNum">    1661 </span><span class="lineCov">       3514 :         static std::string convert( T const&amp; _value ) {</span>
+<span class="lineNum">    1662 </span><span class="lineCov">       3514 :             std::ostringstream oss;</span>
+<span class="lineNum">    1663 </span><span class="lineCov">       3514 :             oss &lt;&lt; _value;</span>
+<span class="lineNum">    1664 </span><span class="lineCov">       3514 :             return oss.str();</span>
 <span class="lineNum">    1665 </span>            :         }
 <span class="lineNum">    1666 </span>            :     };
 <span class="lineNum">    1667 </span>            : 
@@ -1835,8 +1835,8 @@
 <span class="lineNum">    1773 </span>            : /// Overload (not specialise) this template for custom typs that you don't want
 <a name="1774"><span class="lineNum">    1774 </span>            : /// to provide an ostream overload for.</a>
 <span class="lineNum">    1775 </span>            : template&lt;typename T&gt;
-<span class="lineNum">    1776 </span><span class="lineCov">       3488 : std::string toString( T const&amp; value ) {</span>
-<span class="lineNum">    1777 </span><span class="lineCov">       3488 :     return StringMaker&lt;T&gt;::convert( value );</span>
+<span class="lineNum">    1776 </span><span class="lineCov">       3508 : std::string toString( T const&amp; value ) {</span>
+<span class="lineNum">    1777 </span><span class="lineCov">       3508 :     return StringMaker&lt;T&gt;::convert( value );</span>
 <span class="lineNum">    1778 </span>            : }
 <span class="lineNum">    1779 </span>            : 
 <span class="lineNum">    1780 </span>            :     namespace Detail {
@@ -8181,12 +8181,12 @@
 <span class="lineNum">    8119 </span><span class="lineNoCov">          0 :         return Catch::toString( static_cast&lt;const wchar_t*&gt;( value ) );</span>
 <a name="8120"><span class="lineNum">    8120 </span>            : }</a>
 <span class="lineNum">    8121 </span>            : 
-<span class="lineNum">    8122 </span><span class="lineCov">        832 : std::string toString( int value ) {</span>
-<span class="lineNum">    8123 </span><span class="lineCov">        832 :     std::ostringstream oss;</span>
-<span class="lineNum">    8124 </span><span class="lineCov">        832 :     oss &lt;&lt; value;</span>
-<span class="lineNum">    8125 </span><span class="lineCov">        832 :     if( value &gt; Detail::hexThreshold )</span>
+<span class="lineNum">    8122 </span><span class="lineCov">        812 : std::string toString( int value ) {</span>
+<span class="lineNum">    8123 </span><span class="lineCov">        812 :     std::ostringstream oss;</span>
+<span class="lineNum">    8124 </span><span class="lineCov">        812 :     oss &lt;&lt; value;</span>
+<span class="lineNum">    8125 </span><span class="lineCov">        812 :     if( value &gt; Detail::hexThreshold )</span>
 <span class="lineNum">    8126 </span><span class="lineCov">        156 :         oss &lt;&lt; &quot; (0x&quot; &lt;&lt; std::hex &lt;&lt; value &lt;&lt; &quot;)&quot;;</span>
-<span class="lineNum">    8127 </span><span class="lineCov">        832 :     return oss.str();</span>
+<span class="lineNum">    8127 </span><span class="lineCov">        812 :     return oss.str();</span>
 <a name="8128"><span class="lineNum">    8128 </span>            : }</a>
 <span class="lineNum">    8129 </span>            : 
 <span class="lineNum">    8130 </span><span class="lineCov">         20 : std::string toString( unsigned long value ) {</span>

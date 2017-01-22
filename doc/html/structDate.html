@@ -157,9 +157,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a88c032d0e05efa136df450f1d3564760"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#a88c032d0e05efa136df450f1d3564760">from_year_week_day</a> (<a class="el" href="types_8h.html#a7ff53e164374f5b24e06f3c04362e61d">int_year</a> <a class="el" href="structDate.html#aac4f4635d8db0ea1a32c2f979a1a6cc0">year</a>, <a class="el" href="types_8h.html#af13e483c5f00ae8ea8ada4c7f5fad337">int_week_of_year</a> <a class="el" href="structDate.html#af051f922cdc105f86b92fc6d8bbdfa90">week_of_year</a>, <a class="el" href="types_8h.html#a78b244794c680f1753a6d92eed77aeda">int_day_of_week</a> <a class="el" href="structDate.html#ac85eed3a3b2d579cdc74b2af801740b0">day_of_week</a>)</td></tr>
 <tr class="memdesc:a88c032d0e05efa136df450f1d3564760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> based on a year, a week of that year, and a day of the week.  <a href="#a88c032d0e05efa136df450f1d3564760">More...</a><br/></td></tr>
 <tr class="separator:a88c032d0e05efa136df450f1d3564760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc234509ba1c8b1717e52181e7ad256d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#afc234509ba1c8b1717e52181e7ad256d">compare</a> (const <a class="el" href="structDate.html">Date</a> &amp;lhs, const <a class="el" href="structDate.html">Date</a> &amp;rhs)</td></tr>
-<tr class="memdesc:afc234509ba1c8b1717e52181e7ad256d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> instances.  <a href="#afc234509ba1c8b1717e52181e7ad256d">More...</a><br/></td></tr>
-<tr class="separator:afc234509ba1c8b1717e52181e7ad256d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affbeb90f7db9710e090d268e3f9e772a"><td class="memItemLeft" align="right" valign="top">static short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html#affbeb90f7db9710e090d268e3f9e772a">compare</a> (const <a class="el" href="structDate.html">Date</a> &amp;lhs, const <a class="el" href="structDate.html">Date</a> &amp;rhs)</td></tr>
+<tr class="memdesc:affbeb90f7db9710e090d268e3f9e772a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> instances.  <a href="#affbeb90f7db9710e090d268e3f9e772a">More...</a><br/></td></tr>
+<tr class="separator:affbeb90f7db9710e090d268e3f9e772a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -667,7 +667,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afc234509ba1c8b1717e52181e7ad256d"></a>
+<a class="anchor" id="affbeb90f7db9710e090d268e3f9e772a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -675,7 +675,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int Date::compare </td>
+          <td class="memname">static short Date::compare </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDate.html">Date</a> &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -700,7 +700,11 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> instances. </p>
-<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
+<ul>
+<li>If lhs &lt; rhs, then a negative integer will be returned.</li>
+<li>If lhs == rhs, then 0 will be returned.</li>
+<li>If lhs &gt; rhs, then a positive integer will be returned. </li>
+</ul>
 
 </div>
 </div>

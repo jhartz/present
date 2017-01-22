@@ -42,7 +42,7 @@ static \hyperlink{structClockTime}{Clock\-Time} \hyperlink{structClockTime_a8681
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to midnight (00\-:00). \end{DoxyCompactList}\item 
 static \hyperlink{structClockTime}{Clock\-Time} \hyperlink{structClockTime_ae206b86808ff1d0158cbc920eb289797}{noon} ()
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to noon (12\-:00). \end{DoxyCompactList}\item 
-static int \hyperlink{structClockTime_a4c185648dcfc28f46ac3fc700b3415c2}{compare} (const \hyperlink{structClockTime}{Clock\-Time} \&lhs, const \hyperlink{structClockTime}{Clock\-Time} \&rhs)
+static short \hyperlink{structClockTime_a96d2948e3c535a711899fbe1e393e3af}{compare} (const \hyperlink{structClockTime}{Clock\-Time} \&lhs, const \hyperlink{structClockTime}{Clock\-Time} \&rhs)
 \begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structClockTime}{Clock\-Time} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -362,19 +362,24 @@ If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{
 
 Subtract a \hyperlink{structTimeDelta}{Time\-Delta} from a \hyperlink{structClockTime}{Clock\-Time}. 
 
-If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{Clock\-Time} will wrap around. \hypertarget{structClockTime_a4c185648dcfc28f46ac3fc700b3415c2}{\index{Clock\-Time@{Clock\-Time}!compare@{compare}}
+If the result goes above 23\-:59\-:59.\-999... or below 00\-:00, the \hyperlink{structClockTime}{Clock\-Time} will wrap around. \hypertarget{structClockTime_a96d2948e3c535a711899fbe1e393e3af}{\index{Clock\-Time@{Clock\-Time}!compare@{compare}}
 \index{compare@{compare}!ClockTime@{Clock\-Time}}
-\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int Clock\-Time\-::compare (
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static short Clock\-Time\-::compare (
 \begin{DoxyParamCaption}
 \item[{const {\bf Clock\-Time} \&}]{lhs, }
 \item[{const {\bf Clock\-Time} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{structClockTime_a4c185648dcfc28f46ac3fc700b3415c2}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structClockTime_a96d2948e3c535a711899fbe1e393e3af}
 
 
 Compare two \hyperlink{structClockTime}{Clock\-Time} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. 
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}
 
 \subsection{Friends And Related Function Documentation}
 \hypertarget{structClockTime_afceb2935d4b931a097145e4967ac71b6}{\index{Clock\-Time@{Clock\-Time}!operator+@{operator+}}

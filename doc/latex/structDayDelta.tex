@@ -31,9 +31,9 @@ void \hyperlink{structDayDelta_a23b9453556a255f5413aee21b12938a6}{negate} ()
 \begin{DoxyCompactList}\small\item\em Subtract one day from the \hyperlink{structDayDelta}{Day\-Delta}. \end{DoxyCompactList}\item 
 \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_a7e0ffb0cc2aeff7414fee2edfb8e3424}{operator-\/-\/} (int)
 \begin{DoxyCompactList}\small\item\em Subtract one day from the \hyperlink{structDayDelta}{Day\-Delta}. \end{DoxyCompactList}\item 
-\hyperlink{structDayDelta}{Day\-Delta} \& \hyperlink{structDayDelta_a4312a7090a3365dc3646f91f44ae7654}{operator$\ast$=} (const int \&scale\-\_\-factor)
+\hyperlink{structDayDelta}{Day\-Delta} \& \hyperlink{structDayDelta_a91d89bf70ffbbe65b113e65272820362}{operator$\ast$=} (const long \&scale\-\_\-factor)
 \begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structDayDelta}{Day\-Delta} by multiplying it by a scale factor. \end{DoxyCompactList}\item 
-\hyperlink{structDayDelta}{Day\-Delta} \& \hyperlink{structDayDelta_a892e28fb54b113684d1f5078d6f607c8}{operator/=} (const int \&scale\-\_\-factor)
+\hyperlink{structDayDelta}{Day\-Delta} \& \hyperlink{structDayDelta_a2a4951095b765e2888a7ebd970e98b5f}{operator/=} (const long \&scale\-\_\-factor)
 \begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structDayDelta}{Day\-Delta} by dividing it by a scale factor. \end{DoxyCompactList}\item 
 \hyperlink{structDayDelta}{Day\-Delta} \& \hyperlink{structDayDelta_a081325e9acba450f7446d1d59ed65518}{operator+=} (const \hyperlink{structDayDelta}{Day\-Delta} \&other)
 \begin{DoxyCompactList}\small\item\em Add another \hyperlink{structDayDelta}{Day\-Delta} to a \hyperlink{structDayDelta}{Day\-Delta}. \end{DoxyCompactList}\item 
@@ -48,8 +48,12 @@ static \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_a871bbf3
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structDayDelta}{Day\-Delta} based on a positive or negative number of weeks. \end{DoxyCompactList}\item 
 static \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_acfcc09473305041a930a1ea6a3c20409}{zero} ()
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structDayDelta}{Day\-Delta} initialized to zero days. \end{DoxyCompactList}\item 
-static int \hyperlink{structDayDelta_a1059465fe1c1bfb8d7136ad887b00d30}{compare} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
-\begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structDayDelta}{Day\-Delta} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static short \hyperlink{structDayDelta_af8a4d86216517f70136406b08b54357c}{compare} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structDayDelta}{Day\-Delta} instances. \end{DoxyCompactList}\item 
+static short \hyperlink{structDayDelta_a29afd5af43e3efe57b00784e77ccf67f}{compare} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Compare a \hyperlink{structDayDelta}{Day\-Delta} to a \hyperlink{structTimeDelta}{Time\-Delta}. \end{DoxyCompactList}\item 
+static short \hyperlink{structDayDelta_abac87320f446ebf1e6b73bb1c36150cc}{compare} (const \hyperlink{structTimeDelta}{Time\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,9 +62,9 @@ struct Present\-Day\-Delta\-Data \hyperlink{structDayDelta_af256f16b6700e4399518
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-const \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_af888d4911eda6f27731cbf92bb393c32}{operator$\ast$} (const \hyperlink{structDayDelta}{Day\-Delta} \&delta, const int \&scale\-\_\-factor)
+const \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_a6adf4f64a2cc331d79aa417debee707d}{operator$\ast$} (const \hyperlink{structDayDelta}{Day\-Delta} \&delta, const long \&scale\-\_\-factor)
 \item 
-const \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_a9469df031e6aba7593890989a954ae35}{operator/} (const \hyperlink{structDayDelta}{Day\-Delta} \&delta, const int \&scale\-\_\-factor)
+const \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_a27bd20e8e7c80f368090ab4150dceb12}{operator/} (const \hyperlink{structDayDelta}{Day\-Delta} \&delta, const long \&scale\-\_\-factor)
 \item 
 const \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_a371e4babc2d194244a5b4cea3ea66d7e}{operator+} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
 \item 
@@ -68,16 +72,28 @@ const \hyperlink{structDayDelta}{Day\-Delta} \hyperlink{structDayDelta_a1b59f350
 \item 
 bool \hyperlink{structDayDelta_a04f6712422789b8ec3f19d3e1789bf4f}{operator==} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
 \begin{DoxyCompactList}\small\item\em Determine whether two \hyperlink{structDayDelta}{Day\-Delta} instances are equal (lhs == rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structDayDelta_a2105aa2309b34a2ade619ca0e1603cf9}{operator==} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} equals a \hyperlink{structTimeDelta}{Time\-Delta} (lhs == rhs). \end{DoxyCompactList}\item 
 bool \hyperlink{structDayDelta_ad0581c91724489d68bd79382831a5a1e}{operator!=} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
+\item 
+bool \hyperlink{structDayDelta_a5fe844795f3526eadc10b0ca22d889fb}{operator!=} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
 \item 
 bool \hyperlink{structDayDelta_ad6792531d3979ec77fd7ddce40a1a496}{operator$<$} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
 \begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than another \hyperlink{structDayDelta}{Day\-Delta} (lhs $<$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structDayDelta_ac674837a6effc9bebb565eb50342dd1e}{operator$<$} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$ rhs). \end{DoxyCompactList}\item 
 bool \hyperlink{structDayDelta_abdcc1adeaad32dd0ae90569e52f514dd}{operator$<$=} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
 \begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than or equal to another \hyperlink{structDayDelta}{Day\-Delta} (lhs $<$= rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structDayDelta_a28af6f5ba5523f346f0f4e48933a3957}{operator$<$=} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than or equal to a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$= rhs). \end{DoxyCompactList}\item 
 bool \hyperlink{structDayDelta_aaf9360c064df44a15781807e4a26c296}{operator$>$} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
 \begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than another \hyperlink{structDayDelta}{Day\-Delta} (lhs $>$ rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structDayDelta_a082c139cbfcebb76ff647eff274c005e}{operator$>$} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$ rhs). \end{DoxyCompactList}\item 
 bool \hyperlink{structDayDelta_a78c4c340fdd0331b761215aeb08f56e6}{operator$>$=} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structDayDelta}{Day\-Delta} \&rhs)
-\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than or equal to another \hyperlink{structDayDelta}{Day\-Delta} (lhs $>$= rhs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than or equal to another \hyperlink{structDayDelta}{Day\-Delta} (lhs $>$= rhs). \end{DoxyCompactList}\item 
+bool \hyperlink{structDayDelta_a71044975661533f23b8dcbb1cca79bc7}{operator$>$=} (const \hyperlink{structDayDelta}{Day\-Delta} \&lhs, const \hyperlink{structTimeDelta}{Time\-Delta} \&rhs)
+\begin{DoxyCompactList}\small\item\em Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than or equal to a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$= rhs). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -241,24 +257,24 @@ Subtract one day from the \hyperlink{structDayDelta}{Day\-Delta}.
 
 Subtract one day from the \hyperlink{structDayDelta}{Day\-Delta}. 
 
-\hypertarget{structDayDelta_a4312a7090a3365dc3646f91f44ae7654}{\index{Day\-Delta@{Day\-Delta}!operator$\ast$=@{operator$\ast$=}}
+\hypertarget{structDayDelta_a91d89bf70ffbbe65b113e65272820362}{\index{Day\-Delta@{Day\-Delta}!operator$\ast$=@{operator$\ast$=}}
 \index{operator$\ast$=@{operator$\ast$=}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Day\-Delta}\& Day\-Delta\-::operator$\ast$= (
 \begin{DoxyParamCaption}
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)}}\label{structDayDelta_a4312a7090a3365dc3646f91f44ae7654}
+)}}\label{structDayDelta_a91d89bf70ffbbe65b113e65272820362}
 
 
 Scale a \hyperlink{structDayDelta}{Day\-Delta} by multiplying it by a scale factor. 
 
-\hypertarget{structDayDelta_a892e28fb54b113684d1f5078d6f607c8}{\index{Day\-Delta@{Day\-Delta}!operator/=@{operator/=}}
+\hypertarget{structDayDelta_a2a4951095b765e2888a7ebd970e98b5f}{\index{Day\-Delta@{Day\-Delta}!operator/=@{operator/=}}
 \index{operator/=@{operator/=}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Day\-Delta}\& Day\-Delta\-::operator/= (
 \begin{DoxyParamCaption}
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)}}\label{structDayDelta_a892e28fb54b113684d1f5078d6f607c8}
+)}}\label{structDayDelta_a2a4951095b765e2888a7ebd970e98b5f}
 
 
 Scale a \hyperlink{structDayDelta}{Day\-Delta} by dividing it by a scale factor. 
@@ -285,42 +301,75 @@ The second \hyperlink{structDayDelta}{Day\-Delta} parameter is added to the firs
 
 Subtract another \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structDayDelta}{Day\-Delta}. 
 
-The second \hyperlink{structDayDelta}{Day\-Delta} parameter is added to the first. \hypertarget{structDayDelta_a1059465fe1c1bfb8d7136ad887b00d30}{\index{Day\-Delta@{Day\-Delta}!compare@{compare}}
+The second \hyperlink{structDayDelta}{Day\-Delta} parameter is added to the first. \hypertarget{structDayDelta_af8a4d86216517f70136406b08b54357c}{\index{Day\-Delta@{Day\-Delta}!compare@{compare}}
 \index{compare@{compare}!DayDelta@{Day\-Delta}}
-\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int Day\-Delta\-::compare (
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static short Day\-Delta\-::compare (
 \begin{DoxyParamCaption}
 \item[{const {\bf Day\-Delta} \&}]{lhs, }
 \item[{const {\bf Day\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{structDayDelta_a1059465fe1c1bfb8d7136ad887b00d30}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structDayDelta_af8a4d86216517f70136406b08b54357c}
 
 
 Compare two \hyperlink{structDayDelta}{Day\-Delta} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. 
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}\hypertarget{structDayDelta_a29afd5af43e3efe57b00784e77ccf67f}{\index{Day\-Delta@{Day\-Delta}!compare@{compare}}
+\index{compare@{compare}!DayDelta@{Day\-Delta}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static short Day\-Delta\-::compare (
+\begin{DoxyParamCaption}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structDayDelta_a29afd5af43e3efe57b00784e77ccf67f}
+
+
+Compare a \hyperlink{structDayDelta}{Day\-Delta} to a \hyperlink{structTimeDelta}{Time\-Delta}. 
+
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}\hypertarget{structDayDelta_abac87320f446ebf1e6b73bb1c36150cc}{\index{Day\-Delta@{Day\-Delta}!compare@{compare}}
+\index{compare@{compare}!DayDelta@{Day\-Delta}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static short Day\-Delta\-::compare (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time\-Delta} \&}]{lhs, }
+\item[{const {\bf Day\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structDayDelta_abac87320f446ebf1e6b73bb1c36150cc}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{structDayDelta_a29afd5af43e3efe57b00784e77ccf67f}{Day\-Delta\-::compare(const Day\-Delta \& lhs, const Time\-Delta \& rhs)} 
+\end{DoxySeeAlso}
+
 
 \subsection{Friends And Related Function Documentation}
-\hypertarget{structDayDelta_af888d4911eda6f27731cbf92bb393c32}{\index{Day\-Delta@{Day\-Delta}!operator$\ast$@{operator$\ast$}}
+\hypertarget{structDayDelta_a6adf4f64a2cc331d79aa417debee707d}{\index{Day\-Delta@{Day\-Delta}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Day\-Delta} operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Day\-Delta} \&}]{delta, }
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_af888d4911eda6f27731cbf92bb393c32}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a6adf4f64a2cc331d79aa417debee707d}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{structDayDelta_a4312a7090a3365dc3646f91f44ae7654}{Day\-Delta\-::operator$\ast$=(const int \& scale\-\_\-factor)} 
+\hyperlink{structDayDelta_a91d89bf70ffbbe65b113e65272820362}{Day\-Delta\-::operator$\ast$=(const long \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
-\hypertarget{structDayDelta_a9469df031e6aba7593890989a954ae35}{\index{Day\-Delta@{Day\-Delta}!operator/@{operator/}}
+\hypertarget{structDayDelta_a27bd20e8e7c80f368090ab4150dceb12}{\index{Day\-Delta@{Day\-Delta}!operator/@{operator/}}
 \index{operator/@{operator/}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Day\-Delta} operator/ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Day\-Delta} \&}]{delta, }
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a9469df031e6aba7593890989a954ae35}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a27bd20e8e7c80f368090ab4150dceb12}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{structDayDelta_a892e28fb54b113684d1f5078d6f607c8}{Day\-Delta\-::operator/=(const int \& scale\-\_\-factor)} 
+\hyperlink{structDayDelta_a2a4951095b765e2888a7ebd970e98b5f}{Day\-Delta\-::operator/=(const long \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
 \hypertarget{structDayDelta_a371e4babc2d194244a5b4cea3ea66d7e}{\index{Day\-Delta@{Day\-Delta}!operator+@{operator+}}
 \index{operator+@{operator+}!DayDelta@{Day\-Delta}}
@@ -356,6 +405,18 @@ If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 
 
 Determine whether two \hyperlink{structDayDelta}{Day\-Delta} instances are equal (lhs == rhs). 
 
+\hypertarget{structDayDelta_a2105aa2309b34a2ade619ca0e1603cf9}{\index{Day\-Delta@{Day\-Delta}!operator==@{operator==}}
+\index{operator==@{operator==}!DayDelta@{Day\-Delta}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a2105aa2309b34a2ade619ca0e1603cf9}
+
+
+Determine whether a \hyperlink{structDayDelta}{Day\-Delta} equals a \hyperlink{structTimeDelta}{Time\-Delta} (lhs == rhs). 
+
 \hypertarget{structDayDelta_ad0581c91724489d68bd79382831a5a1e}{\index{Day\-Delta@{Day\-Delta}!operator!=@{operator!=}}
 \index{operator!=@{operator!=}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
@@ -364,6 +425,14 @@ Determine whether two \hyperlink{structDayDelta}{Day\-Delta} instances are equal
 \item[{const {\bf Day\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_ad0581c91724489d68bd79382831a5a1e}
+\hypertarget{structDayDelta_a5fe844795f3526eadc10b0ca22d889fb}{\index{Day\-Delta@{Day\-Delta}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!DayDelta@{Day\-Delta}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a5fe844795f3526eadc10b0ca22d889fb}
 \hypertarget{structDayDelta_ad6792531d3979ec77fd7ddce40a1a496}{\index{Day\-Delta@{Day\-Delta}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
@@ -375,6 +444,18 @@ Determine whether two \hyperlink{structDayDelta}{Day\-Delta} instances are equal
 
 
 Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than another \hyperlink{structDayDelta}{Day\-Delta} (lhs $<$ rhs). 
+
+\hypertarget{structDayDelta_ac674837a6effc9bebb565eb50342dd1e}{\index{Day\-Delta@{Day\-Delta}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!DayDelta@{Day\-Delta}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_ac674837a6effc9bebb565eb50342dd1e}
+
+
+Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$ rhs). 
 
 \hypertarget{structDayDelta_abdcc1adeaad32dd0ae90569e52f514dd}{\index{Day\-Delta@{Day\-Delta}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!DayDelta@{Day\-Delta}}
@@ -388,6 +469,18 @@ Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than another 
 
 Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than or equal to another \hyperlink{structDayDelta}{Day\-Delta} (lhs $<$= rhs). 
 
+\hypertarget{structDayDelta_a28af6f5ba5523f346f0f4e48933a3957}{\index{Day\-Delta@{Day\-Delta}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!DayDelta@{Day\-Delta}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a28af6f5ba5523f346f0f4e48933a3957}
+
+
+Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than or equal to a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $<$= rhs). 
+
 \hypertarget{structDayDelta_aaf9360c064df44a15781807e4a26c296}{\index{Day\-Delta@{Day\-Delta}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
@@ -400,6 +493,18 @@ Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is less than or equal
 
 Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than another \hyperlink{structDayDelta}{Day\-Delta} (lhs $>$ rhs). 
 
+\hypertarget{structDayDelta_a082c139cbfcebb76ff647eff274c005e}{\index{Day\-Delta@{Day\-Delta}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!DayDelta@{Day\-Delta}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a082c139cbfcebb76ff647eff274c005e}
+
+
+Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$ rhs). 
+
 \hypertarget{structDayDelta_a78c4c340fdd0331b761215aeb08f56e6}{\index{Day\-Delta@{Day\-Delta}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!DayDelta@{Day\-Delta}}
 \subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
@@ -411,6 +516,18 @@ Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than anoth
 
 
 Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than or equal to another \hyperlink{structDayDelta}{Day\-Delta} (lhs $>$= rhs). 
+
+\hypertarget{structDayDelta_a71044975661533f23b8dcbb1cca79bc7}{\index{Day\-Delta@{Day\-Delta}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!DayDelta@{Day\-Delta}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Day\-Delta} \&}]{lhs, }
+\item[{const {\bf Time\-Delta} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structDayDelta_a71044975661533f23b8dcbb1cca79bc7}
+
+
+Determine whether a \hyperlink{structDayDelta}{Day\-Delta} is greater than or equal to a \hyperlink{structTimeDelta}{Time\-Delta} (lhs $>$= rhs). 
 
 
 

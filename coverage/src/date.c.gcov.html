@@ -504,7 +504,7 @@
 <span class="lineNum">     442 </span><span class="lineCov">          3 :     check_date_data(&amp;self-&gt;data_);</span>
 <span class="lineNum">     443 </span><span class="lineCov">          3 : }</span>
 <a name="444"><span class="lineNum">     444 </span>            : </a>
-<span class="lineNum">     445 </span>            : int
+<span class="lineNum">     445 </span>            : short
 <span class="lineNum">     446 </span><span class="lineCov">       1275 : Date_compare(</span>
 <span class="lineNum">     447 </span>            :         const struct Date * const lhs,
 <span class="lineNum">     448 </span>            :         const struct Date * const rhs)
@@ -514,8 +514,8 @@
 <span class="lineNum">     452 </span><span class="lineCov">       1275 :     assert(rhs != NULL);</span>
 <span class="lineNum">     453 </span><span class="lineCov">       1275 :     assert(rhs-&gt;has_error == 0);</span>
 <span class="lineNum">     454 </span>            : 
-<span class="lineNum">     455 </span><span class="lineCov">       1275 :     return</span>
-<span class="lineNum">     456 </span><span class="lineCov">       1275 :         STRUCT_COMPARE(year,</span>
+<span class="lineNum">     455 </span><span class="lineCov">       7575 :     return</span>
+<span class="lineNum">     456 </span><span class="lineCov">       7575 :         STRUCT_COMPARE(year,</span>
 <span class="lineNum">     457 </span>            :             STRUCT_COMPARE(month,
 <span class="lineNum">     458 </span>            :                 STRUCT_COMPARE(day, 0)));
 <a name="459"><span class="lineNum">     459 </span>            : }</a>

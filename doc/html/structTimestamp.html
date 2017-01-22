@@ -187,9 +187,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa2f108710dbe1372d8fc7146a2e66c37"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTimestamp.html">Timestamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#aa2f108710dbe1372d8fc7146a2e66c37">epoch</a> ()</td></tr>
 <tr class="memdesc:aa2f108710dbe1372d8fc7146a2e66c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> representing the UNIX epoch (Jan.  <a href="#aa2f108710dbe1372d8fc7146a2e66c37">More...</a><br/></td></tr>
 <tr class="separator:aa2f108710dbe1372d8fc7146a2e66c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64216c9061a4449c8d3fb9d1fecbb4a0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a64216c9061a4449c8d3fb9d1fecbb4a0">compare</a> (const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;lhs, const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a64216c9061a4449c8d3fb9d1fecbb4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> instances.  <a href="#a64216c9061a4449c8d3fb9d1fecbb4a0">More...</a><br/></td></tr>
-<tr class="separator:a64216c9061a4449c8d3fb9d1fecbb4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2099bdddf963c9ab1ccf2d0845100cc7"><td class="memItemLeft" align="right" valign="top">static short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimestamp.html#a2099bdddf963c9ab1ccf2d0845100cc7">compare</a> (const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;lhs, const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a2099bdddf963c9ab1ccf2d0845100cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> instances.  <a href="#a2099bdddf963c9ab1ccf2d0845100cc7">More...</a><br/></td></tr>
+<tr class="separator:a2099bdddf963c9ab1ccf2d0845100cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -920,7 +920,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a64216c9061a4449c8d3fb9d1fecbb4a0"></a>
+<a class="anchor" id="a2099bdddf963c9ab1ccf2d0845100cc7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -928,7 +928,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int Timestamp::compare </td>
+          <td class="memname">static short Timestamp::compare </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTimestamp.html">Timestamp</a> &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -953,7 +953,11 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compare two <a class="el" href="structTimestamp.html" title="Class or struct representing an exact point in time. ">Timestamp</a> instances. </p>
-<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
+<ul>
+<li>If lhs &lt; rhs, then a negative integer will be returned.</li>
+<li>If lhs == rhs, then 0 will be returned.</li>
+<li>If lhs &gt; rhs, then a positive integer will be returned. </li>
+</ul>
 
 </div>
 </div>

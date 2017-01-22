@@ -368,7 +368,7 @@
 <span class="lineNum">     306 </span><span class="lineCov">          6 :     check_clock_time(self);</span>
 <span class="lineNum">     307 </span><span class="lineCov">          6 : }</span>
 <a name="308"><span class="lineNum">     308 </span>            : </a>
-<span class="lineNum">     309 </span>            : int
+<span class="lineNum">     309 </span>            : short
 <span class="lineNum">     310 </span><span class="lineCov">         39 : ClockTime_compare(</span>
 <span class="lineNum">     311 </span>            :         const struct ClockTime * const lhs,
 <span class="lineNum">     312 </span>            :         const struct ClockTime * const rhs)
@@ -378,8 +378,8 @@
 <span class="lineNum">     316 </span><span class="lineCov">         39 :     assert(rhs != NULL);</span>
 <span class="lineNum">     317 </span><span class="lineCov">         39 :     assert(rhs-&gt;has_error == 0);</span>
 <span class="lineNum">     318 </span>            : 
-<span class="lineNum">     319 </span><span class="lineCov">         39 :     return</span>
-<span class="lineNum">     320 </span><span class="lineCov">         39 :         STRUCT_COMPARE(seconds,</span>
+<span class="lineNum">     319 </span><span class="lineCov">        117 :     return</span>
+<span class="lineNum">     320 </span><span class="lineCov">        117 :         STRUCT_COMPARE(seconds,</span>
 <span class="lineNum">     321 </span>            :             STRUCT_COMPARE(nanoseconds, 0));
 <a name="322"><span class="lineNum">     322 </span>            : }</a>
 <span class="lineNum">     323 </span>            : 

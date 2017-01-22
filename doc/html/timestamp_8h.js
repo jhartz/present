@@ -37,7 +37,7 @@ var timestamp_8h =
     [ "Timestamp_subtract_TimeDelta", "timestamp_8h.html#ab081ab27811efec99498a10988489a66", null ],
     [ "Timestamp_subtract_DayDelta", "timestamp_8h.html#add038a395a083a427398f0c75f504238", null ],
     [ "Timestamp_subtract_MonthDelta", "timestamp_8h.html#a35221b4819154b7841c77ff4ef3f8294", null ],
-    [ "Timestamp_compare", "timestamp_8h.html#a93e685bff6dd607d1cfbfdef53690149", null ],
+    [ "Timestamp_compare", "timestamp_8h.html#a7b893a840d0e7bb95cae956bebc66401", null ],
     [ "Timestamp_equal", "timestamp_8h.html#a9d72490b52a4b0c5beba9f2b015ae10c", null ],
     [ "Timestamp_less_than", "timestamp_8h.html#a506eea479aa1e081cffa110b66d921a5", null ],
     [ "Timestamp_less_than_or_equal", "timestamp_8h.html#afee18aa02a9b4cd5e079c2474be2dc89", null ],

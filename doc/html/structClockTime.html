@@ -151,9 +151,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae206b86808ff1d0158cbc920eb289797"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structClockTime.html">ClockTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#ae206b86808ff1d0158cbc920eb289797">noon</a> ()</td></tr>
 <tr class="memdesc:ae206b86808ff1d0158cbc920eb289797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> initialized to noon (12:00).  <a href="#ae206b86808ff1d0158cbc920eb289797">More...</a><br/></td></tr>
 <tr class="separator:ae206b86808ff1d0158cbc920eb289797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c185648dcfc28f46ac3fc700b3415c2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a4c185648dcfc28f46ac3fc700b3415c2">compare</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a4c185648dcfc28f46ac3fc700b3415c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> instances.  <a href="#a4c185648dcfc28f46ac3fc700b3415c2">More...</a><br/></td></tr>
-<tr class="separator:a4c185648dcfc28f46ac3fc700b3415c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d2948e3c535a711899fbe1e393e3af"><td class="memItemLeft" align="right" valign="top">static short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structClockTime.html#a96d2948e3c535a711899fbe1e393e3af">compare</a> (const <a class="el" href="structClockTime.html">ClockTime</a> &amp;lhs, const <a class="el" href="structClockTime.html">ClockTime</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a96d2948e3c535a711899fbe1e393e3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> instances.  <a href="#a96d2948e3c535a711899fbe1e393e3af">More...</a><br/></td></tr>
+<tr class="separator:a96d2948e3c535a711899fbe1e393e3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -657,7 +657,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4c185648dcfc28f46ac3fc700b3415c2"></a>
+<a class="anchor" id="a96d2948e3c535a711899fbe1e393e3af"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -665,7 +665,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int ClockTime::compare </td>
+          <td class="memname">static short ClockTime::compare </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structClockTime.html">ClockTime</a> &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -690,7 +690,11 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compare two <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> instances. </p>
-<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
+<ul>
+<li>If lhs &lt; rhs, then a negative integer will be returned.</li>
+<li>If lhs == rhs, then 0 will be returned.</li>
+<li>If lhs &gt; rhs, then a positive integer will be returned. </li>
+</ul>
 
 </div>
 </div>

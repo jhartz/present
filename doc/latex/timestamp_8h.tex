@@ -81,7 +81,7 @@ void \hyperlink{timestamp_8h_add038a395a083a427398f0c75f504238}{Timestamp\-\_\-s
 \begin{DoxyCompactList}\small\item\em Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structTimestamp}{Timestamp}. \end{DoxyCompactList}\item 
 void \hyperlink{timestamp_8h_a35221b4819154b7841c77ff4ef3f8294}{Timestamp\-\_\-subtract\-\_\-\-Month\-Delta} (struct \hyperlink{structTimestamp}{Timestamp} $\ast$const self, const struct \hyperlink{structMonthDelta}{Month\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em Subtract a \hyperlink{structMonthDelta}{Month\-Delta} from a \hyperlink{structTimestamp}{Timestamp}. \end{DoxyCompactList}\item 
-int \hyperlink{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}{Timestamp\-\_\-compare} (const struct \hyperlink{structTimestamp}{Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{Timestamp} $\ast$const rhs)
+short \hyperlink{timestamp_8h_a7b893a840d0e7bb95cae956bebc66401}{Timestamp\-\_\-compare} (const struct \hyperlink{structTimestamp}{Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{Timestamp} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structTimestamp}{Timestamp} instances. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{timestamp_8h_a9d72490b52a4b0c5beba9f2b015ae10c}{Timestamp\-\_\-equal} (const struct \hyperlink{structTimestamp}{Timestamp} $\ast$const lhs, const struct \hyperlink{structTimestamp}{Timestamp} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em Determine whether two \hyperlink{structTimestamp}{Timestamp} instances represent the exact same point in time (lhs == rhs). \end{DoxyCompactList}\item 
@@ -718,19 +718,24 @@ Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structTimest
 
 Subtract a \hyperlink{structMonthDelta}{Month\-Delta} from a \hyperlink{structTimestamp}{Timestamp}. 
 
-\hypertarget{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-compare@{Timestamp\-\_\-compare}}
+\hypertarget{timestamp_8h_a7b893a840d0e7bb95cae956bebc66401}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-compare@{Timestamp\-\_\-compare}}
 \index{Timestamp\-\_\-compare@{Timestamp\-\_\-compare}!timestamp.h@{timestamp.\-h}}
-\subsubsection[{Timestamp\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int Timestamp\-\_\-compare (
+\subsubsection[{Timestamp\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}short Timestamp\-\_\-compare (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf Timestamp} $\ast$const}]{lhs, }
 \item[{const struct {\bf Timestamp} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{timestamp_8h_a93e685bff6dd607d1cfbfdef53690149}
+)}}\label{timestamp_8h_a7b893a840d0e7bb95cae956bebc66401}
 
 
 Compare two \hyperlink{structTimestamp}{Timestamp} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. \hypertarget{timestamp_8h_a9d72490b52a4b0c5beba9f2b015ae10c}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-equal@{Timestamp\-\_\-equal}}
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}\hypertarget{timestamp_8h_a9d72490b52a4b0c5beba9f2b015ae10c}{\index{timestamp.\-h@{timestamp.\-h}!Timestamp\-\_\-equal@{Timestamp\-\_\-equal}}
 \index{Timestamp\-\_\-equal@{Timestamp\-\_\-equal}!timestamp.h@{timestamp.\-h}}
 \subsubsection[{Timestamp\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Timestamp\-\_\-equal (
 \begin{DoxyParamCaption}

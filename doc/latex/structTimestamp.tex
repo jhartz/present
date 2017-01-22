@@ -66,7 +66,7 @@ static \hyperlink{structTimestamp}{Timestamp} \hyperlink{structTimestamp_ab2b171
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} representing the exact time right now. \end{DoxyCompactList}\item 
 static \hyperlink{structTimestamp}{Timestamp} \hyperlink{structTimestamp_aa2f108710dbe1372d8fc7146a2e66c37}{epoch} ()
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structTimestamp}{Timestamp} representing the U\-N\-I\-X epoch (Jan. \end{DoxyCompactList}\item 
-static int \hyperlink{structTimestamp_a64216c9061a4449c8d3fb9d1fecbb4a0}{compare} (const \hyperlink{structTimestamp}{Timestamp} \&lhs, const \hyperlink{structTimestamp}{Timestamp} \&rhs)
+static short \hyperlink{structTimestamp_a2099bdddf963c9ab1ccf2d0845100cc7}{compare} (const \hyperlink{structTimestamp}{Timestamp} \&lhs, const \hyperlink{structTimestamp}{Timestamp} \&rhs)
 \begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structTimestamp}{Timestamp} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -513,19 +513,24 @@ Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structTimest
 
 Subtract a \hyperlink{structMonthDelta}{Month\-Delta} from a \hyperlink{structTimestamp}{Timestamp}. 
 
-\hypertarget{structTimestamp_a64216c9061a4449c8d3fb9d1fecbb4a0}{\index{Timestamp@{Timestamp}!compare@{compare}}
+\hypertarget{structTimestamp_a2099bdddf963c9ab1ccf2d0845100cc7}{\index{Timestamp@{Timestamp}!compare@{compare}}
 \index{compare@{compare}!Timestamp@{Timestamp}}
-\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int Timestamp\-::compare (
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static short Timestamp\-::compare (
 \begin{DoxyParamCaption}
 \item[{const {\bf Timestamp} \&}]{lhs, }
 \item[{const {\bf Timestamp} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimestamp_a64216c9061a4449c8d3fb9d1fecbb4a0}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structTimestamp_a2099bdddf963c9ab1ccf2d0845100cc7}
 
 
 Compare two \hyperlink{structTimestamp}{Timestamp} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. 
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}
 
 \subsection{Friends And Related Function Documentation}
 \hypertarget{structTimestamp_a5eb71bec7edce3a62bfc8ad803217d81}{\index{Timestamp@{Timestamp}!operator+@{operator+}}

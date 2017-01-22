@@ -32,8 +32,8 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">131</td>
-            <td class="headerCovTableEntry">196</td>
-            <td class="headerCovTableEntryLo">66.8 %</td>
+            <td class="headerCovTableEntry">202</td>
+            <td class="headerCovTableEntryLo">64.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
@@ -41,8 +41,8 @@
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">39</td>
-            <td class="headerCovTableEntry">53</td>
-            <td class="headerCovTableEntryLo">73.6 %</td>
+            <td class="headerCovTableEntry">59</td>
+            <td class="headerCovTableEntryLo">66.1 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -440,7 +440,7 @@
 <span class="lineNum">     378 </span><span class="lineCov">          2 : }</span>
 <a name="379"><span class="lineNum">     379 </span>            : </a>
 <span class="lineNum">     380 </span>            : void
-<span class="lineNum">     381 </span><span class="lineNoCov">          0 : TimeDelta_multiply_by(struct TimeDelta * const self, const int scale_factor)</span>
+<span class="lineNum">     381 </span><span class="lineNoCov">          0 : TimeDelta_multiply_by(struct TimeDelta * const self, const long scale_factor)</span>
 <span class="lineNum">     382 </span>            : {
 <span class="lineNum">     383 </span><span class="lineNoCov">          0 :     assert(self != NULL);</span>
 <span class="lineNum">     384 </span>            : 
@@ -473,7 +473,7 @@
 <span class="lineNum">     411 </span><span class="lineNoCov">          0 : }</span>
 <a name="412"><span class="lineNum">     412 </span>            : </a>
 <span class="lineNum">     413 </span>            : void
-<span class="lineNum">     414 </span><span class="lineNoCov">          0 : TimeDelta_divide_by(struct TimeDelta * const self, const int scale_factor)</span>
+<span class="lineNum">     414 </span><span class="lineNoCov">          0 : TimeDelta_divide_by(struct TimeDelta * const self, const long scale_factor)</span>
 <span class="lineNum">     415 </span>            : {
 <span class="lineNum">     416 </span>            :     int_delta orig_seconds;
 <span class="lineNum">     417 </span>            : 
@@ -562,7 +562,7 @@
 <span class="lineNum">     500 </span><span class="lineNoCov">          0 :     CHECK_DATA(self-&gt;data_);</span>
 <span class="lineNum">     501 </span><span class="lineNoCov">          0 : }</span>
 <a name="502"><span class="lineNum">     502 </span>            : </a>
-<span class="lineNum">     503 </span>            : int
+<span class="lineNum">     503 </span>            : short
 <span class="lineNum">     504 </span><span class="lineCov">         41 : TimeDelta_compare(</span>
 <span class="lineNum">     505 </span>            :         const struct TimeDelta * const lhs,
 <span class="lineNum">     506 </span>            :         const struct TimeDelta * const rhs)
@@ -570,13 +570,27 @@
 <span class="lineNum">     508 </span><span class="lineCov">         41 :     assert(lhs != NULL);</span>
 <span class="lineNum">     509 </span><span class="lineCov">         41 :     assert(rhs != NULL);</span>
 <span class="lineNum">     510 </span>            : 
-<span class="lineNum">     511 </span><span class="lineCov">         41 :     return</span>
-<span class="lineNum">     512 </span><span class="lineCov">         41 :         STRUCT_COMPARE(delta_seconds,</span>
+<span class="lineNum">     511 </span><span class="lineCov">        164 :     return</span>
+<span class="lineNum">     512 </span><span class="lineCov">        164 :         STRUCT_COMPARE(delta_seconds,</span>
 <span class="lineNum">     513 </span>            :             STRUCT_COMPARE(delta_nanoseconds, 0));
-<a name="514"><span class="lineNum">     514 </span>            : }</a>
-<span class="lineNum">     515 </span>            : 
-<span class="lineNum">     516 </span><span class="lineCov">         41 : STRUCT_COMPARISON_OPERATORS(TimeDelta)</span>
-<span class="lineNum">     517 </span>            : 
+<span class="lineNum">     514 </span>            : }
+<a name="515"><span class="lineNum">     515 </span>            : </a>
+<span class="lineNum">     516 </span>            : short
+<span class="lineNum">     517 </span><span class="lineNoCov">          0 : TimeDelta_compare_to_DayDelta(</span>
+<span class="lineNum">     518 </span>            :         const struct TimeDelta * const lhs,
+<span class="lineNum">     519 </span>            :         const struct DayDelta * const rhs)
+<span class="lineNum">     520 </span>            : {
+<span class="lineNum">     521 </span><span class="lineNoCov">          0 :     assert(lhs != NULL);</span>
+<span class="lineNum">     522 </span><span class="lineNoCov">          0 :     assert(rhs != NULL);</span>
+<span class="lineNum">     523 </span>            : 
+<span class="lineNum">     524 </span><span class="lineNoCov">          0 :     struct TimeDelta rhs_as_time_delta = DayDelta_to_TimeDelta(rhs);</span>
+<span class="lineNum">     525 </span><span class="lineNoCov">          0 :     return TimeDelta_compare(lhs, &amp;rhs_as_time_delta);</span>
+<a name="526"><span class="lineNum">     526 </span>            : }</a>
+<span class="lineNum">     527 </span>            : 
+<a name="528"><span class="lineNum">     528 </span><span class="lineCov">         41 : STRUCT_COMPARISON_OPERATORS(TimeDelta)</span></a>
+<span class="lineNum">     529 </span>            : 
+<span class="lineNum">     530 </span><span class="lineNoCov">          0 : STRUCT_COMPARISON_OPERATORS_WITH_OTHER_STRUCT(TimeDelta, DayDelta)</span>
+<span class="lineNum">     531 </span>            : 
 </pre>
       </td>
     </tr>

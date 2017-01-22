@@ -62,7 +62,7 @@ void \hyperlink{date_8h_a716bf0637b696d9b315da68732f05703}{Date\-\_\-subtract\-\
 \begin{DoxyCompactList}\small\item\em Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structDate}{Date}. \end{DoxyCompactList}\item 
 void \hyperlink{date_8h_a0a78857ea2f6fd1d0fc4867729c7df77}{Date\-\_\-subtract\-\_\-\-Month\-Delta} (struct \hyperlink{structDate}{Date} $\ast$const self, const struct \hyperlink{structMonthDelta}{Month\-Delta} $\ast$const delta)
 \begin{DoxyCompactList}\small\item\em Subtract a \hyperlink{structMonthDelta}{Month\-Delta} from a \hyperlink{structDate}{Date}. \end{DoxyCompactList}\item 
-int \hyperlink{date_8h_a3d60efd11d46f93eda8a02d7103c4fab}{Date\-\_\-compare} (const struct \hyperlink{structDate}{Date} $\ast$const lhs, const struct \hyperlink{structDate}{Date} $\ast$const rhs)
+short \hyperlink{date_8h_ae651bd8f734d7f77d65b0be33879da77}{Date\-\_\-compare} (const struct \hyperlink{structDate}{Date} $\ast$const lhs, const struct \hyperlink{structDate}{Date} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structDate}{Date} instances. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a1c24e2cdd988b886e889080ded176ae0}{present\-\_\-bool} \hyperlink{date_8h_aac70e60c05c18e841b5394a6bae3ff9d}{Date\-\_\-equal} (const struct \hyperlink{structDate}{Date} $\ast$const lhs, const struct \hyperlink{structDate}{Date} $\ast$const rhs)
 \begin{DoxyCompactList}\small\item\em Determine whether two \hyperlink{structDate}{Date} instances are equal (lhs == rhs). \end{DoxyCompactList}\item 
@@ -589,19 +589,24 @@ Subtract a \hyperlink{structDayDelta}{Day\-Delta} from a \hyperlink{structDate}{
 
 Subtract a \hyperlink{structMonthDelta}{Month\-Delta} from a \hyperlink{structDate}{Date}. 
 
-\hypertarget{date_8h_a3d60efd11d46f93eda8a02d7103c4fab}{\index{date.\-h@{date.\-h}!Date\-\_\-compare@{Date\-\_\-compare}}
+\hypertarget{date_8h_ae651bd8f734d7f77d65b0be33879da77}{\index{date.\-h@{date.\-h}!Date\-\_\-compare@{Date\-\_\-compare}}
 \index{Date\-\_\-compare@{Date\-\_\-compare}!date.h@{date.\-h}}
-\subsubsection[{Date\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}int Date\-\_\-compare (
+\subsubsection[{Date\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}short Date\-\_\-compare (
 \begin{DoxyParamCaption}
 \item[{const struct {\bf Date} $\ast$const}]{lhs, }
 \item[{const struct {\bf Date} $\ast$const}]{rhs}
 \end{DoxyParamCaption}
-)}}\label{date_8h_a3d60efd11d46f93eda8a02d7103c4fab}
+)}}\label{date_8h_ae651bd8f734d7f77d65b0be33879da77}
 
 
 Compare two \hyperlink{structDate}{Date} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. \hypertarget{date_8h_aac70e60c05c18e841b5394a6bae3ff9d}{\index{date.\-h@{date.\-h}!Date\-\_\-equal@{Date\-\_\-equal}}
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}\hypertarget{date_8h_aac70e60c05c18e841b5394a6bae3ff9d}{\index{date.\-h@{date.\-h}!Date\-\_\-equal@{Date\-\_\-equal}}
 \index{Date\-\_\-equal@{Date\-\_\-equal}!date.h@{date.\-h}}
 \subsubsection[{Date\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf present\-\_\-bool} Date\-\_\-equal (
 \begin{DoxyParamCaption}

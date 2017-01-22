@@ -184,9 +184,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a0a78857ea2f6fd1d0fc4867729c7df77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a0a78857ea2f6fd1d0fc4867729c7df77">Date_subtract_MonthDelta</a> (struct <a class="el" href="structDate.html">Date</a> *const self, const struct <a class="el" href="structMonthDelta.html">MonthDelta</a> *const delta)</td></tr>
 <tr class="memdesc:a0a78857ea2f6fd1d0fc4867729c7df77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract a <a class="el" href="structMonthDelta.html">MonthDelta</a> from a <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a>.  <a href="#a0a78857ea2f6fd1d0fc4867729c7df77">More...</a><br/></td></tr>
 <tr class="separator:a0a78857ea2f6fd1d0fc4867729c7df77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d60efd11d46f93eda8a02d7103c4fab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#a3d60efd11d46f93eda8a02d7103c4fab">Date_compare</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
-<tr class="memdesc:a3d60efd11d46f93eda8a02d7103c4fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> instances.  <a href="#a3d60efd11d46f93eda8a02d7103c4fab">More...</a><br/></td></tr>
-<tr class="separator:a3d60efd11d46f93eda8a02d7103c4fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae651bd8f734d7f77d65b0be33879da77"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#ae651bd8f734d7f77d65b0be33879da77">Date_compare</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
+<tr class="memdesc:ae651bd8f734d7f77d65b0be33879da77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> instances.  <a href="#ae651bd8f734d7f77d65b0be33879da77">More...</a><br/></td></tr>
+<tr class="separator:ae651bd8f734d7f77d65b0be33879da77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac70e60c05c18e841b5394a6bae3ff9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a1c24e2cdd988b886e889080ded176ae0">present_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="date_8h.html#aac70e60c05c18e841b5394a6bae3ff9d">Date_equal</a> (const struct <a class="el" href="structDate.html">Date</a> *const lhs, const struct <a class="el" href="structDate.html">Date</a> *const rhs)</td></tr>
 <tr class="memdesc:aac70e60c05c18e841b5394a6bae3ff9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether two <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> instances are equal (lhs == rhs).  <a href="#aac70e60c05c18e841b5394a6bae3ff9d">More...</a><br/></td></tr>
 <tr class="separator:aac70e60c05c18e841b5394a6bae3ff9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1004,12 +1004,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3d60efd11d46f93eda8a02d7103c4fab"></a>
+<a class="anchor" id="ae651bd8f734d7f77d65b0be33879da77"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Date_compare </td>
+          <td class="memname">short Date_compare </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structDate.html">Date</a> *const&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -1029,7 +1029,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compare two <a class="el" href="structDate.html" title="Class or struct representing a calendar date. ">Date</a> instances. </p>
-<p>If lhs &lt; rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs &gt; rhs, then a positive integer will be returned. </p>
+<ul>
+<li>If lhs &lt; rhs, then a negative integer will be returned.</li>
+<li>If lhs == rhs, then 0 will be returned.</li>
+<li>If lhs &gt; rhs, then a positive integer will be returned. </li>
+</ul>
 
 </div>
 </div>

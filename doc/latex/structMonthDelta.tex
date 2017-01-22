@@ -29,9 +29,9 @@ void \hyperlink{structMonthDelta_a88f17c6793e3e48ac00a70e12b9045d3}{negate} ()
 \begin{DoxyCompactList}\small\item\em Subtract one month from the \hyperlink{structMonthDelta}{Month\-Delta}. \end{DoxyCompactList}\item 
 \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_a57b2bfc986e466491dc6ae5546988de7}{operator-\/-\/} (int)
 \begin{DoxyCompactList}\small\item\em Subtract one month from the \hyperlink{structMonthDelta}{Month\-Delta}. \end{DoxyCompactList}\item 
-\hyperlink{structMonthDelta}{Month\-Delta} \& \hyperlink{structMonthDelta_a63ed19158fcd7fd743ecb4afb83ff874}{operator$\ast$=} (const int \&scale\-\_\-factor)
+\hyperlink{structMonthDelta}{Month\-Delta} \& \hyperlink{structMonthDelta_a0f26a2f2f8dca7cdfc6c1e9baab2f495}{operator$\ast$=} (const long \&scale\-\_\-factor)
 \begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structMonthDelta}{Month\-Delta} by multiplying it by a scale factor. \end{DoxyCompactList}\item 
-\hyperlink{structMonthDelta}{Month\-Delta} \& \hyperlink{structMonthDelta_aa8333e32a1bcd75fd93410574af2ec00}{operator/=} (const int \&scale\-\_\-factor)
+\hyperlink{structMonthDelta}{Month\-Delta} \& \hyperlink{structMonthDelta_a1c88e61ee94308ced34e8d73d13bc383}{operator/=} (const long \&scale\-\_\-factor)
 \begin{DoxyCompactList}\small\item\em Scale a \hyperlink{structMonthDelta}{Month\-Delta} by dividing it by a scale factor. \end{DoxyCompactList}\item 
 \hyperlink{structMonthDelta}{Month\-Delta} \& \hyperlink{structMonthDelta_aa244bc614894a3daaf8d71f0c9c6202b}{operator+=} (const \hyperlink{structMonthDelta}{Month\-Delta} \&other)
 \begin{DoxyCompactList}\small\item\em Add another \hyperlink{structMonthDelta}{Month\-Delta} to a \hyperlink{structMonthDelta}{Month\-Delta}. \end{DoxyCompactList}\item 
@@ -46,7 +46,7 @@ static \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_a1
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structMonthDelta}{Month\-Delta} based on a positive or negative number of years. \end{DoxyCompactList}\item 
 static \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_a847cb9c956c133957dbaffb32fb9bd15}{zero} ()
 \begin{DoxyCompactList}\small\item\em Create a new \hyperlink{structMonthDelta}{Month\-Delta} initialized to zero months. \end{DoxyCompactList}\item 
-static int \hyperlink{structMonthDelta_afb632f08f6278bcf7dfd5aef0cb12322}{compare} (const \hyperlink{structMonthDelta}{Month\-Delta} \&lhs, const \hyperlink{structMonthDelta}{Month\-Delta} \&rhs)
+static short \hyperlink{structMonthDelta_a60b102be9cdf79b9eda0bb3a06e62178}{compare} (const \hyperlink{structMonthDelta}{Month\-Delta} \&lhs, const \hyperlink{structMonthDelta}{Month\-Delta} \&rhs)
 \begin{DoxyCompactList}\small\item\em Compare two \hyperlink{structMonthDelta}{Month\-Delta} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -56,9 +56,9 @@ struct Present\-Month\-Delta\-Data \hyperlink{structMonthDelta_a428f2591ca57d192
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-const \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_a371fb6abbbaa0d2c2011d29af10171bc}{operator$\ast$} (const \hyperlink{structMonthDelta}{Month\-Delta} \&delta, const int \&scale\-\_\-factor)
+const \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_a8ec4e463ca75d4336f7793f9263ec8b5}{operator$\ast$} (const \hyperlink{structMonthDelta}{Month\-Delta} \&delta, const long \&scale\-\_\-factor)
 \item 
-const \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_abd091fddaf6d6459ff88179670c45dda}{operator/} (const \hyperlink{structMonthDelta}{Month\-Delta} \&delta, const int \&scale\-\_\-factor)
+const \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_adc685a1884457238d5742f06d66ab8d3}{operator/} (const \hyperlink{structMonthDelta}{Month\-Delta} \&delta, const long \&scale\-\_\-factor)
 \item 
 const \hyperlink{structMonthDelta}{Month\-Delta} \hyperlink{structMonthDelta_a9f7f420c48017d9fecdcebc1864fdcad}{operator+} (const \hyperlink{structMonthDelta}{Month\-Delta} \&lhs, const \hyperlink{structMonthDelta}{Month\-Delta} \&rhs)
 \item 
@@ -228,24 +228,24 @@ Subtract one month from the \hyperlink{structMonthDelta}{Month\-Delta}.
 
 Subtract one month from the \hyperlink{structMonthDelta}{Month\-Delta}. 
 
-\hypertarget{structMonthDelta_a63ed19158fcd7fd743ecb4afb83ff874}{\index{Month\-Delta@{Month\-Delta}!operator$\ast$=@{operator$\ast$=}}
+\hypertarget{structMonthDelta_a0f26a2f2f8dca7cdfc6c1e9baab2f495}{\index{Month\-Delta@{Month\-Delta}!operator$\ast$=@{operator$\ast$=}}
 \index{operator$\ast$=@{operator$\ast$=}!MonthDelta@{Month\-Delta}}
 \subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Month\-Delta}\& Month\-Delta\-::operator$\ast$= (
 \begin{DoxyParamCaption}
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)}}\label{structMonthDelta_a63ed19158fcd7fd743ecb4afb83ff874}
+)}}\label{structMonthDelta_a0f26a2f2f8dca7cdfc6c1e9baab2f495}
 
 
 Scale a \hyperlink{structMonthDelta}{Month\-Delta} by multiplying it by a scale factor. 
 
-\hypertarget{structMonthDelta_aa8333e32a1bcd75fd93410574af2ec00}{\index{Month\-Delta@{Month\-Delta}!operator/=@{operator/=}}
+\hypertarget{structMonthDelta_a1c88e61ee94308ced34e8d73d13bc383}{\index{Month\-Delta@{Month\-Delta}!operator/=@{operator/=}}
 \index{operator/=@{operator/=}!MonthDelta@{Month\-Delta}}
 \subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Month\-Delta}\& Month\-Delta\-::operator/= (
 \begin{DoxyParamCaption}
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)}}\label{structMonthDelta_aa8333e32a1bcd75fd93410574af2ec00}
+)}}\label{structMonthDelta_a1c88e61ee94308ced34e8d73d13bc383}
 
 
 Scale a \hyperlink{structMonthDelta}{Month\-Delta} by dividing it by a scale factor. 
@@ -272,42 +272,47 @@ The second \hyperlink{structMonthDelta}{Month\-Delta} parameter is added to the 
 
 Subtract another \hyperlink{structMonthDelta}{Month\-Delta} from a \hyperlink{structMonthDelta}{Month\-Delta}. 
 
-The second \hyperlink{structMonthDelta}{Month\-Delta} parameter is subtracted from the first. \hypertarget{structMonthDelta_afb632f08f6278bcf7dfd5aef0cb12322}{\index{Month\-Delta@{Month\-Delta}!compare@{compare}}
+The second \hyperlink{structMonthDelta}{Month\-Delta} parameter is subtracted from the first. \hypertarget{structMonthDelta_a60b102be9cdf79b9eda0bb3a06e62178}{\index{Month\-Delta@{Month\-Delta}!compare@{compare}}
 \index{compare@{compare}!MonthDelta@{Month\-Delta}}
-\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static int Month\-Delta\-::compare (
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static short Month\-Delta\-::compare (
 \begin{DoxyParamCaption}
 \item[{const {\bf Month\-Delta} \&}]{lhs, }
 \item[{const {\bf Month\-Delta} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{structMonthDelta_afb632f08f6278bcf7dfd5aef0cb12322}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structMonthDelta_a60b102be9cdf79b9eda0bb3a06e62178}
 
 
 Compare two \hyperlink{structMonthDelta}{Month\-Delta} instances. 
 
-If lhs $<$ rhs, then a negative integer will be returned. If lhs == rhs, then 0 will be returned. If lhs $>$ rhs, then a positive integer will be returned. 
+
+\begin{DoxyItemize}
+\item If lhs $<$ rhs, then a negative integer will be returned.
+\item If lhs == rhs, then 0 will be returned.
+\item If lhs $>$ rhs, then a positive integer will be returned. 
+\end{DoxyItemize}
 
 \subsection{Friends And Related Function Documentation}
-\hypertarget{structMonthDelta_a371fb6abbbaa0d2c2011d29af10171bc}{\index{Month\-Delta@{Month\-Delta}!operator$\ast$@{operator$\ast$}}
+\hypertarget{structMonthDelta_a8ec4e463ca75d4336f7793f9263ec8b5}{\index{Month\-Delta@{Month\-Delta}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!MonthDelta@{Month\-Delta}}
 \subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Month\-Delta} operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Month\-Delta} \&}]{delta, }
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structMonthDelta_a371fb6abbbaa0d2c2011d29af10171bc}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structMonthDelta_a8ec4e463ca75d4336f7793f9263ec8b5}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{structMonthDelta_a63ed19158fcd7fd743ecb4afb83ff874}{Month\-Delta\-::operator$\ast$=(const int \& scale\-\_\-factor)} 
+\hyperlink{structMonthDelta_a0f26a2f2f8dca7cdfc6c1e9baab2f495}{Month\-Delta\-::operator$\ast$=(const long \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
-\hypertarget{structMonthDelta_abd091fddaf6d6459ff88179670c45dda}{\index{Month\-Delta@{Month\-Delta}!operator/@{operator/}}
+\hypertarget{structMonthDelta_adc685a1884457238d5742f06d66ab8d3}{\index{Month\-Delta@{Month\-Delta}!operator/@{operator/}}
 \index{operator/@{operator/}!MonthDelta@{Month\-Delta}}
 \subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Month\-Delta} operator/ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Month\-Delta} \&}]{delta, }
-\item[{const int \&}]{scale\-\_\-factor}
+\item[{const long \&}]{scale\-\_\-factor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structMonthDelta_abd091fddaf6d6459ff88179670c45dda}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{structMonthDelta_adc685a1884457238d5742f06d66ab8d3}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{structMonthDelta_aa8333e32a1bcd75fd93410574af2ec00}{Month\-Delta\-::operator/=(const int \& scale\-\_\-factor)} 
+\hyperlink{structMonthDelta_a1c88e61ee94308ced34e8d73d13bc383}{Month\-Delta\-::operator/=(const long \& scale\-\_\-factor)} 
 \end{DoxySeeAlso}
 \hypertarget{structMonthDelta_a9f7f420c48017d9fecdcebc1864fdcad}{\index{Month\-Delta@{Month\-Delta}!operator+@{operator+}}
 \index{operator+@{operator+}!MonthDelta@{Month\-Delta}}
