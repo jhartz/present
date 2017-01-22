@@ -117,7 +117,7 @@ DayDelta_negate(struct DayDelta * const self)
 }
 
 void
-DayDelta_multiply_by(struct DayDelta * const self, int scale_factor)
+DayDelta_multiply_by(struct DayDelta * const self, long scale_factor)
 {
     assert(self != NULL);
 
@@ -125,7 +125,7 @@ DayDelta_multiply_by(struct DayDelta * const self, int scale_factor)
 }
 
 void
-DayDelta_divide_by(struct DayDelta * const self, int scale_factor)
+DayDelta_divide_by(struct DayDelta * const self, long scale_factor)
 {
     assert(self != NULL);
 
@@ -154,7 +154,7 @@ DayDelta_subtract(
     self->data_.delta_days -= other->data_.delta_days;
 }
 
-int
+short
 DayDelta_compare(
         const struct DayDelta * const lhs,
         const struct DayDelta * const rhs)

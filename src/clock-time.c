@@ -306,7 +306,7 @@ ClockTime_subtract_TimeDelta(
     check_clock_time(self);
 }
 
-int
+short
 ClockTime_compare(
         const struct ClockTime * const lhs,
         const struct ClockTime * const rhs)

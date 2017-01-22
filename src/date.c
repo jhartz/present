@@ -442,7 +442,7 @@ Date_subtract_MonthDelta(
     check_date_data(&self->data_);
 }
 
-int
+short
 Date_compare(
         const struct Date * const lhs,
         const struct Date * const rhs)

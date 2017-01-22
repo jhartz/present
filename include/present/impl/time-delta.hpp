@@ -213,7 +213,7 @@ TimeDelta::operator-() const
 }
 
 inline TimeDelta &
-TimeDelta::operator*=(const int & scale_factor)
+TimeDelta::operator*=(const long & scale_factor)
 {
     TimeDelta_multiply_by(this, scale_factor);
     return *this;
@@ -227,7 +227,7 @@ TimeDelta::operator*=(const double & scale_factor)
 }
 
 inline TimeDelta &
-TimeDelta::operator/=(const int & scale_factor)
+TimeDelta::operator/=(const long & scale_factor)
 {
     TimeDelta_divide_by(this, scale_factor);
     return *this;
@@ -241,7 +241,7 @@ TimeDelta::operator/=(const double & scale_factor)
 }
 
 inline const TimeDelta
-operator*(const TimeDelta & lhs, const int & rhs)
+operator*(const TimeDelta & lhs, const long & rhs)
 {
     return (TimeDelta(lhs) *= rhs);
 }
@@ -253,7 +253,7 @@ operator*(const TimeDelta & lhs, const double & rhs)
 }
 
 inline const TimeDelta
-operator/(const TimeDelta & lhs, const int & rhs)
+operator/(const TimeDelta & lhs, const long & rhs)
 {
     return (TimeDelta(lhs) /= rhs);
 }
@@ -330,7 +330,7 @@ operator-(const DayDelta & lhs, const TimeDelta & rhs)
     return (lhs_time_delta -= rhs);
 }
 
-inline int
+inline short
 TimeDelta::compare(const TimeDelta & lhs, const TimeDelta & rhs)
 {
     return TimeDelta_compare(&lhs, &rhs);

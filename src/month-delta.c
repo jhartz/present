@@ -114,7 +114,7 @@ MonthDelta_negate(struct MonthDelta * const self)
 }
 
 void
-MonthDelta_multiply_by(struct MonthDelta * const self, int scale_factor)
+MonthDelta_multiply_by(struct MonthDelta * const self, long scale_factor)
 {
     assert(self != NULL);
 
@@ -122,7 +122,7 @@ MonthDelta_multiply_by(struct MonthDelta * const self, int scale_factor)
 }
 
 void
-MonthDelta_divide_by(struct MonthDelta * const self, int scale_factor)
+MonthDelta_divide_by(struct MonthDelta * const self, long scale_factor)
 {
     assert(self != NULL);
 
@@ -151,7 +151,7 @@ MonthDelta_subtract(
     self->data_.delta_months -= other->data_.delta_months;
 }
 
-int
+short
 MonthDelta_compare(
         const struct MonthDelta * const lhs,
         const struct MonthDelta * const rhs)

@@ -163,7 +163,7 @@ operator-(const Date & lhs, const MonthDelta & rhs)
     return (Date(lhs) -= rhs);
 }
 
-inline int
+inline short
 Date::compare(const Date & lhs, const Date & rhs)
 {
     return Date_compare(&lhs, &rhs);

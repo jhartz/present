@@ -181,7 +181,7 @@ struct PRESENT_API Timestamp {
             const MonthDelta & rhs);
 
     /** @copydoc Timestamp_compare */
-    static int compare(const Timestamp & lhs, const Timestamp & rhs);
+    static short compare(const Timestamp & lhs, const Timestamp & rhs);
 
     /** @copydoc Timestamp_equal */
     friend bool operator==(const Timestamp & lhs, const Timestamp & rhs);
@@ -580,7 +580,7 @@ Timestamp_subtract_MonthDelta(
  * If lhs == rhs, then 0 will be returned.
  * If lhs > rhs, then a positive integer will be returned.
  */
-PRESENT_API int
+PRESENT_API short
 Timestamp_compare(
         const struct Timestamp * const lhs,
         const struct Timestamp * const rhs);

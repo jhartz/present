@@ -150,7 +150,7 @@ struct PRESENT_API Date {
     friend const Date operator-(const Date & lhs, const MonthDelta & rhs);
 
     /** @copydoc Date_compare */
-    static int compare(const Date & lhs, const Date & rhs);
+    static short compare(const Date & lhs, const Date & rhs);
 
     /** @copydoc Date_equal */
     friend bool operator==(const Date & lhs, const Date & rhs);
@@ -426,7 +426,7 @@ Date_subtract_MonthDelta(
  * If lhs == rhs, then 0 will be returned.
  * If lhs > rhs, then a positive integer will be returned.
  */
-PRESENT_API int
+PRESENT_API short
 Date_compare(
         const struct Date * const lhs,
         const struct Date * const rhs);

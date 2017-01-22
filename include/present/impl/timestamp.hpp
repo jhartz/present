@@ -250,7 +250,7 @@ operator-(const Timestamp & lhs, const MonthDelta & rhs)
     return (Timestamp(lhs) -= rhs);
 }
 
-inline int
+inline short
 Timestamp::compare(const Timestamp & lhs, const Timestamp & rhs)
 {
     return Timestamp_compare(&lhs, &rhs);

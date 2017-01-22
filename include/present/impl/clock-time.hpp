@@ -145,7 +145,7 @@ operator-(const ClockTime & lhs, const TimeDelta & rhs)
     return (ClockTime(lhs) -= rhs);
 }
 
-inline int
+inline short
 ClockTime::compare(const ClockTime & lhs, const ClockTime & rhs)
 {
     return ClockTime_compare(&lhs, &rhs);

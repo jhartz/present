@@ -378,7 +378,7 @@ TimeDelta_negate(struct TimeDelta * const self)
 }
 
 void
-TimeDelta_multiply_by(struct TimeDelta * const self, const int scale_factor)
+TimeDelta_multiply_by(struct TimeDelta * const self, const long scale_factor)
 {
     assert(self != NULL);
 
@@ -411,7 +411,7 @@ TimeDelta_multiply_by_decimal(
 }
 
 void
-TimeDelta_divide_by(struct TimeDelta * const self, const int scale_factor)
+TimeDelta_divide_by(struct TimeDelta * const self, const long scale_factor)
 {
     int_delta orig_seconds;
 
@@ -500,7 +500,7 @@ TimeDelta_subtract_DayDelta(
     CHECK_DATA(self->data_);
 }
 
-int
+short
 TimeDelta_compare(
         const struct TimeDelta * const lhs,
         const struct TimeDelta * const rhs)

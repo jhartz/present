@@ -111,27 +111,27 @@ DayDelta::operator--(int)
 }
 
 inline DayDelta &
-DayDelta::operator*=(const int & scale_factor)
+DayDelta::operator*=(const long & scale_factor)
 {
     DayDelta_multiply_by(this, scale_factor);
     return *this;
 }
 
 inline DayDelta &
-DayDelta::operator/=(const int & scale_factor)
+DayDelta::operator/=(const long & scale_factor)
 {
     DayDelta_divide_by(this, scale_factor);
     return *this;
 }
 
 inline const DayDelta
-operator*(const DayDelta & lhs, const int & rhs)
+operator*(const DayDelta & lhs, const long & rhs)
 {
     return (DayDelta(lhs) *= rhs);
 }
 
 inline const DayDelta
-operator/(const DayDelta & lhs, const int & rhs)
+operator/(const DayDelta & lhs, const long & rhs)
 {
     return (DayDelta(lhs) /= rhs);
 }
@@ -162,7 +162,7 @@ operator-(const DayDelta & lhs, const DayDelta & rhs)
     return (DayDelta(lhs) -= rhs);
 }
 
-inline int
+inline short
 DayDelta::compare(const DayDelta & lhs, const DayDelta & rhs)
 {
     return DayDelta_compare(&lhs, &rhs);

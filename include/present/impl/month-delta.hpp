@@ -105,27 +105,27 @@ MonthDelta::operator--(int)
 }
 
 inline MonthDelta &
-MonthDelta::operator*=(const int & scale_factor)
+MonthDelta::operator*=(const long & scale_factor)
 {
     MonthDelta_multiply_by(this, scale_factor);
     return *this;
 }
 
 inline MonthDelta &
-MonthDelta::operator/=(const int & scale_factor)
+MonthDelta::operator/=(const long & scale_factor)
 {
     MonthDelta_divide_by(this, scale_factor);
     return *this;
 }
 
 inline const MonthDelta
-operator*(const MonthDelta & lhs, const int & rhs)
+operator*(const MonthDelta & lhs, const long & rhs)
 {
     return (MonthDelta(lhs) *= rhs);
 }
 
 inline const MonthDelta
-operator/(const MonthDelta & lhs, const int & rhs)
+operator/(const MonthDelta & lhs, const long & rhs)
 {
     return (MonthDelta(lhs) /= rhs);
 }
@@ -156,7 +156,7 @@ operator-(const MonthDelta & lhs, const MonthDelta & rhs)
     return (MonthDelta(lhs) -= rhs);
 }
 
-inline int
+inline short
 MonthDelta::compare(const MonthDelta & lhs, const MonthDelta & rhs)
 {
     return MonthDelta_compare(&lhs, &rhs);

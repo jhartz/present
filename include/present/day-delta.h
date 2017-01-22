@@ -85,18 +85,18 @@ struct PRESENT_API DayDelta {
     DayDelta operator--(int);
 
     /** @copydoc DayDelta_multiply_by */
-    DayDelta & operator*=(const int & scale_factor);
+    DayDelta & operator*=(const long & scale_factor);
     /** @copydoc DayDelta_divide_by */
-    DayDelta & operator/=(const int & scale_factor);
+    DayDelta & operator/=(const long & scale_factor);
 
-    /** @see DayDelta::operator*=(const int & scale_factor) */
+    /** @see DayDelta::operator*=(const long & scale_factor) */
     friend const DayDelta operator*(
             const DayDelta & delta,
-            const int & scale_factor);
-    /** @see DayDelta::operator/=(const int & scale_factor) */
+            const long & scale_factor);
+    /** @see DayDelta::operator/=(const long & scale_factor) */
     friend const DayDelta operator/(
             const DayDelta & delta,
-            const int & scale_factor);
+            const long & scale_factor);
 
     /** @copydoc DayDelta_add */
     DayDelta & operator+=(const DayDelta & other);
@@ -113,7 +113,7 @@ struct PRESENT_API DayDelta {
             const DayDelta & rhs);
 
     /** @copydoc DayDelta_compare */
-    static int compare(const DayDelta & lhs, const DayDelta & rhs);
+    static short compare(const DayDelta & lhs, const DayDelta & rhs);
 
     /** @copydoc DayDelta_equal */
     friend bool operator==(const DayDelta & lhs, const DayDelta & rhs);
@@ -220,13 +220,13 @@ DayDelta_negate(struct DayDelta * const self);
  * Scale a DayDelta by multiplying it by a scale factor.
  */
 PRESENT_API void
-DayDelta_multiply_by(struct DayDelta * const self, int scale_factor);
+DayDelta_multiply_by(struct DayDelta * const self, long scale_factor);
 
 /**
  * Scale a DayDelta by dividing it by a scale factor.
  */
 PRESENT_API void
-DayDelta_divide_by(struct DayDelta * const self, int scale_factor);
+DayDelta_divide_by(struct DayDelta * const self, long scale_factor);
 
 /**
  * Add another DayDelta to a DayDelta.
@@ -253,7 +253,7 @@ DayDelta_subtract(
  * If lhs == rhs, then 0 will be returned.
  * If lhs > rhs, then a positive integer will be returned.
  */
-PRESENT_API int
+PRESENT_API short
 DayDelta_compare(
         const struct DayDelta * const lhs,
         const struct DayDelta * const rhs);

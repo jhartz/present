@@ -134,7 +134,7 @@ struct PRESENT_API ClockTime {
             const TimeDelta & rhs);
 
     /** @copydoc ClockTime_compare */
-    static int compare(const ClockTime & lhs, const ClockTime & rhs);
+    static short compare(const ClockTime & lhs, const ClockTime & rhs);
 
     /** @copydoc ClockTime_equal */
     friend bool operator==(const ClockTime & lhs, const ClockTime & rhs);
@@ -428,7 +428,7 @@ ClockTime_subtract_TimeDelta(
  * If lhs == rhs, then 0 will be returned.
  * If lhs > rhs, then a positive integer will be returned.
  */
-PRESENT_API int
+PRESENT_API short
 ClockTime_compare(
         const struct ClockTime * const lhs,
         const struct ClockTime * const rhs);

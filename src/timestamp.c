@@ -658,7 +658,7 @@ Timestamp_subtract_MonthDelta(
             tm.tm_sec));
 }
 
-int
+short
 Timestamp_compare(
         const struct Timestamp * const lhs,
         const struct Timestamp * const rhs)
