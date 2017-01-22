@@ -130,23 +130,26 @@ Macros</h2></td></tr>
 <p>Shortcut macro to create an instance of a Present delta type, based on a numeric value and a unit. </p>
 <p>Possible units and their returned types:</p>
 <ul>
-<li><em>year</em>, <em>years</em>: <a class="el" href="structMonthDelta.html">MonthDelta</a></li>
-<li><em>month</em>, <em>months</em>: <a class="el" href="structMonthDelta.html">MonthDelta</a></li>
-<li><em>week</em>, <em>weeks</em>: <a class="el" href="structDayDelta.html">DayDelta</a></li>
-<li><em>day</em>, <em>days</em>: <a class="el" href="structDayDelta.html">DayDelta</a></li>
-<li><em>week_time</em>, <em>weeks_time</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
-<li><em>day_time</em>, <em>days_time</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
-<li><em>hour</em>, <em>hours</em>, <em>hr</em>, <em>hrs</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
-<li><em>minute</em>, <em>minutes</em>, <em>min</em>, <em>mins</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
-<li><em>second</em>, <em>seconds</em>, <em>sec</em>, <em>secs</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
-<li><em>millisecond</em>, <em>milliseconds</em>, <em>ms</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
-<li><em>microsecond</em>, <em>microseconds</em>, <em>us</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
-<li><em>nanosecond</em>, <em>nanoseconds</em>, <em>ns</em>: <a class="el" href="structTimeDelta.html">TimeDelta</a></li>
+<li><em>year</em>, <em>years</em>: <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a></li>
+<li><em>month</em>, <em>months</em>: <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a></li>
+<li><em>week</em>, <em>weeks</em>: <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks. ">DayDelta</a></li>
+<li><em>day</em>, <em>days</em>: <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks. ">DayDelta</a></li>
+<li><em>week_time</em>, <em>weeks_time</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
+<li><em>day_time</em>, <em>days_time</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
+<li><em>hour</em>, <em>hours</em>, <em>hr</em>, <em>hrs</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
+<li><em>minute</em>, <em>minutes</em>, <em>min</em>, <em>mins</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
+<li><em>second</em>, <em>seconds</em>, <em>sec</em>, <em>secs</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
+<li><em>millisecond</em>, <em>milliseconds</em>, <em>ms</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
+<li><em>microsecond</em>, <em>microseconds</em>, <em>us</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
+<li><em>nanosecond</em>, <em>nanoseconds</em>, <em>ns</em>: <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></li>
 </ul>
-<p>Note that <em>day</em> and <em>week</em> return a <code><a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks. ">DayDelta</a></code>, not a <code><a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></code>. If you need a <code><a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a></code> instead in one of these situations, you need to use <em>day_time</em> and <em>week_time</em>.</p>
+<p>Note that <em>day</em> and <em>week</em> return a <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks. ">DayDelta</a>, not a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a>. If you need a <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a> instead in one of these situations, you need to use <em>day_time</em> and <em>week_time</em>.</p>
 <p>Examples:</p>
-<p>``` <a class="el" href="structMonthDelta.html" title="Class or struct representing a positive or negative delta of a number of months or years...">MonthDelta</a> d = <a class="el" href="present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c" title="Shortcut macro to create an instance of a Present delta type, based on a numeric value and a unit...">present_delta(6, months)</a>; <a class="el" href="structDayDelta.html" title="Class or struct representing a positive or negative delta of a number of days or weeks. ">DayDelta</a> d = present_delta(-10, days); <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a> d = <a class="el" href="present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c" title="Shortcut macro to create an instance of a Present delta type, based on a numeric value and a unit...">present_delta(4, weeks_time)</a>; <a class="el" href="structTimeDelta.html" title="Class or struct representing a positive or negative delta of a number of nanoseconds, seconds, minutes, hours, days, or weeks. ">TimeDelta</a> d = <a class="el" href="present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c" title="Shortcut macro to create an instance of a Present delta type, based on a numeric value and a unit...">present_delta(1, second)</a>; ``` </p>
-
+<div class="fragment"><div class="line"><a class="code" href="structMonthDelta.html">MonthDelta</a> d = <a class="code" href="present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c">present_delta</a>(6, months);</div>
+<div class="line"><a class="code" href="structDayDelta.html">DayDelta</a>   d = <a class="code" href="present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c">present_delta</a>(-10, days);</div>
+<div class="line"><a class="code" href="structTimeDelta.html">TimeDelta</a>  d = <a class="code" href="present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c">present_delta</a>(4, weeks_time);</div>
+<div class="line"><a class="code" href="structTimeDelta.html">TimeDelta</a>  d = <a class="code" href="present_8h.html#a381fc9ebf9765d2a1c1a6b809f39ed6c">present_delta</a>(1, second);</div>
+</div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->

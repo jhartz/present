@@ -39,8 +39,15 @@ Possible units and their returned types\-:
 \item {\itshape nanosecond}, {\itshape nanoseconds}, {\itshape ns}\-: \hyperlink{structTimeDelta}{Time\-Delta}
 \end{DoxyItemize}
 
-Note that {\itshape day} and {\itshape week} return a {\ttfamily \hyperlink{structDayDelta}{Day\-Delta}}, not a {\ttfamily \hyperlink{structTimeDelta}{Time\-Delta}}. If you need a {\ttfamily \hyperlink{structTimeDelta}{Time\-Delta}} instead in one of these situations, you need to use {\itshape day\-\_\-time} and {\itshape week\-\_\-time}.
+Note that {\itshape day} and {\itshape week} return a \hyperlink{structDayDelta}{Day\-Delta}, not a \hyperlink{structTimeDelta}{Time\-Delta}. If you need a \hyperlink{structTimeDelta}{Time\-Delta} instead in one of these situations, you need to use {\itshape day\-\_\-time} and {\itshape week\-\_\-time}.
 
 Examples\-:
 
-``` \hyperlink{structMonthDelta}{Month\-Delta} d = \hyperlink{present_8h_a381fc9ebf9765d2a1c1a6b809f39ed6c}{present\-\_\-delta(6, months)}; \hyperlink{structDayDelta}{Day\-Delta} d = present\-\_\-delta(-\/10, days); \hyperlink{structTimeDelta}{Time\-Delta} d = \hyperlink{present_8h_a381fc9ebf9765d2a1c1a6b809f39ed6c}{present\-\_\-delta(4, weeks\-\_\-time)}; \hyperlink{structTimeDelta}{Time\-Delta} d = \hyperlink{present_8h_a381fc9ebf9765d2a1c1a6b809f39ed6c}{present\-\_\-delta(1, second)}; ``` 
+
+\begin{DoxyCode}
+\hyperlink{structMonthDelta}{MonthDelta} d = \hyperlink{present_8h_a381fc9ebf9765d2a1c1a6b809f39ed6c}{present\_delta}(6, months);
+\hyperlink{structDayDelta}{DayDelta}   d = \hyperlink{present_8h_a381fc9ebf9765d2a1c1a6b809f39ed6c}{present\_delta}(-10, days);
+\hyperlink{structTimeDelta}{TimeDelta}  d = \hyperlink{present_8h_a381fc9ebf9765d2a1c1a6b809f39ed6c}{present\_delta}(4, weeks\_time);
+\hyperlink{structTimeDelta}{TimeDelta}  d = \hyperlink{present_8h_a381fc9ebf9765d2a1c1a6b809f39ed6c}{present\_delta}(1, second);
+\end{DoxyCode}
+ 
