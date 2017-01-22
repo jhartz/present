@@ -80,41 +80,41 @@
 <span class="lineNum">      18 </span>            : 
 <a name="19"><span class="lineNum">      19 </span>            : /** Initialize a new DayDelta based on the number of days. */</a>
 <span class="lineNum">      20 </span>            : static void
-<span class="lineNum">      21 </span><span class="lineCov">         79 : init_day_delta(struct DayDelta * const result, int_delta days)</span>
+<span class="lineNum">      21 </span><span class="lineCov">         95 : init_day_delta(struct DayDelta * const result, int_delta days)</span>
 <span class="lineNum">      22 </span>            : {
-<span class="lineNum">      23 </span><span class="lineCov">         79 :     assert(result != NULL);</span>
-<span class="lineNum">      24 </span><span class="lineCov">         79 :     CLEAR(result);</span>
-<span class="lineNum">      25 </span><span class="lineCov">         79 :     result-&gt;data_.delta_days = days;</span>
-<span class="lineNum">      26 </span><span class="lineCov">         79 : }</span>
+<span class="lineNum">      23 </span><span class="lineCov">         95 :     assert(result != NULL);</span>
+<span class="lineNum">      24 </span><span class="lineCov">         95 :     CLEAR(result);</span>
+<span class="lineNum">      25 </span><span class="lineCov">         95 :     result-&gt;data_.delta_days = days;</span>
+<span class="lineNum">      26 </span><span class="lineCov">         95 : }</span>
 <span class="lineNum">      27 </span>            : 
 <a name="28"><span class="lineNum">      28 </span>            : </a>
 <span class="lineNum">      29 </span>            : struct DayDelta
-<span class="lineNum">      30 </span><span class="lineCov">          5 : DayDelta_from_days(int_delta days)</span>
+<span class="lineNum">      30 </span><span class="lineCov">          9 : DayDelta_from_days(int_delta days)</span>
 <span class="lineNum">      31 </span>            : {
 <span class="lineNum">      32 </span>            :     struct DayDelta result;
-<span class="lineNum">      33 </span><span class="lineCov">          5 :     init_day_delta(&amp;result, days);</span>
-<span class="lineNum">      34 </span><span class="lineCov">          5 :     return result;</span>
+<span class="lineNum">      33 </span><span class="lineCov">          9 :     init_day_delta(&amp;result, days);</span>
+<span class="lineNum">      34 </span><span class="lineCov">          9 :     return result;</span>
 <span class="lineNum">      35 </span>            : }
 <a name="36"><span class="lineNum">      36 </span>            : </a>
 <span class="lineNum">      37 </span>            : void
-<span class="lineNum">      38 </span><span class="lineCov">         50 : DayDelta_ptr_from_days(struct DayDelta * const result, int_delta days)</span>
+<span class="lineNum">      38 </span><span class="lineCov">         54 : DayDelta_ptr_from_days(struct DayDelta * const result, int_delta days)</span>
 <span class="lineNum">      39 </span>            : {
-<span class="lineNum">      40 </span><span class="lineCov">         50 :     init_day_delta(result, days);</span>
-<span class="lineNum">      41 </span><span class="lineCov">         50 : }</span>
+<span class="lineNum">      40 </span><span class="lineCov">         54 :     init_day_delta(result, days);</span>
+<span class="lineNum">      41 </span><span class="lineCov">         54 : }</span>
 <a name="42"><span class="lineNum">      42 </span>            : </a>
 <span class="lineNum">      43 </span>            : struct DayDelta
-<span class="lineNum">      44 </span><span class="lineCov">          1 : DayDelta_from_weeks(int_delta weeks)</span>
+<span class="lineNum">      44 </span><span class="lineCov">          5 : DayDelta_from_weeks(int_delta weeks)</span>
 <span class="lineNum">      45 </span>            : {
 <span class="lineNum">      46 </span>            :     struct DayDelta result;
-<span class="lineNum">      47 </span><span class="lineCov">          1 :     init_day_delta(&amp;result, weeks * DAYS_IN_WEEK);</span>
-<span class="lineNum">      48 </span><span class="lineCov">          1 :     return result;</span>
+<span class="lineNum">      47 </span><span class="lineCov">          5 :     init_day_delta(&amp;result, weeks * DAYS_IN_WEEK);</span>
+<span class="lineNum">      48 </span><span class="lineCov">          5 :     return result;</span>
 <span class="lineNum">      49 </span>            : }
 <a name="50"><span class="lineNum">      50 </span>            : </a>
 <span class="lineNum">      51 </span>            : void
-<span class="lineNum">      52 </span><span class="lineCov">         12 : DayDelta_ptr_from_weeks(struct DayDelta * const result, int_delta weeks)</span>
+<span class="lineNum">      52 </span><span class="lineCov">         16 : DayDelta_ptr_from_weeks(struct DayDelta * const result, int_delta weeks)</span>
 <span class="lineNum">      53 </span>            : {
-<span class="lineNum">      54 </span><span class="lineCov">         12 :     init_day_delta(result, weeks * DAYS_IN_WEEK);</span>
-<span class="lineNum">      55 </span><span class="lineCov">         12 : }</span>
+<span class="lineNum">      54 </span><span class="lineCov">         16 :     init_day_delta(result, weeks * DAYS_IN_WEEK);</span>
+<span class="lineNum">      55 </span><span class="lineCov">         16 : }</span>
 <a name="56"><span class="lineNum">      56 </span>            : </a>
 <span class="lineNum">      57 </span>            : struct DayDelta
 <span class="lineNum">      58 </span><span class="lineCov">          1 : DayDelta_zero(void)</span>
@@ -131,11 +131,11 @@
 <span class="lineNum">      69 </span><span class="lineCov">         10 : }</span>
 <a name="70"><span class="lineNum">      70 </span>            : </a>
 <span class="lineNum">      71 </span>            : int_delta
-<span class="lineNum">      72 </span><span class="lineCov">         65 : DayDelta_days(const struct DayDelta * const self)</span>
+<span class="lineNum">      72 </span><span class="lineCov">         81 : DayDelta_days(const struct DayDelta * const self)</span>
 <span class="lineNum">      73 </span>            : {
-<span class="lineNum">      74 </span><span class="lineCov">         65 :     assert(self != NULL);</span>
+<span class="lineNum">      74 </span><span class="lineCov">         81 :     assert(self != NULL);</span>
 <span class="lineNum">      75 </span>            : 
-<span class="lineNum">      76 </span><span class="lineCov">         65 :     return self-&gt;data_.delta_days;</span>
+<span class="lineNum">      76 </span><span class="lineCov">         81 :     return self-&gt;data_.delta_days;</span>
 <span class="lineNum">      77 </span>            : }
 <a name="78"><span class="lineNum">      78 </span>            : </a>
 <span class="lineNum">      79 </span>            : int_delta
@@ -217,17 +217,17 @@
 <span class="lineNum">     155 </span><span class="lineCov">          4 : }</span>
 <a name="156"><span class="lineNum">     156 </span>            : </a>
 <span class="lineNum">     157 </span>            : int
-<span class="lineNum">     158 </span><span class="lineCov">         35 : DayDelta_compare(</span>
+<span class="lineNum">     158 </span><span class="lineCov">         43 : DayDelta_compare(</span>
 <span class="lineNum">     159 </span>            :         const struct DayDelta * const lhs,
 <span class="lineNum">     160 </span>            :         const struct DayDelta * const rhs)
 <span class="lineNum">     161 </span>            : {
-<span class="lineNum">     162 </span><span class="lineCov">         35 :     assert(lhs != NULL);</span>
-<span class="lineNum">     163 </span><span class="lineCov">         35 :     assert(rhs != NULL);</span>
+<span class="lineNum">     162 </span><span class="lineCov">         43 :     assert(lhs != NULL);</span>
+<span class="lineNum">     163 </span><span class="lineCov">         43 :     assert(rhs != NULL);</span>
 <span class="lineNum">     164 </span>            : 
-<span class="lineNum">     165 </span><span class="lineCov">         35 :     return STRUCT_COMPARE(delta_days, 0);</span>
+<span class="lineNum">     165 </span><span class="lineCov">         43 :     return STRUCT_COMPARE(delta_days, 0);</span>
 <a name="166"><span class="lineNum">     166 </span>            : }</a>
 <span class="lineNum">     167 </span>            : 
-<span class="lineNum">     168 </span><span class="lineCov">         29 : STRUCT_COMPARISON_OPERATORS(DayDelta)</span>
+<span class="lineNum">     168 </span><span class="lineCov">         37 : STRUCT_COMPARISON_OPERATORS(DayDelta)</span>
 <span class="lineNum">     169 </span>            : 
 </pre>
       </td>

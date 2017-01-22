@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info.cleaned - test/delta-macros-test.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">test</a> - delta-macros-test.cpp<span style="font-size: 80%;"> (source / <a href="delta-macros-test.cpp.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">51</td>
+            <td class="headerCovTableEntry">51</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-01-22</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /*</a>
+<span class="lineNum">       2 </span>            :  * Present - Date/Time Library
+<span class="lineNum">       3 </span>            :  *
+<span class="lineNum">       4 </span>            :  * Tests for the &quot;present_delta&quot; shortcut macro
+<span class="lineNum">       5 </span>            :  *
+<span class="lineNum">       6 </span>            :  * Licensed under the MIT License.
+<span class="lineNum">       7 </span>            :  * For details, see LICENSE.
+<span class="lineNum">       8 </span>            :  */
+<span class="lineNum">       9 </span>            : 
+<span class="lineNum">      10 </span>            : #include &quot;catch.hpp&quot;
+<span class="lineNum">      11 </span>            : #include &quot;test-utils.hpp&quot;
+<span class="lineNum">      12 </span>            : 
+<a name="13"><span class="lineNum">      13 </span>            : #include &quot;present.h&quot;</a>
+<span class="lineNum">      14 </span>            : 
+<span class="lineNum">      15 </span><span class="lineCov">          2 : TEST_CASE(&quot;present_delta macro creating MonthDeltas&quot;,</span>
+<span class="lineNum">      16 </span>            :           &quot;[delta-macros] [month-delta]&quot;) {
+<span class="lineNum">      17 </span><span class="lineCov">          1 :     CHECK(present_delta(3, year) == MonthDelta::from_years(3));</span>
+<span class="lineNum">      18 </span><span class="lineCov">          1 :     CHECK(present_delta(-4, year) == MonthDelta::from_years(-4));</span>
+<span class="lineNum">      19 </span><span class="lineCov">          1 :     CHECK(present_delta(5, years) == MonthDelta::from_years(5));</span>
+<span class="lineNum">      20 </span><span class="lineCov">          1 :     CHECK(present_delta(-6, years) == MonthDelta::from_years(-6));</span>
+<span class="lineNum">      21 </span>            : 
+<span class="lineNum">      22 </span><span class="lineCov">          1 :     CHECK(present_delta(7, month) == MonthDelta::from_months(7));</span>
+<span class="lineNum">      23 </span><span class="lineCov">          1 :     CHECK(present_delta(-8, month) == MonthDelta::from_months(-8));</span>
+<span class="lineNum">      24 </span><span class="lineCov">          1 :     CHECK(present_delta(9, months) == MonthDelta::from_months(9));</span>
+<span class="lineNum">      25 </span><span class="lineCov">          1 :     CHECK(present_delta(-10, months) == MonthDelta::from_months(-10));</span>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span><span class="lineCov">          2 : TEST_CASE(&quot;present_delta macro creating DayDeltas&quot;,</span>
+<span class="lineNum">      29 </span>            :           &quot;[delta-macros] [day-delta]&quot;) {
+<span class="lineNum">      30 </span><span class="lineCov">          1 :     CHECK(present_delta(11, week) == DayDelta::from_weeks(11));</span>
+<span class="lineNum">      31 </span><span class="lineCov">          1 :     CHECK(present_delta(-12, week) == DayDelta::from_weeks(-12));</span>
+<span class="lineNum">      32 </span><span class="lineCov">          1 :     CHECK(present_delta(13, weeks) == DayDelta::from_weeks(13));</span>
+<span class="lineNum">      33 </span><span class="lineCov">          1 :     CHECK(present_delta(-14, weeks) == DayDelta::from_weeks(-14));</span>
+<span class="lineNum">      34 </span>            : 
+<span class="lineNum">      35 </span><span class="lineCov">          1 :     CHECK(present_delta(15, day) == DayDelta::from_days(15));</span>
+<span class="lineNum">      36 </span><span class="lineCov">          1 :     CHECK(present_delta(-16, day) == DayDelta::from_days(-16));</span>
+<span class="lineNum">      37 </span><span class="lineCov">          1 :     CHECK(present_delta(17, days) == DayDelta::from_days(17));</span>
+<span class="lineNum">      38 </span><span class="lineCov">          1 :     CHECK(present_delta(-18, days) == DayDelta::from_days(-18));</span>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span><span class="lineCov">          2 : TEST_CASE(&quot;present_delta macro creating TimeDeltas&quot;,</span>
+<span class="lineNum">      42 </span>            :           &quot;[delta-macros] [time-delta]&quot;) {
+<span class="lineNum">      43 </span><span class="lineCov">          1 :     CHECK(present_delta(19, week_time) == TimeDelta::from_weeks(19));</span>
+<span class="lineNum">      44 </span><span class="lineCov">          1 :     CHECK(present_delta(-20, week_time) == TimeDelta::from_weeks(-20));</span>
+<span class="lineNum">      45 </span><span class="lineCov">          1 :     CHECK(present_delta(21, weeks_time) == TimeDelta::from_weeks(21));</span>
+<span class="lineNum">      46 </span><span class="lineCov">          1 :     CHECK(present_delta(-22, weeks_time) == TimeDelta::from_weeks(-22));</span>
+<span class="lineNum">      47 </span>            : 
+<span class="lineNum">      48 </span><span class="lineCov">          1 :     CHECK(present_delta(23, day_time) == TimeDelta::from_days(23));</span>
+<span class="lineNum">      49 </span><span class="lineCov">          1 :     CHECK(present_delta(-24, day_time) == TimeDelta::from_days(-24));</span>
+<span class="lineNum">      50 </span><span class="lineCov">          1 :     CHECK(present_delta(25, days_time) == TimeDelta::from_days(25));</span>
+<span class="lineNum">      51 </span><span class="lineCov">          1 :     CHECK(present_delta(-26, days_time) == TimeDelta::from_days(-26));</span>
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span><span class="lineCov">          1 :     CHECK(present_delta(27, hour) == TimeDelta::from_hours(27));</span>
+<span class="lineNum">      54 </span><span class="lineCov">          1 :     CHECK(present_delta(28, hours) == TimeDelta::from_hours(28));</span>
+<span class="lineNum">      55 </span><span class="lineCov">          1 :     CHECK(present_delta(29, hr) == TimeDelta::from_hours(29));</span>
+<span class="lineNum">      56 </span><span class="lineCov">          1 :     CHECK(present_delta(30, hrs) == TimeDelta::from_hours(30));</span>
+<span class="lineNum">      57 </span>            : 
+<span class="lineNum">      58 </span><span class="lineCov">          1 :     CHECK(present_delta(31, minute) == TimeDelta::from_minutes(31));</span>
+<span class="lineNum">      59 </span><span class="lineCov">          1 :     CHECK(present_delta(32, minutes) == TimeDelta::from_minutes(32));</span>
+<span class="lineNum">      60 </span><span class="lineCov">          1 :     CHECK(present_delta(33, min) == TimeDelta::from_minutes(33));</span>
+<span class="lineNum">      61 </span><span class="lineCov">          1 :     CHECK(present_delta(34, mins) == TimeDelta::from_minutes(34));</span>
+<span class="lineNum">      62 </span>            : 
+<span class="lineNum">      63 </span><span class="lineCov">          1 :     CHECK(present_delta(35, second) == TimeDelta::from_seconds(35));</span>
+<span class="lineNum">      64 </span><span class="lineCov">          1 :     CHECK(present_delta(36, seconds) == TimeDelta::from_seconds(36));</span>
+<span class="lineNum">      65 </span><span class="lineCov">          1 :     CHECK(present_delta(37, sec) == TimeDelta::from_seconds(37));</span>
+<span class="lineNum">      66 </span><span class="lineCov">          1 :     CHECK(present_delta(38, secs) == TimeDelta::from_seconds(38));</span>
+<span class="lineNum">      67 </span>            : 
+<span class="lineNum">      68 </span><span class="lineCov">          1 :     CHECK(present_delta(39, millisecond) == TimeDelta::from_milliseconds(39));</span>
+<span class="lineNum">      69 </span><span class="lineCov">          1 :     CHECK(present_delta(40, milliseconds) == TimeDelta::from_milliseconds(40));</span>
+<span class="lineNum">      70 </span><span class="lineCov">          1 :     CHECK(present_delta(41, ms) == TimeDelta::from_milliseconds(41));</span>
+<span class="lineNum">      71 </span>            : 
+<span class="lineNum">      72 </span><span class="lineCov">          1 :     CHECK(present_delta(42, microsecond) == TimeDelta::from_microseconds(42));</span>
+<span class="lineNum">      73 </span><span class="lineCov">          1 :     CHECK(present_delta(43, microseconds) == TimeDelta::from_microseconds(43));</span>
+<span class="lineNum">      74 </span><span class="lineCov">          1 :     CHECK(present_delta(44, us) == TimeDelta::from_microseconds(44));</span>
+<span class="lineNum">      75 </span>            : 
+<span class="lineNum">      76 </span><span class="lineCov">          1 :     CHECK(present_delta(45, nanosecond) == TimeDelta::from_nanoseconds(45));</span>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">          1 :     CHECK(present_delta(46, nanoseconds) == TimeDelta::from_nanoseconds(46));</span></a>
+<span class="lineNum">      78 </span><span class="lineCov">          1 :     CHECK(present_delta(47, ns) == TimeDelta::from_nanoseconds(47));</span>
+<span class="lineNum">      79 </span><span class="lineCov">          4 : }</span>
+<span class="lineNum">      80 </span>            : 
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.10</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
