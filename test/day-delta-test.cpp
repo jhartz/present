@@ -245,6 +245,12 @@ TEST_CASE("DayDelta comparison operators", "[day-delta]") {
              d4 = DayDelta::from_days(-13),
              d5 = DayDelta::zero();
 
+    TimeDelta td1 = TimeDelta::from_days(19),
+              td2 = TimeDelta::from_days(21),
+              td3 = TimeDelta::from_days(-13),
+              td4 = TimeDelta::from_days(-13),
+              td5 = TimeDelta::zero();
+
     CHECK(DayDelta::compare(d1, d2) < 0);
     CHECK(DayDelta::compare(d1, d3) > 0);
     CHECK(DayDelta::compare(d1, d5) > 0);
@@ -252,34 +258,48 @@ TEST_CASE("DayDelta comparison operators", "[day-delta]") {
     CHECK(DayDelta::compare(d4, d3) == 0);
     CHECK(DayDelta::compare(d5, d5) == 0);
 
-    CHECK(d3 == d4);
-    CHECK(d4 == d3);
-    CHECK(!(d1 == d2));
-    CHECK(!(d1 == d5));
-    CHECK(d1 != d2);
-    CHECK(d5 != d1);
+    CHECK(DayDelta::compare(d1, td2) < 0);
+    CHECK(DayDelta::compare(d1, td3) > 0);
+    CHECK(DayDelta::compare(d1, td5) > 0);
+    CHECK(DayDelta::compare(d3, td4) == 0);
+    CHECK(DayDelta::compare(d4, td3) == 0);
+    CHECK(DayDelta::compare(d5, td5) == 0);
 
-    CHECK(d1 < d2);
-    CHECK(d3 < d1);
-    CHECK(!(d5 < d4));
-    CHECK(!(d3 < d4));
+    CHECK(DayDelta::compare(td1, d2) < 0);
+    CHECK(DayDelta::compare(td1, d3) > 0);
+    CHECK(DayDelta::compare(td1, d5) > 0);
+    CHECK(DayDelta::compare(td3, d4) == 0);
+    CHECK(DayDelta::compare(td4, d3) == 0);
+    CHECK(DayDelta::compare(td5, d5) == 0);
 
-    CHECK(d1 <= d2);
-    CHECK(d3 <= d2);
-    CHECK(!(d5 <= d4));
-    CHECK(d3 <= d4);
+    CHECK(d3 == d4);        CHECK(d3 == td4);
+    CHECK(d4 == d3);        CHECK(d4 == td3);
+    CHECK(!(d1 == d2));     CHECK(!(d1 == td2));
+    CHECK(!(d1 == d5));     CHECK(!(d1 == td5));
+    CHECK(d1 != d2);        CHECK(d1 != td2);
+    CHECK(d5 != d1);        CHECK(d5 != td1);
 
-    CHECK(d1 > d3);
-    CHECK(d2 > d1);
-    CHECK(d5 > d3);
-    CHECK(!(d3 > d4));
-    CHECK(!(d3 > d2));
-    CHECK(!(d1 > d2));
+    CHECK(d1 < d2);         CHECK(d1 < td2);
+    CHECK(d3 < d1);         CHECK(d3 < td1);
+    CHECK(!(d5 < d4));      CHECK(!(d5 < td4));
+    CHECK(!(d3 < d4));      CHECK(!(d3 < td4));
 
-    CHECK(d1 >= d3);
-    CHECK(d2 >= d1);
-    CHECK(d5 >= d3);
-    CHECK(d3 >= d4);
-    CHECK(!(d5 >= d2));
+    CHECK(d1 <= d2);        CHECK(d1 <= td2);
+    CHECK(d3 <= d2);        CHECK(d3 <= td2);
+    CHECK(!(d5 <= d4));     CHECK(!(d5 <= td4));
+    CHECK(d3 <= d4);        CHECK(d3 <= td4);
+
+    CHECK(d1 > d3);         CHECK(d1 > td3);
+    CHECK(d2 > d1);         CHECK(d2 > td1);
+    CHECK(d5 > d3);         CHECK(d5 > td3);
+    CHECK(!(d3 > d4));      CHECK(!(d3 > td4));
+    CHECK(!(d3 > d2));      CHECK(!(d3 > td2));
+    CHECK(!(d1 > d2));      CHECK(!(d1 > td2));
+
+    CHECK(d1 >= d3);        CHECK(d1 >= td3);
+    CHECK(d2 >= d1);        CHECK(d2 >= td1);
+    CHECK(d5 >= d3);        CHECK(d5 >= td3);
+    CHECK(d3 >= d4);        CHECK(d3 >= td4);
+    CHECK(!(d5 >= d2));     CHECK(!(d5 >= td2));
 }
 
