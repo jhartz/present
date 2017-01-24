@@ -75,9 +75,14 @@ Macros in Present fall into 4 categories:
     Example:
 
     ```c
-    #define INEQUALITY_OPERATOR(__StructName__, __DataMember__)             \
-        int is_equal(struct __StructName__ *a, struct __StructName__ *b) {  \
-            return a->__DataMember__ == b->__DataMember__                   \
+    #define EQUALITY_OPERATORS(__StructName__, __DataMember__)              \
+        int is_equal(struct __StructName__ *a, struct __StructName__ *b)    \
+        {                                                                   \
+            return a->(__DataMember__) == b->(__DataMember__);              \
+        }                                                                   \
+        int is_unequal(struct __StructName__ *a, struct __StructName__ *b)  \
+        {                                                                   \
+            return a->(__DataMember__) != b->(__DataMember__);              \
         }
     ```
 
