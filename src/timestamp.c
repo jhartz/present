@@ -53,29 +53,33 @@ struct_tm_to_clock_time(
  * than NANOSECONDS_IN_SECOND.
  */
 #define CHECK_DATA(data)                                            \
-    while (data.additional_nanoseconds < 0) {                       \
-        data.timestamp_seconds -= 1;                                \
-        data.additional_nanoseconds += NANOSECONDS_IN_SECOND;       \
-    }                                                               \
-    if (data.additional_nanoseconds >= NANOSECONDS_IN_SECOND) {     \
-        data.timestamp_seconds += data.additional_nanoseconds /     \
-            NANOSECONDS_IN_SECOND;                                  \
-        data.additional_nanoseconds %= NANOSECONDS_IN_SECOND;       \
-    }
+    do {                                                            \
+        while (data.additional_nanoseconds < 0) {                   \
+            data.timestamp_seconds -= 1;                            \
+            data.additional_nanoseconds += NANOSECONDS_IN_SECOND;   \
+        }                                                           \
+        if (data.additional_nanoseconds >= NANOSECONDS_IN_SECOND) { \
+            data.timestamp_seconds += data.additional_nanoseconds / \
+                NANOSECONDS_IN_SECOND;                              \
+            data.additional_nanoseconds %= NANOSECONDS_IN_SECOND;   \
+        }                                                           \
+    } while (0)
 
 /**
  * Check a Date and a ClockTime to make sure they aren't erroneous (if so, set
  * the proper errors on "result").
  */
 #define CHECK_DATE_AND_CLOCK_TIME(date, clock_time) \
-    if ((date)->has_error) {                        \
-        result->has_error = 1;                      \
-        result->errors.invalid_date = 1;            \
-    }                                               \
-    if ((clock_time)->has_error) {                  \
-        result->has_error = 1;                      \
-        result->errors.invalid_clock_time = 1;      \
-    }
+    do {                                            \
+        if ((date)->has_error) {                    \
+            result->has_error = 1;                  \
+            result->errors.invalid_date = 1;        \
+        }                                           \
+        if ((clock_time)->has_error) {              \
+            result->has_error = 1;                  \
+            result->errors.invalid_clock_time = 1;  \
+        }                                           \
+    } while (0)
 
 
 /** Initialize a new Timestamp instance based on its data parameters. */
@@ -110,7 +114,7 @@ init_timestamp_from_date_and_clock_time_utc(
     CLEAR(result);
 
     /* Make sure the Date and ClockTime aren't erroneous */
-    CHECK_DATE_AND_CLOCK_TIME(date, clock_time)
+    CHECK_DATE_AND_CLOCK_TIME(date, clock_time);
 
     if (!result->has_error) {
         /* This is a more useful form of the clock time */
@@ -146,7 +150,7 @@ init_timestamp_from_date_and_clock_time(
     CLEAR(result);
 
     /* Make sure the Date and ClockTime aren't erroneous */
-    CHECK_DATE_AND_CLOCK_TIME(date, clock_time)
+    CHECK_DATE_AND_CLOCK_TIME(date, clock_time);
 
     if (!result->has_error) {
         /* First, pretend it's just UTC */
@@ -328,7 +332,7 @@ Timestamp_ptr_create_local(
     CLEAR(result);
 
     /* Make sure the Date and ClockTime aren't erroneous */
-    CHECK_DATE_AND_CLOCK_TIME(date, clock_time)
+    CHECK_DATE_AND_CLOCK_TIME(date, clock_time);
 
     if (!result->has_error) {
         CLEAR(&tm);
@@ -569,7 +573,7 @@ Timestamp_add_TimeDelta(
 
     self->data_.timestamp_seconds += delta->data_.delta_seconds;
     self->data_.additional_nanoseconds += delta->data_.delta_nanoseconds;
-    CHECK_DATA(self->data_)
+    CHECK_DATA(self->data_);
 }
 
 void
@@ -619,7 +623,7 @@ Timestamp_subtract_TimeDelta(
 
     self->data_.timestamp_seconds -= delta->data_.delta_seconds;
     self->data_.additional_nanoseconds -= delta->data_.delta_nanoseconds;
-    CHECK_DATA(self->data_)
+    CHECK_DATA(self->data_);
 }
 
 void

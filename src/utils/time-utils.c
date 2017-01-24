@@ -29,7 +29,7 @@
 static pthread_mutex_t syscall_access;
 static int is_initialized = 0;
 
-#define INITIALIZE                          \
+#define INITIALIZE()                        \
     do {                                    \
         if (!is_initialized) {              \
             pthread_mutex_init(             \
@@ -40,7 +40,7 @@ static int is_initialized = 0;
                 &syscall_access);           \
     } while (0)
 
-#define DONE                                \
+#define DONE()                              \
     do {                                    \
         pthread_mutex_unlock(               \
                 &syscall_access);           \
@@ -48,8 +48,8 @@ static int is_initialized = 0;
 
 #else
 
-#define INITIALIZE
-#define DONE
+#define INITIALIZE()
+#define DONE()
 
 #endif
 
@@ -188,11 +188,11 @@ time_t_to_struct_tm(const time_t * timep, struct tm * result)
 {
     struct tm * value;
 
-    INITIALIZE;
+    INITIALIZE();
     value = gmtime(timep);
     assert(value != NULL);
     memcpy(result, value, sizeof(struct tm));
-    DONE;
+    DONE();
 }
 
 time_t
@@ -200,10 +200,10 @@ struct_tm_to_time_t_local(struct tm * tm)
 {
     time_t value;
 
-    INITIALIZE;
+    INITIALIZE();
     value = mktime(tm);
     assert(value != (time_t) -1);
-    DONE;
+    DONE();
     return value;
 }
 
@@ -212,11 +212,11 @@ time_t_to_struct_tm_local(const time_t * timep, struct tm * result)
 {
     struct tm * value;
 
-    INITIALIZE;
+    INITIALIZE();
     value = localtime(timep);
     assert(value != NULL);
     memcpy(result, value, sizeof(struct tm));
-    DONE;
+    DONE();
 }
 
 void
@@ -242,7 +242,7 @@ present_now(struct PresentNowStruct * result)
     struct timespec tp;
 #endif
 
-    INITIALIZE;
+    INITIALIZE();
     if (is_test_time_set) {
         *result = test_time;
     } else {
@@ -255,23 +255,23 @@ present_now(struct PresentNowStruct * result)
         result->nsec = 0;
 #endif
     }
-    DONE;
+    DONE();
 }
 
 void
 present_set_test_time(struct PresentNowStruct value)
 {
-    INITIALIZE;
+    INITIALIZE();
     is_test_time_set = 1;
     test_time = value;
-    DONE;
+    DONE();
 }
 
 void
 present_reset_test_time()
 {
-    INITIALIZE;
+    INITIALIZE();
     is_test_time_set = 0;
-    DONE;
+    DONE();
 }
 
