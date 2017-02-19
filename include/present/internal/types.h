@@ -45,7 +45,7 @@ typedef unsigned char   present_bool;
  * NOTE: Integer types are at least 16-bit, and signed, to make calculations
  * (when adding/subtracting deltas) easier. Also, if we use 8-bit integers,
  * it's usually a typedef of "char", and thus they are treated as characters
- * in certain places where they should be treated as integers.
+ * in certain C++ overloads where they should be treated as integers.
  */
 
 /* Timestamp */
