@@ -198,8 +198,11 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 
 Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour of the day. 
 
-If the hour is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. If the hour is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.\\
+\hline
+\end{DoxyParams}
 \begin{DoxyAttention}{Attention}
 Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
 \end{DoxyAttention}
@@ -211,10 +214,8 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 \hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
 \end{DoxySeeAlso}
 
-\begin{DoxyParams}[1]{Parameters}
- & {\em hour} & The hour of the day (0 to 23, inclusive). \\
-\hline
-\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
 \end{DoxyParams}
 \hypertarget{clock-time_8h_aa035b1f4af768453d8932ce43ba7ba35}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute}}
@@ -261,8 +262,11 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 
 Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour and a minute. 
 
-If the hour or the minute is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. If the hour or the minute is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.\\
+\hline
+\end{DoxyParams}
 \begin{DoxyAttention}{Attention}
 Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
 \end{DoxyAttention}
@@ -274,12 +278,10 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 \hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
 \end{DoxySeeAlso}
 
-\begin{DoxyParams}[1]{Parameters}
- & {\em hour} & The hour of the day (0 to 23, inclusive). \\
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
- & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
-\hline
-\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
 \hline
 \end{DoxyParams}
 \hypertarget{clock-time_8h_a7881866a32c7c6027257208e456a5041}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second}}
@@ -330,8 +332,11 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 
 Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a second. 
 
-If the hour, the minute, or the second is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. If the hour, the minute, or the second is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.\\
+\hline
+\end{DoxyParams}
 \begin{DoxyAttention}{Attention}
 Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
 \end{DoxyAttention}
@@ -343,14 +348,12 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 \hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
 \end{DoxySeeAlso}
 
-\begin{DoxyParams}[1]{Parameters}
- & {\em hour} & The hour of the day (0 to 23, inclusive). \\
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
- & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
 \hline
- & {\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
-\hline
-\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+{\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
 \hline
 \end{DoxyParams}
 \hypertarget{clock-time_8h_adbf645da18ea1c4bd1cb22f7107f9112}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond@{Clock\-Time\-\_\-from\-\_\-hour\-\_\-minute\-\_\-second\-\_\-nanosecond}}
@@ -405,8 +408,11 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 
 Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, a second, and a nanosecond. 
 
-If the hour, minute, second, or nanosecond is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. If the hour, minute, second, or nanosecond is out of range, the \hyperlink{structClockTime}{Clock\-Time} will have {\ttfamily has\-\_\-error} and {\ttfamily errors} set.\\
+\hline
+\end{DoxyParams}
 \begin{DoxyAttention}{Attention}
 Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
 \end{DoxyAttention}
@@ -418,16 +424,14 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 \hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
 \end{DoxySeeAlso}
 
-\begin{DoxyParams}[1]{Parameters}
- & {\em hour} & The hour of the day (0 to 23, inclusive). \\
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
- & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
 \hline
- & {\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
+{\em second} & The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). \\
 \hline
- & {\em nanosecond} & The nanosecond (0 to 10$^\wedge$9-\/1, inclusive, i.\-e. no bigger than the number of nanoseconds in a second). \\
-\hline
-\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+{\em nanosecond} & The nanosecond (0 to 10$^\wedge$9-\/1, inclusive, i.\-e. no bigger than the number of nanoseconds in a second). \\
 \hline
 \end{DoxyParams}
 \hypertarget{clock-time_8h_a519b7c6074cf1addc815f7495048c30b}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds@{Clock\-Time\-\_\-create\-\_\-with\-\_\-decimal\-\_\-seconds}}
@@ -476,6 +480,11 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 
 Create a new \hyperlink{structClockTime}{Clock\-Time} based on an hour, a minute, and a decimal second. 
 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result.\\
+\hline
+\end{DoxyParams}
 \begin{DoxyAttention}{Attention}
 Make sure to check for any errors by checking if the {\ttfamily has\-\_\-error} field on the returned struct is true.
 \end{DoxyAttention}
@@ -487,14 +496,12 @@ If {\ttfamily has\-\_\-error} is true, then at least one of the fields in the {\
 \hyperlink{structClockTime_a7aa79d494a580c4961d5e0f0c2e112a0}{Clock\-Time\-::errors}
 \end{DoxySeeAlso}
 
-\begin{DoxyParams}[1]{Parameters}
- & {\em hour} & The hour of the day (0 to 23, inclusive). \\
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hour of the day (0 to 23, inclusive). \\
 \hline
- & {\em minute} & The minute of the hour (0 to 59, inclusive). \\
+{\em minute} & The minute of the hour (0 to 59, inclusive). \\
 \hline
- & {\em second} & The second of the minute (0 up to, but not including, 60). \\
-\hline
-\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+{\em second} & The second of the minute (0 up to, but not including, 60). \\
 \hline
 \end{DoxyParams}
 \hypertarget{clock-time_8h_a03a50ba89456f73dfd83cf4b7da88036}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-midnight@{Clock\-Time\-\_\-midnight}}
@@ -521,7 +528,7 @@ Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to midnight (0
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result.\\
 \hline
 \end{DoxyParams}
 \hypertarget{clock-time_8h_a7f66f1fc5941b55ba08e40a2e2777106}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-noon@{Clock\-Time\-\_\-noon}}
@@ -548,7 +555,7 @@ Create a new \hyperlink{structClockTime}{Clock\-Time} initialized to noon (12\-:
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result. \\
+\mbox{\tt out}  & {\em result} & A pointer to a struct \hyperlink{structClockTime}{Clock\-Time} for the result.\\
 \hline
 \end{DoxyParams}
 \hypertarget{clock-time_8h_a197ecd5df7f193d534e51794051ea68c}{\index{clock-\/time.\-h@{clock-\/time.\-h}!Clock\-Time\-\_\-hour@{Clock\-Time\-\_\-hour}}
