@@ -173,8 +173,8 @@ PRESENT_API struct ClockTime
 ClockTime_from_hour(int_hour hour);
 
 /**
- * @copydoc ClockTime_from_hour
  * @param[out] result A pointer to a struct ClockTime for the result.
+ * @copydoc ClockTime_from_hour
  */
 PRESENT_API void
 ClockTime_ptr_from_hour(struct ClockTime * const result, int_hour hour);
@@ -194,8 +194,8 @@ PRESENT_API struct ClockTime
 ClockTime_from_hour_minute(int_hour hour, int_minute minute);
 
 /**
- * @copydoc ClockTime_from_hour_minute
  * @param[out] result A pointer to a struct ClockTime for the result.
+ * @copydoc ClockTime_from_hour_minute
  */
 PRESENT_API void
 ClockTime_ptr_from_hour_minute(
@@ -223,8 +223,8 @@ ClockTime_from_hour_minute_second(
         int_second second);
 
 /**
- * @copydoc ClockTime_from_hour_minute_second
  * @param[out] result A pointer to a struct ClockTime for the result.
+ * @copydoc ClockTime_from_hour_minute_second
  */
 PRESENT_API void
 ClockTime_ptr_from_hour_minute_second(
@@ -257,8 +257,8 @@ ClockTime_from_hour_minute_second_nanosecond(
         int_nanosecond nanosecond);
 
 /**
- * @copydoc ClockTime_from_hour_minute_second_nanosecond
  * @param[out] result A pointer to a struct ClockTime for the result.
+ * @copydoc ClockTime_from_hour_minute_second_nanosecond
  */
 PRESENT_API void
 ClockTime_ptr_from_hour_minute_second_nanosecond(
@@ -325,8 +325,8 @@ ClockTime_create_with_decimal_seconds(
         double second);
 
 /**
- * @copydoc ClockTime_create_with_decimal_seconds
  * @param[out] result A pointer to a struct ClockTime for the result.
+ * @copydoc ClockTime_create_with_decimal_seconds
  */
 PRESENT_API void
 ClockTime_ptr_create_with_decimal_seconds(
@@ -342,8 +342,8 @@ PRESENT_API struct ClockTime
 ClockTime_midnight(void);
 
 /**
- * @copydoc ClockTime_midnight
  * @param[out] result A pointer to a struct ClockTime for the result.
+ * @copydoc ClockTime_midnight
  */
 PRESENT_API void
 ClockTime_ptr_midnight(struct ClockTime * const result);
@@ -355,8 +355,8 @@ PRESENT_API struct ClockTime
 ClockTime_noon(void);
 
 /**
- * @copydoc ClockTime_noon
  * @param[out] result A pointer to a struct ClockTime for the result.
+ * @copydoc ClockTime_noon
  */
 PRESENT_API void
 ClockTime_ptr_noon(struct ClockTime * const result);
