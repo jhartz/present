@@ -350,12 +350,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> based on an hour of the day. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. If the hour is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>If the hour is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Make sure to check for any errors by checking if the <code>has_error</code> field on the returned struct is true.</dd></dl>
 <p>If <code>has_error</code> is true, then at least one of the fields in the <code>errors</code> struct will also be true.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="structClockTime.html#ab04bad96a5d91e8a29b61a1802e5faba" title="This will be true if there were any errors when creating this ClockTime. ">ClockTime::has_error</a> </dd>
@@ -363,7 +358,8 @@ Functions</h2></td></tr>
 <a class="el" href="structClockTime.html#a7aa79d494a580c4961d5e0f0c2e112a0" title="If there were any errors when creating this ClockTime, then one or more of these fields will be set...">ClockTime::errors</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. </td></tr>
   </table>
   </dd>
 </dl>
@@ -442,12 +438,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> based on an hour and a minute. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. If the hour or the minute is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>If the hour or the minute is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Make sure to check for any errors by checking if the <code>has_error</code> field on the returned struct is true.</dd></dl>
 <p>If <code>has_error</code> is true, then at least one of the fields in the <code>errors</code> struct will also be true.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="structClockTime.html#ab04bad96a5d91e8a29b61a1802e5faba" title="This will be true if there were any errors when creating this ClockTime. ">ClockTime::has_error</a> </dd>
@@ -455,8 +446,9 @@ Functions</h2></td></tr>
 <a class="el" href="structClockTime.html#a7aa79d494a580c4961d5e0f0c2e112a0" title="If there were any errors when creating this ClockTime, then one or more of these fields will be set...">ClockTime::errors</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
-    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. </td></tr>
   </table>
   </dd>
 </dl>
@@ -548,12 +540,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> based on an hour, a minute, and a second. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. If the hour, the minute, or the second is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>If the hour, the minute, or the second is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Make sure to check for any errors by checking if the <code>has_error</code> field on the returned struct is true.</dd></dl>
 <p>If <code>has_error</code> is true, then at least one of the fields in the <code>errors</code> struct will also be true.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="structClockTime.html#ab04bad96a5d91e8a29b61a1802e5faba" title="This will be true if there were any errors when creating this ClockTime. ">ClockTime::has_error</a> </dd>
@@ -561,9 +548,10 @@ Functions</h2></td></tr>
 <a class="el" href="structClockTime.html#a7aa79d494a580c4961d5e0f0c2e112a0" title="If there were any errors when creating this ClockTime, then one or more of these fields will be set...">ClockTime::errors</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
-    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
-    <tr><td class="paramname">second</td><td>The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">second</td><td>The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. </td></tr>
   </table>
   </dd>
 </dl>
@@ -668,12 +656,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> based on an hour, a minute, a second, and a nanosecond. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. If the hour, minute, second, or nanosecond is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>If the hour, minute, second, or nanosecond is out of range, the <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> will have <code>has_error</code> and <code>errors</code> set.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Make sure to check for any errors by checking if the <code>has_error</code> field on the returned struct is true.</dd></dl>
 <p>If <code>has_error</code> is true, then at least one of the fields in the <code>errors</code> struct will also be true.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="structClockTime.html#ab04bad96a5d91e8a29b61a1802e5faba" title="This will be true if there were any errors when creating this ClockTime. ">ClockTime::has_error</a> </dd>
@@ -681,10 +664,11 @@ Functions</h2></td></tr>
 <a class="el" href="structClockTime.html#a7aa79d494a580c4961d5e0f0c2e112a0" title="If there were any errors when creating this ClockTime, then one or more of these fields will be set...">ClockTime::errors</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
-    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
-    <tr><td class="paramname">second</td><td>The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). </td></tr>
-    <tr><td class="paramname">nanosecond</td><td>The nanosecond (0 to 10^9-1, inclusive, i.e. no bigger than the number of nanoseconds in a second). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">second</td><td>The second of the minute (0 to 59, inclusive, or possibly 60 in the case of a leap second). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">nanosecond</td><td>The nanosecond (0 to 10^9-1, inclusive, i.e. no bigger than the number of nanoseconds in a second). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. </td></tr>
   </table>
   </dd>
 </dl>
@@ -775,12 +759,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> based on an hour, a minute, and a decimal second. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section attention"><dt>Attention</dt><dd>Make sure to check for any errors by checking if the <code>has_error</code> field on the returned struct is true.</dd></dl>
 <p>If <code>has_error</code> is true, then at least one of the fields in the <code>errors</code> struct will also be true.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="structClockTime.html#ab04bad96a5d91e8a29b61a1802e5faba" title="This will be true if there were any errors when creating this ClockTime. ">ClockTime::has_error</a> </dd>
@@ -788,9 +766,10 @@ Functions</h2></td></tr>
 <a class="el" href="structClockTime.html#a7aa79d494a580c4961d5e0f0c2e112a0" title="If there were any errors when creating this ClockTime, then one or more of these fields will be set...">ClockTime::errors</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
-    <tr><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
-    <tr><td class="paramname">second</td><td>The second of the minute (0 up to, but not including, 60). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">hour</td><td>The hour of the day (0 to 23, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">minute</td><td>The minute of the hour (0 to 59, inclusive). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">second</td><td>The second of the minute (0 up to, but not including, 60). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. </td></tr>
   </table>
   </dd>
 </dl>
@@ -832,7 +811,7 @@ Functions</h2></td></tr>
 <p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> initialized to midnight (00:00). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. </td></tr>
   </table>
   </dd>
 </dl>
@@ -874,7 +853,7 @@ Functions</h2></td></tr>
 <p>Create a new <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> initialized to noon (12:00). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>A pointer to a struct <a class="el" href="structClockTime.html" title="Class or struct representing a time as seen on a clock. ">ClockTime</a> for the result. </td></tr>
   </table>
   </dd>
 </dl>
