@@ -16,7 +16,7 @@
 
 #include "present-config.h"
 
-#ifdef PRESENT_USE_PTHREAD
+#ifdef PRESENT_WRAP_STDLIB_CALLS
 # include <pthread.h>
 #endif
 
@@ -25,25 +25,22 @@
 
 #include "utils/time-utils.h"
 
-#ifdef PRESENT_USE_PTHREAD
-static pthread_mutex_t syscall_access;
+#ifdef PRESENT_WRAP_STDLIB_CALLS
+static pthread_mutex_t stdlib_call_access;
 static int is_initialized = 0;
 
-#define INITIALIZE()                        \
-    do {                                    \
-        if (!is_initialized) {              \
-            pthread_mutex_init(             \
-                    &syscall_access, NULL); \
-            is_initialized = 1;             \
-        }                                   \
-        pthread_mutex_lock(                 \
-                &syscall_access);           \
+#define INITIALIZE()                                        \
+    do {                                                    \
+        if (!is_initialized) {                              \
+            pthread_mutex_init(&stdlib_call_access, NULL);  \
+            is_initialized = 1;                             \
+        }                                                   \
+        pthread_mutex_lock(&stdlib_call_access);            \
     } while (0)
 
-#define DONE()                              \
-    do {                                    \
-        pthread_mutex_unlock(               \
-                &syscall_access);           \
+#define DONE()                                      \
+    do {                                            \
+        pthread_mutex_unlock(&stdlib_call_access);  \
     } while (0)
 
 #else
@@ -71,7 +68,7 @@ days_since_base_year(
 {
     /** Day of the year that each month starts on (in non-leap years). */
     static const int_day_of_year DAY_OF_START_OF_MONTH[13] = {
-            0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
+        0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
     };
 
     int_timestamp offset_year;

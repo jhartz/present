@@ -64,8 +64,8 @@ to_unix_timestamp(
  *
  * This is a wrapper around the @p gmtime function in the C standard library.
  *
- * If Present is not compiled with pthread support enabled, then this function
- * is not thread-safe.
+ * If Present is not compiled with PRESENT_WRAP_STDLIB_CALLS, then this
+ * function is not thread-safe.
  */
 void
 time_t_to_struct_tm(const time_t * timep, struct tm * result);
@@ -76,8 +76,8 @@ time_t_to_struct_tm(const time_t * timep, struct tm * result);
  * This is a wrapper around the @p mktime function in the C standard library.
  * Prefer using @p to_unix_timestamp if possible.
  *
- * If Present is not compiled with pthread support enabled, then this function
- * is not thread-safe.
+ * If Present is not compiled with PRESENT_WRAP_STDLIB_CALLS, then this
+ * function is not thread-safe.
  */
 time_t
 struct_tm_to_time_t_local(struct tm * tm);
@@ -89,8 +89,8 @@ struct_tm_to_time_t_local(struct tm * tm);
  * This is a wrapper around the @p localtime function in the C standard
  * library.
  *
- * If Present is not compiled with pthread support enabled, then this function
- * is not thread-safe.
+ * If Present is not compiled with PRESENT_WRAP_STDLIB_CALLS, then this
+ * function is not thread-safe.
  */
 void
 time_t_to_struct_tm_local(const time_t * timep, struct tm * result);

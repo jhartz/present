@@ -25,7 +25,7 @@ option (COMPILE_WITH_CXX_AS_CC
     OFF
 )
 
-option (PRESENT_USE_PTHREAD
+option (PRESENT_WRAP_STDLIB_CALLS
     "Use the pthread library to ensure thread safety when calling time functions from the standard library"
     # (only works if Present is the only one calling the standard library functions directly)
     OFF
@@ -138,11 +138,11 @@ if (LIBRT_PATH)
 endif (LIBRT_PATH)
 
 # Link pthread if necessary
-if (PRESENT_USE_PTHREAD)
+if (PRESENT_WRAP_STDLIB_CALLS)
     target_link_libraries (present
         pthread
     )
-endif (PRESENT_USE_PTHREAD)
+endif (PRESENT_WRAP_STDLIB_CALLS)
 
 # Install the C library
 install (
