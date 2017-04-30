@@ -40,12 +40,18 @@ It also does not include any time zone information.
 
 ### Timestamp
 
-A `Timestamp` instance is a combination of a `ClockTime` and a `Date`,
-representing a fixed point in time (up to nanosecond precision).
+A `Timestamp` instance is like combination of a `ClockTime` and a `Date`,
+representing a fixed point in time (with up to nanosecond precision).
 
 - `January 1, 1970 00:00:00 UTC`
 - `November 24, 2012 11:50 EST`
 - `2008-08-09T23:29:59.456+04:00`
+
+Unlike just a mere pair of `ClockTime` and `Date`, though, a `Timestamp`
+represents a specific *instance* in time. A single timestamp can be represented
+in many possible ways (e.g. many different `ClockTime`+`Date` pairs can mean the
+same timestamp) depending on time zone interpretations. For example, these are
+the same timestamp: `Jan. 1, 2017 11:00 AM EST` and `Jan. 1, 2017 4:00 PM UTC`.
 
 ## Delta Types
 
