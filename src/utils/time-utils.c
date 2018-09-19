@@ -26,27 +26,22 @@
 #include "utils/time-utils.h"
 
 #ifdef PRESENT_WRAP_STDLIB_CALLS
-static pthread_mutex_t stdlib_call_access;
-static int is_initialized = 0;
+static pthread_mutex_t stdlib_call_lock = PTHREAD_MUTEX_INITIALIZER;
 
-#define INITIALIZE()                                        \
-    do {                                                    \
-        if (!is_initialized) {                              \
-            pthread_mutex_init(&stdlib_call_access, NULL);  \
-            is_initialized = 1;                             \
-        }                                                   \
-        pthread_mutex_lock(&stdlib_call_access);            \
+#define LOCK()                                  \
+    do {                                        \
+        pthread_mutex_lock(&stdlib_call_lock);  \
     } while (0)
 
-#define DONE()                                      \
+#define UNLOCK()                                    \
     do {                                            \
-        pthread_mutex_unlock(&stdlib_call_access);  \
+        pthread_mutex_unlock(&stdlib_call_lock);    \
     } while (0)
 
 #else
 
-#define INITIALIZE()
-#define DONE()
+#define LOCK()
+#define UNLOCK()
 
 #endif
 
@@ -185,11 +180,11 @@ time_t_to_struct_tm(const time_t * timep, struct tm * result)
 {
     struct tm * value;
 
-    INITIALIZE();
+    LOCK();
     value = gmtime(timep);
     assert(value != NULL);
     memcpy(result, value, sizeof(struct tm));
-    DONE();
+    UNLOCK();
 }
 
 time_t
@@ -197,10 +192,10 @@ struct_tm_to_time_t_local(struct tm * tm)
 {
     time_t value;
 
-    INITIALIZE();
+    LOCK();
     value = mktime(tm);
     assert(value != (time_t) -1);
-    DONE();
+    UNLOCK();
     return value;
 }
 
@@ -209,11 +204,11 @@ time_t_to_struct_tm_local(const time_t * timep, struct tm * result)
 {
     struct tm * value;
 
-    INITIALIZE();
+    LOCK();
     value = localtime(timep);
     assert(value != NULL);
     memcpy(result, value, sizeof(struct tm));
-    DONE();
+    UNLOCK();
 }
 
 void
@@ -239,7 +234,7 @@ present_now(struct PresentNowStruct * result)
     struct timespec tp;
 #endif
 
-    INITIALIZE();
+    LOCK();
     if (is_test_time_set) {
         *result = test_time;
     } else {
@@ -252,23 +247,23 @@ present_now(struct PresentNowStruct * result)
         result->nsec = 0;
 #endif
     }
-    DONE();
+    UNLOCK();
 }
 
 void
 present_set_test_time(struct PresentNowStruct value)
 {
-    INITIALIZE();
+    LOCK();
     is_test_time_set = 1;
     test_time = value;
-    DONE();
+    UNLOCK();
 }
 
 void
 present_reset_test_time()
 {
-    INITIALIZE();
+    LOCK();
     is_test_time_set = 0;
-    DONE();
+    UNLOCK();
 }
 
